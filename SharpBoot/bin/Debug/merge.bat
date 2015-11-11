@@ -1,0 +1,1 @@
+libz inject-dll -a SharpBoot.exe -i de\SharpBoot.resources.dll -i fr\SharpBoot.resources.dll -i ro\SharpBoot.resources.dll --move

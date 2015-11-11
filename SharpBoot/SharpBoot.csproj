@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7EA17673-BEC5-4E2D-B51E-98FAA9C9B178}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SharpBoot</RootNamespace>
+    <AssemblyName>SharpBoot</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;UNMANAGED, COMPRESS, LZMA_STREAM, CS4</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddIso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddIso.Designer.cs">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AskPath.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskPath.Designer.cs">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bootloaders.cs" />
+    <Compile Include="GenIsoFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenIsoFrm.Designer.cs">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupedComboBox.cs" />
+    <Compile Include="ImageLine.cs" />
+    <Compile Include="InstallBoot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstallBoot.Designer.cs">
+      <DependentUpon>InstallBoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISOCat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISOCat.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISOCat.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISODesc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISODesc.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISODesc.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISODesc.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISODesc.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISODesc.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISOInfo.cs" />
+    <Compile Include="LinkLabelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QEMUISO.cs" />
+    <Compile Include="SevenZipExtractor.cs" />
+    <Compile Include="SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SysInfo.cs" />
+    <Compile Include="W7R.cs" />
+    <EmbeddedResource Include="About.de.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About.fr.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="About.ro.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.de.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.fr.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.ro.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.de.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.fr.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.ro.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.de.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.fr.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.ro.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallBoot.de.resx">
+      <DependentUpon>InstallBoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallBoot.fr.resx">
+      <DependentUpon>InstallBoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallBoot.resx">
+      <DependentUpon>InstallBoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstallBoot.ro.resx">
+      <DependentUpon>InstallBoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.de.resx" />
+    <EmbeddedResource Include="ISOCat.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISODesc.de.resx" />
+    <EmbeddedResource Include="ISODesc.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISODesc.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISODesc.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISODesc.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISODesc.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISODesc.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.de.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.fr.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.ro.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Strings.de.resx" />
+    <EmbeddedResource Include="Strings.fr.resx" />
+    <EmbeddedResource Include="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.ro.resx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\basedisk.7z" />
+    <None Include="Resources\grldr" />
+    <None Include="Resources\grub4dos.7z" />
+    <None Include="Resources\imagemagick.7z" />
+    <None Include="Resources\mkisofs.7z" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd_delete1.png" />
+    <None Include="Resources\cd_delete.png" />
+    <None Include="Resources\cd.png" />
+    <None Include="Resources\7za.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qemu.7z" />
+    <None Include="Resources\sharpboot.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear_in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cd_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\syslinux.7z" />
+    <None Include="Resources\syslinux.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accept_button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\grubinst.exe" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chntpw" xml:space="preserve">
+    <value>CHNTPW is a utility to reset the password of any user that has a valid local account on your Windows system.</value>
+  </data>
+  <data name="clonezilla" xml:space="preserve">
+    <value>Clonezilla is a partition and disk imaging/cloning program similar to True Image® or Norton Ghost®.</value>
+  </data>
+  <data name="dban" xml:space="preserve">
+    <value>DBAN is a self-contained boot disk that automatically deletes the contents of any disk it detects.</value>
+  </data>
+  <data name="edubuntu" xml:space="preserve">
+    <value>Edubuntu este o distribuție membră a familiei Ubuntu de distribuții Linux, special proiectată pentru a fi folosită în scopuri educaționale.</value>
+  </data>
+  <data name="fedora" xml:space="preserve">
+    <value>Fedora este o distribuție Linux bazată pe pachete RPM dezvoltată de comunitatea Proiectul Fedora și sponsorizată de Red Hat.</value>
+  </data>
+  <data name="fusionlinux" xml:space="preserve">
+    <value>Fusion Linux is a Linux distribution that has desktop usability.</value>
+  </data>
+  <data name="gparted" xml:space="preserve">
+    <value>GParted is a free partition manager that enables you to resize, copy, and move partitions without data loss.</value>
+  </data>
+  <data name="inquisitor" xml:space="preserve">
+    <value>Inquisitor is an open-source hardware testing and certification system.</value>
+  </data>
+  <data name="kalilinux" xml:space="preserve">
+    <value>Kali este o distribuție Linux bazată pe Debian GNU / Linux concepută pentru securitatea în informatică și gestionată de către Offensive Security. Este considerat succesorul lui BackTrack Linux.</value>
+  </data>
+  <data name="knoppix" xml:space="preserve">
+    <value>Knoppix este un sistem de operare cu nucleu Linux ce se bazează pe Debian GNU/Linux.</value>
+  </data>
+  <data name="kubuntu" xml:space="preserve">
+    <value>Kubuntu este un derivat oficial al Ubuntu ce folosește KDE Plasma Desktop în locul GNOME.</value>
+  </data>
+  <data name="lubuntu" xml:space="preserve">
+    <value>Lubuntu is the LXDE version of Ubuntu.</value>
+  </data>
+  <data name="memtest86" xml:space="preserve">
+    <value>Memtest86 is an open source memory test software programs designed to test and stress test an x86 architecture computer's RAM.</value>
+  </data>
+  <data name="netbootcd" xml:space="preserve">
+    <value>NetbootCD is a Linux live CD based on Tiny Core Linux.</value>
+  </data>
+  <data name="ophcrack" xml:space="preserve">
+    <value>Ophcrack is a free Windows password cracker based on rainbow tables.</value>
+  </data>
+  <data name="redobackup" xml:space="preserve">
+    <value>Redo Backup is an easy rescue system with GUI tools for full system backup, bare metal recovery and partition editing.</value>
+  </data>
+  <data name="ubcd4dos" xml:space="preserve">
+    <value>UBCD 4 DOS is a system that regroups lots of useful utilities.</value>
+  </data>
+  <data name="ubuntu" xml:space="preserve">
+    <value>Ubuntu este un sistem de operare bazat pe Linux pentru computerele personale, servere și netbook-uri.</value>
+  </data>
+  <data name="ubuntugnome" xml:space="preserve">
+    <value>Ubuntu GNOME is the GNOME edition of Ubuntu.</value>
+  </data>
+  <data name="ubuntuserver" xml:space="preserve">
+    <value>Ubuntu Server is the server edition of the popular Linux distribution, Ubuntu.</value>
+  </data>
+  <data name="ubuntustudio" xml:space="preserve">
+    <value>Ubuntu Studio este o variantă de Ubuntu care se concentrează pe editare video, audio și grafică.</value>
+  </data>
+  <data name="xubuntu" xml:space="preserve">
+    <value>Xubuntu este o distribuție oficială derivată din Ubuntu, folosind sistemul grafic Xfce.</value>
+  </data>
+</root>

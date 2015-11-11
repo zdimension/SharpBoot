@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chntpw" xml:space="preserve">
+    <value>CHNTPW ist ein Hilfsprogramm, um das Passwort eines beliebigen Nutzers zurückzusetzen, welcher ein gültiges lokales Benutzerkonto auf einem Windows system hat.</value>
+  </data>
+  <data name="clonezilla" xml:space="preserve">
+    <value>Clonezilla ist ein kostenloses und freies Computerprogramm des taiwanischen National Center for High Performance Computing (NCHC) zum Herstellen von 1:1-Abbildern von PC-Festplatten.</value>
+  </data>
+  <data name="dban" xml:space="preserve">
+    <value>Darik’s Boot and Nuke (meist abgekürzt mit dem Akronym "DBAN") ist ein freies, Linux-basiertes Live-System, dessen Aufgabe einzig das unwiderrufliche Löschen von Festplatten oder anderen beschreibbaren Datenspeichern ist. Im Ergebnis können die Dateien selbst mit forensischen Spezialwerkzeugen nicht wiederhergestellt werden.</value>
+  </data>
+  <data name="edubuntu" xml:space="preserve">
+    <value>Edubuntu ist eine für die Verwendung in der Schule entwickelte Erweiterung zu Ubuntu, das auf dem Ubuntu Linux Terminal Server Project aufsetzt.</value>
+  </data>
+  <data name="fedora" xml:space="preserve">
+    <value>Fedora ist eine RPM-basierte Linux-Distribution. Ziel der Entwickler der Distribution ist es, freie Software zu fördern und ein Betriebssystem für eine möglichst vielfältige Zielgruppe zu gestalten.</value>
+  </data>
+  <data name="fusionlinux" xml:space="preserve">
+    <value>Fusion Linux is a Linux distribution that has desktop usability.</value>
+  </data>
+  <data name="gparted" xml:space="preserve">
+    <value>GParted (GNU Parted) ist ein freies plattformübergreifendes Partitionierungsprogramm, das mit den grafischen Oberflächen GParted und QtParted dazu verwendet werden kann, Partitionen und darin liegende Dateisysteme zu bearbeiten und zu überprüfen.</value>
+  </data>
+  <data name="inquisitor" xml:space="preserve">
+    <value>Inquisitor is an open-source hardware testing and certification system.</value>
+  </data>
+  <data name="kalilinux" xml:space="preserve">
+    <value>Kali Linux ist eine auf Debian beruhende Distribution, die vor allem Programme für Sicherheitstests versammelt. Obwohl Kali sich in erster Linie an professionelle Computersicherheitsfachleute richtet, steht es auch Privatanwendern zur Verfügung.</value>
+  </data>
+  <data name="knoppix" xml:space="preserve">
+    <value>Knoppix ist eine freie GNU/Linux-Distribution, deren Hauptanwendungsbereich im Live-Betrieb liegt. Sie wird von Klaus Knopper entwickelt, von dessen Namen sich die Benennung ableitet.</value>
+  </data>
+  <data name="kubuntu" xml:space="preserve">
+    <value>Kubuntu ist eine Ubuntu-Variante mit der Arbeitsumgebung KDE, die erstmals mit der Version 5.04 erschienen ist.</value>
+  </data>
+  <data name="lubuntu" xml:space="preserve">
+    <value>Lubuntu ist ein Derivat, das für den Einsatz auf leistungsschwächerer Hardware konzipiert ist. Als Desktop-Umgebung setzt es das besonders ressourcensparende LXDE ein, durch den Einsatz von Openbox als Fenstermanager wird nur etwa halb soviel Arbeitsspeicher wie bei Xubuntu benötigt.</value>
+  </data>
+  <data name="memtest86" xml:space="preserve">
+    <value>Memtest86 ist eine Software, mit der man den Arbeitsspeicher eines Computers auf Fehler überprüfen kann.</value>
+  </data>
+  <data name="netbootcd" xml:space="preserve">
+    <value>NetbootCD is a Linux live CD based on Tiny Core Linux.</value>
+  </data>
+  <data name="ophcrack" xml:space="preserve">
+    <value>Ophcrack ist ein freies Computerprogramm unter der GPL-Lizenz, das verschlüsselte(gehashte) Passwörter mithilfe von Rainbow Tables versucht zu entschlüsseln. Das Programm unterstützt das Importieren von LM-Hashes und NTLM-Hashes, inklusive des direkten Importierens der SAM-Datei unter Windows.</value>
+  </data>
+  <data name="redobackup" xml:space="preserve">
+    <value>Redo Backup is an easy rescue system with GUI tools for full system backup, bare metal recovery and partition editing.</value>
+  </data>
+  <data name="ubcd4dos" xml:space="preserve">
+    <value>UBCD 4 DOS is a system that regroups lots of useful utilities.</value>
+  </data>
+  <data name="ubuntu" xml:space="preserve">
+    <value>Ubuntu (auch: Ubuntu Linux) ist eine kostenlose Linux-Distribution, die auf Debian basiert. Der Name Ubuntu bedeutet auf Zulu etwa "Menschlichkeit" und bezeichnet eine afrikanische Philosophie.</value>
+  </data>
+  <data name="ubuntugnome" xml:space="preserve">
+    <value>Die Variante Ubuntu GNOME (vormals: Ubuntu Gnome Remix) verwendet die Gnome Shell an Stelle von Unity, sowie ein paar andere Gnome-Applikationen, welche in Ubuntu standardmäßig nicht installiert sind.</value>
+  </data>
+  <data name="ubuntuserver" xml:space="preserve">
+    <value>Die Ubuntu Server Edition ist eine Zusammenstellung mit mehr Serverdiensten statt grafischer Benutzeroberfläche.</value>
+  </data>
+  <data name="ubuntustudio" xml:space="preserve">
+    <value>Ubuntu Studio ist speziell auf die Anforderungen von Audio-, Grafik- und Videobearbeitung ausgerichtet. Für solche Zwecke wurde den Ubuntu-Quellen ein Kernel mit Echtzeitfunktionen hinzugefügt, der dafür keinerlei Energiesparfunktionen unterstützt.</value>
+  </data>
+  <data name="xubuntu" xml:space="preserve">
+    <value>Xubuntu ist eine Abwandlung von Ubuntu, die die ressourcensparende Xfce-Arbeitsumgebung verwendet. Daher eignet sich Xubuntu für ältere Computer mit wenig Arbeitsspeicher, bei denen die Installation der Standardversion problematisch ist.</value>
+  </data>
+</root>
