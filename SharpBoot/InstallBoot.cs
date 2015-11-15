@@ -8,13 +8,11 @@ using SharpBoot.Properties;
 
 namespace SharpBoot
 {
+    
+
     public partial class InstallBoot : Form
     {
-        private class driveitem
-        {
-            public string Disp { get; set; }
-            public DriveInfo Value { get; set; }
-        }
+       
 
         public InstallBoot()
         {
@@ -68,13 +66,34 @@ namespace SharpBoot
 
             var di = getseldrive();
 
+            BootloaderInst.Install(di.Name, bl);
+
+            onfinish();
+        }
+
+        private void onfinish()
+        {
+            setprg(100);
+            MessageBox.Show(
+                string.Format(Strings.BootloaderInstalled, (bl == "grub4dos" ? "Grub4DOS" : "Syslinux"),
+                    getseldrive().Name), "SharpBoot", 0, MessageBoxIcon.Information);
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            installit();
+        }
+    }
+
+    public class BootloaderInst
+    {
+        public static void Install(string l, string bl)
+        {
             var exename = bl == "grub4dos" ? "grubinst.exe" : "syslinux.exe";
 
             var d = Program.GetTemporaryDirectory();
-            setprg(11);
             var exepath = Path.Combine(d, exename);
             File.WriteAllBytes(exepath, bl == "grub4dos" ? Resources.grubinst : Resources.syslinux);
-            setprg(37);
 
             var p = new Process
             {
@@ -86,7 +105,7 @@ namespace SharpBoot
                     Verb = "runas"
                 }
             };
-            var driveletter = di.Name.ToLower().Substring(0, 2);
+            var driveletter = l.ToLower().Substring(0, 2);
             if (bl == "grub4dos")
             {
                 var deviceId = string.Empty;
@@ -107,27 +126,18 @@ namespace SharpBoot
             {
                 p.StartInfo.Arguments = " -m -a " + driveletter;
             }
-            setprg(42);
             p.Start();
             p.WaitForExit();
             if (bl == "grub4dos")
             {
                 File.WriteAllBytes(Path.Combine(driveletter, "grldr"), Resources.grldr);
             }
-            onfinish();
         }
+    }
 
-        private void onfinish()
-        {
-            setprg(100);
-            MessageBox.Show(
-                string.Format(Strings.BootloaderInstalled, (bl == "grub4dos" ? "Grub4DOS" : "Syslinux"),
-                    getseldrive().Name), "SharpBoot", 0, MessageBoxIcon.Information);
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            installit();
-        }
+    public class driveitem
+    {
+        public string Disp { get; set; }
+        public DriveInfo Value { get; set; }
     }
 }

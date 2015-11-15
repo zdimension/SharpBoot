@@ -130,7 +130,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>356, 18</value>
+    <value>340, 18</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
@@ -160,10 +160,10 @@
     <value>NoControl</value>
   </data>
   <data name="btnAnnul.Location" type="System.Drawing.Point, System.Drawing">
-    <value>453, 18</value>
+    <value>437, 18</value>
   </data>
   <data name="btnAnnul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>91, 23</value>
   </data>
   <data name="btnAnnul.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -205,7 +205,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -238,7 +238,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="rbnFile.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -268,7 +268,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbnFile.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>49, 80</value>
@@ -289,7 +289,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtFile.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -298,7 +298,7 @@
     <value>440, 79</value>
   </data>
   <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 25</value>
+    <value>98, 25</value>
   </data>
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -316,7 +316,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="rbnDown.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,7 +346,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbnDown.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <metadata name="ofpIso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -356,33 +356,6 @@
   </data>
   <data name="ofpIso.Title" xml:space="preserve">
     <value>Add ISO</value>
-  </data>
-  <data name="lblDetected.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblDetected.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblDetected.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 115</value>
-  </data>
-  <data name="lblDetected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
-  </data>
-  <data name="lblDetected.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;lblDetected.Name" xml:space="preserve">
-    <value>lblDetected</value>
-  </data>
-  <data name="&gt;&gt;lblDetected.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblDetected.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblDetected.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="lblPercent.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -415,7 +388,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblPercent.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="pbxPrg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -442,7 +415,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;pbxPrg.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <metadata name="sfdIso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>103, 17</value>
@@ -478,7 +451,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxVersion.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lblSpeed.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -511,7 +484,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblSpeed.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="lblProg.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -544,7 +517,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblProg.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="cbxDetIso.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 111</value>
+  </data>
+  <data name="cbxDetIso.MaxDropDownItems" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="cbxDetIso.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 24</value>
+  </data>
+  <data name="cbxDetIso.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cbxDetIso.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;cbxDetIso.Name" xml:space="preserve">
+    <value>cbxDetIso</value>
+  </data>
+  <data name="&gt;&gt;cbxDetIso.Type" xml:space="preserve">
+    <value>GroupedComboBox, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;cbxDetIso.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbxDetIso.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="cbxISOS.Location" type="System.Drawing.Point, System.Drawing">
     <value>49, 171</value>
@@ -565,19 +565,43 @@
     <value>cbxISOS</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cbxISOS.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="pbxLoading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pbxLoading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 111</value>
+  </data>
+  <data name="pbxLoading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
+  <data name="pbxLoading.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="pbxLoading.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pbxLoading.Name" xml:space="preserve">
+    <value>pbxLoading</value>
+  </data>
+  <data name="&gt;&gt;pbxLoading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbxLoading.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbxLoading.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>de</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
@@ -587,9 +611,6 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Add ISO</value>

@@ -41,15 +41,17 @@ namespace SharpBoot
             this.btnBrowse = new System.Windows.Forms.Button();
             this.rbnDown = new System.Windows.Forms.RadioButton();
             this.ofpIso = new System.Windows.Forms.OpenFileDialog();
-            this.lblDetected = new System.Windows.Forms.Label();
             this.lblPercent = new System.Windows.Forms.Label();
             this.pbxPrg = new System.Windows.Forms.ProgressBar();
             this.sfdIso = new System.Windows.Forms.SaveFileDialog();
             this.cbxVersion = new System.Windows.Forms.ComboBox();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.lblProg = new System.Windows.Forms.Label();
+            this.cbxDetIso = new GroupedComboBox();
             this.cbxISOS = new GroupedComboBox();
+            this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -117,11 +119,6 @@ namespace SharpBoot
             this.ofpIso.DefaultExt = "iso";
             resources.ApplyResources(this.ofpIso, "ofpIso");
             // 
-            // lblDetected
-            // 
-            resources.ApplyResources(this.lblDetected, "lblDetected");
-            this.lblDetected.Name = "lblDetected";
-            // 
             // lblPercent
             // 
             resources.ApplyResources(this.lblPercent, "lblPercent");
@@ -155,6 +152,18 @@ namespace SharpBoot
             resources.ApplyResources(this.lblProg, "lblProg");
             this.lblProg.Name = "lblProg";
             // 
+            // cbxDetIso
+            // 
+            this.cbxDetIso.DataSource = null;
+            this.cbxDetIso.DisplayMember = "Name";
+            this.cbxDetIso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDetIso.FormattingEnabled = true;
+            this.cbxDetIso.GroupMember = "Category";
+            resources.ApplyResources(this.cbxDetIso, "cbxDetIso");
+            this.cbxDetIso.Name = "cbxDetIso";
+            this.cbxDetIso.ValueMember = "Val";
+            this.cbxDetIso.SelectedIndexChanged += new System.EventHandler(this.cbxDetIso_SelectedIndexChanged);
+            // 
             // cbxISOS
             // 
             this.cbxISOS.DataSource = null;
@@ -164,20 +173,29 @@ namespace SharpBoot
             this.cbxISOS.GroupMember = "Category";
             resources.ApplyResources(this.cbxISOS, "cbxISOS");
             this.cbxISOS.Name = "cbxISOS";
-            this.cbxISOS.ValueMember = "Key";
+            this.cbxISOS.ValueMember = "Val";
             this.cbxISOS.SelectedIndexChanged += new System.EventHandler(this.cbxISOS_SelectedIndexChanged);
+            // 
+            // pbxLoading
+            // 
+            this.pbxLoading.BackColor = System.Drawing.Color.Transparent;
+            this.pbxLoading.Image = global::SharpBoot.Properties.Resources.ajax_loader;
+            resources.ApplyResources(this.pbxLoading, "pbxLoading");
+            this.pbxLoading.Name = "pbxLoading";
+            this.pbxLoading.TabStop = false;
             // 
             // AddIso
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.pbxLoading);
+            this.Controls.Add(this.cbxDetIso);
             this.Controls.Add(this.lblProg);
             this.Controls.Add(this.lblSpeed);
             this.Controls.Add(this.cbxVersion);
             this.Controls.Add(this.lblPercent);
             this.Controls.Add(this.pbxPrg);
-            this.Controls.Add(this.lblDetected);
             this.Controls.Add(this.cbxISOS);
             this.Controls.Add(this.rbnDown);
             this.Controls.Add(this.btnBrowse);
@@ -192,6 +210,7 @@ namespace SharpBoot
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.AddIso_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,12 +228,13 @@ namespace SharpBoot
         private RadioButton rbnDown;
         private GroupedComboBox cbxISOS;
         private OpenFileDialog ofpIso;
-        private Label lblDetected;
         private Label lblPercent;
         private ProgressBar pbxPrg;
         private SaveFileDialog sfdIso;
         private ComboBox cbxVersion;
         private Label lblSpeed;
         private Label lblProg;
+        private GroupedComboBox cbxDetIso;
+        private PictureBox pbxLoading;
     }
 }

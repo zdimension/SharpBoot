@@ -83,6 +83,14 @@ namespace SharpBoot
                             "https://dl.dropboxusercontent.com/u/98959151/chntpw_140201.iso", "cd140201.iso"))
                     ,
                     new ISOInfo(
+                        "Kon-Boot",
+                        ISODesc.chntpw,
+                        ISOCat.Password,
+                        "^kon-boot(.*).(img|iso)$",
+                        new ISOV("eed910d2ef9b058cf3eec28294bd303c", "Kon-Boot 2.5",
+                            "https://dl.dropboxusercontent.com/u/98959151/konboot.img", "konboot.img"))
+                            ,
+                    new ISOInfo(
                         "Clonezilla",
                         ISODesc.clonezilla,
                         ISOCat.Partition,
@@ -115,7 +123,7 @@ namespace SharpBoot
                         "Memtest86+",
                         ISODesc.memtest86,
                         ISOCat.Utility,
-                        @"^memtest86\+-([0-9.]+).iso$",
+                        @"^(?:memtest86(\+|plus)[-_]([0-9.]+).iso|MEMTEST\.IMG)$",
                         new ISOV("0f3d162f0c2f42da1455993ac4df396b",
                             "Memtest86+ 5.01",
                             "https://dl.dropboxusercontent.com/u/98959151/memtest86plus-501.iso",
@@ -227,7 +235,7 @@ namespace SharpBoot
                         new ISOV("c7fef1289f36b4c25ee4057a9988d975",
                             "Inquisitor Live 3.1 beta 2 x64",
                             "http://downloads.sourceforge.net/project/inq/inquisitor/3.1-beta2/inq-live-3.1beta2-amd64-debian.iso",
-                            "inq-live-3.1(.*).iso")),
+                            "/inq-live-3.1(.*).iso")),
                     new ISOInfo(
                         "Knoppix",
                         ISODesc.knoppix,
@@ -236,7 +244,7 @@ namespace SharpBoot
                         new ISOV("43e1bf11bd52d88d61379fdd38fe869c",
                             "Knoppix 7.2.0",
                             "http://ftp.free.fr/pub/Distributions_Linux/knoppix/KNOPPIX_V7.2.0CD-2013-06-16-EN.iso",
-                            "")),
+                            "/KNOPPIX_(.*).iso")),
                     new ISOInfo(
                         "NetbootCD",
                         ISODesc.netbootcd,
@@ -245,16 +253,32 @@ namespace SharpBoot
                         new ISOV("75ef50099a4887df5195a31adb474db0",
                             "NetbootCD 5.3.3",
                             "http://downloads.tuxfamily.org/netbootcd/5.3.3/NetbootCD-5.3.3.iso",
-                            "")),
+                            "/NetbootCD-(.*).iso")),
                     new ISOInfo(
                         "Ubuntu",
                         ISODesc.ubuntu,
                         ISOCat.Linux,
                         @"^ubuntu-[0-9.]{5}-desktop-[0-9a-z]+.iso$",
+                        new ISOV("09eb43dcfce2b7246bdd6e8108e755df",
+                            "Ubuntu 12.04.5 LTS x86",
+                            "http://releases.ubuntu.com/12.04.5/ubuntu-12.04.5-desktop-i386.iso",
+                            "/ubuntu-12.04(.*)-i386.iso"),
+                        new ISOV("48b4edf237c489eebbfef208c2650d11",
+                            "Ubuntu 12.04.5 LTS x64",
+                            "http://releases.ubuntu.com/12.04.5/ubuntu-12.04.5-desktop-amd64.iso",
+                            "/ubuntu-12.04(.*)-amd64.iso"),
                         new ISOV("c4d4d037d7d0a05e8f526d18aa25fb5e",
-                            "Ubuntu 14.04",
+                            "Ubuntu 14.04 x86",
                             "http://releases.ubuntu.com/14.04/ubuntu-14.04-desktop-i386.iso",
-                            "")),
+                            "/ubuntu-14.04-(.*).iso"),
+                        new ISOV("7d483b990de4e1369b76b7b693737191",
+                            "Ubuntu 15.10 x86",
+                            "http://releases.ubuntu.com/15.10/ubuntu-15.10-desktop-i386.iso",
+                            "/ubuntu-15.10(.*)-i386.iso"),
+                        new ISOV("ece816e12f97018fa3d4974b5fd27337",
+                            "Ubuntu 15.10 x64",
+                            "http://releases.ubuntu.com/15.10/ubuntu-15.10-desktop-amd64.iso",
+                            "/ubuntu-15.10(.*)-amd64.iso", true)),
                     new ISOInfo(
                         "Edubuntu",
                         ISODesc.edubuntu,
@@ -343,7 +367,7 @@ namespace SharpBoot
             }
             else
             {
-                var md5 = SysInfo.FileHash(filename, "md5");
+                var md5 = Utils.FileHash(filename, "md5");
                 var sta = ISOs.SelectMany(x => x.Versions);
                 var st =
                     sta.FirstOrDefault(
@@ -355,7 +379,7 @@ namespace SharpBoot
                     sta.FirstOrDefault(
                         x =>
                             x.Hash ==
-                            (x.Hash.Contains(':') ? SysInfo.FileHash(filename, x.Hash.Split(':')[0]) : md5));
+                            (x.Hash.Contains(':') ? Utils.FileHash(filename, x.Hash.Split(':')[0]) : md5));
 
                 if (st != null)
                 {

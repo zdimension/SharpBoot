@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnUSB.Text" xml:space="preserve">
+    <value>Multiboot USB Datenträger erstellen</value>
+  </data>
   <data name="btnInstBoot.Text" xml:space="preserve">
     <value>Bootloader auf USB Datenträger installieren</value>
-  </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Datenträgerabbild testen</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>ISO erstellen</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
@@ -132,6 +129,12 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Ziehe eine ISO oder IMG Datei hier her</value>
+  </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Datenträgerabbild testen</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>ISO erstellen</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Auflösung</value>
@@ -148,9 +151,6 @@
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> MD5 Prüfsumme</value>
   </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Hintergrundbild</value>
-  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Standard</value>
   </data>
@@ -158,26 +158,13 @@
     <value>Eigenes</value>
   </data>
   <data name="cbxBackType.Items2" xml:space="preserve">
-    <value>Keine</value>
+    <value>Keins</value>
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Durchsuche</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="rbnCustom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>97, 22</value>
-  </data>
-  <data name="rbnCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 19</value>
-  </data>
-  <data name="rbnCustom.Text" xml:space="preserve">
-    <value>Eigenes</value>
-  </data>
-  <data name="rbnBackDft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 19</value>
-  </data>
-  <data name="rbnBackDft.Text" xml:space="preserve">
-    <value>Standard</value>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Hintergrundbild</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>Titel</value>
@@ -200,6 +187,7 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>Dateipfad</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 22</value>
   </data>

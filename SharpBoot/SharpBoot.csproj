@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -60,6 +63,15 @@
     <Compile Include="AddIso.Designer.cs">
       <DependentUpon>AddIso.cs</DependentUpon>
     </Compile>
+    <Compile Include="AskPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskUSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AskUSB.Designer.cs">
+      <DependentUpon>AskUSB.cs</DependentUpon>
+    </Compile>
     <Compile Include="AskPath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +79,9 @@
       <DependentUpon>AskPath.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootloaders.cs" />
+    <Compile Include="CustomListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GenIsoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +95,11 @@
     </Compile>
     <Compile Include="InstallBoot.Designer.cs">
       <DependentUpon>InstallBoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISOCat.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.de.resx</DependentUpon>
     </Compile>
     <Compile Include="ISOCat.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -95,6 +115,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ISOCat.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISODesc.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISODesc.de.resx</DependentUpon>
     </Compile>
     <Compile Include="ISODesc.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -115,6 +140,7 @@
     <Compile Include="LinkLabelEx.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MainGenerator.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +154,27 @@
     <Compile Include="SplitButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Strings.de.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.de.resx</DependentUpon>
+    </Compile>
     <Compile Include="Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="SysInfo.cs" />
+    <Compile Include="Strings.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.fr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strings.ro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.ro.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <Compile Include="W7R.cs" />
     <EmbeddedResource Include="About.de.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -160,6 +201,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.ro.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskUSB.de.resx">
+      <DependentUpon>AskUSB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskUSB.fr.resx">
+      <DependentUpon>AskUSB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskUSB.resx">
+      <DependentUpon>AskUSB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskUSB.ro.resx">
+      <DependentUpon>AskUSB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.de.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
@@ -197,7 +250,10 @@
     <EmbeddedResource Include="InstallBoot.ro.resx">
       <DependentUpon>InstallBoot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.de.resx" />
+    <EmbeddedResource Include="ISOCat.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ISOCat.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.fr.Designer.cs</LastGenOutput>
@@ -210,7 +266,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISODesc.de.resx" />
+    <EmbeddedResource Include="ISODesc.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISODesc.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ISODesc.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISODesc.fr.Designer.cs</LastGenOutput>
@@ -245,13 +304,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Strings.de.resx" />
-    <EmbeddedResource Include="Strings.fr.resx" />
+    <EmbeddedResource Include="Strings.de.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.fr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.ro.resx" />
+    <EmbeddedResource Include="Strings.ro.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -306,6 +377,9 @@
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\drive_disk.png" />
+    <None Include="Resources\ajax-loader.gif" />
+    <None Include="Resources\flag_germany.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

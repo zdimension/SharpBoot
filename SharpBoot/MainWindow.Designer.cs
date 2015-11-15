@@ -38,6 +38,7 @@ namespace SharpBoot
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.btnUSB = new System.Windows.Forms.Button();
             this.btnInstBoot = new System.Windows.Forms.Button();
             this.gbxTest = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@ namespace SharpBoot
             this.btnAbout = new System.Windows.Forms.Button();
             this.gbxLng = new System.Windows.Forms.GroupBox();
             this.cbxLng = new System.Windows.Forms.ComboBox();
+            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha256 = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +84,6 @@ namespace SharpBoot
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.pnlBottom.SuspendLayout();
             this.gbxTest.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,12 +100,21 @@ namespace SharpBoot
             // 
             // pnlBottom
             // 
+            this.pnlBottom.Controls.Add(this.btnUSB);
             this.pnlBottom.Controls.Add(this.btnInstBoot);
             this.pnlBottom.Controls.Add(this.gbxTest);
             this.pnlBottom.Controls.Add(this.btnGen);
             this.pnlBottom.Controls.Add(this.txImInfo);
             resources.ApplyResources(this.pnlBottom, "pnlBottom");
             this.pnlBottom.Name = "pnlBottom";
+            // 
+            // btnUSB
+            // 
+            resources.ApplyResources(this.btnUSB, "btnUSB");
+            this.btnUSB.Image = global::SharpBoot.Properties.Resources.drive_disk;
+            this.btnUSB.Name = "btnUSB";
+            this.btnUSB.UseVisualStyleBackColor = true;
+            this.btnUSB.Click += new System.EventHandler(this.btnUSB_Click);
             // 
             // btnInstBoot
             // 
@@ -221,6 +231,16 @@ namespace SharpBoot
             this.cbxLng.Name = "cbxLng";
             this.cbxLng.ValueMember = "Value";
             this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
+            // 
+            // btnChecksum
+            // 
+            resources.ApplyResources(this.btnChecksum, "btnChecksum");
+            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
+            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
+            this.btnChecksum.Name = "btnChecksum";
+            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
+            this.btnChecksum.UseVisualStyleBackColor = true;
+            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
             // 
             // cmsChecksum
             // 
@@ -456,16 +476,6 @@ namespace SharpBoot
             this.saveFileDialog.DefaultExt = "sbt";
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
-            // btnChecksum
-            // 
-            resources.ApplyResources(this.btnChecksum, "btnChecksum");
-            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
-            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
-            this.btnChecksum.Name = "btnChecksum";
-            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
-            this.btnChecksum.UseVisualStyleBackColor = true;
-            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
-            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -549,6 +559,7 @@ namespace SharpBoot
         private GroupBox groupBox3;
         private ComboBox cbxRes;
         private ComboBox cbxBackType;
+        private Button btnUSB;
     }
 }
 

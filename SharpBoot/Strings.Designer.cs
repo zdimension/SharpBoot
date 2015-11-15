@@ -142,6 +142,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Creating multiboot USB key....
+        /// </summary>
+        internal static string CreatingUSB {
+            get {
+                return ResourceManager.GetString("CreatingUSB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Detected:.
         /// </summary>
         internal static string Detected {
@@ -201,6 +210,33 @@ namespace SharpBoot {
         internal static string FileUnit {
             get {
                 return ResourceManager.GetString("FileUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Undetermined error while formatting..
+        /// </summary>
+        internal static string FormatError {
+            get {
+                return ResourceManager.GetString("FormatError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Formatting.
+        /// </summary>
+        internal static string Formatting {
+            get {
+                return ResourceManager.GetString("Formatting", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Start the formatting operation?\nThis will DESTROY any data on the target!.
+        /// </summary>
+        internal static string FormatWillErase {
+            get {
+                return ResourceManager.GetString("FormatWillErase", resourceCulture);
             }
         }
         
@@ -282,6 +318,24 @@ namespace SharpBoot {
         internal static string MainMenu {
             get {
                 return ResourceManager.GetString("MainMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à You must have administrator rights to format the USB key..
+        /// </summary>
+        internal static string NeedAdmin {
+            get {
+                return ResourceManager.GetString("NeedAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Other.
+        /// </summary>
+        internal static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
             }
         }
         

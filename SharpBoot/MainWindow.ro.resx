@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Încearcă fișierul de imagine de disc</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>Crează ISO</value>
+  <data name="btnInstBoot.Text" xml:space="preserve">
+    <value>Instalează bootloaderul pe cheia USB</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
@@ -129,6 +126,12 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Trage fișierul ISO sau IMG aici.</value>
+  </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Încearcă fișierul de imagine de disc</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Crează ISO</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rezoluție</value>
@@ -142,9 +145,6 @@
   <data name="gbxLng.Text" xml:space="preserve">
     <value>Limbă</value>
   </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Imagine de fundal</value>
-  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Implicit</value>
   </data>
@@ -157,18 +157,8 @@
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Navighează</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="rbnCustom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 19</value>
-  </data>
-  <data name="rbnCustom.Text" xml:space="preserve">
-    <value>Personalizat</value>
-  </data>
-  <data name="rbnBackDft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 19</value>
-  </data>
-  <data name="rbnBackDft.Text" xml:space="preserve">
-    <value>Implicit</value>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Imagine de fundal</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>Titlu</value>
@@ -194,6 +184,7 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>Locația fișierului</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>

@@ -195,4 +195,22 @@
   <data name="MainMenu" xml:space="preserve">
     <value>Main menu</value>
   </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Creating multiboot USB key...</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Undetermined error while formatting.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formatting</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Start the formatting operation?\nThis will DESTROY any data on the target!</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>You must have administrator rights to format the USB key.</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
 </root>

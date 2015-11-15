@@ -13,6 +13,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using SharpBoot.Properties;
+using W7R;
 
 namespace SharpBoot
 {
@@ -82,9 +83,9 @@ namespace SharpBoot
             var cat = "";
 
 
-            if (automaticallyAddISOInfoToolStripMenuItem.Checked)
+            if (automaticallyAddISOInfoToolStripMenuItem.Checked && ver?.Hash != "other")
             {
-                ver = ver ?? ISOInfo.GetFromFile(filePath);
+                ver = ver ?? (new FileInfo(filePath).Length > 750000000 ? null : ISOInfo.GetFromFile(filePath));
                 if (ver == null)
                 {
                     MessageBox.Show(Strings.CouldntDetect, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -154,7 +155,7 @@ namespace SharpBoot
                 MessageBox.Show(Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                QEMUISO.LaunchQemu(g.OutputFilepath);
+                QEMUISO.LaunchQemu(g.OutputFilepath, g._usb);
             }
         }
 
@@ -198,13 +199,19 @@ namespace SharpBoot
 
         private void btnGen_Click(object sender, EventArgs e)
         {
-            var ask = new AskPath();
+            launchgeniso(false);
+        }
+
+        private void launchgeniso(bool usb)
+        {
+            AskPForm ask = usb ? (AskPForm)new AskUSB() : (AskPForm)new AskPath();
             if (ask.ShowDialog() == DialogResult.OK)
             {
-                var g = new GenIsoFrm(ask.FileName);
+                var g = new GenIsoFrm(ask.FileName, usb);
                 g.GenerationFinished += delegate { g_GenerationFinished(g); };
                 g.Images = CurImages;
                 g.Title = txtTitle.Text;
+                if (usb) g.filesystem = ((AskUSB) ask).FileSystem;
                 switch (cbxBackType.SelectedIndex)
                 {
                     case 0:
@@ -240,7 +247,7 @@ namespace SharpBoot
 
         public void CheckFields()
         {
-            btnGen.Enabled = !(lvIsos.Rows.Count == 0 ||
+            btnGen.Enabled = btnUSB.Enabled = !(lvIsos.Rows.Count == 0 ||
                                (cbxBackType.SelectedIndex == 1 && !File.Exists(txtBackFile.Text)));
         }
 
@@ -540,22 +547,22 @@ namespace SharpBoot
 
         private void btnSha1_Click(object sender, EventArgs e)
         {
-            chksum("SHA-1", () => SysInfo.FileSHA1(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-1", () => Utils.FileSHA1(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void btnSha256_Click(object sender, EventArgs e)
         {
-            chksum("SHA-256", () => SysInfo.FileSHA256(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-256", () => Utils.FileSHA256(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void btnSha512_Click(object sender, EventArgs e)
         {
-            chksum("SHA-512", () => SysInfo.FileSHA512(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-512", () => Utils.FileSHA512(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void btnSha384_Click(object sender, EventArgs e)
         {
-            chksum("SHA-384", () => SysInfo.FileSHA384(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-384", () => Utils.FileSHA384(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void lvIsos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -579,6 +586,11 @@ namespace SharpBoot
         private void lvIsos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             CheckFields();
+        }
+
+        private void btnUSB_Click(object sender, EventArgs e)
+        {
+            launchgeniso(true);
         }
     }
 }

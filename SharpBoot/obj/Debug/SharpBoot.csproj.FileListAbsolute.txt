@@ -1,64 +1,13 @@
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\bin\Debug\SharpBoot.exe.config
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csprojResolveAssemblyReference.cache
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.resources
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.GenIsoFrm.resources
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.resources
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Properties.Resources.resources
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csproj.GenerateResource.Cache
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\bin\Debug\SharpBoot.exe
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\bin\Debug\SharpBoot.pdb
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.exe
-d:\documents\visual studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.pdb
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISOCat.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\bin\Debug\ro\SharpBoot.resources.dll
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISOCat.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\ro\SharpBoot.resources.dll
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\bin\Debug\fr\SharpBoot.resources.dll
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\fr\SharpBoot.resources.dll
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.GenIsoFrm.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISOCat.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.GenIsoFrm.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.ro.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.InstallBoot.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\bin\Debug\de\SharpBoot.resources.dll
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.GenIsoFrm.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.InstallBoot.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.InstallBoot.fr.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISOCat.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\de\SharpBoot.resources.dll
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.de.resources
-D:\Documents\Visual Studio 2013\Projects\SharpBoot\SharpBoot\obj\Debug\SharpBoot.InstallBoot.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\SharpBoot.exe.config
-D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.exe
-D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.pdb
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\SharpBoot.exe
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\SharpBoot.pdb
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\de\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\fr\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\ro\SharpBoot.resources.dll
-D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\en\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskUSB.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.GenIsoFrm.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.InstallBoot.resources
@@ -73,6 +22,9 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.de.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.ro.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskUSB.de.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskUSB.fr.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskUSB.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.de.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskPath.ro.resources
@@ -89,6 +41,7 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.de.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.de.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.en.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.de.resources
@@ -98,3 +51,7 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csproj.GenerateResou
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\de\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\fr\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\ro\SharpBoot.resources.dll
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\en\SharpBoot.resources.dll
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.exe
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.pdb
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csprojResolveAssemblyReference.cache

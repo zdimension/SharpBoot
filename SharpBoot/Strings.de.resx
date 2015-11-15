@@ -195,4 +195,19 @@
   <data name="MainMenu" xml:space="preserve">
     <value>Hauptmenü</value>
   </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Installiere Dateien auf USB...</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Unbekannter Fehler während der Formatierung.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formatieren</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Formatierung starten?\nAlle Daten auf dem Ziellaufwerk werden GELÖSCHT!</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Um diesen USB Datenträger zu Formatieren, müssen Sie über Administratorrechte verfügen.</value>
+  </data>
 </root>

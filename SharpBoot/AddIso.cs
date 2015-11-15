@@ -2,8 +2,10 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -29,8 +31,15 @@ namespace SharpBoot
 
         private void AddIso_Load(object sender, EventArgs e)
         {
-            cbxISOS.DataSource = ISOInfo.ISOs.Select(x => new {x.Name, x.Category, x.LatestVersion.Hash});
+            var isos = ISOInfo.ISOs.Select(x => new { Val = x, x.Name, x.Category, x.LatestVersion.Hash });
+            
+            cbxISOS.DataSource = isos;
+            var iso2 = isos.ToList();
+            iso2.Insert(0, new { Val = new ISOInfo("", "", ""), Name = Strings.Other, Category = "", Hash = "" });
+            cbxDetIso.DataSource = iso2;
+            cbxDetIso.DisplayMember = "Name";
             fempty = true;
+            cbxDetIso.SelectedItem = null;
             cbxISOS.SelectedItem = null;
             cbxVersion.SelectedItem = null;
         }
@@ -67,17 +76,11 @@ namespace SharpBoot
             ISOPath = txtFile.Text;
         }
 
-        private ISOInfo selinfo => ISOInfo.ISOs.FirstOrDefault(x =>
-        {
-            dynamic tmp = cbxISOS.SelectedValue;
-            return x.LatestVersion.Hash == tmp.Hash;
-        });
+        private ISOInfo selinfo => cbxISOS.SelectedItem == null ? null : ((dynamic) cbxISOS.SelectedItem).Val;
 
-        private ISOV selinfoversion => selinfo.Versions.FirstOrDefault(x =>
-        {
-            dynamic tmp = cbxVersion.SelectedValue;
-            return x.Name.Equals(tmp.Name.ToString());
-        });
+        private ISOInfo selinfo2 => cbxDetIso.SelectedItem == null ? null : ((dynamic)cbxDetIso.SelectedItem).Val;
+
+        private ISOV selinfoversion => selinfo.Versions.FirstOrDefault(x => x.Name.Equals(((dynamic)cbxVersion.SelectedValue).Name));
 
         private void cbxISOS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -159,6 +162,7 @@ namespace SharpBoot
             if (ofpIso.ShowDialog() == DialogResult.OK)
             {
                 txtFile.Text = ofpIso.FileName;
+                cbxDetIso.Visible = true;
                 md5stuff();
             }
         }
@@ -172,19 +176,32 @@ namespace SharpBoot
             {
                 string t = "";
 
+                Invoke((MethodInvoker) (() => pbxLoading.Visible = true));
+
                 var resk = ISOInfo.GetFromFile(ISOPath);
 
-                if (resk == null)
-                {
-                    t = Strings.CouldntDetect;
-                }
-                else
-                {
-                    t = Strings.Detected + " " + resk.Name;
-                    IsoV = resk;
-                }
 
-                Invoke((MethodInvoker) (() => lblDetected.Text = t));
+                Invoke((MethodInvoker) (() =>
+                {
+                    if (resk == null)
+                    {
+                        cbxDetIso.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        IsoV = resk;
+                        for (int index = 0; index < cbxDetIso.Items.Count; index++)
+                        {
+                            dynamic it = cbxDetIso.Items[index];
+                            if (it.Val == resk.Parent)
+                            {
+                                cbxDetIso.SelectedIndex = index;
+                                break;
+                            }
+                        }
+                    }
+                    pbxLoading.Visible = false;
+                }));
             })
             {
                 CurrentCulture = CultureInfo.CurrentCulture,
@@ -225,19 +242,15 @@ namespace SharpBoot
         {
             client?.CancelAsync();
         }
-    }
 
-    public enum ISOChooseType
-    {
-        Local = 1,
-        Download = 2
-    }
+        
 
-    public class ISOChooseResult
-    {
-        public ISOChooseType ISOType { get; set; }
-        public string ISOPath { get; set; }
-
-        public string ISOMd5 { get; set; }
+        private void cbxDetIso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null)
+            {
+                IsoV = cbxDetIso.SelectedIndex == 0 ? new ISOV("other", "") : selinfo2?.LatestVersion;
+            }
+        }
     }
 }

@@ -53,6 +53,8 @@ namespace SharpBoot
             Close();
         }
 
+        public string filesystem = "";
+
         public void AddImage(ImageLine i)
         {
             Images.Add(i);
@@ -63,11 +65,14 @@ namespace SharpBoot
 
         public delegate void ChangeProgressBarDelegate(int val, int max);
 
-        public GenIsoFrm(string output)
+        public bool _usb = false;
+
+        public GenIsoFrm(string output, bool usb)
         {
             InitializeComponent();
 
             OutputFilepath = output;
+            _usb = usb;
         }
 
         public delegate void ChangeStatusDelegate(string stat);
@@ -121,6 +126,9 @@ namespace SharpBoot
 
         public Size Res { get; set; }
 
+        public bool abort = false;
+
+
         public void Generate()
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
@@ -133,7 +141,55 @@ namespace SharpBoot
 
             var ext = new SevenZipExtractor();
 
-            var sylp = Path.Combine(f, "iso", "boot", bloader.FolderName);
+            var isodir = _usb ? OutputFilepath : Path.Combine(f, "iso");
+
+            if(_usb)
+            {
+                // format
+                if (
+                    MessageBox.Show(Strings.FormatWillErase.Replace(@"\n", "\n"), "SharpBoot", MessageBoxButtons.YesNo) !=
+                    DialogResult.Yes)
+                {
+                    abort = true;
+                    return;
+                }
+                int tries = 1;
+                while (true)
+                {
+                    if (tries == 5)
+                    {
+                        MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        abort = true;
+                        return;
+                    }
+                    ChangeProgress(0, 100, Strings.Formatting);
+                    uint res = 1;
+                    if ((res = Utils.FormatDrive(OutputFilepath.Substring(0, 2), filesystem,
+                        label: string.Concat(Title.Where(char.IsLetter)))) == 0)
+                    {
+                        ChangeProgress(100, 100, Strings.Formatting);
+                        
+                        break;
+                    }
+                    else
+                    {
+                        if(res == 3)
+                        {
+                            MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            abort = true;
+                            return;
+                        }
+                        if(MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Cancel)
+                        {
+                            abort = true;
+                            return;
+                        }
+                    }
+                    tries++;
+                }
+            }
+
+            var sylp = Path.Combine(isodir, "boot", bloader.FolderName);
 
             bloader.WorkingDir = sylp;
             bloader.Resolution = Res;
@@ -141,8 +197,8 @@ namespace SharpBoot
             if (!Directory.Exists(sylp))
                 Directory.CreateDirectory(sylp);
 
-            var isoroot = Path.Combine(f, "iso", "images");
-            var isodir = Path.Combine(f, "iso");
+            var isoroot = Path.Combine(isodir, "images");
+            
 
             var mkisofsexe = Path.Combine(f, "mkisofs", "mkisofs.exe");
             var archs = Path.Combine(f, "arch");
@@ -153,8 +209,8 @@ namespace SharpBoot
             File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk);
-            ext.Extract(Path.Combine(archs, "basedisk.7z"), Path.Combine(f, "iso"));
-            ext.Extract(Path.Combine(archs, "bloader.7z"), Path.Combine(f, "iso"));
+            ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
+            ext.Extract(Path.Combine(archs, "bloader.7z"), isodir);
 
             if (bloader is Syslinux)
             {
@@ -177,23 +233,32 @@ namespace SharpBoot
 
             bloader.SetImage(img, Res);
 
-            ext.ExtractionFinished += delegate { ChangeProgress(50, 100, Strings.ExtractMkisofs); };
+            if (!_usb)
+            {
+                ext.ExtractionFinished += delegate { ChangeProgress(50, 100, Strings.ExtractMkisofs); };
 
-            ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
+                ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
+            }
 
             // copier les fichiers dans le rep temporaire
             ChangeProgress(0, Images.Count, Strings.CopyISOfiles);
             for (var i = 0; i < Images.Count; i++)
             {
                 ChangeProgress(i, Images.Count, Strings.Copying + " " + Path.GetFileName(Images[i].FilePath));
+                copyfile:
                 try
                 {
-                    File.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)));
+                    //File.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)));
+                    XCopy.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)), true, true,
+                        (o, pce) => 
+                        {
+                            ChangeProgressBar(pce.ProgressPercentage, 100);
+                        });
                 }
                 catch (DirectoryNotFoundException)
                 {
                     Directory.CreateDirectory(isoroot);
-                    File.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)));
+                    goto copyfile;
                 }
             }
 
@@ -206,6 +271,8 @@ namespace SharpBoot
 
             var ii = 0;
 
+            var itype = new Func<string, MenuItemType>(fn => Path.GetExtension(fn).ToLower() == ".img" ? MenuItemType.IMG : MenuItemType.ISO);
+
             foreach (var c in Categories)
             {
                 if (string.IsNullOrWhiteSpace(c))
@@ -214,18 +281,18 @@ namespace SharpBoot
                     Images.Where(x => x.Category == c).All(x =>
                     {
                         main.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
-                            MenuItemType.ISO, x.FilePath, false));
+                            itype(x.FilePath), x.FilePath, false));
                         return true;
                     });
                 }
                 else
                 {
-                    ChangeProgress(ii, Categories.Count, Strings.GenMenu + " " + c + "\"");
+                    ChangeProgress(ii, Categories.Count, Strings.GenMenu + " \"" + c + "\"");
                     var t = new BootMenu(c, false);
                     Images.Where(x => x.Category == c).All(x =>
                     {
                         t.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
-                            MenuItemType.ISO, x.FilePath, false));
+                            itype(x.FilePath), x.FilePath, false));
                         return true;
                     });
 
@@ -242,35 +309,43 @@ namespace SharpBoot
                 File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
 
 
-            // TODO: Implement working progress printing (I can't get OutputDataReceived to work on my computer)
-            ChangeProgress(23, 100, Strings.CreatingISO);
-
-            var p = new Process
+            if(_usb)
             {
-                StartInfo =
-                {
-                    UseShellExecute = false,
-                    FileName = mkisofsexe
-                    /*RedirectStandardOutput = true,
-                    RedirectStandardError = true*/
-                }
-            };
-            p.StartInfo.Arguments += " " + bloader.CmdArgs +
-                                     " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b " +
-                                     bloader.BinFile;
-            p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + Path.Combine(f, "iso") + "\"";
-            p.EnableRaisingEvents = true;
+                BootloaderInst.Install(OutputFilepath, bloader.FolderName);
+                GenF(f);
+            }
+            else
+            {
 
-            /*var a = new Action<object, DataReceivedEventArgs>((o, args) => MessageBox.Show(args.Data));
+                // TODO: Implement working progress printing (I can't get OutputDataReceived to work on my computer)
+                ChangeProgress(23, 100, Strings.CreatingISO);
+                Thread.Sleep(500);
+                var p = new Process
+                {
+                    StartInfo =
+                    {
+                        UseShellExecute = false,
+                        FileName = mkisofsexe
+                        /*RedirectStandardOutput = true,
+                    RedirectStandardError = true*/
+                    }
+                };
+                p.StartInfo.Arguments += " " + bloader.CmdArgs +
+                                         " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b " +
+                                         bloader.BinFile;
+                p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + isodir + "\"";
+                p.EnableRaisingEvents = true;
+
+                /*var a = new Action<object, DataReceivedEventArgs>((o, args) => MessageBox.Show(args.Data));
 
             p.OutputDataReceived += new DataReceivedEventHandler(a);
             p.ErrorDataReceived += new DataReceivedEventHandler(a);*/
 
-            p.Exited += delegate { GenF(f); };
+                p.Exited += delegate { GenF(f); };
 
-            Thread.Sleep(500);
-            p.Start();
-            /*p.BeginOutputReadLine();
+                Thread.Sleep(500);
+                p.Start();
+                /*p.BeginOutputReadLine();
 
             using (var reader = p.StandardOutput)
             {
@@ -285,8 +360,10 @@ namespace SharpBoot
                     }
                 }
             }*/
-            if (!p.HasExited)
-                p.WaitForExit();
+                if (!p.HasExited)
+                    p.WaitForExit();
+
+            }
 
 
             ext.Close();
@@ -295,12 +372,22 @@ namespace SharpBoot
         private void bwkISO_DoWork(object sender, DoWorkEventArgs e)
         {
             Generate();
+            if(abort) Close();
         }
 
         private void GenF(string f)
         {
-            if (Directory.Exists(f))
-                new DirectoryInfo(f).Delete(true);
+            while (Directory.Exists(f))
+            {
+                try
+                {
+                    new DirectoryInfo(f).Delete(true);
+                }
+                catch
+                {
+
+                }
+            }
 
             OnFinished(EventArgs.Empty);
 

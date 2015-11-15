@@ -195,4 +195,22 @@
   <data name="MainMenu" xml:space="preserve">
     <value>Menu principal</value>
   </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Création de la clé USB multiboot...</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Une erreur est survenue pendant le formatage.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formatage</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Formater la clé USB ?\nCette opération DÉTRUIRA toutes les données présentes sur la clé !</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Vous devez disposer des droits d'administrateur pour formater cette clé USB.</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Autre</value>
+  </data>
 </root>

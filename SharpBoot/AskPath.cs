@@ -3,14 +3,14 @@ using System.Windows.Forms;
 
 namespace SharpBoot
 {
-    public partial class AskPath : Form
+    public partial class AskPath : AskPForm
     {
         public AskPath()
         {
             InitializeComponent();
         }
 
-        public string FileName => tbxDest.Text;
+        public override string FileName => tbxDest.Text;
 
         private void tbxDest_TextChanged(object sender, EventArgs e)
         {

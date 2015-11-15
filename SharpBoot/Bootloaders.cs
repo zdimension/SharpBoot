@@ -85,17 +85,25 @@ namespace SharpBoot
                 case MenuItemType.ISO:
                     code += "LABEL -\n";
                     code += "LINUX /boot/syslinux/grub.exe\n";
-                    code +=
+                    /*code +=
                         string.Format(
                             "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map --heads=0 --sectors-per-track=0 /images/{0} (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/{0} (0xff);map --hook;chainloader (0xff)\"\n",
+                            item.IsoName);*/
+                    code +=
+                        string.Format(
+                            "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (0xff);map --hook;root (0xff);chainloader (0xff);boot\"\n",
                             item.IsoName);
                     break;
                 case MenuItemType.IMG:
                     code += "LABEL -\n";
                     code += "LINUX /boot/syslinux/grub.exe\n";
-                    code +=
+                    /*code +=
                         string.Format(
                             "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (fd0) || map --mem /images/{0} (fd0);map --hook;chainloader (fd0)+1;rootnoverify (fd0)\"\n",
+                            item.IsoName);*/
+                    code +=
+                        string.Format(
+                            "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (fd0);map --hook;chainloader (fd0)+1;rootnoverify (fd0);boot\"\n",
                             item.IsoName);
                     break;
             }
@@ -297,8 +305,20 @@ namespace SharpBoot
             Thread.Sleep(300);
             p.Start();
             p.WaitForExit();
-
+            Thread.Sleep(1000);
             File.Delete(imgf);
+            ext.Close();
+            while (Directory.Exists(convertdir))
+            {
+                try
+                {
+                    Directory.Delete(convertdir, true);
+                }
+                catch
+                {
+
+                }
+            }
         }
 
         public string BinFile { get; set; } = "grldr";
