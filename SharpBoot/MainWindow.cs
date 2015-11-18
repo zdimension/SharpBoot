@@ -242,6 +242,8 @@ namespace SharpBoot
 
                 g.Res = new Size(int.Parse(ssize[0]), int.Parse(ssize[1]));
                 g.ShowDialog(this);
+
+                Program.ClrTmp();
             }
         }
 

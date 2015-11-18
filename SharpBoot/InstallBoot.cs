@@ -132,6 +132,8 @@ namespace SharpBoot
             {
                 File.WriteAllBytes(Path.Combine(driveletter, "grldr"), Resources.grldr);
             }
+
+            Program.SafeDel(d);
         }
     }
 

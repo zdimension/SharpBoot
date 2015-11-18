@@ -210,4 +210,7 @@
   <data name="Other" xml:space="preserve">
     <value>Altele</value>
   </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>Partiția selectata este prea mare pentru {0}</value>
+  </data>
 </root>

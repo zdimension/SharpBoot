@@ -4,7 +4,6 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\SharpBoot.pdb
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\de\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\fr\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\ro\SharpBoot.resources.dll
-D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\en\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AddIso.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.AskUSB.resources
@@ -41,7 +40,6 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.de.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISODesc.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.de.resources
-D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.en.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.de.resources
@@ -51,7 +49,6 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csproj.GenerateResou
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\de\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\fr\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\ro\SharpBoot.resources.dll
-D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\en\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.exe
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.pdb
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csprojResolveAssemblyReference.cache

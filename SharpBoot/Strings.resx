@@ -213,4 +213,10 @@
   <data name="Other" xml:space="preserve">
     <value>Other</value>
   </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>The selected partition is too big for {0}</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Installing {0} on {1}...</value>
+  </data>
 </root>

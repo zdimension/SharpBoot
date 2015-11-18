@@ -253,7 +253,10 @@
     <value>FAT32 (recommended)</value>
   </data>
   <data name="cbxFS.Items1" xml:space="preserve">
-    <value>UDF</value>
+    <value>FAT12</value>
+  </data>
+  <data name="cbxFS.Items2" xml:space="preserve">
+    <value>FAT16</value>
   </data>
   <data name="cbxFS.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 119</value>
@@ -331,6 +334,6 @@
     <value>AskUSB</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>SharpBoot.AskPForm, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.AskPForm, SharpBoot, Version=3.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
 </root>

@@ -29,6 +29,8 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
+            ClrTmp();
+
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
 
@@ -54,9 +56,9 @@ namespace SharpBoot
         public static void ClrTmp()
         {
             Directory.GetDirectories(Path.GetTempPath())
-                .Where(x => x.StartsWith("SharpBoot_"))
+                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_"))
                 .ToList()
-                .ForEach(x => new DirectoryInfo(x).Delete(true));
+                .ForEach(SafeDel);
         }
 
         private static void Application_ApplicationExit(object sender, EventArgs e)
@@ -75,6 +77,21 @@ namespace SharpBoot
         public static string ShortLang()
         {
             return GetCulture().Name;
+        }
+
+        public static void SafeDel(string d)
+        {
+            while (Directory.Exists(d))
+            {
+                try
+                {
+                    Directory.Delete(d, true);
+                }
+                catch
+                {
+                    continue;
+                }
+            }
         }
 
         public static void SetAppLng(CultureInfo c)

@@ -286,6 +286,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Installing {0} on {1}....
+        /// </summary>
+        internal static string InstallingBoot {
+            get {
+                return ResourceManager.GetString("InstallingBoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à The iso file has been successfully created.\nWould you like to try it on QEMU?.
         /// </summary>
         internal static string IsoCreated {
@@ -336,6 +345,15 @@ namespace SharpBoot {
         internal static string Other {
             get {
                 return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à The selected partition is too big for {0}.
+        /// </summary>
+        internal static string PartitionTooBig {
+            get {
+                return ResourceManager.GetString("PartitionTooBig", resourceCulture);
             }
         }
         

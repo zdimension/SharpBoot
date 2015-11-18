@@ -158,6 +158,24 @@ namespace SharpBoot
                     Verb = "runas"
                 }
             };
+
+            try
+            {
+                var di = new DriveInfo(driveLetter);
+                long maxsize = -1;
+                if (fileSystem == "FAT12") maxsize = 16777216;
+                if (fileSystem == "FAT16") maxsize = 4000000000;
+                if(di.TotalSize >= maxsize && maxsize != -1)
+                {
+                    MessageBox.Show(string.Format(Strings.PartitionTooBig, fileSystem), "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return 2;
+                }
+            }
+            catch
+            {
+                return 1;
+            }
+
             p.StartInfo.Arguments += " /k format /FS:" + fileSystem + " /V:" + label + " /Q /Y " + driveLetter + " & exit";
             p.Start();
             bool finished = p.WaitForExit(20000);

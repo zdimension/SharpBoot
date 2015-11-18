@@ -57,6 +57,8 @@ namespace SharpBoot
             }
             Thread.Sleep(300);
             p.Start();
+            ext.Close();
+            p.Exited += (sender, args) => Program.SafeDel(f);
         }
     }
 }

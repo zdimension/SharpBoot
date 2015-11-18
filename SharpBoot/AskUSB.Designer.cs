@@ -93,7 +93,8 @@ namespace SharpBoot
             this.cbxFS.FormattingEnabled = true;
             this.cbxFS.Items.AddRange(new object[] {
             resources.GetString("cbxFS.Items"),
-            resources.GetString("cbxFS.Items1")});
+            resources.GetString("cbxFS.Items1"),
+            resources.GetString("cbxFS.Items2")});
             resources.ApplyResources(this.cbxFS, "cbxFS");
             this.cbxFS.Name = "cbxFS";
             this.cbxFS.ValueMember = "Value";

@@ -26,7 +26,7 @@ namespace SharpBoot
         public void Close()
         {
             // ReSharper disable once AssignNullToNotNullAttribute
-            new DirectoryInfo(Path.GetDirectoryName(SevenZipPath)).Delete(true);
+            Program.SafeDel(Path.GetDirectoryName(SevenZipPath));
         }
 
         public void Extract(string arch, string output)

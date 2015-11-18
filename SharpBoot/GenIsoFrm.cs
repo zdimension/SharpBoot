@@ -179,6 +179,11 @@ namespace SharpBoot
                             abort = true;
                             return;
                         }
+                        else if(res == 2)
+                        {
+                            abort = true;
+                            return;
+                        }
                         if(MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Cancel)
                         {
                             abort = true;
@@ -206,7 +211,7 @@ namespace SharpBoot
 
             File.WriteAllBytes(Path.Combine(archs, "basedisk.7z"), Resources.basedisk);
             File.WriteAllBytes(Path.Combine(archs, "bloader.7z"), bloader.Archive);
-            File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
+            if(!_usb) File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk);
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
@@ -239,6 +244,8 @@ namespace SharpBoot
 
                 ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
             }
+
+            Program.SafeDel(archs);
 
             // copier les fichiers dans le rep temporaire
             ChangeProgress(0, Images.Count, Strings.CopyISOfiles);
@@ -311,6 +318,7 @@ namespace SharpBoot
 
             if(_usb)
             {
+                ChangeProgress(23, 100, Strings.InstallingBoot);
                 BootloaderInst.Install(OutputFilepath, bloader.FolderName);
                 GenF(f);
             }
