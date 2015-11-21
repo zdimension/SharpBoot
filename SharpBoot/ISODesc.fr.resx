@@ -162,6 +162,9 @@
   <data name="ophcrack" xml:space="preserve">
     <value>Ophcrack est un outil gratuit de craquage de mot de passes.</value>
   </data>
+  <data name="pmagic" xml:space="preserve">
+    <value>Parted Magic est une distribution Linux commerciale proposant des outils de partitionnement, de récupération de données ainsi que des programmes basiques tels qu'un navigateur Web et un explorateur de fichiers.</value>
+  </data>
   <data name="redobackup" xml:space="preserve">
     <value>Redo Backup est un systeme de sauvegarde, de restauration et d'edition de partition.</value>
   </data>
@@ -172,7 +175,7 @@
     <value>Ubuntu est une distribution Linux rapide, gratuite et facile a utiliser.</value>
   </data>
   <data name="ubuntugnome" xml:space="preserve">
-    <value>Ubuntu GNOME est la version d'Ubuntu qui utilise GNOME.</value>
+    <value>Ubuntu GNOME est l'édition d'Ubuntu reposant sur l'environnement GNOME.</value>
   </data>
   <data name="ubuntuserver" xml:space="preserve">
     <value>Ubuntu Server est la version serveur de la tres populaire distribution Linux, Ubuntu.</value>
@@ -181,6 +184,6 @@
     <value>Ubuntu Studio est un systeme gratuit et ouvert pour les gens creatifs.</value>
   </data>
   <data name="xubuntu" xml:space="preserve">
-    <value>Xubuntu est la version Xfce d'Ubuntu.</value>
+    <value>Xubuntu est l'édition d'Ubuntu reposant sur l'environnement Xfce.</value>
   </data>
 </root>

@@ -210,4 +210,13 @@
   <data name="NeedAdmin" xml:space="preserve">
     <value>Um diesen USB Datenträger zu Formatieren, müssen Sie über Administratorrechte verfügen.</value>
   </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Installiere {0} auf {1}...</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Anderes</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>Die ausgewählte Partition ist zu groß für {0}</value>
+  </data>
 </root>

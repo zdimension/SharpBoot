@@ -47,10 +47,13 @@ namespace SharpBoot
 
         public List<ISOV> Versions { get; set; }
 
+        public bool NoDL { get; set; }
+
         public ISOV LatestVersion
         {
             get
             {
+                if (Versions.Count == 0) return null;
                 var r = Versions.FirstOrDefault(x => x.Latest);
                 return r ?? Versions.OrderByDescending(x => x.Name).First();
             }
@@ -82,6 +85,20 @@ namespace SharpBoot
                         new ISOV("06bbed5b81475c6899dbb549a755b00d", "chntpw 2014-02-01",
                             "https://dl.dropboxusercontent.com/u/98959151/chntpw_140201.iso", "cd140201.iso"))
                     ,
+                    new ISOInfo(
+                        "EaseUS Partition Master WinPE Edition",
+                        "",
+                        ISOCat.Partition,
+                        "easeuspartitionmasterwinpeedition.iso") {NoDL = true},
+                    new ISOInfo(
+                        "Parted Magic",
+                        "",
+                        ISOCat.Partition,
+                        "^pmagic(.*).iso$",
+                        new ISOV("3441b138b43a62a1b6b1d3e4dca12e71",
+                        "Parted Magic 2014-11-19",
+                        "", "pmagic_2014_11_19.iso")) {NoDL = true}
+                        ,
                     new ISOInfo(
                         "Kon-Boot",
                         ISODesc.chntpw,
@@ -258,7 +275,7 @@ namespace SharpBoot
                         "Ubuntu",
                         ISODesc.ubuntu,
                         ISOCat.Linux,
-                        @"^ubuntu-[0-9.]{5}-desktop-[0-9a-z]+.iso$",
+                        @"^ubuntu(.*).iso$",
                         new ISOV("09eb43dcfce2b7246bdd6e8108e755df",
                             "Ubuntu 12.04.5 LTS x86",
                             "http://releases.ubuntu.com/12.04.5/ubuntu-12.04.5-desktop-i386.iso",
@@ -283,7 +300,7 @@ namespace SharpBoot
                         "Edubuntu",
                         ISODesc.edubuntu,
                         ISOCat.Linux,
-                        @"^edubuntu-[0-9.]{5}-dvd-[0-9a-z]+.iso$",
+                        @"^edubuntu(.*).iso$",
                         new ISOV("1919086a97af4092342933a5eccbab62",
                             "Edubuntu 14.04",
                             "http://cdimage.ubuntu.com/edubuntu/releases/14.04/release/edubuntu-14.04-dvd-i386.iso",
@@ -292,7 +309,7 @@ namespace SharpBoot
                         "Kubuntu",
                         ISODesc.kubuntu,
                         ISOCat.Linux,
-                        @"^kubuntu-[0-9.]{5}-desktop-[0-9a-z]+.iso$",
+                        @"^kubuntu(.*).iso$",
                         new ISOV("327cf4202f8e2601ce0d772082c84b86",
                             "Kubuntu 14.04",
                             "http://cdimage.ubuntu.com/kubuntu/releases/14.04/release/kubuntu-14.04-desktop-i386.iso",
@@ -301,7 +318,7 @@ namespace SharpBoot
                         "Lubuntu",
                         ISODesc.lubuntu,
                         ISOCat.Linux,
-                        @"^lubuntu-[0-9.]{5}-desktop-[0-9a-z]+.iso$",
+                        @"^lubuntu(.*).iso$",
                         new ISOV("b0d1c58c8515ab40382d01f59655ba85",
                             "Lubuntu 14.04",
                             "http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.iso",
@@ -310,7 +327,7 @@ namespace SharpBoot
                         "Ubuntu GNOME",
                         ISODesc.ubuntugnome,
                         ISOCat.Linux,
-                        @"^ubuntu-gnome-[0-9.]{5}-desktop-[0-9a-z]+.iso$",
+                        @"^ubuntu-gnome(.*).iso$",
                         new ISOV("ab5c39caef103694fe97bda23412ff00",
                             "Ubuntu GNOME 14.04",
                             "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/release/ubuntu-gnome-14.04-desktop-i386.iso",
@@ -328,7 +345,7 @@ namespace SharpBoot
                         "Ubuntu Studio",
                         ISODesc.ubuntustudio,
                         ISOCat.Linux,
-                        @"^ubuntustudio-[0-9.]{5}-dvd-[0-9a-z]+.iso$",
+                        @"^ubuntustudio(.*).iso$",
                         new ISOV("75cdb9b7cb42e4bd04d2554e6142764c",
                             "Ubuntu Studio 14.04",
                             "http://cdimage.ubuntu.com/ubuntustudio/releases/14.04/release/ubuntustudio-14.04-dvd-i386.iso",
@@ -337,7 +354,7 @@ namespace SharpBoot
                         "Xubuntu",
                         ISODesc.xubuntu,
                         ISOCat.Linux,
-                        @"^xubuntu-[0-9.]{5}-desktop-[0-9a-z]+.iso$",
+                        @"^xubuntu(.*).iso$",
                         new ISOV("ccd326466b705bc324a20dd45cb3de82",
                             "Xubuntu 14.04",
                             "http://cdimage.ubuntu.com/xubuntu/releases/14.04/release/xubuntu-14.04-desktop-i386.iso",

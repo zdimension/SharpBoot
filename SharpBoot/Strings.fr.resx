@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BootFromHDD" xml:space="preserve">
-    <value>Demarrer depuis le premier disque dur</value>
+    <value>Démarrer depuis le premier disque dur</value>
   </data>
   <data name="ChangesNeedRestart" xml:space="preserve">
     <value>Les changements prendront effet après un redémarrage de l'application.</value>

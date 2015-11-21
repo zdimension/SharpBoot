@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Globalization;
@@ -41,7 +42,22 @@ namespace SharpBoot
 
             result.AddRange(fromresx(typeof (ISOCat)));
 
-            result.Distinct().ToList().ForEach(x => cbxLng.Items.Add(new {Value = x, Name = x.NativeName}));
+            var systemLng = CultureInfo.InstalledUICulture;
+            if (!systemLng.IsNeutralCulture)
+                systemLng = systemLng.Parent;
+
+            if(result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
+            {
+                result.Add(systemLng);
+            }
+
+            result = result.Distinct().ToList();
+            result.Sort((x, y) => string.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
+
+            foreach (var x in result)
+            {
+                cbxLng.Items.Add(new {Value = x, Name = x.NativeName, Supported = x != systemLng});
+            }
         }
 
         private static List<CultureInfo> fromresx(Type t)
@@ -82,19 +98,28 @@ namespace SharpBoot
             var desc = "";
             var cat = "";
 
-
-            if (automaticallyAddISOInfoToolStripMenuItem.Checked && ver?.Hash != "other")
+            if (ver?.Hash == "nover")
             {
-                ver = ver ?? (new FileInfo(filePath).Length > 750000000 ? null : ISOInfo.GetFromFile(filePath));
-                if (ver == null)
+                name = ver.Parent.Name;
+                desc = ver.Parent.Description;
+                cat = ver.Parent.Category;
+            }
+            else
+            {
+                if (automaticallyAddISOInfoToolStripMenuItem.Checked && ver?.Hash != "other")
                 {
-                    MessageBox.Show(Strings.CouldntDetect, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    name = ver.Name;
-                    desc = ver.Parent.Description;
-                    cat = ver.Parent.Category;
+                    ver = ver ?? (new FileInfo(filePath).Length > 750000000 ? null : ISOInfo.GetFromFile(filePath));
+                    if (ver == null)
+                    {
+                        MessageBox.Show(Strings.CouldntDetect, "SharpBoot", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        name = ver.Name;
+                        desc = ver.Parent.Description;
+                        cat = ver.Parent.Category;
+                    }
                 }
             }
 
@@ -110,12 +135,6 @@ namespace SharpBoot
 
         [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
         private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
-
-        private CultureInfo getselectedlng()
-        {
-            dynamic item = cbxLng.SelectedItem;
-            return item.Value as CultureInfo;
-        }
 
         public MainWindow()
         {
@@ -393,9 +412,33 @@ namespace SharpBoot
             return lvIsos.Rows.Count == 0 && txtTitle.Text == "SharpBoot" && txtBackFile.Text.Length == 0;
         }
 
+        private int lastIndex = -1;
+
+        private bool temporary = false;
+
         private void cbxLng_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Program.SetAppLng(getselectedlng());
+            if(temporary)
+            {
+                temporary = false;
+                return;
+            }
+            dynamic item = cbxLng.SelectedItem;
+
+            if(!item.Supported)
+            {
+                Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
+
+                temporary = true;
+                cbxLng.SelectedIndex = lastIndex;
+                
+                return;
+            }
+            lastIndex = cbxLng.SelectedIndex;
+
+            var sel = item.Value as CultureInfo;
+
+            Program.SetAppLng(sel);
             if (changing && FieldsEmpty())
             {
                 Controls.Clear();
@@ -414,15 +457,7 @@ namespace SharpBoot
 
             changing = false;
             var c = Program.GetCulture();
-            /*foreach (var it in
-                cbxLng.Items.Cast<object>()
-                    .Select(it => new {it, its = it})
-                    .Where(t => (((dynamic) t.its).Value as CultureInfo).Equals(c))
-                    .Select(t => t.it))
-            {
-                cbxLng.SelectedItem = it;
-                break;
-            }*/
+
             cbxLng.SelectedItem = cbxLng.Items.Cast<object>()
                 .Select(it => new {it, its = it})
                 .Where(t => (((dynamic) t.its).Value as CultureInfo).Equals(c))

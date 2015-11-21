@@ -162,6 +162,9 @@
   <data name="ophcrack" xml:space="preserve">
     <value>Ophcrack is a free Windows password cracker based on rainbow tables.</value>
   </data>
+  <data name="pmagic" xml:space="preserve">
+    <value>Parted Magic is a commercial Linux distribution with disk partitioning and data recovery tools, sold as a Linux-based bootable disk. It is named after Parted.</value>
+  </data>
   <data name="redobackup" xml:space="preserve">
     <value>Redo Backup is an easy rescue system with GUI tools for full system backup, bare metal recovery and partition editing.</value>
   </data>

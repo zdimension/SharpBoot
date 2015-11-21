@@ -196,6 +196,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Parted Magic is a commercial Linux distribution with disk partitioning and data recovery tools, sold as a Linux-based bootable disk. It is named after Parted..
+        /// </summary>
+        internal static string pmagic {
+            get {
+                return ResourceManager.GetString("pmagic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Redo Backup is an easy rescue system with GUI tools for full system backup, bare metal recovery and partition editing..
         /// </summary>
         internal static string redobackup {

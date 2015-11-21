@@ -162,6 +162,9 @@
   <data name="ophcrack" xml:space="preserve">
     <value>Ophcrack ist ein freies Computerprogramm unter der GPL-Lizenz, das verschlüsselte(gehashte) Passwörter mithilfe von Rainbow Tables versucht zu entschlüsseln. Das Programm unterstützt das Importieren von LM-Hashes und NTLM-Hashes, inklusive des direkten Importierens der SAM-Datei unter Windows.</value>
   </data>
+  <data name="pmagic" xml:space="preserve">
+    <value>Parted Magic ist eine rund 480 Megabyte große Live-GNU/Linux-Distribution aus den Vereinigten Staaten mit dem Ziel, die eine komplette Festplatten-Management-Lösung zu bieten.</value>
+  </data>
   <data name="redobackup" xml:space="preserve">
     <value>Redo Backup is an easy rescue system with GUI tools for full system backup, bare metal recovery and partition editing.</value>
   </data>

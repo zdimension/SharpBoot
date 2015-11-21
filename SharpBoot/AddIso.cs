@@ -31,11 +31,12 @@ namespace SharpBoot
 
         private void AddIso_Load(object sender, EventArgs e)
         {
-            var isos = ISOInfo.ISOs.Select(x => new { Val = x, x.Name, x.Category, x.LatestVersion.Hash });
-            
+            var isos = ISOInfo.ISOs.Where(x => !x.NoDL).Select(x => new { Val = x, x.Name, x.Category, x.LatestVersion.Hash });
+
             cbxISOS.DataSource = isos;
             var iso2 = isos.ToList();
             iso2.Insert(0, new { Val = new ISOInfo("", "", ""), Name = Strings.Other, Category = "", Hash = "" });
+            iso2.AddRange(ISOInfo.ISOs.Where(x => x.NoDL).Select(x => new { Val = x, x.Name, x.Category, Hash = "" }));
             cbxDetIso.DataSource = iso2;
             cbxDetIso.DisplayMember = "Name";
             fempty = true;
@@ -46,8 +47,7 @@ namespace SharpBoot
 
         private void rbnFile_CheckedChanged(object sender, EventArgs e)
         {
-            txtFile.Enabled = rbnFile.Checked;
-            btnBrowse.Enabled = rbnFile.Checked;
+            txtFile.Enabled = btnBrowse.Enabled = cbxDetIso.Enabled = rbnFile.Checked;
             cbxISOS.Visible = cbxVersion.Visible = rbnDown.Checked;
 
             if (rbnDown.Checked)
@@ -80,7 +80,13 @@ namespace SharpBoot
 
         private ISOInfo selinfo2 => cbxDetIso.SelectedItem == null ? null : ((dynamic)cbxDetIso.SelectedItem).Val;
 
-        private ISOV selinfoversion => selinfo.Versions.FirstOrDefault(x => x.Name.Equals(((dynamic)cbxVersion.SelectedValue).Name));
+        private ISOV selinfoversion()
+        {
+            var ret = selinfo.Versions.FirstOrDefault(x => x.Name.Equals(((dynamic) cbxVersion.SelectedValue).Name));
+            if (ret != default(ISOV)) return ret;
+            var si = selinfo2;
+            return new ISOV("nover", si.Name, si.Description, si.Filename, true) {Parent = si};
+        }
 
         private void cbxISOS_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -116,7 +122,7 @@ namespace SharpBoot
         {
             pbxPrg.Visible = lblPercent.Visible = lblSpeed.Visible = lblProg.Visible = true;
 
-            var dn = selinfoversion.DownloadLink;
+            var dn = selinfoversion().DownloadLink;
 
             sw = new Stopwatch();
 
@@ -140,7 +146,7 @@ namespace SharpBoot
             btnOK.Enabled = true;
             ControlBox = true;
             ISOPath = DownFile;
-            IsoV = selinfoversion;
+            IsoV = selinfoversion();
             DialogResult = DialogResult.OK;
             Close();
         }

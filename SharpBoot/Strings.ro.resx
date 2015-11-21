@@ -202,7 +202,7 @@
     <value>Formatarea</value>
   </data>
   <data name="FormatWillErase" xml:space="preserve">
-    <value>Începe operația de formatare?\nAceasta va distruge orice date de pe dispozitiv!</value>
+    <value>Începe operația de formatare?\nAceasta va DISTRUGE orice date de pe dispozitiv!</value>
   </data>
   <data name="CreatingUSB" xml:space="preserve">
     <value>Se crează cheia USB multiboot.</value>

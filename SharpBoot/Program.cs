@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -126,8 +127,15 @@ namespace SharpBoot
             return GetSizeString(b);
         }
 
+        /*[DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
+        public static extern long StrFormatByteSize(long fileSize, System.Text.StringBuilder buffer, int bufferSize);*/
+
         public static string GetSizeString(long file)
         {
+            /*var sb = new StringBuilder(20);
+            StrFormatByteSize(file, sb, sb.Capacity);
+            return sb.ToString();*/
+
             string[] suf =
             {
                 GetSizeUnit(), "K" + GetSizeUnit(), "M" + GetSizeUnit(), "G" + GetSizeUnit(),
