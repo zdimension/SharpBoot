@@ -148,7 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="lblAbout.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,7 +169,7 @@
     <value>SharpBoot
 Copyright © 2014-2015 zdimension 
 
-
+{0}
 - 7-zip 9.20 © 2013 Igor Pavlov
 - QEMU 1.5.1 © Various authors
 - ImageMagick 6.8.9-Q16 © 1999-2014 ImageMagick Studio LLC
@@ -189,37 +189,7 @@ Copyright © 2014-2015 zdimension
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lblAbout.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblUseSoftware.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblUseSoftware.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblUseSoftware.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 54</value>
-  </data>
-  <data name="lblUseSoftware.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 15</value>
-  </data>
-  <data name="lblUseSoftware.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lblUseSoftware.Text" xml:space="preserve">
-    <value>SharpBoot uses the following software:</value>
-  </data>
-  <data name="&gt;&gt;lblUseSoftware.Name" xml:space="preserve">
-    <value>lblUseSoftware</value>
-  </data>
-  <data name="&gt;&gt;lblUseSoftware.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblUseSoftware.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblUseSoftware.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <metadata name="ilTranslators.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -229,7 +199,7 @@ Copyright © 2014-2015 zdimension
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAg
-        CQAAAk1TRnQBSQFMAgEBAwEAAagBAAGoAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAwEAAcwBAAHMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -293,7 +263,7 @@ Copyright © 2014-2015 zdimension
     <value>lblHelpTranslate</value>
   </data>
   <data name="&gt;&gt;lblHelpTranslate.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblHelpTranslate.Parent" xml:space="preserve">
     <value>$this</value>
@@ -323,7 +293,7 @@ Copyright © 2014-2015 zdimension
     <value>lblWebsite</value>
   </data>
   <data name="&gt;&gt;lblWebsite.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblWebsite.Parent" xml:space="preserve">
     <value>$this</value>
@@ -419,7 +389,7 @@ Copyright © 2014-2015 zdimension
     <value>lvTranslators</value>
   </data>
   <data name="&gt;&gt;lvTranslators.Type" xml:space="preserve">
-    <value>SharpBoot.CustomListView, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.CustomListView, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvTranslators.Parent" xml:space="preserve">
     <value>$this</value>
@@ -449,7 +419,7 @@ Copyright © 2014-2015 zdimension
     <value>linkLabelEx6</value>
   </data>
   <data name="&gt;&gt;linkLabelEx6.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;linkLabelEx6.Parent" xml:space="preserve">
     <value>$this</value>
@@ -479,7 +449,7 @@ Copyright © 2014-2015 zdimension
     <value>linkLabelEx5</value>
   </data>
   <data name="&gt;&gt;linkLabelEx5.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;linkLabelEx5.Parent" xml:space="preserve">
     <value>$this</value>
@@ -509,7 +479,7 @@ Copyright © 2014-2015 zdimension
     <value>linkLabelEx4</value>
   </data>
   <data name="&gt;&gt;linkLabelEx4.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;linkLabelEx4.Parent" xml:space="preserve">
     <value>$this</value>
@@ -539,7 +509,7 @@ Copyright © 2014-2015 zdimension
     <value>linkLabelEx3</value>
   </data>
   <data name="&gt;&gt;linkLabelEx3.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;linkLabelEx3.Parent" xml:space="preserve">
     <value>$this</value>
@@ -569,7 +539,7 @@ Copyright © 2014-2015 zdimension
     <value>linkLabelEx1</value>
   </data>
   <data name="&gt;&gt;linkLabelEx1.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;linkLabelEx1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -599,7 +569,7 @@ Copyright © 2014-2015 zdimension
     <value>lblQEMU</value>
   </data>
   <data name="&gt;&gt;lblQEMU.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lblQEMU.Parent" xml:space="preserve">
     <value>$this</value>
@@ -629,13 +599,13 @@ Copyright © 2014-2015 zdimension
     <value>linkLabelEx2</value>
   </data>
   <data name="&gt;&gt;linkLabelEx2.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;linkLabelEx2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;linkLabelEx2.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="lbl7zip.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -659,13 +629,13 @@ Copyright © 2014-2015 zdimension
     <value>lbl7zip</value>
   </data>
   <data name="&gt;&gt;lbl7zip.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lbl7zip.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl7zip.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -678,9 +648,6 @@ Copyright © 2014-2015 zdimension
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About SharpBoot</value>

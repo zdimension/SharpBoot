@@ -219,4 +219,7 @@
   <data name="InstallingBoot" xml:space="preserve">
     <value>Installing {0} on {1}...</value>
   </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot uses the following software:</value>
+  </data>
 </root>

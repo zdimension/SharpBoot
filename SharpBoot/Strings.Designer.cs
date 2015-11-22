@@ -365,5 +365,14 @@ namespace SharpBoot {
                 return ResourceManager.GetString("PicFilter", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à SharpBoot uses the following software:.
+        /// </summary>
+        internal static string SharpBootUsesSoft {
+            get {
+                return ResourceManager.GetString("SharpBootUsesSoft", resourceCulture);
+            }
+        }
     }
 }

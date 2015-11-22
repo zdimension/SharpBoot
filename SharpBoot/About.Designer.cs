@@ -35,7 +35,6 @@ namespace SharpBoot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnOK = new System.Windows.Forms.Button();
             this.lblAbout = new System.Windows.Forms.Label();
-            this.lblUseSoftware = new System.Windows.Forms.Label();
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
             this.lblHelpTranslate = new SharpBoot.LinkLabelEx();
             this.lblWebsite = new SharpBoot.LinkLabelEx();
@@ -63,11 +62,6 @@ namespace SharpBoot
             // 
             resources.ApplyResources(this.lblAbout, "lblAbout");
             this.lblAbout.Name = "lblAbout";
-            // 
-            // lblUseSoftware
-            // 
-            resources.ApplyResources(this.lblUseSoftware, "lblUseSoftware");
-            this.lblUseSoftware.Name = "lblUseSoftware";
             // 
             // ilTranslators
             // 
@@ -189,7 +183,6 @@ namespace SharpBoot
             this.Controls.Add(this.linkLabelEx3);
             this.Controls.Add(this.linkLabelEx1);
             this.Controls.Add(this.lblQEMU);
-            this.Controls.Add(this.lblUseSoftware);
             this.Controls.Add(this.linkLabelEx2);
             this.Controls.Add(this.lbl7zip);
             this.Controls.Add(this.lblAbout);
@@ -210,7 +203,6 @@ namespace SharpBoot
         private Label lblAbout;
         private LinkLabelEx lbl7zip;
         private LinkLabelEx linkLabelEx2;
-        private Label lblUseSoftware;
         private LinkLabelEx lblQEMU;
         private LinkLabelEx linkLabelEx1;
         private LinkLabelEx linkLabelEx3;

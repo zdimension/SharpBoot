@@ -133,8 +133,6 @@ namespace SharpBoot
             lvIsos.Rows.Add(name, Program.GetFileSizeString(filePath), cat, desc, filePath);
         }
 
-        [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
-        private static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
 
         public MainWindow()
         {
@@ -155,7 +153,11 @@ namespace SharpBoot
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
 
             SetSize();
-            SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
+            if (Program.IsWin)
+            {
+                Utils.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
+            }
+
 
             cbxBootloader.SelectedIndex = 0;
             cbxRes.SelectedIndex = 0;

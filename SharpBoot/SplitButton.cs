@@ -434,7 +434,14 @@ namespace wyDay.Controls
             using (Region oldClip = g.Clip.Clone())
             {
                 g.SetClip(buttonClip, CombineMode.Intersect);
-                ComboBoxRenderer.DrawDropDownButton(g, buttonBounds, getSt(State));
+                try
+                {
+                    ComboBoxRenderer.DrawDropDownButton(g, buttonBounds, getSt(State));
+                }
+                catch
+                {
+
+                }
                 g.SetClip(oldClip, CombineMode.Replace);
             }
 

@@ -8,8 +8,8 @@ namespace SharpBoot
         public About()
         {
             InitializeComponent();
-            lblAbout.Text = lblAbout.Text.Insert(9, " " + Program.GetVersion());
-            Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
+            lblAbout.Text = lblAbout.Text.Insert(9, " " + Program.GetVersion()).Replace("{0}", Strings.SharpBootUsesSoft);
+            if(Program.IsWin) Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
         }
 
         private void linkLabelClicked(object sender, LinkLabelLinkClickedEventArgs e)

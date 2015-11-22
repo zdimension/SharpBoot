@@ -213,4 +213,7 @@
   <data name="PartitionTooBig" xml:space="preserve">
     <value>Partiția selectata este prea mare pentru {0}</value>
   </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot folosește următoarele softuri:</value>
+  </data>
 </root>

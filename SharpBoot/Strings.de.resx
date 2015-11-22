@@ -219,4 +219,7 @@
   <data name="PartitionTooBig" xml:space="preserve">
     <value>Die ausgewählte Partition ist zu groß für {0}</value>
   </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot nutzt die folgende Software:</value>
+  </data>
 </root>
