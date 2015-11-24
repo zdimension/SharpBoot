@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace SharpBoot
@@ -8,8 +10,11 @@ namespace SharpBoot
         public About()
         {
             InitializeComponent();
-            lblAbout.Text = lblAbout.Text.Insert(9, " " + Program.GetVersion()).Replace("{0}", Strings.SharpBootUsesSoft);
+            richTextBox1.Text = richTextBox1.Text.Insert(9, " " + Program.GetVersion()).Replace("{0}", Strings.SharpBootUsesSoft);
             if(Program.IsWin) Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
+            rtbMyWebsite.SelectAll();
+            rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
+            rtbMyWebsite.DeselectAll();
         }
 
         private void linkLabelClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -27,6 +32,11 @@ namespace SharpBoot
                 if(!string.IsNullOrEmpty(url)) Process.Start(url);
                 lvTranslators.SelectedIndices.Clear();
             }
+        }
+
+        private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            Process.Start(e.LinkText);
         }
     }
 }

@@ -1070,7 +1070,7 @@ public class GroupedComboBox : ComboBox, IComparer
     /// </summary>
     protected void ToggleStyle()
     {
-        if (_bufferedPainter.BufferedPaintSupported && (DropDownStyle == ComboBoxStyle.DropDownList))
+        if (_bufferedPainter != null && _bufferedPainter.BufferedPaintSupported && (DropDownStyle == ComboBoxStyle.DropDownList))
         {
             _bufferedPainter.Enabled = true;
             SetStyle(ControlStyles.UserPaint, true);
@@ -1079,7 +1079,7 @@ public class GroupedComboBox : ComboBox, IComparer
         }
         else
         {
-            _bufferedPainter.Enabled = false;
+            if(_bufferedPainter != null) _bufferedPainter.Enabled = false;
             SetStyle(ControlStyles.UserPaint, false);
             SetStyle(ControlStyles.AllPaintingInWmPaint, false);
             SetStyle(ControlStyles.SupportsTransparentBackColor, false);

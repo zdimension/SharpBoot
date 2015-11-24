@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>447, 287</value>
+    <value>495, 304</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -148,48 +148,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lblAbout.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblAbout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 9</value>
-  </data>
-  <data name="lblAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 180</value>
-  </data>
-  <data name="lblAbout.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lblAbout.Text" xml:space="preserve">
-    <value>SharpBoot
-Copyright © 2014-2015 zdimension 
-
-{0}
-- 7-zip 9.20 © 2013 Igor Pavlov
-- QEMU 1.5.1 © Various authors
-- ImageMagick 6.8.9-Q16 © 1999-2014 ImageMagick Studio LLC
-- Syslinux 4.0.4 © H. Peter Anvin et al
-- Grub4DOS 0.4.6a ; grubinst 1.1
-- GroupedComboBox © 2014 Bradley Smith
-- Windows 7 Renderer © 2011 Andrea Martinelli
-- LibZ 1.1.0.2 © 2013-2014 Milosz Krajewski</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Name" xml:space="preserve">
-    <value>lblAbout</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblAbout.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>3</value>
   </data>
   <metadata name="ilTranslators.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -199,7 +158,7 @@ Copyright © 2014-2015 zdimension
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAg
-        CQAAAk1TRnQBSQFMAgEBAwEAAcwBAAHMAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBAwEAARQBAQEUAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -241,65 +200,94 @@ Copyright © 2014-2015 zdimension
         Cw==
 </value>
   </data>
-  <data name="lblHelpTranslate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="richTextBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 9</value>
   </data>
-  <data name="lblHelpTranslate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>556, 197</value>
   </data>
-  <data name="lblHelpTranslate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 295</value>
+  <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="lblHelpTranslate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 15</value>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>SharpBoot
+Copyright © 2014-2015 zdimension 
+
+{0}
+- 7-zip 9.20 © 2013 Igor Pavlov  http://www.7-zip.org/
+- QEMU 1.5.1 © Various authors  http://www.qemu.org/
+- ImageMagick 6.8.9-Q16 © 1999-2014 ImageMagick Studio LLC  http://www.imagemagick.org/
+- Syslinux 4.0.4 © H. Peter Anvin et al  http://www.syslinux.org/
+- Grub4DOS 0.4.6a ; grubinst 1.1  https://gna.org/projects/grub4dos/
+- GroupedComboBox © 2014 Bradley Smith  http://www.brad-smith.info/blog/archives/104
+- Windows 7 Renderer © 2011 Andrea Martinelli  https://windows7renderer.codeplex.com/
+- LibZ 1.1.0.2 © 2013-2014 Milosz Krajewski  https://github.com/MiloszKrajewski/LibZ</value>
   </data>
-  <data name="lblHelpTranslate.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="&gt;&gt;richTextBox1.Name" xml:space="preserve">
+    <value>richTextBox1</value>
   </data>
-  <data name="lblHelpTranslate.Text" xml:space="preserve">
-    <value>https://poeditor.com/join/project/GDNqzsHFSk</value>
+  <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblHelpTranslate.Name" xml:space="preserve">
-    <value>lblHelpTranslate</value>
-  </data>
-  <data name="&gt;&gt;lblHelpTranslate.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lblHelpTranslate.Parent" xml:space="preserve">
+  <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblHelpTranslate.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;richTextBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="lblWebsite.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="rtbMyWebsite.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="lblWebsite.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="rtbMyWebsite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 9</value>
   </data>
-  <data name="lblWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 9</value>
+  <data name="rtbMyWebsite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>254, 18</value>
   </data>
-  <data name="lblWebsite.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 15</value>
+  <data name="rtbMyWebsite.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="lblWebsite.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="lblWebsite.Text" xml:space="preserve">
+  <data name="rtbMyWebsite.Text" xml:space="preserve">
     <value>http://www.zdimension.tk/sharpboot.php</value>
   </data>
-  <data name="&gt;&gt;lblWebsite.Name" xml:space="preserve">
-    <value>lblWebsite</value>
+  <data name="&gt;&gt;rtbMyWebsite.Name" xml:space="preserve">
+    <value>rtbMyWebsite</value>
   </data>
-  <data name="&gt;&gt;lblWebsite.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;rtbMyWebsite.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lblWebsite.Parent" xml:space="preserve">
+  <data name="&gt;&gt;rtbMyWebsite.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lblWebsite.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;rtbMyWebsite.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="rbnHelpTranslate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 308</value>
+  </data>
+  <data name="rbnHelpTranslate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 18</value>
+  </data>
+  <data name="rbnHelpTranslate.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="rbnHelpTranslate.Text" xml:space="preserve">
+    <value>https://poeditor.com/join/project/GDNqzsHFSk</value>
+  </data>
+  <data name="&gt;&gt;rbnHelpTranslate.Name" xml:space="preserve">
+    <value>rbnHelpTranslate</value>
+  </data>
+  <data name="&gt;&gt;rbnHelpTranslate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbnHelpTranslate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;rbnHelpTranslate.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="lvTranslators.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="clmnName.Text" xml:space="preserve">
     <value />
@@ -377,10 +365,10 @@ Copyright © 2014-2015 zdimension
 </value>
   </data>
   <data name="lvTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 195</value>
+    <value>14, 205</value>
   </data>
   <data name="lvTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 97</value>
+    <value>556, 97</value>
   </data>
   <data name="lvTranslators.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -395,247 +383,7 @@ Copyright © 2014-2015 zdimension
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lvTranslators.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="linkLabelEx6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabelEx6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabelEx6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 174</value>
-  </data>
-  <data name="linkLabelEx6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 15</value>
-  </data>
-  <data name="linkLabelEx6.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="linkLabelEx6.Text" xml:space="preserve">
-    <value>https://github.com/MiloszKrajewski/LibZ</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx6.Name" xml:space="preserve">
-    <value>linkLabelEx6</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx6.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx6.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="linkLabelEx5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabelEx5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabelEx5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>269, 159</value>
-  </data>
-  <data name="linkLabelEx5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 15</value>
-  </data>
-  <data name="linkLabelEx5.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="linkLabelEx5.Text" xml:space="preserve">
-    <value>https://windows7renderer.codeplex.com/</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx5.Name" xml:space="preserve">
-    <value>linkLabelEx5</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx5.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx5.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="linkLabelEx4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabelEx4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabelEx4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 144</value>
-  </data>
-  <data name="linkLabelEx4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>255, 15</value>
-  </data>
-  <data name="linkLabelEx4.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="linkLabelEx4.Text" xml:space="preserve">
-    <value>http://www.brad-smith.info/blog/archives/104</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx4.Name" xml:space="preserve">
-    <value>linkLabelEx4</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx4.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx4.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="linkLabelEx3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabelEx3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabelEx3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>184, 129</value>
-  </data>
-  <data name="linkLabelEx3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 15</value>
-  </data>
-  <data name="linkLabelEx3.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="linkLabelEx3.Text" xml:space="preserve">
-    <value>https://gna.org/projects/grub4dos/</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx3.Name" xml:space="preserve">
-    <value>linkLabelEx3</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx3.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx3.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="linkLabelEx1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabelEx1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabelEx1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 114</value>
-  </data>
-  <data name="linkLabelEx1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 15</value>
-  </data>
-  <data name="linkLabelEx1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="linkLabelEx1.Text" xml:space="preserve">
-    <value>http://www.syslinux.org/</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx1.Name" xml:space="preserve">
-    <value>linkLabelEx1</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx1.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx1.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="lblQEMU.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblQEMU.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblQEMU.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 84</value>
-  </data>
-  <data name="lblQEMU.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 15</value>
-  </data>
-  <data name="lblQEMU.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lblQEMU.Text" xml:space="preserve">
-    <value>http://www.qemu.org/</value>
-  </data>
-  <data name="&gt;&gt;lblQEMU.Name" xml:space="preserve">
-    <value>lblQEMU</value>
-  </data>
-  <data name="&gt;&gt;lblQEMU.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lblQEMU.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lblQEMU.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="linkLabelEx2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabelEx2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="linkLabelEx2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 99</value>
-  </data>
-  <data name="linkLabelEx2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 15</value>
-  </data>
-  <data name="linkLabelEx2.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="linkLabelEx2.Text" xml:space="preserve">
-    <value>http://www.imagemagick.org/</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx2.Name" xml:space="preserve">
-    <value>linkLabelEx2</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx2.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;linkLabelEx2.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="lbl7zip.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl7zip.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl7zip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 69</value>
-  </data>
-  <data name="lbl7zip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 15</value>
-  </data>
-  <data name="lbl7zip.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbl7zip.Text" xml:space="preserve">
-    <value>http://www.7-zip.org/</value>
-  </data>
-  <data name="&gt;&gt;lbl7zip.Name" xml:space="preserve">
-    <value>lbl7zip</value>
-  </data>
-  <data name="&gt;&gt;lbl7zip.Type" xml:space="preserve">
-    <value>SharpBoot.LinkLabelEx, SharpBoot, Version=3.1.1.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lbl7zip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbl7zip.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -644,10 +392,13 @@ Copyright © 2014-2015 zdimension
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>534, 322</value>
+    <value>582, 339</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>About SharpBoot</value>
