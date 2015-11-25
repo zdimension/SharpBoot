@@ -34,6 +34,7 @@ namespace SharpBoot
 
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
+            MessageBox.Show("密码".ChineseToPinyin());
 
             ISOInfo.RefreshISOs();
 
@@ -203,8 +204,14 @@ namespace SharpBoot
                 stringBuilder.Append(c);
             }
 
-            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            var ret = stringBuilder.ToString().Normalize(NormalizationForm.FormC);
+            //ret = ChineseToPinYin.Convert(ret);
+            //var ret2 = string.Join(" ", ret.Select())
+            ret = ret.ChineseToPinyin();
+            return ret;
         }
+
+
 
         public static string GetTemporaryDirectory()
         {

@@ -241,7 +241,7 @@ namespace SharpBoot
                 fn = usb ? ((USBFrm) ask).SelectedUSB.Name.ToUpper().Substring(0, 3) : ((AskPath) ask).FileName;
                 var g = new GenIsoFrm(fn, usb);
                 g.GenerationFinished += delegate { g_GenerationFinished(g); };
-                g.Images = CurImages;
+                g.Images = CurImages.Select(x => new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(), x.Category.RemoveAccent())).ToList();
                 g.Title = txtTitle.Text;
                 if (usb) g.filesystem = ((USBFrm) ask).TheComboBox.SelectedItem.ToString().Split(' ')[0].ToUpper();
                 switch (cbxBackType.SelectedIndex)

@@ -64,3 +64,4 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.GenIsoFrm.zh-Hans.re
 D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\aa\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.About.aa.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\aa\SharpBoot.resources.dll
+D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\Pinyin4net.dll

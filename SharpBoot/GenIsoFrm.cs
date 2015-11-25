@@ -21,7 +21,7 @@ namespace SharpBoot
 
         public List<string> Categories
         {
-            get { return Images.Select(x => x.Category.RemoveAccent()).Distinct().ToList(); }
+            get { return Images.Select(x => x.Category).Distinct().ToList(); }
         }
 
         public long TotalSize
@@ -110,6 +110,7 @@ namespace SharpBoot
 
         private void GenIsoFrm_Load(object sender, EventArgs e)
         {
+            if (_usb) Text = Strings.CreatingUSB;
             Show();
             if (usethread)
                 bwkISO.RunWorkerAsync();
