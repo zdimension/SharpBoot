@@ -44,12 +44,12 @@
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.lblPercent);
             this.panel1.Controls.Add(this.pbxPrg);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // lblPercent
@@ -79,10 +79,10 @@
             // 
             // cbxUSB
             // 
+            resources.ApplyResources(this.cbxUSB, "cbxUSB");
             this.cbxUSB.DisplayMember = "Disp";
             this.cbxUSB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxUSB.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxUSB, "cbxUSB");
             this.cbxUSB.Name = "cbxUSB";
             this.cbxUSB.ValueMember = "Value";
             this.cbxUSB.SelectedIndexChanged += new System.EventHandler(this.cbxUSB_SelectedIndexChanged);
@@ -104,12 +104,12 @@
             // 
             // comboBox
             // 
+            resources.ApplyResources(this.comboBox, "comboBox");
             this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
             this.comboBox.Items.AddRange(new object[] {
             resources.GetString("comboBox.Items"),
             resources.GetString("comboBox.Items1")});
-            resources.ApplyResources(this.comboBox, "comboBox");
             this.comboBox.Name = "comboBox";
             // 
             // USBFrm

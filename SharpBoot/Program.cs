@@ -42,10 +42,22 @@ namespace SharpBoot
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
             Application.ApplicationExit += Application_ApplicationExit;
+            Application.ThreadException += Application_ThreadException;
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWindow());
+        }
+
+        private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
+        {
+            MessageBox.Show(unhandledExceptionEventArgs.ExceptionObject.ToString());
+        }
+
+        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
+        {
+            MessageBox.Show(e.Exception.Message);
         }
 
         public static string GetVersion()

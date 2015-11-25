@@ -828,7 +828,7 @@ namespace wyDay.Controls
 
         #endregion Button Layout Calculations
 
-        private void ShowContextMenuStrip()
+        public void ShowContextMenuStrip()
         {
             if (skipNextOpen)
             {

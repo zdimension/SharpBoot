@@ -149,7 +149,7 @@
     <value>Sprache</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> MD5 Prüfsumme</value>
+    <value> Prüfsumme</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Standard</value>

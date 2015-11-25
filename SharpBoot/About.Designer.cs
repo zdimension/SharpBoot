@@ -61,10 +61,10 @@ namespace SharpBoot
             // 
             // richTextBox1
             // 
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
@@ -79,9 +79,9 @@ namespace SharpBoot
             // 
             // rbnHelpTranslate
             // 
+            resources.ApplyResources(this.rbnHelpTranslate, "rbnHelpTranslate");
             this.rbnHelpTranslate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rbnHelpTranslate.Cursor = System.Windows.Forms.Cursors.Default;
-            resources.ApplyResources(this.rbnHelpTranslate, "rbnHelpTranslate");
             this.rbnHelpTranslate.Name = "rbnHelpTranslate";
             this.rbnHelpTranslate.ReadOnly = true;
             // 

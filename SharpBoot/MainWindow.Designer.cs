@@ -52,7 +52,9 @@ namespace SharpBoot
             this.btnAbout = new System.Windows.Forms.Button();
             this.gbxLng = new System.Windows.Forms.GroupBox();
             this.cbxLng = new System.Windows.Forms.ComboBox();
+            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha256 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha384 = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,11 +69,6 @@ namespace SharpBoot
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbxSize = new System.Windows.Forms.TextBox();
             this.lvIsos = new System.Windows.Forms.DataGridView();
-            this.clmnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnDescr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmnFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.sharpBootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,7 +80,11 @@ namespace SharpBoot
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
+            this.clmnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnDescr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmnFilePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlBottom.SuspendLayout();
             this.gbxTest.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -232,15 +233,32 @@ namespace SharpBoot
             this.cbxLng.ValueMember = "Value";
             this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
             // 
+            // btnChecksum
+            // 
+            resources.ApplyResources(this.btnChecksum, "btnChecksum");
+            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
+            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
+            this.btnChecksum.Name = "btnChecksum";
+            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
+            this.btnChecksum.UseVisualStyleBackColor = true;
+            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
+            // 
             // cmsChecksum
             // 
             resources.ApplyResources(this.cmsChecksum, "cmsChecksum");
             this.cmsChecksum.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mD5ToolStripMenuItem,
             this.btnSha1,
             this.btnSha256,
             this.btnSha384,
             this.btnSha512});
             this.cmsChecksum.Name = "cmsChecksum";
+            // 
+            // mD5ToolStripMenuItem
+            // 
+            resources.ApplyResources(this.mD5ToolStripMenuItem, "mD5ToolStripMenuItem");
+            this.mD5ToolStripMenuItem.Name = "mD5ToolStripMenuItem";
+            this.mD5ToolStripMenuItem.Click += new System.EventHandler(this.mD5ToolStripMenuItem_Click);
             // 
             // btnSha1
             // 
@@ -365,33 +383,6 @@ namespace SharpBoot
             this.lvIsos.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvIsos_DragDrop);
             this.lvIsos.DragEnter += new System.Windows.Forms.DragEventHandler(this.lvIsos_DragEnter);
             // 
-            // clmnName
-            // 
-            resources.ApplyResources(this.clmnName, "clmnName");
-            this.clmnName.Name = "clmnName";
-            // 
-            // clmnSize
-            // 
-            resources.ApplyResources(this.clmnSize, "clmnSize");
-            this.clmnSize.Name = "clmnSize";
-            this.clmnSize.ReadOnly = true;
-            // 
-            // clmnCate
-            // 
-            resources.ApplyResources(this.clmnCate, "clmnCate");
-            this.clmnCate.Name = "clmnCate";
-            // 
-            // clmnDescr
-            // 
-            resources.ApplyResources(this.clmnDescr, "clmnDescr");
-            this.clmnDescr.Name = "clmnDescr";
-            // 
-            // clmnFilePath
-            // 
-            resources.ApplyResources(this.clmnFilePath, "clmnFilePath");
-            this.clmnFilePath.Name = "clmnFilePath";
-            this.clmnFilePath.ReadOnly = true;
-            // 
             // menuStrip
             // 
             resources.ApplyResources(this.menuStrip, "menuStrip");
@@ -466,15 +457,32 @@ namespace SharpBoot
             this.saveFileDialog.DefaultExt = "sbt";
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
-            // btnChecksum
+            // clmnName
             // 
-            resources.ApplyResources(this.btnChecksum, "btnChecksum");
-            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
-            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
-            this.btnChecksum.Name = "btnChecksum";
-            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
-            this.btnChecksum.UseVisualStyleBackColor = true;
-            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
+            resources.ApplyResources(this.clmnName, "clmnName");
+            this.clmnName.Name = "clmnName";
+            // 
+            // clmnSize
+            // 
+            resources.ApplyResources(this.clmnSize, "clmnSize");
+            this.clmnSize.Name = "clmnSize";
+            this.clmnSize.ReadOnly = true;
+            // 
+            // clmnCate
+            // 
+            resources.ApplyResources(this.clmnCate, "clmnCate");
+            this.clmnCate.Name = "clmnCate";
+            // 
+            // clmnDescr
+            // 
+            resources.ApplyResources(this.clmnDescr, "clmnDescr");
+            this.clmnDescr.Name = "clmnDescr";
+            // 
+            // clmnFilePath
+            // 
+            resources.ApplyResources(this.clmnFilePath, "clmnFilePath");
+            this.clmnFilePath.Name = "clmnFilePath";
+            this.clmnFilePath.ReadOnly = true;
             // 
             // MainWindow
             // 
@@ -555,6 +563,7 @@ namespace SharpBoot
         private ComboBox cbxRes;
         private ComboBox cbxBackType;
         private Button btnUSB;
+        private ToolStripMenuItem mD5ToolStripMenuItem;
         private DataGridViewTextBoxColumn clmnName;
         private DataGridViewTextBoxColumn clmnSize;
         private DataGridViewTextBoxColumn clmnCate;

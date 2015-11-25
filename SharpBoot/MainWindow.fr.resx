@@ -155,9 +155,6 @@ fichier ISO ou IMG ici</value>
   <data name="gbxLng.Text" xml:space="preserve">
     <value>Langue</value>
   </data>
-  <data name="btnChecksum.Text" xml:space="preserve">
-    <value> Checksum MD5</value>
-  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Par défaut</value>
   </data>

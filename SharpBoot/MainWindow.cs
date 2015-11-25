@@ -133,6 +133,17 @@ namespace SharpBoot
             lvIsos.Rows.Add(name, Program.GetFileSizeString(filePath), cat, desc, filePath);
         }
 
+        public void setlngitem(CultureInfo ci)
+        {
+            var ar = cbxLng.Items.Cast<object>()
+                .Select(it => new { it, its = it })
+                .Where(t => (((dynamic)t.its).Value as CultureInfo).Equals(ci));
+            if (!ar.Any())
+            {
+                setlngitem(new CultureInfo("en"));
+            }
+            else cbxLng.SelectedItem = ar.Select(x => x.it).First();
+        }
 
         public MainWindow()
         {
@@ -145,11 +156,7 @@ namespace SharpBoot
             changing = true;
             loadlng();
             var c = Program.GetCulture();
-            cbxLng.SelectedItem = cbxLng.Items.Cast<object>()
-                .Select(it => new { it, its = it })
-                .Where(t => (((dynamic)t.its).Value as CultureInfo).Equals(c))
-                .Select(t => t.it)
-                .First();
+            setlngitem(c);
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
 
             SetSize();
@@ -226,7 +233,7 @@ namespace SharpBoot
         private void launchgeniso(bool usb)
         {
             Form ask = null;
-            if(usb) ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, "OK", true, "FAT32 " + Strings.Recommended, "FAT16", "FAT12");
+            if(usb) ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true, "FAT32 " + Strings.Recommended, "FAT16", "FAT12");
             else ask = new AskPath();
             if (ask.ShowDialog() == DialogResult.OK)
             {
@@ -372,21 +379,7 @@ namespace SharpBoot
 
         private void btnChecksum_Click(object sender, EventArgs e)
         {
-            chksum("MD5", () =>
-            {
-                var file = new FileStream(lvIsos.SelectedRows[0].Cells[4].Value.ToString(), FileMode.Open);
-                MD5 md5 = new MD5CryptoServiceProvider();
-                var retVal = md5.ComputeHash(file);
-                file.Close();
-
-                var sb = new StringBuilder();
-                foreach (var t1 in retVal)
-                {
-                    sb.Append(t1.ToString("x2"));
-                }
-
-                return sb.ToString();
-            });
+            btnChecksum.ShowContextMenuStrip();
         }
 
         private void chksum(string n, Func<string> f)
@@ -653,6 +646,11 @@ namespace SharpBoot
         private void btnUSB_Click(object sender, EventArgs e)
         {
             launchgeniso(true);
+        }
+
+        private void mD5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            chksum("MD5", () => Utils.FileMD5(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
     }
 }

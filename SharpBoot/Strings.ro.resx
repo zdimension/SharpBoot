@@ -240,4 +240,7 @@
   <data name="NeedAdmin" xml:space="preserve">
     <value>Ai nevoie de drepturi administrative pentru a formata cheia USB.</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

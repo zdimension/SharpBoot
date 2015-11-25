@@ -376,6 +376,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à OK.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Other.
         /// </summary>
         internal static string Other {

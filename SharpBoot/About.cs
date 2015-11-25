@@ -17,11 +17,6 @@ namespace SharpBoot
             rtbMyWebsite.DeselectAll();
         }
 
-        private void linkLabelClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start(((LinkLabelEx)sender).Text);
-        }
-
         private void lvTranslators_DoubleClick(object sender, System.EventArgs e)
         {
             if(lvTranslators.SelectedItems.Count == 1)

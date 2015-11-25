@@ -237,4 +237,7 @@
   <data name="Filesystem" xml:space="preserve">
     <value>Dateisystem:</value>
   </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

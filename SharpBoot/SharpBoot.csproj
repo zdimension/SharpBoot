@@ -66,12 +66,6 @@
     <Compile Include="AskPForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AskUSB.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AskUSB.Designer.cs">
-      <DependentUpon>AskUSB.cs</DependentUpon>
-    </Compile>
     <Compile Include="AskPath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +73,7 @@
       <DependentUpon>AskPath.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootloaders.cs" />
+    <Compile Include="ChineseToPinYin.cs" />
     <Compile Include="CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -113,12 +108,6 @@
     </Compile>
     <Compile Include="USBFrm.Designer.cs">
       <DependentUpon>USBFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InstallBoot.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InstallBoot.Designer.cs">
-      <DependentUpon>InstallBoot.cs</DependentUpon>
     </Compile>
     <Compile Include="ISOCat.de.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -199,6 +188,9 @@
     </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="W7R.cs" />
+    <EmbeddedResource Include="About.aa.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="About.de.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -213,6 +205,9 @@
     <EmbeddedResource Include="About.ro.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="About.zh-Hans.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddIso.de.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,17 +220,11 @@
     <EmbeddedResource Include="AddIso.ro.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskUSB.de.resx">
-      <DependentUpon>AskUSB.cs</DependentUpon>
+    <EmbeddedResource Include="AddIso.zh-Hans.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskUSB.fr.resx">
-      <DependentUpon>AskUSB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AskUSB.resx">
-      <DependentUpon>AskUSB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AskUSB.ro.resx">
-      <DependentUpon>AskUSB.cs</DependentUpon>
+    <EmbeddedResource Include="AskPath.zh-Hans.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.de.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
@@ -264,7 +253,10 @@
     <EmbeddedResource Include="DropDownSelector.resx">
       <DependentUpon>DropDownSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.zh-CHS.resx" />
+    <EmbeddedResource Include="GenIsoFrm.zh-Hans.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.zh-Hans.resx" />
     <EmbeddedResource Include="MainWindow.zh-Hans.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,7 +266,7 @@
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.zh-CHS.resx" />
+    <EmbeddedResource Include="Strings.zh-Hans.resx" />
     <EmbeddedResource Include="USBFrm.de.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -286,18 +278,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.ro.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstallBoot.de.resx">
-      <DependentUpon>InstallBoot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstallBoot.fr.resx">
-      <DependentUpon>InstallBoot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstallBoot.resx">
-      <DependentUpon>InstallBoot.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstallBoot.ro.resx">
-      <DependentUpon>InstallBoot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ISOCat.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -368,6 +348,9 @@
     <EmbeddedResource Include="Strings.ro.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.zh-Hans.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
       <SubType>Designer</SubType>

@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Threading;
 using SharpBoot.Properties;
 
@@ -410,5 +411,79 @@ namespace SharpBoot
                 return $"menu color {Name} 0 {Foreground.ToHexArgb()} {Background.ToHexArgb()} {ShadowType}\n";
             }
         }
+    }
+
+    public enum Bootloaders
+    {
+        Syslinux = 0,
+        Grub4Dos = 1
+    }
+    public class BootloaderInst
+    {
+        public static void Install(string l, int bl)
+        {
+            Install(l, (Bootloaders)bl);
+        }
+
+        public static void Install(string l, string bl)
+        {
+            if (bl == "grub4dos") Install(l, Bootloaders.Grub4Dos);
+            if (bl == "syslinux") Install(l, Bootloaders.Syslinux);
+        }
+
+        public static void Install(string l, Bootloaders bl)
+        {
+            var exename = bl == Bootloaders.Grub4Dos ? "grubinst.exe" : "syslinux.exe";
+
+            var d = Program.GetTemporaryDirectory();
+            var exepath = Path.Combine(d, exename);
+            File.WriteAllBytes(exepath, bl == Bootloaders.Grub4Dos ? Resources.grubinst : Resources.syslinux);
+
+            var p = new Process
+            {
+                StartInfo =
+                {
+                    CreateNoWindow = true,
+                    UseShellExecute = true,
+                    FileName = exepath,
+                    Verb = "runas"
+                }
+            };
+            var driveletter = l.ToLower().Substring(0, 2);
+            if (bl == Bootloaders.Grub4Dos)
+            {
+                var deviceId = string.Empty;
+                var queryResults = new ManagementObjectSearcher(
+                    $"ASSOCIATORS OF {{Win32_LogicalDisk.DeviceID='{driveletter}'}} WHERE AssocClass = Win32_LogicalDiskToPartition");
+                var partitions = queryResults.Get();
+                foreach (var partition in partitions)
+                {
+                    queryResults = new ManagementObjectSearcher(
+                        $"ASSOCIATORS OF {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} WHERE AssocClass = Win32_DiskDriveToDiskPartition");
+                    var drives = queryResults.Get();
+                    foreach (var drive in drives)
+                        deviceId = drive["DeviceID"].ToString();
+                }
+                p.StartInfo.Arguments = " --skip-mbr-test (hd" + string.Concat(deviceId.Where(char.IsDigit)) + ")";
+            }
+            else
+            {
+                p.StartInfo.Arguments = " -m -a " + driveletter;
+            }
+            p.Start();
+            p.WaitForExit();
+            if (bl == Bootloaders.Grub4Dos)
+            {
+                File.WriteAllBytes(Path.Combine(driveletter, "grldr"), Resources.grldr);
+            }
+
+            Program.SafeDel(d);
+        }
+    }
+
+    public class driveitem
+    {
+        public string Disp { get; set; }
+        public DriveInfo Value { get; set; }
     }
 }

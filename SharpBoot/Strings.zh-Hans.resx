@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BootFromHDD" xml:space="preserve">
+    <value>Boot from first hard drive</value>
+  </data>
+  <data name="BootloaderInstalled" xml:space="preserve">
+    <value>{0} has successfully been installed to drive {1}.</value>
+  </data>
+  <data name="CalcIn" xml:space="preserve">
+    <value>计算了</value>
+  </data>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>Changes will take effect after restarting the application.</value>
+  </data>
+  <data name="ChkOf" xml:space="preserve">
+    <value>{0}校验</value>
+  </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Choose the bootloader you want to install:</value>
+  </data>
+  <data name="Copying" xml:space="preserve">
+    <value>正在复制文件</value>
+  </data>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>正在复制ISO的文件</value>
+  </data>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>Could not detect which operating system is in this disc image.</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Create multiboot USB key</value>
+  </data>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>正在做ISO</value>
+  </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Creating multiboot USB key...</value>
+  </data>
+  <data name="Detected" xml:space="preserve">
+    <value>Detected:</value>
+  </data>
+  <data name="DownComplete" xml:space="preserve">
+    <value>下载好了</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>正在解压所需文件...</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>正在解压{0}...</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>File system:</value>
+  </data>
+  <data name="FileUnit" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Undetermined error while formatting.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formatting</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Start the formatting operation?\nThis will DESTROY any data on the target!</value>
+  </data>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>正在创建主菜单</value>
+  </data>
+  <data name="GenMenu" xml:space="preserve">
+    <value>正在创建菜单</value>
+  </data>
+  <data name="GenMenus" xml:space="preserve">
+    <value>正在创建菜单们</value>
+  </data>
+  <data name="HDD" xml:space="preserve">
+    <value>硬盘</value>
+  </data>
+  <data name="Init" xml:space="preserve">
+    <value>正在准备...</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>安装</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Install a bootloader on an USB key</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>{0}在"{1}"安装</value>
+  </data>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>ISO做好了。\n你想用QEMU尝试吗？</value>
+  </data>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>ISO做好了</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>ISO</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>主菜单</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>You must have administrator rights to format the USB key.</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>The selected partition is too big for {0}</value>
+  </data>
+  <data name="PicFilter" xml:space="preserve">
+    <value>图片</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(recommended)</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot用这个软件们：</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>好的</value>
+  </data>
+</root>
