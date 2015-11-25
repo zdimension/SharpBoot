@@ -50,23 +50,23 @@ namespace SharpBoot
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnOK
             // 
-            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Name = "btnOK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnAnnul
             // 
-            this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btnAnnul, "btnAnnul");
+            this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.UseVisualStyleBackColor = true;
             // 
@@ -78,16 +78,17 @@ namespace SharpBoot
             // 
             // cbxUSB
             // 
+            resources.ApplyResources(this.cbxUSB, "cbxUSB");
             this.cbxUSB.DisplayMember = "Disp";
             this.cbxUSB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxUSB.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxUSB, "cbxUSB");
             this.cbxUSB.Name = "cbxUSB";
             this.cbxUSB.ValueMember = "Value";
             this.cbxUSB.SelectedIndexChanged += new System.EventHandler(this.cbxUSB_SelectedIndexChanged);
             // 
             // cbxFS
             // 
+            resources.ApplyResources(this.cbxFS, "cbxFS");
             this.cbxFS.DisplayMember = "Disp";
             this.cbxFS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFS.FormattingEnabled = true;
@@ -95,7 +96,6 @@ namespace SharpBoot
             resources.GetString("cbxFS.Items"),
             resources.GetString("cbxFS.Items1"),
             resources.GetString("cbxFS.Items2")});
-            resources.ApplyResources(this.cbxFS, "cbxFS");
             this.cbxFS.Name = "cbxFS";
             this.cbxFS.ValueMember = "Value";
             // 

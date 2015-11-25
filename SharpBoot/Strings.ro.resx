@@ -216,4 +216,22 @@
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot folosește următoarele softuri:</value>
   </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Alege bootloaderul care vrei sa îl instalezi:</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Instalează</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Instalează un bootloader pe o cheie USB</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(recomandat)</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Crează USB multiboot</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>Sistem de fișiere:</value>
+  </data>
 </root>

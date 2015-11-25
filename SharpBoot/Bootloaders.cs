@@ -23,6 +23,7 @@ namespace SharpBoot
         byte[] Archive { get; set; }
 
         string FolderName { get; set; }
+        string Name { get; set; }
 
         string FileExt { get; set; }
 
@@ -39,6 +40,8 @@ namespace SharpBoot
         public string WorkingDir { get; set; } = "";
 
         public string FolderName { get; set; } = "syslinux";
+        public string Name { get; set; } = "Syslinux";
+
         public string FileExt { get; set; } = ".cfg";
 
         public Size Resolution { get; set; } = new Size(640, 480);
@@ -183,11 +186,12 @@ namespace SharpBoot
         }
     }
 
-    public class Grub4Dos : IBootloader
+    public class Grub4DOS : IBootloader
     {
         public string CmdArgs { get; set; } = " ";
         public string WorkingDir { get; set; } = "";
 
+        public string Name { get; set; } = "Grub4DOS";
         public string FileExt { get; set; } = ".lst";
         public string FolderName { get; set; } = "grub4dos";
 

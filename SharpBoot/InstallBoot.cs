@@ -66,7 +66,7 @@ namespace SharpBoot
 
             var di = getseldrive();
 
-            BootloaderInst.Install(di.Name, bl);
+            //BootloaderInst.Install(di.Name, bl);
 
             onfinish();
         }
@@ -85,15 +85,31 @@ namespace SharpBoot
         }
     }
 
+    public enum Bootloaders
+    {
+        Syslinux = 0,
+        Grub4Dos = 1
+    }
     public class BootloaderInst
     {
+        public static void Install(string l, int bl)
+        {
+            Install(l, (Bootloaders) bl);
+        }
+
         public static void Install(string l, string bl)
         {
-            var exename = bl == "grub4dos" ? "grubinst.exe" : "syslinux.exe";
+            if(bl == "grub4dos") Install(l, Bootloaders.Grub4Dos);
+            if(bl == "syslinux") Install(l, Bootloaders.Syslinux);
+        }
+
+        public static void Install(string l, Bootloaders bl)
+        {
+            var exename = bl == Bootloaders.Grub4Dos ? "grubinst.exe" : "syslinux.exe";
 
             var d = Program.GetTemporaryDirectory();
             var exepath = Path.Combine(d, exename);
-            File.WriteAllBytes(exepath, bl == "grub4dos" ? Resources.grubinst : Resources.syslinux);
+            File.WriteAllBytes(exepath, bl == Bootloaders.Grub4Dos ? Resources.grubinst : Resources.syslinux);
 
             var p = new Process
             {
@@ -106,7 +122,7 @@ namespace SharpBoot
                 }
             };
             var driveletter = l.ToLower().Substring(0, 2);
-            if (bl == "grub4dos")
+            if (bl == Bootloaders.Grub4Dos)
             {
                 var deviceId = string.Empty;
                 var queryResults = new ManagementObjectSearcher(
@@ -128,7 +144,7 @@ namespace SharpBoot
             }
             p.Start();
             p.WaitForExit();
-            if (bl == "grub4dos")
+            if (bl == Bootloaders.Grub4Dos)
             {
                 File.WriteAllBytes(Path.Combine(driveletter, "grldr"), Resources.grldr);
             }

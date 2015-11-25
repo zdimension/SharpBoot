@@ -106,6 +106,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Choose the bootloader you want to install:.
+        /// </summary>
+        internal static string ChooseBootloader {
+            get {
+                return ResourceManager.GetString("ChooseBootloader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Copying.
         /// </summary>
         internal static string Copying {
@@ -129,6 +138,15 @@ namespace SharpBoot {
         internal static string CouldntDetect {
             get {
                 return ResourceManager.GetString("CouldntDetect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Create multiboot USB key.
+        /// </summary>
+        internal static string CreateMultibootUsb {
+            get {
+                return ResourceManager.GetString("CreateMultibootUsb", resourceCulture);
             }
         }
         
@@ -201,6 +219,15 @@ namespace SharpBoot {
         internal static string ExtractMkisofs {
             get {
                 return ResourceManager.GetString("ExtractMkisofs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à File system:.
+        /// </summary>
+        internal static string Filesystem {
+            get {
+                return ResourceManager.GetString("Filesystem", resourceCulture);
             }
         }
         
@@ -286,6 +313,24 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Install.
+        /// </summary>
+        internal static string Install {
+            get {
+                return ResourceManager.GetString("Install", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Install a bootloader on an USB key.
+        /// </summary>
+        internal static string InstallABootLoader {
+            get {
+                return ResourceManager.GetString("InstallABootLoader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Installing {0} on {1}....
         /// </summary>
         internal static string InstallingBoot {
@@ -363,6 +408,15 @@ namespace SharpBoot {
         internal static string PicFilter {
             get {
                 return ResourceManager.GetString("PicFilter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à (recommended).
+        /// </summary>
+        internal static string Recommended {
+            get {
+                return ResourceManager.GetString("Recommended", resourceCulture);
             }
         }
         

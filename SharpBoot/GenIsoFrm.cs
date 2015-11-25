@@ -312,13 +312,13 @@ namespace SharpBoot
             }
             if (bloader is Syslinux)
                 File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main));
-            else if (bloader is Grub4Dos)
+            else if (bloader is Grub4DOS)
                 File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
 
 
             if(_usb)
             {
-                ChangeProgress(23, 100, Strings.InstallingBoot);
+                ChangeProgress(23, 100, String.Format(Strings.InstallingBoot, bloader.Name, OutputFilepath));
                 BootloaderInst.Install(OutputFilepath, bloader.FolderName);
                 GenF(f);
             }

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Management;
 using System.Threading;
@@ -8,9 +9,12 @@ namespace SharpBoot
 {
     public class QEMUISO
     {
+        public static List<string> Paths = new List<string>(); 
+
         public static void LaunchQemu(string iso, bool usb = false)
         {
             var f = Program.GetTemporaryDirectory();
+            Paths.Add(f);
 
             var floppy = Path.GetExtension(iso).ToLower() == ".img";
 
@@ -58,7 +62,11 @@ namespace SharpBoot
             Thread.Sleep(300);
             p.Start();
             ext.Close();
-            p.Exited += (sender, args) => Program.SafeDel(f);
+            p.Exited += (sender, args) =>
+            {
+                Program.SafeDel(f);
+                Paths.Remove(f);
+            };
         }
     }
 }

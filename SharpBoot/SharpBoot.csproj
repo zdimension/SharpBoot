@@ -90,6 +90,12 @@
     </Compile>
     <Compile Include="GroupedComboBox.cs" />
     <Compile Include="ImageLine.cs" />
+    <Compile Include="USBFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USBFrm.Designer.cs">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InstallBoot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.ro.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.de.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.fr.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.ro.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InstallBoot.de.resx">
       <DependentUpon>InstallBoot.cs</DependentUpon>

@@ -52,3 +52,7 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\ro\SharpBoot.resources.dll
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.exe
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.pdb
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.de.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.fr.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.ro.resources

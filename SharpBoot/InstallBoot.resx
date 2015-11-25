@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;cbxUSB.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Install a bootloader on an USB key</value>
   </data>
@@ -127,9 +130,6 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>475, 294</value>
-  </data>
-  <data name="rbnG4D.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 154</value>
   </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
@@ -156,14 +156,11 @@
   <data name="rbnG4D.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>InstallBoot</value>
+  <data name="btnAnnul.Text" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
-  </data>
-  <data name="pbxPrg.Size" type="System.Drawing.Size, System.Drawing">
-    <value>201, 23</value>
   </data>
   <data name="&gt;&gt;rbnSyslinux.Name" xml:space="preserve">
     <value>rbnSyslinux</value>
@@ -183,8 +180,8 @@
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 25</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 15.75pt</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
   </data>
   <data name="btnAnnul.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -255,20 +252,17 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>475, 59</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
-  </data>
   <data name="rbnG4D.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="pbxPrg.Size" type="System.Drawing.Size, System.Drawing">
+    <value>201, 23</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 15</value>
-  </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Close</value>
   </data>
   <data name="&gt;&gt;cbxUSB.Name" xml:space="preserve">
     <value>cbxUSB</value>
@@ -278,6 +272,9 @@
   </data>
   <data name="btnOK.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -291,11 +288,11 @@
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="cbxUSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>451, 23</value>
-  </data>
   <data name="&gt;&gt;pbxPrg.Name" xml:space="preserve">
     <value>pbxPrg</value>
+  </data>
+  <data name="cbxUSB.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>281, 17</value>
@@ -318,8 +315,11 @@
   <data name="rbnSyslinux.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;cbxUSB.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <data name="cbxUSB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>451, 23</value>
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -348,17 +348,17 @@
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value> </value>
-  </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
   <data name="pbxPrg.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="cbxUSB.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>  Install</value>
   </data>
   <data name="lblPercent.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -372,8 +372,8 @@
   <data name="&gt;&gt;rbnG4D.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>  Install</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value> </value>
   </data>
   <data name="pbxPrg.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -384,14 +384,14 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Choose your USB key in the drop-down below:</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="rbnG4D.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 154</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 53</value>
   </data>
-  <data name="rbnSyslinux.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;rbnG4D.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btnOK.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
@@ -399,8 +399,8 @@
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="rbnSyslinux.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="cbxUSB.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 81</value>
@@ -441,11 +441,11 @@
   <data name="btnAnnul.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 25</value>
   </data>
-  <data name="&gt;&gt;rbnG4D.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>InstallBoot</value>
   </data>
   <data name="lblPercent.Size" type="System.Drawing.Size, System.Drawing">
     <value>26, 15</value>
@@ -467,5 +467,8 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ro</value>
   </metadata>
 </root>

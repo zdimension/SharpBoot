@@ -222,4 +222,22 @@
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot utilise les logiciels suivants :</value>
   </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Choisissez le bootloader que vous souhaitez installer :</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Installer</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Installer un bootloader sur une clé USB</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(recommandé)</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Créer la clé USB multiboot</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>Système de fichiers :</value>
+  </data>
 </root>

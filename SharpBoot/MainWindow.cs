@@ -225,14 +225,18 @@ namespace SharpBoot
 
         private void launchgeniso(bool usb)
         {
-            AskPForm ask = usb ? (AskPForm)new AskUSB() : (AskPForm)new AskPath();
+            Form ask = null;
+            if(usb) ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, "OK", true, "FAT32 " + Strings.Recommended, "FAT16", "FAT12");
+            else ask = new AskPath();
             if (ask.ShowDialog() == DialogResult.OK)
             {
-                var g = new GenIsoFrm(ask.FileName, usb);
+                var fn = "";
+                fn = usb ? ((USBFrm) ask).SelectedUSB.Name.ToUpper().Substring(0, 3) : ((AskPath) ask).FileName;
+                var g = new GenIsoFrm(fn, usb);
                 g.GenerationFinished += delegate { g_GenerationFinished(g); };
                 g.Images = CurImages;
                 g.Title = txtTitle.Text;
-                if (usb) g.filesystem = ((AskUSB) ask).FileSystem;
+                if (usb) g.filesystem = ((USBFrm) ask).TheComboBox.SelectedItem.ToString().Split(' ')[0].ToUpper();
                 switch (cbxBackType.SelectedIndex)
                 {
                     case 0:
@@ -256,7 +260,7 @@ namespace SharpBoot
                 if (selload == "syslinux") bl = new Syslinux();
                 if (selload == "grub4dos")
                 {
-                    bl = new Grub4Dos();
+                    bl = new Grub4DOS();
                 }
 
                 g.bloader = bl;
@@ -581,7 +585,19 @@ namespace SharpBoot
 
         private void btnInstBoot_Click(object sender, EventArgs e)
         {
-            new InstallBoot().ShowDialog(this);
+            //new InstallBoot().ShowDialog(this);
+            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false, "Syslinux " + Strings.Recommended, "Grub4Dos");
+            frm.BtnClicked += (o, args) =>
+            {
+                frm.ProgressVisible = true;
+                frm.SetProgress(5);
+                BootloaderInst.Install(frm.SelectedUSB.Name, (Bootloaders) frm.TheComboBox.SelectedIndex);
+                frm.SetProgress(100);
+                MessageBox.Show(
+                string.Format(Strings.BootloaderInstalled, (frm.TheComboBox.SelectedIndex == 1 ? "Grub4Dos" : "Syslinux"),
+                    frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
+            };
+            frm.ShowDialog(this);
         }
 
         private void btnSha1_Click(object sender, EventArgs e)
