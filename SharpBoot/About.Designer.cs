@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace SharpBoot
@@ -68,6 +69,7 @@ namespace SharpBoot
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            this.richTextBox1.Enter += new System.EventHandler(this.RichTextBox1OnGotFocus);
             // 
             // rtbMyWebsite
             // 
@@ -76,6 +78,7 @@ namespace SharpBoot
             this.rtbMyWebsite.Cursor = System.Windows.Forms.Cursors.Default;
             this.rtbMyWebsite.Name = "rtbMyWebsite";
             this.rtbMyWebsite.ReadOnly = true;
+            this.rtbMyWebsite.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // rbnHelpTranslate
             // 
@@ -84,6 +87,8 @@ namespace SharpBoot
             this.rbnHelpTranslate.Cursor = System.Windows.Forms.Cursors.Default;
             this.rbnHelpTranslate.Name = "rbnHelpTranslate";
             this.rbnHelpTranslate.ReadOnly = true;
+            this.rbnHelpTranslate.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            this.rbnHelpTranslate.Enter += new System.EventHandler(this.RichTextBox1OnGotFocus);
             // 
             // lvTranslators
             // 
@@ -133,6 +138,8 @@ namespace SharpBoot
             this.ResumeLayout(false);
 
         }
+
+        
 
         #endregion
 

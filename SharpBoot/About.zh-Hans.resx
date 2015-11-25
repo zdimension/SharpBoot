@@ -122,7 +122,7 @@
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 340</value>
+    <value>513, 365</value>
   </data>
   <data name="btnOK.Text" xml:space="preserve">
     <value>好的</value>
@@ -132,7 +132,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAB2
-        CQAAAk1TRnQBSQFMAgEBBAEAAYQBAQGEAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        CQAAAk1TRnQBSQFMAgEBBAEAAcwBAQHMAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -179,13 +179,13 @@
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 233</value>
+    <value>574, 258</value>
   </data>
   <data name="rtbMyWebsite.Location" type="System.Drawing.Point, System.Drawing">
     <value>334, 9</value>
   </data>
   <data name="rbnHelpTranslate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 344</value>
+    <value>14, 369</value>
   </data>
   <data name="lvTranslators.Items" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -276,13 +276,13 @@
 </value>
   </data>
   <data name="lvTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 241</value>
+    <value>14, 266</value>
   </data>
   <data name="lvTranslators.Size" type="System.Drawing.Size, System.Drawing">
     <value>574, 97</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 375</value>
+    <value>600, 400</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>关于SharpBoot</value>
