@@ -4,6 +4,6 @@ You can choose between Syslinux and Grub4DOS, you can choose filesystem (when ma
 You can also pick a custom background image (automatically resized to chosen resolution).
 
 # Translators
-|German|Romanian|Your language
-|---|---|---|
-|[SplittyDev](http://www.github.com/SplittyDev)|[Chronium](http://www.github.com/chronium)|[Click here to translate!](https://poeditor.com/join/project/GDNqzsHFSk)|
+|German|Romanian|Chinese (Simplified)|Your language
+|---|---|---|---|
+|[SplittyDev](http://www.github.com/SplittyDev)|[Chronium](http://www.github.com/chronium)|[CallumDev](http://www.github.com/CallumDev)|[Click here to translate!](https://poeditor.com/join/project/GDNqzsHFSk)|

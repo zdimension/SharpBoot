@@ -205,20 +205,11 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Extracting ImageMagick....
+        ///   Recherche une chaîne localisée semblable à Extracting {0}....
         /// </summary>
-        internal static string ExtractImageMagick {
+        internal static string Extracting {
             get {
-                return ResourceManager.GetString("ExtractImageMagick", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Extracting Mkisofs....
-        /// </summary>
-        internal static string ExtractMkisofs {
-            get {
-                return ResourceManager.GetString("ExtractMkisofs", resourceCulture);
+                return ResourceManager.GetString("Extracting", resourceCulture);
             }
         }
         

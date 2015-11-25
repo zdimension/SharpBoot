@@ -240,7 +240,7 @@ namespace SharpBoot
 
             if (!_usb)
             {
-                ext.ExtractionFinished += delegate { ChangeProgress(50, 100, Strings.ExtractMkisofs); };
+                ext.ExtractionFinished += delegate { ChangeProgress(50, 100, Strings.Extracting.FormatEx("Mkisofs")); };
 
                 ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
             }

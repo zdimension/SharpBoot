@@ -118,123 +118,123 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BootFromHDD" xml:space="preserve">
-    <value>Démarrer depuis le premier disque dur</value>
-  </data>
-  <data name="ChangesNeedRestart" xml:space="preserve">
-    <value>Les changements prendront effet après un redémarrage de l'application.</value>
-  </data>
-  <data name="Copying" xml:space="preserve">
-    <value>Copie de</value>
-  </data>
-  <data name="CopyISOfiles" xml:space="preserve">
-    <value>Copie des fichiers ISO...</value>
-  </data>
-  <data name="CreatingISO" xml:space="preserve">
-    <value>Création du fichier ISO...</value>
-  </data>
-  <data name="ExtractBaseDisk" xml:space="preserve">
-    <value>Extraction du disque de base...</value>
-  </data>
-  <data name="Extracting" xml:space="preserve">
-    <value>Extraction de {0}...</value>
-  </data>
-  <data name="GenMainMenu" xml:space="preserve">
-    <value>Génération du menu principal...</value>
-  </data>
-  <data name="GenMenu" xml:space="preserve">
-    <value>Génération du menu</value>
-  </data>
-  <data name="GenMenus" xml:space="preserve">
-    <value>Génération des menus...</value>
-  </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Disque dur</value>
-  </data>
-  <data name="Init" xml:space="preserve">
-    <value>Initialisation...</value>
-  </data>
-  <data name="CalcIn" xml:space="preserve">
-    <value>Calculé en</value>
-  </data>
-  <data name="ChkOf" xml:space="preserve">
-    <value>Checksum {0} de</value>
-  </data>
-  <data name="CouldntDetect" xml:space="preserve">
-    <value>Nous n'avons pas pu détecter quel système d'exploitation se trouve dans cette image disque.</value>
-  </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Détecté :</value>
-  </data>
-  <data name="IsoCreated" xml:space="preserve">
-    <value>Le fichier ISO a bien été créé.\nVoulez-vous l'essayer sur QEMU ?</value>
-  </data>
-  <data name="IsoCreatedTitle" xml:space="preserve">
-    <value>Création terminée</value>
-  </data>
-  <data name="ISOImg" xml:space="preserve">
-    <value>Image ISO</value>
-  </data>
-  <data name="PicFilter" xml:space="preserve">
-    <value>Images</value>
-  </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>o</value>
+    <value>Boot from first hard drive</value>
   </data>
   <data name="BootloaderInstalled" xml:space="preserve">
-    <value>{0} a bien été installé sur le disque {1}.</value>
+    <value>{0} has successfully been installed to drive {1}.</value>
   </data>
-  <data name="DownComplete" xml:space="preserve">
-    <value>Téléchargement terminé.</value>
+  <data name="CalcIn" xml:space="preserve">
+    <value>计算了</value>
   </data>
-  <data name="Download" xml:space="preserve">
-    <value>Télécharger</value>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>Changes will take effect after restarting the application.</value>
   </data>
-  <data name="MainMenu" xml:space="preserve">
-    <value>Menu principal</value>
-  </data>
-  <data name="CreatingUSB" xml:space="preserve">
-    <value>Création de la clé USB multiboot...</value>
-  </data>
-  <data name="FormatError" xml:space="preserve">
-    <value>Une erreur est survenue pendant le formatage.</value>
-  </data>
-  <data name="Formatting" xml:space="preserve">
-    <value>Formatage</value>
-  </data>
-  <data name="FormatWillErase" xml:space="preserve">
-    <value>Formater la clé USB ?\nCette opération DÉTRUIRA toutes les données présentes sur la clé !</value>
-  </data>
-  <data name="NeedAdmin" xml:space="preserve">
-    <value>Vous devez disposer des droits d'administrateur pour formater cette clé USB.</value>
-  </data>
-  <data name="Other" xml:space="preserve">
-    <value>Autre</value>
-  </data>
-  <data name="PartitionTooBig" xml:space="preserve">
-    <value>La partition sélectionnée est trop grande pour {0}</value>
-  </data>
-  <data name="InstallingBoot" xml:space="preserve">
-    <value>Installation de {0} sur {1}...</value>
-  </data>
-  <data name="SharpBootUsesSoft" xml:space="preserve">
-    <value>SharpBoot utilise les logiciels suivants :</value>
+  <data name="ChkOf" xml:space="preserve">
+    <value>{0} checksum of</value>
   </data>
   <data name="ChooseBootloader" xml:space="preserve">
-    <value>Choisissez le bootloader que vous souhaitez installer :</value>
+    <value>Choose the bootloader you want to install:</value>
   </data>
-  <data name="Install" xml:space="preserve">
-    <value>Installer</value>
+  <data name="Copying" xml:space="preserve">
+    <value>正在复制文件</value>
   </data>
-  <data name="InstallABootLoader" xml:space="preserve">
-    <value>Installer un bootloader sur une clé USB</value>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>正在复制ISO的文件</value>
   </data>
-  <data name="Recommended" xml:space="preserve">
-    <value>(recommandé)</value>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>Could not detect which operating system is in this disc image.</value>
   </data>
   <data name="CreateMultibootUsb" xml:space="preserve">
-    <value>Créer la clé USB multiboot</value>
+    <value>Create multiboot USB key</value>
+  </data>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>Creating ISO file...</value>
+  </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Creating multiboot USB key...</value>
+  </data>
+  <data name="Detected" xml:space="preserve">
+    <value>Detected:</value>
+  </data>
+  <data name="DownComplete" xml:space="preserve">
+    <value>Download complete.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>正在解压所需文件...</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>正在解压{0}...</value>
   </data>
   <data name="Filesystem" xml:space="preserve">
-    <value>Système de fichiers :</value>
+    <value>File system:</value>
+  </data>
+  <data name="FileUnit" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Undetermined error while formatting.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formatting</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Start the formatting operation?\nThis will DESTROY any data on the target!</value>
+  </data>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>Generating main menu...</value>
+  </data>
+  <data name="GenMenu" xml:space="preserve">
+    <value>Generating menu</value>
+  </data>
+  <data name="GenMenus" xml:space="preserve">
+    <value>Generating menus...</value>
+  </data>
+  <data name="HDD" xml:space="preserve">
+    <value>硬盘</value>
+  </data>
+  <data name="Init" xml:space="preserve">
+    <value>正在准备...</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>安装</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Install a bootloader on an USB key</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>{0}在"{1}"安装</value>
+  </data>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>The iso file has been successfully created.\nWould you like to try it on QEMU?</value>
+  </data>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>ISO created</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>ISO image</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Main menu</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>You must have administrator rights to format the USB key.</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>The selected partition is too big for {0}</value>
+  </data>
+  <data name="PicFilter" xml:space="preserve">
+    <value>照片</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(recommended)</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot uses the following software:</value>
   </data>
 </root>

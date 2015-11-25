@@ -264,12 +264,17 @@
     <EmbeddedResource Include="DropDownSelector.resx">
       <DependentUpon>DropDownSelector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.zh-CHS.resx" />
+    <EmbeddedResource Include="MainWindow.zh-Hans.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PathSelector.resx">
       <DependentUpon>PathSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.zh-CHS.resx" />
     <EmbeddedResource Include="USBFrm.de.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>

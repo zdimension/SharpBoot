@@ -117,124 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BootFromHDD" xml:space="preserve">
-    <value>Démarrer depuis le premier disque dur</value>
+  <data name="Backup" xml:space="preserve">
+    <value>备份</value>
   </data>
-  <data name="ChangesNeedRestart" xml:space="preserve">
-    <value>Les changements prendront effet après un redémarrage de l'application.</value>
+  <data name="Bios" xml:space="preserve">
+    <value>BIOS</value>
   </data>
-  <data name="Copying" xml:space="preserve">
-    <value>Copie de</value>
+  <data name="CPU" xml:space="preserve">
+    <value>中央处理器</value>
   </data>
-  <data name="CopyISOfiles" xml:space="preserve">
-    <value>Copie des fichiers ISO...</value>
+  <data name="Linux" xml:space="preserve">
+    <value>Linux</value>
   </data>
-  <data name="CreatingISO" xml:space="preserve">
-    <value>Création du fichier ISO...</value>
+  <data name="Partition" xml:space="preserve">
+    <value>分区</value>
   </data>
-  <data name="ExtractBaseDisk" xml:space="preserve">
-    <value>Extraction du disque de base...</value>
+  <data name="Password" xml:space="preserve">
+    <value>密码</value>
   </data>
-  <data name="Extracting" xml:space="preserve">
-    <value>Extraction de {0}...</value>
+  <data name="RAM" xml:space="preserve">
+    <value>内存</value>
   </data>
-  <data name="GenMainMenu" xml:space="preserve">
-    <value>Génération du menu principal...</value>
+  <data name="Recovery" xml:space="preserve">
+    <value>数据恢复</value>
   </data>
-  <data name="GenMenu" xml:space="preserve">
-    <value>Génération du menu</value>
+  <data name="Testing" xml:space="preserve">
+    <value>Testing</value>
   </data>
-  <data name="GenMenus" xml:space="preserve">
-    <value>Génération des menus...</value>
-  </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Disque dur</value>
-  </data>
-  <data name="Init" xml:space="preserve">
-    <value>Initialisation...</value>
-  </data>
-  <data name="CalcIn" xml:space="preserve">
-    <value>Calculé en</value>
-  </data>
-  <data name="ChkOf" xml:space="preserve">
-    <value>Checksum {0} de</value>
-  </data>
-  <data name="CouldntDetect" xml:space="preserve">
-    <value>Nous n'avons pas pu détecter quel système d'exploitation se trouve dans cette image disque.</value>
-  </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Détecté :</value>
-  </data>
-  <data name="IsoCreated" xml:space="preserve">
-    <value>Le fichier ISO a bien été créé.\nVoulez-vous l'essayer sur QEMU ?</value>
-  </data>
-  <data name="IsoCreatedTitle" xml:space="preserve">
-    <value>Création terminée</value>
-  </data>
-  <data name="ISOImg" xml:space="preserve">
-    <value>Image ISO</value>
-  </data>
-  <data name="PicFilter" xml:space="preserve">
-    <value>Images</value>
-  </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>o</value>
-  </data>
-  <data name="BootloaderInstalled" xml:space="preserve">
-    <value>{0} a bien été installé sur le disque {1}.</value>
-  </data>
-  <data name="DownComplete" xml:space="preserve">
-    <value>Téléchargement terminé.</value>
-  </data>
-  <data name="Download" xml:space="preserve">
-    <value>Télécharger</value>
-  </data>
-  <data name="MainMenu" xml:space="preserve">
-    <value>Menu principal</value>
-  </data>
-  <data name="CreatingUSB" xml:space="preserve">
-    <value>Création de la clé USB multiboot...</value>
-  </data>
-  <data name="FormatError" xml:space="preserve">
-    <value>Une erreur est survenue pendant le formatage.</value>
-  </data>
-  <data name="Formatting" xml:space="preserve">
-    <value>Formatage</value>
-  </data>
-  <data name="FormatWillErase" xml:space="preserve">
-    <value>Formater la clé USB ?\nCette opération DÉTRUIRA toutes les données présentes sur la clé !</value>
-  </data>
-  <data name="NeedAdmin" xml:space="preserve">
-    <value>Vous devez disposer des droits d'administrateur pour formater cette clé USB.</value>
-  </data>
-  <data name="Other" xml:space="preserve">
-    <value>Autre</value>
-  </data>
-  <data name="PartitionTooBig" xml:space="preserve">
-    <value>La partition sélectionnée est trop grande pour {0}</value>
-  </data>
-  <data name="InstallingBoot" xml:space="preserve">
-    <value>Installation de {0} sur {1}...</value>
-  </data>
-  <data name="SharpBootUsesSoft" xml:space="preserve">
-    <value>SharpBoot utilise les logiciels suivants :</value>
-  </data>
-  <data name="ChooseBootloader" xml:space="preserve">
-    <value>Choisissez le bootloader que vous souhaitez installer :</value>
-  </data>
-  <data name="Install" xml:space="preserve">
-    <value>Installer</value>
-  </data>
-  <data name="InstallABootLoader" xml:space="preserve">
-    <value>Installer un bootloader sur une clé USB</value>
-  </data>
-  <data name="Recommended" xml:space="preserve">
-    <value>(recommandé)</value>
-  </data>
-  <data name="CreateMultibootUsb" xml:space="preserve">
-    <value>Créer la clé USB multiboot</value>
-  </data>
-  <data name="Filesystem" xml:space="preserve">
-    <value>Système de fichiers :</value>
+  <data name="Utility" xml:space="preserve">
+    <value>Utility</value>
   </data>
 </root>

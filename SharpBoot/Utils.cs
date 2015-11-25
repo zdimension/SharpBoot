@@ -11,9 +11,14 @@ using System.Windows.Forms;
 
 namespace SharpBoot
 {
-    public class Utils
+    public static class Utils
     {
         public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
+
+        public static string FormatEx(this string s, params object[] args)
+        {
+            return string.Format(s, args);
+        }
 
         public static string FileMD5(string fileName)
         {

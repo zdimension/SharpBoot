@@ -135,11 +135,8 @@
   <data name="ExtractBaseDisk" xml:space="preserve">
     <value>Extracting base disk...</value>
   </data>
-  <data name="ExtractImageMagick" xml:space="preserve">
-    <value>Extracting ImageMagick...</value>
-  </data>
-  <data name="ExtractMkisofs" xml:space="preserve">
-    <value>Extracting Mkisofs...</value>
+  <data name="Extracting" xml:space="preserve">
+    <value>Extracting {0}...</value>
   </data>
   <data name="GenMainMenu" xml:space="preserve">
     <value>Generating main menu...</value>

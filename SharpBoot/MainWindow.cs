@@ -402,8 +402,9 @@ namespace SharpBoot
             txImInfo.Text = string.Format(Strings.ChkOf, n) + " " +
                             Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString()) + " :\r\n";
             txImInfo.Text += sb + "\r\n";
-            txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
-                             "s";
+            /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
+                             "s";*/
+            txImInfo.Text += Strings.CalcIn + " " + t;
             Cursor = Cursors.Default;
         }
 
@@ -421,6 +422,8 @@ namespace SharpBoot
         private int lastIndex = -1;
 
         private bool temporary = false;
+
+
 
         private void cbxLng_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -449,6 +452,10 @@ namespace SharpBoot
             {
                 Controls.Clear();
                 InitializeComponent();
+                if (!sel.TwoLetterISOLanguageName.Contains("zh"))
+                {
+                    this.Size = new Size(1006, 754);
+                }
                 SetSize();
                 cbxLng.Items.Clear();
                 loadlng();

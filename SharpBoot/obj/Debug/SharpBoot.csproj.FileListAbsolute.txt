@@ -59,3 +59,10 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.ro.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.PathSelector.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.SelectorCtrl.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.DropDownSelector.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\zh-CHS\SharpBoot.resources.dll
+D:\Documents\GitHub\SharpBoot\SharpBoot\bin\Debug\zh-Hans\SharpBoot.resources.dll
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.ISOCat.zh-CHS.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.MainWindow.zh-Hans.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.Strings.zh-CHS.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\zh-CHS\SharpBoot.resources.dll
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\zh-Hans\SharpBoot.resources.dll

@@ -150,11 +150,8 @@
   <data name="ExtractBaseDisk" xml:space="preserve">
     <value>Basisdatenträger wird extrahiert...</value>
   </data>
-  <data name="ExtractImageMagick" xml:space="preserve">
-    <value>ImageMagick wird extrahiert...</value>
-  </data>
-  <data name="ExtractMkisofs" xml:space="preserve">
-    <value>Mkisofs wird extrahiert...</value>
+  <data name="Extracting" xml:space="preserve">
+    <value>{0} wird extrahiert...</value>
   </data>
   <data name="FileUnit" xml:space="preserve">
     <value>B</value>

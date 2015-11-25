@@ -117,124 +117,165 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BootFromHDD" xml:space="preserve">
-    <value>Démarrer depuis le premier disque dur</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnUSB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>874, 14</value>
   </data>
-  <data name="ChangesNeedRestart" xml:space="preserve">
-    <value>Les changements prendront effet après un redémarrage de l'application.</value>
+  <data name="btnUSB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 118</value>
   </data>
-  <data name="Copying" xml:space="preserve">
-    <value>Copie de</value>
+  <data name="btnInstBoot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>654, 14</value>
   </data>
-  <data name="CopyISOfiles" xml:space="preserve">
-    <value>Copie des fichiers ISO...</value>
+  <data name="btnInstBoot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 118</value>
   </data>
-  <data name="CreatingISO" xml:space="preserve">
-    <value>Création du fichier ISO...</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 43</value>
   </data>
-  <data name="ExtractBaseDisk" xml:space="preserve">
-    <value>Extraction du disque de base...</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 34</value>
   </data>
-  <data name="Extracting" xml:space="preserve">
-    <value>Extraction de {0}...</value>
+  <data name="gbxTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>462, 14</value>
   </data>
-  <data name="GenMainMenu" xml:space="preserve">
-    <value>Génération du menu principal...</value>
+  <data name="gbxTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 118</value>
   </data>
-  <data name="GenMenu" xml:space="preserve">
-    <value>Génération du menu</value>
+  <data name="btnGen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 14</value>
   </data>
-  <data name="GenMenus" xml:space="preserve">
-    <value>Génération des menus...</value>
+  <data name="btnGen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 118</value>
   </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Disque dur</value>
+  <data name="txImInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 14</value>
   </data>
-  <data name="Init" xml:space="preserve">
-    <value>Initialisation...</value>
+  <data name="txImInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 117</value>
   </data>
-  <data name="CalcIn" xml:space="preserve">
-    <value>Calculé en</value>
+  <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 665</value>
   </data>
-  <data name="ChkOf" xml:space="preserve">
-    <value>Checksum {0} de</value>
+  <data name="pnlBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>990, 145</value>
   </data>
-  <data name="CouldntDetect" xml:space="preserve">
-    <value>Nous n'avons pas pu détecter quel système d'exploitation se trouve dans cette image disque.</value>
+  <data name="cbxRes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Détecté :</value>
+  <data name="cbxRes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 25</value>
   </data>
-  <data name="IsoCreated" xml:space="preserve">
-    <value>Le fichier ISO a bien été créé.\nVoulez-vous l'essayer sur QEMU ?</value>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 393</value>
   </data>
-  <data name="IsoCreatedTitle" xml:space="preserve">
-    <value>Création terminée</value>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
   </data>
-  <data name="ISOImg" xml:space="preserve">
-    <value>Image ISO</value>
+  <data name="cbxBootloader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="PicFilter" xml:space="preserve">
-    <value>Images</value>
+  <data name="cbxBootloader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 25</value>
   </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>o</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 328</value>
   </data>
-  <data name="BootloaderInstalled" xml:space="preserve">
-    <value>{0} a bien été installé sur le disque {1}.</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
   </data>
-  <data name="DownComplete" xml:space="preserve">
-    <value>Téléchargement terminé.</value>
+  <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 463</value>
   </data>
-  <data name="Download" xml:space="preserve">
-    <value>Télécharger</value>
+  <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 52</value>
   </data>
-  <data name="MainMenu" xml:space="preserve">
-    <value>Menu principal</value>
+  <data name="cbxLng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="CreatingUSB" xml:space="preserve">
-    <value>Création de la clé USB multiboot...</value>
+  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 25</value>
   </data>
-  <data name="FormatError" xml:space="preserve">
-    <value>Une erreur est survenue pendant le formatage.</value>
+  <data name="gbxLng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 262</value>
   </data>
-  <data name="Formatting" xml:space="preserve">
-    <value>Formatage</value>
+  <data name="gbxLng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
   </data>
-  <data name="FormatWillErase" xml:space="preserve">
-    <value>Formater la clé USB ?\nCette opération DÉTRUIRA toutes les données présentes sur la clé !</value>
+  <data name="btnChecksum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 522</value>
   </data>
-  <data name="NeedAdmin" xml:space="preserve">
-    <value>Vous devez disposer des droits d'administrateur pour formater cette clé USB.</value>
+  <data name="btnChecksum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 52</value>
   </data>
-  <data name="Other" xml:space="preserve">
-    <value>Autre</value>
+  <data name="cbxBackType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
   </data>
-  <data name="PartitionTooBig" xml:space="preserve">
-    <value>La partition sélectionnée est trop grande pour {0}</value>
+  <data name="cbxBackType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 25</value>
   </data>
-  <data name="InstallingBoot" xml:space="preserve">
-    <value>Installation de {0} sur {1}...</value>
+  <data name="txtBackFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 53</value>
   </data>
-  <data name="SharpBootUsesSoft" xml:space="preserve">
-    <value>SharpBoot utilise les logiciels suivants :</value>
+  <data name="btnBackBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 86</value>
   </data>
-  <data name="ChooseBootloader" xml:space="preserve">
-    <value>Choisissez le bootloader que vous souhaitez installer :</value>
+  <data name="btnBackBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 26</value>
   </data>
-  <data name="Install" xml:space="preserve">
-    <value>Installer</value>
+  <data name="gbxBckd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 135</value>
   </data>
-  <data name="InstallABootLoader" xml:space="preserve">
-    <value>Installer un bootloader sur une clé USB</value>
+  <data name="gbxBckd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 120</value>
   </data>
-  <data name="Recommended" xml:space="preserve">
-    <value>(recommandé)</value>
+  <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
   </data>
-  <data name="CreateMultibootUsb" xml:space="preserve">
-    <value>Créer la clé USB multiboot</value>
+  <data name="gbxTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
   </data>
-  <data name="Filesystem" xml:space="preserve">
-    <value>Système de fichiers :</value>
+  <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 581</value>
+  </data>
+  <data name="btnRemISO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 52</value>
+  </data>
+  <data name="tbxSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 69</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 641</value>
+  </data>
+  <data name="clmnName.HeaderText" xml:space="preserve">
+    <value>名字</value>
+  </data>
+  <data name="clmnSize.HeaderText" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 641</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 17</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>990, 810</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1006, 849</value>
   </data>
 </root>
