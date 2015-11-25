@@ -90,6 +90,24 @@
     </Compile>
     <Compile Include="GroupedComboBox.cs" />
     <Compile Include="ImageLine.cs" />
+    <Compile Include="DropDownSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DropDownSelector.Designer.cs">
+      <DependentUpon>DropDownSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PathSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PathSelector.Designer.cs">
+      <DependentUpon>PathSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectorCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectorCtrl.Designer.cs">
+      <DependentUpon>SelectorCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="USBFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +260,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.ro.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DropDownSelector.resx">
+      <DependentUpon>DropDownSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PathSelector.resx">
+      <DependentUpon>PathSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectorCtrl.resx">
+      <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.de.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>

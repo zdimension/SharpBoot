@@ -234,4 +234,10 @@
   <data name="Filesystem" xml:space="preserve">
     <value>Sistem de fișiere:</value>
   </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Se instalează {0} pe {1}..</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Ai nevoie de drepturi administrative pentru a formata cheia USB.</value>
+  </data>
 </root>

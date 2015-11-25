@@ -56,3 +56,6 @@ D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.de.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.fr.resources
 D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.USBFrm.ro.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.PathSelector.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.SelectorCtrl.resources
+D:\Documents\GitHub\SharpBoot\SharpBoot\obj\Debug\SharpBoot.DropDownSelector.resources
