@@ -142,6 +142,12 @@
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 12</value>
   </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 30</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>加入一个ISO</value>
+  </data>
   <data name="rbnFile.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 60</value>
   </data>
@@ -157,11 +163,17 @@
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 90</value>
   </data>
+  <data name="btnBrowse.Text" xml:space="preserve">
+    <value>浏览</value>
+  </data>
   <data name="rbnDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 165</value>
   </data>
   <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>189, 21</value>
+    <value>131, 21</value>
+  </data>
+  <data name="rbnDown.Text" xml:space="preserve">
+    <value>下载一个验证的ISO</value>
   </data>
   <data name="lblPercent.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 303</value>
@@ -214,5 +226,8 @@
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> </value>
   </data>
 </root>

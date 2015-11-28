@@ -121,22 +121,22 @@
     <value>Boot from first hard drive</value>
   </data>
   <data name="BootloaderInstalled" xml:space="preserve">
-    <value>{0} has successfully been installed to drive {1}.</value>
+    <value>{0}在{1}安装得顺利</value>
   </data>
   <data name="CalcIn" xml:space="preserve">
-    <value>计算了</value>
+    <value>计算了{0}</value>
   </data>
   <data name="ChangesNeedRestart" xml:space="preserve">
     <value>Changes will take effect after restarting the application.</value>
   </data>
   <data name="ChkOf" xml:space="preserve">
-    <value>{0}校验</value>
+    <value>{1}的{0}校验：</value>
   </data>
   <data name="ChooseBootloader" xml:space="preserve">
     <value>Choose the bootloader you want to install:</value>
   </data>
   <data name="Copying" xml:space="preserve">
-    <value>正在复制文件</value>
+    <value>正在复制 {0}</value>
   </data>
   <data name="CopyISOfiles" xml:space="preserve">
     <value>正在复制ISO的文件</value>
@@ -145,16 +145,13 @@
     <value>Could not detect which operating system is in this disc image.</value>
   </data>
   <data name="CreateMultibootUsb" xml:space="preserve">
-    <value>Create multiboot USB key</value>
+    <value>做Multiboot的U片</value>
   </data>
   <data name="CreatingISO" xml:space="preserve">
     <value>正在做ISO</value>
   </data>
   <data name="CreatingUSB" xml:space="preserve">
-    <value>Creating multiboot USB key...</value>
-  </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Detected:</value>
+    <value>正在做Multiboot的U片</value>
   </data>
   <data name="DownComplete" xml:space="preserve">
     <value>下载好了</value>
@@ -187,7 +184,7 @@
     <value>正在创建主菜单</value>
   </data>
   <data name="GenMenu" xml:space="preserve">
-    <value>正在创建菜单</value>
+    <value>正在创建菜单：{0}</value>
   </data>
   <data name="GenMenus" xml:space="preserve">
     <value>正在创建菜单们</value>
@@ -202,7 +199,7 @@
     <value>安装</value>
   </data>
   <data name="InstallABootLoader" xml:space="preserve">
-    <value>Install a bootloader on an USB key</value>
+    <value>啟動程式套裝在U片安装</value>
   </data>
   <data name="InstallingBoot" xml:space="preserve">
     <value>{0}在"{1}"安装</value>
@@ -217,7 +214,7 @@
     <value>ISO</value>
   </data>
   <data name="MainMenu" xml:space="preserve">
-    <value>主菜单</value>
+    <value>回主菜单</value>
   </data>
   <data name="NeedAdmin" xml:space="preserve">
     <value>You must have administrator rights to format the USB key.</value>
@@ -232,7 +229,7 @@
     <value>图片</value>
   </data>
   <data name="Recommended" xml:space="preserve">
-    <value>(recommended)</value>
+    <value>(推荐)</value>
   </data>
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot用这个软件们：</value>

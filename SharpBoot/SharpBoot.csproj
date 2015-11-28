@@ -191,9 +191,6 @@
     </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="W7R.cs" />
-    <EmbeddedResource Include="About.aa.resx">
-      <DependentUpon>About.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="About.de.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>

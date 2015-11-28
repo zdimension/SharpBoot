@@ -124,7 +124,7 @@
     <value>Modificările vor avea loc după ce reporniți aplicatia.</value>
   </data>
   <data name="Copying" xml:space="preserve">
-    <value>Se copiază</value>
+    <value>Se copiază {0}</value>
   </data>
   <data name="CopyISOfiles" xml:space="preserve">
     <value>Se copiază fișierele ISO</value>
@@ -134,9 +134,6 @@
   </data>
   <data name="CreatingISO" xml:space="preserve">
     <value>Se crează fișierul ISO...</value>
-  </data>
-  <data name="Detected" xml:space="preserve">
-    <value>S-a detectat :</value>
   </data>
   <data name="ExtractBaseDisk" xml:space="preserve">
     <value>Se extrage discul de bază</value>
@@ -151,7 +148,7 @@
     <value>Se generează meniul principal.</value>
   </data>
   <data name="GenMenu" xml:space="preserve">
-    <value>Se generează meniul</value>
+    <value>Se generează meniul {0}</value>
   </data>
   <data name="GenMenus" xml:space="preserve">
     <value>Se generează meniurile...</value>
@@ -163,10 +160,10 @@
     <value>Se inițializează</value>
   </data>
   <data name="CalcIn" xml:space="preserve">
-    <value>Calculat în</value>
+    <value>Calculat în {0}</value>
   </data>
   <data name="ChkOf" xml:space="preserve">
-    <value>{0} checksum al</value>
+    <value>{0} checksum al {1}:</value>
   </data>
   <data name="FileUnit" xml:space="preserve">
     <value>B</value>

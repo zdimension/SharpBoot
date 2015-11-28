@@ -124,16 +124,16 @@
     <value>{0} wurde erfolgreich auf {1} installiert.</value>
   </data>
   <data name="CalcIn" xml:space="preserve">
-    <value>Berechnet in</value>
+    <value>Berechnet in {0}</value>
   </data>
   <data name="ChangesNeedRestart" xml:space="preserve">
     <value>Änderungen werden nach Neustart der Anwendung wirksam.</value>
   </data>
   <data name="ChkOf" xml:space="preserve">
-    <value>{0} Prüfsumme von</value>
+    <value>{0} Prüfsumme von {1}:</value>
   </data>
   <data name="Copying" xml:space="preserve">
-    <value>Kopiere</value>
+    <value>Kopiere {0}</value>
   </data>
   <data name="CopyISOfiles" xml:space="preserve">
     <value>Kopiere ISO Dateien...</value>
@@ -143,9 +143,6 @@
   </data>
   <data name="CreatingISO" xml:space="preserve">
     <value>Erstelle ISO Datei...</value>
-  </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Erkannt:</value>
   </data>
   <data name="ExtractBaseDisk" xml:space="preserve">
     <value>Basisdatenträger wird extrahiert...</value>
@@ -160,7 +157,7 @@
     <value>Generiere Hauptmenü...</value>
   </data>
   <data name="GenMenu" xml:space="preserve">
-    <value>Generiere Menü</value>
+    <value>Generiere Menü {0}</value>
   </data>
   <data name="GenMenus" xml:space="preserve">
     <value>Generiere Menüs...</value>

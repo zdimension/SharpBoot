@@ -1,1 +1,2 @@
-libz inject-dll -a SharpBoot.exe -i de\SharpBoot.resources.dll -i fr\SharpBoot.resources.dll -i ro\SharpBoot.resources.dll --move
+copy /Y SharpBoot.exe final\SharpBoot.exe
+libz inject-dll -a .\final\SharpBoot.exe -i de\SharpBoot.resources.dll -i fr\SharpBoot.resources.dll -i ro\SharpBoot.resources.dll -i zh-Hans\SharpBoot.resources.dll -i Pinyin4net.dll --move

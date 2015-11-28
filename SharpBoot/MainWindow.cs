@@ -392,12 +392,12 @@ namespace SharpBoot
 
             var a = DateTime.Now;
             var t = a - d;
-            txImInfo.Text = string.Format(Strings.ChkOf, n) + " " +
-                            Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString()) + " :\r\n";
+            txImInfo.Text = string.Format(Strings.ChkOf, n, 
+                            Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
             txImInfo.Text += sb + "\r\n";
             /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
                              "s";*/
-            txImInfo.Text += Strings.CalcIn + " " + t;
+            txImInfo.Text += string.Format(Strings.CalcIn, t);
             Cursor = Cursors.Default;
         }
 

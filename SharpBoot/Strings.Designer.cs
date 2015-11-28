@@ -79,7 +79,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Calculated in.
+        ///   Recherche une chaîne localisée semblable à Calculated in {0}.
         /// </summary>
         internal static string CalcIn {
             get {
@@ -97,7 +97,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à {0} checksum of.
+        ///   Recherche une chaîne localisée semblable à {0} checksum of {1}:.
         /// </summary>
         internal static string ChkOf {
             get {
@@ -115,7 +115,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Copying.
+        ///   Recherche une chaîne localisée semblable à Copying {0}.
         /// </summary>
         internal static string Copying {
             get {
@@ -165,15 +165,6 @@ namespace SharpBoot {
         internal static string CreatingUSB {
             get {
                 return ResourceManager.GetString("CreatingUSB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une chaîne localisée semblable à Detected:.
-        /// </summary>
-        internal static string Detected {
-            get {
-                return ResourceManager.GetString("Detected", resourceCulture);
             }
         }
         
@@ -268,7 +259,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Generating menu.
+        ///   Recherche une chaîne localisée semblable à Generating menu {0}.
         /// </summary>
         internal static string GenMenu {
             get {
@@ -313,7 +304,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Install a bootloader on an USB key.
+        ///   Recherche une chaîne localisée semblable à Install a bootloader on a USB key.
         /// </summary>
         internal static string InstallABootLoader {
             get {
@@ -331,7 +322,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à The iso file has been successfully created.\nWould you like to try it on QEMU?.
+        ///   Recherche une chaîne localisée semblable à The ISO file has been successfully created.\nWould you like to try it on QEMU?.
         /// </summary>
         internal static string IsoCreated {
             get {

@@ -124,7 +124,7 @@
     <value>Les changements prendront effet après un redémarrage de l'application.</value>
   </data>
   <data name="Copying" xml:space="preserve">
-    <value>Copie de</value>
+    <value>Copie de {0}</value>
   </data>
   <data name="CopyISOfiles" xml:space="preserve">
     <value>Copie des fichiers ISO...</value>
@@ -142,7 +142,7 @@
     <value>Génération du menu principal...</value>
   </data>
   <data name="GenMenu" xml:space="preserve">
-    <value>Génération du menu</value>
+    <value>Génération du menu {0}</value>
   </data>
   <data name="GenMenus" xml:space="preserve">
     <value>Génération des menus...</value>
@@ -154,16 +154,13 @@
     <value>Initialisation...</value>
   </data>
   <data name="CalcIn" xml:space="preserve">
-    <value>Calculé en</value>
+    <value>Calculé en {0}</value>
   </data>
   <data name="ChkOf" xml:space="preserve">
-    <value>Checksum {0} de</value>
+    <value>Checksum {0} de {1} :</value>
   </data>
   <data name="CouldntDetect" xml:space="preserve">
     <value>Nous n'avons pas pu détecter quel système d'exploitation se trouve dans cette image disque.</value>
-  </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Détecté :</value>
   </data>
   <data name="IsoCreated" xml:space="preserve">
     <value>Le fichier ISO a bien été créé.\nVoulez-vous l'essayer sur QEMU ?</value>

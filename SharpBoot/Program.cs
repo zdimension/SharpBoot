@@ -93,7 +93,8 @@ namespace SharpBoot
 
         public static void SafeDel(string d)
         {
-            while (Directory.Exists(d))
+            int i = 0;
+            while (Directory.Exists(d) && i < 10)
             {
                 try
                 {
@@ -103,6 +104,7 @@ namespace SharpBoot
                 {
                     continue;
                 }
+                i++;
             }
         }
 
@@ -195,6 +197,7 @@ namespace SharpBoot
 
         public static string RemoveAccent(this string str)
         {
+            str = str.Replace("ß", "ss").Replace("ä", "ae").Replace("ü", "ue").Replace("ö", "oe");
             var normalizedString = str.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
 

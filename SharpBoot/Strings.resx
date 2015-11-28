@@ -124,7 +124,7 @@
     <value>Changes will take effect after restarting the application.</value>
   </data>
   <data name="Copying" xml:space="preserve">
-    <value>Copying</value>
+    <value>Copying {0}</value>
   </data>
   <data name="CopyISOfiles" xml:space="preserve">
     <value>Copying ISO files...</value>
@@ -142,7 +142,7 @@
     <value>Generating main menu...</value>
   </data>
   <data name="GenMenu" xml:space="preserve">
-    <value>Generating menu</value>
+    <value>Generating menu {0}</value>
   </data>
   <data name="GenMenus" xml:space="preserve">
     <value>Generating menus...</value>
@@ -154,19 +154,16 @@
     <value>Initializing...</value>
   </data>
   <data name="CalcIn" xml:space="preserve">
-    <value>Calculated in</value>
+    <value>Calculated in {0}</value>
   </data>
   <data name="ChkOf" xml:space="preserve">
-    <value>{0} checksum of</value>
+    <value>{0} checksum of {1}:</value>
   </data>
   <data name="CouldntDetect" xml:space="preserve">
     <value>Could not detect which operating system is in this disc image.</value>
   </data>
-  <data name="Detected" xml:space="preserve">
-    <value>Detected:</value>
-  </data>
   <data name="IsoCreated" xml:space="preserve">
-    <value>The iso file has been successfully created.\nWould you like to try it on QEMU?</value>
+    <value>The ISO file has been successfully created.\nWould you like to try it on QEMU?</value>
   </data>
   <data name="IsoCreatedTitle" xml:space="preserve">
     <value>ISO created</value>
@@ -226,7 +223,7 @@
     <value>Install</value>
   </data>
   <data name="InstallABootLoader" xml:space="preserve">
-    <value>Install a bootloader on an USB key</value>
+    <value>Install a bootloader on a USB key</value>
   </data>
   <data name="Recommended" xml:space="preserve">
     <value>(recommended)</value>

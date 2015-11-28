@@ -79,20 +79,30 @@ namespace SharpBoot
 
         public void ChangeProgressBar(int val, int max)
         {
-            pbx.Maximum = max;
-            pbx.Value = val;
+            if (pbx.InvokeRequired)
+                pbx.Invoke((MethodInvoker) (() =>
+                {
+                    pbx.Maximum = max;
+                    pbx.Value = val;
+                }));
+            else
+            {
+                pbx.Maximum = max;
+                pbx.Value = val;
+            }
         }
 
         public void ChangeStatus(string stat)
         {
-            lblStatus.Text = stat;
+            if (lblStatus.InvokeRequired) lblStatus.Invoke((MethodInvoker) (() => lblStatus.Text = stat));
+            else lblStatus.Text = stat;
         }
 
         public void ChangeProgress(int val, int max, string stat)
         {
-            pbx.BeginInvoke(new ChangeProgressBarDelegate(ChangeProgressBar), val, max);
+            ChangeProgressBar(val, max);
 
-            lblStatus.BeginInvoke(new ChangeStatusDelegate(ChangeStatus), stat);
+            ChangeStatus(stat);
         }
 
 
@@ -252,7 +262,7 @@ namespace SharpBoot
             ChangeProgress(0, Images.Count, Strings.CopyISOfiles);
             for (var i = 0; i < Images.Count; i++)
             {
-                ChangeProgress(i, Images.Count, Strings.Copying + " " + Path.GetFileName(Images[i].FilePath));
+                ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(Images[i].FilePath)));
                 copyfile:
                 try
                 {
@@ -295,7 +305,7 @@ namespace SharpBoot
                 }
                 else
                 {
-                    ChangeProgress(ii, Categories.Count, Strings.GenMenu + " \"" + c + "\"");
+                    ChangeProgress(ii, Categories.Count, string.Format(Strings.GenMenu, c));
                     var t = new BootMenu(c, false);
                     Images.Where(x => x.Category == c).All(x =>
                     {

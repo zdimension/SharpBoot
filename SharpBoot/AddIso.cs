@@ -58,7 +58,7 @@ namespace SharpBoot
             else
             {
                 btnOK.DialogResult = DialogResult.OK;
-                btnOK.Text = "OK";
+                btnOK.Text = Strings.OK;
             }
 
 
