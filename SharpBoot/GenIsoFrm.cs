@@ -402,6 +402,18 @@ namespace SharpBoot
 
             Program.ClrTmp();
         }
+
+        private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if(e.Error != null)
+            {
+                if(e.Error is FileNotFoundException)
+                {
+                    MessageBox.Show("File not found: " + ((FileNotFoundException) e.Error).FileName);
+                }
+                else throw new Exception("Error: " + e.Error.Message + "\n", e.Error);
+            }
+        }
     }
 
     public class BootMenu

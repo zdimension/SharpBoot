@@ -52,7 +52,6 @@ namespace SharpBoot
             this.btnAbout = new System.Windows.Forms.Button();
             this.gbxLng = new System.Windows.Forms.GroupBox();
             this.cbxLng = new System.Windows.Forms.ComboBox();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +79,7 @@ namespace SharpBoot
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.clmnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnCate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -232,16 +232,6 @@ namespace SharpBoot
             this.cbxLng.Name = "cbxLng";
             this.cbxLng.ValueMember = "Value";
             this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
-            // 
-            // btnChecksum
-            // 
-            resources.ApplyResources(this.btnChecksum, "btnChecksum");
-            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
-            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
-            this.btnChecksum.Name = "btnChecksum";
-            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
-            this.btnChecksum.UseVisualStyleBackColor = true;
-            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
             // 
             // cmsChecksum
             // 
@@ -456,6 +446,16 @@ namespace SharpBoot
             // 
             this.saveFileDialog.DefaultExt = "sbt";
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
+            // 
+            // btnChecksum
+            // 
+            resources.ApplyResources(this.btnChecksum, "btnChecksum");
+            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
+            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
+            this.btnChecksum.Name = "btnChecksum";
+            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
+            this.btnChecksum.UseVisualStyleBackColor = true;
+            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
             // 
             // clmnName
             // 

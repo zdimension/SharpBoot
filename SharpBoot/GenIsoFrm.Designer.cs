@@ -42,15 +42,15 @@ namespace SharpBoot
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnAnnul
             // 
-            resources.ApplyResources(this.btnAnnul, "btnAnnul");
             this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btnAnnul, "btnAnnul");
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.UseVisualStyleBackColor = true;
             this.btnAnnul.Click += new System.EventHandler(this.btnAnnul_Click);
@@ -69,6 +69,7 @@ namespace SharpBoot
             // 
             this.bwkISO.WorkerSupportsCancellation = true;
             this.bwkISO.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkISO_DoWork);
+            this.bwkISO.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkISO_RunWorkerCompleted);
             // 
             // GenIsoFrm
             // 

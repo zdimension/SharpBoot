@@ -34,8 +34,6 @@ namespace SharpBoot
 
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
-            MessageBox.Show("密码".ChineseToPinyin());
-
             ISOInfo.RefreshISOs();
 
 
@@ -150,6 +148,7 @@ namespace SharpBoot
             Mac
         }
 
+        /// http://stackoverflow.com/q/10138040/2196124
         public static Platform RunningPlatform()
         {
             switch (Environment.OSVersion.Platform)
@@ -205,8 +204,6 @@ namespace SharpBoot
             }
 
             var ret = stringBuilder.ToString().Normalize(NormalizationForm.FormC);
-            //ret = ChineseToPinYin.Convert(ret);
-            //var ret2 = string.Join(" ", ret.Select())
             ret = ret.ChineseToPinyin();
             return ret;
         }
