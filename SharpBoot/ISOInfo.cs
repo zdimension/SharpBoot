@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -53,7 +54,8 @@ namespace SharpBoot
         {
             get
             {
-                if (Versions.Count == 0) return null;
+                if (Versions.Count == 0)
+                    return null;
                 var r = Versions.FirstOrDefault(x => x.Latest);
                 return r ?? Versions.OrderByDescending(x => x.Name).First();
             }
@@ -101,7 +103,7 @@ namespace SharpBoot
                         ,
                     new ISOInfo(
                         "Kon-Boot",
-                        ISODesc.chntpw,
+                        "",
                         ISOCat.Password,
                         "^kon-boot(.*).(img|iso)$",
                         new ISOV("eed910d2ef9b058cf3eec28294bd303c", "Kon-Boot 2.5",
@@ -373,34 +375,44 @@ namespace SharpBoot
         }
 
         [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
-        public static ISOV GetFromFile(string filename)
+        public static ISOV GetFromFile(string filename, bool fast)
         {
             ISOV resk = null;
 
             var s = ISOs.FirstOrDefault(x => Regex.IsMatch(Path.GetFileName(filename), x.Filename));
-            if (s != null)
+            /*if (s != null)
             {
-                resk = s.LatestVersion;
-            }
+                resk = s.LatestVersion ?? new ISOV("nover", s.Name, "", s.Filename, true) {Parent=s};
+            }*/
+            if (s != null && s.LatestVersion == null) resk = new ISOV("nover", s.Name, "", s.Filename, true) {Parent = s};
             else
             {
-                var md5 = Utils.FileHash(filename, "md5");
-                var sta = ISOs.SelectMany(x => x.Versions);
-                var st =
-                    sta.FirstOrDefault(
-                        x =>
-                            x.Filename.StartsWith("/")
-                                ? Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1))
-                                : string.Equals(Path.GetFileName(filename).Trim(), x.Filename.Trim(),
-                                    StringComparison.CurrentCultureIgnoreCase)) ??
-                    sta.FirstOrDefault(
-                        x =>
-                            x.Hash ==
-                            (x.Hash.Contains(':') ? Utils.FileHash(filename, x.Hash.Split(':')[0]) : md5));
-
-                if (st != null)
+                if (s != null && s.Versions.Count == 1)
                 {
-                    resk = st;
+                    resk = s.LatestVersion;
+                }
+                else
+                {
+                    var sta = s == null ? ISOs.SelectMany(x => x.Versions) : s.Versions;
+                    var st =
+                        sta.FirstOrDefault(
+                            x =>
+                                x.Filename.StartsWith("/")
+                                    ? Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1))
+                                    : string.Equals(Path.GetFileName(filename).Trim(), x.Filename.Trim(),
+                                        StringComparison.CurrentCultureIgnoreCase));
+                    if (st == null)
+                    {
+                        var md5 = fast ? "" : Utils.FileHash(filename, "md5");
+                        st = (fast
+                            ? null
+                            : sta.FirstOrDefault(
+                                x =>
+                                    x.Hash ==
+                                    (x.Hash.Contains(':') ? Utils.FileHash(filename, x.Hash.Split(':')[0]) : md5)));
+                    }
+
+                    resk = st ?? (s == null ? null : new ISOV("nover", s.Name, "", s.Filename, true) {Parent = s});
                 }
             }
 

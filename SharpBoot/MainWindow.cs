@@ -108,10 +108,10 @@ namespace SharpBoot
             {
                 if (automaticallyAddISOInfoToolStripMenuItem.Checked && ver?.Hash != "other")
                 {
-                    ver = ver ?? (new FileInfo(filePath).Length > 750000000 ? null : ISOInfo.GetFromFile(filePath));
+                    ver = ver ?? (ISOInfo.GetFromFile(filePath, new FileInfo(filePath).Length > 750000000));
                     if (ver == null)
                     {
-                        MessageBox.Show(Strings.CouldntDetect, "SharpBoot", MessageBoxButtons.OK,
+                        MessageBox.Show(Path.GetFileName(filePath) + "\n\n" + Strings.CouldntDetect, "SharpBoot", MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     else

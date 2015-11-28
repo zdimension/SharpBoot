@@ -176,15 +176,15 @@ namespace SharpBoot
 
         private Thread th;
 
+        private bool changing = false;
+
         private void md5stuff()
         {
             th = new Thread(() =>
             {
-                string t = "";
-
                 Invoke((MethodInvoker) (() => pbxLoading.Visible = true));
 
-                var resk = ISOInfo.GetFromFile(ISOPath);
+                var resk = ISOInfo.GetFromFile(ISOPath, false);
 
 
                 Invoke((MethodInvoker) (() =>
@@ -201,19 +201,23 @@ namespace SharpBoot
                             dynamic it = cbxDetIso.Items[index];
                             if (it.Val == resk.Parent)
                             {
+                                changing = true;
                                 cbxDetIso.SelectedIndex = index;
+                                
                                 break;
                             }
                         }
                     }
                     pbxLoading.Visible = false;
                 }));
+                changing = false;
             })
             {
                 CurrentCulture = CultureInfo.CurrentCulture,
                 CurrentUICulture = CultureInfo.CurrentUICulture
             };
             th.Start();
+
         }
 
         public ISOV IsoV;
@@ -253,9 +257,10 @@ namespace SharpBoot
 
         private void cbxDetIso_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (changing) return;
             if(cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null)
             {
-                IsoV = cbxDetIso.SelectedIndex == 0 ? new ISOV("other", "") : selinfo2?.LatestVersion;
+                IsoV = cbxDetIso.SelectedIndex == 0 ? new ISOV("other", "") : (selinfo2 == null ? null : (selinfo2.LatestVersion ?? new ISOV("nover", selinfo2.Name, "", selinfo2.Filename, true) {Parent=selinfo2}));
             }
         }
     }
