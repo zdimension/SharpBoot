@@ -284,7 +284,7 @@ namespace SharpBoot
 
 
             var main = new BootMenu(Title, true);
-            main.Items.Add(new BootMenuItem(Strings.HDD.RemoveAccent(), Strings.BootFromHDD.RemoveAccent(),
+            main.Items.Add(new BootMenuItem(Strings.BootFromHDD.RemoveAccent(), Strings.BootFromHDD.RemoveAccent(),
                 MenuItemType.BootHDD));
 
             var ii = 0;
