@@ -103,7 +103,8 @@ namespace SharpBoot
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items1"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items2"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items3")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items3"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items4")))});
             this.lvTranslators.LargeImageList = this.ilTranslators;
             this.lvTranslators.MultiSelect = false;
             this.lvTranslators.Name = "lvTranslators";

@@ -47,7 +47,8 @@ namespace SharpBoot
 
         private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            Process.Start(e.LinkText);
+            if(e.LinkText != "")
+                Process.Start(e.LinkText);
         }
     }
 }
