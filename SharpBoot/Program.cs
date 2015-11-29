@@ -24,6 +24,8 @@ namespace SharpBoot
             return list.ToDictionary(x => x.Key, x => x.Value);
         }
 
+        public static bool SupportAccent = false;
+
         /// <summary>
         ///     Point d'entrée principal de l'application.
         /// </summary>
@@ -51,12 +53,16 @@ namespace SharpBoot
 
         private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
         {
-            MessageBox.Show(unhandledExceptionEventArgs.ExceptionObject.ToString());
+            if (unhandledExceptionEventArgs.ExceptionObject is FileNotFoundException)
+                MessageBox.Show(((FileNotFoundException) unhandledExceptionEventArgs.ExceptionObject).FileName);
+            MessageBox.Show(unhandledExceptionEventArgs.ExceptionObject.ToString(), "Unhandled exception");
         }
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            MessageBox.Show(e.Exception.Message);
+            if (e.Exception is FileNotFoundException)
+                MessageBox.Show(((FileNotFoundException)e.Exception).FileName);
+            MessageBox.Show(e.Exception.Message, "Thread exception");
         }
 
         public static string GetVersion()
@@ -197,18 +203,21 @@ namespace SharpBoot
 
         public static string RemoveAccent(this string str)
         {
-            str = str.Replace("ß", "ss").Replace("ä", "ae").Replace("ü", "ue").Replace("ö", "oe");
+            str = str.Normalize(NormalizationForm.FormC);
+            str = str.ChineseToPinyin();
+
+            string supported =
+                string.Concat(Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => Encoding.GetEncoding(437).GetString(new[] {(byte) x})[0]));
             var normalizedString = str.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
 
-            foreach (var c in from c in normalizedString let unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c) where unicodeCategory != UnicodeCategory.NonSpacingMark select c)
+            for(int i = 0; i < str.Length; i++)
             {
-                stringBuilder.Append(c);
+                stringBuilder.Append((supported.Contains(str[i]) || char.IsWhiteSpace(str[i])) ? str[i] : normalizedString[i]);
             }
 
-            var ret = stringBuilder.ToString().Normalize(NormalizationForm.FormC);
-            ret = ret.ChineseToPinyin();
-            return ret;
+            
+            return stringBuilder.ToString();
         }
 
 

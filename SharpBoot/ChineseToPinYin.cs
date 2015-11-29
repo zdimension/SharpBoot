@@ -19,8 +19,7 @@ namespace SharpBoot
                 {
                     sb.Append(string.Join(" ", Program.GetCulture()
                         .TextInfo.ToTitleCase(string.Join(" ",
-                            Pinyin4net.PinyinHelper.ToHanyuPinyinStringArray(c,
-                                new HanyuPinyinOutputFormat() {ToneType = HanyuPinyinToneType.WITH_TONE_NUMBER})[0]))) + " ");
+                            Pinyin4net.PinyinHelper.ToHanyuPinyinStringArray(c)[0]))) + " ");
                 }
                 else sb.Append(c);
             }

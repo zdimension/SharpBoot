@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using SharpBoot.Properties;
@@ -144,6 +145,8 @@ namespace SharpBoot
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+
+            Program.SupportAccent = bloader is Syslinux;
 
             var f = Program.GetTemporaryDirectory();
 
@@ -315,14 +318,14 @@ namespace SharpBoot
                     });
 
                     File.WriteAllText(Path.Combine(sylp, c.ToLower().Replace(" ", "")) + bloader.FileExt,
-                        bloader.GetCode(t));
+                        bloader.GetCode(t), Encoding.GetEncoding(437));
                     main.Items.Add(new BootMenuItem(c, c, MenuItemType.Category, "", false));
                 }
 
                 ii++;
             }
             if (bloader is Syslinux)
-                File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main));
+                File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main), Encoding.GetEncoding(437));
             else if (bloader is Grub4DOS)
                 File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
 
@@ -383,7 +386,7 @@ namespace SharpBoot
                     p.WaitForExit();
 
             }
-
+            Program.SupportAccent = false;
 
             ext.Close();
         }

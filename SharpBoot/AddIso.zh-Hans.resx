@@ -223,7 +223,4 @@
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value> </value>
-  </data>
 </root>
