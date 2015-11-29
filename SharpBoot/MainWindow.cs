@@ -7,9 +7,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Resources;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -145,11 +142,21 @@ namespace SharpBoot
             else cbxLng.SelectedItem = ar.Select(x => x.it).First();
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         public MainWindow()
         {
             DoubleBuffered = true;
             SetStyle(
-                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw,
+                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer | ControlStyles.ResizeRedraw,
                 true);
 
             InitializeComponent();
@@ -414,7 +421,7 @@ namespace SharpBoot
 
         private int lastIndex = -1;
 
-        private bool temporary = false;
+        private bool temporary;
 
 
 
@@ -447,7 +454,7 @@ namespace SharpBoot
                 InitializeComponent();
                 if (!sel.TwoLetterISOLanguageName.Contains("zh"))
                 {
-                    this.Size = new Size(1006, 754);
+                    Size = new Size(1006, 754);
                 }
                 SetSize();
                 cbxLng.Items.Clear();

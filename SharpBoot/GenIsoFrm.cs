@@ -66,7 +66,7 @@ namespace SharpBoot
 
         public delegate void ChangeProgressBarDelegate(int val, int max);
 
-        public bool _usb = false;
+        public bool _usb;
 
         public GenIsoFrm(string output, bool usb)
         {
@@ -138,7 +138,7 @@ namespace SharpBoot
 
         public Size Res { get; set; }
 
-        public bool abort = false;
+        public bool abort;
 
 
         public void Generate()
@@ -187,16 +187,15 @@ namespace SharpBoot
                     }
                     else
                     {
-                        if(res == 3)
+                        switch (res)
                         {
-                            MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            abort = true;
-                            return;
-                        }
-                        else if(res == 2)
-                        {
-                            abort = true;
-                            return;
+                            case 3:
+                                MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                abort = true;
+                                return;
+                            case 2:
+                                abort = true;
+                                return;
                         }
                         if(MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Cancel)
                         {
@@ -332,7 +331,7 @@ namespace SharpBoot
 
             if(_usb)
             {
-                ChangeProgress(23, 100, String.Format(Strings.InstallingBoot, bloader.Name, OutputFilepath));
+                ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, bloader.Name, OutputFilepath));
                 BootloaderInst.Install(OutputFilepath, bloader.FolderName);
                 GenF(f);
             }

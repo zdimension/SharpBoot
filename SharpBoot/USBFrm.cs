@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Management;
 using System.Windows.Forms;
-using SharpBoot.Properties;
 
 namespace SharpBoot
 {
@@ -56,6 +52,7 @@ namespace SharpBoot
             btnOK.Enabled = cbxUSB.SelectedIndex != -1;
         }
 
+        // ReSharper disable once ConvertToAutoPropertyWhenPossible
         public ComboBox TheComboBox => comboBox;
 
         public void SetProgress (int v)
@@ -70,7 +67,6 @@ namespace SharpBoot
        
 
         public event EventHandler BtnClicked = (sender, args) => { };
-        public event EventHandler OnFinished = (sender, args) => { };
 
         private void btnOK_Click(object sender, EventArgs e)
         {

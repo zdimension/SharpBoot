@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace SharpBoot
@@ -33,7 +31,7 @@ namespace SharpBoot
             HideCaret(rtbMyWebsite.Handle);
         }
 
-        private void lvTranslators_DoubleClick(object sender, System.EventArgs e)
+        private void lvTranslators_DoubleClick(object sender, EventArgs e)
         {
             if(lvTranslators.SelectedItems.Count == 1)
             {

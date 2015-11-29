@@ -5,7 +5,7 @@ namespace SharpBoot
 {
     public partial class AskPath : AskPForm
     {
-        public AskPath()
+        public AskPath() 
         {
             InitializeComponent();
         }

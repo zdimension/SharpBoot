@@ -1,11 +1,14 @@
-﻿namespace SharpBoot
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace SharpBoot
 {
     partial class USBFrm
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -138,15 +141,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnAnnul;
-        private System.Windows.Forms.ComboBox cbxUSB;
-        private System.Windows.Forms.Label lblHeader;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblCbx;
-        private System.Windows.Forms.ProgressBar pbxPrg;
-        private System.Windows.Forms.Label lblPercent;
-        private System.Windows.Forms.ComboBox comboBox;
+        private Panel panel1;
+        private Button btnOK;
+        private Button btnAnnul;
+        private ComboBox cbxUSB;
+        private Label lblHeader;
+        private Label label2;
+        private Label lblCbx;
+        private ProgressBar pbxPrg;
+        private Label lblPercent;
+        private ComboBox comboBox;
     }
 }

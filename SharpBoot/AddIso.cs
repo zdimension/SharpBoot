@@ -2,10 +2,8 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Net;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -176,7 +174,7 @@ namespace SharpBoot
 
         private Thread th;
 
-        private bool changing = false;
+        private bool changing;
 
         private void md5stuff()
         {

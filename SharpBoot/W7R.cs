@@ -10,8 +10,6 @@
 // https://windows7renderer.codeplex.com/
 
 
-
-
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -981,7 +979,7 @@ namespace W7R
         protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
         {
             if ((e.ToolStrip is MenuStrip) ||
-                (e.ToolStrip is ToolStrip) ||
+                (e.ToolStrip != null) ||
                 (e.ToolStrip is ContextMenuStrip) ||
                 (e.ToolStrip is ToolStripDropDownMenu))
             {

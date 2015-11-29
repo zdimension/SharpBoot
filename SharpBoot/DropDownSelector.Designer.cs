@@ -1,11 +1,15 @@
-﻿namespace SharpBoot
+﻿using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace SharpBoot
 {
     partial class DropDownSelector
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Nettoyage des ressources utilisées.
@@ -28,24 +32,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.comboBox = new ComboBox();
             this.SuspendLayout();
             // 
             // comboBox
             // 
             this.comboBox.DisplayMember = "Disp";
-            this.comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(0, 28);
+            this.comboBox.Location = new Point(0, 28);
             this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(432, 23);
+            this.comboBox.Size = new Size(432, 23);
             this.comboBox.TabIndex = 9;
             this.comboBox.ValueMember = "Value";
             // 
             // DropDownSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new SizeF(7F, 15F);
+            this.AutoScaleMode = AutoScaleMode.Font;
             this.Controls.Add(this.comboBox);
             this.Name = "DropDownSelector";
             this.Controls.SetChildIndex(this.comboBox, 0);
@@ -56,6 +60,6 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox;
+        private ComboBox comboBox;
     }
 }

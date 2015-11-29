@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -306,7 +305,7 @@ namespace SharpBoot
                         new ISOV("1919086a97af4092342933a5eccbab62",
                             "Edubuntu 14.04",
                             "http://cdimage.ubuntu.com/edubuntu/releases/14.04/release/edubuntu-14.04-dvd-i386.iso",
-                            "")),
+                            "edubuntu-14.04-dvd-i386.iso")),
                     new ISOInfo(
                         "Kubuntu",
                         ISODesc.kubuntu,
@@ -315,7 +314,7 @@ namespace SharpBoot
                         new ISOV("327cf4202f8e2601ce0d772082c84b86",
                             "Kubuntu 14.04",
                             "http://cdimage.ubuntu.com/kubuntu/releases/14.04/release/kubuntu-14.04-desktop-i386.iso",
-                            "")),
+                            "kubuntu-14.04-desktop-i386.iso")),
                     new ISOInfo(
                         "Lubuntu",
                         ISODesc.lubuntu,
@@ -324,7 +323,7 @@ namespace SharpBoot
                         new ISOV("b0d1c58c8515ab40382d01f59655ba85",
                             "Lubuntu 14.04",
                             "http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.iso",
-                            "")),
+                            "lubuntu-14.04-desktop-i386.iso")),
                     new ISOInfo(
                         "Ubuntu GNOME",
                         ISODesc.ubuntugnome,
@@ -333,7 +332,7 @@ namespace SharpBoot
                         new ISOV("ab5c39caef103694fe97bda23412ff00",
                             "Ubuntu GNOME 14.04",
                             "http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/release/ubuntu-gnome-14.04-desktop-i386.iso",
-                            "")),
+                            "ubuntu-gnome-14.04-desktop-i386.iso")),
                     new ISOInfo(
                         "Ubuntu Server",
                         ISODesc.ubuntuserver,
@@ -342,7 +341,7 @@ namespace SharpBoot
                         new ISOV("08d25bf879e353686a974b7b14ae7d81",
                             "Ubuntu Server 14.04",
                             "http://releases.ubuntu.com/14.04/ubuntu-14.04-server-i386.iso",
-                            "")),
+                            "ubuntu-14.04-server-i386.iso")),
                     new ISOInfo(
                         "Ubuntu Studio",
                         ISODesc.ubuntustudio,
@@ -351,7 +350,7 @@ namespace SharpBoot
                         new ISOV("75cdb9b7cb42e4bd04d2554e6142764c",
                             "Ubuntu Studio 14.04",
                             "http://cdimage.ubuntu.com/ubuntustudio/releases/14.04/release/ubuntustudio-14.04-dvd-i386.iso",
-                            "")),
+                            "ubuntustudio-14.04-dvd-i386.iso")),
                     new ISOInfo(
                         "Xubuntu",
                         ISODesc.xubuntu,
@@ -360,7 +359,7 @@ namespace SharpBoot
                         new ISOV("ccd326466b705bc324a20dd45cb3de82",
                             "Xubuntu 14.04",
                             "http://cdimage.ubuntu.com/xubuntu/releases/14.04/release/xubuntu-14.04-desktop-i386.iso",
-                            ""))
+                            "xubuntu-14.04-desktop-i386.iso"))
                 }.OrderBy(item => item.Category).ToList();
             });
             Task.WaitAll(th);

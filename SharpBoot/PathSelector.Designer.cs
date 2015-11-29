@@ -1,11 +1,17 @@
-﻿namespace SharpBoot
+﻿using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+using SharpBoot.Properties;
+
+namespace SharpBoot
 {
     partial class PathSelector
     {
         /// <summary> 
         /// Variable nécessaire au concepteur.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary> 
         /// Nettoyage des ressources utilisées.
@@ -28,36 +34,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.tbxDest = new System.Windows.Forms.TextBox();
+            this.btnBrowse = new Button();
+            this.tbxDest = new TextBox();
             this.SuspendLayout();
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowse.Image = global::SharpBoot.Properties.Resources.folder;
-            this.btnBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBrowse.Location = new System.Drawing.Point(402, 27);
+            this.btnBrowse.Anchor = ((AnchorStyles)((AnchorStyles.Bottom | AnchorStyles.Right)));
+            this.btnBrowse.Image = Resources.folder;
+            this.btnBrowse.ImeMode = ImeMode.NoControl;
+            this.btnBrowse.Location = new Point(402, 27);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(31, 25);
+            this.btnBrowse.Size = new Size(31, 25);
             this.btnBrowse.TabIndex = 7;
             this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            this.btnBrowse.Click += new EventHandler(this.btnBrowse_Click);
             // 
             // tbxDest
             // 
-            this.tbxDest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxDest.Location = new System.Drawing.Point(0, 28);
+            this.tbxDest.Anchor = ((AnchorStyles)(((AnchorStyles.Bottom | AnchorStyles.Left) 
+            | AnchorStyles.Right)));
+            this.tbxDest.Location = new Point(0, 28);
             this.tbxDest.Name = "tbxDest";
-            this.tbxDest.Size = new System.Drawing.Size(396, 23);
+            this.tbxDest.Size = new Size(396, 23);
             this.tbxDest.TabIndex = 6;
-            this.tbxDest.TextChanged += new System.EventHandler(this.tbxDest_TextChanged);
+            this.tbxDest.TextChanged += new EventHandler(this.tbxDest_TextChanged);
             // 
             // PathSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new SizeF(7F, 15F);
+            this.AutoScaleMode = AutoScaleMode.Font;
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.tbxDest);
             this.Name = "PathSelector";
@@ -69,7 +75,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.TextBox tbxDest;
+        private Button btnBrowse;
+        private TextBox tbxDest;
     }
 }

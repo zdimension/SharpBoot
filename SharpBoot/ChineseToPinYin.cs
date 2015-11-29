@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Text;
-using System.Text.RegularExpressions;
-using Pinyin4net.Format;
+using Pinyin4net;
 
 namespace SharpBoot
 {
@@ -19,7 +15,7 @@ namespace SharpBoot
                 {
                     sb.Append(string.Join(" ", Program.GetCulture()
                         .TextInfo.ToTitleCase(string.Join(" ",
-                            Pinyin4net.PinyinHelper.ToHanyuPinyinStringArray(c)[0]))) + " ");
+                            PinyinHelper.ToHanyuPinyinStringArray(c)[0]))) + " ");
                 }
                 else sb.Append(c);
             }

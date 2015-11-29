@@ -2,10 +2,8 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Management;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
-using System.Security.Permissions;
 using System.Text;
 using System.Windows.Forms;
 
@@ -234,7 +232,7 @@ namespace SharpBoot
                 if (handler != null)
                     ProgressChanged += handler;
 
-                bool result = CopyFileEx(Source, Destination, new CopyProgressRoutine(CopyProgressHandler), IntPtr.Zero, ref IsCancelled, copyFileFlags);
+                bool result = CopyFileEx(Source, Destination, CopyProgressHandler, IntPtr.Zero, ref IsCancelled, copyFileFlags);
                 if (!result)
                     throw new Win32Exception(Marshal.GetLastWin32Error());
             }
@@ -269,7 +267,7 @@ namespace SharpBoot
 
         [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool CopyFileEx(string lpExistingFileName, string lpNewFileName, CopyProgressRoutine lpProgressRoutine, IntPtr lpData, ref Int32 pbCancel, CopyFileFlags dwCopyFlags);
+        private static extern bool CopyFileEx(string lpExistingFileName, string lpNewFileName, CopyProgressRoutine lpProgressRoutine, IntPtr lpData, ref int pbCancel, CopyFileFlags dwCopyFlags);
 
         private delegate CopyProgressResult CopyProgressRoutine(long TotalFileSize, long TotalBytesTransferred, long StreamSize, long StreamBytesTransferred, uint dwStreamNumber, CopyProgressCallbackReason dwCallbackReason,
                                                         IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData);

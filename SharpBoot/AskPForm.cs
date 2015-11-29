@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Drawing;
 using System.Windows.Forms;
 
 namespace SharpBoot
 {
     public class AskPForm : Form
     {
+        public AskPForm()
+        {
+            InitializeComponent();
+        }
+
         public virtual string FileName { get; }
 
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // AskPForm
             // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "AskPForm";
-            this.ResumeLayout(false);
+            ClientSize = new Size(284, 261);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "AskPForm";
+            ResumeLayout(false);
 
         }
     }

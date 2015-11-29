@@ -323,37 +323,11 @@ namespace wyDay.Controls
                     bounds.Width - dropDownRectangle.Width - internalBorder,
                     bounds.Height - (internalBorder * 2) + 2);
 
-            //bool drawSplitLine = (State == PushButtonState.Hot || State == PushButtonState.Pressed || !Application.RenderWithVisualStyles);
-            bool drawSplitLine = false;
 
             if (RightToLeft == RightToLeft.Yes)
             {
                 dropDownRectangle.X = bounds.Left + 1;
                 focusRect.X = dropDownRectangle.Right;
-
-/*
-                if (drawSplitLine)
-                {
-                    // draw two lines at the edge of the dropdown button
-                    g.DrawLine(SystemPens.ButtonShadow, bounds.Left + SplitSectionWidth, BorderSize,
-                        bounds.Left + SplitSectionWidth, bounds.Bottom - BorderSize);
-                    g.DrawLine(SystemPens.ButtonFace, bounds.Left + SplitSectionWidth + 1, BorderSize,
-                        bounds.Left + SplitSectionWidth + 1, bounds.Bottom - BorderSize);
-                }
-*/
-            }
-            else
-            {
-/*
-                if (drawSplitLine)
-                {
-                    // draw two lines at the edge of the dropdown button
-                    g.DrawLine(SystemPens.ButtonShadow, bounds.Right - SplitSectionWidth, BorderSize,
-                        bounds.Right - SplitSectionWidth, bounds.Bottom - BorderSize);
-                    g.DrawLine(SystemPens.ButtonFace, bounds.Right - SplitSectionWidth - 1, BorderSize,
-                        bounds.Right - SplitSectionWidth - 1, bounds.Bottom - BorderSize);
-                }
-*/
             }
 
             // Draw an arrow in the correct location
