@@ -58,6 +58,7 @@ namespace SharpBoot
             this.ilTranslators.Images.SetKeyName(1, "flag_france.png");
             this.ilTranslators.Images.SetKeyName(2, "flag_romania.png");
             this.ilTranslators.Images.SetKeyName(3, "flag_china.png");
+            this.ilTranslators.Images.SetKeyName(4, "flag_taiwan.png");
             // 
             // richTextBox1
             // 
