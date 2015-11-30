@@ -67,7 +67,7 @@ namespace SharpBoot
         public static string GetVersion()
         {
             var v = Assembly.GetEntryAssembly().GetName().Version;
-            return v.Major + "." + v.Minor;
+            return v.Major + "." + v.Minor + (v.Build == 0 ? "" : "." + v.Build);
         }
 
         public static void ClrTmp()
