@@ -38,7 +38,6 @@ namespace SharpBoot
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnAnnul = new System.Windows.Forms.Button();
-            this.ofpISO = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,12 +82,6 @@ namespace SharpBoot
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.UseVisualStyleBackColor = true;
             // 
-            // ofpISO
-            // 
-            this.ofpISO.DefaultExt = "iso";
-            resources.ApplyResources(this.ofpISO, "ofpISO");
-            this.ofpISO.SupportMultiDottedExtensions = true;
-            // 
             // AskPath
             // 
             resources.ApplyResources(this, "$this");
@@ -115,6 +108,5 @@ namespace SharpBoot
         private Panel panel1;
         private Button btnOK;
         private Button btnAnnul;
-        private SaveFileDialog ofpISO;
     }
 }

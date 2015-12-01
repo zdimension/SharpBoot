@@ -230,6 +230,9 @@
     <EmbeddedResource Include="About.ro.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="About.ru.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="About.zh-Hans.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
@@ -248,11 +251,17 @@
     <EmbeddedResource Include="AddIso.ro.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.ru.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddIso.zh-Hans.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.zh-Hant.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.ru.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.zh-Hans.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
@@ -290,12 +299,16 @@
     <EmbeddedResource Include="DropDownSelector.resx">
       <DependentUpon>DropDownSelector.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.ru.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.zh-Hans.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.ru.resx" />
     <EmbeddedResource Include="ISOCat.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.zh-Hans.Designer.cs</LastGenOutput>
@@ -303,6 +316,9 @@
     <EmbeddedResource Include="ISOCat.zh-Hant.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.zh-Hant.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.ru.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.zh-Hans.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -316,6 +332,8 @@
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.ru.resx" />
+    <EmbeddedResource Include="Strings.uk.resx" />
     <EmbeddedResource Include="Strings.zh-Hant.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.zh-Hant.Designer.cs</LastGenOutput>
@@ -405,6 +423,9 @@
     <EmbeddedResource Include="Strings.ro.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ro.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.ru.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.zh-Hans.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>

@@ -59,6 +59,8 @@ namespace SharpBoot
             this.ilTranslators.Images.SetKeyName(2, "flag_romania.png");
             this.ilTranslators.Images.SetKeyName(3, "flag_china.png");
             this.ilTranslators.Images.SetKeyName(4, "flag_taiwan.png");
+            this.ilTranslators.Images.SetKeyName(5, "flag_russia.png");
+            this.ilTranslators.Images.SetKeyName(6, "flag_ukraine.png");
             // 
             // richTextBox1
             // 
@@ -104,7 +106,9 @@ namespace SharpBoot
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items1"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items2"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items3"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items4")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items4"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items5"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items6")))});
             this.lvTranslators.LargeImageList = this.ilTranslators;
             this.lvTranslators.MultiSelect = false;
             this.lvTranslators.Name = "lvTranslators";
@@ -148,9 +152,9 @@ namespace SharpBoot
         private CustomListView lvTranslators;
         private ColumnHeader clmnName;
         private ImageList ilTranslators;
-        private ColumnHeader clmnURL;
         private RichTextBox richTextBox1;
         private RichTextBox rtbMyWebsite;
         private RichTextBox rbnHelpTranslate;
+        private ColumnHeader clmnURL;
     }
 }

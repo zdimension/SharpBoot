@@ -228,6 +228,7 @@ namespace SharpBoot
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk);
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
+            ChangeProgressBar(10, 100);
             ext.Extract(Path.Combine(archs, "bloader.7z"), isodir);
 
             if (bloader is Syslinux)
@@ -237,27 +238,28 @@ namespace SharpBoot
                     Resolution = Res,
                     noback = IsoBackgroundImage == "$$NONE$$"
                 };
+                ChangeProgressBar(20, 100);
                 File.WriteAllText(Path.Combine(sylp, "theme.cfg"), theme.GetCode());
             }
 
             Image img = null;
-
+            ChangeProgressBar(30, 100);
             if (IsoBackgroundImage == "")
             {
                 var ms = new MemoryStream(Resources.sharpboot);
                 img = Image.FromStream(ms);
             }
             else if (IsoBackgroundImage != "$$NONE$$") img = Image.FromFile(IsoBackgroundImage);
-
+            ChangeProgressBar(35, 100);
             bloader.SetImage(img, Res);
-
+            ChangeProgressBar(45, 100);
             if (!_usb)
             {
                 ext.ExtractionFinished += delegate { ChangeProgress(50, 100, Strings.Extracting.FormatEx("Mkisofs")); };
 
                 ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
             }
-
+            ChangeProgressBar(60, 100);
             Program.SafeDel(archs);
 
             // copier les fichiers dans le rep temporaire

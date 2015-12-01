@@ -126,7 +126,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 327</value>
+    <value>495, 364</value>
   </data>
   <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -157,8 +157,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABM
-        CgAAAk1TRnQBSQFMAgEBBQEAAcQBAQHEAQEBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAs
+        CwAAAk1TRnQBSQFMAgEBBwEAASABAgEgAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -186,23 +186,26 @@
         AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
         AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
         AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/0EAEPMwABAgMAABIA5N
-        ASAwAAEgAU0MRwFNASAwAAHpAU0GJgZHAU0BIDAAAYoB1AbNASYFRwHjASAwAAGKAdUBrAG0AQkB2wKs
-        ASYFRwEWASAwAAGKArQBBwH0Ad0BugGsASYERwEmAXUBIDAAAYoBtAEJAbwB/wH0AQkBrAImA0cBJgGU
-        ASAwAAGKAbsBtAG1AbwBCQG0AawGJgGUASAwAAGKAQkBpgG0AbsBtAGmAawFJgH5AZoBIDAAAYoHCQGa
-        Br0BIDAAAbQHigH5BiABb/AAQPMBUw4yAVMBrASKAbwEBwG8BSABrAOmAccGMhUgATIO+wEyAYoEsgb/
-        ASYDTQEgAaYErAH7BDgB+wFHA00CIA5NASABMgFeDDgBXgEyAYoBswOyBv8BJgJHAU0BIAGmAa0DrAH7
-        BDgB+wNHAU0CIAFNDEcBTQEgATIBXgw4AV4BMgGKAbMDsgH2BPQB/wEmAkcBTQEgAaYBswOsAfsEOAH7
-        A0cBTQIgAU0MRwFNAiABFgxNARYBIAGKAbkDsgH2AfQC8wH0Af8BJgJHAeMBIAGmAbMCrAHHBTgB+wNH
-        AeMCIAHjAkcB+wFHAfsHRwHjAiABdQxHAXUBIAGKAboDsgH2BPMB9AEmAkcBFgEgAaYBtAKsAccFOAH7
-        A0cBFgIgARYMRwEWAiABdQEmCkcBJgF1ASABigG6ArIBrAH0AfMC8gHzAfQDJgF1ASABpgG0AccBrAHH
-        BTgB+wJHASYBdQIgAXUBJgRHAfsFRwEmAXUCIAGUDCYBlAEgAYoB3AGsAbIBrAHzBPIB8wMmAZQBIAGm
-        AbQDxwY4AkcBJgGUAiABlAEmAvsIRwEmAZQBIAERAe8BFQpEARUB7wERAYoBCQOsARsE8QEZAyYBlAEg
-        AaYBCQPHBjgBRwImAZQCIAGUAfkC+wImAfsGJgGUASABEQEHAUMKFQFDAQcBEQGKAQkDrAHxBPAB8gH5
-        ASYB+QGaASABpgEJAaYCxwY4AfkBJgH5AZoCIAGaBPkBJgH5BSYB+QGaASABEQ4HAREBigQJAfYE9AH/
-        AZoDvQEgAaYECQKgBMMEvQIgDr0BIAHtDhEB7QG6BIoBvAQHAbwEIAFvAbQDpgHHBjIEIAFvARYOIAEW
-        gAABQgFNAT4HAAE+AwABKAMAAUADAAEgAwABAQEAAQEGAAEBFgAD/wEAAv9uAAL/BgAC/wYACP9oABD/
-        Cw==
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/0EAIPMB9A7zAfQQABAg
+        ASUOIAElAXkOMgF5EAABIA5NAiAOFwEgATIO+wEyEAABIAFNDEcBTQIgARcMRwEXASABMgFeDPsBXgEy
+        EAAB6QFNBiYGRwFNAiABFwImCEcCJgEXASABMgFeDDgBXgEyEAABigHUBs0BJgVHAeMBIAGsAdsMswHb
+        AawBMgFeDDgBXgEyEAABigHVAawBtAEJAdsCrAEmBUcBFgEgAYoBugyzAboBigEyAV4MOAFeATIQAAGK
+        ArQBBwH0Ad0BugGsASYERwEmAXUBIAGKAboBrAqtAawBugGKAawBCQzbAQkBrBAAAYoBtAEJAbwB/wH0
+        AQkBrAImA0cBJgGUASABigG6DIoBugGKAawBGQzbARkBrBAAAYoBuwG0AbUBvAEJAbQBrAYmAZQBIAH3
+        AfQC8AgZAvAB9AH3AawBGQzUARkBrBAAAYoBCQGmAbQBuwG0AaYBrAUmAfkBmgEgAQcO/wEHAawBGQHT
+        CtQB0wEZAawQAAGKBwkBmga9ASABBw7/AQcBrA4ZAawQAAG0B4oB+QYgAW8B8AEHDO8BBwHwAboOrAG6
+        0ABA8wFTDjIBUwGsBIoBvAQHAbwFIAGsA6YBxwYyFSABMg77ATIBigSyBv8BJgNNASABpgSsAfsEOAH7
+        AUcDTQIgDk0BIAEyAV4MOAFeATIBigGzA7IG/wEmAkcBTQEgAaYBrQOsAfsEOAH7A0cBTQIgAU0MRwFN
+        ASABMgFeDDgBXgEyAYoBswOyAfYE9AH/ASYCRwFNASABpgGzA6wB+wQ4AfsDRwFNAiABTQxHAU0CIAEW
+        DE0BFgEgAYoBuQOyAfYB9ALzAfQB/wEmAkcB4wEgAaYBswKsAccFOAH7A0cB4wIgAeMCRwH7AUcB+wdH
+        AeMCIAF1DEcBdQEgAYoBugOyAfYE8wH0ASYCRwEWASABpgG0AqwBxwU4AfsDRwEWAiABFgxHARYCIAF1
+        ASYKRwEmAXUBIAGKAboCsgGsAfQB8wLyAfMB9AMmAXUBIAGmAbQBxwGsAccFOAH7AkcBJgF1AiABdQEm
+        BEcB+wVHASYBdQIgAZQMJgGUASABigHcAawBsgGsAfME8gHzAyYBlAEgAaYBtAPHBjgCRwEmAZQCIAGU
+        ASYC+whHASYBlAEgAREB7wEVCkQBFQHvAREBigEJA6wBGwTxARkDJgGUASABpgEJA8cGOAFHAiYBlAIg
+        AZQB+QL7AiYB+wYmAZQBIAERAQcBQwoVAUMBBwERAYoBCQOsAfEE8AHyAfkBJgH5AZoBIAGmAQkBpgLH
+        BjgB+QEmAfkBmgIgAZoE+QEmAfkFJgH5AZoBIAERDgcBEQGKBAkB9gT0Af8BmgO9ASABpgQJAqAEwwS9
+        AiAOvQEgAe0OEQHtAboEigG8BAcBvAQgAW8BtAOmAccGMgQgAW8BFg4gARaAAAFCAU0BPgcAAT4DAAEo
+        AwABQAMAASADAAEBAQABAQYAAQEWAAP/AQAG/2oABv8CAAb/AgAI/2gAEP8L
 </value>
   </data>
   <data name="richTextBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -212,7 +215,7 @@
     <value>14, 9</value>
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 220</value>
+    <value>556, 257</value>
   </data>
   <data name="richTextBox1.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -276,7 +279,7 @@ Copyright © 2014-2015 zdimension
     <value>Bottom, Left</value>
   </data>
   <data name="rbnHelpTranslate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 331</value>
+    <value>14, 368</value>
   </data>
   <data name="rbnHelpTranslate.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 18</value>
@@ -307,6 +310,9 @@ Copyright © 2014-2015 zdimension
   </data>
   <data name="clmnName.Width" type="System.Int32, mscorlib">
     <value>440</value>
+  </data>
+  <data name="clmnURL.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="clmnURL.Width" type="System.Int32, mscorlib">
     <value>0</value>
@@ -414,19 +420,54 @@ Copyright © 2014-2015 zdimension
         AAAB+P////r///8KAAAAAAAAAAAaAAEAAQUFAAAAMVN5c3RlbS5XaW5kb3dzLkZvcm1zLkxpc3RWaWV3
         SXRlbStMaXN0Vmlld1N1Ykl0ZW0EAAAABHRleHQEbmFtZQVzdHlsZQh1c2VyRGF0YQEBBAI+U3lzdGVt
         LldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtK0xpc3RWaWV3U3ViSXRlbStTdWJJdGVtU3R5bGUCAAAA
-        AgAAAAYJAAAAG2h0dHA6Ly81N2xpZmUuYmxvZ3Nwb3QuY29tLwYKAAAAEExpc3RWaWV3U3ViSXRlbTAK
-        CgUHAAAAE1N5c3RlbS5EcmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsYU3lz
-        dGVtLkRyYXdpbmcuRm9udFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAAAwAA
-        AAYLAAAACFNlZ29lIFVJAAAQQQX0////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVf
-        XwAIAwAAAAAAAAAF8////xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMA
-        AAADAAAACw==
+        AgAAAAYJAAAAG2h0dHA6Ly81N2xpZmUuYmxvZ3Nwb3QuY29tLwoKCgUHAAAAE1N5c3RlbS5EcmF3aW5n
+        LkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsYU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxl
+        AwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAAAwAAAAYKAAAACFNlZ29lIFVJAAAQQQX1
+        ////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAAAF9P///xtTeXN0
+        ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMAAAADAAAACw==
+</value>
+  </data>
+  <data name="lvTranslators.Items5" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
+        ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
+        PWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0HAAAA
+        BFRleHQKSW1hZ2VJbmRleAlCYWNrQ29sb3IHQ2hlY2tlZARGb250CUZvcmVDb2xvchdVc2VJdGVtU3R5
+        bGVGb3JTdWJJdGVtcwEABAAEBAAIFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAAETU3lzdGVtLkRyYXdp
+        bmcuRm9udAMAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAAAQIAAAAGBAAAABIgIE1pY2hhZWwgT3Jp
+        c2hpY2gFAAAABfv///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xv
+        cgVzdGF0ZQEAAAAJBwcDAAAACgAAAAAAAAAABQABAAAJBgAAAAH5////+////woAAAAAAAAAABoAAQAB
+        BQYAAAATU3lzdGVtLkRyYXdpbmcuRm9udAQAAAAETmFtZQRTaXplBVN0eWxlBFVuaXQBAAQECxhTeXN0
+        ZW0uRHJhd2luZy5Gb250U3R5bGUDAAAAG1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAMAAAADAAAA
+        BggAAAAIU2Vnb2UgVUkAABBBBff///8YU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAQAAAAd2YWx1ZV9f
+        AAgDAAAAAAAAAAX2////G1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAEAAAAHdmFsdWVfXwAIAwAA
+        AAMAAAAL
+</value>
+  </data>
+  <data name="lvTranslators.Items6" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
+        ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
+        PWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0HAAAA
+        BFRleHQKSW1hZ2VJbmRleAlCYWNrQ29sb3IHQ2hlY2tlZARGb250CUZvcmVDb2xvchdVc2VJdGVtU3R5
+        bGVGb3JTdWJJdGVtcwEABAAEBAAIFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAAETU3lzdGVtLkRyYXdp
+        bmcuRm9udAMAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAAAQIAAAAGBAAAABIgIE1pY2hhZWwgT3Jp
+        c2hpY2gGAAAABfv///8UU3lzdGVtLkRyYXdpbmcuQ29sb3IEAAAABG5hbWUFdmFsdWUKa25vd25Db2xv
+        cgVzdGF0ZQEAAAAJBwcDAAAACgAAAAAAAAAABQABAAAJBgAAAAH5////+////woAAAAAAAAAABoAAQAB
+        BQYAAAATU3lzdGVtLkRyYXdpbmcuRm9udAQAAAAETmFtZQRTaXplBVN0eWxlBFVuaXQBAAQECxhTeXN0
+        ZW0uRHJhd2luZy5Gb250U3R5bGUDAAAAG1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAMAAAADAAAA
+        BggAAAAIU2Vnb2UgVUkAABBBBff///8YU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAQAAAAd2YWx1ZV9f
+        AAgDAAAAAAAAAAX2////G1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAEAAAAHdmFsdWVfXwAIAwAA
+        AAMAAAAL
 </value>
   </data>
   <data name="lvTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 228</value>
+    <value>14, 239</value>
   </data>
   <data name="lvTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>556, 97</value>
+    <value>556, 123</value>
   </data>
   <data name="lvTranslators.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -450,7 +491,7 @@ Copyright © 2014-2015 zdimension
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>582, 362</value>
+    <value>582, 399</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>

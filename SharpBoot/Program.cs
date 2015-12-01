@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -69,6 +70,12 @@ namespace SharpBoot
             var v = Assembly.GetEntryAssembly().GetName().Version;
             return v.Major + "." + v.Minor + (v.Build == 0 ? "" : "." + v.Build);
         }
+
+        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>
+        {
+            CultureInfo.GetCultureInfo("ru"),
+            CultureInfo.GetCultureInfo("uk")
+        }; 
 
         public static void ClrTmp()
         {
@@ -145,8 +152,8 @@ namespace SharpBoot
             return GetSizeString(b);
         }
 
-        /*[DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
-        public static extern long StrFormatByteSize(long fileSize, System.Text.StringBuilder buffer, int bufferSize);*/
+        [DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
+        public static extern long StrFormatByteSize(long fileSize, System.Text.StringBuilder buffer, int bufferSize);
 
         public enum Platform
         {
@@ -183,9 +190,12 @@ namespace SharpBoot
 
         public static string GetSizeString(long file)
         {
-            /*var sb = new StringBuilder(20);
-            StrFormatByteSize(file, sb, sb.Capacity);
-            return sb.ToString();*/
+            if (UseSystemSize.Contains(Thread.CurrentThread.CurrentUICulture))
+            {
+                var sb = new StringBuilder(20);
+                StrFormatByteSize(file, sb, sb.Capacity);
+                return sb.ToString();
+            }
 
             string[] suf =
             {

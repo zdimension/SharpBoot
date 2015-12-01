@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BootFromHDD" xml:space="preserve">
+    <value>Загрузиться с жёсткого диска</value>
+  </data>
+  <data name="BootloaderInstalled" xml:space="preserve">
+    <value>{0} был успешно установлен на {1}</value>
+  </data>
+  <data name="CalcIn" xml:space="preserve">
+    <value>Время: {0}</value>
+  </data>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>Язык смениться после перезагрузки приложения</value>
+  </data>
+  <data name="ChkOf" xml:space="preserve">
+    <value>Тип хэшсуммы {0} - {1}</value>
+  </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Выберите загрузчик, который вы хотите установить:</value>
+  </data>
+  <data name="Copying" xml:space="preserve">
+    <value>Копирование {0}</value>
+  </data>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>Копирование файлов ISO...</value>
+  </data>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>Невозможно определить, какая ОС содержится в этом образе.</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Создать мультизагрузочную флеш-памьять</value>
+  </data>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>Создание ISO-образа...</value>
+  </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Создание мултизагрузочной флеш-памьяти...</value>
+  </data>
+  <data name="DownComplete" xml:space="preserve">
+    <value>Загрузка завершена.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Загрузить</value>
+  </data>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>Распаковка базового диска...</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>Выполнение {0}</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>Файловая система:</value>
+  </data>
+  <data name="FileUnit" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Неизвестная ошибка при форматировании</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Форматирование</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Начать процедуру форматирования?\nЭто УНИЧТОЖИТ все данные на накопителе!</value>
+  </data>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>Генерирование главного меню...</value>
+  </data>
+  <data name="GenMenu" xml:space="preserve">
+    <value>Генерирование {0}</value>
+  </data>
+  <data name="GenMenus" xml:space="preserve">
+    <value>Генерирование подменю...</value>
+  </data>
+  <data name="HDD" xml:space="preserve">
+    <value>Жёсткий диск</value>
+  </data>
+  <data name="Init" xml:space="preserve">
+    <value>Подготовка...</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Установить</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Установить загрузчик на флеш-памьять</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Установка {0} на {1}</value>
+  </data>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>Этот ISO-образ был успешно создан.\nВы хотите протестировать его в QEMU?</value>
+  </data>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>Образ создан</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>ISO-образ</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Главное меню</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Вы должны иметь права администратора для того что бы отформатировать флеш-памьять.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Другое</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>Выбраный раздел слишком большой для накопителя {0}</value>
+  </data>
+  <data name="PicFilter" xml:space="preserve">
+    <value>Изображения</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(рекомендовано)</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot использует следующее ПО:</value>
+  </data>
+</root>
