@@ -6,4 +6,4 @@ You can also pick a custom background image (automatically resized to chosen res
 # Translators
 |German|Romanian|Chinese (Simplified)|Chinese (Traditional)|Your language
 |---|---|---|---|---|
-|[SplittyDev](http://www.github.com/SplittyDev)|[Chronium](http://www.github.com/chronium)|[CallumDev](http://www.github.com/CallumDev)|Jen Hung-Chia|[Click here to translate!](https://poeditor.com/join/project/GDNqzsHFSk)|
+|[SplittyDev](http://www.github.com/SplittyDev)|[Chronium](http://www.github.com/chronium)|[CallumDev](http://www.github.com/CallumDev)|[Jen Hung-Chia](http://57life.blogspot.com/)|[Click here to translate!](https://poeditor.com/join/project/GDNqzsHFSk)|
