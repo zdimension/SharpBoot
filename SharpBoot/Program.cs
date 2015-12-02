@@ -58,6 +58,8 @@ namespace SharpBoot
             MessageBox.Show(unhandledExceptionEventArgs.ExceptionObject.ToString(), "Unhandled exception");
         }
 
+        public static bool UseCyrillicFont => GetEnc().CodePage == 866;
+
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             if (e.Exception is FileNotFoundException)
@@ -76,6 +78,18 @@ namespace SharpBoot
             CultureInfo.GetCultureInfo("ru"),
             CultureInfo.GetCultureInfo("uk")
         }; 
+
+        public static Encoding GetEnc()
+        {
+            switch(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
+            {
+                case "ru":
+                case "uk":
+                    return Encoding.GetEncoding(866);
+                default:
+                    return Encoding.GetEncoding(437);
+            }
+        }
 
         public static void ClrTmp()
         {
@@ -216,7 +230,7 @@ namespace SharpBoot
             str = str.ChineseToPinyin();
 
             string supported =
-                string.Concat(Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => Encoding.GetEncoding(437).GetString(new[] {(byte) x})[0]));
+                string.Concat(Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => GetEnc().GetString(new[] {(byte) x})[0]));
             var normalizedString = str.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
 

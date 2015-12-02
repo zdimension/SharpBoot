@@ -146,7 +146,7 @@ namespace SharpBoot
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-            Program.SupportAccent = bloader is Syslinux;
+            
 
             var f = Program.GetTemporaryDirectory();
 
@@ -240,6 +240,10 @@ namespace SharpBoot
                 };
                 ChangeProgressBar(20, 100);
                 File.WriteAllText(Path.Combine(sylp, "theme.cfg"), theme.GetCode());
+                if(Program.UseCyrillicFont)
+                {
+                    File.WriteAllBytes(Path.Combine(sylp, "cyrillic_cp866.psf"), Resources._866_8x16);
+                }
             }
 
             Image img = null;
@@ -270,7 +274,6 @@ namespace SharpBoot
                 copyfile:
                 try
                 {
-                    //File.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)));
                     XCopy.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)), true, true,
                         (o, pce) => 
                         {
@@ -318,15 +321,15 @@ namespace SharpBoot
                         return true;
                     });
 
-                    File.WriteAllText(Path.Combine(sylp, c.ToLower().Replace(" ", "")) + bloader.FileExt,
-                        bloader.GetCode(t), Encoding.GetEncoding(437));
-                    main.Items.Add(new BootMenuItem(c, c, MenuItemType.Category, "", false));
+                    File.WriteAllText(Path.Combine(sylp, Utils.CRC32(c)) + bloader.FileExt,
+                        bloader.GetCode(t), Program.GetEnc());
+                    main.Items.Add(new BootMenuItem(c, c, MenuItemType.Category, Utils.CRC32(c), false));
                 }
 
                 ii++;
             }
             if (bloader is Syslinux)
-                File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main), Encoding.GetEncoding(437));
+                File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main), Program.GetEnc());
             else if (bloader is Grub4DOS)
                 File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
 

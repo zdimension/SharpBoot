@@ -4,6 +4,22 @@ You can choose between Syslinux and Grub4DOS, you can choose filesystem (when ma
 You can also pick a custom background image (automatically resized to chosen resolution).
 
 # Translators
-|German|Romanian|Chinese (Simplified)|Chinese (Traditional)|Your language
-|---|---|---|---|---|
-|[SplittyDev](http://www.github.com/SplittyDev)|[Chronium](http://www.github.com/chronium)|[CallumDev](http://www.github.com/CallumDev)|[Jen Hung-Chia](http://57life.blogspot.com/)|[Click here to translate!](https://poeditor.com/join/project/GDNqzsHFSk)|
+<table>
+  <tr>
+    <th>German</th>
+	<th>Romanian</th>
+	<th>Chinese (Simplified)</th>
+	<th>Chinese (Traditional)</th>
+	<th>Russian</th>
+	<th>Ukrainian</th>
+	<th>Your language</th>
+  </tr>
+  <tr>
+    <td><a href="http://www.github.com/SplittyDev">SplittyDev</a></td>
+    <td><a href="http://www.github.com/chronium">Chronium</a></td>
+    <td><a href="http://www.github.com/CallumDev">CallumDev</a></td>
+    <td><a href="http://57life.blogspot.com">Jen Hung-Chia</a></td>
+    <td colspan="2">Michael Orishich</td>
+    <td><a href="https://poeditor.com/join/project/GDNqzsHFSk">Click here to translate!</a></td>
+  </tr>
+</table>

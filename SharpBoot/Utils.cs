@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -111,6 +112,27 @@ namespace SharpBoot
                 }
             }
             return formatted.ToString();
+        }
+
+        public static string CRC32(string ct)
+        {
+            return CRC32(Program.GetEnc().GetBytes(ct));
+        }
+
+        public static string CRC32(byte[] ct)
+        {
+            var table = new uint[256];
+            for(var i = 0; i < 256; i++)
+            {
+                var cur = (uint) i;
+                for (var j = 0; j < 8; j++)
+                    if ((cur & 1) == 1)
+                        cur = (cur >> 1) ^ 0xedb88320;
+                    else
+                        cur = cur >> 1;
+                table[i] = cur;
+            }
+            return (~ct.Aggregate(0xffffffff, (current, t) => (current >> 8) ^ table[t])).ToString("x8");
         }
 
         [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]

@@ -126,6 +126,9 @@
   <data name="dban" xml:space="preserve">
     <value>DBAN is a self-contained boot disk that automatically deletes the contents of any disk it detects.</value>
   </data>
+  <data name="easeuspm" xml:space="preserve">
+    <value>EaseUS Partition Master is software that manages disk partitioning. The product enables users to resize FAT16, FAT32, or NTFS partitions and to create, copy, format, merge, remove, and split partitions while keeping data intact.</value>
+  </data>
   <data name="edubuntu" xml:space="preserve">
     <value>Edubuntu is the Education version of Ubuntu.</value>
   </data>

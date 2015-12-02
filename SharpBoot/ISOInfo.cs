@@ -68,6 +68,10 @@ namespace SharpBoot
             Filename = fn;
             Versions = vers.ToList();
             Versions.ForEach(x => x.Parent = this);
+            if(!Versions.Any(x => x.Latest) && Versions.Count > 0)
+            {
+                Versions.Where(t => LatestVersion == t).ToList()[0].Latest = true;
+            }
         }
 
         public static void RefreshISOs()
@@ -88,7 +92,7 @@ namespace SharpBoot
                     ,
                     new ISOInfo(
                         "EaseUS Partition Master WinPE Edition",
-                        "",
+                        ISODesc.easeuspm,
                         ISOCat.Partition,
                         "easeuspartitionmasterwinpeedition.iso") {NoDL = true},
                     new ISOInfo(

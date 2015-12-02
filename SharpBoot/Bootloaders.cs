@@ -33,6 +33,8 @@ namespace SharpBoot
         string CmdArgs { get; set; }
 
         Size Resolution { get; set; }
+
+        bool SupportAccent { get; set; }
     }
 
     public class Syslinux : IBootloader
@@ -46,6 +48,7 @@ namespace SharpBoot
         public string FileExt { get; set; } = ".cfg";
 
         public Size Resolution { get; set; } = new Size(640, 480);
+        public bool SupportAccent { get; set; } = true;
 
         public string GetCode(BootMenu menu)
         {
@@ -84,15 +87,11 @@ namespace SharpBoot
                 case MenuItemType.Category:
                     code += "LABEL -\n";
                     code += "KERNEL /boot/syslinux/vesamenu.c32\n";
-                    code += "APPEND /boot/syslinux/" + item.Name.ToLower().Replace(" ", "") + ".cfg\n";
+                    code += "APPEND /boot/syslinux/" + item.IsoName + ".cfg\n";
                     break;
                 case MenuItemType.ISO:
                     code += "LABEL -\n";
                     code += "LINUX /boot/syslinux/grub.exe\n";
-                    /*code +=
-                        string.Format(
-                            "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map --heads=0 --sectors-per-track=0 /images/{0} (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/{0} (0xff);map --hook;chainloader (0xff)\"\n",
-                            item.IsoName);*/
                     code +=
                         string.Format(
                             "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (0xff);map --hook;root (0xff);chainloader (0xff);boot\"\n",
@@ -101,10 +100,6 @@ namespace SharpBoot
                 case MenuItemType.IMG:
                     code += "LABEL -\n";
                     code += "LINUX /boot/syslinux/grub.exe\n";
-                    /*code +=
-                        string.Format(
-                            "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (fd0) || map --mem /images/{0} (fd0);map --hook;chainloader (fd0)+1;rootnoverify (fd0)\"\n",
-                            item.IsoName);*/
                     code +=
                         string.Format(
                             "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (fd0);map --hook;chainloader (fd0)+1;rootnoverify (fd0);boot\"\n",
@@ -197,6 +192,7 @@ namespace SharpBoot
         public string FolderName { get; set; } = "grub4dos";
 
         public Size Resolution { get; set; } = new Size(640, 480);
+        public bool SupportAccent { get; set; } = false;
 
         public string GetCode(BootMenu menu)
         {
@@ -236,7 +232,7 @@ namespace SharpBoot
                     code += "chainloader (hd0,0)\n";
                     break;
                 case MenuItemType.Category:
-                    code += "configfile /boot/grub4dos/" + item.Name.ToLower().Replace(" ", "") + ".lst\n";
+                    code += "configfile /boot/grub4dos/" + item.IsoName + ".lst\n";
                     break;
                 case MenuItemType.IMG:
                 case MenuItemType.ISO:
@@ -369,7 +365,8 @@ namespace SharpBoot
                    (noback ? "" : "menu background /boot/syslinux/sharpboot.jpg\n") +
                    string.Concat(Entries.Select(x => x.GetCode())) +
                    "menu helpmsgrow 19\n" +
-                   "menu helpmsendrow -1\n";
+                   "menu helpmsendrow -1\n" + 
+                   (Program.UseCyrillicFont ? "FONT /boot/syslinux/cyrillic_cp866.psf\n" : "");
         }
 
         public List<ThemeEntry> Entries = new List<ThemeEntry>
