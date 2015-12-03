@@ -34,7 +34,7 @@ namespace SharpBoot
 
         public void loadkeys()
         {
-            foreach (var drive in DriveInfo.GetDrives().Where(d => d.DriveType == DriveType.Removable && d.IsReady))
+            foreach (var drive in DriveInfo.GetDrives().Where(d => (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed) && d.IsReady))
             {
                 cbxUSB.Items.Add(new driveitem
                 {

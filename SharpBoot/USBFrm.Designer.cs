@@ -47,12 +47,12 @@ namespace SharpBoot
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.lblPercent);
             this.panel1.Controls.Add(this.pbxPrg);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // lblPercent

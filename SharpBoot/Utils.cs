@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
@@ -133,6 +134,56 @@ namespace SharpBoot
                 table[i] = cur;
             }
             return (~ct.Aggregate(0xffffffff, (current, t) => (current >> 8) ^ table[t])).ToString("x8");
+        }
+
+
+        // http://stackoverflow.com/a/10018438/2196124
+        public static bool IsExternalDisk(string driveLetter)
+        {
+            var retVal = false;
+            driveLetter = driveLetter.TrimEnd('\\');
+
+            // browse all USB WMI physical disks
+            foreach (
+                ManagementObject drive in
+                    new ManagementObjectSearcher("select DeviceID, MediaType,InterfaceType from Win32_DiskDrive").Get())
+            {
+                // associate physical disks with partitions
+                var partitionCollection =
+                    new ManagementObjectSearcher(
+                        $"associators of {{Win32_DiskDrive.DeviceID='{drive["DeviceID"]}'}} " +
+                        "where AssocClass = Win32_DiskDriveToDiskPartition").Get();
+
+                foreach (var logicalCollection in from ManagementObject partition in partitionCollection
+                                                  where partition != null
+                                                  select new ManagementObjectSearcher(
+                                                      $"associators of {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} " +
+                                                      "where AssocClass= Win32_LogicalDiskToPartition").Get())
+                {
+                    foreach (var volumeEnumerator in from ManagementObject logical in logicalCollection
+                                                     where logical != null
+                                                     select new ManagementObjectSearcher(
+                                                         $"select DeviceID from Win32_LogicalDisk where Name='{logical["Name"]}'")
+                                                         .Get().GetEnumerator())
+                    {
+                        volumeEnumerator.MoveNext();
+
+                        var volume = (ManagementObject) volumeEnumerator.Current;
+
+                        if (
+                            driveLetter.ToLowerInvariant()
+                                .Equals(volume["DeviceID"].ToString().ToLowerInvariant()) &&
+                            (drive["MediaType"].ToString().ToLowerInvariant().Contains("external") ||
+                             drive["InterfaceType"].ToString().ToLowerInvariant().Contains("usb")))
+                        {
+                            retVal = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            return retVal;
         }
 
         [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
