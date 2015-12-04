@@ -133,10 +133,19 @@
   <data name="lblHeader.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 28</value>
   </data>
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 11.25pt</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 20</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>选取您的 USB 随身碟:</value>
+  </data>
   <data name="lblCbx.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+    <value>Microsoft YaHei UI, 11.25pt</value>
   </data>
   <data name="lblCbx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
+    <value>69, 20</value>
   </data>
 </root>

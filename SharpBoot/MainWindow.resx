@@ -490,7 +490,7 @@
     <value>clmnSize</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Type" xml:space="preserve">
-    <value>wyDay.Controls.SplitButton, SharpBoot, Version=3.3.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>wyDay.Controls.SplitButton, SharpBoot, Version=3.4.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="gbxLng.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 231</value>
@@ -1187,7 +1187,7 @@ the ISO or IMG file here</value>
     <value>49</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>uk</value>
+    <value>zh-Hans</value>
   </metadata>
   <metadata name="clmnFilePath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

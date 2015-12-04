@@ -130,18 +130,18 @@
   <data name="btnInstBoot.Text" xml:space="preserve">
     <value>Встановити завантажувач на USB-накопичувач</value>
   </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Спробувати в QEMU</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>Створити ISO-файл</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Перетягніть ISO-файли сюди</value>
+  </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Спробувати в QEMU</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Створити ISO-файл</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Розширення екрану</value>
@@ -161,18 +161,6 @@
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> Хєшсумма</value>
   </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Фонова картинка</value>
-  </data>
-  <data name="gbxTitle.Text" xml:space="preserve">
-    <value>Заголовок</value>
-  </data>
-  <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Видалити</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Всього</value>
-  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Стандартна</value>
   </data>
@@ -184,6 +172,18 @@
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Огляд</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Фонова картинка</value>
+  </data>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>Заголовок</value>
+  </data>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value> Видалити</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Всього</value>
   </data>
   <data name="clmnName.HeaderText" xml:space="preserve">
     <value>Ім’я</value>

@@ -203,7 +203,7 @@
     <value>188, 59</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>啟動程式套裝</value>
+    <value>啟動引導器</value>
   </data>
   <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 480</value>

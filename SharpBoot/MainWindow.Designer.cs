@@ -498,6 +498,7 @@ namespace SharpBoot
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
             this.gbxTest.ResumeLayout(false);
+            this.gbxTest.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
