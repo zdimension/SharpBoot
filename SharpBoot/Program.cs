@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using SharpBoot.Properties;
 
 namespace SharpBoot
@@ -32,11 +33,15 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
+            
+
             ClrTmp();
 
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
-            ISOInfo.RefreshISOs();
+            //ISOInfo.RefreshISOs();
+
+            
 
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
@@ -107,9 +112,12 @@ namespace SharpBoot
         private static void Default_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             Settings.Default.Save();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
-            ISOInfo.RefreshISOs();
+            if (e.PropertyName == "Lang")
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+                ISOInfo.RefreshISOs();
+            }
         }
 
         public static string ShortLang()

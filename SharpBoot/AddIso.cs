@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
@@ -29,12 +30,12 @@ namespace SharpBoot
 
         private void AddIso_Load(object sender, EventArgs e)
         {
-            var isos = ISOInfo.ISOs.Where(x => !x.NoDL).Select(x => new { Val = x, x.Name, x.Category, x.LatestVersion.Hash });
+            var isos = ISOInfo.ISOs.Where(x => !x.NoDL).Select(x => new { Val = x, x.Name, Category = x.CategoryTxt, x.LatestVersion.Hash });
 
             cbxISOS.DataSource = isos;
             var iso2 = isos.ToList();
-            iso2.Insert(0, new { Val = new ISOInfo("", "", ""), Name = Strings.Other, Category = "", Hash = "" });
-            iso2.AddRange(ISOInfo.ISOs.Where(x => x.NoDL).Select(x => new { Val = x, x.Name, x.Category, Hash = "" }));
+            iso2.Insert(0, new { Val = new ISOInfo("", new Dictionary<CultureInfo, string>(), IsoCategory.None), Name = Strings.Other, Category = "", Hash = "" });
+            iso2.AddRange(ISOInfo.ISOs.Where(x => x.NoDL).Select(x => new { Val = x, x.Name, Category = x.CategoryTxt, Hash = "" }));
             cbxDetIso.DataSource = iso2;
             cbxDetIso.DisplayMember = "Name";
             fempty = true;

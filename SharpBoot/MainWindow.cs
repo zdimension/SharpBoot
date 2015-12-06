@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using SharpBoot.Properties;
 using W7R;
+using Timer = System.Timers.Timer;
 
 namespace SharpBoot
 {
@@ -99,7 +100,7 @@ namespace SharpBoot
             {
                 name = ver.Parent.Name;
                 desc = ver.Parent.Description;
-                cat = ver.Parent.Category;
+                cat = ver.Parent.CategoryTxt;
             }
             else
             {
@@ -115,7 +116,7 @@ namespace SharpBoot
                     {
                         name = ver.Name;
                         desc = ver.Parent.Description;
-                        cat = ver.Parent.Category;
+                        cat = ver.Parent.CategoryTxt;
                     }
                 }
             }
@@ -152,6 +153,8 @@ namespace SharpBoot
             }
         }
 
+        public Timer updTmr;
+
         public MainWindow()
         {
             DoubleBuffered = true;
@@ -176,8 +179,20 @@ namespace SharpBoot
             cbxBootloader.SelectedIndex = 0;
             cbxRes.SelectedIndex = 0;
             cbxBackType.SelectedIndex = 0;
+
+            updTmr = new Timer(600000);
+            updTmr.Elapsed += UpdTmr_Elapsed;
+            updTmr.Enabled = true;
+
+            
         }
 
+        private void UpdTmr_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            mniUpdate.Visible = true;
+            ISOInfo.RefreshISOs();
+            mniUpdate.Visible = false;
+        }
 
         private static void g_GenerationFinished(GenIsoFrm g)
         {
@@ -412,6 +427,7 @@ namespace SharpBoot
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            UpdTmr_Elapsed(this, null);
         }
 
         private bool changing;
