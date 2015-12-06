@@ -61,7 +61,445 @@ namespace SharpBoot.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" ?>\r\n<apps>\r\n\t<!--\r\n\tCategories:\r\n\t\r\n\t-1\t\tNone\r\n\t0\t\tBackup\r\n\t1" +
+            "\t\tBIOS\r\n\t2\t\tCPU\r\n\t3\t\tLinux\r\n\t4\t\tPartition\r\n\t5\t\tPassword\r\n\t6\t\tRAM\r\n\t7\t\tRecovery\r\n" +
+            "\t8\t\tTesting\r\n\t9\t\tUtility\r\n\t\r\n\t-->\r\n    <app>\r\n        <name>Kali Linux</name>\r\n " +
+            "       <category>3</category>\r\n        <filenameRegex>^kali-linux-([0-9.]+)-([0-" +
+            "9a-z]+).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r" +
+            "\n            <desc lang=\"de\">Kali Linux ist eine auf Debian beruhende Distributi" +
+            "on, die vor allem Programme für Sicherheitstests versammelt. Obwohl Kali sich in" +
+            " erster Linie an professionelle Computersicherheitsfachleute richtet, steht es a" +
+            "uch Privatanwendern zur Verfügung.</desc>\r\n            <desc lang=\"fr\">Kali Linu" +
+            "x est une distribution Linux pour pénétrer les systèmes.</desc>\r\n            <de" +
+            "sc lang=\"ro\">Kali este o distribuție Linux bazată pe Debian GNU / Linux conceput" +
+            "ă pentru securitatea în informatică și gestionată de către Offensive Security. E" +
+            "ste considerat succesorul lui BackTrack Linux.</desc>\r\n            <desc lang=\"e" +
+            "n\">Kali Linux is a penetration testing Linux distribution.</desc>\r\n\t\t\t<desc lang" +
+            "=\"ru\">Kali Linux - GNU/Linux-LiveCD, возникший как результат слияния WHAX и Audi" +
+            "tor Security Collection.</desc>\r\n\t\t\t<desc lang=\"zh-Hans\">Kali Linux是基于Debian的Lin" +
+            "ux发行版， 设计用于数位鉴识和渗透测试（英语：Penetration test）。由Offensive Security Ltd维护和资助。最先由Offens" +
+            "ive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linu" +
+            "x发行版。</desc>\r\n\t\t\t<desc lang=\"zh-Hant\">Kali Linux是基於Debian的Linux發行版， 設計用於數位鑑識和滲透測" +
+            "試（英語：Penetration test）。由Offensive Security Ltd維護和資助。最先由Offensive Security的Mati A" +
+            "haroni和Devon Kearns通過重寫BackTrack來完成，BackTrack是他們之前寫的用於取證的Linux發行版。</desc>\r\n     " +
+            "   </description>\r\n        <versions>\r\n            <version>\r\n                <h" +
+            "ash>sha1:8e0f63bc97842b2af6ff34986790efeb10d4d1a0</hash>\r\n                <name>" +
+            "Kali Linux 1.0.7</name>\r\n                <download>http://cdimage.kali.org/kali-" +
+            "1.0.7/kali-linux-1.0.7-i386.iso</download>\r\n                <filenameRegex>/kali" +
+            "-linux-1.0.7-(.*).iso</filenameRegex>\r\n                <isLatest>false</isLatest" +
+            ">\r\n            </version>\r\n            <version>\r\n                <hash>sha1:6e5" +
+            "e6390b9d2f6a54bc980f50d6312d9c77bf30b</hash>\r\n                <name>Kali Linux 2" +
+            ".0 x86</name>\r\n                <download>http://cdimage.kali.org/kali-2.0/kali-l" +
+            "inux-2.0-i386.iso</download>\r\n                <filenameRegex>kali-linux-2.0-i386" +
+            ".iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </v" +
+            "ersion>\r\n            <version>\r\n                <hash>sha1:aaeb89a78f155377282f8" +
+            "1a785aa1b38ee5f8ba0</hash>\r\n                <name>Kali Linux 2.0 x64</name>\r\n   " +
+            "             <download>http://cdimage.kali.org/kali-2.0/kali-linux-2.0-amd64.iso" +
+            "</download>\r\n                <filenameRegex>kali-linux-2.0-amd64.iso</filenameRe" +
+            "gex>\r\n                <isLatest>false</isLatest>\r\n            </version>\r\n      " +
+            "  </versions>\r\n    </app>\r\n    <app>\r\n        <name>Fedora</name>\r\n        <cate" +
+            "gory>3</category>\r\n        <filenameRegex>^Fedora-Live-([A-Za-z]+)-([0-9a-z]+)-(" +
+            "[0-9-]+).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>" +
+            "\r\n            <desc lang=\"de\">Fedora ist eine RPM-basierte Linux-Distribution. Z" +
+            "iel der Entwickler der Distribution ist es, freie Software zu fördern und ein Be" +
+            "triebssystem für eine möglichst vielfältige Zielgruppe zu gestalten.</desc>\r\n   " +
+            "         <desc lang=\"fr\">Fedora, anciennement Fedora Core, est un système d’expl" +
+            "oitation libre et une distribution GNU/Linux communautaire développée par le pro" +
+            "jet Fedora et sponsorisée par l’entreprise Red Hat, qui lui fournit des développ" +
+            "eurs ainsi que des moyens financiers et logistiques.</desc>\r\n            <desc l" +
+            "ang=\"ro\">Fedora este o distribuție Linux bazată pe pachete RPM dezvoltată de com" +
+            "unitatea Proiectul Fedora și sponsorizată de Red Hat.</desc>\r\n            <desc " +
+            "lang=\"en\">Fedora is a fast, stable, and powerful operating system for everyday u" +
+            "se built by a worldwide community of friends.</desc>\r\n\t\t\t<desc lang=\"ru\">Fedora " +
+            "(англ. \"мягкая фетровая шляпа\", произносится \"федо́ра\", ранее Fedora Core) - дис" +
+            "трибутив операционной системы GNU/Linux. Этот дистрибутив спонсируется фирмой Re" +
+            "d Hat и поддерживается сообществом.</desc>\r\n        </description>\r\n        <ver" +
+            "sions>\r\n            <version>\r\n                <hash>sha256:b115c5653b855de2353e" +
+            "41ff0c72158350f14a020c041462f35ba2a47bd1e33b</hash>\r\n                <name>Fedor" +
+            "a 20.1</name>\r\n                <download>http://download.fedoraproject.org/pub/f" +
+            "edora/linux/releases/20/Live/i386/Fedora-Live-Desktop-i686-20-1.iso</download>\r\n" +
+            "                <filenameRegex>Fedora-Live-Desktop-i686-20-1.iso</filenameRegex>" +
+            "\r\n                <isLatest>false</isLatest>\r\n            </version>\r\n          " +
+            "  <version>\r\n                <hash>sha256:6e4c47b582ece2b431ee95d6f453945d11e28c" +
+            "712f7619b178cb31979138f884</hash>\r\n                <name>Fedora 22.3 x86</name>\r" +
+            "\n                <download>http://mir01.syntis.net/fedora/linux/releases/22/Work" +
+            "station/i386/iso/Fedora-Live-Workstation-i686-22-3.iso</download>\r\n             " +
+            "   <filenameRegex>Fedora-Live-Workstation-i686-22-3.iso</filenameRegex>\r\n       " +
+            "         <isLatest>true</isLatest>\r\n            </version>\r\n            <version" +
+            ">\r\n                <hash>sha256:615abfc89709a46a078dd1d39638019aa66f62b0ff832533" +
+            "4f1af100551bb6cf</hash>\r\n                <name>Fedora 22.3 x64</name>\r\n         " +
+            "       <download>http://mir01.syntis.net/fedora/linux/releases/22/Workstation/x8" +
+            "6_64/iso/Fedora-Live-Workstation-x86_64-22-3.iso</download>\r\n                <fi" +
+            "lenameRegex>Fedora-Live-Workstation-x86_64-22-3.iso</filenameRegex>\r\n           " +
+            "     <isLatest>false</isLatest>\r\n            </version>\r\n        </versions>\r\n  " +
+            "  </app>\r\n    <app>\r\n        <name>Fusion Linux</name>\r\n        <category>3</cat" +
+            "egory>\r\n        <filenameRegex>^Fusion-Linux-([0-9]+).iso$</filenameRegex>\r\n    " +
+            "    <noDl>false</noDl>\r\n        <description>\r\n            <desc lang=\"fr\">Fusio" +
+            "n Linux est un systeme conçu pour les ordinateurs de bureau.</desc>\r\n           " +
+            " <desc lang=\"en\">Fusion Linux is a Linux distribution that has desktop usability" +
+            ".</desc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n   " +
+            "             <hash>6e17614e3cb23db3f63446f55b179d17</hash>\r\n                <nam" +
+            "e>Fusion Linux 15</name>\r\n                <download>http://fusion.nestabilni.com" +
+            "/Fusion-Linux-15/Fusion-Linux-15.iso</download>\r\n                <filenameRegex>" +
+            "Fusion-Linux-15.iso</filenameRegex>\r\n                <isLatest>false</isLatest>\r" +
+            "\n            </version>\r\n            <version>\r\n                <hash>4caa6e3c43" +
+            "8b645839711fa8da4f17fe</hash>\r\n                <name>Fusion Linux 16 64-bit</nam" +
+            "e>\r\n                <download>http://fusion.nestabilni.com/current/Fusion-Linux-" +
+            "16-64bit.iso</download>\r\n                <filenameRegex>Fusion-Linux-16-64bit.is" +
+            "o</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </vers" +
+            "ion>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Inquisitor</name" +
+            ">\r\n        <category>3</category>\r\n        <filenameRegex>^inq-live-([0-9a-z.]+)" +
+            "-([0-9a-z-]+).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <descrip" +
+            "tion>\r\n            <desc lang=\"fr\">Inquisitor est un système de test materiel.</" +
+            "desc>\r\n            <desc lang=\"en\">Inquisitor is an open-source hardware testing" +
+            " and certification system.</desc>\r\n        </description>\r\n        <versions>\r\n " +
+            "           <version>\r\n                <hash>25ab080c12f540236bca7fad901f7ff0</ha" +
+            "sh>\r\n                <name>Inquisitor Live 3.0</name>\r\n                <download" +
+            ">http://downloads.sourceforge.net/project/inq/inquisitor/3.0/inq-live-3.0-x86.is" +
+            "o</download>\r\n                <filenameRegex>inq-live-3.0-(.*).iso</filenameRege" +
+            "x>\r\n                <isLatest>false</isLatest>\r\n            </version>\r\n        " +
+            "    <version>\r\n                <hash>c7fef1289f36b4c25ee4057a9988d975</hash>\r\n  " +
+            "              <name>Inquisitor Live 3.1 beta 2 x64</name>\r\n                <down" +
+            "load>http://downloads.sourceforge.net/project/inq/inquisitor/3.1-beta2/inq-live-" +
+            "3.1beta2-amd64-debian.iso</download>\r\n                <filenameRegex>/inq-live-3" +
+            ".1(.*).iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n         " +
+            "   </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Knoppix" +
+            "</name>\r\n        <category>3</category>\r\n        <filenameRegex>^KNOPPIX_V([0-9." +
+            "]+)CD-[0-9-]{10}-[A-Z]{2}.iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n    " +
+            "    <description>\r\n            <desc lang=\"de\">Knoppix ist eine freie GNU/Linux-" +
+            "Distribution, deren Hauptanwendungsbereich im Live-Betrieb liegt. Sie wird von K" +
+            "laus Knopper entwickelt, von dessen Namen sich die Benennung ableitet.</desc>\r\n " +
+            "           <desc lang=\"fr\">Knoppix est une distribution Linux basée sur Debian.<" +
+            "/desc>\r\n            <desc lang=\"ro\">Knoppix este un sistem de operare cu nucleu " +
+            "Linux ce se bazeaza pe Debian GNU/Linux.</desc>\r\n            <desc lang=\"en\">Kno" +
+            "ppix is a Debian-based Linux distribution.</desc>\r\n        </description>\r\n     " +
+            "   <versions>\r\n            <version>\r\n                <hash>43e1bf11bd52d88d6137" +
+            "9fdd38fe869c</hash>\r\n                <name>Knoppix 7.2.0</name>\r\n               " +
+            " <download>http://ftp.free.fr/pub/Distributions_Linux/knoppix/KNOPPIX_V7.2.0CD-2" +
+            "013-06-16-EN.iso</download>\r\n                <filenameRegex>/KNOPPIX_(.*).iso</f" +
+            "ilenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </version>" +
+            "\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>NetbootCD</name>\r\n  " +
+            "      <category>3</category>\r\n        <filenameRegex>^NetbootCD-[0-9.]+.iso$</fi" +
+            "lenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n            <de" +
+            "sc lang=\"fr\">NetbootCD est un live CD Linux basé sur Tiny Core Linux.</desc>\r\n  " +
+            "          <desc lang=\"en\">NetbootCD is a Linux live CD based on Tiny Core Linux." +
+            "</desc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n    " +
+            "            <hash>75ef50099a4887df5195a31adb474db0</hash>\r\n                <name" +
+            ">NetbootCD 5.3.3</name>\r\n                <download>http://downloads.tuxfamily.or" +
+            "g/netbootcd/5.3.3/NetbootCD-5.3.3.iso</download>\r\n                <filenameRegex" +
+            ">/NetbootCD-(.*).iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r" +
+            "\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <na" +
+            "me>Ubuntu</name>\r\n        <category>3</category>\r\n        <filenameRegex>^ubuntu" +
+            "(.*).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n  " +
+            "          <desc lang=\"de\">Ubuntu (auch: Ubuntu Linux) ist eine kostenlose Linux-" +
+            "Distribution, die auf Debian basiert. Der Name Ubuntu bedeutet auf Zulu etwa \"Me" +
+            "nschlichkeit\" und bezeichnet eine afrikanische Philosophie.</desc>\r\n            " +
+            "<desc lang=\"fr\">Ubuntu est une distribution Linux rapide, gratuite et facile à u" +
+            "tiliser.</desc>\r\n            <desc lang=\"ro\">Ubuntu este un sistem de operare ba" +
+            "zat pe Linux pentru computerele personale, servere și netbook-uri.</desc>\r\n     " +
+            "       <desc lang=\"en\">Ubuntu is a fast, free and incredibly easy to use Linux d" +
+            "istribution.</desc>\r\n        </description>\r\n        <versions>\r\n            <ve" +
+            "rsion>\r\n                <hash>09eb43dcfce2b7246bdd6e8108e755df</hash>\r\n         " +
+            "       <name>Ubuntu 12.04.5 LTS x86</name>\r\n                <download>http://rel" +
+            "eases.ubuntu.com/12.04.5/ubuntu-12.04.5-desktop-i386.iso</download>\r\n           " +
+            "     <filenameRegex>/ubuntu-12.04(.*)-i386.iso</filenameRegex>\r\n                " +
+            "<isLatest>false</isLatest>\r\n            </version>\r\n            <version>\r\n     " +
+            "           <hash>48b4edf237c489eebbfef208c2650d11</hash>\r\n                <name>" +
+            "Ubuntu 12.04.5 LTS x64</name>\r\n                <download>http://releases.ubuntu." +
+            "com/12.04.5/ubuntu-12.04.5-desktop-amd64.iso</download>\r\n                <filena" +
+            "meRegex>/ubuntu-12.04(.*)-amd64.iso</filenameRegex>\r\n                <isLatest>f" +
+            "alse</isLatest>\r\n            </version>\r\n            <version>\r\n                " +
+            "<hash>c4d4d037d7d0a05e8f526d18aa25fb5e</hash>\r\n                <name>Ubuntu 14.0" +
+            "4 x86</name>\r\n                <download>http://releases.ubuntu.com/14.04/ubuntu-" +
+            "14.04-desktop-i386.iso</download>\r\n                <filenameRegex>/ubuntu-14.04-" +
+            "(.*).iso</filenameRegex>\r\n                <isLatest>false</isLatest>\r\n          " +
+            "  </version>\r\n            <version>\r\n                <hash>7d483b990de4e1369b76b" +
+            "7b693737191</hash>\r\n                <name>Ubuntu 15.10 x86</name>\r\n             " +
+            "   <download>http://releases.ubuntu.com/15.10/ubuntu-15.10-desktop-i386.iso</dow" +
+            "nload>\r\n                <filenameRegex>/ubuntu-15.10(.*)-i386.iso</filenameRegex" +
+            ">\r\n                <isLatest>false</isLatest>\r\n            </version>\r\n         " +
+            "   <version>\r\n                <hash>ece816e12f97018fa3d4974b5fd27337</hash>\r\n   " +
+            "             <name>Ubuntu 15.10 x64</name>\r\n                <download>http://rel" +
+            "eases.ubuntu.com/15.10/ubuntu-15.10-desktop-amd64.iso</download>\r\n              " +
+            "  <filenameRegex>/ubuntu-15.10(.*)-amd64.iso</filenameRegex>\r\n                <i" +
+            "sLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>" +
+            "\r\n    <app>\r\n        <name>Edubuntu</name>\r\n        <category>3</category>\r\n    " +
+            "    <filenameRegex>^edubuntu(.*).iso$</filenameRegex>\r\n        <noDl>false</noDl" +
+            ">\r\n        <description>\r\n            <desc lang=\"de\">Edubuntu ist eine für die " +
+            "Verwendung in der Schule entwickelte Erweiterung zu Ubuntu, das auf dem Ubuntu L" +
+            "inux Terminal Server Project aufsetzt.</desc>\r\n            <desc lang=\"fr\">Edubu" +
+            "ntu est la version d\'éducation d\'Ubuntu.</desc>\r\n            <desc lang=\"ro\">Edu" +
+            "buntu este o distribuție membră a familiei Ubuntu de distribuții Linux, special " +
+            "proiectată pentru a fi folosită în scopuri educaționale.</desc>\r\n            <de" +
+            "sc lang=\"en\">Edubuntu is the Education version of Ubuntu.</desc>\r\n        </desc" +
+            "ription>\r\n        <versions>\r\n            <version>\r\n                <hash>19190" +
+            "86a97af4092342933a5eccbab62</hash>\r\n                <name>Edubuntu 14.04</name>\r" +
+            "\n                <download>http://cdimage.ubuntu.com/edubuntu/releases/14.04/rel" +
+            "ease/edubuntu-14.04-dvd-i386.iso</download>\r\n                <filenameRegex>edub" +
+            "untu-14.04-dvd-i386.iso</filenameRegex>\r\n                <isLatest>true</isLates" +
+            "t>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        " +
+            "<name>Kubuntu</name>\r\n        <category>3</category>\r\n        <filenameRegex>^ku" +
+            "buntu(.*).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description" +
+            ">\r\n            <desc lang=\"de\">Kubuntu ist eine Ubuntu-Variante mit der Arbeitsu" +
+            "mgebung KDE, die erstmals mit der Version 5.04 erschienen ist.</desc>\r\n         " +
+            "   <desc lang=\"fr\">Kubuntu est la version KDE d\'Ubuntu.</desc>\r\n            <des" +
+            "c lang=\"ro\">Kubuntu este un derivat oficial al Ubuntu ce folosește KDE Plasma De" +
+            "sktop în locul GNOME.</desc>\r\n            <desc lang=\"en\">Kubuntu is the KDE ver" +
+            "sion of Ubuntu.</desc>\r\n        </description>\r\n        <versions>\r\n            " +
+            "<version>\r\n                <hash>327cf4202f8e2601ce0d772082c84b86</hash>\r\n      " +
+            "          <name>Kubuntu 14.04</name>\r\n                <download>http://cdimage.u" +
+            "buntu.com/kubuntu/releases/14.04/release/kubuntu-14.04-desktop-i386.iso</downloa" +
+            "d>\r\n                <filenameRegex>kubuntu-14.04-desktop-i386.iso</filenameRegex" +
+            ">\r\n                <isLatest>true</isLatest>\r\n            </version>\r\n        </" +
+            "versions>\r\n    </app>\r\n    <app>\r\n        <name>Lubuntu</name>\r\n        <categor" +
+            "y>3</category>\r\n        <filenameRegex>^lubuntu(.*).iso$</filenameRegex>\r\n      " +
+            "  <noDl>false</noDl>\r\n        <description>\r\n            <desc lang=\"de\">Lubuntu" +
+            " ist ein Derivat, das für den Einsatz auf leistungsschwächerer Hardware konzipie" +
+            "rt ist. Als Desktop-Umgebung setzt es das besonders ressourcensparende LXDE ein," +
+            " durch den Einsatz von Openbox als Fenstermanager wird nur etwa halb soviel Arbe" +
+            "itsspeicher wie bei Xubuntu benötigt.</desc>\r\n            <desc lang=\"fr\">Lubunt" +
+            "u est la version LXDE d\'Ubuntu.</desc>\r\n            <desc lang=\"en\">Lubuntu is t" +
+            "he LXDE version of Ubuntu.</desc>\r\n        </description>\r\n        <versions>\r\n " +
+            "           <version>\r\n                <hash>b0d1c58c8515ab40382d01f59655ba85</ha" +
+            "sh>\r\n                <name>Lubuntu 14.04</name>\r\n                <download>http:" +
+            "//cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.i" +
+            "so</download>\r\n                <filenameRegex>lubuntu-14.04-desktop-i386.iso</fi" +
+            "lenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </version>\r" +
+            "\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ubuntu GNOME</name>\r\n" +
+            "        <category>3</category>\r\n        <filenameRegex>^ubuntu-gnome(.*).iso$</f" +
+            "ilenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n            <d" +
+            "esc lang=\"de\">Die Variante Ubuntu GNOME (vormals: Ubuntu Gnome Remix) verwendet " +
+            "die Gnome Shell an Stelle von Unity, sowie ein paar andere Gnome-Applikationen, " +
+            "welche in Ubuntu standardmäßig nicht installiert sind.</desc>\r\n            <desc" +
+            " lang=\"fr\">Ubuntu GNOME est l\'édition d\'Ubuntu reposant sur l\'environnement GNOM" +
+            "E.</desc>\r\n            <desc lang=\"en\">Ubuntu GNOME is the GNOME edition of Ubun" +
+            "tu.</desc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n " +
+            "               <hash>ab5c39caef103694fe97bda23412ff00</hash>\r\n                <n" +
+            "ame>Ubuntu GNOME 14.04</name>\r\n                <download>http://cdimage.ubuntu.c" +
+            "om/ubuntu-gnome/releases/14.04/release/ubuntu-gnome-14.04-desktop-i386.iso</down" +
+            "load>\r\n                <filenameRegex>ubuntu-gnome-14.04-desktop-i386.iso</filen" +
+            "ameRegex>\r\n                <isLatest>true</isLatest>\r\n            </version>\r\n  " +
+            "      </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ubuntu Server</name>\r\n  " +
+            "      <category>3</category>\r\n        <filenameRegex>^ubuntu-[0-9.]{5}-server-[0" +
+            "-9a-z]+.iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r" +
+            "\n            <desc lang=\"de\">Die Ubuntu Server Edition ist eine Zusammenstellung" +
+            " mit mehr Serverdiensten statt grafischer Benutzeroberfläche.</desc>\r\n          " +
+            "  <desc lang=\"fr\">Ubuntu Server est la version serveur de la très populaire dist" +
+            "ribution Linux, Ubuntu.</desc>\r\n            <desc lang=\"en\">Ubuntu Server is the" +
+            " server edition of the popular Linux distribution, Ubuntu.</desc>\r\n        </des" +
+            "cription>\r\n        <versions>\r\n            <version>\r\n                <hash>08d2" +
+            "5bf879e353686a974b7b14ae7d81</hash>\r\n                <name>Ubuntu Server 14.04</" +
+            "name>\r\n                <download>http://releases.ubuntu.com/14.04/ubuntu-14.04-s" +
+            "erver-i386.iso</download>\r\n                <filenameRegex>ubuntu-14.04-server-i3" +
+            "86.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            <" +
+            "/version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ubuntu Stud" +
+            "io</name>\r\n        <category>3</category>\r\n        <filenameRegex>^ubuntustudio(" +
+            ".*).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n   " +
+            "         <desc lang=\"de\">Ubuntu Studio ist speziell auf die Anforderungen von Au" +
+            "dio-, Grafik- und Videobearbeitung ausgerichtet. Für solche Zwecke wurde den Ubu" +
+            "ntu-Quellen ein Kernel mit Echtzeitfunktionen hinzugefügt, der dafür keinerlei E" +
+            "nergiesparfunktionen unterstützt.</desc>\r\n            <desc lang=\"fr\">Ubuntu Stu" +
+            "dio est un système gratuit et ouvert pour les gens créatifs.</desc>\r\n           " +
+            " <desc lang=\"ro\">Ubuntu Studio este o variantă de Ubuntu care se concentrează pe" +
+            " editare video, audio și grafică.</desc>\r\n            <desc lang=\"en\">Ubuntu Stu" +
+            "dio is a free and open operating system for creative people.</desc>\r\n        </d" +
+            "escription>\r\n        <versions>\r\n            <version>\r\n                <hash>75" +
+            "cdb9b7cb42e4bd04d2554e6142764c</hash>\r\n                <name>Ubuntu Studio 14.04" +
+            "</name>\r\n                <download>http://cdimage.ubuntu.com/ubuntustudio/releas" +
+            "es/14.04/release/ubuntustudio-14.04-dvd-i386.iso</download>\r\n                <fi" +
+            "lenameRegex>ubuntustudio-14.04-dvd-i386.iso</filenameRegex>\r\n                <is" +
+            "Latest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r" +
+            "\n    <app>\r\n        <name>Xubuntu</name>\r\n        <category>3</category>\r\n      " +
+            "  <filenameRegex>^xubuntu(.*).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n" +
+            "        <description>\r\n            <desc lang=\"de\">Xubuntu ist eine Abwandlung v" +
+            "on Ubuntu, die die ressourcensparende Xfce-Arbeitsumgebung verwendet. Daher eign" +
+            "et sich Xubuntu für ältere Computer mit wenig Arbeitsspeicher, bei denen die Ins" +
+            "tallation der Standardversion problematisch ist.</desc>\r\n            <desc lang=" +
+            "\"fr\">Xubuntu est l\'édition d\'Ubuntu reposant sur l\'environnement Xfce.</desc>\r\n " +
+            "           <desc lang=\"ro\">Xubuntu este o distribuție oficială derivată din Ubun" +
+            "tu, folosind sistemul grafic Xfce.</desc>\r\n            <desc lang=\"en\">Xubuntu i" +
+            "s the Xfce version of Ubuntu.</desc>\r\n        </description>\r\n        <versions>" +
+            "\r\n            <version>\r\n                <hash>ccd326466b705bc324a20dd45cb3de82<" +
+            "/hash>\r\n                <name>Xubuntu 14.04</name>\r\n                <download>ht" +
+            "tp://cdimage.ubuntu.com/xubuntu/releases/14.04/release/xubuntu-14.04-desktop-i38" +
+            "6.iso</download>\r\n                <filenameRegex>xubuntu-14.04-desktop-i386.iso<" +
+            "/filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </versio" +
+            "n>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>EaseUS Partition M" +
+            "aster WinPE Edition</name>\r\n        <category>4</category>\r\n        <filenameReg" +
+            "ex>easeuspartitionmasterwinpeedition.iso</filenameRegex>\r\n        <noDl>true</no" +
+            "Dl>\r\n        <description>\r\n            <desc lang=\"en\">EaseUS Partition Master " +
+            "is software that manages disk partitioning. The product enables users to resize " +
+            "FAT16, FAT32, or NTFS partitions and to create, copy, format, merge, remove, and" +
+            " split partitions while keeping data intact.</desc>\r\n        </description>\r\n   " +
+            "     <versions />\r\n    </app>\r\n    <app>\r\n        <name>Parted Magic</name>\r\n   " +
+            "     <category>4</category>\r\n        <filenameRegex>^pmagic(.*).iso$</filenameRe" +
+            "gex>\r\n        <noDl>true</noDl>\r\n        <description>\r\n            <desc lang=\"" +
+            "en\"></desc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n" +
+            "                <hash>3441b138b43a62a1b6b1d3e4dca12e71</hash>\r\n                <" +
+            "name>Parted Magic 2014-11-19</name>\r\n                <download>www.google.com/se" +
+            "arch?q=Parted Magic 2014-11-19</download>\r\n                <filenameRegex>pmagic" +
+            "_2014_11_19.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n    " +
+            "        </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Cl" +
+            "onezilla</name>\r\n        <category>4</category>\r\n        <filenameRegex>^clonezi" +
+            "lla-live-([0-9]{8})-([a-z]+)-([a-z0-9]+).iso$</filenameRegex>\r\n        <noDl>fal" +
+            "se</noDl>\r\n        <description>\r\n            <desc lang=\"de\">Clonezilla ist ein" +
+            " kostenloses und freies Computerprogramm des taiwanischen National Center for Hi" +
+            "gh Performance Computing (NCHC) zum Herstellen von 1:1-Abbildern von PC-Festplat" +
+            "ten.</desc>\r\n            <desc lang=\"fr\">Clonezilla est un outil de partitionnem" +
+            "ent et de clonage de disques similaire a True Image® ou Norton Ghost®.</desc>\r\n " +
+            "           <desc lang=\"en\">Clonezilla is a partition and disk imaging/cloning pr" +
+            "ogram similar to True Image® or Norton Ghost®.</desc>\r\n        </description>\r\n " +
+            "       <versions>\r\n            <version>\r\n                <hash>95aed0dd50964c3a" +
+            "dcb17183ab1dff37</hash>\r\n                <name>Clonezilla 2.4.2-61</name>\r\n     " +
+            "           <download>http://downloads.sourceforge.net/project/clonezilla/clonezi" +
+            "lla_live_stable/2.4.2-61/clonezilla-live-2.4.2-61-amd64.iso</download>\r\n        " +
+            "        <filenameRegex>/clonezilla-live-2\\.4\\.2-61-(.*).iso</filenameRegex>\r\n   " +
+            "             <isLatest>true</isLatest>\r\n            </version>\r\n        </versio" +
+            "ns>\r\n    </app>\r\n    <app>\r\n        <name>Darik\'s Boot and Nuke</name>\r\n        " +
+            "<category>4</category>\r\n        <filenameRegex>^dban-([0-9.]+)_([a-z0-9]+).iso$<" +
+            "/filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n            " +
+            "<desc lang=\"de\">Darik’s Boot and Nuke (meist abgekürzt mit dem Akronym \"DBAN\") i" +
+            "st ein freies, Linux-basiertes Live-System, dessen Aufgabe einzig das unwiderruf" +
+            "liche Löschen von Festplatten oder anderen beschreibbaren Datenspeichern ist. Im" +
+            " Ergebnis können die Dateien selbst mit forensischen Spezialwerkzeugen nicht wie" +
+            "derhergestellt werden.</desc>\r\n            <desc lang=\"fr\">DBAN est un disque de" +
+            " démarrage qui efface automatiquement le contenu de tous les disques qu\'il détec" +
+            "te.</desc>\r\n            <desc lang=\"en\">DBAN is a self-contained boot disk that " +
+            "automatically deletes the contents of any disk it detects.</desc>\r\n        </des" +
+            "cription>\r\n        <versions>\r\n            <version>\r\n                <hash>d076" +
+            "d4bc510eb39f57196773172ad072</hash>\r\n                <name>Darik\'s Boot and Nuke" +
+            " 2.2.8</name>\r\n                <download>http://downloads.sourceforge.net/projec" +
+            "t/dban/dban/dban-2.2.8/dban-2.2.8_i586.iso</download>\r\n                <filename" +
+            "Regex>/dban-2.2.8_(.*).iso</filenameRegex>\r\n                <isLatest>false</isL" +
+            "atest>\r\n            </version>\r\n            <version>\r\n                <hash>33a" +
+            "1df4171e649462ef9679ac207aa77</hash>\r\n                <name>Darik\'s Boot and Nuk" +
+            "e 2.3.0</name>\r\n                <download>http://downloads.sourceforge.net/proje" +
+            "ct/dban/dban/dban-2.3.0/dban-2.3.0_i586.iso</download>\r\n                <filenam" +
+            "eRegex>/dban-2.3.0_(.*).iso</filenameRegex>\r\n                <isLatest>true</isL" +
+            "atest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n    " +
+            "    <name>GParted</name>\r\n        <category>4</category>\r\n        <filenameRegex" +
+            ">^gparted-live-([0-9.-]+)([0-9a-z]+).iso$</filenameRegex>\r\n        <noDl>false</" +
+            "noDl>\r\n        <description>\r\n            <desc lang=\"de\">GParted (GNU Parted) i" +
+            "st ein freies plattformübergreifendes Partitionierungsprogramm, das mit den graf" +
+            "ischen Oberflächen GParted und QtParted dazu verwendet werden kann, Partitionen " +
+            "und darin liegende Dateisysteme zu bearbeiten und zu überprüfen.</desc>\r\n       " +
+            "     <desc lang=\"fr\">GParted est un gestionnaire de partitions qui permet de red" +
+            "imensionner, copier et déplacer des partitions sans pertes.</desc>\r\n            " +
+            "<desc lang=\"en\">GParted is a free partition manager that enables you to resize, " +
+            "copy, and move partitions without data loss.</desc>\r\n        </description>\r\n   " +
+            "     <versions>\r\n            <version>\r\n                <hash>d57b2f94a54a0f4889" +
+            "9f8e21d070cb40</hash>\r\n                <name>GParted 0.19.0-1</name>\r\n          " +
+            "      <download>http://downloads.sourceforge.net/project/gparted/gparted-live-st" +
+            "able/0.19.0-1/gparted-live-0.19.0-1-i486.iso</download>\r\n                <filena" +
+            "meRegex>/gparted-live-0.19.0-1-(.*).iso</filenameRegex>\r\n                <isLate" +
+            "st>false</isLatest>\r\n            </version>\r\n            <version>\r\n            " +
+            "    <hash>f6e11d722ab8167568bdf6e393c50651</hash>\r\n                <name>GParted" +
+            " 0.24.0-2</name>\r\n                <download>http://downloads.sourceforge.net/pro" +
+            "ject/gparted/gparted-live-stable/0.24.0-2/gparted-live-0.24.0-2-i586.iso</downlo" +
+            "ad>\r\n                <filenameRegex>/gparted-live-0.24.0-2-(.*).iso</filenameReg" +
+            "ex>\r\n                <isLatest>true</isLatest>\r\n            </version>\r\n        " +
+            "</versions>\r\n    </app>\r\n    <app>\r\n        <name>Offline Windows NT Password &a" +
+            "mp; Registry Editor</name>\r\n        <category>5</category>\r\n        <filenameReg" +
+            "ex>^(cd[0-9]{6}).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n        <desc" +
+            "ription>\r\n            <desc lang=\"de\">CHNTPW ist ein Hilfsprogramm, um das Passw" +
+            "ort eines beliebigen Nutzers zurückzusetzen, welcher ein gültiges lokales Benutz" +
+            "erkonto auf einem Windows system hat.</desc>\r\n            <desc lang=\"fr\">CHNTPW" +
+            " est un outil permettant de modifier ou effacer les mot de passe de Windows 95 à" +
+            " 10.</desc>\r\n            <desc lang=\"en\">CHNTPW is a utility to reset the passwo" +
+            "rd of any user that has a valid local account on your Windows system.</desc>\r\n  " +
+            "      </description>\r\n        <versions>\r\n            <version>\r\n               " +
+            " <hash>06bbed5b81475c6899dbb549a755b00d</hash>\r\n                <name>chntpw 201" +
+            "4-02-01</name>\r\n                <download>https://dl.dropboxusercontent.com/u/98" +
+            "959151/chntpw_140201.iso</download>\r\n                <filenameRegex>cd140201.iso" +
+            "</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </versi" +
+            "on>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Kon-Boot</name>\r\n" +
+            "        <category>5</category>\r\n        <filenameRegex>^kon-boot(.*).(img|iso)$<" +
+            "/filenameRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n            " +
+            "<desc lang=\"en\"></desc>\r\n        </description>\r\n        <versions>\r\n           " +
+            " <version>\r\n                <hash>eed910d2ef9b058cf3eec28294bd303c</hash>\r\n     " +
+            "           <name>Kon-Boot 2.5</name>\r\n                <download>https://dl.dropb" +
+            "oxusercontent.com/u/98959151/konboot.img</download>\r\n                <filenameRe" +
+            "gex>konboot.img</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n    " +
+            "        </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Op" +
+            "hcrack</name>\r\n        <category>5</category>\r\n        <filenameRegex>^ophcrack-" +
+            "(\\w+)-livecd-([0-9.]+).iso$</filenameRegex>\r\n        <noDl>false</noDl>\r\n       " +
+            " <description>\r\n            <desc lang=\"de\">Ophcrack ist ein freies Computerprog" +
+            "ramm unter der GPL-Lizenz, das verschlüsselte(gehashte) Passwörter mithilfe von " +
+            "Rainbow Tables versucht zu entschlüsseln. Das Programm unterstützt das Importier" +
+            "en von LM-Hashes und NTLM-Hashes, inklusive des direkten Importierens der SAM-Da" +
+            "tei unter Windows.</desc>\r\n            <desc lang=\"fr\">Ophcrack est un outil gra" +
+            "tuit de craquage de mot de passes.</desc>\r\n            <desc lang=\"en\">Ophcrack " +
+            "is a free Windows password cracker based on rainbow tables.</desc>\r\n        </de" +
+            "scription>\r\n        <versions>\r\n            <version>\r\n                <hash>b23" +
+            "afa62f670dee41c8f01c436c0a092</hash>\r\n                <name>Ophcrack (XP) 3.6.0<" +
+            "/name>\r\n                <download>http://downloads.sourceforge.net/project/ophcr" +
+            "ack/ophcrack-livecd/3.6.0/ophcrack-xp-livecd-3.6.0.iso</download>\r\n             " +
+            "   <filenameRegex>/ophcrack-xp-livecd-(.*).iso</filenameRegex>\r\n                " +
+            "<isLatest>true</isLatest>\r\n            </version>\r\n            <version>\r\n      " +
+            "          <hash>f0753acfe2fce5249ceceec7dfeacea9</hash>\r\n                <name>O" +
+            "phcrack (Vista/7/8) 3.6.0</name>\r\n                <download>http://downloads.sou" +
+            "rceforge.net/project/ophcrack/ophcrack-livecd/3.6.0/ophcrack-vista-livecd-3.6.0." +
+            "iso</download>\r\n                <filenameRegex>/ophcrack-vista-livecd-(.*).iso</" +
+            "filenameRegex>\r\n                <isLatest>false</isLatest>\r\n            </versio" +
+            "n>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Memtest86+</name>\r" +
+            "\n        <category>9</category>\r\n        <filenameRegex>^(?:memtest86(\\+|plus)[-" +
+            "_]([0-9.]+).iso|MEMTEST\\.IMG)$</filenameRegex>\r\n        <noDl>false</noDl>\r\n    " +
+            "    <description>\r\n            <desc lang=\"de\">Memtest86 ist eine Software, mit " +
+            "der man den Arbeitsspeicher eines Computers auf Fehler überprüfen kann.</desc>\r\n" +
+            "            <desc lang=\"fr\">Memtest86 permet d\'effectuer un diagnostic complet d" +
+            "e la mémoire d\'un ordinateur.</desc>\r\n            <desc lang=\"en\">Memtest86 is a" +
+            "n open source memory test software programs designed to test and stress test an " +
+            "x86 architecture computer\'s RAM.</desc>\r\n        </description>\r\n        <versio" +
+            "ns>\r\n            <version>\r\n                <hash>0f3d162f0c2f42da1455993ac4df39" +
+            "6b</hash>\r\n                <name>Memtest86+ 5.01</name>\r\n                <downlo" +
+            "ad>https://dl.dropboxusercontent.com/u/98959151/memtest86plus-501.iso</download>" +
+            "\r\n                <filenameRegex>memtest86plus_501.iso</filenameRegex>\r\n        " +
+            "        <isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n" +
+            "    </app>\r\n    <app>\r\n        <name>Memtest86</name>\r\n        <category>9</cate" +
+            "gory>\r\n        <filenameRegex>^Memtest86-([0-9.]+).iso$</filenameRegex>\r\n       " +
+            " <noDl>false</noDl>\r\n        <description>\r\n            <desc lang=\"de\">Memtest8" +
+            "6 ist eine Software, mit der man den Arbeitsspeicher eines Computers auf Fehler " +
+            "überprüfen kann.</desc>\r\n            <desc lang=\"fr\">Memtest86 permet d\'effectue" +
+            "r un diagnostic complet de la mémoire d\'un ordinateur.</desc>\r\n            <desc" +
+            " lang=\"en\">Memtest86 is an open source memory test software programs designed to" +
+            " test and stress test an x86 architecture computer\'s RAM.</desc>\r\n        </desc" +
+            "ription>\r\n        <versions>\r\n            <version>\r\n                <hash>0c7dd" +
+            "6227dabcb1a5e56c96f178f381d</hash>\r\n                <name>Memtest86 4.3.7</name>" +
+            "\r\n                <download>https://dl.dropboxusercontent.com/u/98959151/Memtest" +
+            "86-4.3.7.iso</download>\r\n                <filenameRegex>Memtest86-4.3.7.iso</fil" +
+            "enameRegex>\r\n                <isLatest>false</isLatest>\r\n            </version>\r" +
+            "\n            <version>\r\n                <hash>ad1310faef37409e1a1b845a5268cb76</" +
+            "hash>\r\n                <name>Memtest86 6.2.0</name>\r\n                <download>h" +
+            "ttps://dl.dropboxusercontent.com/u/98959151/Memtest86-6.2.0.iso</download>\r\n    " +
+            "            <filenameRegex>Memtest86-6.2.0.iso</filenameRegex>\r\n                " +
+            "<isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    </ap" +
+            "p>\r\n    <app>\r\n        <name>Redo Backup and Recovery</name>\r\n        <category>" +
+            "9</category>\r\n        <filenameRegex>^redobackup-livecd-([0-9.]+).iso$</filename" +
+            "Regex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n            <desc lan" +
+            "g=\"fr\">Redo Backup est un système de sauvegarde, de restauration et d\'édition de" +
+            " partition.</desc>\r\n            <desc lang=\"en\">Redo Backup is an easy rescue sy" +
+            "stem with GUI tools for full system backup, bare metal recovery and partition ed" +
+            "iting.</desc>\r\n        </description>\r\n        <versions>\r\n            <version>" +
+            "\r\n                <hash>f84b757242c1b050f8cbed7142197d81</hash>\r\n               " +
+            " <name>Redo Backup and Recovery 1.0.4</name>\r\n                <download>http://d" +
+            "ownloads.sourceforge.net/project/redobackup/redobackup-livecd-1.0.4.iso</downloa" +
+            "d>\r\n                <filenameRegex>redobackup-livecd-1.0.4.iso</filenameRegex>\r\n" +
+            "                <isLatest>true</isLatest>\r\n            </version>\r\n        </ver" +
+            "sions>\r\n    </app>\r\n    <app>\r\n        <name>Ultimate Boot CD 4 DOS</name>\r\n    " +
+            "    <category>9</category>\r\n        <filenameRegex>^ubcd[0-9]{2,3}.iso$</filenam" +
+            "eRegex>\r\n        <noDl>false</noDl>\r\n        <description>\r\n            <desc la" +
+            "ng=\"fr\">UBCD 4 DOS est un système qui regroupe plein d\'outils utiles.</desc>\r\n  " +
+            "          <desc lang=\"en\">UBCD 4 DOS is a system that regroups lots of useful ut" +
+            "ilities.</desc>\r\n        </description>\r\n        <versions>\r\n            <versio" +
+            "n>\r\n                <hash>a5617e0bdd3ccc3cb3a1b1dd20396d7a</hash>\r\n             " +
+            "   <name>Ultimate Boot CD 4 DOS 5.3.0</name>\r\n                <download>http://f" +
+            "tp.cc.uoc.gr/mirrors/linux/ubcd/ubcd530.iso</download>\r\n                <filenam" +
+            "eRegex>ubcd530.iso</filenameRegex>\r\n                <isLatest>false</isLatest>\r\n" +
+            "            </version>\r\n            <version>\r\n                <hash></hash>\r\n  " +
+            "              <name>Ultimate Boot CD 4 DOS 5.3.5</name>\r\n                <downlo" +
+            "ad>http://ftp.cc.uoc.gr/mirrors/linux/ubcd/ubcd535.iso</download>\r\n             " +
+            "   <filenameRegex>ubcd535.iso</filenameRegex>\r\n                <isLatest>true</i" +
+            "sLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n</apps>")]
         public string AppsXml {
             get {
                 return ((string)(this["AppsXml"]));

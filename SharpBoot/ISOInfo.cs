@@ -123,22 +123,37 @@ namespace SharpBoot
 
         public static void UpdateISOs()
         {
-            var wc = new WebClient {Encoding = Encoding.UTF8};
-            var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
-            appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
-            Settings.Default.AppsXml = appsxml;
+            try
+            {
+                var wc = new WebClient {Encoding = Encoding.UTF8};
+                var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
+                appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
+                Settings.Default.AppsXml = appsxml;
 
-            Settings.Default.LastAppsUpdate = DateTime.Now;
+                Settings.Default.LastAppsUpdate = DateTime.Now;
 
-            Settings.Default.Save();
+                Settings.Default.Save();
+            }
+            catch
+            {
+
+            }
         }
 
         public static bool IsUpdateAvailable()
         {
-            var wc = new WebClient { Encoding = Encoding.UTF8 };
-            var temporary = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php"); // Strangely when a PHP page is updated you need to request it twice to see the update
-            var lastappsdate = DateTime.Parse(wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php"));
-            return lastappsdate > Settings.Default.LastAppsUpdate;
+            try
+            {
+                var wc = new WebClient {Encoding = Encoding.UTF8};
+                var temporary = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php");
+                    // Strangely when a PHP page is updated you need to request it twice to see the update
+                var lastappsdate = DateTime.Parse(wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php"));
+                return lastappsdate > Settings.Default.LastAppsUpdate;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public static void RefreshISOs()
