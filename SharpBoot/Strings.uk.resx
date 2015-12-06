@@ -169,7 +169,7 @@
     <value>Файлова система:</value>
   </data>
   <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
+    <value>Б</value>
   </data>
   <data name="FormatError" xml:space="preserve">
     <value>Невідома помилка при форматуванні.</value>
@@ -236,5 +236,8 @@
   </data>
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot викорустовує таке програмне забезпечення:</value>
+  </data>
+  <data name="SizeSuffixes" xml:space="preserve">
+    <value>,к,М,Г,Т,П,Е,З,Й</value>
   </data>
 </root>

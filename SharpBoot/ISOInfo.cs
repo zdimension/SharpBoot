@@ -128,11 +128,16 @@ namespace SharpBoot
                 var wc = new WebClient {Encoding = Encoding.UTF8};
                 var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
                 appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
-                Settings.Default.AppsXml = appsxml;
 
-                Settings.Default.LastAppsUpdate = DateTime.Now;
+                if (appsxml.Contains("</apps>"))
+                {
 
-                Settings.Default.Save();
+                    Settings.Default.AppsXml = appsxml;
+
+                    Settings.Default.LastAppsUpdate = DateTime.Now;
+
+                    Settings.Default.Save();
+                }
             }
             catch
             {
@@ -156,35 +161,54 @@ namespace SharpBoot
             }
         }
 
+        public static event EventHandler UpdateFinished = delegate {  };
+
+
         public static void RefreshISOs()
         {
             /*bool upd = IsUpdateAvailable();
 
             if (upd)*/
-            UpdateISOs();
 
-            var xd = XDocument.Parse(Settings.Default.AppsXml);
+            var th = new Thread(() =>
+            {
+                try
+                {
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-            ISOs = xd.Element("apps").Elements("app").Select(x =>
-                new ISOInfo(
-                    x.Element("name").Value,
-                    x.Element("description")
-                        .Elements("desc")
-                        .Select(y => new {Lang = new CultureInfo(y.Attribute("lang").Value), Val = y.Value})
-                        .ToDictionary(k => k.Lang, k => k.Val),
-                    (IsoCategory) int.Parse(x.Element("category").Value),
-                    x.Element("filenameRegex").Value,
-                    x.Element("versions").IsEmpty
-                        ? new ISOV[] {}
-                        : x.Element("versions").Elements("version").Select(y =>
-                            new ISOV(
-                                y.Element("hash").Value,
-                                y.Element("name").Value,
-                                y.Element("download").Value,
-                                y.Element("filenameRegex").Value,
-                                y.Element("isLatest").Value == "true"
-                                )).ToArray()
-                    ) {NoDL = x.Element("noDl").Value == "true"}).ToList();
+                    UpdateISOs();
+
+                    var xd = XDocument.Parse(Settings.Default.AppsXml);
+
+                    ISOs = xd.Element("apps").Elements("app").Select(x =>
+                        new ISOInfo(
+                            x.Element("name").Value,
+                            x.Element("description")
+                                .Elements("desc")
+                                .Select(y => new {Lang = new CultureInfo(y.Attribute("lang").Value), Val = y.Value})
+                                .ToDictionary(k => k.Lang, k => k.Val),
+                            (IsoCategory) int.Parse(x.Element("category").Value),
+                            x.Element("filenameRegex").Value,
+                            x.Element("versions").IsEmpty
+                                ? new ISOV[] {}
+                                : x.Element("versions").Elements("version").Select(y =>
+                                    new ISOV(
+                                        y.Element("hash").Value,
+                                        y.Element("name").Value,
+                                        y.Element("download").Value,
+                                        y.Element("filenameRegex").Value,
+                                        (y.Element("isLatest") != null && y.Element("isLatest").Value == "true")
+                                        )).ToArray()
+                            ) {NoDL = x.Element("noDl") != null && x.Element("noDl").Value == "true"}).ToList();
+                }
+                catch
+                {
+
+                }
+                UpdateFinished(null, EventArgs.Empty);
+            });
+            th.Start();
         }
 
         public static List<ISOInfo> ISOs = new List<ISOInfo>();

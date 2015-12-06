@@ -180,7 +180,21 @@ namespace SharpBoot
             cbxRes.SelectedIndex = 0;
             cbxBackType.SelectedIndex = 0;
 
-            updTmr = new Timer(600000);
+            ISOInfo.UpdateFinished += (o, args) =>
+            {
+                try
+                {
+                    if (this.InvokeRequired)
+                        this.Invoke((MethodInvoker) (() => mniUpdate.Visible = false));
+                    else mniUpdate.Visible = false;
+                }
+                catch
+                {
+
+                }
+            };
+
+            updTmr = new Timer(300000);
             updTmr.Elapsed += UpdTmr_Elapsed;
             updTmr.Enabled = true;
 
@@ -190,8 +204,9 @@ namespace SharpBoot
         private void UpdTmr_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             mniUpdate.Visible = true;
+            
             ISOInfo.RefreshISOs();
-            mniUpdate.Visible = false;
+            
         }
 
         private static void g_GenerationFinished(GenIsoFrm g)

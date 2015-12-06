@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
@@ -225,6 +226,11 @@ namespace SharpBoot
         {
             if (IsDownload)
             {
+                IsoV = selinfoversion();
+                if(IsoV != null && IsoV.DownloadLink != "")
+                {
+                    sfdIso.FileName = Path.GetFileName(IsoV.DownloadLink);
+                }
                 if (sfdIso.ShowDialog(this) == DialogResult.OK)
                 {
                     btnOK.Enabled = false;

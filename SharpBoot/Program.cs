@@ -80,8 +80,7 @@ namespace SharpBoot
 
         public static List<CultureInfo> UseSystemSize => new List<CultureInfo>
         {
-            CultureInfo.GetCultureInfo("ru"),
-            CultureInfo.GetCultureInfo("uk")
+            
         }; 
 
         public static Encoding GetEnc()
@@ -158,11 +157,6 @@ namespace SharpBoot
         }
 
 
-        public static string GetSizeUnit()
-        {
-            return Strings.FileUnit;
-        }
-
         public static CultureInfo GetCulture()
         {
             return new CultureInfo(Settings.Default.Lang);
@@ -219,11 +213,7 @@ namespace SharpBoot
                 return sb.ToString();
             }
 
-            string[] suf =
-            {
-                GetSizeUnit(), "K" + GetSizeUnit(), "M" + GetSizeUnit(), "G" + GetSizeUnit(),
-                "T" + GetSizeUnit(), "P" + GetSizeUnit(), "E" + GetSizeUnit()
-            };
+            var suf = Strings.SizeSuffixes.Split(',').Select(x => x + Strings.FileUnit).ToArray();
             if (file == 0)
                 return "0 " + suf[0];
             var bytes = Math.Abs(file);
@@ -234,6 +224,13 @@ namespace SharpBoot
 
         public static string RemoveAccent(this string str)
         {
+            var replchar = new Dictionary<string, string>
+            {
+                {"і", "i" } // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
+            };
+
+            str = replchar.Aggregate(str, (current, rc) => current.Replace(rc.Key, rc.Value));
+
             str = str.Normalize(NormalizationForm.FormC);
             str = str.ChineseToPinyin();
 

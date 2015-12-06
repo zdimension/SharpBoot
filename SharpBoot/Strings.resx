@@ -237,4 +237,7 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="SizeSuffixes" xml:space="preserve">
+    <value>,K,M,G,T,P,E,Z,Y</value>
+  </data>
 </root>
