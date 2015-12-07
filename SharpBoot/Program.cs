@@ -226,7 +226,10 @@ namespace SharpBoot
         {
             var replchar = new Dictionary<string, string>
             {
-                {"і", "i" } // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
+                {"і", "i" }, // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
+                {"ї", "ï" },
+                {"І", "I" },
+                {"Ї", "Ï" },
             };
 
             str = replchar.Aggregate(str, (current, rc) => current.Replace(rc.Key, rc.Value));
