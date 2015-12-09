@@ -6,9 +6,7 @@ using System.Windows.Forms;
 namespace SharpBoot
 {
     public partial class About : Form
-    {
-        [DllImport("user32.dll")]
-        static extern bool HideCaret(IntPtr hWnd);
+    { 
 
         public About()
         {
@@ -18,17 +16,6 @@ namespace SharpBoot
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
             rtbMyWebsite.DeselectAll();
-            HideCaret(richTextBox1.Handle);
-            HideCaret(rbnHelpTranslate.Handle);
-            HideCaret(rtbMyWebsite.Handle);
-        }
-
-        private void RichTextBox1OnGotFocus(object sender, EventArgs eventArgs)
-        {
-            btnOK.Focus();
-            HideCaret(richTextBox1.Handle);
-            HideCaret(rbnHelpTranslate.Handle);
-            HideCaret(rtbMyWebsite.Handle);
         }
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)

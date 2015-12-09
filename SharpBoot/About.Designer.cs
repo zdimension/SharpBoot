@@ -35,9 +35,9 @@ namespace SharpBoot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnOK = new System.Windows.Forms.Button();
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.rtbMyWebsite = new System.Windows.Forms.RichTextBox();
-            this.rbnHelpTranslate = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new SharpBoot.DisabledRichTextBox();
+            this.rtbMyWebsite = new SharpBoot.DisabledRichTextBox();
+            this.rbnHelpTranslate = new SharpBoot.DisabledRichTextBox();
             this.lvTranslators = new SharpBoot.CustomListView();
             this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -69,15 +69,13 @@ namespace SharpBoot
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            this.richTextBox1.Enter += new System.EventHandler(this.RichTextBox1OnGotFocus);
             // 
             // rtbMyWebsite
             // 
             resources.ApplyResources(this.rtbMyWebsite, "rtbMyWebsite");
             this.rtbMyWebsite.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbMyWebsite.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtbMyWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rtbMyWebsite.Name = "rtbMyWebsite";
             this.rtbMyWebsite.ReadOnly = true;
             this.rtbMyWebsite.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
@@ -86,11 +84,10 @@ namespace SharpBoot
             // 
             resources.ApplyResources(this.rbnHelpTranslate, "rbnHelpTranslate");
             this.rbnHelpTranslate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rbnHelpTranslate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rbnHelpTranslate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbnHelpTranslate.Name = "rbnHelpTranslate";
             this.rbnHelpTranslate.ReadOnly = true;
             this.rbnHelpTranslate.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            this.rbnHelpTranslate.Enter += new System.EventHandler(this.RichTextBox1OnGotFocus);
             // 
             // lvTranslators
             // 
@@ -152,9 +149,9 @@ namespace SharpBoot
         private CustomListView lvTranslators;
         private ColumnHeader clmnName;
         private ImageList ilTranslators;
-        private RichTextBox richTextBox1;
-        private RichTextBox rtbMyWebsite;
-        private RichTextBox rbnHelpTranslate;
+        private DisabledRichTextBox richTextBox1;
+        private DisabledRichTextBox rtbMyWebsite;
+        private DisabledRichTextBox rbnHelpTranslate;
         private ColumnHeader clmnURL;
     }
 }

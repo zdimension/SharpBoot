@@ -36,19 +36,20 @@ namespace SharpBoot
             cbxISOS.DataSource = isos;
             var iso2 = isos.ToList();
             iso2.Insert(0, new { Val = new ISOInfo("", new Dictionary<CultureInfo, string>(), IsoCategory.None), Name = Strings.Other, Category = "", Hash = "" });
-            iso2.AddRange(ISOInfo.ISOs.Where(x => x.NoDL).Select(x => new { Val = x, x.Name, Category = x.CategoryTxt, Hash = "" }));
+            iso2.AddRange(ISOInfo.ISOs.Where(x => x.NoDL).Select(x => new { Val = x, x.Name, Category = x.CategoryTxt, Hash = "" }).ToList());
             cbxDetIso.DataSource = iso2;
             cbxDetIso.DisplayMember = "Name";
             fempty = true;
             cbxDetIso.SelectedItem = null;
             cbxISOS.SelectedItem = null;
             cbxVersion.SelectedItem = null;
+            rtbIsoDesc.Text = "";
         }
 
         private void rbnFile_CheckedChanged(object sender, EventArgs e)
         {
             txtFile.Enabled = btnBrowse.Enabled = cbxDetIso.Enabled = rbnFile.Checked;
-            cbxISOS.Visible = cbxVersion.Visible = rbnDown.Checked;
+            cbxISOS.Visible = cbxVersion.Visible = rtbIsoDesc.Visible = rbnDown.Checked;
 
             if (rbnDown.Checked)
             {
@@ -93,7 +94,7 @@ namespace SharpBoot
             btnOK.Enabled = cbxISOS.SelectedIndex != -1;
             if (cbxISOS.SelectedIndex != -1 && selinfo != null)
             {
-                cbxVersion.Enabled = cbxVersion.Visible = true;
+                cbxVersion.Enabled = cbxVersion.Visible = rtbIsoDesc.Visible = true;
                 var ds = selinfo.Versions.Select(x => new {x.Name, Value = x}).ToList();
                 cbxVersion.DataSource = ds;
                 var latest = selinfo.LatestVersion;
@@ -106,8 +107,9 @@ namespace SharpBoot
                         break;
                     }
                 }
+                rtbIsoDesc.Text = selinfo.Description;
             }
-            else cbxVersion.Enabled = cbxVersion.Visible = false;
+            else cbxVersion.Enabled = cbxVersion.Visible = rtbIsoDesc.Visible = false;
         }
 
         private void setprg(int v)

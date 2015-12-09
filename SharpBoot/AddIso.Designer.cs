@@ -48,6 +48,7 @@ namespace SharpBoot
             this.lblSpeed = new System.Windows.Forms.Label();
             this.lblProg = new System.Windows.Forms.Label();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
+            this.rtbIsoDesc = new SharpBoot.DisabledRichTextBox();
             this.cbxDetIso = new GroupedComboBox();
             this.cbxISOS = new GroupedComboBox();
             this.panel1.SuspendLayout();
@@ -161,6 +162,14 @@ namespace SharpBoot
             this.pbxLoading.Name = "pbxLoading";
             this.pbxLoading.TabStop = false;
             // 
+            // rtbIsoDesc
+            // 
+            resources.ApplyResources(this.rtbIsoDesc, "rtbIsoDesc");
+            this.rtbIsoDesc.BackColor = System.Drawing.Color.White;
+            this.rtbIsoDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbIsoDesc.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rtbIsoDesc.Name = "rtbIsoDesc";
+            // 
             // cbxDetIso
             // 
             resources.ApplyResources(this.cbxDetIso, "cbxDetIso");
@@ -190,6 +199,7 @@ namespace SharpBoot
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.rtbIsoDesc);
             this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.cbxDetIso);
             this.Controls.Add(this.lblProg);
@@ -237,5 +247,6 @@ namespace SharpBoot
         private Label lblProg;
         private GroupedComboBox cbxDetIso;
         private PictureBox pbxLoading;
+        private DisabledRichTextBox rtbIsoDesc;
     }
 }
