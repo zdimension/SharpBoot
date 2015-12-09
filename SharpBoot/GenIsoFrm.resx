@@ -120,9 +120,6 @@
   <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Generating ISO file</value>
-  </data>
   <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
     <value>lblStatus</value>
   </data>
@@ -147,6 +144,9 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 59</value>
   </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 99</value>
+  </data>
   <data name="&gt;&gt;bwkISO.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -161,9 +161,6 @@
   </data>
   <data name="btnAnnul.Text" xml:space="preserve">
     <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;pbx.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="btnAnnul.Location" type="System.Drawing.Point, System.Drawing">
     <value>362, 18</value>
@@ -180,11 +177,17 @@
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>Initializing...</value>
+  </data>
   <data name="&gt;&gt;panel1.Name" xml:space="preserve">
     <value>panel1</value>
   </data>
   <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbx.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbx.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -210,17 +213,14 @@
   <data name="&gt;&gt;bwkISO.Name" xml:space="preserve">
     <value>bwkISO</value>
   </data>
-  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;btnAnnul.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;btnAnnul.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 99</value>
+  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -228,14 +228,14 @@
   <data name="&gt;&gt;pbx.Name" xml:space="preserve">
     <value>pbx</value>
   </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>Initializing...</value>
+  <data name="&gt;&gt;pbx.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
-  <data name="&gt;&gt;pbx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Generating ISO file</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 15</value>
@@ -247,6 +247,6 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-Hans</value>
+    <value>es</value>
   </metadata>
 </root>

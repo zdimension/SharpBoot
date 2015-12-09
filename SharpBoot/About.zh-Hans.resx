@@ -130,24 +130,6 @@
   <data name="richTextBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
-  <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 282</value>
-  </data>
-  <data name="rtbMyWebsite.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 9</value>
-  </data>
-  <data name="rbnHelpTranslate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 393</value>
-  </data>
-  <data name="lvTranslators.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 262</value>
-  </data>
-  <data name="lvTranslators.Size" type="System.Drawing.Size, System.Drawing">
-    <value>574, 125</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>600, 424</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>关于SharpBoot</value>
   </data>

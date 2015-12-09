@@ -117,7 +117,117 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Про SharpBoot</value>
+  <data name="btnUSB.Text" xml:space="preserve">
+    <value>Crear un USB Multi-arranque</value>
+  </data>
+  <data name="btnInstBoot.Text" xml:space="preserve">
+    <value>Instalar arranque en USB</value>
+  </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Usar este archivo ISO</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Crear ISO</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Arrastra y suelta el archivo ISO o IMG aqui</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Resolución</value>
+  </data>
+  <data name="cbxBootloader.Items" xml:space="preserve">
+    <value>Syslinux (recomendado)</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Secuencia de arranque</value>
+  </data>
+  <data name="btnAbout.Text" xml:space="preserve">
+    <value> Acerca de SharpBoot</value>
+  </data>
+  <data name="gbxLng.Text" xml:space="preserve">
+    <value>Lenguaje</value>
+  </data>
+  <data name="btnChecksum.Text" xml:space="preserve">
+    <value> Verificación</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Imagen de fondo</value>
+  </data>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>Titulo</value>
+  </data>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value> Eliminar</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Tamaño total</value>
+  </data>
+  <data name="cbxBackType.Items" xml:space="preserve">
+    <value>Por defecto</value>
+  </data>
+  <data name="cbxBackType.Items1" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="cbxBackType.Items2" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
+  <data name="btnBackBrowse.Text" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="clmnName.HeaderText" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="clmnSize.HeaderText" xml:space="preserve">
+    <value>Tamaño</value>
+  </data>
+  <data name="clmnCate.HeaderText" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="clmnDescr.HeaderText" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="clmnFilePath.HeaderText" xml:space="preserve">
+    <value>Ruta del archivo</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>A&amp;brir</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Guardar</value>
+  </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 6</value>
+  </data>
+  <data name="addISOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Agregar ISO</value>
+  </data>
+  <data name="automaticallyAddISOInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Ag&amp;regar automáticamente información al ISO</value>
+  </data>
+  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>311, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Salir</value>
   </data>
 </root>

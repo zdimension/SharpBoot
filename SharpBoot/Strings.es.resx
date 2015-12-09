@@ -117,7 +117,127 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Про SharpBoot</value>
+  <data name="BootFromHDD" xml:space="preserve">
+    <value>Iniciar desde el disco duro</value>
+  </data>
+  <data name="BootloaderInstalled" xml:space="preserve">
+    <value>{0} Ha sido instalado correctamente en {1}.</value>
+  </data>
+  <data name="CalcIn" xml:space="preserve">
+    <value>Calculado en {0}</value>
+  </data>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>Los cambios se generan cuando se reinicie la aplicacion.</value>
+  </data>
+  <data name="ChkOf" xml:space="preserve">
+    <value>{0} Verificado en {1}:</value>
+  </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Escoge el arranque que tu quieres instalar:</value>
+  </data>
+  <data name="Copying" xml:space="preserve">
+    <value>Copiando {0}</value>
+  </data>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>Copiando archivos del ISO</value>
+  </data>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>No se puede detectar un O.S en esta imagen.</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Create multiboot USB key</value>
+  </data>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>Creando archivo ISO...</value>
+  </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Creando un USB Multi-arranque</value>
+  </data>
+  <data name="DownComplete" xml:space="preserve">
+    <value>Descargar completada.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>Extrayendo lo basico</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>Extrayendo {0}...</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>Sistema de archivos:</value>
+  </data>
+  <data name="FileUnit" xml:space="preserve">
+    <value>B</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Error indeterminado mientras se formateaba.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formateando</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Iniciar el formateo?\nEsto DESTRUYE cualquier dato que esta en el USB/DISCO</value>
+  </data>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>Generando menu principal...</value>
+  </data>
+  <data name="GenMenu" xml:space="preserve">
+    <value>Generando menu {0}</value>
+  </data>
+  <data name="GenMenus" xml:space="preserve">
+    <value>Generando los menus...</value>
+  </data>
+  <data name="HDD" xml:space="preserve">
+    <value>Disco duro</value>
+  </data>
+  <data name="Init" xml:space="preserve">
+    <value>Iniciando...</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Instalar</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Instalar el arranque en USB</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Instalando {0} en {1}</value>
+  </data>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>El archivo ISO ha sido creado correctamente.\nDesea probarla en QEMU?</value>
+  </data>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>ISO Creado</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>Imagen ISO</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Menu principal</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Debes tener permisos de adminstrador para formatear el USB.</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Otro</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>La partición seleccionada es demasiado grande para {0}</value>
+  </data>
+  <data name="PicFilter" xml:space="preserve">
+    <value>Fotos</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(recomendado)</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot utiliza los siguiente programas:</value>
+  </data>
+  <data name="SizeSuffixes" xml:space="preserve">
+    <value>,K,M,G,T,P,E,Z,Y</value>
   </data>
 </root>

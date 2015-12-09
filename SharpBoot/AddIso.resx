@@ -478,7 +478,7 @@
     <value>53, 15</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=3.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=3.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pbxLoading.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -499,7 +499,7 @@
     <value>440, 79</value>
   </data>
   <data name="&gt;&gt;cbxDetIso.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=3.4.1.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=3.5.1.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rbnFile.Parent" xml:space="preserve">
     <value>$this</value>
@@ -634,7 +634,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-Hans</value>
+    <value>es</value>
   </metadata>
   <metadata name="sfdIso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>103, 17</value>

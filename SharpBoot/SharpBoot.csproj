@@ -220,8 +220,13 @@
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="About.es.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="About.fr.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
@@ -229,20 +234,28 @@
     </EmbeddedResource>
     <EmbeddedResource Include="About.ro.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="About.ru.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="About.uk.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="About.zh-Hans.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="About.zh-Hant.resx">
       <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.de.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.es.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.fr.resx">
@@ -265,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.zh-Hant.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.es.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.ru.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
@@ -296,6 +312,9 @@
     <EmbeddedResource Include="GenIsoFrm.de.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.es.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.fr.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -320,6 +339,7 @@
     <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.es.resx" />
     <EmbeddedResource Include="ISOCat.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.ru.Designer.cs</LastGenOutput>
@@ -335,6 +355,9 @@
     <EmbeddedResource Include="ISOCat.zh-Hant.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.zh-Hant.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.es.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.ru.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -354,6 +377,7 @@
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.es.resx" />
     <EmbeddedResource Include="Strings.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru.Designer.cs</LastGenOutput>
@@ -371,6 +395,9 @@
       <LastGenOutput>Strings.zh-Hans.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.de.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.es.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.fr.resx">
