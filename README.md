@@ -12,6 +12,7 @@ You can also pick a custom background image (automatically resized to chosen res
 	<th>Chinese (Traditional)</th>
 	<th>Russian</th>
 	<th>Ukrainian</th>
+	<th>Spanish</th>
 	<th>Your language</th>
   </tr>
   <tr>
@@ -20,6 +21,7 @@ You can also pick a custom background image (automatically resized to chosen res
     <td><a href="http://www.github.com/CallumDev">CallumDev</a></td>
     <td><a href="http://57life.blogspot.com">Jen Hung-Chia</a></td>
     <td colspan="2">Michael Orishich</td>
+	<td>Hector</td>
     <td><a href="https://poeditor.com/join/project/GDNqzsHFSk">Click here to translate!</a></td>
   </tr>
 </table>

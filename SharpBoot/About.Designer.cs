@@ -61,6 +61,7 @@ namespace SharpBoot
             this.ilTranslators.Images.SetKeyName(4, "flag_taiwan.png");
             this.ilTranslators.Images.SetKeyName(5, "flag_russia.png");
             this.ilTranslators.Images.SetKeyName(6, "flag_ukraine.png");
+            this.ilTranslators.Images.SetKeyName(7, "flag_spain.png");
             // 
             // richTextBox1
             // 
@@ -105,7 +106,8 @@ namespace SharpBoot
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items3"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items4"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items5"))),
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items6")))});
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items6"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items7")))});
             this.lvTranslators.LargeImageList = this.ilTranslators;
             this.lvTranslators.MultiSelect = false;
             this.lvTranslators.Name = "lvTranslators";
