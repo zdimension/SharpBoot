@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Reflection;
 using System.Resources;
 using System.Threading;
 using System.Windows.Forms;
@@ -193,6 +195,8 @@ namespace SharpBoot
 
                 }
             };
+            mniUpdate.Visible = true;
+            checkForUpdates();
 
             updTmr = new Timer(300000);
             updTmr.Elapsed += UpdTmr_Elapsed;
@@ -206,7 +210,37 @@ namespace SharpBoot
             mniUpdate.Visible = true;
             
             ISOInfo.RefreshISOs();
-            
+            mniUpdate.Visible = true;
+            checkForUpdates();
+        }
+
+        private bool update_available = false;
+
+        private void checkForUpdates()
+        {
+            try
+            {
+                using (var wb = new WebClient())
+                {
+                    wb.Headers["User-Agent"] =
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.58 Safari/537.36";
+                    var ct = wb.DownloadString("https://api.github.com/repos/zdimension/SharpBoot/releases/latest");
+
+                    var lnid = ct.IndexOf("tag_name");
+                    ct = ct.Substring(lnid + 13);
+                    ct = ct.Substring(0, ct.IndexOf('"'));
+
+                    var v = Version.Parse(ct);
+                    //v = new Version(3, 7);
+                    updateAvailableToolStripMenuItem.Visible = update_available = v > Assembly.GetEntryAssembly().GetName().Version;
+                }
+            }
+            catch
+            {
+
+            }
+
+            //mniUpdate.Visible = false;
         }
 
         private static void g_GenerationFinished(GenIsoFrm g)
@@ -495,6 +529,7 @@ namespace SharpBoot
                 cbxBootloader.SelectedIndex = 0;
                 cbxRes.SelectedIndex = 0;
                 cbxBackType.SelectedIndex = 0;
+                updateAvailableToolStripMenuItem.Visible = update_available;
             }
             else if (!FieldsEmpty())
             {
@@ -691,6 +726,11 @@ namespace SharpBoot
         private void mD5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             chksum("MD5", () => Utils.FileMD5(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+        }
+
+        private void updateAvailableToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/zdimension/SharpBoot/releases/latest");
         }
     }
 }

@@ -236,4 +236,10 @@
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>Вийти</value>
   </data>
+  <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>Доступне оновлення</value>
+  </data>
 </root>

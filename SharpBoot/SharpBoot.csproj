@@ -80,6 +80,9 @@
     <Compile Include="CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -96,6 +99,11 @@
     </Compile>
     <Compile Include="DropDownSelector.Designer.cs">
       <DependentUpon>DropDownSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ISOCat.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.es.resx</DependentUpon>
     </Compile>
     <Compile Include="ISOCat.ru.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -133,6 +141,11 @@
     </Compile>
     <Compile Include="SelectorCtrl.Designer.cs">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Strings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.es.resx</DependentUpon>
     </Compile>
     <Compile Include="Strings.ru.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -343,7 +356,10 @@
     <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.es.resx" />
+    <EmbeddedResource Include="ISOCat.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ISOCat.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.ru.Designer.cs</LastGenOutput>
@@ -381,7 +397,10 @@
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.es.resx" />
+    <EmbeddedResource Include="Strings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru.Designer.cs</LastGenOutput>
@@ -499,7 +518,9 @@
     <None Include="Resources\mkisofs.7z" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cd_delete1.png" />
@@ -537,6 +558,7 @@
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\package_go.png" />
     <None Include="Resources\update_anim.gif" />
     <None Include="Resources\drive_disk.png" />
     <None Include="Resources\ajax-loader.gif" />

@@ -139,11 +139,11 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Resolución</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (recomendado)</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Secuencia de arranque</value>
+  </data>
+  <data name="cbxBootloader.Items" xml:space="preserve">
+    <value>Syslinux (recomendado)</value>
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Acerca de SharpBoot</value>
@@ -157,15 +157,6 @@
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Imagen de fondo</value>
   </data>
-  <data name="gbxTitle.Text" xml:space="preserve">
-    <value>Titulo</value>
-  </data>
-  <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Eliminar</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Tamaño total</value>
-  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Por defecto</value>
   </data>
@@ -177,6 +168,15 @@
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Buscar</value>
+  </data>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>Titulo</value>
+  </data>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value> Eliminar</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Tamaño total</value>
   </data>
   <data name="clmnName.HeaderText" xml:space="preserve">
     <value>Nombre</value>
@@ -229,5 +229,15 @@
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Salir</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>Actualización de software disponible</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

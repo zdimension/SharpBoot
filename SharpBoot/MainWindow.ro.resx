@@ -123,18 +123,18 @@
   <data name="btnInstBoot.Text" xml:space="preserve">
     <value>Instalează bootloaderul pe cheia USB</value>
   </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Încearcă fișierul de imagine de disc</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Crează ISO</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Trage fișierul ISO sau IMG aici.</value>
-  </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Încearcă fișierul de imagine de disc</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>Crează ISO</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rezoluție</value>
@@ -148,6 +148,9 @@
   <data name="gbxLng.Text" xml:space="preserve">
     <value>Limbă</value>
   </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Imagine de fundal</value>
+  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Implicit</value>
   </data>
@@ -159,9 +162,6 @@
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Navighează</value>
-  </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Imagine de fundal</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>Titlu</value>
@@ -223,5 +223,15 @@
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ieși</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 20</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>Actualizare de software disponibila</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>
