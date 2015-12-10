@@ -259,7 +259,7 @@ namespace SharpBoot
             ChangeProgressBar(45, 100);
             if (!_usb)
             {
-                ext.ExtractionFinished += delegate { ChangeProgress(50, 100, Strings.Extracting.FormatEx("Mkisofs")); };
+                ChangeProgress(50, 100, Strings.Extracting.FormatEx("Mkisofs"));
 
                 ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
             }
@@ -370,7 +370,26 @@ namespace SharpBoot
                 p.Exited += delegate { GenF(f); };
 
                 Thread.Sleep(500);
-                p.Start();
+                while(true)
+                {
+                    if (!File.Exists(mkisofsexe))
+                    {
+                        if (!Directory.Exists(archs)) Directory.CreateDirectory(archs);
+                        File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
+                        ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
+                    }
+                    else break;
+                    Thread.Sleep(500);
+                    
+                }
+                try
+                {
+                    p.Start();
+                }
+                catch (FileNotFoundException e)
+                {
+                    
+                }
                 /*p.BeginOutputReadLine();
 
             using (var reader = p.StandardOutput)

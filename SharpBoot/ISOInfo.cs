@@ -129,15 +129,16 @@ namespace SharpBoot
                 var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
                 appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
 
-                if (appsxml.Contains("</apps>"))
+                while (!appsxml.Contains("</apps>"))
                 {
-
-                    Settings.Default.AppsXml = appsxml;
-
-                    Settings.Default.LastAppsUpdate = DateTime.Now;
-
-                    Settings.Default.Save();
+                    appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
                 }
+                Settings.Default.AppsXml = appsxml;
+
+                Settings.Default.LastAppsUpdate = DateTime.Now;
+
+                Settings.Default.Save();
+
             }
             catch
             {

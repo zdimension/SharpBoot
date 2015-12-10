@@ -69,7 +69,7 @@ namespace SharpBoot
         {
             if (e.Exception is FileNotFoundException)
                 MessageBox.Show(((FileNotFoundException)e.Exception).FileName);
-            MessageBox.Show(e.Exception.Message, "Thread exception");
+            MessageBox.Show(e.Exception.Message + "\n" + e.Exception.StackTrace, "Thread exception");
         }
 
         public static string GetVersion()
