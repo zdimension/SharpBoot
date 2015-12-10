@@ -20,7 +20,7 @@ You can also pick a custom background image (automatically resized to chosen res
     <td><a href="http://www.github.com/chronium">Chronium</a></td>
     <td><a href="http://www.github.com/CallumDev">CallumDev</a></td>
     <td><a href="http://57life.blogspot.com">Jen Hung-Chia</a></td>
-    <td colspan="2">Michael Orishich</td>
+    <td colspan="2"><a href="https://github.com/mishaor2005">Michael Orishich</a></td>
 	<td>Hector</td>
     <td><a href="https://poeditor.com/join/project/GDNqzsHFSk">Click here to translate!</a></td>
   </tr>
