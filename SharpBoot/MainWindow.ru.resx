@@ -118,16 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnUSB.Text" xml:space="preserve">
-    <value>Создать мультизагрузочную флеш-памьять</value>
+    <value>Создать мультизагрузочную флеш-память</value>
   </data>
   <data name="btnInstBoot.Text" xml:space="preserve">
     <value>Установить загрузчик на флеш-памьять</value>
-  </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Попробовать образ диска в ВМ</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>Создать ISO</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
@@ -136,14 +130,20 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Перетащите сюда образ CD или DVD диска</value>
   </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Попробовать образ диска в ВМ</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Создать ISO</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Разрешение экрана</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Загрузчик</value>
-  </data>
   <data name="cbxBootloader.Items" xml:space="preserve">
     <value>Syslinux (рекомендовано)</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Загрузчик</value>
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> О SharpBoot...</value>
@@ -153,9 +153,6 @@
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> Хэшсумма</value>
-  </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Фон</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Стандартный фон</value>
@@ -168,6 +165,9 @@
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Обзор</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Фон</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>Заголовок</value>
@@ -238,6 +238,6 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
 </root>
