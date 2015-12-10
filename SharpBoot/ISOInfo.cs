@@ -50,7 +50,9 @@ namespace SharpBoot
         RAM = 6,
         Recovery = 7,
         Testing = 8,
-        Utility = 9
+        Utility = 9,
+        Antivirus = 10,
+        Windows = 11
     }
 
     public class ISOInfo
@@ -69,7 +71,9 @@ namespace SharpBoot
                 {6, ISOCat.RAM},
                 {7, ISOCat.Recovery},
                 {8, ISOCat.Testing},
-                {9, ISOCat.Utility}
+                {9, ISOCat.Utility},
+                {10, ISOCat.Antivirus},
+                {11, ISOCat.Windows }
             };
             return inttocat[(int) ct];
         }
