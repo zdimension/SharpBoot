@@ -80,9 +80,6 @@
     <Compile Include="CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomWebClient.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -563,6 +560,7 @@
     <None Include="Resources\drive_disk.png" />
     <None Include="Resources\ajax-loader.gif" />
     <None Include="Resources\flag_germany.png" />
+    <None Include="Resources\download.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

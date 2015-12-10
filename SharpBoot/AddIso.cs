@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
 using System.Windows.Forms;
+using SharpBoot.Properties;
 
 namespace SharpBoot
 {
@@ -55,11 +57,15 @@ namespace SharpBoot
             {
                 btnOK.DialogResult = DialogResult.None;
                 btnOK.Text = Strings.Download;
+                btnOK.TextAlign = ContentAlignment.MiddleRight;
+                btnOK.Image = Resources.download;
             }
             else
             {
                 btnOK.DialogResult = DialogResult.OK;
                 btnOK.Text = Strings.OK;
+                btnOK.TextAlign = ContentAlignment.MiddleCenter;
+                btnOK.Image = null;
             }
 
 
