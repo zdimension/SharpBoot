@@ -26,6 +26,13 @@ LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
 ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+Changes:
+ zdimension 2015-12-12: 
+ - I added the ImageMember property for showing icons for items
+
+
 */
 
 using System;
@@ -604,7 +611,9 @@ public class GroupedComboBox : ComboBox, IComparer
     private BindingSource _bindingSource; // used for change detection and grouping
     private Font _groupFont; // for painting
     private string _groupMember; // name of group-by property
+    private string _imageMember; // name of image property
     private PropertyDescriptor _groupProperty; // used to get group-by values
+    private PropertyDescriptor _imageProperty; // used to get images values
     private ArrayList _internalItems; // internal sorted collection of items
     private BindingSource _internalSource; // binds sorted collection to the combobox
     private TextFormatFlags _textFormatFlags; // used in measuring/painting
@@ -659,6 +668,20 @@ public class GroupedComboBox : ComboBox, IComparer
         set
         {
             _groupMember = value;
+            if (_bindingSource != null) SyncInternalItems();
+        }
+    }
+
+    /// <summary>
+    ///     Gets or sets the property to use when showing icons of items in the list.
+    /// </summary>
+    [DefaultValue("")]
+    public string ImageMember
+    {
+        get { return _imageMember; }
+        set
+        {
+            _imageMember = value;
             if (_bindingSource != null) SyncInternalItems();
         }
     }
@@ -839,6 +862,18 @@ public class GroupedComboBox : ComboBox, IComparer
         }
     }
 
+    private Image GetItemImage(object item)
+    {
+        try
+        {
+            return (_imageProperty.GetValue(item)) as Image;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
     /// <summary>
     ///     Determines whether the list item at the specified index is the start of a new group. In all
     ///     cases, populates the string respresentation of the group that the item belongs to.
@@ -933,9 +968,15 @@ public class GroupedComboBox : ComboBox, IComparer
             else
                 textColor = ForeColor;
 
+            Image itimg = GetItemImage(Items[e.Index]);
+            int delay = itimg?.Width ?? 0;
+
+
+
+
             // items will be indented if they belong to a group
             Rectangle itemBounds = Rectangle.FromLTRB(
-                e.Bounds.X + (hasGroup ? 12 : 0),
+                e.Bounds.X + (hasGroup ? 12 : 0) + delay,
                 e.Bounds.Y + (isGroupStart ? (e.Bounds.Height / 2) : 0),
                 e.Bounds.Right,
                 e.Bounds.Bottom
@@ -974,6 +1015,11 @@ public class GroupedComboBox : ComboBox, IComparer
                     ForeColor,
                     _textFormatFlags
                     );
+
+            if(itimg != null)
+            {
+                e.Graphics.DrawImageUnscaled(itimg, e.Bounds.X + (hasGroup ? 12 : 0), itemBounds.Y);
+            }
 
             // render item text
             TextRenderer.DrawText(
@@ -1038,7 +1084,8 @@ public class GroupedComboBox : ComboBox, IComparer
     {
         // locate the property descriptor that corresponds to the value of GroupMember
         _groupProperty = null;
-        foreach (
+        _imageProperty = null;
+        /*foreach (
             PropertyDescriptor descriptor in
                 _bindingSource.GetItemProperties(null)
                     .Cast<PropertyDescriptor>()
@@ -1046,7 +1093,14 @@ public class GroupedComboBox : ComboBox, IComparer
         {
             _groupProperty = descriptor;
             break;
-        }
+        }*/
+
+        _groupProperty = _bindingSource
+            .GetItemProperties(null)
+            .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_groupMember));
+        _imageProperty = _bindingSource
+           .GetItemProperties(null)
+           .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_imageMember));
 
         // rebuild the collection and sort using custom logic
         _internalItems.Clear();

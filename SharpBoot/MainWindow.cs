@@ -354,6 +354,7 @@ namespace SharpBoot
 
         public void CheckFields()
         {
+            lblDragHere.Visible = lvIsos.Rows.Count == 0;
             btnGen.Enabled = btnUSB.Enabled = !(lvIsos.Rows.Count == 0 ||
                                (cbxBackType.SelectedIndex == 1 && !File.Exists(txtBackFile.Text)));
         }
@@ -490,7 +491,13 @@ namespace SharpBoot
 
         private bool temporary;
 
-
+        private void centerDragndrop()
+        {
+            lblDragHere.Location = new Point(
+                lvIsos.Width / 2 - lblDragHere.Width / 2 + lvIsos.Location.X,
+                lvIsos.Height / 2 - lblDragHere.Height / 2 + lvIsos.Location.Y
+                );
+        }
 
         private void cbxLng_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -524,6 +531,7 @@ namespace SharpBoot
                     Size = new Size(1006, 754);
                 }
                 SetSize();
+                centerDragndrop();
                 cbxLng.Items.Clear();
                 loadlng();
                 cbxBootloader.SelectedIndex = 0;
@@ -731,6 +739,11 @@ namespace SharpBoot
         private void updateAvailableToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/zdimension/SharpBoot/releases/latest");
+        }
+
+        private void MainWindow_SizeChanged(object sender, EventArgs e)
+        {
+            centerDragndrop();
         }
     }
 }

@@ -170,6 +170,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>拖曳&amp;放置 ISO 或 IMG 文件至這裡</value>
   </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 658</value>
+  </data>
   <data name="groupBox3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 11pt</value>
   </data>
@@ -182,6 +185,15 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>解析度</value>
   </data>
+  <data name="cbxRes.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 10pt</value>
+  </data>
+  <data name="cbxRes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="cbxRes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 27</value>
+  </data>
   <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 10pt</value>
   </data>
@@ -193,6 +205,18 @@
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>啟動引導器</value>
+  </data>
+  <data name="cbxBootloader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 10pt</value>
+  </data>
+  <data name="cbxBootloader.Items" xml:space="preserve">
+    <value>Syslinux (建議)</value>
+  </data>
+  <data name="cbxBootloader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="cbxBootloader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 27</value>
   </data>
   <data name="btnAbout.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 10pt</value>
@@ -218,6 +242,12 @@
   <data name="gbxLng.Text" xml:space="preserve">
     <value>語言</value>
   </data>
+  <data name="cbxLng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 27</value>
+  </data>
   <data name="btnChecksum.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 11pt</value>
   </data>
@@ -241,69 +271,6 @@
   </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>背景圖像</value>
-  </data>
-  <data name="gbxTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="gbxTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="gbxTitle.Text" xml:space="preserve">
-    <value>標題</value>
-  </data>
-  <data name="btnRemISO.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 11pt</value>
-  </data>
-  <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 598</value>
-  </data>
-  <data name="btnRemISO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 52</value>
-  </data>
-  <data name="btnRemISO.Text" xml:space="preserve">
-    <value> 刪除</value>
-  </data>
-  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 69</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>總計大小</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 658</value>
-  </data>
-  <data name="cbxRes.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="cbxRes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="cbxRes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 27</value>
-  </data>
-  <data name="cbxBootloader.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (建議)</value>
-  </data>
-  <data name="cbxBootloader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="cbxBootloader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 27</value>
-  </data>
-  <data name="cbxLng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 27</value>
   </data>
   <data name="cbxBackType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 10pt</value>
@@ -341,6 +308,15 @@
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>瀏覽</value>
   </data>
+  <data name="gbxTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 10pt</value>
+  </data>
+  <data name="gbxTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
+  </data>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>標題</value>
+  </data>
   <data name="txtTitle.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 10pt</value>
   </data>
@@ -350,11 +326,38 @@
   <data name="txtTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 24</value>
   </data>
+  <data name="btnRemISO.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 11pt</value>
+  </data>
+  <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 598</value>
+  </data>
+  <data name="btnRemISO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 52</value>
+  </data>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value> 刪除</value>
+  </data>
+  <data name="groupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 10pt</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 69</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>總計大小</value>
+  </data>
   <data name="tbxSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 25</value>
   </data>
   <data name="tbxSize.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 24</value>
+  </data>
+  <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 658</value>
   </data>
   <data name="clmnName.HeaderText" xml:space="preserve">
     <value>名稱</value>
@@ -371,26 +374,11 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>文件路徑</value>
   </data>
-  <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 658</value>
-  </data>
   <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="sharpBootToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="sharpBootToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
-  </data>
-  <data name="mniUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 21</value>
-  </data>
-  <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 21</value>
-  </data>
-  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
-    <value>更新可用</value>
   </data>
   <data name="openToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 10pt</value>
@@ -443,6 +431,21 @@
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>離開</value>
   </data>
+  <data name="mniUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 21</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 21</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>更新可用</value>
+  </data>
+  <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 25</value>
+  </data>
+  <data name="lblDragHere.Text" xml:space="preserve">
+    <value>將文件拖至此處</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 17</value>
   </data>
@@ -454,7 +457,7 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1006, 849</value>

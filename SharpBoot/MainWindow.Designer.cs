@@ -52,6 +52,7 @@ namespace SharpBoot
             this.btnAbout = new System.Windows.Forms.Button();
             this.gbxLng = new System.Windows.Forms.GroupBox();
             this.cbxLng = new System.Windows.Forms.ComboBox();
+            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,7 +87,7 @@ namespace SharpBoot
             this.updateAvailableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
+            this.lblDragHere = new System.Windows.Forms.Label();
             this.pnlBottom.SuspendLayout();
             this.gbxTest.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -103,12 +104,12 @@ namespace SharpBoot
             // 
             // pnlBottom
             // 
+            resources.ApplyResources(this.pnlBottom, "pnlBottom");
             this.pnlBottom.Controls.Add(this.btnUSB);
             this.pnlBottom.Controls.Add(this.btnInstBoot);
             this.pnlBottom.Controls.Add(this.gbxTest);
             this.pnlBottom.Controls.Add(this.btnGen);
             this.pnlBottom.Controls.Add(this.txImInfo);
-            resources.ApplyResources(this.pnlBottom, "pnlBottom");
             this.pnlBottom.Name = "pnlBottom";
             // 
             // btnUSB
@@ -129,8 +130,8 @@ namespace SharpBoot
             // 
             // gbxTest
             // 
-            this.gbxTest.AllowDrop = true;
             resources.ApplyResources(this.gbxTest, "gbxTest");
+            this.gbxTest.AllowDrop = true;
             this.gbxTest.Controls.Add(this.label1);
             this.gbxTest.Name = "gbxTest";
             this.gbxTest.TabStop = false;
@@ -139,8 +140,8 @@ namespace SharpBoot
             // 
             // label1
             // 
-            this.label1.AllowDrop = true;
             resources.ApplyResources(this.label1, "label1");
+            this.label1.AllowDrop = true;
             this.label1.Name = "label1";
             this.label1.DragDrop += new System.Windows.Forms.DragEventHandler(this.gbxTest_DragDrop);
             this.label1.DragEnter += new System.Windows.Forms.DragEventHandler(this.gbxTest_DragEnter);
@@ -162,6 +163,7 @@ namespace SharpBoot
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btnAbout);
@@ -171,7 +173,6 @@ namespace SharpBoot
             this.panel1.Controls.Add(this.gbxTitle);
             this.panel1.Controls.Add(this.btnRemISO);
             this.panel1.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // groupBox3
@@ -183,13 +184,13 @@ namespace SharpBoot
             // 
             // cbxRes
             // 
+            resources.ApplyResources(this.cbxRes, "cbxRes");
             this.cbxRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRes.FormattingEnabled = true;
             this.cbxRes.Items.AddRange(new object[] {
             resources.GetString("cbxRes.Items"),
             resources.GetString("cbxRes.Items1"),
             resources.GetString("cbxRes.Items2")});
-            resources.ApplyResources(this.cbxRes, "cbxRes");
             this.cbxRes.Name = "cbxRes";
             // 
             // groupBox2
@@ -201,12 +202,12 @@ namespace SharpBoot
             // 
             // cbxBootloader
             // 
+            resources.ApplyResources(this.cbxBootloader, "cbxBootloader");
             this.cbxBootloader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBootloader.FormattingEnabled = true;
             this.cbxBootloader.Items.AddRange(new object[] {
             resources.GetString("cbxBootloader.Items"),
             resources.GetString("cbxBootloader.Items1")});
-            resources.ApplyResources(this.cbxBootloader, "cbxBootloader");
             this.cbxBootloader.Name = "cbxBootloader";
             this.cbxBootloader.SelectedIndexChanged += new System.EventHandler(this.cbxBootloader_SelectedIndexChanged);
             // 
@@ -227,16 +228,27 @@ namespace SharpBoot
             // 
             // cbxLng
             // 
+            resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.DisplayMember = "Name";
             this.cbxLng.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLng.FormattingEnabled = true;
-            resources.ApplyResources(this.cbxLng, "cbxLng");
             this.cbxLng.Name = "cbxLng";
             this.cbxLng.ValueMember = "Value";
             this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
             // 
+            // btnChecksum
+            // 
+            resources.ApplyResources(this.btnChecksum, "btnChecksum");
+            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
+            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
+            this.btnChecksum.Name = "btnChecksum";
+            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
+            this.btnChecksum.UseVisualStyleBackColor = true;
+            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
+            // 
             // cmsChecksum
             // 
+            resources.ApplyResources(this.cmsChecksum, "cmsChecksum");
             this.cmsChecksum.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mD5ToolStripMenuItem,
             this.btnSha1,
@@ -244,36 +256,35 @@ namespace SharpBoot
             this.btnSha384,
             this.btnSha512});
             this.cmsChecksum.Name = "cmsChecksum";
-            resources.ApplyResources(this.cmsChecksum, "cmsChecksum");
             // 
             // mD5ToolStripMenuItem
             // 
-            this.mD5ToolStripMenuItem.Name = "mD5ToolStripMenuItem";
             resources.ApplyResources(this.mD5ToolStripMenuItem, "mD5ToolStripMenuItem");
+            this.mD5ToolStripMenuItem.Name = "mD5ToolStripMenuItem";
             this.mD5ToolStripMenuItem.Click += new System.EventHandler(this.mD5ToolStripMenuItem_Click);
             // 
             // btnSha1
             // 
-            this.btnSha1.Name = "btnSha1";
             resources.ApplyResources(this.btnSha1, "btnSha1");
+            this.btnSha1.Name = "btnSha1";
             this.btnSha1.Click += new System.EventHandler(this.btnSha1_Click);
             // 
             // btnSha256
             // 
-            this.btnSha256.Name = "btnSha256";
             resources.ApplyResources(this.btnSha256, "btnSha256");
+            this.btnSha256.Name = "btnSha256";
             this.btnSha256.Click += new System.EventHandler(this.btnSha256_Click);
             // 
             // btnSha384
             // 
-            this.btnSha384.Name = "btnSha384";
             resources.ApplyResources(this.btnSha384, "btnSha384");
+            this.btnSha384.Name = "btnSha384";
             this.btnSha384.Click += new System.EventHandler(this.btnSha384_Click);
             // 
             // btnSha512
             // 
-            this.btnSha512.Name = "btnSha512";
             resources.ApplyResources(this.btnSha512, "btnSha512");
+            this.btnSha512.Name = "btnSha512";
             this.btnSha512.Click += new System.EventHandler(this.btnSha512_Click);
             // 
             // gbxBckd
@@ -287,20 +298,20 @@ namespace SharpBoot
             // 
             // cbxBackType
             // 
+            resources.ApplyResources(this.cbxBackType, "cbxBackType");
             this.cbxBackType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBackType.FormattingEnabled = true;
             this.cbxBackType.Items.AddRange(new object[] {
             resources.GetString("cbxBackType.Items"),
             resources.GetString("cbxBackType.Items1"),
             resources.GetString("cbxBackType.Items2")});
-            resources.ApplyResources(this.cbxBackType, "cbxBackType");
             this.cbxBackType.Name = "cbxBackType";
             this.cbxBackType.SelectedIndexChanged += new System.EventHandler(this.cbxBackType_SelectedIndexChanged);
             // 
             // txtBackFile
             // 
-            this.txtBackFile.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.txtBackFile, "txtBackFile");
+            this.txtBackFile.BackColor = System.Drawing.SystemColors.Window;
             this.txtBackFile.Name = "txtBackFile";
             this.txtBackFile.ReadOnly = true;
             // 
@@ -347,6 +358,7 @@ namespace SharpBoot
             // 
             // lvIsos
             // 
+            resources.ApplyResources(this.lvIsos, "lvIsos");
             this.lvIsos.AllowDrop = true;
             this.lvIsos.AllowUserToAddRows = false;
             this.lvIsos.AllowUserToResizeRows = false;
@@ -361,7 +373,6 @@ namespace SharpBoot
             this.clmnCate,
             this.clmnDescr,
             this.clmnFilePath});
-            resources.ApplyResources(this.lvIsos, "lvIsos");
             this.lvIsos.GridColor = System.Drawing.SystemColors.Window;
             this.lvIsos.MultiSelect = false;
             this.lvIsos.Name = "lvIsos";
@@ -404,15 +415,16 @@ namespace SharpBoot
             // 
             // menuStrip
             // 
+            resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sharpBootToolStripMenuItem,
             this.mniUpdate,
             this.updateAvailableToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             // 
             // sharpBootToolStripMenuItem
             // 
+            resources.ApplyResources(this.sharpBootToolStripMenuItem, "sharpBootToolStripMenuItem");
             this.sharpBootToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
@@ -422,64 +434,63 @@ namespace SharpBoot
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.sharpBootToolStripMenuItem.Name = "sharpBootToolStripMenuItem";
-            resources.ApplyResources(this.sharpBootToolStripMenuItem, "sharpBootToolStripMenuItem");
             // 
             // openToolStripMenuItem
             // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
             // 
             // addISOToolStripMenuItem
             // 
+            resources.ApplyResources(this.addISOToolStripMenuItem, "addISOToolStripMenuItem");
             this.addISOToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.cd_add;
             this.addISOToolStripMenuItem.Name = "addISOToolStripMenuItem";
-            resources.ApplyResources(this.addISOToolStripMenuItem, "addISOToolStripMenuItem");
             this.addISOToolStripMenuItem.Click += new System.EventHandler(this.addISOToolStripMenuItem_Click);
             // 
             // automaticallyAddISOInfoToolStripMenuItem
             // 
+            resources.ApplyResources(this.automaticallyAddISOInfoToolStripMenuItem, "automaticallyAddISOInfoToolStripMenuItem");
             this.automaticallyAddISOInfoToolStripMenuItem.Checked = true;
             this.automaticallyAddISOInfoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.automaticallyAddISOInfoToolStripMenuItem.Name = "automaticallyAddISOInfoToolStripMenuItem";
-            resources.ApplyResources(this.automaticallyAddISOInfoToolStripMenuItem, "automaticallyAddISOInfoToolStripMenuItem");
             this.automaticallyAddISOInfoToolStripMenuItem.Click += new System.EventHandler(this.automaticallyAddISOInfoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // mniUpdate
             // 
+            resources.ApplyResources(this.mniUpdate, "mniUpdate");
             this.mniUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.mniUpdate.Image = global::SharpBoot.Properties.Resources.update_anim;
             this.mniUpdate.Name = "mniUpdate";
-            resources.ApplyResources(this.mniUpdate, "mniUpdate");
             // 
             // updateAvailableToolStripMenuItem
             // 
+            resources.ApplyResources(this.updateAvailableToolStripMenuItem, "updateAvailableToolStripMenuItem");
             this.updateAvailableToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.updateAvailableToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.package_go;
             this.updateAvailableToolStripMenuItem.Name = "updateAvailableToolStripMenuItem";
-            resources.ApplyResources(this.updateAvailableToolStripMenuItem, "updateAvailableToolStripMenuItem");
             this.updateAvailableToolStripMenuItem.Click += new System.EventHandler(this.updateAvailableToolStripMenuItem_Click);
             // 
             // openFileDialog
@@ -493,20 +504,18 @@ namespace SharpBoot
             this.saveFileDialog.DefaultExt = "sbt";
             resources.ApplyResources(this.saveFileDialog, "saveFileDialog");
             // 
-            // btnChecksum
+            // lblDragHere
             // 
-            resources.ApplyResources(this.btnChecksum, "btnChecksum");
-            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
-            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
-            this.btnChecksum.Name = "btnChecksum";
-            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
-            this.btnChecksum.UseVisualStyleBackColor = true;
-            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
+            resources.ApplyResources(this.lblDragHere, "lblDragHere");
+            this.lblDragHere.BackColor = System.Drawing.Color.White;
+            this.lblDragHere.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblDragHere.Name = "lblDragHere";
             // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblDragHere);
             this.Controls.Add(this.lvIsos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBottom);
@@ -514,10 +523,10 @@ namespace SharpBoot
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
             this.gbxTest.ResumeLayout(false);
-            this.gbxTest.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -590,6 +599,7 @@ namespace SharpBoot
         private DataGridViewTextBoxColumn clmnFilePath;
         private ToolStripMenuItem mniUpdate;
         private ToolStripMenuItem updateAvailableToolStripMenuItem;
+        private Label lblDragHere;
     }
 }
 

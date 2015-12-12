@@ -123,6 +123,12 @@
   <data name="btnInstBoot.Text" xml:space="preserve">
     <value>Установить загрузчик на флеш-памьять</value>
   </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Попробовать образ диска в ВМ</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Создать ISO</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -130,20 +136,14 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Перетащите сюда образ CD или DVD диска</value>
   </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Попробовать образ диска в ВМ</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>Создать ISO</value>
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Разрешение экрана</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (рекомендовано)</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Загрузчик</value>
+  </data>
+  <data name="cbxBootloader.Items" xml:space="preserve">
+    <value>Syslinux (рекомендовано)</value>
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> О SharpBoot...</value>
@@ -153,6 +153,9 @@
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> Хэшсумма</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Фон</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Стандартный фон</value>
@@ -165,9 +168,6 @@
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Обзор</value>
-  </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Фон</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>Заголовок</value>
@@ -236,8 +236,10 @@
   <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
     <value>Доступно обновление</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 25</value>
+  </data>
+  <data name="lblDragHere.Text" xml:space="preserve">
+    <value>Сохранить файлы здесь</value>
   </data>
 </root>
