@@ -240,4 +240,10 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Inchide</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>Operație anulată</value>
+  </data>
 </root>

@@ -129,9 +129,20 @@ namespace SharpBoot
                 Generate();
         }
 
+        private bool closeonclick = false;
+
         private void btnAnnul_Click(object sender, EventArgs e)
         {
-            bwkISO.CancelAsync();
+            if (closeonclick)
+            {
+                DialogResult = DialogResult.Cancel;
+                Close();
+            }
+            else
+            {
+                bwkISO.CancelAsync();
+                SetCancel();
+            }
         }
 
         public IBootloader bloader { get; set; }
@@ -207,6 +218,12 @@ namespace SharpBoot
                 }
             }
 
+            if (bwkISO.CancellationPending)
+            {
+                abort = true;
+                return;
+            }
+
             var sylp = Path.Combine(isodir, "boot", bloader.FolderName);
 
             bloader.WorkingDir = sylp;
@@ -246,6 +263,12 @@ namespace SharpBoot
                 }
             }
 
+            if (bwkISO.CancellationPending)
+            {
+                abort = true;
+                return;
+            }
+
             Image img = null;
             ChangeProgressBar(30, 100);
             if (IsoBackgroundImage == "")
@@ -265,6 +288,12 @@ namespace SharpBoot
             }
             ChangeProgressBar(60, 100);
             Program.SafeDel(archs);
+
+            if (bwkISO.CancellationPending)
+            {
+                abort = true;
+                return;
+            }
 
             // copier les fichiers dans le rep temporaire
             ChangeProgress(0, Images.Count, Strings.CopyISOfiles);
@@ -287,6 +316,12 @@ namespace SharpBoot
                 }
             }
 
+            if (bwkISO.CancellationPending)
+            {
+                abort = true;
+                return;
+            }
+
             ChangeProgress(0, Categories.Count, Strings.GenMenus);
 
 
@@ -297,6 +332,12 @@ namespace SharpBoot
             var ii = 0;
 
             var itype = new Func<string, MenuItemType>(fn => Path.GetExtension(fn).ToLower() == ".img" ? MenuItemType.IMG : MenuItemType.ISO);
+
+            if (bwkISO.CancellationPending)
+            {
+                abort = true;
+                return;
+            }
 
             foreach (var c in Categories)
             {
@@ -327,14 +368,25 @@ namespace SharpBoot
                 }
 
                 ii++;
+
+                if (bwkISO.CancellationPending)
+                {
+                    abort = true;
+                    return;
+                }
             }
             if (bloader is Syslinux)
                 File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main), Program.GetEnc());
             else if (bloader is Grub4DOS)
                 File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
 
+            if (bwkISO.CancellationPending)
+            {
+                abort = true;
+                return;
+            }
 
-            if(_usb)
+            if (_usb)
             {
                 ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, bloader.Name, OutputFilepath));
                 BootloaderInst.Install(OutputFilepath, bloader.FolderName);
@@ -370,7 +422,14 @@ namespace SharpBoot
                 p.Exited += delegate { GenF(f); };
 
                 Thread.Sleep(500);
-                while(true)
+
+                if (bwkISO.CancellationPending)
+                {
+                    abort = true;
+                    return;
+                }
+
+                while (true)
                 {
                     if (!File.Exists(mkisofsexe))
                     {
@@ -417,7 +476,17 @@ namespace SharpBoot
         private void bwkISO_DoWork(object sender, DoWorkEventArgs e)
         {
             Generate();
-            if(abort) Close();
+            if (abort)
+            {
+                closeonclick = true;
+                SetCancel();
+            }
+        }
+
+        private void SetCancel()
+        {
+            ChangeProgress(0, 100, Strings.OpCancelled);
+            btnAnnul.Text = Strings.Close;
         }
 
         private void GenF(string f)
@@ -441,6 +510,11 @@ namespace SharpBoot
 
         private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            if(e.Cancelled)
+            {
+                abort = true;
+                SetCancel();
+            }
             if(e.Error != null)
             {
                 if(e.Error is FileNotFoundException)

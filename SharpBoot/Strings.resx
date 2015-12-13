@@ -240,4 +240,10 @@
   <data name="SizeSuffixes" xml:space="preserve">
     <value>,K,M,G,T,P,E,Z,Y</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>Operation cancelled</value>
+  </data>
 </root>

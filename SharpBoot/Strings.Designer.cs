@@ -115,6 +115,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Close.
+        /// </summary>
+        internal static string Close {
+            get {
+                return ResourceManager.GetString("Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Copying {0}.
         /// </summary>
         internal static string Copying {
@@ -372,6 +381,15 @@ namespace SharpBoot {
         internal static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Operation cancelled.
+        /// </summary>
+        internal static string OpCancelled {
+            get {
+                return ResourceManager.GetString("OpCancelled", resourceCulture);
             }
         }
         

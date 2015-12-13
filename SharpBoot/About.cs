@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace SharpBoot
 {
     public partial class About : Form
-    { 
+    {
+        public static List<Image> Flags => new About().ilTranslators.Images.Cast<Image>().ToList(); 
+
 
         public About()
         {
@@ -16,6 +21,7 @@ namespace SharpBoot
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
             rtbMyWebsite.DeselectAll();
+            
         }
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)

@@ -56,7 +56,7 @@ namespace SharpBoot
 
             foreach (var x in result)
             {
-                cbxLng.Items.Add(new {Value = x, Name = x.NativeName, Supported = x != systemLng});
+                cbxLng.Items.Add(new {Value = x, Name = x.NativeName, Supported = x != systemLng, Img = Utils.GetFlag(x.Name)});
             }
         }
 

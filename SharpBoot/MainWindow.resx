@@ -134,23 +134,17 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;btnBackBrowse.Name" xml:space="preserve">
-    <value>btnBackBrowse</value>
+  <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 586</value>
   </data>
   <data name="&gt;&gt;cbxRes.Name" xml:space="preserve">
     <value>cbxRes</value>
   </data>
-  <data name="lblDragHere.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="clmnSize.HeaderText" xml:space="preserve">
-    <value>Size</value>
-  </data>
   <data name="&gt;&gt;openToolStripMenuItem.Name" xml:space="preserve">
     <value>openToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;clmnSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnSha256.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 22</value>
   </data>
   <data name="&gt;&gt;txImInfo.Parent" xml:space="preserve">
     <value>pnlBottom</value>
@@ -158,8 +152,12 @@
   <data name="&gt;&gt;cbxRes.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Exit</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;updateAvailableToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -167,7 +165,12 @@
   <data name="&gt;&gt;pnlBottom.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;clmnSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btnRemISO.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -176,6 +179,9 @@
   </data>
   <data name="&gt;&gt;btnRemISO.Name" xml:space="preserve">
     <value>btnRemISO</value>
+  </data>
+  <data name="btnGen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 12</value>
   </data>
   <data name="cbxRes.Items" xml:space="preserve">
     <value>640x480</value>
@@ -201,8 +207,8 @@
   <data name="btnSha384.Text" xml:space="preserve">
     <value>SHA-384</value>
   </data>
-  <data name="btnAbout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+  <data name="&gt;&gt;clmnCate.Name" xml:space="preserve">
+    <value>clmnCate</value>
   </data>
   <data name="&gt;&gt;txImInfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -273,9 +279,6 @@
   <data name="sharpBootToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;SharpBoot</value>
   </data>
-  <data name="&gt;&gt;gbxTitle.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="btnAbout.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
@@ -309,14 +312,14 @@
   <data name="clmnCate.Width" type="System.Int32, mscorlib">
     <value>130</value>
   </data>
-  <data name="cbxBootloader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 23</value>
+  <data name="&gt;&gt;lvIsos.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;lblDragHere.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 22</value>
+  <data name="&gt;&gt;lvIsos.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 52</value>
@@ -342,8 +345,8 @@
   <data name="cbxBootloader.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;updateAvailableToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;gbxTitle.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="btnChecksum.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -353,9 +356,6 @@
   </data>
   <data name="btnUSB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="&gt;&gt;cbxRes.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -375,17 +375,14 @@
   <data name="cbxRes.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 22</value>
   </data>
-  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 23</value>
-  </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 15</value>
   </data>
-  <data name="btnInstBoot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 104</value>
+  <data name="&gt;&gt;btnBackBrowse.Name" xml:space="preserve">
+    <value>btnBackBrowse</value>
   </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Background image</value>
@@ -393,8 +390,11 @@
   <data name="&gt;&gt;gbxBckd.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
-    <value>217, 25</value>
+  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 24</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;cbxBackType.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -456,14 +456,14 @@
   <data name="&gt;&gt;cbxLng.Name" xml:space="preserve">
     <value>cbxLng</value>
   </data>
-  <data name="&gt;&gt;btnChecksum.Name" xml:space="preserve">
-    <value>btnChecksum</value>
+  <data name="clmnCate.HeaderText" xml:space="preserve">
+    <value>Category</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="gbxTitle.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>Title</value>
   </data>
   <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
     <value>790, 562</value>
@@ -472,7 +472,7 @@
     <value>SHA-1</value>
   </data>
   <data name="&gt;&gt;cbxLng.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>GroupedComboBox, SharpBoot, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;clmnDescr.Name" xml:space="preserve">
     <value>clmnDescr</value>
@@ -486,6 +486,9 @@
   <data name="&gt;&gt;btnAbout.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>gbxTest</value>
   </data>
@@ -495,20 +498,17 @@
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;sharpBootToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1006, 753</value>
   </data>
-  <data name="gbxLng.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="cbxBootloader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 23</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btnUSB.Parent" xml:space="preserve">
-    <value>pnlBottom</value>
-  </data>
-  <data name="clmnSize.Width" type="System.Int32, mscorlib">
-    <value>65</value>
+  <data name="btnChecksum.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;btnSha256.Name" xml:space="preserve">
     <value>btnSha256</value>
@@ -518,6 +518,9 @@
   </data>
   <data name="&gt;&gt;clmnSize.Name" xml:space="preserve">
     <value>clmnSize</value>
+  </data>
+  <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 25</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Type" xml:space="preserve">
     <value>wyDay.Controls.SplitButton, SharpBoot, Version=3.7.0.0, Culture=neutral, PublicKeyToken=null</value>
@@ -540,8 +543,8 @@
   <data name="btnChecksum.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="&gt;&gt;btnGen.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtTitle.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -555,17 +558,14 @@
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="&gt;&gt;sharpBootToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="&gt;&gt;cbxBackType.Name" xml:space="preserve">
-    <value>cbxBackType</value>
-  </data>
-  <data name="&gt;&gt;txImInfo.Name" xml:space="preserve">
-    <value>txImInfo</value>
+  <data name="clmnSize.Width" type="System.Int32, mscorlib">
+    <value>65</value>
   </data>
   <data name="gbxTest.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -578,9 +578,6 @@
   </data>
   <data name="cbxLng.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 22</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Bootloader</value>
   </data>
   <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
@@ -625,11 +622,11 @@ the ISO or IMG file here</value>
   <data name="&gt;&gt;gbxTitle.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btnGen.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;mD5ToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="menuStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;lvIsos.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -639,6 +636,9 @@ the ISO or IMG file here</value>
   </data>
   <data name="txtBackFile.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
+  </data>
+  <data name="&gt;&gt;btnChecksum.Name" xml:space="preserve">
+    <value>btnChecksum</value>
   </data>
   <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -651,9 +651,6 @@ the ISO or IMG file here</value>
   </data>
   <data name="cbxRes.Items2" xml:space="preserve">
     <value>1024x768</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gbxTest.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
@@ -709,11 +706,17 @@ the ISO or IMG file here</value>
   <data name="clmnDescr.HeaderText" xml:space="preserve">
     <value>Description</value>
   </data>
-  <data name="&gt;&gt;txtTitle.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="gbxTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnAbout.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
   </data>
   <data name="&gt;&gt;txtBackFile.Name" xml:space="preserve">
     <value>txtBackFile</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Exit</value>
   </data>
   <data name="btnBackBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -736,11 +739,17 @@ the ISO or IMG file here</value>
   <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>990, 24</value>
   </data>
+  <data name="&gt;&gt;clmnName.Name" xml:space="preserve">
+    <value>clmnName</value>
+  </data>
   <data name="tbxSize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;clmnFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlBottom.Name" xml:space="preserve">
     <value>pnlBottom</value>
@@ -766,11 +775,11 @@ the ISO or IMG file here</value>
   <data name="txtTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;clmnFilePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;clmnCate.Name" xml:space="preserve">
-    <value>clmnCate</value>
+  <data name="btnInstBoot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 104</value>
   </data>
   <data name="&gt;&gt;btnInstBoot.Parent" xml:space="preserve">
     <value>pnlBottom</value>
@@ -790,8 +799,8 @@ the ISO or IMG file here</value>
   <data name="btnChecksum.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
   </data>
-  <data name="btnSha256.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Bootloader</value>
   </data>
   <data name="&gt;&gt;lvIsos.Name" xml:space="preserve">
     <value>lvIsos</value>
@@ -810,6 +819,9 @@ the ISO or IMG file here</value>
   </data>
   <data name="gbxBckd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;mD5ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;mniUpdate.Name" xml:space="preserve">
     <value>mniUpdate</value>
@@ -859,8 +871,8 @@ the ISO or IMG file here</value>
   <data name="cbxBackType.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 18</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
+  <data name="&gt;&gt;txImInfo.Name" xml:space="preserve">
+    <value>txImInfo</value>
   </data>
   <data name="&gt;&gt;menuStrip.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -910,8 +922,8 @@ the ISO or IMG file here</value>
   <data name="btnChecksum.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 460</value>
   </data>
-  <data name="&gt;&gt;clmnName.Name" xml:space="preserve">
-    <value>clmnName</value>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 22</value>
   </data>
   <data name="btnAbout.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -954,6 +966,9 @@ the ISO or IMG file here</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Resolution</value>
+  </data>
+  <data name="&gt;&gt;cbxBackType.Name" xml:space="preserve">
+    <value>cbxBackType</value>
   </data>
   <data name="tbxSize.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1006,8 +1021,8 @@ the ISO or IMG file here</value>
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="btnGen.Location" type="System.Drawing.Point, System.Drawing">
-    <value>764, 12</value>
+  <data name="clmnSize.HeaderText" xml:space="preserve">
+    <value>Size</value>
   </data>
   <data name="btnUSB.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1018,8 +1033,8 @@ the ISO or IMG file here</value>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="btnChecksum.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cbxBackType.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1030,8 +1045,8 @@ the ISO or IMG file here</value>
   <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 510</value>
   </data>
-  <data name="gbxTitle.Text" xml:space="preserve">
-    <value>Title</value>
+  <data name="gbxBckd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 106</value>
   </data>
   <data name="gbxTest.Location" type="System.Drawing.Point, System.Drawing">
     <value>462, 12</value>
@@ -1045,14 +1060,8 @@ the ISO or IMG file here</value>
   <data name="btnInstBoot.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="&gt;&gt;lblDragHere.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="gbxTitle.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 52</value>
@@ -1066,11 +1075,11 @@ the ISO or IMG file here</value>
   <data name="btnUSB.Location" type="System.Drawing.Point, System.Drawing">
     <value>874, 12</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblDragHere.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;lvIsos.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;cbxLng.Parent" xml:space="preserve">
+    <value>gbxLng</value>
   </data>
   <data name="&gt;&gt;cbxLng.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1126,9 +1135,6 @@ the ISO or IMG file here</value>
   <data name="&gt;&gt;gbxLng.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="&gt;&gt;cbxLng.Parent" xml:space="preserve">
-    <value>gbxLng</value>
-  </data>
   <data name="&gt;&gt;btnRemISO.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
@@ -1156,8 +1162,8 @@ the ISO or IMG file here</value>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>790, 24</value>
   </data>
-  <data name="&gt;&gt;lvIsos.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="gbxLng.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;btnGen.Parent" xml:space="preserve">
     <value>pnlBottom</value>
@@ -1192,11 +1198,8 @@ the ISO or IMG file here</value>
   <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 20</value>
   </data>
-  <data name="gbxBckd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 106</value>
-  </data>
-  <data name="clmnCate.HeaderText" xml:space="preserve">
-    <value>Category</value>
+  <data name="&gt;&gt;btnUSB.Parent" xml:space="preserve">
+    <value>pnlBottom</value>
   </data>
   <data name="pnlBottom.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1209,9 +1212,6 @@ the ISO or IMG file here</value>
   </data>
   <data name="&gt;&gt;cmsChecksum.Name" xml:space="preserve">
     <value>cmsChecksum</value>
-  </data>
-  <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 586</value>
   </data>
   <data name="btnUSB.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 104</value>
@@ -1234,11 +1234,11 @@ the ISO or IMG file here</value>
   <metadata name="clmnDescr.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="clmnCate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="clmnFilePath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>125, 17</value>
+  <metadata name="clmnCate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="menuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -1250,10 +1250,10 @@ the ISO or IMG file here</value>
     <value>49</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ro</value>
+    <value>uk</value>
   </metadata>
-  <metadata name="clmnFilePath.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="openFileDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>125, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

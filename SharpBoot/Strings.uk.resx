@@ -240,4 +240,10 @@
   <data name="SizeSuffixes" xml:space="preserve">
     <value>,к,М,Г,Т,П,Е,З,Й</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>Операцію скасовано</value>
+  </data>
 </root>

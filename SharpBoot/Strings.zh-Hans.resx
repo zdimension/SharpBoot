@@ -237,4 +237,10 @@
   <data name="OK" xml:space="preserve">
     <value>好的</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>操作被取消</value>
+  </data>
 </root>

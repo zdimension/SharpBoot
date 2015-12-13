@@ -237,4 +237,10 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>Vorgang abgebrochen</value>
+  </data>
 </root>

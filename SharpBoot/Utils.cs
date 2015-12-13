@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -8,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
+using SharpBoot.Properties;
 
 namespace SharpBoot
 {
@@ -18,6 +21,14 @@ namespace SharpBoot
         public static string FormatEx(this string s, params object[] args)
         {
             return string.Format(s, args);
+        }
+
+        public static Image GetFlag(string twocode)
+        {
+            if (twocode == "en") return Resources.flag_usa;
+            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es"};
+            var index = dc.IndexOf(twocode);
+            return index == -1 ? null : About.Flags[index];
         }
 
         public static string FileMD5(string fileName)
@@ -253,7 +264,22 @@ namespace SharpBoot
             }
 
             p.StartInfo.Arguments += " /k format /FS:" + fileSystem + " /V:" + label + " /Q /Y " + driveLetter + " & exit";
-            p.Start();
+            try
+            {
+                p.Start();
+            }
+            catch(Win32Exception e)
+            {
+                if(e.NativeErrorCode == 1223)
+                    return 2;
+                if (e.NativeErrorCode == 5)
+                    return 3;
+                return 1;
+            }
+            catch
+            {
+                return 1;
+            }
             bool finished = p.WaitForExit(20000);
             return (uint)(finished ? 0 : 1);
         }

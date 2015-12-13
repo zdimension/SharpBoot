@@ -193,9 +193,9 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap flag_germany {
+        internal static System.Drawing.Bitmap flag_usa {
             get {
-                object obj = ResourceManager.GetObject("flag_germany", resourceCulture);
+                object obj = ResourceManager.GetObject("flag_usa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

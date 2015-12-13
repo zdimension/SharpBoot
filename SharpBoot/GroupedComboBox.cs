@@ -619,6 +619,7 @@ public class GroupedComboBox : ComboBox, IComparer
     private TextFormatFlags _textFormatFlags; // used in measuring/painting
     private BufferedPainter<ComboBoxState> _bufferedPainter; // provides buffered paint animations
     private bool _isNotDroppedDown;
+    private bool _showImageOnDropDown = true;
 
     /// <summary>
     ///     Gets or sets the data source for this GroupedComboBox.
@@ -864,9 +865,11 @@ public class GroupedComboBox : ComboBox, IComparer
 
     private Image GetItemImage(object item)
     {
+
         try
         {
-            return (_imageProperty.GetValue(item)) as Image;
+            if(_imageProperty == null) RefreshImageProp();
+            return _imageProperty?.GetValue(item) as Image;
         }
         catch
         {
@@ -937,6 +940,13 @@ public class GroupedComboBox : ComboBox, IComparer
         _groupFont = new Font(Font, FontStyle.Bold);
     }
 
+    [DefaultValue(true)]
+    public bool ShowImageOnDropDown
+    {
+        get { return _showImageOnDropDown; }
+        set { _showImageOnDropDown = value; Invalidate(); }
+    }
+
     /// <summary>
     ///     Performs custom painting for a list item.
     /// </summary>
@@ -968,15 +978,15 @@ public class GroupedComboBox : ComboBox, IComparer
             else
                 textColor = ForeColor;
 
-            Image itimg = GetItemImage(Items[e.Index]);
-            int delay = itimg?.Width ?? 0;
+            Image itimg = ((!ShowImageOnDropDown && comboBoxEdit) ? null : GetItemImage(Items[e.Index]));
+            int delay = itimg?.Width + 4 ?? 0;
 
 
 
 
             // items will be indented if they belong to a group
             Rectangle itemBounds = Rectangle.FromLTRB(
-                e.Bounds.X + (hasGroup ? 12 : 0) + delay,
+                e.Bounds.X + (hasGroup ? 12 : 0) + (comboBoxEdit ? -2 : 0) + delay,
                 e.Bounds.Y + (isGroupStart ? (e.Bounds.Height / 2) : 0),
                 e.Bounds.Right,
                 e.Bounds.Bottom
@@ -1018,7 +1028,7 @@ public class GroupedComboBox : ComboBox, IComparer
 
             if(itimg != null)
             {
-                e.Graphics.DrawImageUnscaled(itimg, e.Bounds.X + (hasGroup ? 12 : 0), itemBounds.Y);
+                e.Graphics.DrawImage(itimg, e.Bounds.X + (hasGroup ? 12 : 0) + 2, itemBounds.Y);
             }
 
             // render item text
@@ -1077,6 +1087,14 @@ public class GroupedComboBox : ComboBox, IComparer
         }
     }
 
+    public void RefreshImageProp()
+    {
+        if(_bindingSource == null) _bindingSource = new BindingSource(Items, "");
+        _imageProperty = _bindingSource
+           .GetItemProperties(null)
+           .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_imageMember));
+    }
+
     /// <summary>
     ///     Rebuilds the internal sorted collection.
     /// </summary>
@@ -1098,9 +1116,7 @@ public class GroupedComboBox : ComboBox, IComparer
         _groupProperty = _bindingSource
             .GetItemProperties(null)
             .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_groupMember));
-        _imageProperty = _bindingSource
-           .GetItemProperties(null)
-           .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_imageMember));
+        RefreshImageProp();
 
         // rebuild the collection and sort using custom logic
         _internalItems.Clear();

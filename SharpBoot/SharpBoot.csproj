@@ -559,8 +559,8 @@
     <None Include="Resources\update_anim.gif" />
     <None Include="Resources\drive_disk.png" />
     <None Include="Resources\ajax-loader.gif" />
-    <None Include="Resources\flag_germany.png" />
     <None Include="Resources\download.png" />
+    <None Include="Resources\flag_usa.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

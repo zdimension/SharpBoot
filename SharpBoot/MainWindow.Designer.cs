@@ -51,7 +51,7 @@ namespace SharpBoot
             this.cbxBootloader = new System.Windows.Forms.ComboBox();
             this.btnAbout = new System.Windows.Forms.Button();
             this.gbxLng = new System.Windows.Forms.GroupBox();
-            this.cbxLng = new System.Windows.Forms.ComboBox();
+            this.cbxLng = new GroupedComboBox();
             this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -229,10 +229,13 @@ namespace SharpBoot
             // cbxLng
             // 
             resources.ApplyResources(this.cbxLng, "cbxLng");
+            this.cbxLng.DataSource = null;
             this.cbxLng.DisplayMember = "Name";
             this.cbxLng.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLng.FormattingEnabled = true;
+            this.cbxLng.ImageMember = "Img";
             this.cbxLng.Name = "cbxLng";
+            this.cbxLng.ShowImageOnDropDown = false;
             this.cbxLng.ValueMember = "Value";
             this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
             // 
@@ -566,7 +569,7 @@ namespace SharpBoot
         private Button btnBackBrowse;
         private SplitButton btnChecksum;
         private GroupBox gbxLng;
-        private ComboBox cbxLng;
+        private GroupedComboBox cbxLng;
         private Button btnAbout;
         private MenuStrip menuStrip;
         private ToolStripMenuItem sharpBootToolStripMenuItem;
