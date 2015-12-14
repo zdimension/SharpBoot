@@ -499,6 +499,16 @@ namespace SharpBoot
                 );
         }
 
+        private void ReplaceFontRecursive(Control parent, Font f1, Font f2)
+        {
+            if (parent.Font == f1) parent.Font = f2;
+            foreach(Control ct in parent.Controls)
+            {
+                if (ct.Font == f1) ct.Font = f2;
+                ReplaceFontRecursive(ct, f1, f2);
+            }
+        }
+
         private void cbxLng_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(temporary)
@@ -526,10 +536,6 @@ namespace SharpBoot
             {
                 Controls.Clear();
                 InitializeComponent();
-                if (!sel.TwoLetterISOLanguageName.Contains("zh"))
-                {
-                    Size = new Size(1006, 754);
-                }
                 SetSize();
                 centerDragndrop();
                 cbxLng.Items.Clear();

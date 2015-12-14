@@ -117,147 +117,32 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnUSB.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
+  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
+    <value>加入一个ISO</value>
   </data>
-  <data name="btnUSB.Text" xml:space="preserve">
-    <value>做Multiboot的U片</value>
-  </data>
-  <data name="btnInstBoot.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="btnInstBoot.Text" xml:space="preserve">
-    <value>啟動程式套裝在U片安装</value>
-  </data>
-  <data name="gbxTest.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>在QEMU尝试</value>
-  </data>
-  <data name="btnGen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>做ISO</value>
-  </data>
-  <data name="txImInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9.75pt</value>
-  </data>
-  <data name="txImInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 14</value>
-  </data>
-  <data name="txImInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>444, 102</value>
-  </data>
-  <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 682</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 48</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 20</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>单击及拖动ISO到这里</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 658</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 393</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>屏幕分辨率</value>
-  </data>
-  <data name="cbxRes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="cbxRes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 25</value>
-  </data>
-  <data name="groupBox2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 328</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>啟動引導器</value>
-  </data>
-  <data name="cbxBootloader.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (推荐)</value>
-  </data>
-  <data name="cbxBootloader.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="cbxBootloader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 25</value>
-  </data>
-  <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 480</value>
-  </data>
-  <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 52</value>
+  <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
+    <value>加入ISO信息得自动</value>
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> 关于SharpBoot</value>
   </data>
-  <data name="gbxLng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 262</value>
-  </data>
-  <data name="gbxLng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>语言</value>
-  </data>
-  <data name="cbxLng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 25</value>
-  </data>
-  <data name="btnChecksum.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="btnChecksum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 539</value>
-  </data>
-  <data name="btnChecksum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 52</value>
+  <data name="btnBackBrowse.Text" xml:space="preserve">
+    <value>浏览</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> 校验</value>
   </data>
-  <data name="gbxBckd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>做ISO</value>
   </data>
-  <data name="gbxBckd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 135</value>
+  <data name="btnInstBoot.Text" xml:space="preserve">
+    <value>啟動程式套裝在U片安装</value>
   </data>
-  <data name="gbxBckd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 120</value>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value> 删除</value>
   </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>背景</value>
-  </data>
-  <data name="cbxBackType.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
+  <data name="btnUSB.Text" xml:space="preserve">
+    <value>做Multiboot的U片</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>缺省</value>
@@ -268,77 +153,8 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>没有</value>
   </data>
-  <data name="cbxBackType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
-  </data>
-  <data name="cbxBackType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 27</value>
-  </data>
-  <data name="txtBackFile.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="txtBackFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 53</value>
-  </data>
-  <data name="btnBackBrowse.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="btnBackBrowse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 86</value>
-  </data>
-  <data name="btnBackBrowse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 26</value>
-  </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>浏览</value>
-  </data>
-  <data name="gbxTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="gbxTitle.Text" xml:space="preserve">
-    <value>标题</value>
-  </data>
-  <data name="txtTitle.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="txtTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 24</value>
-  </data>
-  <data name="btnRemISO.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 10pt</value>
-  </data>
-  <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 598</value>
-  </data>
-  <data name="btnRemISO.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 52</value>
-  </data>
-  <data name="btnRemISO.Text" xml:space="preserve">
-    <value> 删除</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 69</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 59</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>总大小</value>
-  </data>
-  <data name="tbxSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 25</value>
-  </data>
-  <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 658</value>
-  </data>
-  <data name="clmnName.HeaderText" xml:space="preserve">
-    <value>名字</value>
-  </data>
-  <data name="clmnSize.HeaderText" xml:space="preserve">
-    <value>大小</value>
+  <data name="cbxBootloader.Items" xml:space="preserve">
+    <value>Syslinux (推荐)</value>
   </data>
   <data name="clmnCate.HeaderText" xml:space="preserve">
     <value>类别</value>
@@ -349,92 +165,49 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>文件的位置</value>
   </data>
-  <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+  <data name="clmnName.HeaderText" xml:space="preserve">
+    <value>名字</value>
   </data>
-  <data name="sharpBootToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="openToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>打开</value>
-  </data>
-  <data name="saveToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>保存</value>
-  </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
-    <value>加入一个ISO</value>
-  </data>
-  <data name="automaticallyAddISOInfoToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="automaticallyAddISOInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
-    <value>加入ISO信息得自动</value>
-  </data>
-  <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="exitToolStripMenuItem.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+  <data name="clmnSize.HeaderText" xml:space="preserve">
+    <value>大小</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>退 出</value>
   </data>
-  <data name="mniUpdate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 21</value>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>背景</value>
   </data>
-  <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 21</value>
+  <data name="gbxLng.Text" xml:space="preserve">
+    <value>语言</value>
   </data>
-  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
-    <value>更新可用</value>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>在QEMU尝试</value>
   </data>
-  <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 25</value>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>总大小</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>啟動引導器</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>屏幕分辨率</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>单击及拖动ISO到这里</value>
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>将文件拖至此处</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 17</value>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>打开</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>990, 810</value>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>保存</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1006, 849</value>
+  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>更新可用</value>
   </data>
 </root>
