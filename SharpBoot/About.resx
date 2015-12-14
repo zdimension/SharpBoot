@@ -157,8 +157,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC2
-        CwAAAk1TRnQBSQFMAgEBCAEAAVABAgFQAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAB0
+        DAAAAk1TRnQBSQFMAgEBCQEAAVgBAgFYAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAATADAAEBAQABCAYAAQwYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -186,29 +186,32 @@
         AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
         AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
         AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD//8A/wD/AP8ARQAg8wH0
-        DvMB9BDzECABJQ4gASUBeQ4yAXkRIA5NAiAOFwEgATIO+wEyASAORwIgAU0MRwFNAiABFwxHARcBIAEy
-        AV4M+wFeATIBIAFHDCYBRwEgAekBTQYmBkcBTQIgARcCJghHAiYBFwEgATIBXgw4AV4CMgFeAfsB7AE3
-        AVEBKwHsAvsEOAFeATIBigHUBs0BJgVHAeMBIAGsAdsMswHbAawBMgFeDDgBXgIyAV4B+wFGASsBSwFS
-        AUYGOAFeATIBigHVAawBtAEJAdsCrAEmBUcBFgEgAYoBugyzAboBigEyAV4MOAFeAjIB5QE4AVgBRAFo
-        AbcBWAY4AXoBMgGKArQBBwH0Ad0BugGsASYERwEmAXUBIAGKAboBrAqtAawBugGKAawBCQzbAQkBrAEy
-        AeUBOAE3AUwBdAFYATcGOAHlATIBigG0AQkBvAH/AfQBCQGsAiYDRwEmAZQBIAGKAboMigG6AYoBrAEZ
-        DNsBGQGsATIBoAI4AcMBeQHDBzgB5QEyAYoBuwG0AbUBvAEJAbQBrAYmAZQBIAH3AfQC8AgZAvAB9AH3
-        AawBGQzUARkBrAEyAaAK+wI4AaABMgGKAQkBpgG0AbsBtAGmAawFJgH5AZoBIAEHDv8BBwGsARkB0wrU
-        AdMBGQGsASABlAwgAZQBIAGKBwkBmga9ASABBw7/AQcBrA4ZAawBIAG9AZQKtwGUAb0BIAG0B4oB+QYg
-        AW8B8AEHDO8BBwHwAboOrAG6ARYOIAEWwABA8wFTDjIBUwGsBIoBvAQHAbwFIAGsA6YBxwYyFSABMg77
-        ATIBigSyBv8BJgNNASABpgSsAfsEOAH7AUcDTQIgDk0BIAEyAV4MOAFeATIBigGzA7IG/wEmAkcBTQEg
-        AaYBrQOsAfsEOAH7A0cBTQIgAU0MRwFNASABMgFeDDgBXgEyAYoBswOyAfYE9AH/ASYCRwFNASABpgGz
-        A6wB+wQ4AfsDRwFNAiABTQxHAU0CIAEWDE0BFgEgAYoBuQOyAfYB9ALzAfQB/wEmAkcB4wEgAaYBswKs
-        AccFOAH7A0cB4wIgAeMCRwH7AUcB+wdHAeMCIAF1DEcBdQEgAYoBugOyAfYE8wH0ASYCRwEWASABpgG0
-        AqwBxwU4AfsDRwEWAiABFgxHARYCIAF1ASYKRwEmAXUBIAGKAboCsgGsAfQB8wLyAfMB9AMmAXUBIAGm
-        AbQBxwGsAccFOAH7AkcBJgF1AiABdQEmBEcB+wVHASYBdQIgAZQMJgGUASABigHcAawBsgGsAfME8gHz
-        AyYBlAEgAaYBtAPHBjgCRwEmAZQCIAGUASYC+whHASYBlAEgAREB7wEVCkQBFQHvAREBigEJA6wBGwTx
-        ARkDJgGUASABpgEJA8cGOAFHAiYBlAIgAZQB+QL7AiYB+wYmAZQBIAERAQcBQwoVAUMBBwERAYoBCQOs
-        AfEE8AHyAfkBJgH5AZoBIAGmAQkBpgLHBjgB+QEmAfkBmgIgAZoE+QEmAfkFJgH5AZoBIAERDgcBEQGK
-        BAkB9gT0Af8BmgO9ASABpgQJAqAEwwS9AiAOvQEgAe0OEQHtAboEigG8BAcBvAQgAW8BtAOmAccGMgQg
-        AW8BFg4gARaAAAFCAU0BPgcAAT4DAAEoAwABQAMAATADAAEBAQABAQUAAYABARYAA/+BAAj/aAAY/2gA
-        EP8L
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/0EAAfQO8wH0MAABbw4g
+        AW8wAAGsAbMNTQEgMAABrAHUAbIBTAFHCk0BIDAAAYoBswKyAW4BJghHAU0BIDAAAYoBuQOyAesIJgHj
+        ASAwAAGKAboEsgGuB/kB4wEgMAABigG6A7IBrAGzCPUBkzAAAYoB3AOsAbsB9gfzAf8BBzAAAYoBCQKs
+        AQkB9gjzAf8BBzAAAYoBCQGsAfAB9ALzB/IB/wEHMAABigEJDf8BBzAAAfAEBwjvAgcB8PAAIPMB9A7z
+        AfQQ8xAgASUOIAElAXkOMgF5ESAOTQIgDhcBIAEyDvsBMgEgDkcCIAFNDEcBTQIgARcMRwEXASABMgFe
+        DPsBXgEyASABRwwmAUcBIAHpAU0GJgZHAU0CIAEXAiYIRwImARcBIAEyAV4MOAFeAjIBXgH7AewBNwFR
+        ASsB7AL7BDgBXgEyAYoB1AbNASYFRwHjASABrAHbDLMB2wGsATIBXgw4AV4CMgFeAfsBRgErAUsBUgFG
+        BjgBXgEyAYoB1QGsAbQBCQHbAqwBJgVHARYBIAGKAboMswG6AYoBMgFeDDgBXgIyAeUBOAFYAUQBaAG3
+        AVgGOAF6ATIBigK0AQcB9AHdAboBrAEmBEcBJgF1ASABigG6AawKrQGsAboBigGsAQkM2wEJAawBMgHl
+        ATgBNwFMAXQBWAE3BjgB5QEyAYoBtAEJAbwB/wH0AQkBrAImA0cBJgGUASABigG6DIoBugGKAawBGQzb
+        ARkBrAEyAaACOAHDAXkBwwc4AeUBMgGKAbsBtAG1AbwBCQG0AawGJgGUASAB9wH0AvAIGQLwAfQB9wGs
+        ARkM1AEZAawBMgGgCvsCOAGgATIBigEJAaYBtAG7AbQBpgGsBSYB+QGaASABBw7/AQcBrAEZAdMK1AHT
+        ARkBrAEgAZQMIAGUASABigcJAZoGvQEgAQcO/wEHAawOGQGsASABvQGUCrcBlAG9ASABtAeKAfkGIAFv
+        AfABBwzvAQcB8AG6DqwBugEWDiABFsAAQPMBUw4yAVMBrASKAbwEBwG8BSABrAOmAccGMhUgATIO+wEy
+        AYoEsgb/ASYDTQEgAaYErAH7BDgB+wFHA00CIA5NASABMgFeDDgBXgEyAYoBswOyBv8BJgJHAU0BIAGm
+        Aa0DrAH7BDgB+wNHAU0CIAFNDEcBTQEgATIBXgw4AV4BMgGKAbMDsgH2BPQB/wEmAkcBTQEgAaYBswOs
+        AfsEOAH7A0cBTQIgAU0MRwFNAiABFgxNARYBIAGKAbkDsgH2AfQC8wH0Af8BJgJHAeMBIAGmAbMCrAHH
+        BTgB+wNHAeMCIAHjAkcB+wFHAfsHRwHjAiABdQxHAXUBIAGKAboDsgH2BPMB9AEmAkcBFgEgAaYBtAKs
+        AccFOAH7A0cBFgIgARYMRwEWAiABdQEmCkcBJgF1ASABigG6ArIBrAH0AfMC8gHzAfQDJgF1ASABpgG0
+        AccBrAHHBTgB+wJHASYBdQIgAXUBJgRHAfsFRwEmAXUCIAGUDCYBlAEgAYoB3AGsAbIBrAHzBPIB8wMm
+        AZQBIAGmAbQDxwY4AkcBJgGUAiABlAEmAvsIRwEmAZQBIAERAe8BFQpEARUB7wERAYoBCQOsARsE8QEZ
+        AyYBlAEgAaYBCQPHBjgBRwImAZQCIAGUAfkC+wImAfsGJgGUASABEQEHAUMKFQFDAQcBEQGKAQkDrAHx
+        BPAB8gH5ASYB+QGaASABpgEJAaYCxwY4AfkBJgH5AZoCIAGaBPkBJgH5BSYB+QGaASABEQ4HAREBigQJ
+        AfYE9AH/AZoDvQEgAaYECQKgBMMEvQIgDr0BIAHtDhEB7QG6BIoBvAQHAbwEIAFvAbQDpgHHBjIEIAFv
+        ARYOIAEWgAABQgFNAT4HAAE+AwABKAMAAUADAAEwAwABAQEAAQEFAAGAAQEWAAP/AQAC/24AAv8GAAL/
+        BgAI/2gAGP9oABD/Cw==
 </value>
   </data>
   <data name="richTextBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -243,7 +246,7 @@ Copyright © 2014-2015 zdimension
     <value>richTextBox1</value>
   </data>
   <data name="&gt;&gt;richTextBox1.Type" xml:space="preserve">
-    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;richTextBox1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -270,7 +273,7 @@ Copyright © 2014-2015 zdimension
     <value>rtbMyWebsite</value>
   </data>
   <data name="&gt;&gt;rtbMyWebsite.Type" xml:space="preserve">
-    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtbMyWebsite.Parent" xml:space="preserve">
     <value>$this</value>
@@ -297,7 +300,7 @@ Copyright © 2014-2015 zdimension
     <value>rbnHelpTranslate</value>
   </data>
   <data name="&gt;&gt;rbnHelpTranslate.Type" xml:space="preserve">
-    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rbnHelpTranslate.Parent" xml:space="preserve">
     <value>$this</value>
@@ -445,12 +448,11 @@ Copyright © 2014-2015 zdimension
         CQcAAAAB+P////r///8KAAAAAAAAAAAaAAEAAQUFAAAAMVN5c3RlbS5XaW5kb3dzLkZvcm1zLkxpc3RW
         aWV3SXRlbStMaXN0Vmlld1N1Ykl0ZW0EAAAABHRleHQEbmFtZQVzdHlsZQh1c2VyRGF0YQEBBAI+U3lz
         dGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtK0xpc3RWaWV3U3ViSXRlbStTdWJJdGVtU3R5bGUC
-        AAAAAgAAAAYJAAAAHmh0dHBzOi8vZ2l0aHViLmNvbS9taXNoYW9yMjAwNQYKAAAAEExpc3RWaWV3U3Vi
-        SXRlbTAKCgUHAAAAE1N5c3RlbS5EcmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAE
-        BAsYU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQD
-        AAAAAwAAAAYLAAAACFNlZ29lIFVJAAAQQQX0////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAH
-        dmFsdWVfXwAIAwAAAAAAAAAF8////xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVl
-        X18ACAMAAAADAAAACw==
+        AAAAAgAAAAYJAAAAHmh0dHBzOi8vZ2l0aHViLmNvbS9taXNoYW9yMjAwNQoKCgUHAAAAE1N5c3RlbS5E
+        cmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsYU3lzdGVtLkRyYXdpbmcuRm9u
+        dFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAAAwAAAAYKAAAACFNlZ29lIFVJ
+        AAAQQQX1////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAAAF9P//
+        /xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMAAAADAAAACw==
 </value>
   </data>
   <data name="lvTranslators.Items6" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -468,12 +470,11 @@ Copyright © 2014-2015 zdimension
         CQcAAAAB+P////r///8KAAAAAAAAAAAaAAEAAQUFAAAAMVN5c3RlbS5XaW5kb3dzLkZvcm1zLkxpc3RW
         aWV3SXRlbStMaXN0Vmlld1N1Ykl0ZW0EAAAABHRleHQEbmFtZQVzdHlsZQh1c2VyRGF0YQEBBAI+U3lz
         dGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtK0xpc3RWaWV3U3ViSXRlbStTdWJJdGVtU3R5bGUC
-        AAAAAgAAAAYJAAAAHmh0dHBzOi8vZ2l0aHViLmNvbS9taXNoYW9yMjAwNQYKAAAAEExpc3RWaWV3U3Vi
-        SXRlbTEKCgUHAAAAE1N5c3RlbS5EcmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAE
-        BAsYU3lzdGVtLkRyYXdpbmcuRm9udFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQD
-        AAAAAwAAAAYLAAAACFNlZ29lIFVJAAAQQQX0////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAH
-        dmFsdWVfXwAIAwAAAAAAAAAF8////xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVl
-        X18ACAMAAAADAAAACw==
+        AAAAAgAAAAYJAAAAHmh0dHBzOi8vZ2l0aHViLmNvbS9taXNoYW9yMjAwNQoKCgUHAAAAE1N5c3RlbS5E
+        cmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsYU3lzdGVtLkRyYXdpbmcuRm9u
+        dFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAAAwAAAAYKAAAACFNlZ29lIFVJ
+        AAAQQQX1////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAAAF9P//
+        /xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMAAAADAAAACw==
 </value>
   </data>
   <data name="lvTranslators.Items7" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -493,6 +494,24 @@ Copyright © 2014-2015 zdimension
         Bfb///8bU3lzdGVtLkRyYXdpbmcuR3JhcGhpY3NVbml0AQAAAAd2YWx1ZV9fAAgDAAAAAwAAAAs=
 </value>
   </data>
+  <data name="lvTranslators.Items8" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
+        ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
+        PWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0HAAAA
+        BFRleHQKSW1hZ2VJbmRleAlCYWNrQ29sb3IHQ2hlY2tlZARGb250CUZvcmVDb2xvchdVc2VJdGVtU3R5
+        bGVGb3JTdWJJdGVtcwEABAAEBAAIFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAAETU3lzdGVtLkRyYXdp
+        bmcuRm9udAMAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3IDAAAAAQIAAAAGBAAAABAgIFZhbGVudGluIEZS
+        SVRaCAAAAAX7////FFN5c3RlbS5EcmF3aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IF
+        c3RhdGUBAAAACQcHAwAAAAoAAAAAAAAAAAUAAQAACQYAAAAB+f////v///8KAAAAAAAAAAAaAAEAAQUG
+        AAAAE1N5c3RlbS5EcmF3aW5nLkZvbnQEAAAABE5hbWUEU2l6ZQVTdHlsZQRVbml0AQAEBAsYU3lzdGVt
+        LkRyYXdpbmcuRm9udFN0eWxlAwAAABtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQDAAAAAwAAAAYI
+        AAAACFNlZ29lIFVJAAAQQQX3////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAI
+        AwAAAAAAAAAF9v///xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMAAAAD
+        AAAACw==
+</value>
+  </data>
   <data name="lvTranslators.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 239</value>
   </data>
@@ -506,7 +525,7 @@ Copyright © 2014-2015 zdimension
     <value>lvTranslators</value>
   </data>
   <data name="&gt;&gt;lvTranslators.Type" xml:space="preserve">
-    <value>SharpBoot.CustomListView, SharpBoot, Version=3.6.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.CustomListView, SharpBoot, Version=3.8.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lvTranslators.Parent" xml:space="preserve">
     <value>$this</value>

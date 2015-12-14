@@ -80,6 +80,9 @@
     <Compile Include="CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CustomTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -163,6 +166,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.zh-Hant.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TestFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestFrm.Designer.cs">
+      <DependentUpon>TestFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="USBFrm.cs">
       <SubType>Form</SubType>
@@ -323,6 +332,9 @@
     <EmbeddedResource Include="AskPForm.resx">
       <DependentUpon>AskPForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.cs.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.de.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +365,7 @@
     <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.cs.resx" />
     <EmbeddedResource Include="ISOCat.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.es.Designer.cs</LastGenOutput>
@@ -372,6 +385,10 @@
     <EmbeddedResource Include="ISOCat.zh-Hant.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.zh-Hant.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.cs.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.es.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -394,6 +411,7 @@
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.cs.resx" />
     <EmbeddedResource Include="Strings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
