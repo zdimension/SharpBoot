@@ -235,7 +235,6 @@ namespace SharpBoot
             this.cbxLng.FormattingEnabled = true;
             this.cbxLng.ImageMember = "Img";
             this.cbxLng.Name = "cbxLng";
-            this.cbxLng.ShowImageOnDropDown = false;
             this.cbxLng.ValueMember = "Value";
             this.cbxLng.SelectedIndexChanged += new System.EventHandler(this.cbxLng_SelectedIndexChanged);
             // 
