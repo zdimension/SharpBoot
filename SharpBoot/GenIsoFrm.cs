@@ -129,7 +129,7 @@ namespace SharpBoot
                 Generate();
         }
 
-        private bool closeonclick = false;
+        private bool closeonclick;
 
         private void btnAnnul_Click(object sender, EventArgs e)
         {
@@ -445,7 +445,7 @@ namespace SharpBoot
                 {
                     p.Start();
                 }
-                catch (FileNotFoundException e)
+                catch (FileNotFoundException)
                 {
                     
                 }

@@ -117,136 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="BootFromHDD" xml:space="preserve">
+    <value>Avvia dal primo hard drive</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Generating ISO file</value>
+  <data name="BootloaderInstalled" xml:space="preserve">
+    <value>{0} di {1} installati con successo.</value>
   </data>
-  <data name="&gt;&gt;lblStatus.Name" xml:space="preserve">
-    <value>lblStatus</value>
+  <data name="CalcIn" xml:space="preserve">
+    <value>Fine operazioni in {0}</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>Riavvia l'applicazione per vedere i cambiamenti.</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
+  <data name="ChkOf" xml:space="preserve">
+    <value>{0} checksum di {1}:</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pbx.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Scegli il bootloader che vuoi installare:</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="Close" xml:space="preserve">
+    <value>Chiudi</value>
   </data>
-  <data name="btnAnnul.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="Copying" xml:space="preserve">
+    <value>Copiatura {0}</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>456, 59</value>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>Copiatura ISO...</value>
   </data>
-  <data name="&gt;&gt;bwkISO.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>Non si è potuto riconoscere il sistema operativo nel disco immagine.</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>456, 158</value>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Crea multiboot USB</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>GenIsoFrm</value>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>Creazione del file ISO...</value>
   </data>
-  <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Creando multiboot USB...</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancel</value>
+  <data name="DownComplete" xml:space="preserve">
+    <value>Download completato.</value>
   </data>
-  <data name="&gt;&gt;pbx.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
   </data>
-  <data name="btnAnnul.Location" type="System.Drawing.Point, System.Drawing">
-    <value>362, 18</value>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>Estrazione dei file...</value>
   </data>
-  <data name="btnAnnul.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="Extracting" xml:space="preserve">
+    <value>Estrazione {0}...</value>
   </data>
-  <data name="&gt;&gt;lblStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Filesystem" xml:space="preserve">
+    <value>File system:</value>
   </data>
-  <data name="pbx.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 23</value>
+  <data name="FileUnit" xml:space="preserve">
+    <value>B</value>
   </data>
-  <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="FormatError" xml:space="preserve">
+    <value>Errore indeterminato durante la formattazione.</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formattazione</value>
   </data>
-  <data name="&gt;&gt;lblStatus.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Iniziare la formattazione?\nQuesto cancellerà tutti i dati sulla destinazione!</value>
   </data>
-  <data name="&gt;&gt;pbx.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>Creazione menu principale...</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="GenMenu" xml:space="preserve">
+    <value>Creazione menu {0}</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
-    <value>btnAnnul</value>
+  <data name="GenMenus" xml:space="preserve">
+    <value>Creazione menu...</value>
   </data>
-  <data name="lblStatus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="HDD" xml:space="preserve">
+    <value>Hard drive</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="Init" xml:space="preserve">
+    <value>Inizializzazione...</value>
   </data>
-  <data name="pbx.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 41</value>
+  <data name="Install" xml:space="preserve">
+    <value>Installa</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Installa un bootloader su USB</value>
   </data>
-  <data name="&gt;&gt;bwkISO.Name" xml:space="preserve">
-    <value>bwkISO</value>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Installazione {0} di {1}...</value>
   </data>
-  <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>Il file ISO è stato creato con successo.\nVuoi provarlo con QEMU?</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>ISO creata</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="ISOImg" xml:space="preserve">
+    <value>Immagine ISO</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 99</value>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Menu principale</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Devi essere Amministratore per formattare la chiavetta USB.</value>
   </data>
-  <data name="&gt;&gt;pbx.Name" xml:space="preserve">
-    <value>pbx</value>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
   </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>Initializing...</value>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>Operazione cancellata</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9pt</value>
+  <data name="Other" xml:space="preserve">
+    <value>Altro</value>
   </data>
-  <data name="&gt;&gt;pbx.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>La partizione selezionata è troppo grande per {0}</value>
   </data>
-  <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 15</value>
+  <data name="PicFilter" xml:space="preserve">
+    <value>Immagini</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>it</value>
-  </metadata>
-  <metadata name="bwkISO.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="Recommended" xml:space="preserve">
+    <value>(consigliato)</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>SharpBoot usa i seguenti software</value>
+  </data>
+  <data name="SizeSuffixes" xml:space="preserve">
+    <value>,K,M,G,T,P,E,Z,Y</value>
+  </data>
 </root>

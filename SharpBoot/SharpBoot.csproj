@@ -66,9 +66,6 @@
     <Compile Include="AddIso.Designer.cs">
       <DependentUpon>AddIso.cs</DependentUpon>
     </Compile>
-    <Compile Include="AskPForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AskPath.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -250,6 +247,10 @@
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="About.it.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -284,6 +285,9 @@
     <EmbeddedResource Include="AddIso.fr.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.it.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddIso.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +307,9 @@
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.es.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.it.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.ru.resx">
@@ -329,9 +336,6 @@
     <EmbeddedResource Include="AskPath.zh-Hant.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPForm.resx">
-      <DependentUpon>AskPForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.cs.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +346,9 @@
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.fr.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.it.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.resx">
@@ -370,6 +377,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ISOCat.it.resx" />
     <EmbeddedResource Include="ISOCat.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.ru.Designer.cs</LastGenOutput>
@@ -391,6 +399,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.es.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.it.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.ru.resx">
@@ -416,6 +427,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.it.resx" />
     <EmbeddedResource Include="Strings.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru.Designer.cs</LastGenOutput>
@@ -442,6 +454,9 @@
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.fr.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.it.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.resx">

@@ -26,7 +26,7 @@ namespace SharpBoot
         public static Image GetFlag(string twocode)
         {
             if (twocode == "en") return Resources.flag_usa;
-            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es"};
+            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it"};
             var index = dc.IndexOf(twocode);
             return index == -1 ? null : About.Flags[index];
         }

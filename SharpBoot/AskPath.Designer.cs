@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace SharpBoot
 {
-    partial class AskPath
+    partial class AskPath : Form
     {
         /// <summary>
         /// Required designer variable.
