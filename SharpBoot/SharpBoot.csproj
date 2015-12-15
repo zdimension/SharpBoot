@@ -432,6 +432,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.zh-Hans.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestFrm.resx">
+      <DependentUpon>TestFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.de.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
