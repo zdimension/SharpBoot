@@ -1001,7 +1001,10 @@ namespace W7R
                 }
 
                 e.TextRectangle = AdjustDrawRectangle(e.Item, e.TextRectangle);
-
+                if(e.Item.Image != null)
+                {
+                    e.TextRectangle = new Rectangle(e.TextRectangle.X + 5, e.TextRectangle.Y, e.TextRectangle.Width, e.TextRectangle.Height);
+                }
 
                 // All text is draw using the ClearTypeGridFit text rendering hint
                 using (UseClearTypeGridFit clearTypeGridFit = new UseClearTypeGridFit(e.Graphics))
@@ -1073,7 +1076,7 @@ namespace W7R
                 {
                     var newrect = AdjustDrawRectangle(e.Item, e.ImageRectangle);
                     if (e.Item.Enabled)
-                        e.Graphics.DrawImage(e.Image, newrect);
+                        e.Graphics.DrawImage(e.Image, newrect.X + 3, newrect.Y);
                     else
                         ControlPaint.DrawImageDisabled(e.Graphics, e.Image,
                             newrect.X,
