@@ -133,7 +133,7 @@
     <value>Linux</value>
   </data>
   <data name="Partition" xml:space="preserve">
-    <value>Partition</value>
+    <value>Oddíl</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Heslo</value>

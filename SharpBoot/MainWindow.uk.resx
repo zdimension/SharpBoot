@@ -143,6 +143,9 @@
   <data name="btnGen.Text" xml:space="preserve">
     <value>Створити ISO-файл</value>
   </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value> Текст програми</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Розширення екрану</value>
   </data>
@@ -154,9 +157,6 @@
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Про SharpBoot</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>Мова</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> Хєшсумма</value>
@@ -253,5 +253,9 @@
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>Перетягніть файли сюди</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

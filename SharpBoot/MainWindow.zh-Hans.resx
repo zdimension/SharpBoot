@@ -136,6 +136,9 @@
   <data name="btnGen.Text" xml:space="preserve">
     <value>做ISO</value>
   </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value> 编辑代码</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>屏幕分辨率</value>
   </data>
@@ -147,9 +150,6 @@
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> 关于SharpBoot</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>语言</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> 校验</value>
@@ -246,5 +246,9 @@
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>将文件拖至此处</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

@@ -97,10 +97,20 @@
     <Compile Include="DropDownSelector.Designer.cs">
       <DependentUpon>DropDownSelector.cs</DependentUpon>
     </Compile>
+    <Compile Include="ISOCat.cs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.cs.resx</DependentUpon>
+    </Compile>
     <Compile Include="ISOCat.es.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ISOCat.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ISOCat.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ISOCat.it.resx</DependentUpon>
     </Compile>
     <Compile Include="ISOCat.ru.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -139,10 +149,20 @@
     <Compile Include="SelectorCtrl.Designer.cs">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Strings.cs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.cs.resx</DependentUpon>
+    </Compile>
     <Compile Include="Strings.es.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Strings.it.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.it.resx</DependentUpon>
     </Compile>
     <Compile Include="Strings.ru.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -275,6 +295,9 @@
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.cs.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddIso.de.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,6 +328,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.zh-Hant.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.cs.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.es.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
@@ -372,12 +398,18 @@
     <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.cs.resx" />
+    <EmbeddedResource Include="ISOCat.cs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.cs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ISOCat.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.it.resx" />
+    <EmbeddedResource Include="ISOCat.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ISOCat.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ISOCat.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ISOCat.ru.Designer.cs</LastGenOutput>
@@ -422,12 +454,18 @@
     <EmbeddedResource Include="SelectorCtrl.resx">
       <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.cs.resx" />
+    <EmbeddedResource Include="Strings.cs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.cs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.it.resx" />
+    <EmbeddedResource Include="Strings.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Strings.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru.Designer.cs</LastGenOutput>
@@ -446,6 +484,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestFrm.resx">
       <DependentUpon>TestFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.cs.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.de.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
@@ -591,6 +632,7 @@
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\script_edit.png" />
     <None Include="Resources\package_go.png" />
     <None Include="Resources\update_anim.gif" />
     <None Include="Resources\drive_disk.png" />

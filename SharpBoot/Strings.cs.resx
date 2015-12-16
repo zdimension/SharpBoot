@@ -136,7 +136,7 @@
     <value>Choose the bootloader you want to install:</value>
   </data>
   <data name="Close" xml:space="preserve">
-    <value>Close</value>
+    <value>Zavřít</value>
   </data>
   <data name="Copying" xml:space="preserve">
     <value>Kopírování {0}</value>
@@ -157,10 +157,10 @@
     <value>Creating multiboot USB key...</value>
   </data>
   <data name="DownComplete" xml:space="preserve">
-    <value>Download complete.</value>
+    <value>Stahování dokončeno.</value>
   </data>
   <data name="Download" xml:space="preserve">
-    <value>Download</value>
+    <value>Stahování</value>
   </data>
   <data name="ExtractBaseDisk" xml:space="preserve">
     <value>Extracting base disk...</value>
@@ -169,7 +169,7 @@
     <value>Těžba {0}</value>
   </data>
   <data name="Filesystem" xml:space="preserve">
-    <value>File system:</value>
+    <value>Systém souborů:</value>
   </data>
   <data name="FileUnit" xml:space="preserve">
     <value>B</value>
@@ -217,7 +217,7 @@
     <value>ISO image</value>
   </data>
   <data name="MainMenu" xml:space="preserve">
-    <value>Main menu</value>
+    <value>Hlavní nabídka</value>
   </data>
   <data name="NeedAdmin" xml:space="preserve">
     <value>You must have administrator rights to format the USB key.</value>
@@ -226,7 +226,7 @@
     <value>OK</value>
   </data>
   <data name="OpCancelled" xml:space="preserve">
-    <value>Operation cancelled</value>
+    <value>Operace byla zrušena</value>
   </data>
   <data name="Other" xml:space="preserve">
     <value>Other</value>
@@ -235,10 +235,10 @@
     <value>The selected partition is too big for {0}</value>
   </data>
   <data name="PicFilter" xml:space="preserve">
-    <value>Pictures</value>
+    <value>Obrázky</value>
   </data>
   <data name="Recommended" xml:space="preserve">
-    <value>(recommended)</value>
+    <value>(doporučené)</value>
   </data>
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot uses the following software:</value>

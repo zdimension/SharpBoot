@@ -140,6 +140,9 @@
   <data name="btnGen.Text" xml:space="preserve">
     <value>建立 ISO</value>
   </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value> 編輯程式碼</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>解析度</value>
   </data>
@@ -151,9 +154,6 @@
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> 關於 SharpBoot</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>語言</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> 驗證碼</value>

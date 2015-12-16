@@ -150,8 +150,11 @@
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>456, 59</value>
   </data>
+  <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>SharpBoot.AskPForm, SharpBoot, Version=3.8.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Please choose the output file path.</value>
@@ -216,8 +219,8 @@
   <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
+    <value>btnAnnul</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -252,9 +255,6 @@
   <data name="&gt;&gt;tbxDest.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
@@ -270,8 +270,8 @@
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
-    <value>btnAnnul</value>
+  <data name="btnAnnul.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
@@ -286,6 +286,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>it</value>
+    <value>cs</value>
   </metadata>
 </root>

@@ -136,6 +136,9 @@
   <data name="btnGen.Text" xml:space="preserve">
     <value>Crear ISO</value>
   </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value> Editar código</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Resolución</value>
   </data>
@@ -147,9 +150,6 @@
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Acerca de SharpBoot</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>Lenguaje</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> Verificación</value>
@@ -247,5 +247,9 @@
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>Colocar archivos aquí</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

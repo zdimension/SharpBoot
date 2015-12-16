@@ -143,6 +143,9 @@
   <data name="btnGen.Text" xml:space="preserve">
     <value>Crea ISO</value>
   </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value> Modifica codice</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Risoluzione</value>
   </data>
@@ -151,9 +154,6 @@
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Info SharpBoot</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>Lingua</value>
   </data>
   <data name="cbxBackType.Items1" xml:space="preserve">
     <value>Personalizzata</value>
@@ -244,5 +244,9 @@
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>Prendi e trascina file qui</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>

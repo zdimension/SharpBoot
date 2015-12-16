@@ -136,6 +136,9 @@
   <data name="btnGen.Text" xml:space="preserve">
     <value>Crează ISO</value>
   </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value> Editare Cod</value>
+  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rezoluție</value>
   </data>
@@ -144,9 +147,6 @@
   </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Despre SharpBoot</value>
-  </data>
-  <data name="gbxLng.Text" xml:space="preserve">
-    <value>Limbă</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Implicit</value>
@@ -241,5 +241,9 @@
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>Trage fisierele aici</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
 </root>
