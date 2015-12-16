@@ -246,4 +246,7 @@
   <data name="OpCancelled" xml:space="preserve">
     <value>Операцію скасовано</value>
   </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Файл уже існує.</value>
+  </data>
 </root>

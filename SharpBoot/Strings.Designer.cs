@@ -214,6 +214,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à File already exists..
+        /// </summary>
+        internal static string FileAlreadyExists {
+            get {
+                return ResourceManager.GetString("FileAlreadyExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à File system:.
         /// </summary>
         internal static string Filesystem {

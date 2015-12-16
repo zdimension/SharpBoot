@@ -239,6 +239,12 @@
   <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
     <value>更新可用</value>
   </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 20</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>語言</value>
+  </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 25</value>
   </data>

@@ -246,4 +246,7 @@
   <data name="SizeSuffixes" xml:space="preserve">
     <value>,K,M,G,T,P,E,Z,Y</value>
   </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>Soubor již existuje.</value>
+  </data>
 </root>

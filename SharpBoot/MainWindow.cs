@@ -36,6 +36,9 @@ namespace SharpBoot
             cmsChecksum.Renderer = Windows7Renderer.Instance;
         }
 
+        Dictionary<string, Tuple<CultureInfo, bool>> lngs = new Dictionary<string, Tuple<CultureInfo, bool>>(); 
+
+
         private void loadlng()
         {
             List<CultureInfo> result = fromresx(typeof (Strings));
@@ -54,10 +57,57 @@ namespace SharpBoot
             result = result.Distinct().ToList();
             result.Sort((x, y) => string.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
 
+            lngs.Clear();
             foreach (var x in result)
             {
-                cbxLng.Items.Add(new {Value = x, Name = x.NativeName, Supported = x != systemLng, Img = Utils.GetFlag(x.Name)});
+                var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name));
+                mnit.Click += (sender, args) => LngItemClick(mnit);
+                languageToolStripMenuItem.DropDownItems.Add(mnit);
+                lngs.Add(x.NativeName, new Tuple<CultureInfo, bool>(x, x != systemLng));
             }
+        }
+
+
+
+        private void LngItemClick(ToolStripMenuItem it)
+        {
+            var tmp = lngs[it.Text];
+
+            if (Program.GetCulture().Equals(tmp.Item1)) return;
+
+            if(!tmp.Item2)
+            {
+                Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
+                setlngitem(Program.GetCulture());
+                return;
+            }
+
+            Program.SetAppLng(tmp.Item1);
+
+            if (changing && FieldsEmpty())
+            {
+                Controls.Clear();
+                InitializeComponent();
+                SetSize();
+                centerDragndrop();
+                lngs.Clear();
+                loadlng();
+                cbxBootloader.SelectedIndex = 0;
+                cbxRes.SelectedIndex = 0;
+                cbxBackType.SelectedIndex = 0;
+                updateAvailableToolStripMenuItem.Visible = update_available;
+            }
+            else if (!FieldsEmpty())
+            {
+                MessageBox.Show(Strings.ChangesNeedRestart);
+            }
+
+            changing = false;
+            var c = Program.GetCulture();
+
+            setlngitem(tmp.Item1);
+            
+            changing = true;
         }
 
         private static List<CultureInfo> fromresx(Type t)
@@ -135,14 +185,21 @@ namespace SharpBoot
 
         public void setlngitem(CultureInfo ci)
         {
-            var ar = cbxLng.Items.Cast<object>()
-                .Select(it => new { it, its = it })
-                .Where(t => (((dynamic)t.its).Value as CultureInfo).Equals(ci));
-            if (!ar.Any())
+            bool found = false;
+
+            foreach (ToolStripMenuItem mni in languageToolStripMenuItem.DropDownItems)
             {
-                setlngitem(new CultureInfo("en"));
+                if (lngs[mni.Text].Item1.Equals(ci))
+                {
+                    found = true;
+                    mni.Checked = true;
+                    languageToolStripMenuItem.Image = mni.Image;
+                    break;
+                }
+                else mni.Checked = false;
             }
-            else cbxLng.SelectedItem = ar.Select(x => x.it).First();
+
+            if(!found) setlngitem(new CultureInfo("en"));
         }
 
         protected override CreateParams CreateParams
@@ -507,58 +564,6 @@ namespace SharpBoot
                 if (ct.Font == f1) ct.Font = f2;
                 ReplaceFontRecursive(ct, f1, f2);
             }
-        }
-
-        private void cbxLng_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(temporary)
-            {
-                temporary = false;
-                return;
-            }
-            dynamic item = cbxLng.SelectedItem;
-
-            if(!item.Supported)
-            {
-                Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
-
-                temporary = true;
-                cbxLng.SelectedIndex = lastIndex;
-                
-                return;
-            }
-            lastIndex = cbxLng.SelectedIndex;
-
-            var sel = item.Value as CultureInfo;
-
-            Program.SetAppLng(sel);
-            if (changing && FieldsEmpty())
-            {
-                Controls.Clear();
-                InitializeComponent();
-                SetSize();
-                centerDragndrop();
-                cbxLng.Items.Clear();
-                loadlng();
-                cbxBootloader.SelectedIndex = 0;
-                cbxRes.SelectedIndex = 0;
-                cbxBackType.SelectedIndex = 0;
-                updateAvailableToolStripMenuItem.Visible = update_available;
-            }
-            else if (!FieldsEmpty())
-            {
-                MessageBox.Show(Strings.ChangesNeedRestart);
-            }
-
-            changing = false;
-            var c = Program.GetCulture();
-
-            cbxLng.SelectedItem = cbxLng.Items.Cast<object>()
-                .Select(it => new {it, its = it})
-                .Where(t => (((dynamic) t.its).Value as CultureInfo).Equals(c))
-                .Select(t => t.it)
-                .First();
-            changing = true;
         }
 
         public void CheckGrub4Dos()

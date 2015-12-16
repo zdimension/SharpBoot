@@ -145,10 +145,6 @@
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Despre SharpBoot</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="cbxLng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 24</value>
-  </data>
   <data name="gbxLng.Text" xml:space="preserve">
     <value>Limbă</value>
   </data>
@@ -191,6 +187,7 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>Locația fișierului</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>242, 22</value>
   </data>
@@ -232,6 +229,12 @@
   </data>
   <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
     <value>Actualizare de software disponibila</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Limbă</value>
   </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 25</value>

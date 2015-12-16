@@ -123,12 +123,6 @@
   <data name="btnInstBoot.Text" xml:space="preserve">
     <value>Installer un bootloader sur une clé USB</value>
   </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>Tester le fichier d'image disque</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>Créer le fichier ISO</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>33, 38</value>
@@ -139,6 +133,12 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Glissez-déplacez le 
 fichier ISO ou IMG ici</value>
+  </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Tester le fichier d'image disque</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Créer le fichier ISO</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Résolution</value>
@@ -152,9 +152,6 @@ fichier ISO ou IMG ici</value>
   <data name="gbxLng.Text" xml:space="preserve">
     <value>Langue</value>
   </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Image de fond</value>
-  </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Par défaut</value>
   </data>
@@ -166,6 +163,9 @@ fichier ISO ou IMG ici</value>
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Parcourir</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Image de fond</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>Titre</value>
@@ -187,9 +187,6 @@ fichier ISO ou IMG ici</value>
   </data>
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>Fichier</value>
-  </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
   </data>
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>383, 22</value>
@@ -233,14 +230,19 @@ fichier ISO ou IMG ici</value>
   <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
     <value>Mise à jour disponible</value>
   </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 20</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Langue</value>
+  </data>
+  <data name="menuStrip.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 25</value>
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>Glissez-déplacez des fichiers ici</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
