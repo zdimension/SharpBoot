@@ -192,9 +192,6 @@
   <data name="GenMenus" xml:space="preserve">
     <value>Creazione menu...</value>
   </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Hard drive</value>
-  </data>
   <data name="Init" xml:space="preserve">
     <value>Inizializzazione...</value>
   </data>

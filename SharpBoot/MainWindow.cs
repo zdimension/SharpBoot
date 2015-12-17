@@ -136,7 +136,6 @@ namespace SharpBoot
 
         public List<ImageLine> CurImages = new List<ImageLine>();
 
-        public Bootloader SelectedBootloader => (Bootloader) cbxBootloader.SelectedIndex;
 
 
         public void AddImage(string filePath, ISOV ver = null)
@@ -388,25 +387,31 @@ namespace SharpBoot
                 selsize = selsize.Replace("x", " ");
                 var ssize = selsize.Split(' ');
 
-                var selload = cbxBootloader.SelectedItem.ToString().ToLower().Trim();
-                if (selload.StartsWith("syslinux")) selload = "syslinux";
-
-                IBootloader bl = null;
-                if (selload == "syslinux") bl = new Syslinux();
-                if (selload == "grub4dos")
-                {
-                    bl = new Grub4DOS();
-                }
+                var bl = SelectedBootloader();
 
                 g.bloader = bl;
                 Program.SupportAccent = bl.SupportAccent;
                 g.Res = new Size(int.Parse(ssize[0]), int.Parse(ssize[1]));
-                g.Images = CurImages.Select(x => new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(), x.Category.RemoveAccent())).ToList();
+                g.Images = CurImages.Select(x => new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(), x.Category.RemoveAccent(), x.CustomCode)).ToList();
                 g.ShowDialog(this);
 
                 Program.ClrTmp();
                 Program.SupportAccent = false;
             }
+        }
+
+        public IBootloader SelectedBootloader()
+        {
+            var selload = cbxBootloader.SelectedItem.ToString().ToLower().Trim();
+            if (selload.StartsWith("syslinux")) selload = "syslinux";
+
+            IBootloader bl = null;
+            if (selload == "syslinux") bl = new Syslinux();
+            if (selload == "grub4dos")
+            {
+                bl = new Grub4DOS();
+            }
+            return bl;
         }
 
         public void CheckFields()
@@ -454,8 +459,7 @@ namespace SharpBoot
 
         private void lvIsos_SelectionChanged(object sender, EventArgs e)
         {
-            btnRemISO.Enabled = lvIsos.SelectedRows.Count == 1;
-            btnChecksum.Enabled = lvIsos.SelectedRows.Count == 1;
+            btnRemISO.Enabled = btnChecksum.Enabled = btnCustomCode.Enabled = lvIsos.SelectedRows.Count == 1;
         }
 
         private void lvIsos_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
@@ -534,6 +538,10 @@ namespace SharpBoot
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            Program.editcode = btnCustomCode.Text;
+            Program.fpath = lvIsos.Columns[4].HeaderText;
+            SetSize();
+            centerDragndrop();
             UpdTmr_Elapsed(this, null);
         }
 
@@ -586,6 +594,8 @@ namespace SharpBoot
                 }
             }
         }
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -755,6 +765,27 @@ namespace SharpBoot
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
             centerDragndrop();
+        }
+
+        private void btnCustomCode_Click(object sender, EventArgs e)
+        {
+            var cit = lvIsos.SelectedRows[0];
+            var bmi = new BootMenuItem(
+                cit.Cells[0].Value.ToString(),
+                cit.Cells[3].Value.ToString(),
+                cit.Cells[4].Value.ToString().ToLower().EndsWith("img") ? MenuItemType.IMG : MenuItemType.ISO,
+                cit.Cells[4].Value.ToString());
+            bmi.Start = false;
+
+            var cod = SelectedBootloader().GetCode(bmi);
+
+            var edfrm = new EditCodeFrm("/images/" + Path.GetFileName(cit.Cells[4].Value.ToString())) {Code = cod};
+            if (edfrm.ShowDialog(this) == DialogResult.OK)
+            {
+                lvIsos.SelectedRows[0].Cells[5].Value = edfrm.Code == cod ? "" : edfrm.Code;
+                CurImages.First(x => x.Name == cit.Cells[0].Value.ToString()).CustomCode =
+                    lvIsos.SelectedRows[0].Cells[5].Value.ToString();
+            }
         }
     }
 }

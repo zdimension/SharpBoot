@@ -369,8 +369,8 @@ namespace wyDay.Controls
             //draw the text
             if (!string.IsNullOrEmpty(Text))
             {
-                if (Enabled)
-                    TextRenderer.DrawText(g, Text, Font, text_rectangle, ForeColor, textFormatFlags);
+                if (Enabled || true)
+                    TextRenderer.DrawText(g, Text, Font, text_rectangle, Enabled ? ForeColor : SystemColors.ControlDark, textFormatFlags);
                 else
                     ControlPaint.DrawStringDisabled(g, Text, Font, BackColor, text_rectangle, textFormatFlags);
             }

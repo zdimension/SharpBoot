@@ -147,6 +147,9 @@
   <data name="rtbIsoDesc.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
+  <data name="rbnDown.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
   <data name="rtbIsoDesc.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -186,9 +189,6 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 30</value>
   </data>
-  <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 19</value>
-  </data>
   <data name="&gt;&gt;sfdIso.Name" xml:space="preserve">
     <value>sfdIso</value>
   </data>
@@ -207,8 +207,20 @@
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
   <data name="pbxPrg.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="rbnDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 146</value>
@@ -255,8 +267,8 @@
   <data name="&gt;&gt;rtbIsoDesc.Name" xml:space="preserve">
     <value>rtbIsoDesc</value>
   </data>
-  <data name="&gt;&gt;lblSpeed.Name" xml:space="preserve">
-    <value>lblSpeed</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 360</value>
   </data>
   <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
     <value>btnAnnul</value>
@@ -269,9 +281,6 @@
   </data>
   <data name="rtbIsoDesc.Location" type="System.Drawing.Point, System.Drawing">
     <value>49, 230</value>
-  </data>
-  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
   </data>
   <data name="txtFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 23</value>
@@ -306,20 +315,23 @@
   <data name="cbxISOS.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="cbxDetIso.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 111</value>
+  </data>
   <data name="&gt;&gt;pbxPrg.Type" xml:space="preserve">
     <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rbnDown.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;cbxVersion.Name" xml:space="preserve">
+    <value>cbxVersion</value>
+  </data>
   <data name="sfdIso.Filter" xml:space="preserve">
     <value>ISO image (*.iso)|*.iso</value>
   </data>
-  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 360</value>
+  <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 19</value>
   </data>
   <data name="btnAnnul.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -369,14 +381,11 @@
   <data name="rbnFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>135, 19</value>
   </data>
-  <data name="rbnDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="btnBrowse.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
-    <value>btnBrowse</value>
   </data>
   <data name="&gt;&gt;lblSpeed.Parent" xml:space="preserve">
     <value>$this</value>
@@ -414,14 +423,14 @@
   <data name="lblSpeed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="&gt;&gt;lblSpeed.Name" xml:space="preserve">
+    <value>lblSpeed</value>
+  </data>
   <data name="lblProg.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 323</value>
   </data>
   <data name="btnAnnul.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
-  </data>
-  <data name="pbxLoading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="pbxPrg.Size" type="System.Drawing.Size, System.Drawing">
     <value>273, 23</value>
@@ -459,9 +468,6 @@
   <data name="&gt;&gt;cbxDetIso.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="rbnFile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 53</value>
-  </data>
   <data name="&gt;&gt;lblPercent.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -498,6 +504,9 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="pbxLoading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 24</value>
+  </data>
   <data name="btnAnnul.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
   </data>
@@ -509,9 +518,6 @@
   </data>
   <data name="&gt;&gt;cbxISOS.Type" xml:space="preserve">
     <value>GroupedComboBox, SharpBoot, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;pbxLoading.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbxVersion.Location" type="System.Drawing.Point, System.Drawing">
     <value>49, 201</value>
@@ -576,14 +582,11 @@
   <data name="&gt;&gt;rtbIsoDesc.Type" xml:space="preserve">
     <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=3.9.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="&gt;&gt;pbxLoading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rtbIsoDesc.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 15.75pt</value>
   </data>
   <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -594,8 +597,8 @@
   <data name="lblPercent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
-  <data name="cbxDetIso.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 111</value>
+  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
+    <value>btnBrowse</value>
   </data>
   <data name="btnAnnul.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -606,17 +609,17 @@
   <data name="btnAnnul.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 18</value>
   </data>
-  <data name="rbnDown.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
   </data>
-  <data name="&gt;&gt;cbxVersion.Name" xml:space="preserve">
-    <value>cbxVersion</value>
+  <data name="pbxLoading.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;txtFile.Parent" xml:space="preserve">
     <value>$this</value>
@@ -633,14 +636,11 @@
   <data name="lblProg.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="&gt;&gt;btnAnnul.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
   </data>
-  <data name="cbxISOS.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 171</value>
-  </data>
-  <data name="pbxLoading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+  <data name="rbnFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 53</value>
   </data>
   <data name="cbxISOS.MaxDropDownItems" type="System.Int32, mscorlib">
     <value>30</value>
@@ -648,8 +648,8 @@
   <data name="&gt;&gt;pbxPrg.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="btnBrowse.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
+  <data name="rbnDown.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Name" xml:space="preserve">
     <value>cbxISOS</value>
@@ -657,8 +657,8 @@
   <data name="cbxDetIso.Size" type="System.Drawing.Size, System.Drawing">
     <value>488, 24</value>
   </data>
-  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="cbxISOS.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 171</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -674,9 +674,6 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>cs</value>
   </metadata>
   <metadata name="sfdIso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>103, 17</value>

@@ -153,9 +153,6 @@
   <data name="GenMenus" xml:space="preserve">
     <value>Se generează meniurile...</value>
   </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Hard disk</value>
-  </data>
   <data name="Init" xml:space="preserve">
     <value>Se inițializează</value>
   </data>

@@ -189,9 +189,6 @@
   <data name="GenMenus" xml:space="preserve">
     <value>Генерування меню...</value>
   </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Жорсткий диск</value>
-  </data>
   <data name="Init" xml:space="preserve">
     <value>Ініціализація...</value>
   </data>

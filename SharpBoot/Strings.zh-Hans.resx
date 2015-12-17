@@ -189,9 +189,6 @@
   <data name="GenMenus" xml:space="preserve">
     <value>正在创建菜单们</value>
   </data>
-  <data name="HDD" xml:space="preserve">
-    <value>硬盘</value>
-  </data>
   <data name="Init" xml:space="preserve">
     <value>正在准备...</value>
   </data>

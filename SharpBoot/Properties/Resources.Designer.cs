@@ -83,16 +83,6 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap accept_button {
-            get {
-                object obj = ResourceManager.GetObject("accept_button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap accept_button1 {
             get {
                 object obj = ResourceManager.GetObject("accept_button1", resourceCulture);
@@ -143,16 +133,6 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cd_delete {
-            get {
-                object obj = ResourceManager.GetObject("cd_delete", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cd_delete1 {
             get {
                 object obj = ResourceManager.GetObject("cd_delete1", resourceCulture);
@@ -173,6 +153,16 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap door_out {
+            get {
+                object obj = ResourceManager.GetObject("door_out", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -186,6 +176,16 @@ namespace SharpBoot.Properties {
         internal static System.Drawing.Bitmap drive_disk {
             get {
                 object obj = ResourceManager.GetObject("drive_disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap file_save_as {
+            get {
+                object obj = ResourceManager.GetObject("file_save_as", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

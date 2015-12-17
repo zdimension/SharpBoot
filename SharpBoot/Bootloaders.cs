@@ -75,6 +75,8 @@ namespace SharpBoot
 
         public string GetCode(BootMenuItem item)
         {
+            if (item.CustomCode != "") return item.CustomCode;
+
             var code = "";
 
 
@@ -217,6 +219,8 @@ namespace SharpBoot
 
         public string GetCode(BootMenuItem item)
         {
+            if (item.CustomCode != "") return item.CustomCode;
+
             var code = "";
 
             code += "title " + item.Name.RemoveAccent() + "\\n";

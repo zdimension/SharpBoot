@@ -123,23 +123,11 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rozlišení obrazovky</value>
   </data>
-  <data name="btnChecksum.Text" xml:space="preserve">
-    <value> Kontrolní součet</value>
-  </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>Obrázek pozadí</value>
-  </data>
-  <data name="gbxTitle.Text" xml:space="preserve">
-    <value>Titul</value>
-  </data>
-  <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Vymazat</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Celková velikost</value>
-  </data>
   <data name="cbxBootloader.Items" xml:space="preserve">
     <value>Syslinux (doporučené)</value>
+  </data>
+  <data name="btnChecksum.Text" xml:space="preserve">
+    <value> Kontrolní součet</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Výchozí</value>
@@ -152,6 +140,18 @@
   </data>
   <data name="btnBackBrowse.Text" xml:space="preserve">
     <value>Procházet</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Obrázek pozadí</value>
+  </data>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>Titul</value>
+  </data>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value> Vymazat</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Celková velikost</value>
   </data>
   <data name="clmnName.HeaderText" xml:space="preserve">
     <value>Jméno</value>
@@ -168,6 +168,9 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>Cesta k souboru</value>
   </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Ukončit</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 20</value>
@@ -181,7 +184,8 @@
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Jazyk</value>
   </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ukončit</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

@@ -295,15 +295,6 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Hard drive.
-        /// </summary>
-        internal static string HDD {
-            get {
-                return ResourceManager.GetString("HDD", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une chaîne localisée semblable à Initializing....
         /// </summary>
         internal static string Init {

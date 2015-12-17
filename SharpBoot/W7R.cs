@@ -1001,7 +1001,7 @@ namespace W7R
                 }
 
                 e.TextRectangle = AdjustDrawRectangle(e.Item, e.TextRectangle);
-                if(e.Item.Image != null)
+                if(e.Item.Image != null && e.ToolStrip is MenuStrip)
                 {
                     e.TextRectangle = new Rectangle(e.TextRectangle.X + 5, e.TextRectangle.Y, e.TextRectangle.Width, e.TextRectangle.Height);
                 }

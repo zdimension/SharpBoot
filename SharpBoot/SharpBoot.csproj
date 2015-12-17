@@ -83,6 +83,12 @@
     <Compile Include="DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EditCodeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCodeFrm.Designer.cs">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenIsoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,11 @@
     </Compile>
     <Compile Include="PathSelector.Designer.cs">
       <DependentUpon>PathSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SelectorCtrl.cs">
       <SubType>UserControl</SubType>
@@ -362,6 +373,36 @@
     <EmbeddedResource Include="AskPath.zh-Hant.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.cs.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.de.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.es.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.it.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.ro.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.ru.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.uk.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.zh-Hans.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCodeFrm.zh-Hant.resx">
+      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.cs.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -536,14 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Strings.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
@@ -575,6 +611,7 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Strings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -598,7 +635,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cd_delete1.png" />
-    <None Include="Resources\cd_delete.png" />
     <None Include="Resources\cd.png" />
     <None Include="Resources\7za.exe" />
   </ItemGroup>
@@ -626,9 +662,6 @@
     <None Include="Resources\compile.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\accept_button.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -639,6 +672,8 @@
     <None Include="Resources\ajax-loader.gif" />
     <None Include="Resources\download.png" />
     <None Include="Resources\flag_usa.png" />
+    <None Include="Resources\file_save_as.png" />
+    <None Include="Resources\door_out.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

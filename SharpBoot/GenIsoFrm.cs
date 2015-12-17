@@ -347,7 +347,7 @@ namespace SharpBoot
                     Images.Where(x => x.Category == c).All(x =>
                     {
                         main.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
-                            itype(x.FilePath), x.FilePath, false));
+                            itype(x.FilePath), x.FilePath, false, x.CustomCode));
                         return true;
                     });
                 }
@@ -358,7 +358,7 @@ namespace SharpBoot
                     Images.Where(x => x.Category == c).All(x =>
                     {
                         t.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
-                            itype(x.FilePath), x.FilePath, false));
+                            itype(x.FilePath), x.FilePath, false, x.CustomCode));
                         return true;
                     });
 

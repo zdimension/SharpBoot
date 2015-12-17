@@ -192,9 +192,6 @@
   <data name="GenMenus" xml:space="preserve">
     <value>Generování menus</value>
   </data>
-  <data name="HDD" xml:space="preserve">
-    <value>Pevný disk</value>
-  </data>
   <data name="Init" xml:space="preserve">
     <value>Inicializace</value>
   </data>

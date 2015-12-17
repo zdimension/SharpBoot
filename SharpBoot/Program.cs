@@ -25,6 +25,9 @@ namespace SharpBoot
             return list.ToDictionary(x => x.Key, x => x.Value);
         }
 
+        public static string editcode = "";
+        public static string fpath = "";
+
         public static bool SupportAccent = false;
 
         /// <summary>
