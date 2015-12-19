@@ -41,6 +41,7 @@ namespace SharpBoot
 
         private void loadlng()
         {
+            languageToolStripMenuItem.DropDownItems.Clear();
             List<CultureInfo> result = fromresx(typeof (Strings));
 
             result.AddRange(fromresx(typeof (ISOCat)));
@@ -67,7 +68,20 @@ namespace SharpBoot
             }
         }
 
-
+        private void InitAfterLng()
+        {
+            Controls.Clear();
+            InitializeComponent();
+            SetSize();
+            centerDragndrop();
+            lngs.Clear();
+            loadlng();
+            cbxBootloader.SelectedIndex = 0;
+            cbxRes.SelectedIndex = 0;
+            cbxBackType.SelectedIndex = 0;
+            updateAvailableToolStripMenuItem.Visible = update_available;
+            addFilesToolStripMenuItem.Text = Strings.AddFiles;
+        }
 
         private void LngItemClick(ToolStripMenuItem it)
         {
@@ -86,16 +100,7 @@ namespace SharpBoot
 
             if (changing && FieldsEmpty())
             {
-                Controls.Clear();
-                InitializeComponent();
-                SetSize();
-                centerDragndrop();
-                lngs.Clear();
-                loadlng();
-                cbxBootloader.SelectedIndex = 0;
-                cbxRes.SelectedIndex = 0;
-                cbxBackType.SelectedIndex = 0;
-                updateAvailableToolStripMenuItem.Visible = update_available;
+               InitAfterLng();
             }
             else if (!FieldsEmpty())
             {
@@ -213,6 +218,8 @@ namespace SharpBoot
 
         public Timer updTmr;
 
+        private Dictionary<string, string> CustomFiles = new Dictionary<string, string>(); 
+
         public MainWindow()
         {
             DoubleBuffered = true;
@@ -220,7 +227,7 @@ namespace SharpBoot
                 ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer | ControlStyles.ResizeRedraw,
                 true);
 
-            InitializeComponent();
+            InitAfterLng();
             changing = true;
             loadlng();
             var c = Program.GetCulture();
@@ -233,10 +240,6 @@ namespace SharpBoot
                 Utils.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
             }
 
-
-            cbxBootloader.SelectedIndex = 0;
-            cbxRes.SelectedIndex = 0;
-            cbxBackType.SelectedIndex = 0;
 
             ISOInfo.UpdateFinished += (o, args) =>
             {
@@ -393,6 +396,7 @@ namespace SharpBoot
                 Program.SupportAccent = bl.SupportAccent;
                 g.Res = new Size(int.Parse(ssize[0]), int.Parse(ssize[1]));
                 g.Images = CurImages.Select(x => new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(), x.Category.RemoveAccent(), x.CustomCode)).ToList();
+                g.CustomFiles = CustomFiles;
                 g.ShowDialog(this);
 
                 Program.ClrTmp();
@@ -732,6 +736,7 @@ namespace SharpBoot
         private void cbxBootloader_SelectedIndexChanged(object sender, EventArgs e)
         {
             CheckGrub4Dos();
+            Program.SupportAccent = SelectedBootloader().SupportAccent;
         }
 
         private void cbxBackType_SelectedIndexChanged(object sender, EventArgs e)
@@ -771,10 +776,10 @@ namespace SharpBoot
         {
             var cit = lvIsos.SelectedRows[0];
             var bmi = new BootMenuItem(
-                cit.Cells[0].Value.ToString(),
-                cit.Cells[3].Value.ToString(),
-                cit.Cells[4].Value.ToString().ToLower().EndsWith("img") ? MenuItemType.IMG : MenuItemType.ISO,
-                cit.Cells[4].Value.ToString());
+                cit.Cells[0].Value?.ToString() ?? "",
+                cit.Cells[3].Value?.ToString() ?? "",
+                (cit.Cells[4].Value?.ToString() ?? "").ToLower().EndsWith("img") ? MenuItemType.IMG : MenuItemType.ISO,
+                cit.Cells[4].Value?.ToString() ?? "");
             bmi.Start = false;
 
             var cod = SelectedBootloader().GetCode(bmi);
@@ -786,6 +791,13 @@ namespace SharpBoot
                 CurImages.First(x => x.Name == cit.Cells[0].Value.ToString()).CustomCode =
                     lvIsos.SelectedRows[0].Cells[5].Value.ToString();
             }
+        }
+
+        private void addFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var filesfrm = new CustomFileFrm {CFiles = CustomFiles};
+            filesfrm.ShowDialog(this);
+            CustomFiles = filesfrm.CFiles;
         }
     }
 }

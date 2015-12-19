@@ -120,9 +120,6 @@
   <data name="btnUSB.Text" xml:space="preserve">
     <value>Crează USB multiboot</value>
   </data>
-  <data name="btnInstBoot.Text" xml:space="preserve">
-    <value>Instalează bootloaderul pe cheia USB</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -236,6 +233,12 @@
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Limbă</value>
   </data>
+  <data name="installBootloaderOnUSBKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>228, 20</value>
+  </data>
+  <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instalează bootloaderul pe cheia USB</value>
+  </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
     <value>163, 25</value>
   </data>
@@ -244,6 +247,6 @@
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
+    <value>NoControl</value>
   </data>
 </root>

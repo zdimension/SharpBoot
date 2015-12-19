@@ -151,6 +151,7 @@ namespace SharpBoot
 
         public bool abort;
 
+        public Dictionary<string, string> CustomFiles { get; set; } 
 
         public void Generate()
         {
@@ -299,20 +300,53 @@ namespace SharpBoot
             ChangeProgress(0, Images.Count, Strings.CopyISOfiles);
             for (var i = 0; i < Images.Count; i++)
             {
-                ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(Images[i].FilePath)));
-                copyfile:
-                try
-                {
-                    XCopy.Copy(Images[i].FilePath, Path.Combine(isoroot, Path.GetFileName(Images[i].FilePath)), true, true,
-                        (o, pce) => 
-                        {
-                            ChangeProgressBar(pce.ProgressPercentage, 100);
-                        });
-                }
-                catch (DirectoryNotFoundException)
-                {
+                var current = Images[i].FilePath;
+                ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(current)));
+                while(!Directory.Exists(isoroot))
                     Directory.CreateDirectory(isoroot);
-                    goto copyfile;
+                for (int j = 0; j < 5; j++)
+                {
+                    try
+                    {
+                        XCopy.Copy(current, Path.Combine(isoroot, Path.GetFileName(current)), true,
+                            true,
+                            (o, pce) =>
+                            {
+                                ChangeProgressBar(pce.ProgressPercentage, 100);
+                            });
+                        break;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            ChangeProgressBar(0, CustomFiles.Count);
+
+            for (var i = 0; i < CustomFiles.Count; i++)
+            {
+                var current = CustomFiles.ToList()[i];
+                var local = current.Key;
+                var remote = current.Value;
+                if (remote.StartsWith("/")) remote = remote.Substring(1);
+                ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(local)));
+                while (!Directory.Exists(isoroot))
+                    Directory.CreateDirectory(isoroot);
+                for (int j = 0; j < 5; j++)
+                {
+                    try
+                    {
+                        XCopy.Copy(local, Path.Combine(isoroot, remote), true,
+                            true,
+                            (o, pce) =>
+                            {
+                                ChangeProgressBar(pce.ProgressPercentage, 100);
+                            });
+                        break;
+                    }
+                    catch
+                    {
+                    }
                 }
             }
 

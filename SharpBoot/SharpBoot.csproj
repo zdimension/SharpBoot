@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="Bootloaders.cs" />
     <Compile Include="ChineseToPinYin.cs" />
+    <Compile Include="CustomFileFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomFileFrm.Designer.cs">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -373,6 +379,9 @@
     <EmbeddedResource Include="AskPath.zh-Hant.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCodeFrm.cs.resx">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -665,6 +674,7 @@
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\page_white_add.png" />
     <None Include="Resources\script_edit.png" />
     <None Include="Resources\package_go.png" />
     <None Include="Resources\update_anim.gif" />
@@ -674,6 +684,10 @@
     <None Include="Resources\flag_usa.png" />
     <None Include="Resources\file_save_as.png" />
     <None Include="Resources\door_out.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\compile1.png" />
+    <None Include="Resources\compile2.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -38,14 +38,20 @@ namespace SharpBoot
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnUSB = new System.Windows.Forms.Button();
             this.gbxTest = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnGen = new System.Windows.Forms.Button();
             this.txImInfo = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCustomCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbxRes = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxBootloader = new System.Windows.Forms.ComboBox();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,6 +64,7 @@ namespace SharpBoot
             this.btnBackBrowse = new System.Windows.Forms.Button();
             this.gbxTitle = new System.Windows.Forms.GroupBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
+            this.btnRemISO = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbxSize = new System.Windows.Forms.TextBox();
             this.lvIsos = new System.Windows.Forms.DataGridView();
@@ -69,26 +76,21 @@ namespace SharpBoot
             this.clmnCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.sharpBootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.addISOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.automaticallyAddISOInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateAvailableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.installBootloaderOnUSBKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblDragHere = new System.Windows.Forms.Label();
-            this.btnCustomCode = new System.Windows.Forms.Button();
-            this.btnUSB = new System.Windows.Forms.Button();
-            this.btnInstBoot = new System.Windows.Forms.Button();
-            this.btnGen = new System.Windows.Forms.Button();
-            this.btnAbout = new System.Windows.Forms.Button();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
-            this.btnRemISO = new System.Windows.Forms.Button();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addISOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniUpdate = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateAvailableToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlBottom.SuspendLayout();
             this.gbxTest.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,18 +106,33 @@ namespace SharpBoot
             // 
             // pnlBottom
             // 
+            resources.ApplyResources(this.pnlBottom, "pnlBottom");
+            this.pnlBottom.Controls.Add(this.button1);
             this.pnlBottom.Controls.Add(this.btnUSB);
-            this.pnlBottom.Controls.Add(this.btnInstBoot);
             this.pnlBottom.Controls.Add(this.gbxTest);
             this.pnlBottom.Controls.Add(this.btnGen);
             this.pnlBottom.Controls.Add(this.txImInfo);
-            resources.ApplyResources(this.pnlBottom, "pnlBottom");
             this.pnlBottom.Name = "pnlBottom";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Image = global::SharpBoot.Properties.Resources.cd;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnUSB
+            // 
+            resources.ApplyResources(this.btnUSB, "btnUSB");
+            this.btnUSB.Image = global::SharpBoot.Properties.Resources.drive_disk;
+            this.btnUSB.Name = "btnUSB";
+            this.btnUSB.UseVisualStyleBackColor = true;
+            this.btnUSB.Click += new System.EventHandler(this.btnUSB_Click);
             // 
             // gbxTest
             // 
-            this.gbxTest.AllowDrop = true;
             resources.ApplyResources(this.gbxTest, "gbxTest");
+            this.gbxTest.AllowDrop = true;
             this.gbxTest.Controls.Add(this.label1);
             this.gbxTest.Name = "gbxTest";
             this.gbxTest.TabStop = false;
@@ -124,11 +141,19 @@ namespace SharpBoot
             // 
             // label1
             // 
-            this.label1.AllowDrop = true;
             resources.ApplyResources(this.label1, "label1");
+            this.label1.AllowDrop = true;
             this.label1.Name = "label1";
             this.label1.DragDrop += new System.Windows.Forms.DragEventHandler(this.gbxTest_DragDrop);
             this.label1.DragEnter += new System.Windows.Forms.DragEventHandler(this.gbxTest_DragEnter);
+            // 
+            // btnGen
+            // 
+            resources.ApplyResources(this.btnGen, "btnGen");
+            this.btnGen.Image = global::SharpBoot.Properties.Resources.cd;
+            this.btnGen.Name = "btnGen";
+            this.btnGen.UseVisualStyleBackColor = true;
+            this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
             // 
             // txImInfo
             // 
@@ -139,6 +164,7 @@ namespace SharpBoot
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.btnCustomCode);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
@@ -148,8 +174,15 @@ namespace SharpBoot
             this.panel1.Controls.Add(this.gbxTitle);
             this.panel1.Controls.Add(this.btnRemISO);
             this.panel1.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // btnCustomCode
+            // 
+            resources.ApplyResources(this.btnCustomCode, "btnCustomCode");
+            this.btnCustomCode.Image = global::SharpBoot.Properties.Resources.script_edit;
+            this.btnCustomCode.Name = "btnCustomCode";
+            this.btnCustomCode.UseVisualStyleBackColor = true;
+            this.btnCustomCode.Click += new System.EventHandler(this.btnCustomCode_Click);
             // 
             // groupBox3
             // 
@@ -160,13 +193,13 @@ namespace SharpBoot
             // 
             // cbxRes
             // 
+            resources.ApplyResources(this.cbxRes, "cbxRes");
             this.cbxRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRes.FormattingEnabled = true;
             this.cbxRes.Items.AddRange(new object[] {
             resources.GetString("cbxRes.Items"),
             resources.GetString("cbxRes.Items1"),
             resources.GetString("cbxRes.Items2")});
-            resources.ApplyResources(this.cbxRes, "cbxRes");
             this.cbxRes.Name = "cbxRes";
             // 
             // groupBox2
@@ -178,17 +211,36 @@ namespace SharpBoot
             // 
             // cbxBootloader
             // 
+            resources.ApplyResources(this.cbxBootloader, "cbxBootloader");
             this.cbxBootloader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBootloader.FormattingEnabled = true;
             this.cbxBootloader.Items.AddRange(new object[] {
             resources.GetString("cbxBootloader.Items"),
             resources.GetString("cbxBootloader.Items1")});
-            resources.ApplyResources(this.cbxBootloader, "cbxBootloader");
             this.cbxBootloader.Name = "cbxBootloader";
             this.cbxBootloader.SelectedIndexChanged += new System.EventHandler(this.cbxBootloader_SelectedIndexChanged);
             // 
+            // btnAbout
+            // 
+            resources.ApplyResources(this.btnAbout, "btnAbout");
+            this.btnAbout.Image = global::SharpBoot.Properties.Resources.question;
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnChecksum
+            // 
+            resources.ApplyResources(this.btnChecksum, "btnChecksum");
+            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
+            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
+            this.btnChecksum.Name = "btnChecksum";
+            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
+            this.btnChecksum.UseVisualStyleBackColor = true;
+            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
+            // 
             // cmsChecksum
             // 
+            resources.ApplyResources(this.cmsChecksum, "cmsChecksum");
             this.cmsChecksum.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mD5ToolStripMenuItem,
             this.btnSha1,
@@ -196,36 +248,35 @@ namespace SharpBoot
             this.btnSha384,
             this.btnSha512});
             this.cmsChecksum.Name = "cmsChecksum";
-            resources.ApplyResources(this.cmsChecksum, "cmsChecksum");
             // 
             // mD5ToolStripMenuItem
             // 
-            this.mD5ToolStripMenuItem.Name = "mD5ToolStripMenuItem";
             resources.ApplyResources(this.mD5ToolStripMenuItem, "mD5ToolStripMenuItem");
+            this.mD5ToolStripMenuItem.Name = "mD5ToolStripMenuItem";
             this.mD5ToolStripMenuItem.Click += new System.EventHandler(this.mD5ToolStripMenuItem_Click);
             // 
             // btnSha1
             // 
-            this.btnSha1.Name = "btnSha1";
             resources.ApplyResources(this.btnSha1, "btnSha1");
+            this.btnSha1.Name = "btnSha1";
             this.btnSha1.Click += new System.EventHandler(this.btnSha1_Click);
             // 
             // btnSha256
             // 
-            this.btnSha256.Name = "btnSha256";
             resources.ApplyResources(this.btnSha256, "btnSha256");
+            this.btnSha256.Name = "btnSha256";
             this.btnSha256.Click += new System.EventHandler(this.btnSha256_Click);
             // 
             // btnSha384
             // 
-            this.btnSha384.Name = "btnSha384";
             resources.ApplyResources(this.btnSha384, "btnSha384");
+            this.btnSha384.Name = "btnSha384";
             this.btnSha384.Click += new System.EventHandler(this.btnSha384_Click);
             // 
             // btnSha512
             // 
-            this.btnSha512.Name = "btnSha512";
             resources.ApplyResources(this.btnSha512, "btnSha512");
+            this.btnSha512.Name = "btnSha512";
             this.btnSha512.Click += new System.EventHandler(this.btnSha512_Click);
             // 
             // gbxBckd
@@ -239,20 +290,20 @@ namespace SharpBoot
             // 
             // cbxBackType
             // 
+            resources.ApplyResources(this.cbxBackType, "cbxBackType");
             this.cbxBackType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBackType.FormattingEnabled = true;
             this.cbxBackType.Items.AddRange(new object[] {
             resources.GetString("cbxBackType.Items"),
             resources.GetString("cbxBackType.Items1"),
             resources.GetString("cbxBackType.Items2")});
-            resources.ApplyResources(this.cbxBackType, "cbxBackType");
             this.cbxBackType.Name = "cbxBackType";
             this.cbxBackType.SelectedIndexChanged += new System.EventHandler(this.cbxBackType_SelectedIndexChanged);
             // 
             // txtBackFile
             // 
-            this.txtBackFile.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.txtBackFile, "txtBackFile");
+            this.txtBackFile.BackColor = System.Drawing.SystemColors.Window;
             this.txtBackFile.Name = "txtBackFile";
             this.txtBackFile.ReadOnly = true;
             // 
@@ -276,6 +327,14 @@ namespace SharpBoot
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
+            // btnRemISO
+            // 
+            resources.ApplyResources(this.btnRemISO, "btnRemISO");
+            this.btnRemISO.Image = global::SharpBoot.Properties.Resources.cd_delete1;
+            this.btnRemISO.Name = "btnRemISO";
+            this.btnRemISO.UseVisualStyleBackColor = true;
+            this.btnRemISO.Click += new System.EventHandler(this.btnRemISO_Click);
+            // 
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
@@ -291,6 +350,7 @@ namespace SharpBoot
             // 
             // lvIsos
             // 
+            resources.ApplyResources(this.lvIsos, "lvIsos");
             this.lvIsos.AllowDrop = true;
             this.lvIsos.AllowUserToAddRows = false;
             this.lvIsos.AllowUserToResizeRows = false;
@@ -306,7 +366,6 @@ namespace SharpBoot
             this.clmnDescr,
             this.clmnFilePath,
             this.clmnCode});
-            resources.ApplyResources(this.lvIsos, "lvIsos");
             this.lvIsos.GridColor = System.Drawing.SystemColors.Window;
             this.lvIsos.MultiSelect = false;
             this.lvIsos.Name = "lvIsos";
@@ -354,16 +413,19 @@ namespace SharpBoot
             // 
             // menuStrip
             // 
+            resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sharpBootToolStripMenuItem,
             this.mniUpdate,
             this.updateAvailableToolStripMenuItem,
-            this.languageToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip, "menuStrip");
+            this.languageToolStripMenuItem,
+            this.addFilesToolStripMenuItem,
+            this.installBootloaderOnUSBKeyToolStripMenuItem});
             this.menuStrip.Name = "menuStrip";
             // 
             // sharpBootToolStripMenuItem
             // 
+            resources.ApplyResources(this.sharpBootToolStripMenuItem, "sharpBootToolStripMenuItem");
             this.sharpBootToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
@@ -373,38 +435,87 @@ namespace SharpBoot
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.sharpBootToolStripMenuItem.Name = "sharpBootToolStripMenuItem";
-            resources.ApplyResources(this.sharpBootToolStripMenuItem, "sharpBootToolStripMenuItem");
+            // 
+            // openToolStripMenuItem
+            // 
+            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+            this.openToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.folder;
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
+            this.saveToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.file_save_as;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            // 
+            // addISOToolStripMenuItem
+            // 
+            resources.ApplyResources(this.addISOToolStripMenuItem, "addISOToolStripMenuItem");
+            this.addISOToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.cd_add;
+            this.addISOToolStripMenuItem.Name = "addISOToolStripMenuItem";
+            this.addISOToolStripMenuItem.Click += new System.EventHandler(this.addISOToolStripMenuItem_Click);
             // 
             // automaticallyAddISOInfoToolStripMenuItem
             // 
+            resources.ApplyResources(this.automaticallyAddISOInfoToolStripMenuItem, "automaticallyAddISOInfoToolStripMenuItem");
             this.automaticallyAddISOInfoToolStripMenuItem.Checked = true;
             this.automaticallyAddISOInfoToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.automaticallyAddISOInfoToolStripMenuItem.Name = "automaticallyAddISOInfoToolStripMenuItem";
-            resources.ApplyResources(this.automaticallyAddISOInfoToolStripMenuItem, "automaticallyAddISOInfoToolStripMenuItem");
             this.automaticallyAddISOInfoToolStripMenuItem.Click += new System.EventHandler(this.automaticallyAddISOInfoToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
             // 
             // exitToolStripMenuItem
             // 
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.door_out;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // mniUpdate
+            // 
+            resources.ApplyResources(this.mniUpdate, "mniUpdate");
+            this.mniUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.mniUpdate.Image = global::SharpBoot.Properties.Resources.update_anim;
+            this.mniUpdate.Name = "mniUpdate";
+            // 
+            // updateAvailableToolStripMenuItem
+            // 
+            resources.ApplyResources(this.updateAvailableToolStripMenuItem, "updateAvailableToolStripMenuItem");
+            this.updateAvailableToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.updateAvailableToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.package_go;
+            this.updateAvailableToolStripMenuItem.Name = "updateAvailableToolStripMenuItem";
+            this.updateAvailableToolStripMenuItem.Click += new System.EventHandler(this.updateAvailableToolStripMenuItem_Click);
             // 
             // languageToolStripMenuItem
             // 
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
             this.languageToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // addFilesToolStripMenuItem
+            // 
+            resources.ApplyResources(this.addFilesToolStripMenuItem, "addFilesToolStripMenuItem");
+            this.addFilesToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.page_white_add;
+            this.addFilesToolStripMenuItem.Name = "addFilesToolStripMenuItem";
+            this.addFilesToolStripMenuItem.Click += new System.EventHandler(this.addFilesToolStripMenuItem_Click);
+            // 
+            // installBootloaderOnUSBKeyToolStripMenuItem
+            // 
+            resources.ApplyResources(this.installBootloaderOnUSBKeyToolStripMenuItem, "installBootloaderOnUSBKeyToolStripMenuItem");
+            this.installBootloaderOnUSBKeyToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.compile1;
+            this.installBootloaderOnUSBKeyToolStripMenuItem.Name = "installBootloaderOnUSBKeyToolStripMenuItem";
+            this.installBootloaderOnUSBKeyToolStripMenuItem.Click += new System.EventHandler(this.btnInstBoot_Click);
             // 
             // openFileDialog
             // 
@@ -424,100 +535,6 @@ namespace SharpBoot
             this.lblDragHere.ForeColor = System.Drawing.Color.DarkGray;
             this.lblDragHere.Name = "lblDragHere";
             // 
-            // btnCustomCode
-            // 
-            resources.ApplyResources(this.btnCustomCode, "btnCustomCode");
-            this.btnCustomCode.Image = global::SharpBoot.Properties.Resources.script_edit;
-            this.btnCustomCode.Name = "btnCustomCode";
-            this.btnCustomCode.UseVisualStyleBackColor = true;
-            this.btnCustomCode.Click += new System.EventHandler(this.btnCustomCode_Click);
-            // 
-            // btnUSB
-            // 
-            resources.ApplyResources(this.btnUSB, "btnUSB");
-            this.btnUSB.Image = global::SharpBoot.Properties.Resources.drive_disk;
-            this.btnUSB.Name = "btnUSB";
-            this.btnUSB.UseVisualStyleBackColor = true;
-            this.btnUSB.Click += new System.EventHandler(this.btnUSB_Click);
-            // 
-            // btnInstBoot
-            // 
-            resources.ApplyResources(this.btnInstBoot, "btnInstBoot");
-            this.btnInstBoot.Image = global::SharpBoot.Properties.Resources.compile;
-            this.btnInstBoot.Name = "btnInstBoot";
-            this.btnInstBoot.UseVisualStyleBackColor = true;
-            this.btnInstBoot.Click += new System.EventHandler(this.btnInstBoot_Click);
-            // 
-            // btnGen
-            // 
-            resources.ApplyResources(this.btnGen, "btnGen");
-            this.btnGen.Image = global::SharpBoot.Properties.Resources.cd;
-            this.btnGen.Name = "btnGen";
-            this.btnGen.UseVisualStyleBackColor = true;
-            this.btnGen.Click += new System.EventHandler(this.btnGen_Click);
-            // 
-            // btnAbout
-            // 
-            resources.ApplyResources(this.btnAbout, "btnAbout");
-            this.btnAbout.Image = global::SharpBoot.Properties.Resources.question;
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnChecksum
-            // 
-            resources.ApplyResources(this.btnChecksum, "btnChecksum");
-            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
-            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
-            this.btnChecksum.Name = "btnChecksum";
-            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
-            this.btnChecksum.UseVisualStyleBackColor = true;
-            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
-            // 
-            // btnRemISO
-            // 
-            resources.ApplyResources(this.btnRemISO, "btnRemISO");
-            this.btnRemISO.Image = global::SharpBoot.Properties.Resources.cd_delete1;
-            this.btnRemISO.Name = "btnRemISO";
-            this.btnRemISO.UseVisualStyleBackColor = true;
-            this.btnRemISO.Click += new System.EventHandler(this.btnRemISO_Click);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.folder;
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.file_save_as;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            resources.ApplyResources(this.saveToolStripMenuItem, "saveToolStripMenuItem");
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // addISOToolStripMenuItem
-            // 
-            this.addISOToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.cd_add;
-            this.addISOToolStripMenuItem.Name = "addISOToolStripMenuItem";
-            resources.ApplyResources(this.addISOToolStripMenuItem, "addISOToolStripMenuItem");
-            this.addISOToolStripMenuItem.Click += new System.EventHandler(this.addISOToolStripMenuItem_Click);
-            // 
-            // mniUpdate
-            // 
-            this.mniUpdate.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.mniUpdate.Image = global::SharpBoot.Properties.Resources.update_anim;
-            this.mniUpdate.Name = "mniUpdate";
-            resources.ApplyResources(this.mniUpdate, "mniUpdate");
-            // 
-            // updateAvailableToolStripMenuItem
-            // 
-            this.updateAvailableToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.updateAvailableToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.package_go;
-            this.updateAvailableToolStripMenuItem.Name = "updateAvailableToolStripMenuItem";
-            resources.ApplyResources(this.updateAvailableToolStripMenuItem, "updateAvailableToolStripMenuItem");
-            this.updateAvailableToolStripMenuItem.Click += new System.EventHandler(this.updateAvailableToolStripMenuItem_Click);
-            // 
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
@@ -534,7 +551,6 @@ namespace SharpBoot
             this.pnlBottom.ResumeLayout(false);
             this.pnlBottom.PerformLayout();
             this.gbxTest.ResumeLayout(false);
-            this.gbxTest.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -584,7 +600,7 @@ namespace SharpBoot
         private ToolStripSeparator toolStripSeparator2;
         private OpenFileDialog openFileDialog;
         private SaveFileDialog saveFileDialog;
-        private Button btnInstBoot;
+        private Button btnInstBoot2;
         private ContextMenuStrip cmsChecksum;
         private ToolStripMenuItem btnSha1;
         private ToolStripMenuItem btnSha256;
@@ -608,6 +624,9 @@ namespace SharpBoot
         private DataGridViewTextBoxColumn clmnCate;
         private DataGridViewTextBoxColumn clmnSize;
         private DataGridViewTextBoxColumn clmnName;
+        private ToolStripMenuItem addFilesToolStripMenuItem;
+        private ToolStripMenuItem installBootloaderOnUSBKeyToolStripMenuItem;
+        private Button button1;
     }
 }
 

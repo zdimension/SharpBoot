@@ -243,4 +243,7 @@
   <data name="FileAlreadyExists" xml:space="preserve">
     <value>Datei bereits vorhanden.</value>
   </data>
+  <data name="AddFiles" xml:space="preserve">
+    <value>Dateien hinzufügen</value>
+  </data>
 </root>

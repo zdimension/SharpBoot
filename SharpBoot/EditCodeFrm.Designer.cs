@@ -74,6 +74,7 @@
             // 
             resources.ApplyResources(this.rtbCode, "rtbCode");
             this.rtbCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbCode.DetectUrls = false;
             this.rtbCode.Name = "rtbCode";
             this.rtbCode.TextChanged += new System.EventHandler(this.rtbCode_TextChanged);
             // 
