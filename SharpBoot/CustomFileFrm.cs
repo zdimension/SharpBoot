@@ -49,7 +49,7 @@ namespace SharpBoot
 
         private void lvFiles_SelectionChanged(object sender, EventArgs e)
         {
-            btnRemove.Visible = lvFiles.SelectedRows.Count != 0;
+            btnRemove.Enabled = lvFiles.SelectedRows.Count != 0;
         }
 
         private void btnRemove_Click(object sender, EventArgs e)

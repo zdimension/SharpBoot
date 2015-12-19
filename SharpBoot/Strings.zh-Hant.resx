@@ -246,4 +246,7 @@
   <data name="AddFiles" xml:space="preserve">
     <value>新增檔案</value>
   </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>新增自訂項目</value>
+  </data>
 </root>

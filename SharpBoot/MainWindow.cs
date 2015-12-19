@@ -81,6 +81,7 @@ namespace SharpBoot
             cbxBackType.SelectedIndex = 0;
             updateAvailableToolStripMenuItem.Visible = update_available;
             addFilesToolStripMenuItem.Text = Strings.AddFiles;
+            btnCustomEntry.Text = Strings.AddCustomEntry;
         }
 
         private void LngItemClick(ToolStripMenuItem it)

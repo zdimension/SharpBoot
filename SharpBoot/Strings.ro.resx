@@ -249,4 +249,7 @@
   <data name="AddFiles" xml:space="preserve">
     <value>Adăugare fişiere</value>
   </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>Adăugare intrare particularizată</value>
+  </data>
 </root>

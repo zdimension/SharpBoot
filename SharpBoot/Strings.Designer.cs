@@ -61,6 +61,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Add Custom Entry.
+        /// </summary>
+        internal static string AddCustomEntry {
+            get {
+                return ResourceManager.GetString("AddCustomEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Add files.
         /// </summary>
         internal static string AddFiles {

@@ -239,19 +239,15 @@
     <value>语言</value>
   </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 20</value>
+    <value>205, 20</value>
   </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
-    <value>啟動程式套裝在U片安装</value>
+    <value>安装启动引导器至 USB 随身碟</value>
   </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 25</value>
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>将文件拖至此处</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>

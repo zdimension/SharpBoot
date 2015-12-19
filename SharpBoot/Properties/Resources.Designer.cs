@@ -173,16 +173,6 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap compile2 {
-            get {
-                object obj = ResourceManager.GetObject("compile2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap delete {
             get {
                 object obj = ResourceManager.GetObject("delete", resourceCulture);
@@ -216,6 +206,16 @@ namespace SharpBoot.Properties {
         internal static System.Drawing.Bitmap drive_disk {
             get {
                 object obj = ResourceManager.GetObject("drive_disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap edit_package {
+            get {
+                object obj = ResourceManager.GetObject("edit_package", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

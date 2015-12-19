@@ -249,4 +249,7 @@
   <data name="AddFiles" xml:space="preserve">
     <value>Add files</value>
   </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>Add Custom Entry</value>
+  </data>
 </root>

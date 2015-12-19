@@ -687,7 +687,7 @@
     <None Include="Resources\add.png" />
     <None Include="Resources\delete.png" />
     <None Include="Resources\compile1.png" />
-    <None Include="Resources\compile2.png" />
+    <None Include="Resources\edit_package.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

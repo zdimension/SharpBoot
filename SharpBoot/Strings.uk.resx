@@ -249,4 +249,7 @@
   <data name="AddFiles" xml:space="preserve">
     <value>Додавання файлів</value>
   </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>Додати настроюваний запис</value>
+  </data>
 </root>

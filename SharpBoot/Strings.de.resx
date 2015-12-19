@@ -246,4 +246,7 @@
   <data name="AddFiles" xml:space="preserve">
     <value>Dateien hinzufügen</value>
   </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>Benutzerdef. Datensatz hinzufügen</value>
+  </data>
 </root>

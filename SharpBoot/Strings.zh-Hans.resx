@@ -196,7 +196,7 @@
     <value>安装</value>
   </data>
   <data name="InstallABootLoader" xml:space="preserve">
-    <value>啟動程式套裝在U片安装</value>
+    <value>安装启动引导器至 USB 随身碟</value>
   </data>
   <data name="InstallingBoot" xml:space="preserve">
     <value>{0}在"{1}"安装</value>
@@ -245,5 +245,8 @@
   </data>
   <data name="AddFiles" xml:space="preserve">
     <value>添加文件</value>
+  </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>添加自定义条目</value>
   </data>
 </root>

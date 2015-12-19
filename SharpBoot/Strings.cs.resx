@@ -249,4 +249,7 @@
   <data name="AddFiles" xml:space="preserve">
     <value>Přidat soubory</value>
   </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>Přidat vlastní položku</value>
+  </data>
 </root>
