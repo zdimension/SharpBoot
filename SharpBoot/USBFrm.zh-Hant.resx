@@ -124,9 +124,6 @@
   <data name="btnAnnul.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 11pt</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>關閉</value>
-  </data>
   <data name="btnAnnul.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>

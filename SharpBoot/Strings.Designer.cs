@@ -39,7 +39,7 @@ namespace SharpBoot {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SharpBoot.Strings", typeof(Strings).Assembly);
+                    var temp = new global::System.Resources.ResourceManager("SharpBoot.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -102,6 +102,15 @@ namespace SharpBoot {
         internal static string CalcIn {
             get {
                 return ResourceManager.GetString("CalcIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
             }
         }
         

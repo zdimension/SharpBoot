@@ -124,9 +124,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Scegli il percorso dove salvare il file.</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancella</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crea ISO</value>
   </data>

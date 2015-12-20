@@ -31,7 +31,7 @@ namespace SharpBoot
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenIsoFrm));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(GenIsoFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAnnul = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();

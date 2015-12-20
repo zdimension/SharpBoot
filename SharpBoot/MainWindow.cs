@@ -36,13 +36,13 @@ namespace SharpBoot
             cmsChecksum.Renderer = Windows7Renderer.Instance;
         }
 
-        Dictionary<string, Tuple<CultureInfo, bool>> lngs = new Dictionary<string, Tuple<CultureInfo, bool>>(); 
+        private Dictionary<string, Tuple<CultureInfo, bool>> lngs = new Dictionary<string, Tuple<CultureInfo, bool>>();
 
 
         private void loadlng()
         {
             languageToolStripMenuItem.DropDownItems.Clear();
-            List<CultureInfo> result = fromresx(typeof (Strings));
+            var result = fromresx(typeof (Strings));
 
             result.AddRange(fromresx(typeof (ISOCat)));
 
@@ -50,7 +50,7 @@ namespace SharpBoot
             if (!systemLng.IsNeutralCulture)
                 systemLng = systemLng.Parent;
 
-            if(result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
+            if (result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
             {
                 result.Add(systemLng);
             }
@@ -82,15 +82,17 @@ namespace SharpBoot
             updateAvailableToolStripMenuItem.Visible = update_available;
             addFilesToolStripMenuItem.Text = Strings.AddFiles;
             btnCustomEntry.Text = Strings.AddCustomEntry;
+            Program.editcode = btnCustomCode.Text.Substring(1);
+            Program.fpath = lvIsos.Columns[4].HeaderText;
         }
 
-        private void LngItemClick(ToolStripMenuItem it)
+        private void LngItemClick(ToolStripItem it)
         {
             var tmp = lngs[it.Text];
 
             if (Program.GetCulture().Equals(tmp.Item1)) return;
 
-            if(!tmp.Item2)
+            if (!tmp.Item2)
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
                 setlngitem(Program.GetCulture());
@@ -101,7 +103,7 @@ namespace SharpBoot
 
             if (changing && FieldsEmpty())
             {
-               InitAfterLng();
+                InitAfterLng();
             }
             else if (!FieldsEmpty())
             {
@@ -109,26 +111,25 @@ namespace SharpBoot
             }
 
             changing = false;
-            var c = Program.GetCulture();
 
             setlngitem(tmp.Item1);
-            
+
             changing = true;
         }
 
         private static List<CultureInfo> fromresx(Type t)
         {
-            List<CultureInfo> result = new List<CultureInfo>();
-            ResourceManager rm = new ResourceManager(t);
+            var result = new List<CultureInfo>();
+            var rm = new ResourceManager(t);
 
-            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (CultureInfo culture in cultures)
+            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            foreach (var culture in cultures)
             {
                 try
                 {
                     if (culture.Equals(CultureInfo.InvariantCulture)) continue; //do not use "==", won't work
 
-                    ResourceSet rs = rm.GetResourceSet(culture, true, false);
+                    var rs = rm.GetResourceSet(culture, true, false);
                     if (rs != null)
                         result.Add(culture);
                 }
@@ -141,7 +142,6 @@ namespace SharpBoot
         }
 
         public List<ImageLine> CurImages = new List<ImageLine>();
-
 
 
         public void AddImage(string filePath, ISOV ver = null)
@@ -166,7 +166,8 @@ namespace SharpBoot
                     ver = ver ?? (ISOInfo.GetFromFile(filePath, new FileInfo(filePath).Length > 750000000));
                     if (ver == null)
                     {
-                        MessageBox.Show(Path.GetFileName(filePath) + "\n\n" + Strings.CouldntDetect, "SharpBoot", MessageBoxButtons.OK,
+                        MessageBox.Show(Path.GetFileName(filePath) + "\n\n" + Strings.CouldntDetect, "SharpBoot",
+                            MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
                     else
@@ -179,7 +180,8 @@ namespace SharpBoot
             }
 
 
-            var im = new ImageLine(name, filePath, desc, cat);
+            var im = new ImageLine(name, filePath, desc, cat,
+                typ: filePath.ToLower().EndsWith("img") ? EntryType.IMG : EntryType.ISO);
             CurImages.Add(im);
 
             SetSize();
@@ -190,7 +192,7 @@ namespace SharpBoot
 
         public void setlngitem(CultureInfo ci)
         {
-            bool found = false;
+            var found = false;
 
             foreach (ToolStripMenuItem mni in languageToolStripMenuItem.DropDownItems)
             {
@@ -204,28 +206,30 @@ namespace SharpBoot
                 else mni.Checked = false;
             }
 
-            if(!found) setlngitem(new CultureInfo("en"));
+            // ReSharper disable once TailRecursiveCall
+            if (!found) setlngitem(new CultureInfo("en"));
         }
 
         protected override CreateParams CreateParams
         {
             get
             {
-                CreateParams handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000;   // WS_EX_COMPOSITED       
+                var handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // WS_EX_COMPOSITED       
                 return handleParam;
             }
         }
 
         public Timer updTmr;
 
-        private Dictionary<string, string> CustomFiles = new Dictionary<string, string>(); 
+        private Dictionary<string, string> CustomFiles = new Dictionary<string, string>();
 
         public MainWindow()
         {
             DoubleBuffered = true;
             SetStyle(
-                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer | ControlStyles.ResizeRedraw,
+                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer |
+                ControlStyles.ResizeRedraw,
                 true);
 
             InitAfterLng();
@@ -246,13 +250,12 @@ namespace SharpBoot
             {
                 try
                 {
-                    if (this.InvokeRequired)
-                        this.Invoke((MethodInvoker) (() => mniUpdate.Visible = false));
+                    if (InvokeRequired)
+                        Invoke((MethodInvoker) (() => mniUpdate.Visible = false));
                     else mniUpdate.Visible = false;
                 }
                 catch
                 {
-
                 }
             };
             mniUpdate.Visible = true;
@@ -261,20 +264,18 @@ namespace SharpBoot
             updTmr = new Timer(300000);
             updTmr.Elapsed += UpdTmr_Elapsed;
             updTmr.Enabled = true;
-
-            
         }
 
         private void UpdTmr_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
             mniUpdate.Visible = true;
-            
+
             ISOInfo.RefreshISOs();
             mniUpdate.Visible = true;
             checkForUpdates();
         }
 
-        private bool update_available = false;
+        private bool update_available;
 
         private void checkForUpdates()
         {
@@ -292,12 +293,12 @@ namespace SharpBoot
 
                     var v = Version.Parse(ct);
                     //v = new Version(3, 7);
-                    updateAvailableToolStripMenuItem.Visible = update_available = v > Assembly.GetEntryAssembly().GetName().Version;
+                    updateAvailableToolStripMenuItem.Visible =
+                        update_available = v > Assembly.GetEntryAssembly().GetName().Version;
                 }
             }
             catch
             {
-
             }
 
             //mniUpdate.Visible = false;
@@ -364,7 +365,9 @@ namespace SharpBoot
         private void launchgeniso(bool usb)
         {
             Form ask = null;
-            if(usb) ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true, "FAT32 " + Strings.Recommended, "FAT16", "FAT12");
+            if (usb)
+                ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true,
+                    "FAT32 " + Strings.Recommended, "FAT16", "FAT12");
             else ask = new AskPath();
             if (ask.ShowDialog() == DialogResult.OK)
             {
@@ -372,7 +375,7 @@ namespace SharpBoot
                 fn = usb ? ((USBFrm) ask).SelectedUSB.Name.ToUpper().Substring(0, 3) : ((AskPath) ask).FileName;
                 var g = new GenIsoFrm(fn, usb);
                 g.GenerationFinished += delegate { g_GenerationFinished(g); };
-                
+
                 g.Title = txtTitle.Text;
                 if (usb) g.filesystem = ((USBFrm) ask).TheComboBox.SelectedItem.ToString().Split(' ')[0].ToUpper();
                 switch (cbxBackType.SelectedIndex)
@@ -396,7 +399,11 @@ namespace SharpBoot
                 g.bloader = bl;
                 Program.SupportAccent = bl.SupportAccent;
                 g.Res = new Size(int.Parse(ssize[0]), int.Parse(ssize[1]));
-                g.Images = CurImages.Select(x => new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(), x.Category.RemoveAccent(), x.CustomCode)).ToList();
+                g.Images =
+                    CurImages.Select(
+                        x =>
+                            new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(),
+                                x.Category.RemoveAccent(), x.CustomCode, x.EntryType)).ToList();
                 g.CustomFiles = CustomFiles;
                 g.ShowDialog(this);
 
@@ -423,7 +430,7 @@ namespace SharpBoot
         {
             lblDragHere.Visible = lvIsos.Rows.Count == 0;
             btnGen.Enabled = btnUSB.Enabled = !(lvIsos.Rows.Count == 0 ||
-                               (cbxBackType.SelectedIndex == 1 && !File.Exists(txtBackFile.Text)));
+                                                (cbxBackType.SelectedIndex == 1 && !File.Exists(txtBackFile.Text)));
         }
 
         private void btnRemISO_Click(object sender, EventArgs e)
@@ -532,8 +539,8 @@ namespace SharpBoot
 
             var a = DateTime.Now;
             var t = a - d;
-            txImInfo.Text = string.Format(Strings.ChkOf, n, 
-                            Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
+            txImInfo.Text = string.Format(Strings.ChkOf, n,
+                Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
             txImInfo.Text += sb + "\r\n";
             /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
                              "s";*/
@@ -543,8 +550,6 @@ namespace SharpBoot
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            Program.editcode = btnCustomCode.Text;
-            Program.fpath = lvIsos.Columns[4].HeaderText;
             SetSize();
             centerDragndrop();
             UpdTmr_Elapsed(this, null);
@@ -557,9 +562,6 @@ namespace SharpBoot
             return lvIsos.Rows.Count == 0 && txtTitle.Text == "SharpBoot" && txtBackFile.Text.Length == 0;
         }
 
-        private int lastIndex = -1;
-
-        private bool temporary;
 
         private void centerDragndrop()
         {
@@ -569,18 +571,19 @@ namespace SharpBoot
                 );
         }
 
-        private void ReplaceFontRecursive(Control parent, Font f1, Font f2)
+        /*private void ReplaceFontRecursive(Control parent, Font f1, Font f2)
         {
             if (parent.Font == f1) parent.Font = f2;
-            foreach(Control ct in parent.Controls)
+            foreach (Control ct in parent.Controls)
             {
                 if (ct.Font == f1) ct.Font = f2;
                 ReplaceFontRecursive(ct, f1, f2);
             }
-        }
+        }*/
 
         public void CheckGrub4Dos()
         {
+            if (cbxBackType.SelectedIndex == 0 && cbxBootloader.SelectedIndex == 1) cbxBackType.SelectedIndex = 2;
             cbxRes.Enabled = !(cbxBackType.SelectedIndex == 2 && cbxBootloader.SelectedIndex == 1);
             if (cbxBackType.SelectedIndex == 1 && File.Exists(txtBackFile.Text) && cbxBootloader.SelectedIndex == 1)
             {
@@ -600,7 +603,6 @@ namespace SharpBoot
             }
         }
 
-        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -695,7 +697,8 @@ namespace SharpBoot
         private void btnInstBoot_Click(object sender, EventArgs e)
         {
             //new InstallBoot().ShowDialog(this);
-            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false, "Syslinux " + Strings.Recommended, "Grub4Dos");
+            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false,
+                "Syslinux " + Strings.Recommended, "Grub4Dos");
             frm.BtnClicked += (o, args) =>
             {
                 frm.ProgressVisible = true;
@@ -703,8 +706,9 @@ namespace SharpBoot
                 BootloaderInst.Install(frm.SelectedUSB.Name, (Bootloaders) frm.TheComboBox.SelectedIndex);
                 frm.SetProgress(100);
                 MessageBox.Show(
-                string.Format(Strings.BootloaderInstalled, (frm.TheComboBox.SelectedIndex == 1 ? "Grub4Dos" : "Syslinux"),
-                    frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
+                    string.Format(Strings.BootloaderInstalled,
+                        (frm.TheComboBox.SelectedIndex == 1 ? "Grub4Dos" : "Syslinux"),
+                        frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
             };
             frm.ShowDialog(this);
         }
@@ -773,15 +777,20 @@ namespace SharpBoot
             centerDragndrop();
         }
 
+        private ImageLine selectediline()
+        {
+            var cit = lvIsos.SelectedRows[0];
+            return CurImages.First(x => x.Name == cit.Cells[0].Value?.ToString());
+        }
+
         private void btnCustomCode_Click(object sender, EventArgs e)
         {
             var cit = lvIsos.SelectedRows[0];
             var bmi = new BootMenuItem(
                 cit.Cells[0].Value?.ToString() ?? "",
                 cit.Cells[3].Value?.ToString() ?? "",
-                (cit.Cells[4].Value?.ToString() ?? "").ToLower().EndsWith("img") ? MenuItemType.IMG : MenuItemType.ISO,
-                cit.Cells[4].Value?.ToString() ?? "");
-            bmi.Start = false;
+                selectediline().EntryType,
+                cit.Cells[4].Value?.ToString() ?? "") {Start = false};
 
             var cod = SelectedBootloader().GetCode(bmi);
 
@@ -799,6 +808,19 @@ namespace SharpBoot
             var filesfrm = new CustomFileFrm {CFiles = CustomFiles};
             filesfrm.ShowDialog(this);
             CustomFiles = filesfrm.CFiles;
+        }
+
+        private void btnCustomEntry_Click(object sender, EventArgs e)
+        {
+            var entryfrm = new CustomEntryFrm();
+            if (entryfrm.ShowDialog(this) == DialogResult.OK)
+            {
+                var im = new ImageLine(Path.GetFileNameWithoutExtension(entryfrm.FilePath), entryfrm.FilePath, "", "",
+                    "", entryfrm.SelectedType);
+                CurImages.Add(im);
+                SetSize();
+                lvIsos.Rows.Add(im.Name, Program.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
+            }
         }
     }
 }

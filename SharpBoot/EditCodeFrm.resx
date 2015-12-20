@@ -235,7 +235,7 @@
     <value>True</value>
   </data>
   <data name="lblFilePath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 59</value>
+    <value>12, 53</value>
   </data>
   <data name="lblFilePath.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 15</value>
@@ -298,10 +298,10 @@
     <value>Consolas, 9.75pt</value>
   </data>
   <data name="rtbCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 89</value>
+    <value>12, 81</value>
   </data>
   <data name="rtbCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>432, 228</value>
+    <value>432, 236</value>
   </data>
   <data name="rtbCode.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -321,6 +321,9 @@
   <data name="&gt;&gt;rtbCode.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

@@ -124,11 +124,8 @@
   <data name="cd_delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cd_delete1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="compile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\compile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="syslinux" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\syslinux.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="package_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\package_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="syslinux1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\syslinux.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -147,9 +144,6 @@
   </data>
   <data name="qemu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\qemu.7z;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="package_go" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\package_go.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cd_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cd_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +172,14 @@
   <data name="script_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\script_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="syslinux" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\syslinux.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="grldr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\grldr;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,11 +193,11 @@
   <data name="_7za" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\7za.exe;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="door_out" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\door_out.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_package" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_package.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_866_8x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\866_8x16.psf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -211,13 +211,13 @@
   <data name="drive_disk" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drive_disk.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="accept_button1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="accept_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accept_button1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="flag_usa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flag_usa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="edit_package" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_package.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="arrow_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\arrow_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

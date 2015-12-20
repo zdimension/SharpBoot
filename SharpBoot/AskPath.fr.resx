@@ -124,9 +124,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Veuillez sélectionner le fichier de destination.</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Créer un fichier ISO</value>
   </data>

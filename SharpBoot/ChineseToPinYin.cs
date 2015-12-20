@@ -9,7 +9,7 @@ namespace SharpBoot
         public static string ChineseToPinyin(this string s)
         {
             var sb = new StringBuilder();
-            foreach(var c in s)
+            foreach (var c in s)
             {
                 if (char.GetUnicodeCategory(c) == UnicodeCategory.OtherLetter)
                 {

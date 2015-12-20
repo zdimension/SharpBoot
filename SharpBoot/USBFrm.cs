@@ -5,15 +5,12 @@ using System.Windows.Forms;
 
 namespace SharpBoot
 {
-    
-
     public partial class USBFrm : Form
     {
-       
-
         public USBFrm()
         {
             InitializeComponent();
+            btnAnnul.Text = Strings.Cancel;
             loadkeys();
         }
 
@@ -34,7 +31,12 @@ namespace SharpBoot
 
         public void loadkeys()
         {
-            foreach (var drive in DriveInfo.GetDrives().Where(d => (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed) && d.IsReady))
+            cbxUSB.Items.Clear();
+            foreach (
+                var drive in
+                    DriveInfo.GetDrives()
+                        .Where(d => (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed) && d.IsReady)
+                )
             {
                 cbxUSB.Items.Add(new driveitem
                 {
@@ -55,7 +57,7 @@ namespace SharpBoot
         // ReSharper disable once ConvertToAutoPropertyWhenPossible
         public ComboBox TheComboBox => comboBox;
 
-        public void SetProgress (int v)
+        public void SetProgress(int v)
         {
             pbxPrg.Value = v;
             lblPercent.Text = v + " %";
@@ -64,13 +66,16 @@ namespace SharpBoot
         public DriveInfo SelectedUSB => ((driveitem) cbxUSB.SelectedItem).Value;
 
 
-       
-
         public event EventHandler BtnClicked = (sender, args) => { };
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             BtnClicked(sender, e);
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            loadkeys();
         }
     }
 }

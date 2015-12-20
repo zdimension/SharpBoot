@@ -31,28 +31,29 @@ namespace SharpBoot
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USBFrm));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(USBFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPercent = new System.Windows.Forms.Label();
             this.pbxPrg = new System.Windows.Forms.ProgressBar();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnAnnul = new System.Windows.Forms.Button();
             this.cbxUSB = new System.Windows.Forms.ComboBox();
             this.lblHeader = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCbx = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnOK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.lblPercent);
             this.panel1.Controls.Add(this.pbxPrg);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // lblPercent
@@ -64,14 +65,6 @@ namespace SharpBoot
             // 
             resources.ApplyResources(this.pbxPrg, "pbxPrg");
             this.pbxPrg.Name = "pbxPrg";
-            // 
-            // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
-            this.btnOK.Image = global::SharpBoot.Properties.Resources.accept_button1;
-            this.btnOK.Name = "btnOK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnAnnul
             // 
@@ -115,12 +108,28 @@ namespace SharpBoot
             resources.GetString("comboBox.Items1")});
             this.comboBox.Name = "comboBox";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Image = global::SharpBoot.Properties.Resources.arrow_refresh;
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Image = global::SharpBoot.Properties.Resources.accept_button;
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
             // USBFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ControlBox = false;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.lblCbx);
             this.Controls.Add(this.label2);
@@ -131,6 +140,7 @@ namespace SharpBoot
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "USBFrm";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -151,5 +161,6 @@ namespace SharpBoot
         private ProgressBar pbxPrg;
         private Label lblPercent;
         private ComboBox comboBox;
+        private Button btnRefresh;
     }
 }

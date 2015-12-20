@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SharpBoot
+﻿namespace SharpBoot
 {
     // http://stackoverflow.com/a/27027922/2196124
     public class DisabledRichTextBox : System.Windows.Forms.RichTextBox

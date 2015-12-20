@@ -252,4 +252,7 @@
   <data name="AddCustomEntry" xml:space="preserve">
     <value>Aggiungi voce personalizzata</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
 </root>

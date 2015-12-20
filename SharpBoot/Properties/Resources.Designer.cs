@@ -83,9 +83,9 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap accept_button1 {
+        internal static System.Drawing.Bitmap accept_button {
             get {
-                object obj = ResourceManager.GetObject("accept_button1", resourceCulture);
+                object obj = ResourceManager.GetObject("accept_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +106,16 @@ namespace SharpBoot.Properties {
         internal static System.Drawing.Bitmap ajax_loader {
             get {
                 object obj = ResourceManager.GetObject("ajax_loader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap arrow_refresh {
+            get {
+                object obj = ResourceManager.GetObject("arrow_refresh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,16 +156,6 @@ namespace SharpBoot.Properties {
         internal static System.Drawing.Bitmap cd_delete1 {
             get {
                 object obj = ResourceManager.GetObject("cd_delete1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap compile {
-            get {
-                object obj = ResourceManager.GetObject("compile", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

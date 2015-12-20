@@ -117,15 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 15</value>
-  </data>
-  <data name="lblStatus.Text" xml:space="preserve">
-    <value>Iniciando...</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Generando archivo ISO</value>

@@ -6,7 +6,9 @@ namespace SharpBoot
     {
         public CustomListView()
         {
-            SetStyle(ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+            SetStyle(
+                ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint,
+                true);
             DoubleBuffered = true;
         }
     }

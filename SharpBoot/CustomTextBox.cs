@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace SharpBoot
 {
@@ -10,9 +6,10 @@ namespace SharpBoot
     {
         public CustomTextBox()
         {
-            SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer, true);
+            SetStyle(
+                ControlStyles.AllPaintingInWmPaint | ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer,
+                true);
             DoubleBuffered = true;
         }
-
     }
 }

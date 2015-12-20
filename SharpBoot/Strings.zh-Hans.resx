@@ -249,4 +249,7 @@
   <data name="AddCustomEntry" xml:space="preserve">
     <value>添加自定义条目</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>返回</value>
+  </data>
 </root>

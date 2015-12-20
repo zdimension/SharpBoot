@@ -252,4 +252,7 @@
   <data name="AddCustomEntry" xml:space="preserve">
     <value>Adăugare intrare particularizată</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Anulează</value>
+  </data>
 </root>

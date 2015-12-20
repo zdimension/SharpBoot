@@ -124,9 +124,6 @@
   <data name="btnAnnul.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>关闭</value>
-  </data>
   <data name="lblHeader.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 15.75pt</value>
   </data>

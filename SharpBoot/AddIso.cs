@@ -22,6 +22,37 @@ namespace SharpBoot
             InitializeComponent();
             ISOPath = "";
             Closing += AddIso_Closing;
+            btnOK.Text = Strings.OK;
+            btnAnnul.Text = Strings.Cancel;
+            while (ISOInfo.ISOs.Count == 0) Thread.Sleep(50);
+            while (cbxDetIso.Items.Count < 2)
+            {
+                var isos =
+                    ISOInfo.ISOs.Where(x => !x.NoDL)
+                        .Select(x => new {Val = x, x.Name, Category = x.CategoryTxt, x.LatestVersion.Hash});
+
+                cbxISOS.DataSource = isos;
+                var iso2 = isos.ToList();
+                iso2.Insert(0,
+                    new
+                    {
+                        Val = new ISOInfo("", new Dictionary<CultureInfo, string>(), IsoCategory.None),
+                        Name = Strings.Other,
+                        Category = "",
+                        Hash = ""
+                    });
+                iso2.AddRange(
+                    ISOInfo.ISOs.Where(x => x.NoDL)
+                        .Select(x => new {Val = x, x.Name, Category = x.CategoryTxt, Hash = ""})
+                        .ToList());
+                cbxDetIso.DataSource = iso2;
+                cbxDetIso.DisplayMember = "Name";
+                fempty = true;
+                cbxDetIso.SelectedItem = null;
+                cbxISOS.SelectedItem = null;
+                cbxVersion.SelectedItem = null;
+            }
+            rtbIsoDesc.Text = "";
         }
 
         private void AddIso_Closing(object sender, CancelEventArgs e)
@@ -33,19 +64,6 @@ namespace SharpBoot
 
         private void AddIso_Load(object sender, EventArgs e)
         {
-            var isos = ISOInfo.ISOs.Where(x => !x.NoDL).Select(x => new { Val = x, x.Name, Category = x.CategoryTxt, x.LatestVersion.Hash });
-
-            cbxISOS.DataSource = isos;
-            var iso2 = isos.ToList();
-            iso2.Insert(0, new { Val = new ISOInfo("", new Dictionary<CultureInfo, string>(), IsoCategory.None), Name = Strings.Other, Category = "", Hash = "" });
-            iso2.AddRange(ISOInfo.ISOs.Where(x => x.NoDL).Select(x => new { Val = x, x.Name, Category = x.CategoryTxt, Hash = "" }).ToList());
-            cbxDetIso.DataSource = iso2;
-            cbxDetIso.DisplayMember = "Name";
-            fempty = true;
-            cbxDetIso.SelectedItem = null;
-            cbxISOS.SelectedItem = null;
-            cbxVersion.SelectedItem = null;
-            rtbIsoDesc.Text = "";
         }
 
         private void rbnFile_CheckedChanged(object sender, EventArgs e)
@@ -85,7 +103,7 @@ namespace SharpBoot
 
         private ISOInfo selinfo => cbxISOS.SelectedItem == null ? null : ((dynamic) cbxISOS.SelectedItem).Val;
 
-        private ISOInfo selinfo2 => cbxDetIso.SelectedItem == null ? null : ((dynamic)cbxDetIso.SelectedItem).Val;
+        private ISOInfo selinfo2 => cbxDetIso.SelectedItem == null ? null : ((dynamic) cbxDetIso.SelectedItem).Val;
 
         private ISOV selinfoversion()
         {
@@ -105,7 +123,7 @@ namespace SharpBoot
                 cbxVersion.DataSource = ds;
                 var latest = selinfo.LatestVersion;
                 cbxVersion.SelectedIndex = 0;
-                for (int i = 0; i < ds.Count; i++)
+                for (var i = 0; i < ds.Count; i++)
                 {
                     if (ds[i].Value == latest)
                     {
@@ -204,14 +222,14 @@ namespace SharpBoot
                     else
                     {
                         IsoV = resk;
-                        for (int index = 0; index < cbxDetIso.Items.Count; index++)
+                        for (var index = 0; index < cbxDetIso.Items.Count; index++)
                         {
                             dynamic it = cbxDetIso.Items[index];
                             if (it.Val == resk.Parent)
                             {
                                 changing = true;
                                 cbxDetIso.SelectedIndex = index;
-                                
+
                                 break;
                             }
                         }
@@ -225,7 +243,6 @@ namespace SharpBoot
                 CurrentUICulture = CultureInfo.CurrentUICulture
             };
             th.Start();
-
         }
 
         public ISOV IsoV;
@@ -235,7 +252,7 @@ namespace SharpBoot
             if (IsDownload)
             {
                 IsoV = selinfoversion();
-                if(IsoV != null && IsoV.DownloadLink != "")
+                if (IsoV != null && IsoV.DownloadLink != "")
                 {
                     sfdIso.FileName = Path.GetFileName(IsoV.DownloadLink);
                 }
@@ -266,14 +283,18 @@ namespace SharpBoot
             client?.CancelAsync();
         }
 
-        
 
         private void cbxDetIso_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (changing) return;
-            if(cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null)
+            if (cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null)
             {
-                IsoV = cbxDetIso.SelectedIndex == 0 ? new ISOV("other", "") : (selinfo2 == null ? null : (selinfo2.LatestVersion ?? new ISOV("nover", selinfo2.Name, "", selinfo2.Filename, true) {Parent=selinfo2}));
+                IsoV = cbxDetIso.SelectedIndex == 0
+                    ? new ISOV("other", "")
+                    : (selinfo2 == null
+                        ? null
+                        : (selinfo2.LatestVersion ??
+                           new ISOV("nover", selinfo2.Name, "", selinfo2.Filename, true) {Parent = selinfo2}));
             }
         }
     }

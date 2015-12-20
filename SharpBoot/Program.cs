@@ -10,7 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using System.Xml.Linq;
 using SharpBoot.Properties;
 
 namespace SharpBoot
@@ -36,15 +35,11 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
-            
-
             ClrTmp();
 
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
             //ISOInfo.RefreshISOs();
-
-            
 
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
@@ -59,7 +54,8 @@ namespace SharpBoot
             Application.Run(new MainWindow());
         }
 
-        private static void CurrentDomainOnUnhandledException(object sender, UnhandledExceptionEventArgs unhandledExceptionEventArgs)
+        private static void CurrentDomainOnUnhandledException(object sender,
+            UnhandledExceptionEventArgs unhandledExceptionEventArgs)
         {
             if (unhandledExceptionEventArgs.ExceptionObject is FileNotFoundException)
                 MessageBox.Show(((FileNotFoundException) unhandledExceptionEventArgs.ExceptionObject).FileName);
@@ -71,7 +67,7 @@ namespace SharpBoot
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             if (e.Exception is FileNotFoundException)
-                MessageBox.Show(((FileNotFoundException)e.Exception).FileName);
+                MessageBox.Show(((FileNotFoundException) e.Exception).FileName);
             MessageBox.Show(e.Exception.Message + "\n" + e.Exception.StackTrace, "Thread exception");
         }
 
@@ -81,14 +77,11 @@ namespace SharpBoot
             return v.Major + "." + v.Minor + (v.Build == 0 ? "" : "." + v.Build);
         }
 
-        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>
-        {
-            
-        }; 
+        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
 
         public static Encoding GetEnc()
         {
-            switch(Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
+            switch (Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
             {
                 case "ru":
                 case "uk":
@@ -129,7 +122,7 @@ namespace SharpBoot
 
         public static void SafeDel(string d)
         {
-            int i = 0;
+            var i = 0;
             while (Directory.Exists(d) && i < 10)
             {
                 try
@@ -172,7 +165,7 @@ namespace SharpBoot
         }
 
         [DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
-        public static extern long StrFormatByteSize(long fileSize, System.Text.StringBuilder buffer, int bufferSize);
+        public static extern long StrFormatByteSize(long fileSize, StringBuilder buffer, int bufferSize);
 
         public enum Platform
         {
@@ -229,10 +222,10 @@ namespace SharpBoot
         {
             var replchar = new Dictionary<string, string>
             {
-                {"і", "i" }, // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
-                {"ї", "ï" },
-                {"І", "I" },
-                {"Ї", "Ï" },
+                {"і", "i"}, // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
+                {"ї", "ï"},
+                {"І", "I"},
+                {"Ї", "Ï"}
             };
 
             str = replchar.Aggregate(str, (current, rc) => current.Replace(rc.Key, rc.Value));
@@ -240,20 +233,22 @@ namespace SharpBoot
             str = str.Normalize(NormalizationForm.FormC);
             str = str.ChineseToPinyin();
 
-            string supported =
-                string.Concat(Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => GetEnc().GetString(new[] {(byte) x})[0]));
+            var supported =
+                string.Concat(
+                    Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => GetEnc().GetString(new[] {(byte) x})[0]));
             var normalizedString = str.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
 
-            for(int i = 0; i < str.Length; i++)
+            for (var i = 0; i < str.Length; i++)
             {
-                stringBuilder.Append((supported.Contains(str[i]) || char.IsWhiteSpace(str[i])) ? str[i] : normalizedString[i]);
+                stringBuilder.Append((supported.Contains(str[i]) || char.IsWhiteSpace(str[i]))
+                    ? str[i]
+                    : normalizedString[i]);
             }
 
-            
+
             return stringBuilder.ToString();
         }
-
 
 
         public static string GetTemporaryDirectory()

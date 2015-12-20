@@ -73,7 +73,15 @@
       <DependentUpon>AskPath.cs</DependentUpon>
     </Compile>
     <Compile Include="Bootloaders.cs" />
+    <Compile Include="BootMenu.cs" />
     <Compile Include="ChineseToPinYin.cs" />
+    <Compile Include="CustomEntry.cs" />
+    <Compile Include="CustomEntryFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomEntryFrm.Designer.cs">
+      <DependentUpon>CustomEntryFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomFileFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +208,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.zh-Hant.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TablessControl.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TestFrm.cs">
       <SubType>Form</SubType>
@@ -379,7 +390,34 @@
     <EmbeddedResource Include="AskPath.zh-Hant.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomEntryFrm.resx">
+      <DependentUpon>CustomEntryFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.cs.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.de.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.es.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.it.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomFileFrm.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.ro.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.ru.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.uk.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.zh-Hans.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCodeFrm.cs.resx">
@@ -620,7 +658,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Properties\DataSources\Strings.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -668,9 +705,6 @@
     <None Include="Resources\syslinux.exe" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\compile.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -688,6 +722,7 @@
     <None Include="Resources\delete.png" />
     <None Include="Resources\compile1.png" />
     <None Include="Resources\edit_package.png" />
+    <None Include="Resources\arrow_refresh.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

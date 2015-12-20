@@ -1,41 +1,4 @@
-﻿/*
-
-http://www.brad-smith.info/blog/archives/104
-
-
-Copyright (c) 2014, Bradley Smith
-All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer in the
-      documentation and/or other materials provided with the distribution.
-    * The name "Bradley Smith" may not be used to endorse or promote products
-      derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL BRADLEY SMITH BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-Changes:
- zdimension 2015-12-12: 
- - I added the ImageMember property for showing icons for items
-
-
-*/
-
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +8,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+// ReSharper disable BaseObjectEqualsIsObjectEquals
 
 /// <summary>
 ///     Attaches to a System.Windows.Forms.Control and provides buffered
@@ -106,7 +70,7 @@ public class BufferedPainter<TState>
         get { return _defaultState; }
         set
         {
-            bool usingOldDefault = Equals(_currentState, _defaultState);
+            var usingOldDefault = Equals(_currentState, _defaultState);
             _defaultState = value;
             if (usingOldDefault) _currentState = _newState = _defaultState;
         }
@@ -132,7 +96,7 @@ public class BufferedPainter<TState>
         get { return _currentState; }
         set
         {
-            bool diff = !Equals(_currentState, value);
+            var diff = !Equals(_currentState, value);
             _newState = value;
             if (diff)
             {
@@ -224,7 +188,7 @@ public class BufferedPainter<TState>
     {
         if (!Triggers.Any()) return;
 
-        TState newState = DefaultState;
+        var newState = DefaultState;
 
         ApplyCondition(VisualStateTriggerTypes.Focused, ref newState);
         ApplyCondition(VisualStateTriggerTypes.Hot, ref newState);
@@ -240,14 +204,14 @@ public class BufferedPainter<TState>
     /// <param name="stateIfTrue">Reference to the visual state variable to update (if the trigger occurs).</param>
     private void ApplyCondition(VisualStateTriggerTypes type, ref TState stateIfTrue)
     {
-        foreach (VisualStateTrigger<TState> trigger in Triggers.Where(x => x.Type == type))
+        foreach (var trigger in Triggers.Where(x => x.Type == type))
         {
             if (trigger != null)
             {
-                Rectangle bounds = (trigger.Bounds != Rectangle.Empty) ? trigger.Bounds : Control.ClientRectangle;
+                var bounds = (trigger.Bounds != Rectangle.Empty) ? trigger.Bounds : Control.ClientRectangle;
 
-                bool inRect = bounds.Contains(Control.PointToClient(Cursor.Position));
-                bool other = true;
+                var inRect = bounds.Contains(Control.PointToClient(Cursor.Position));
+                var other = true;
 
                 switch (type)
                 {
@@ -283,7 +247,7 @@ public class BufferedPainter<TState>
     }
 */
 
-private void Control_HandleCreated(object sender, EventArgs e)
+    private void Control_HandleCreated(object sender, EventArgs e)
     {
         if (BufferedPaintSupported)
         {
@@ -307,11 +271,11 @@ private void Control_HandleCreated(object sender, EventArgs e)
         if (_animationsNeedCleanup && Control.IsHandleCreated) Interop.BufferedPaintStopAllAnimations(Control.Handle);
 
         // update trigger bounds according to anchor styles
-        foreach (VisualStateTrigger<TState> trigger in Triggers)
+        foreach (var trigger in Triggers)
         {
             if (trigger.Bounds != Rectangle.Empty)
             {
-                Rectangle newBounds = trigger.Bounds;
+                var newBounds = trigger.Bounds;
 
                 if ((trigger.Anchor & AnchorStyles.Left) != AnchorStyles.Left)
                 {
@@ -345,15 +309,15 @@ private void Control_HandleCreated(object sender, EventArgs e)
     {
         if (BufferedPaintSupported && Enabled)
         {
-            bool stateChanged = !Equals(_currentState, _newState);
+            var stateChanged = !Equals(_currentState, _newState);
 
-            IntPtr hdc = e.Graphics.GetHdc();
+            var hdc = e.Graphics.GetHdc();
             if (hdc != IntPtr.Zero)
             {
                 // see if this paint was generated by a soft-fade animation
                 if (!Interop.BufferedPaintRenderAnimation(Control.Handle, hdc))
                 {
-                    Interop.BP_ANIMATIONPARAMS animParams = new Interop.BP_ANIMATIONPARAMS();
+                    var animParams = new Interop.BP_ANIMATIONPARAMS();
                     animParams.cbSize = Marshal.SizeOf(animParams);
                     animParams.style = Interop.BP_ANIMATIONSTYLE.BPAS_LINEAR;
 
@@ -361,29 +325,29 @@ private void Control_HandleCreated(object sender, EventArgs e)
                     animParams.dwDuration = 0;
                     if (stateChanged)
                     {
-                        BufferedPaintTransition<TState> transition =
+                        var transition =
                             Transitions.SingleOrDefault(
                                 x => Equals(x.FromState, _currentState) && Equals(x.ToState, _newState));
                         animParams.dwDuration = transition?.Duration ?? DefaultDuration;
                     }
 
-                    Rectangle rc = Control.ClientRectangle;
+                    var rc = Control.ClientRectangle;
                     IntPtr hdcFrom, hdcTo;
-                    IntPtr hbpAnimation = Interop.BeginBufferedAnimation(Control.Handle, hdc, ref rc,
+                    var hbpAnimation = Interop.BeginBufferedAnimation(Control.Handle, hdc, ref rc,
                         Interop.BP_BUFFERFORMAT.BPBF_COMPATIBLEBITMAP, IntPtr.Zero, ref animParams, out hdcFrom,
                         out hdcTo);
                     if (hbpAnimation != IntPtr.Zero)
                     {
                         if (hdcFrom != IntPtr.Zero)
                         {
-                            using (Graphics g = Graphics.FromHdc(hdcFrom))
+                            using (var g = Graphics.FromHdc(hdcFrom))
                             {
                                 OnPaintVisualState(new BufferedPaintEventArgs<TState>(_currentState, g));
                             }
                         }
                         if (hdcTo != IntPtr.Zero)
                         {
-                            using (Graphics g = Graphics.FromHdc(hdcTo))
+                            using (var g = Graphics.FromHdc(hdcTo))
                             {
                                 OnPaintVisualState(new BufferedPaintEventArgs<TState>(_newState, g));
                             }
@@ -528,6 +492,7 @@ public class VisualStateTrigger<TState> : IEquatable<VisualStateTrigger<TState>>
     public override bool Equals(object obj)
     {
         if (obj is BufferedPaintTransition<TState>)
+            // ReSharper disable once PossibleInvalidCastException
             return ((IEquatable<VisualStateTrigger<TState>>) this).Equals((VisualStateTrigger<TState>) obj);
         else
             return base.Equals(obj);
@@ -800,11 +765,11 @@ public class GroupedComboBox : ComboBox, IComparer
     int IComparer.Compare(object x, object y)
     {
         // compare the display values (and return the result if there is no grouping)
-        int secondLevelSort = Comparer.Default.Compare(GetItemText(x), GetItemText(y));
+        var secondLevelSort = Comparer.Default.Compare(GetItemText(x), GetItemText(y));
         if (_groupProperty == null) return secondLevelSort;
 
         // compare the group values - if equal, return the earlier comparison
-        int firstLevelSort = Comparer.Default.Compare(
+        var firstLevelSort = Comparer.Default.Compare(
             Convert.ToString(_groupProperty.GetValue(x)),
             Convert.ToString(_groupProperty.GetValue(y))
             );
@@ -865,10 +830,9 @@ public class GroupedComboBox : ComboBox, IComparer
 
     private Image GetItemImage(object item)
     {
-
         try
         {
-            if(_imageProperty == null) RefreshImageProp();
+            if (_imageProperty == null) RefreshImageProp();
             return _imageProperty?.GetValue(item) as Image;
         }
         catch
@@ -886,7 +850,7 @@ public class GroupedComboBox : ComboBox, IComparer
     /// <returns></returns>
     private bool IsGroupStart(int index, out string groupText)
     {
-        bool isGroupStart = false;
+        var isGroupStart = false;
         groupText = string.Empty;
 
         if ((_groupProperty != null) && (index >= 0) && (index < Items.Count))
@@ -902,7 +866,7 @@ public class GroupedComboBox : ComboBox, IComparer
             }
             else if ((index - 1) >= 0)
             {
-                string previousGroupText = Convert.ToString(_groupProperty.GetValue(Items[index - 1]));
+                var previousGroupText = Convert.ToString(_groupProperty.GetValue(Items[index - 1]));
                 if (previousGroupText != groupText) isGroupStart = true;
             }
         }
@@ -944,7 +908,11 @@ public class GroupedComboBox : ComboBox, IComparer
     public bool ShowImageOnDropDown
     {
         get { return _showImageOnDropDown; }
-        set { _showImageOnDropDown = value; Invalidate(); }
+        set
+        {
+            _showImageOnDropDown = value;
+            Invalidate();
+        }
     }
 
     /// <summary>
@@ -958,16 +926,16 @@ public class GroupedComboBox : ComboBox, IComparer
         if ((e.Index >= 0) && (e.Index < Items.Count))
         {
             // get noteworthy states
-            bool comboBoxEdit = (e.State & DrawItemState.ComboBoxEdit) == DrawItemState.ComboBoxEdit;
-            bool selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
-            bool noAccelerator = (e.State & DrawItemState.NoAccelerator) == DrawItemState.NoAccelerator;
-            bool disabled = (e.State & DrawItemState.Disabled) == DrawItemState.Disabled;
-            bool focus = (e.State & DrawItemState.Focus) == DrawItemState.Focus;
+            var comboBoxEdit = (e.State & DrawItemState.ComboBoxEdit) == DrawItemState.ComboBoxEdit;
+            var selected = (e.State & DrawItemState.Selected) == DrawItemState.Selected;
+            var noAccelerator = (e.State & DrawItemState.NoAccelerator) == DrawItemState.NoAccelerator;
+            var disabled = (e.State & DrawItemState.Disabled) == DrawItemState.Disabled;
+            var focus = (e.State & DrawItemState.Focus) == DrawItemState.Focus;
 
             // determine grouping
             string groupText;
-            bool isGroupStart = IsGroupStart(e.Index, out groupText) && !comboBoxEdit;
-            bool hasGroup = (groupText != string.Empty) && !comboBoxEdit;
+            var isGroupStart = IsGroupStart(e.Index, out groupText) && !comboBoxEdit;
+            var hasGroup = (groupText != string.Empty) && !comboBoxEdit;
 
             // the item text will appear in a different colour, depending on its state
             Color textColor;
@@ -978,20 +946,18 @@ public class GroupedComboBox : ComboBox, IComparer
             else
                 textColor = ForeColor;
 
-            Image itimg = ((!ShowImageOnDropDown && comboBoxEdit) ? null : GetItemImage(Items[e.Index]));
-            int delay = itimg?.Width + 4 ?? 0;
-
-
+            var itimg = ((!ShowImageOnDropDown && comboBoxEdit) ? null : GetItemImage(Items[e.Index]));
+            var delay = itimg?.Width + 4 ?? 0;
 
 
             // items will be indented if they belong to a group
-            Rectangle itemBounds = Rectangle.FromLTRB(
+            var itemBounds = Rectangle.FromLTRB(
                 e.Bounds.X + (hasGroup ? 12 : 0) + (comboBoxEdit ? -2 : 0) + delay,
                 e.Bounds.Y + (isGroupStart ? (e.Bounds.Height / 2) : 0),
                 e.Bounds.Right,
                 e.Bounds.Bottom
                 );
-            Rectangle groupBounds = new Rectangle(
+            var groupBounds = new Rectangle(
                 e.Bounds.X,
                 e.Bounds.Y,
                 e.Bounds.Width,
@@ -1026,7 +992,7 @@ public class GroupedComboBox : ComboBox, IComparer
                     _textFormatFlags
                     );
 
-            if(itimg != null)
+            if (itimg != null)
             {
                 e.Graphics.DrawImage(itimg, e.Bounds.X + (hasGroup ? 12 : 0) + 2, itemBounds.Y);
             }
@@ -1089,10 +1055,10 @@ public class GroupedComboBox : ComboBox, IComparer
 
     public void RefreshImageProp()
     {
-        if(_bindingSource == null) _bindingSource = new BindingSource(Items, "");
+        if (_bindingSource == null) _bindingSource = new BindingSource(Items, "");
         _imageProperty = _bindingSource
-           .GetItemProperties(null)
-           .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_imageMember));
+            .GetItemProperties(null)
+            .Cast<PropertyDescriptor>().FirstOrDefault(descriptor => descriptor.Name.Equals(_imageMember));
     }
 
     /// <summary>
@@ -1120,7 +1086,7 @@ public class GroupedComboBox : ComboBox, IComparer
 
         // rebuild the collection and sort using custom logic
         _internalItems.Clear();
-        foreach (object item in _bindingSource) _internalItems.Add(item);
+        foreach (var item in _bindingSource) _internalItems.Add(item);
         _internalItems.Sort(this);
 
         // bind the underlying ComboBox to the sorted collection
@@ -1140,7 +1106,8 @@ public class GroupedComboBox : ComboBox, IComparer
     /// </summary>
     protected void ToggleStyle()
     {
-        if (_bufferedPainter != null && _bufferedPainter.BufferedPaintSupported && (DropDownStyle == ComboBoxStyle.DropDownList))
+        if (_bufferedPainter != null && _bufferedPainter.BufferedPaintSupported &&
+            (DropDownStyle == ComboBoxStyle.DropDownList))
         {
             _bufferedPainter.Enabled = true;
             SetStyle(ControlStyles.UserPaint, true);
@@ -1149,7 +1116,7 @@ public class GroupedComboBox : ComboBox, IComparer
         }
         else
         {
-            if(_bufferedPainter != null) _bufferedPainter.Enabled = false;
+            if (_bufferedPainter != null) _bufferedPainter.Enabled = false;
             SetStyle(ControlStyles.UserPaint, false);
             SetStyle(ControlStyles.AllPaintingInWmPaint, false);
             SetStyle(ControlStyles.SupportsTransparentBackColor, false);
@@ -1166,21 +1133,21 @@ public class GroupedComboBox : ComboBox, IComparer
     /// <param name="state"></param>
     internal static void DrawComboBox(Graphics graphics, Rectangle bounds, ComboBoxState state)
     {
-        Rectangle comboBounds = bounds;
+        var comboBounds = bounds;
         comboBounds.Inflate(1, 1);
         ButtonRenderer.DrawButton(graphics, comboBounds, GetPushButtonState(state));
 
-        Rectangle buttonBounds = new Rectangle(
+        var buttonBounds = new Rectangle(
             bounds.Left + (bounds.Width - 17),
             bounds.Top,
             17,
             bounds.Height - (state != ComboBoxState.Pressed ? 1 : 0)
             );
 
-        Rectangle buttonClip = buttonBounds;
+        var buttonClip = buttonBounds;
         buttonClip.Inflate(-2, -2);
 
-        using (Region oldClip = graphics.Clip.Clone())
+        using (var oldClip = graphics.Clip.Clone())
         {
             graphics.SetClip(buttonClip, CombineMode.Intersect);
             ComboBoxRenderer.DrawDropDownButton(graphics, buttonBounds, state);
@@ -1195,17 +1162,17 @@ public class GroupedComboBox : ComboBox, IComparer
     /// <param name="e"></param>
     private void _bufferedPainter_PaintVisualState(object sender, BufferedPaintEventArgs<ComboBoxState> e)
     {
-        VisualStyleRenderer r = new VisualStyleRenderer(VisualStyleElement.Button.PushButton.Normal);
+        var r = new VisualStyleRenderer(VisualStyleElement.Button.PushButton.Normal);
         r.DrawParentBackground(e.Graphics, ClientRectangle, this);
 
         DrawComboBox(e.Graphics, ClientRectangle, e.State);
 
-        Rectangle itemBounds = new Rectangle(0, 0, Width - 21, Height);
+        var itemBounds = new Rectangle(0, 0, Width - 21, Height);
         itemBounds.Inflate(-1, -3);
         itemBounds.Offset(2, 0);
 
         // draw the item in the editable portion
-        DrawItemState state = DrawItemState.ComboBoxEdit;
+        var state = DrawItemState.ComboBoxEdit;
         if (Focused && ShowFocusCues && !DroppedDown) state |= DrawItemState.Focus;
         if (!Enabled) state |= DrawItemState.Disabled;
         OnDrawItem(new DrawItemEventArgs(e.Graphics, Font, itemBounds, SelectedIndex, state));

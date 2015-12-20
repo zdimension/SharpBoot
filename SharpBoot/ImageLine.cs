@@ -21,6 +21,8 @@ namespace SharpBoot
 
         public string CustomCode { get; set; }
 
+        public EntryType EntryType { get; set; }
+
         public ImageLine()
         {
             Name = "";
@@ -28,16 +30,18 @@ namespace SharpBoot
             Category = "";
             Description = "";
             SizeB = 0;
+            EntryType = EntryType.Nope;
         }
 
-        public ImageLine(string n, string fp, string d, string cat = "", string code = "")
+        public ImageLine(string n, string fp, string d, string cat = "", string code = "",
+            EntryType typ = EntryType.Nope)
         {
             Name = n;
             FilePath = fp;
             Category = cat;
             Description = d;
             CustomCode = code;
-
+            EntryType = typ;
             SizeB = new FileInfo(fp).Length;
         }
     }

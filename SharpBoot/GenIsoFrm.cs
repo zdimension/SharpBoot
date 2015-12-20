@@ -7,7 +7,6 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using SharpBoot.Properties;
@@ -71,7 +70,8 @@ namespace SharpBoot
         public GenIsoFrm(string output, bool usb)
         {
             InitializeComponent();
-
+            lblStatus.Text = Strings.Init;
+            btnAnnul.Text = Strings.Cancel;
             OutputFilepath = output;
             _usb = usb;
         }
@@ -151,14 +151,13 @@ namespace SharpBoot
 
         public bool abort;
 
-        public Dictionary<string, string> CustomFiles { get; set; } 
+        public Dictionary<string, string> CustomFiles { get; set; }
 
         public void Generate()
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-            
 
             var f = Program.GetTemporaryDirectory();
 
@@ -169,7 +168,7 @@ namespace SharpBoot
 
             var isodir = _usb ? OutputFilepath : Path.Combine(f, "iso");
 
-            if(_usb)
+            if (_usb)
             {
                 // format
                 if (
@@ -179,7 +178,7 @@ namespace SharpBoot
                     abort = true;
                     return;
                 }
-                int tries = 1;
+                var tries = 1;
                 while (true)
                 {
                     if (tries == 5)
@@ -194,7 +193,7 @@ namespace SharpBoot
                         label: string.Concat(Title.Where(char.IsLetter)))) == 0)
                     {
                         ChangeProgress(100, 100, Strings.Formatting);
-                        
+
                         break;
                     }
                     else
@@ -202,14 +201,17 @@ namespace SharpBoot
                         switch (res)
                         {
                             case 3:
-                                MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                                 abort = true;
                                 return;
                             case 2:
                                 abort = true;
                                 return;
                         }
-                        if(MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) == DialogResult.Cancel)
+                        if (
+                            MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
+                                MessageBoxIcon.Error) == DialogResult.Cancel)
                         {
                             abort = true;
                             return;
@@ -234,7 +236,7 @@ namespace SharpBoot
                 Directory.CreateDirectory(sylp);
 
             var isoroot = Path.Combine(isodir, "images");
-            
+
 
             var mkisofsexe = Path.Combine(f, "mkisofs", "mkisofs.exe");
             var archs = Path.Combine(f, "arch");
@@ -242,7 +244,7 @@ namespace SharpBoot
 
             File.WriteAllBytes(Path.Combine(archs, "basedisk.7z"), Resources.basedisk);
             File.WriteAllBytes(Path.Combine(archs, "bloader.7z"), bloader.Archive);
-            if(!_usb) File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
+            if (!_usb) File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk);
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
@@ -258,7 +260,7 @@ namespace SharpBoot
                 };
                 ChangeProgressBar(20, 100);
                 File.WriteAllText(Path.Combine(sylp, "theme.cfg"), theme.GetCode());
-                if(Program.UseCyrillicFont)
+                if (Program.UseCyrillicFont)
                 {
                     File.WriteAllBytes(Path.Combine(sylp, "cyrillic_cp866.psf"), Resources._866_8x16);
                 }
@@ -302,18 +304,15 @@ namespace SharpBoot
             {
                 var current = Images[i].FilePath;
                 ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(current)));
-                while(!Directory.Exists(isoroot))
+                while (!Directory.Exists(isoroot))
                     Directory.CreateDirectory(isoroot);
-                for (int j = 0; j < 5; j++)
+                for (var j = 0; j < 5; j++)
                 {
                     try
                     {
                         XCopy.Copy(current, Path.Combine(isoroot, Path.GetFileName(current)), true,
                             true,
-                            (o, pce) =>
-                            {
-                                ChangeProgressBar(pce.ProgressPercentage, 100);
-                            });
+                            (o, pce) => { ChangeProgressBar(pce.ProgressPercentage, 100); });
                         break;
                     }
                     catch
@@ -329,19 +328,16 @@ namespace SharpBoot
                 var local = current.Key;
                 var remote = current.Value;
                 if (remote.StartsWith("/")) remote = remote.Substring(1);
-                ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(local)));
-                while (!Directory.Exists(isoroot))
-                    Directory.CreateDirectory(isoroot);
-                for (int j = 0; j < 5; j++)
+                ChangeProgress(i, CustomFiles.Count, string.Format(Strings.Copying, Path.GetFileName(local)));
+                while (!Directory.Exists(isodir))
+                    Directory.CreateDirectory(isodir);
+                for (var j = 0; j < 5; j++)
                 {
                     try
                     {
-                        XCopy.Copy(local, Path.Combine(isoroot, remote), true,
+                        XCopy.Copy(local, Path.Combine(isodir, remote), true,
                             true,
-                            (o, pce) =>
-                            {
-                                ChangeProgressBar(pce.ProgressPercentage, 100);
-                            });
+                            (o, pce) => { ChangeProgressBar(pce.ProgressPercentage, 100); });
                         break;
                     }
                     catch
@@ -361,11 +357,11 @@ namespace SharpBoot
 
             var main = new BootMenu(Title, true);
             main.Items.Add(new BootMenuItem(Strings.BootFromHDD.RemoveAccent(), Strings.BootFromHDD.RemoveAccent(),
-                MenuItemType.BootHDD));
+                EntryType.BootHDD));
 
             var ii = 0;
 
-            var itype = new Func<string, MenuItemType>(fn => Path.GetExtension(fn).ToLower() == ".img" ? MenuItemType.IMG : MenuItemType.ISO);
+            //var itype = new Func<string, EntryType>(fn => Path.GetExtension(fn).ToLower() == ".img" ? EntryType.IMG : EntryType.ISO);
 
             if (bwkISO.CancellationPending)
             {
@@ -381,7 +377,7 @@ namespace SharpBoot
                     Images.Where(x => x.Category == c).All(x =>
                     {
                         main.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
-                            itype(x.FilePath), x.FilePath, false, x.CustomCode));
+                            x.EntryType, x.FilePath, false, x.CustomCode));
                         return true;
                     });
                 }
@@ -392,13 +388,13 @@ namespace SharpBoot
                     Images.Where(x => x.Category == c).All(x =>
                     {
                         t.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
-                            itype(x.FilePath), x.FilePath, false, x.CustomCode));
+                            x.EntryType, x.FilePath, false, x.CustomCode));
                         return true;
                     });
 
                     File.WriteAllText(Path.Combine(sylp, Utils.CRC32(c)) + bloader.FileExt,
                         bloader.GetCode(t), Program.GetEnc());
-                    main.Items.Add(new BootMenuItem(c, c, MenuItemType.Category, Utils.CRC32(c), false));
+                    main.Items.Add(new BootMenuItem(c, c, EntryType.Category, Utils.CRC32(c), false));
                 }
 
                 ii++;
@@ -428,7 +424,6 @@ namespace SharpBoot
             }
             else
             {
-
                 // TODO: Implement working progress printing (I can't get OutputDataReceived to work on my computer)
                 ChangeProgress(23, 100, Strings.CreatingISO);
                 Thread.Sleep(500);
@@ -473,7 +468,6 @@ namespace SharpBoot
                     }
                     else break;
                     Thread.Sleep(500);
-                    
                 }
                 try
                 {
@@ -481,7 +475,6 @@ namespace SharpBoot
                 }
                 catch (FileNotFoundException)
                 {
-                    
                 }
                 /*p.BeginOutputReadLine();
 
@@ -500,7 +493,6 @@ namespace SharpBoot
             }*/
                 if (!p.HasExited)
                     p.WaitForExit();
-
             }
             Program.SupportAccent = false;
 
@@ -521,6 +513,7 @@ namespace SharpBoot
         {
             ChangeProgress(0, 100, Strings.OpCancelled);
             btnAnnul.Text = Strings.Close;
+            btnAnnul.DialogResult = DialogResult.Cancel;
         }
 
         private void GenF(string f)
@@ -533,7 +526,6 @@ namespace SharpBoot
                 }
                 catch
                 {
-
                 }
             }
 
@@ -544,68 +536,19 @@ namespace SharpBoot
 
         private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if(e.Cancelled)
+            if (e.Cancelled)
             {
                 abort = true;
                 SetCancel();
             }
-            if(e.Error != null)
+            if (e.Error != null)
             {
-                if(e.Error is FileNotFoundException)
+                if (e.Error is FileNotFoundException)
                 {
                     MessageBox.Show("File not found: " + ((FileNotFoundException) e.Error).FileName);
                 }
                 else throw new Exception("Error: " + e.Error.Message + "\n", e.Error);
             }
         }
-    }
-
-    public class BootMenu
-    {
-        public string Title { get; set; }
-
-        public List<BootMenuItem> Items { get; set; }
-
-        public bool MainMenu { get; set; }
-
-        public BootMenu(string title, bool main)
-        {
-            Title = title;
-            MainMenu = main;
-            Items = new List<BootMenuItem>();
-        }
-    }
-
-    public class BootMenuItem
-    {
-        public string Name { get; set; }
-        public string Description { get; set; }
-
-        public MenuItemType Type { get; set; }
-
-        public bool Start { get; set; }
-
-        public string CustomCode { get; set; }
-
-
-        public string IsoName { get; set; }
-
-        public BootMenuItem(string n, string d, MenuItemType t, string ison = "", bool st = true, string code = "")
-        {
-            Name = n;
-            Description = d;
-            Type = t;
-            Start = st;
-            IsoName = Path.GetFileName(ison);
-            CustomCode = code;
-        }
-    }
-
-    public enum MenuItemType
-    {
-        ISO = 0,
-        Category = 1,
-        BootHDD = 2,
-        IMG = 3
     }
 }

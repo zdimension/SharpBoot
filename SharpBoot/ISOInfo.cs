@@ -8,8 +8,6 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Xml.Linq;
 using SharpBoot.Properties;
 
@@ -73,7 +71,7 @@ namespace SharpBoot
                 {8, ISOCat.Testing},
                 {9, ISOCat.Utility},
                 {10, ISOCat.Antivirus},
-                {11, ISOCat.Windows }
+                {11, ISOCat.Windows}
             };
             return inttocat[(int) ct];
         }
@@ -109,9 +107,10 @@ namespace SharpBoot
             }
         }
 
-        public Dictionary<CultureInfo, string> Descriptions { get; set; } 
+        public Dictionary<CultureInfo, string> Descriptions { get; set; }
 
-        public ISOInfo(string name, Dictionary<CultureInfo, string> descs, IsoCategory cat, string fn = "", params ISOV[] vers)
+        public ISOInfo(string name, Dictionary<CultureInfo, string> descs, IsoCategory cat, string fn = "",
+            params ISOV[] vers)
         {
             Name = name;
             Descriptions = descs;
@@ -119,7 +118,7 @@ namespace SharpBoot
             Filename = fn;
             Versions = vers.ToList();
             Versions.ForEach(x => x.Parent = this);
-            if(!Versions.Any(x => x.Latest) && Versions.Count > 0)
+            if (!Versions.Any(x => x.Latest) && Versions.Count > 0)
             {
                 Versions.Where(t => LatestVersion == t).ToList()[0].Latest = true;
             }
@@ -142,11 +141,9 @@ namespace SharpBoot
                 Settings.Default.LastAppsUpdate = DateTime.Now;
 
                 Settings.Default.Save();
-
             }
             catch
             {
-
             }
         }
 
@@ -155,8 +152,9 @@ namespace SharpBoot
             try
             {
                 var wc = new WebClient {Encoding = Encoding.UTF8};
+                // ReSharper disable once UnusedVariable
                 var temporary = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php");
-                    // Strangely when a PHP page is updated you need to request it twice to see the update
+                // Strangely when a PHP page is updated you need to request it twice to see the update
                 var lastappsdate = DateTime.Parse(wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php"));
                 return lastappsdate > Settings.Default.LastAppsUpdate;
             }
@@ -166,7 +164,7 @@ namespace SharpBoot
             }
         }
 
-        public static event EventHandler UpdateFinished = delegate {  };
+        public static event EventHandler UpdateFinished = delegate { };
 
 
         public static void RefreshISOs()
@@ -209,7 +207,6 @@ namespace SharpBoot
                 }
                 catch
                 {
-
                 }
                 UpdateFinished(null, EventArgs.Empty);
             });
@@ -234,7 +231,8 @@ namespace SharpBoot
             {
                 resk = s.LatestVersion ?? new ISOV("nover", s.Name, "", s.Filename, true) {Parent=s};
             }*/
-            if (s != null && s.LatestVersion == null) resk = new ISOV("nover", s.Name, "", s.Filename, true) {Parent = s};
+            if (s != null && s.LatestVersion == null)
+                resk = new ISOV("nover", s.Name, "", s.Filename, true) {Parent = s};
             else
             {
                 if (s != null && s.Versions.Count == 1)

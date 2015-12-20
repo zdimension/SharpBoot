@@ -295,13 +295,13 @@ namespace wyDay.Controls
             if (!showSplit)
                 return;
 
-            Graphics g = pevent.Graphics;
-            Rectangle bounds = ClientRectangle;
+            var g = pevent.Graphics;
+            var bounds = ClientRectangle;
 
             // draw the button background as according to the current state.
             if (State != PushButtonState.Pressed && IsDefault && !Application.RenderWithVisualStyles)
             {
-                Rectangle backgroundBounds = bounds;
+                var backgroundBounds = bounds;
                 backgroundBounds.Inflate(-1, -1);
                 ButtonRenderer.DrawButton(g, backgroundBounds, State);
 
@@ -316,8 +316,8 @@ namespace wyDay.Controls
             // calculate the current dropdown rectangle.
             dropDownRectangle = new Rectangle(bounds.Right - SplitSectionWidth, 0, SplitSectionWidth, bounds.Height);
 
-            int internalBorder = BorderSize;
-            Rectangle focusRect =
+            var internalBorder = BorderSize;
+            var focusRect =
                 new Rectangle(internalBorder - 1,
                     internalBorder - 1,
                     bounds.Width - dropDownRectangle.Width - internalBorder,
@@ -369,10 +369,8 @@ namespace wyDay.Controls
             //draw the text
             if (!string.IsNullOrEmpty(Text))
             {
-                if (Enabled || true)
-                    TextRenderer.DrawText(g, Text, Font, text_rectangle, Enabled ? ForeColor : SystemColors.ControlDark, textFormatFlags);
-                else
-                    ControlPaint.DrawStringDisabled(g, Text, Font, BackColor, text_rectangle, textFormatFlags);
+                TextRenderer.DrawText(g, Text, Font, text_rectangle, Enabled ? ForeColor : SystemColors.ControlDark,
+                        textFormatFlags);
             }
         }
 
@@ -395,17 +393,17 @@ namespace wyDay.Controls
         {
             var bounds = ClientRectangle;
 
-            Rectangle buttonBounds = new Rectangle(
+            var buttonBounds = new Rectangle(
                 bounds.Left + (bounds.Width - 19),
                 bounds.Top + 2,
                 17,
                 bounds.Height - (State != PushButtonState.Pressed ? 1 : 0) - 2
                 );
 
-            Rectangle buttonClip = buttonBounds;
+            var buttonClip = buttonBounds;
             buttonClip.Inflate(-2, -2);
 
-            using (Region oldClip = g.Clip.Clone())
+            using (var oldClip = g.Clip.Clone())
             {
                 g.SetClip(buttonClip, CombineMode.Intersect);
                 try
@@ -414,7 +412,6 @@ namespace wyDay.Controls
                 }
                 catch
                 {
-
                 }
                 g.SetClip(oldClip, CombineMode.Replace);
             }
@@ -435,7 +432,7 @@ namespace wyDay.Controls
 
         public override Size GetPreferredSize(Size proposedSize)
         {
-            Size preferredSize = base.GetPreferredSize(proposedSize);
+            var preferredSize = base.GetPreferredSize(proposedSize);
 
             //autosize correctly for splitbuttons
             if (showSplit)
@@ -453,9 +450,9 @@ namespace wyDay.Controls
 
         private Size CalculateButtonAutoSize()
         {
-            Size ret_size = Size.Empty;
-            Size text_size = TextRenderer.MeasureText(Text, Font);
-            Size image_size = Image?.Size ?? Size.Empty;
+            var ret_size = Size.Empty;
+            var text_size = TextRenderer.MeasureText(Text, Font);
+            var image_size = Image?.Size ?? Size.Empty;
 
             // Pad the text size
             if (Text.Length != 0)
@@ -502,8 +499,8 @@ namespace wyDay.Controls
         private void CalculateButtonTextAndImageLayout(ref Rectangle content_rect, out Rectangle textRectangle,
             out Rectangle imageRectangle)
         {
-            Size text_size = TextRenderer.MeasureText(Text, Font, content_rect.Size, textFormatFlags);
-            Size image_size = Image?.Size ?? Size.Empty;
+            var text_size = TextRenderer.MeasureText(Text, Font, content_rect.Size, textFormatFlags);
+            var image_size = Image?.Size ?? Size.Empty;
 
             textRectangle = Rectangle.Empty;
             imageRectangle = Rectangle.Empty;
@@ -602,8 +599,8 @@ namespace wyDay.Controls
         private void LayoutTextBeforeOrAfterImage(Rectangle totalArea, bool textFirst, Size textSize, Size imageSize,
             out Rectangle textRect, out Rectangle imageRect)
         {
-            int element_spacing = 0; // Spacing between the Text and the Image
-            int total_width = textSize.Width + element_spacing + imageSize.Width;
+            var element_spacing = 0; // Spacing between the Text and the Image
+            var total_width = textSize.Width + element_spacing + imageSize.Width;
 
             if (!textFirst)
                 element_spacing += 2;
@@ -615,14 +612,14 @@ namespace wyDay.Controls
                 total_width = totalArea.Width;
             }
 
-            int excess_width = totalArea.Width - total_width;
-            int offset = 0;
+            var excess_width = totalArea.Width - total_width;
+            var offset = 0;
 
             Rectangle final_text_rect;
             Rectangle final_image_rect;
 
-            HorizontalAlignment h_text = GetHorizontalAlignment(TextAlign);
-            HorizontalAlignment h_image = GetHorizontalAlignment(ImageAlign);
+            var h_text = GetHorizontalAlignment(TextAlign);
+            var h_image = GetHorizontalAlignment(ImageAlign);
 
             if (h_image == HorizontalAlignment.Left)
                 offset = 0;
@@ -656,8 +653,8 @@ namespace wyDay.Controls
         private void LayoutTextAboveOrBelowImage(Rectangle totalArea, bool textFirst, Size textSize, Size imageSize,
             out Rectangle textRect, out Rectangle imageRect)
         {
-            int element_spacing = 0; // Spacing between the Text and the Image
-            int total_height = textSize.Height + element_spacing + imageSize.Height;
+            var element_spacing = 0; // Spacing between the Text and the Image
+            var total_height = textSize.Height + element_spacing + imageSize.Height;
 
             if (textFirst)
                 element_spacing += 2;
@@ -672,14 +669,14 @@ namespace wyDay.Controls
                 total_height = totalArea.Height;
             }
 
-            int excess_height = totalArea.Height - total_height;
-            int offset = 0;
+            var excess_height = totalArea.Height - total_height;
+            var offset = 0;
 
             Rectangle final_text_rect;
             Rectangle final_image_rect;
 
-            VerticalAlignment v_text = GetVerticalAlignment(TextAlign);
-            VerticalAlignment v_image = GetVerticalAlignment(ImageAlign);
+            var v_text = GetVerticalAlignment(TextAlign);
+            var v_image = GetVerticalAlignment(ImageAlign);
 
             if (v_image == VerticalAlignment.Top)
                 offset = 0;
@@ -757,8 +754,8 @@ namespace wyDay.Controls
 
         internal static Rectangle AlignInRectangle(Rectangle outer, Size inner, ContentAlignment align)
         {
-            int x = 0;
-            int y = 0;
+            var x = 0;
+            var y = 0;
 
             switch (align)
             {

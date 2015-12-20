@@ -11,6 +11,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using SharpBoot.Properties;
+// ReSharper disable UnusedMember.Local
+// ReSharper disable EventNeverSubscribedTo.Local
 
 namespace SharpBoot
 {
@@ -134,7 +136,7 @@ namespace SharpBoot
         public static string CRC32(byte[] ct)
         {
             var table = new uint[256];
-            for(var i = 0; i < 256; i++)
+            for (var i = 0; i < 256; i++)
             {
                 var cur = (uint) i;
                 for (var j = 0; j < 8; j++)
@@ -252,9 +254,10 @@ namespace SharpBoot
                 long maxsize = -1;
                 if (fileSystem == "FAT12") maxsize = 16777216;
                 if (fileSystem == "FAT16") maxsize = 4000000000;
-                if(di.TotalSize >= maxsize && maxsize != -1)
+                if (di.TotalSize >= maxsize && maxsize != -1)
                 {
-                    MessageBox.Show(string.Format(Strings.PartitionTooBig, fileSystem), "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(string.Format(Strings.PartitionTooBig, fileSystem), "SharpBoot",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return 2;
                 }
             }
@@ -263,31 +266,37 @@ namespace SharpBoot
                 return 1;
             }
 
-            p.StartInfo.Arguments += " /k format /FS:" + fileSystem + " /V:" + label + " /Q /Y " + driveLetter + " & exit";
+            p.StartInfo.Arguments += " /k format /FS:" + fileSystem + " /V:" + label + " /Q /Y " + driveLetter +
+                                     " & exit";
             try
             {
                 p.Start();
             }
-            catch(Win32Exception e)
+            catch (Win32Exception e)
             {
-                if(e.NativeErrorCode == 1223)
-                    return 2;
-                if (e.NativeErrorCode == 5)
-                    return 3;
-                return 1;
+                switch (e.NativeErrorCode)
+                {
+                    case 1223:
+                        return 2;
+                    case 5:
+                        return 3;
+                    default:
+                        return 1;
+                }
             }
             catch
             {
                 return 1;
             }
-            bool finished = p.WaitForExit(20000);
-            return (uint)(finished ? 0 : 1);
+            var finished = p.WaitForExit(20000);
+            return (uint) (finished ? 0 : 1);
         }
     }
+
     // Thanks :D http://stackoverflow.com/a/8341945/2196124
     /// <summary>
-    /// PInvoke wrapper for CopyEx
-    /// http://msdn.microsoft.com/en-us/library/windows/desktop/aa363852.aspx
+    ///     PInvoke wrapper for CopyEx
+    ///     http://msdn.microsoft.com/en-us/library/windows/desktop/aa363852.aspx
     /// </summary>
     public class XCopy
     {
@@ -296,7 +305,8 @@ namespace SharpBoot
             new XCopy().CopyInternal(source, destination, overwrite, nobuffering, null);
         }
 
-        public static void Copy(string source, string destination, bool overwrite, bool nobuffering, EventHandler<ProgressChangedEventArgs> handler)
+        public static void Copy(string source, string destination, bool overwrite, bool nobuffering,
+            EventHandler<ProgressChangedEventArgs> handler)
         {
             new XCopy().CopyInternal(source, destination, overwrite, nobuffering, handler);
         }
@@ -314,11 +324,12 @@ namespace SharpBoot
             IsCancelled = 0;
         }
 
-        private void CopyInternal(string source, string destination, bool overwrite, bool nobuffering, EventHandler<ProgressChangedEventArgs> handler)
+        private void CopyInternal(string source, string destination, bool overwrite, bool nobuffering,
+            EventHandler<ProgressChangedEventArgs> handler)
         {
             try
             {
-                CopyFileFlags copyFileFlags = CopyFileFlags.COPY_FILE_RESTARTABLE;
+                var copyFileFlags = CopyFileFlags.COPY_FILE_RESTARTABLE;
                 if (!overwrite)
                     copyFileFlags |= CopyFileFlags.COPY_FILE_FAIL_IF_EXISTS;
 
@@ -331,7 +342,8 @@ namespace SharpBoot
                 if (handler != null)
                     ProgressChanged += handler;
 
-                bool result = CopyFileEx(Source, Destination, CopyProgressHandler, IntPtr.Zero, ref IsCancelled, copyFileFlags);
+                var result = CopyFileEx(Source, Destination, CopyProgressHandler, IntPtr.Zero, ref IsCancelled,
+                    copyFileFlags);
                 if (!result)
                     throw new Win32Exception(Marshal.GetLastWin32Error());
             }
@@ -347,12 +359,12 @@ namespace SharpBoot
         private void OnProgressChanged(double percent)
         {
             // only raise an event when progress has changed
-            if ((int)percent > FilePercentCompleted)
+            if ((int) percent > FilePercentCompleted)
             {
-                FilePercentCompleted = (int)percent;
+                FilePercentCompleted = (int) percent;
 
                 var handler = ProgressChanged;
-                handler?.Invoke(this, new ProgressChangedEventArgs((int)FilePercentCompleted, null));
+                handler?.Invoke(this, new ProgressChangedEventArgs((int) FilePercentCompleted, null));
             }
         }
 
@@ -366,10 +378,13 @@ namespace SharpBoot
 
         [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool CopyFileEx(string lpExistingFileName, string lpNewFileName, CopyProgressRoutine lpProgressRoutine, IntPtr lpData, ref int pbCancel, CopyFileFlags dwCopyFlags);
+        private static extern bool CopyFileEx(string lpExistingFileName, string lpNewFileName,
+            CopyProgressRoutine lpProgressRoutine, IntPtr lpData, ref int pbCancel, CopyFileFlags dwCopyFlags);
 
-        private delegate CopyProgressResult CopyProgressRoutine(long TotalFileSize, long TotalBytesTransferred, long StreamSize, long StreamBytesTransferred, uint dwStreamNumber, CopyProgressCallbackReason dwCallbackReason,
-                                                        IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData);
+        private delegate CopyProgressResult CopyProgressRoutine(
+            long TotalFileSize, long TotalBytesTransferred, long StreamSize, long StreamBytesTransferred,
+            uint dwStreamNumber, CopyProgressCallbackReason dwCallbackReason,
+            IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData);
 
         private enum CopyProgressResult : uint
         {
@@ -395,11 +410,12 @@ namespace SharpBoot
             COPY_FILE_ALLOW_DECRYPTED_DESTINATION = 0x00000008
         }
 
-        private CopyProgressResult CopyProgressHandler(long total, long transferred, long streamSize, long streamByteTrans, uint dwStreamNumber,
-                                                       CopyProgressCallbackReason reason, IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData)
+        private CopyProgressResult CopyProgressHandler(long total, long transferred, long streamSize,
+            long streamByteTrans, uint dwStreamNumber,
+            CopyProgressCallbackReason reason, IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData)
         {
             if (reason == CopyProgressCallbackReason.CALLBACK_CHUNK_FINISHED)
-                OnProgressChanged((transferred / (double)total) * 100.0);
+                OnProgressChanged((transferred / (double) total) * 100.0);
 
             if (transferred >= total)
                 OnCompleted();
@@ -408,6 +424,5 @@ namespace SharpBoot
         }
 
         #endregion
-
     }
 }

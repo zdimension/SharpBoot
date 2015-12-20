@@ -127,12 +127,6 @@
   <data name="btnOK.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>好的</value>
-  </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>返回</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>做ISO</value>
   </data>

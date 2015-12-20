@@ -5,9 +5,11 @@ namespace SharpBoot
 {
     public partial class AskPath
     {
-        public AskPath() 
+        public AskPath()
         {
             InitializeComponent();
+            btnOK.Text = Strings.OK;
+            btnAnnul.Text = Strings.Cancel;
         }
 
         public string FileName => tbxDest.Text;

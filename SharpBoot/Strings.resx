@@ -252,4 +252,7 @@
   <data name="AddCustomEntry" xml:space="preserve">
     <value>Add Custom Entry</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

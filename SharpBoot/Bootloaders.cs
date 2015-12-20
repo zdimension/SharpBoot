@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -79,33 +80,65 @@ namespace SharpBoot
 
             var code = "";
 
-
+            code += "LABEL -\n";
             switch (item.Type)
             {
-                case MenuItemType.BootHDD:
-                    code += "LABEL localboot\n";
+                case EntryType.BootHDD:
                     code += "localboot 0x80\n";
                     break;
-                case MenuItemType.Category:
-                    code += "LABEL -\n";
+                case EntryType.Category:
                     code += "KERNEL /boot/syslinux/vesamenu.c32\n";
                     code += "APPEND /boot/syslinux/" + item.IsoName + ".cfg\n";
                     break;
-                case MenuItemType.ISO:
-                    code += "LABEL -\n";
+                case EntryType.ISO:
                     code += "LINUX /boot/syslinux/grub.exe\n";
                     code +=
                         string.Format(
                             "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (0xff);map --hook;root (0xff);chainloader (0xff);boot\"\n",
                             item.IsoName);
                     break;
-                case MenuItemType.IMG:
-                    code += "LABEL -\n";
+                case EntryType.IMG:
                     code += "LINUX /boot/syslinux/grub.exe\n";
                     code +=
                         string.Format(
                             "APPEND --config-file=\"ls /images/{0} || find --set-root /images/{0};map /images/{0} (fd0);map --hook;chainloader (fd0)+1;rootnoverify (fd0);boot\"\n",
                             item.IsoName);
+                    break;
+                case EntryType.NTLDR:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND ntldr=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.GRLDR:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND grldr=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.CMLDR:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND cmldr=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.FreeDOS:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND freedos=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.MS_DOS:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND msdos=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.MS_DOS_7:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND msdos7=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.PC_DOS:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND pcdos=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.DRMK:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND drmk=/images/" + item.IsoName + "\n";
+                    break;
+                case EntryType.ReactOS:
+                    code += "COM32 /boot/syslinux/chain.c32\n";
+                    code += "APPEND reactos=/images/" + item.IsoName + "\n";
                     break;
             }
 
@@ -229,21 +262,39 @@ namespace SharpBoot
 
             switch (item.Type)
             {
-                case MenuItemType.BootHDD:
+                case EntryType.BootHDD:
                     code += "map (hd0) (hd1)\n";
                     code += "map (hd1) (hd0)\n";
                     code += "map --hook\n";
                     code += "chainloader (hd0,0)\n";
                     break;
-                case MenuItemType.Category:
+                case EntryType.Category:
                     code += "configfile /boot/grub4dos/" + item.IsoName + ".lst\n";
                     break;
-                case MenuItemType.IMG:
-                case MenuItemType.ISO:
+                case EntryType.ISO:
                     code +=
                         string.Format(
-                            "ls /images/{0} || find --set-root /images/{0}\nmap --heads=0 --sectors-per-track=0 /images/{0} (0xff) || map --heads=0 --sectors-per-track=0 --mem /images/{0} (0xff)\nmap --hook\nchainloader (0xff)\n",
+                            "ls /images/{0} || find --set-root /images/{0}\nmap /images/{0} (0xff)\nmap --hook\nroot (0xff)\nchainloader (0xff)\n",
                             item.IsoName);
+                    break;
+                case EntryType.IMG:
+                    code +=
+                        string.Format(
+                            "ls /images/{0} || find --set-root /images/{0}\nmap /images/{0} (fd0)\nmap --hook\nchainloader (fd0)+1\nrootnoverify (fd0)\n",
+                            item.IsoName);
+                    break;
+                case EntryType.NTLDR:
+                case EntryType.GRLDR:
+                case EntryType.CMLDR:
+                case EntryType.FreeDOS:
+                case EntryType.MS_DOS:
+                case EntryType.MS_DOS_7:
+                case EntryType.PC_DOS:
+                case EntryType.DRMK:
+                case EntryType.ReactOS:
+                    code += string.Format(
+                        "ls /images/{0} || find --set-root /Images/{0}\nchainloader /images/{0}\n",
+                        item.IsoName);
                     break;
             }
 
@@ -308,8 +359,20 @@ namespace SharpBoot
             };
             p.StartInfo.Arguments += " ../sharpboot.bmp ../sharpboot.xpm.lzma";
             Thread.Sleep(300);
+            var begin = DateTime.Now;
             p.Start();
-            p.WaitForExit();
+            while (!File.Exists(Path.Combine(WorkingDir, "sharpboot.xpm.lzma")))
+            {
+                if (p.HasExited)
+                {
+                    p.Start();
+                    continue;
+                }
+                if ((DateTime.Now - begin).TotalSeconds > 1000)
+                {
+                    break;
+                }
+            }
             Thread.Sleep(1000);
             File.Delete(imgf);
             ext.Close();
@@ -321,7 +384,6 @@ namespace SharpBoot
                 }
                 catch
                 {
-
                 }
             }
         }
@@ -369,7 +431,7 @@ namespace SharpBoot
                    (noback ? "" : "menu background /boot/syslinux/sharpboot.jpg\n") +
                    string.Concat(Entries.Select(x => x.GetCode())) +
                    "menu helpmsgrow 19\n" +
-                   "menu helpmsendrow -1\n" + 
+                   "menu helpmsendrow -1\n" +
                    (Program.UseCyrillicFont ? "FONT /boot/syslinux/cyrillic_cp866.psf\n" : "");
         }
 
@@ -419,11 +481,12 @@ namespace SharpBoot
         Syslinux = 0,
         Grub4Dos = 1
     }
+
     public class BootloaderInst
     {
         public static void Install(string l, int bl)
         {
-            Install(l, (Bootloaders)bl);
+            Install(l, (Bootloaders) bl);
         }
 
         public static void Install(string l, string bl)

@@ -9,7 +9,7 @@ namespace SharpBoot
 {
     public class QEMUISO
     {
-        public static List<string> Paths = new List<string>(); 
+        public static List<string> Paths = new List<string>();
 
         public static void LaunchQemu(string iso, bool usb = false)
         {

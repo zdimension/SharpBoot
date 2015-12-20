@@ -249,4 +249,7 @@
   <data name="AddCustomEntry" xml:space="preserve">
     <value>Benutzerdef. Datensatz hinzufügen</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
 </root>

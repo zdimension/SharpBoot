@@ -252,4 +252,7 @@
   <data name="AddCustomEntry" xml:space="preserve">
     <value>Добавление настраиваемой записи</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
 </root>

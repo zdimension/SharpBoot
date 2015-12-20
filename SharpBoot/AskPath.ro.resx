@@ -124,9 +124,6 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Te rog sa alegi locația fișierului.</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Anulează</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Crează ISO</value>
   </data>

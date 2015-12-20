@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SharpBoot
@@ -20,6 +16,10 @@ namespace SharpBoot
             {
                 Utils.SetWindowTheme(lvFiles.Handle, "EXPLORER", null);
             }
+
+            lblHeader.Text = Strings.AddFiles;
+            btnOK.Text = Strings.OK;
+            btnAnnul.Text = Strings.Cancel;
         }
 
         public Dictionary<string, string> CFiles
@@ -54,7 +54,7 @@ namespace SharpBoot
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow r in lvFiles.SelectedRows)
+            foreach (DataGridViewRow r in lvFiles.SelectedRows)
             {
                 lvFiles.Rows.Remove(r);
             }
@@ -62,14 +62,15 @@ namespace SharpBoot
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if(ofpFile.ShowDialog() == DialogResult.OK)
+            if (ofpFile.ShowDialog() == DialogResult.OK)
             {
-                foreach(var f in ofpFile.FileNames)
+                foreach (var f in ofpFile.FileNames)
                 {
                     AddFile(f);
                 }
             }
         }
+
         private void AddFile(string local, string remote)
         {
             if (File.Exists(local))
@@ -81,7 +82,7 @@ namespace SharpBoot
             AddFile(local, GetPath(local));
         }
 
-        private string GetPath(string local)
+        private static string GetPath(string local)
         {
             return "/" + Path.GetFileName(local).RemoveAccent();
         }
@@ -96,9 +97,9 @@ namespace SharpBoot
 
         private void lvFiles_DragDrop(object sender, DragEventArgs e)
         {
-            if(e.Data.GetDataPresent(DataFormats.FileDrop))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                ((string[])e.Data.GetData(DataFormats.FileDrop)).ToList().ForEach(AddFile);
+                ((string[]) e.Data.GetData(DataFormats.FileDrop)).ToList().ForEach(AddFile);
             }
         }
 
@@ -106,14 +107,14 @@ namespace SharpBoot
         {
             var cell = lvFiles.Rows[e.RowIndex].Cells[e.ColumnIndex];
             var cv = cell.Value?.ToString() ?? "";
-            if(string.IsNullOrWhiteSpace(cv) || cv.EndsWith("/"))
+            if (string.IsNullOrWhiteSpace(cv) || cv.EndsWith("/"))
             {
                 var c2 = lvFiles.Rows[e.RowIndex].Cells[0];
                 cell.Value = GetPath(c2.Value.ToString());
             }
             else
             {
-                if(!cv.StartsWith("/"))
+                if (!cv.StartsWith("/"))
                 {
                     cell.Value = "/" + cv;
                 }

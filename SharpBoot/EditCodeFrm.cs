@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SharpBoot
@@ -15,9 +9,15 @@ namespace SharpBoot
         {
             InitializeComponent();
             lblHeader.Text = Program.editcode;
+            btnOK.Text = Strings.OK;
+            btnAnnul.Text = Strings.Cancel;
         }
 
-        public string Code { get { return rtbCode.Text; } set { rtbCode.Text = value; } }
+        public string Code
+        {
+            get { return rtbCode.Text; }
+            set { rtbCode.Text = value; }
+        }
 
         public EditCodeFrm(string fname) : this()
         {
