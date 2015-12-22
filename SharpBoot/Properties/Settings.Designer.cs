@@ -592,501 +592,513 @@ namespace SharpBoot.Properties {
             "download>\r\n                <filenameRegex>/gparted-live-0.24.0-2-amd64.iso</file" +
             "nameRegex>\r\n                <isLatest>true</isLatest>\r\n            </version>\r\n " +
             "       </versions>\r\n    </app>\r\n    <app>\r\n        <name>Offline Windows NT Pass" +
-            "word &amp; Registry Editor</name>\r\n        <category>5</category>\r\n        <file" +
-            "nameRegex>^((cd[0-9]{6})\\.iso|chntpw\\.iso)$</filenameRegex>\r\n        <descriptio" +
-            "n>\r\n            <desc lang=\"de\">CHNTPW ist ein Hilfsprogramm, um das Passwort ei" +
-            "nes beliebigen Nutzers zurückzusetzen, welcher ein gültiges lokales Benutzerkont" +
-            "o auf einem Windows system hat.</desc>\r\n            <desc lang=\"fr\">CHNTPW est u" +
-            "n outil permettant de modifier ou effacer les mot de passe de Windows 95 à 10.</" +
-            "desc>\r\n            <desc lang=\"en\">CHNTPW is a utility to reset the password of " +
-            "any user that has a valid local account on your Windows system.</desc>\r\n        " +
-            "    <desc lang=\"ru\">CHNTPW - UNIX утилита с открытым исходным кодом, предназначе" +
-            "нная для считывания и модификации базы данных паролей Windows (SAM).</desc>\r\n   " +
-            "         <desc lang=\"es\">CHNTPW (Change NT Password), es una utilidad de Linux, " +
-            "diseñado para sobreescribir, resetear, cambiar o modificar passwords de las cuen" +
-            "tas de usarios Windows.</desc>\r\n        </description>\r\n        <versions>\r\n    " +
-            "        <version>\r\n                <hash>06bbed5b81475c6899dbb549a755b00d</hash>" +
-            "\r\n                <name>chntpw 2014-02-01</name>\r\n                <download>http" +
-            "s://dl.dropboxusercontent.com/u/98959151/chntpw_140201.iso</download>\r\n         " +
-            "       <filenameRegex>/(cd140201\\.iso|chntpw\\.iso)</filenameRegex>\r\n            " +
-            "    <isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    " +
-            "</app>\r\n    <app>\r\n        <name>Kon-Boot</name>\r\n        <category>5</category>" +
-            "\r\n        <filenameRegex>^kon-boot(.*).(img|iso)$</filenameRegex>\r\n        <desc" +
-            "ription>\r\n            <desc lang=\"en\">Kon-Boot is a tool which can log you into " +
-            "Windows without knowing the password. It hooks into the system BIOS and temporar" +
-            "ily changes the Windows kernel while booting. It allows you to enter anything as" +
-            " the password during login. The next time you start the computer without Kon-Boo" +
-            "t, the original password will be back and the system will behave as if nothing h" +
-            "as happened.</desc>\r\n            <desc lang=\"es\">Kon-Boot es una aplicación mult" +
-            "iplataforma desarrollada por Piotr Bania para KryptosLogic que parchea directame" +
-            "nte el kernel saltando el proceso de autenticación y nos introduce directamente " +
-            "como administrador del equipo.</desc>\r\n            <desc lang=\"fr\">Kon-boot est " +
-            "un logiciel qui permet de modifier le contenu d\'un noyau Linux ou Windows à la v" +
-            "olée pendant le boot. Sous Linux, il permet de se logger en tant que root sans c" +
-            "onnaitre le mot de passe. Sous Windows, il permet de se logger en utilisant n\'im" +
-            "porte quel compte utilisateur ou administrateur, toujours sans connaître le mot " +
-            "de passe.</desc>\r\n        </description>\r\n        <versions>\r\n            <versi" +
-            "on>\r\n                <hash>eed910d2ef9b058cf3eec28294bd303c</hash>\r\n            " +
-            "    <name>Kon-Boot 2.5</name>\r\n                <download>https://dl.dropboxuserc" +
-            "ontent.com/u/98959151/konboot.img</download>\r\n                <filenameRegex>kon" +
-            "boot.img</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n           " +
-            " </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ophcrack<" +
-            "/name>\r\n        <category>5</category>\r\n        <filenameRegex>^ophcrack-(\\w+)-l" +
-            "ivecd-([0-9.]+).iso$</filenameRegex>\r\n        <description>\r\n            <desc l" +
-            "ang=\"de\">Ophcrack ist ein freies Computerprogramm unter der GPL-Lizenz, das vers" +
-            "chlüsselte(gehashte) Passwörter mithilfe von Rainbow Tables versucht zu entschlü" +
-            "sseln. Das Programm unterstützt das Importieren von LM-Hashes und NTLM-Hashes, i" +
-            "nklusive des direkten Importierens der SAM-Datei unter Windows.</desc>\r\n        " +
-            "    <desc lang=\"fr\">Ophcrack est un outil gratuit de craquage de mot de passes.<" +
-            "/desc>\r\n            <desc lang=\"en\">Ophcrack is a free Windows password cracker " +
-            "based on rainbow tables.</desc>\r\n            <desc lang=\"es\">Ophcrack es una her" +
-            "ramienta para crackear las contraseñas de Windows basada en las tablas Rainbow. " +
-            "Es una implementación muy eficiente de las tablas Rainbow hecha por los inventor" +
-            "es de este método. Viene con una Interfaz Gráfica de Usuario GTK+ y corre bajo W" +
-            "indows, Mac OS X (CPU Intel) y también en Linux.</desc>\r\n        </description>\r" +
-            "\n        <versions>\r\n            <version>\r\n                <hash>b23afa62f670de" +
-            "e41c8f01c436c0a092</hash>\r\n                <name>Ophcrack (XP) 3.6.0</name>\r\n   " +
-            "             <download>http://downloads.sourceforge.net/project/ophcrack/ophcrac" +
-            "k-livecd/3.6.0/ophcrack-xp-livecd-3.6.0.iso</download>\r\n                <filenam" +
-            "eRegex>/ophcrack-xp-livecd-(.*).iso</filenameRegex>\r\n                <isLatest>t" +
-            "rue</isLatest>\r\n            </version>\r\n            <version>\r\n                <" +
-            "hash>f0753acfe2fce5249ceceec7dfeacea9</hash>\r\n                <name>Ophcrack (Vi" +
-            "sta/7/8) 3.6.0</name>\r\n                <download>http://downloads.sourceforge.ne" +
-            "t/project/ophcrack/ophcrack-livecd/3.6.0/ophcrack-vista-livecd-3.6.0.iso</downlo" +
-            "ad>\r\n                <filenameRegex>/ophcrack-vista-livecd-(.*).iso</filenameReg" +
-            "ex>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n       " +
-            " <name>Memtest86+</name>\r\n        <category>9</category>\r\n        <filenameRegex" +
-            ">^(?:memtest86(\\+|plus)[-_]([0-9.]+).iso|MEMTEST\\.IMG)$</filenameRegex>\r\n       " +
-            " <description>\r\n            <desc lang=\"de\">Memtest86+ ist eine Software, mit de" +
-            "r man den Arbeitsspeicher eines Computers auf Fehler überprüfen kann.</desc>\r\n  " +
-            "          <desc lang=\"fr\">Memtest86+ permet d\'effectuer un diagnostic complet de" +
-            " la mémoire d\'un ordinateur.</desc>\r\n            <desc lang=\"en\">Memtest86+ is a" +
-            "n open source memory test software programs designed to test and stress test an " +
-            "x86 architecture computer\'s RAM.</desc>\r\n            <desc lang=\"es\">Memtest86+ " +
-            "es un programa informático para ordenadores compatibles con x86. Su finalidad es" +
-            " pasar una prueba de stress a la memoria RAM del ordenador para encontrar errore" +
-            "s en los módulos propiamente dichos o en los datapaths (chipset, controladoras d" +
-            "e memoria).</desc>\r\n        </description>\r\n        <versions>\r\n            <ver" +
-            "sion>\r\n                <hash>0f3d162f0c2f42da1455993ac4df396b</hash>\r\n          " +
-            "      <name>Memtest86+ 5.01</name>\r\n                <download>https://dl.dropbox" +
-            "usercontent.com/u/98959151/memtest86plus-501.iso</download>\r\n                <fi" +
-            "lenameRegex>memtest86plus_501.iso</filenameRegex>\r\n                <isLatest>tru" +
-            "e</isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>" +
-            "\r\n        <name>Memtest86</name>\r\n        <category>9</category>\r\n        <filen" +
-            "ameRegex>^Memtest86-([0-9.]+).iso$</filenameRegex>\r\n        <description>\r\n     " +
-            "       <desc lang=\"de\">Memtest86 ist eine Software, mit der man den Arbeitsspeic" +
-            "her eines Computers auf Fehler überprüfen kann.</desc>\r\n            <desc lang=\"" +
-            "fr\">Memtest86 permet d\'effectuer un diagnostic complet de la mémoire d\'un ordina" +
-            "teur.</desc>\r\n            <desc lang=\"en\">Memtest86 is an open source memory tes" +
-            "t software programs designed to test and stress test an x86 architecture compute" +
-            "r\'s RAM.</desc>\r\n            <desc lang=\"es\">Memtest86 es un programa informátic" +
-            "o para ordenadores compatibles con x86. Su finalidad es pasar una prueba de stre" +
-            "ss a la memoria RAM del ordenador para encontrar errores en los módulos propiame" +
-            "nte dichos o en los datapaths (chipset, controladoras de memoria).</desc>\r\n     " +
-            "   </description>\r\n        <versions>\r\n            <version>\r\n                <h" +
-            "ash>0c7dd6227dabcb1a5e56c96f178f381d</hash>\r\n                <name>Memtest86 4.3" +
-            ".7</name>\r\n                <download>https://dl.dropboxusercontent.com/u/9895915" +
-            "1/Memtest86-4.3.7.iso</download>\r\n                <filenameRegex>Memtest86-4.3.7" +
-            ".iso</filenameRegex>\r\n            </version>\r\n            <version>\r\n           " +
-            "     <hash>ad1310faef37409e1a1b845a5268cb76</hash>\r\n                <name>Memtes" +
-            "t86 6.2.0</name>\r\n                <download>https://dl.dropboxusercontent.com/u/" +
-            "98959151/Memtest86-6.2.0.iso</download>\r\n                <filenameRegex>Memtest8" +
-            "6-6.2.0.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n        " +
-            "    </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Redo B" +
-            "ackup and Recovery</name>\r\n        <category>9</category>\r\n        <filenameRege" +
-            "x>^redobackup-livecd-([0-9.]+).iso$</filenameRegex>\r\n        <description>\r\n    " +
-            "        <desc lang=\"fr\">Redo Backup est un système de sauvegarde, de restauratio" +
-            "n et d\'édition de partition.</desc>\r\n            <desc lang=\"en\">Redo Backup is " +
-            "an easy rescue system with GUI tools for full system backup, bare metal recovery" +
-            " and partition editing.</desc>\r\n        </description>\r\n        <versions>\r\n    " +
-            "        <version>\r\n                <hash>f84b757242c1b050f8cbed7142197d81</hash>" +
-            "\r\n                <name>Redo Backup and Recovery 1.0.4</name>\r\n                <" +
-            "download>http://downloads.sourceforge.net/project/redobackup/redobackup-livecd-1" +
-            ".0.4.iso</download>\r\n                <filenameRegex>redobackup-livecd-1.0.4.iso<" +
-            "/filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </versio" +
-            "n>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ultimate Boot CD 4" +
-            " DOS</name>\r\n        <category>9</category>\r\n        <filenameRegex>^ubcd[0-9]{2" +
-            ",3}.iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=\"fr\">UBC" +
-            "D 4 DOS est un système qui regroupe plein d\'outils utiles.</desc>\r\n            <" +
-            "desc lang=\"en\">UBCD 4 DOS is a system that regroups lots of useful utilities.</d" +
-            "esc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n       " +
-            "         <hash>a5617e0bdd3ccc3cb3a1b1dd20396d7a</hash>\r\n                <name>Ul" +
-            "timate Boot CD 4 DOS 5.3.0</name>\r\n                <download>http://ftp.cc.uoc.g" +
-            "r/mirrors/linux/ubcd/ubcd530.iso</download>\r\n                <filenameRegex>ubcd" +
-            "530.iso</filenameRegex>\r\n            </version>\r\n            <version>\r\n        " +
-            "        <hash></hash>\r\n                <name>Ultimate Boot CD 4 DOS 5.3.5</name>" +
-            "\r\n                <download>http://ftp.cc.uoc.gr/mirrors/linux/ubcd/ubcd535.iso<" +
-            "/download>\r\n                <filenameRegex>ubcd535.iso</filenameRegex>\r\n        " +
-            "        <isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n" +
-            "    </app>\r\n    <app>\r\n        <name>Arch Linux</name>\r\n        <category>3</cat" +
-            "egory>\r\n        <filenameRegex>^archlinux-(.*).iso$</filenameRegex>\r\n        <de" +
-            "scription>\r\n            <desc lang=\"fr\">Arch Linux est une distribution Linux cr" +
-            "éée par Judd Vinet qui met l\'accent sur la simplicité (selon le principe KISS). " +
-            "Judd a été inspiré par une autre distribution Linux appelée Crux Linux.</desc>\r\n" +
-            "            <desc lang=\"en\">Arch Linux is a Linux distribution for computers bas" +
-            "ed on IA-32 and x86-64 architectures. It is composed predominantly of free and o" +
-            "pen-source software, and supports community involvement.</desc>\r\n            <de" +
-            "sc lang=\"de\">Arch Linux ist eine i686- und AMD64-optimierte Linux-Distribution m" +
-            "it Rolling Releases, dessen Entwicklerteam dem KISS-Prinzip folgt. Zugunsten der" +
-            " Einfachheit wird auf grafische Installations- und Konfigurationshilfen verzicht" +
-            "et.</desc>\r\n            <desc lang=\"ro\">Arch Linux este o distribuție de Linux c" +
-            "reată de Judd Vinet. Inspirată de CRUX, această distribuție are ca obiectiv rapi" +
-            "ditatea și simplitatea, adresându-se utilizatorilor avansați.</desc>\r\n          " +
-            "  <desc lang=\"ru\">Arch - \"легковесный\", простой и гибкий дистрибутив Linux, опти" +
-            "мизированный для архитектур i686 и x86-64, использующий последние стабильные вер" +
-            "сии программ и дополняемый поддерживаемым сообществом репозиторием AUR.</desc>\r\n" +
-            "            <desc lang=\"uk\">Arch Linux - мінімалістичний, гнучкий дистрибутив Li" +
-            "nux, оптимізований для архітектур i686 та x86-64. Використовує останні стабільні" +
-            " версії програм і доповнюється AUR-репозиторієм (який підтримуєтсья користувачам" +
-            "и).</desc>\r\n            <desc lang=\"zh-Hans\">Arch Linux是朝向轻量（lightweight）以及简单（si" +
-            "mple）的Linux发行版。其中“简单”（Simplicity）被定义为“避免不必要或复杂的修改”，也就是说，是由开发者角度定义，而非使用者角度思考。</de" +
-            "sc>\r\n            <desc lang=\"zh-Hant\">Arch Linux是朝向輕量（lightweight）以及簡單（simple）的L" +
-            "inux發行版。其中「簡單」（Simplicity）被定義為「避免不必要或複雜的修改」，也就是說，是由開發者角度定義，而非使用者角度思考。</desc>\r\n  " +
-            "          <desc lang=\"es\">Arch Linux es una distribución Linux para computadoras" +
-            " i686 y x86-64. Se compone predominantemente de software libre y de código abier" +
-            "to (FOSS), y apoya la participación comunitaria.</desc>\r\n        </description>\r" +
-            "\n        <versions>\r\n            <version>\r\n                <hash>bbcd48b73851ae" +
-            "8f31c08f83a86b8ef2</hash>\r\n                <name>Arch Linux 2015.12.01</name>\r\n " +
-            "               <download>http://mirror.rackspace.com/archlinux/iso/2015.12.01/ar" +
-            "chlinux-2015.12.01-dual.iso</download>\r\n                <filenameRegex>archlinux" +
-            "-2015.12.01-dual.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r" +
+            "word & Registry Editor</name>\r\n        <category>5</category>\r\n        <filename" +
+            "Regex>^((cd[0-9]{6})\\.iso|chntpw\\.iso)$</filenameRegex>\r\n        <description>\r\n" +
+            "            <desc lang=\"de\">CHNTPW ist ein Hilfsprogramm, um das Passwort eines " +
+            "beliebigen Nutzers zurückzusetzen, welcher ein gültiges lokales Benutzerkonto au" +
+            "f einem Windows system hat.</desc>\r\n            <desc lang=\"fr\">CHNTPW est un ou" +
+            "til permettant de modifier ou effacer les mot de passe de Windows 95 à 10.</desc" +
+            ">\r\n            <desc lang=\"en\">CHNTPW is a utility to reset the password of any " +
+            "user that has a valid local account on your Windows system.</desc>\r\n            " +
+            "<desc lang=\"ru\">CHNTPW - UNIX утилита с открытым исходным кодом, предназначенная" +
+            " для считывания и модификации базы данных паролей Windows (SAM).</desc>\r\n       " +
+            "     <desc lang=\"es\">CHNTPW (Change NT Password), es una utilidad de Linux, dise" +
+            "ñado para sobreescribir, resetear, cambiar o modificar passwords de las cuentas " +
+            "de usarios Windows.</desc>\r\n        </description>\r\n        <versions>\r\n        " +
+            "    <version>\r\n                <hash>06bbed5b81475c6899dbb549a755b00d</hash>\r\n  " +
+            "              <name>chntpw 2014-02-01</name>\r\n                <download>https://" +
+            "dl.dropboxusercontent.com/u/98959151/chntpw_140201.iso</download>\r\n             " +
+            "   <filenameRegex>/(cd140201\\.iso|chntpw\\.iso)</filenameRegex>\r\n                " +
+            "<isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    </ap" +
+            "p>\r\n    <app>\r\n        <name>Kon-Boot</name>\r\n        <category>5</category>\r\n  " +
+            "      <filenameRegex>^kon-boot(.*).(img|iso)$</filenameRegex>\r\n        <descript" +
+            "ion>\r\n            <desc lang=\"en\">Kon-Boot is a tool which can log you into Wind" +
+            "ows without knowing the password. It hooks into the system BIOS and temporarily " +
+            "changes the Windows kernel while booting. It allows you to enter anything as the" +
+            " password during login. The next time you start the computer without Kon-Boot, t" +
+            "he original password will be back and the system will behave as if nothing has h" +
+            "appened.</desc>\r\n            <desc lang=\"es\">Kon-Boot es una aplicación multipla" +
+            "taforma desarrollada por Piotr Bania para KryptosLogic que parchea directamente " +
+            "el kernel saltando el proceso de autenticación y nos introduce directamente como" +
+            " administrador del equipo.</desc>\r\n            <desc lang=\"fr\">Kon-boot est un l" +
+            "ogiciel qui permet de modifier le contenu d\'un noyau Linux ou Windows à la volée" +
+            " pendant le boot. Sous Linux, il permet de se logger en tant que root sans conna" +
+            "itre le mot de passe. Sous Windows, il permet de se logger en utilisant n\'import" +
+            "e quel compte utilisateur ou administrateur, toujours sans connaître le mot de p" +
+            "asse.</desc>\r\n        </description>\r\n        <versions>\r\n            <version>\r" +
+            "\n                <hash>eed910d2ef9b058cf3eec28294bd303c</hash>\r\n                " +
+            "<name>Kon-Boot 2.5</name>\r\n                <download>https://dl.dropboxuserconte" +
+            "nt.com/u/98959151/konboot.img</download>\r\n                <filenameRegex>konboot" +
+            ".img</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </v" +
+            "ersion>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ophcrack</nam" +
+            "e>\r\n        <category>5</category>\r\n        <filenameRegex>^ophcrack-(\\w+)-livec" +
+            "d-([0-9.]+).iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=" +
+            "\"de\">Ophcrack ist ein freies Computerprogramm unter der GPL-Lizenz, das verschlü" +
+            "sselte(gehashte) Passwörter mithilfe von Rainbow Tables versucht zu entschlüssel" +
+            "n. Das Programm unterstützt das Importieren von LM-Hashes und NTLM-Hashes, inklu" +
+            "sive des direkten Importierens der SAM-Datei unter Windows.</desc>\r\n            " +
+            "<desc lang=\"fr\">Ophcrack est un outil gratuit de craquage de mot de passes.</des" +
+            "c>\r\n            <desc lang=\"en\">Ophcrack is a free Windows password cracker base" +
+            "d on rainbow tables.</desc>\r\n            <desc lang=\"es\">Ophcrack es una herrami" +
+            "enta para crackear las contraseñas de Windows basada en las tablas Rainbow. Es u" +
+            "na implementación muy eficiente de las tablas Rainbow hecha por los inventores d" +
+            "e este método. Viene con una Interfaz Gráfica de Usuario GTK+ y corre bajo Windo" +
+            "ws, Mac OS X (CPU Intel) y también en Linux.</desc>\r\n        </description>\r\n   " +
+            "     <versions>\r\n            <version>\r\n                <hash>b23afa62f670dee41c" +
+            "8f01c436c0a092</hash>\r\n                <name>Ophcrack (XP) 3.6.0</name>\r\n       " +
+            "         <download>http://downloads.sourceforge.net/project/ophcrack/ophcrack-li" +
+            "vecd/3.6.0/ophcrack-xp-livecd-3.6.0.iso</download>\r\n                <filenameReg" +
+            "ex>/ophcrack-xp-livecd-(.*).iso</filenameRegex>\r\n                <isLatest>true<" +
+            "/isLatest>\r\n            </version>\r\n            <version>\r\n                <hash" +
+            ">f0753acfe2fce5249ceceec7dfeacea9</hash>\r\n                <name>Ophcrack (Vista/" +
+            "7/8) 3.6.0</name>\r\n                <download>http://downloads.sourceforge.net/pr" +
+            "oject/ophcrack/ophcrack-livecd/3.6.0/ophcrack-vista-livecd-3.6.0.iso</download>\r" +
+            "\n                <filenameRegex>/ophcrack-vista-livecd-(.*).iso</filenameRegex>\r" +
             "\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <na" +
-            "me>BackTrack</name>\r\n        <category>3</category>\r\n        <filenameRegex>^(BT" +
-            "|bt)\\d(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=\"" +
-            "en\">BackTrack is a Linux distribution that focused on security based on the Ubun" +
-            "tu Linux distribution aimed at digital forensics and penetration testing use.</d" +
-            "esc>\r\n            <desc lang=\"fr\">BackTrack est une distribution Linux, basée su" +
-            "r Slackware jusqu\'à la version 3 et Ubuntu depuis la version 4, apparue en 2006." +
-            " Elle est née de la fusion de Whax et Auditor. Son objectif est de fournir une d" +
-            "istribution regroupant l\'ensemble des outils nécessaires aux tests de sécurité d" +
-            "\'un réseau.</desc>\r\n            <desc lang=\"de\">BackTrack (zu Deutsch etwa Zurüc" +
-            "kverfolgung) ist eine von einer Live-CD, einem USB-Stick oder über ein Netzwerk " +
-            "bootende Linux-Distribution zur Überprüfung der Sicherheit einzelner Rechner in " +
-            "Netzwerken sowie der Gesamtsicherheit des Netzwerks.</desc>\r\n            <desc l" +
-            "ang=\"ro\">&lt;&lt;Back|Track este o distribuție de Linux (distribuită ca LiveDist" +
-            "ro) ce este rezultatul unirii dintre WHAX și Auditor Security Collection. Are ca" +
-            " avantaj designul și structura modulară al distribuției SLAX ce permit utilizato" +
-            "rului includerea scripturilor, uneltelor sau kernel-urilor personalizate.</desc>" +
-            "\r\n            <desc lang=\"uk\">BackTrack - дистрибутив Linux, що розповсюджується" +
-            " у вигляді LiveCD, створений на базі Debian, доповнений утилітами для пен-тестін" +
-            "гу програм, мереж та систем. За кількістю спеціалізованих програм з аудиту й зло" +
-            "му систем безпеки, BackTrack є одним з найкращих дистрибутивів.</desc>\r\n        " +
-            "    <desc lang=\"es\">BackTrack es una distribución GNU/Linux en formato LiveCD pe" +
-            "nsada y diseñada para la auditoría de seguridad y relacionada con la seguridad i" +
-            "nformática en general. Actualmente tiene una gran popularidad y aceptación en la" +
-            " comunidad que se mueve en torno a la seguridad informática.</desc>\r\n           " +
-            " <desc lang=\"zh-Hans\">BackTrack 是一个基于Ubuntu GNU/Linux的发行版本，主要用做数字取证和入侵测试。他的名字引用自" +
-            "回溯法（backtracking）。</desc>\r\n            <desc lang=\"zh-Hant\">BackTrack 是一個基於Ubunt" +
-            "u GNU/Linux的發行版本，主要用做數字取證和入侵測試。他的名字引用自回溯法（backtracking）。</desc>\r\n        </descr" +
-            "iption>\r\n        <versions>\r\n            <version>\r\n                <hash>aafff8" +
-            "ff5b71fdb6fccdded49a6541a0</hash>\r\n                <name>BackTrack 5 R3 GNOME x8" +
-            "6</name>\r\n                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack" +
-            "/BT5R3-GNOME-32.iso</download>\r\n                <filenameRegex>BT5R3-GNOME-32.is" +
-            "o</filenameRegex>\r\n            </version>\r\n            <version>\r\n              " +
-            "  <hash>8cd98b693ce542b671edecaed48ab06d</hash>\r\n                <name>BackTrack" +
-            " 5 R3 GNOME x64</name>\r\n                <download>http://ftp.cc.uoc.gr/mirrors/l" +
-            "inux/backtrack/BT5R3-GNOME-64.iso</download>\r\n                <filenameRegex>BT5" +
-            "R3-GNOME-64.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n    " +
-            "        </version>\r\n            <version>\r\n                <hash>d324687fb891e69" +
-            "5089745d461268576</hash>\r\n                <name>BackTrack 5 R3 KDE x86</name>\r\n " +
-            "               <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-KDE-" +
-            "32.iso</download>\r\n                <filenameRegex>BT5R3-KDE-32.iso</filenameRege" +
-            "x>\r\n            </version>\r\n            <version>\r\n                <hash>981b897" +
-            "b7fdf34fb1431ba84fe93249f</hash>\r\n                <name>BackTrack 5 R3 KDE x64</" +
-            "name>\r\n                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT" +
-            "5R3-KDE-64.iso</download>\r\n                <filenameRegex>BT5R3-KDE-64.iso</file" +
-            "nameRegex>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n" +
-            "        <name>CentOS</name>\r\n        <category>3</category>\r\n        <filenameRe" +
-            "gex>^CentOS-(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc " +
-            "lang=\"fr\">CentOS (Community ENTerprise Operating System) est une distribution GN" +
-            "U/Linux principalement destinée aux serveurs. Tous ses paquets, à l\'exception du" +
-            " logo, sont des paquets compilés à partir des sources de la distribution RHEL (R" +
-            "ed Hat Enterprise Linux), éditée par la société Red Hat.</desc>\r\n            <de" +
-            "sc lang=\"en\">CentOS (abbreviated from Community ENTerprise Operating System) is " +
-            "a Linux distribution that attempts to provide a free, enterprise-class, communit" +
-            "y-supported computing platform which aims to be functionally compatible with its" +
-            " upstream source, Red Hat Enterprise Linux (RHEL).</desc>\r\n            <desc lan" +
-            "g=\"de\">CentOS (Community ENTerprise Operating System) ist eine Linux-Distributio" +
-            "n, die auf der Distribution Red Hat Enterprise Linux (RHEL) des Unternehmens Red" +
-            " Hat aufbaut. Die Distribution wird von einer offenen Gruppe von freiwilligen En" +
-            "twicklern betreut, gepflegt und weiterentwickelt.</desc>\r\n            <desc lang" +
-            "=\"ro\">Community ENTerprise Operating System (CentOS) este un sistem de operare G" +
-            "NU/Linux, liber și gratuit, bazat pe cel liber, dar comercial (plătit), Red Hat " +
-            "Enterprise Linux, de la firma Red Hat. El a luat naștere pentru a oferi o distri" +
-            "buție gratuită pentru afaceri, care dorește să mențină compatibilitate binară de" +
-            " 100% cu cea originală.</desc>\r\n            <desc lang=\"ru\">CentOS (англ. Commun" +
-            "ity ENTerprise Operating System) - дистрибутив Linux, основанный на коммерческом" +
-            " Red Hat Enterprise Linux компании Red Hat и совместимый с ним. Срок поддержки к" +
-            "аждой версии CentOS составляет 10 лет.</desc>\r\n            <desc lang=\"uk\">CentO" +
-            "S (Community ENTerprise Operating System) — вільно доступний дистрибутив Лінукс " +
-            "на основі комерційного дистрибутиву Red Hat Enterprise Linux компанії Red Hat.</" +
-            "desc>\r\n            <desc lang=\"zh-Hans\">CentOS（Community ENTerprise Operating Sy" +
-            "stem）是Linux发行版之一，它是来自于Red Hat Enterprise Linux依照开放原始码规定释出的原始码所编译而成。由于出自同样的原始码，因此" +
-            "有些要求高度稳定性的伺服器以CentOS替代商业版的Red Hat Enterprise Linux使用。</desc>\r\n            <desc " +
-            "lang=\"zh-Hant\">CentOS（Community ENTerprise Operating System）是Linux發行版之一，它是來自於Red" +
-            " Hat Enterprise Linux依照開放原始碼規定釋出的原始碼所編譯而成。由於出自同樣的原始碼，因此有些要求高度穩定性的伺服器以CentOS替代商業版" +
-            "的Red Hat Enterprise Linux使用。</desc>\r\n            <desc lang=\"es\">CentOS (Communi" +
-            "ty ENTerprise Operating System) es una bifurcación a nivel binario de la distrib" +
-            "ución Linux Red Hat Enterprise Linux RHEL, compilado por voluntarios a partir de" +
-            "l código fuente publicado por Red Hat.</desc>\r\n        </description>\r\n        <" +
-            "versions>\r\n            <version>\r\n                <hash>sha256:6540a8dffdf7a7b61" +
-            "f51c9ff1a8616a817214f883c1dce9a8c63b477276c61be</hash>\r\n                <name>Ce" +
-            "ntOS 7 x86_64</name>\r\n                <download>http://buildlogs.centos.org/roll" +
-            "ing/7/isos/x86_64/CentOS-7-x86_64-DVD.iso</download>\r\n                <filenameR" +
-            "egex>/CentOS-7-x86_64-(.*).iso</filenameRegex>\r\n                <isLatest>true</" +
-            "isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n " +
-            "       <name>Damn Small Linux</name>\r\n        <category>3</category>\r\n        <f" +
-            "ilenameRegex>^dsl-(.*).iso$</filenameRegex>\r\n        <description>\r\n            " +
-            "<desc lang=\"fr\">Damn Small Linux, couramment abrégé sous le sigle DSL, est une d" +
-            "istribution GNU/Linux basée sur la Knoppix, elle-même basée sur le système de pa" +
-            "quets du système Debian GNU/Linux. DSL est considérée comme un miniLinux et peut" +
-            " être installée sur des machines très anciennes, comme des i486 (un syslinux est" +
-            " même fourni pour les machines trop anciennes pour isolinux).</desc>\r\n          " +
-            "  <desc lang=\"en\">Damn Small Linux (commonly abbreviated DSL) is a computer oper" +
-            "ating system for the x86 family of personal computers. It was designed to run gr" +
-            "aphical applications on older PC hardware—for example, machines with 486/early P" +
-            "entium processors and very little memory. DSL is a Live CD with a size of 50 MB." +
-            "</desc>\r\n            <desc lang=\"de\">Damn Small Linux ist eine englischsprachige" +
-            " Linux-Distribution, die sich von einer Visitenkarten-CD (50 MB) starten lässt. " +
-            "Das Damn-Small-Linux-Projekt wurde von John Andrews und Robert Shingledecker ins" +
-            " Leben gerufen und basierte ursprünglich auf Knoppix. Heute basiert Damn Small L" +
-            "inux auf Debian GNU/Linux.</desc>\r\n            <desc lang=\"ro\">Damn Small Linux," +
-            " cunoscut și sub numele DSL este o distribuție gratuită a sistemului de operare " +
-            "Linux pentru calculatore personale. Sistemul de operare a fost proiectat pentru " +
-            "folosire pe calculatoare PC mai vechi, de exemplu, calculatoare cu procesoare In" +
-            "tel 80386/Intel 80486/sau primele procesoare Pentium, și cu memorie redusă. DSL " +
-            "este bootabil de pe CD (LiveCD), având dimensiunea de aproximativ 50 MB.</desc>\r" +
-            "\n            <desc lang=\"ru\">Damn Small Linux (DSL; англ. Damn Small Linux — чер" +
-            "товски маленький Линукс) — дистрибутив Linux на основе Debian для архитектуры x8" +
-            "6, загружаемый с LiveCD-\"визитки\". Также он может быть установлен на жёсткий дис" +
-            "к, USB Flash Drive и т. п.</desc>\r\n            <desc lang=\"uk\">Damn Small Linux " +
-            "— дистрибутив Linux на базі Debian. У новій версії представлена нова версія ядра" +
-            " Linux 2.4.31, додана підтримка Prism 2, оновлені деякі додатки. Damn Small Linu" +
-            "x — це Live CD невеликого розміру (лише 50 Мб).</desc>\r\n            <desc lang=\"" +
-            "zh-Hans\">Damn Small Linux简称DSL，是种供x86系列个人电脑使用的作业系统。最早这个project是由一位非科班出身的电脑玩家John" +
-            " Andrews基于好奇想试试看又小又合用的Linux能做到怎样？结果做出了一张小光碟的LiveCD，而后日渐发展而成。</desc>\r\n           " +
-            " <desc lang=\"zh-Hant\">Damn Small Linux簡稱DSL，是種供x86系列個人電腦使用的作業系統。最早這個project是由一位非" +
-            "科班出身的電腦玩家John Andrews基於好奇想試試看又小又合用的Linux能做到怎樣？結果做出了一張小光碟的LiveCD，而後日漸發展而成。</desc>" +
-            "\r\n            <desc lang=\"es\">Damn Small Linux (abreviado como DSL) es una distr" +
-            "ibución Linux LiveCD funcional y completa, basada en Knoppix pensada para funcio" +
-            "nar en computadoras de la familia x86 con muy pocos recursos o antiguos, como lo" +
-            "s procesadores Intel 80486 y siguientes.</desc>\r\n        </description>\r\n       " +
-            " <versions>\r\n            <version>\r\n                <hash>705e76ea3675c60ad3b3f7" +
-            "ce87fe9e6a</hash>\r\n                <name>Damn Small Linux 4.4.10 (initrd)</name>" +
-            "\r\n                <download>http://distro.ibiblio.org/damnsmall/current/dsl-4.4." +
-            "10-initrd.iso</download>\r\n                <filenameRegex>dsl-4.4.10-initrd.iso</" +
-            "filenameRegex>\r\n            </version>\r\n            <version>\r\n                <" +
-            "hash>fe33cec8a9972d41aa0e9fe1fa14c8b6</hash>\r\n                <name>Damn Small L" +
-            "inux 4.4.10 (syslinux)</name>\r\n                <download>http://distro.ibiblio.o" +
-            "rg/damnsmall/current/dsl-4.4.10-syslinux.iso</download>\r\n                <filena" +
-            "meRegex>dsl-4.4.10-syslinux.iso</filenameRegex>\r\n            </version>\r\n       " +
-            "     <version>\r\n                <hash>5cb7e0d4506c249b78bbe0cd4695b865</hash>\r\n " +
-            "               <name>Damn Small Linux 4.4.10 (standard)</name>\r\n                " +
-            "<download>http://distro.ibiblio.org/damnsmall/current/dsl-4.4.10.iso</download>\r" +
-            "\n                <filenameRegex>dsl-4.4.10.iso</filenameRegex>\r\n            </ve" +
-            "rsion>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Debian</name>\r" +
-            "\n        <category>3</category>\r\n        <filenameRegex>^debian-(.*).iso$</filen" +
-            "ameRegex>\r\n        <description>\r\n            <desc lang=\"fr\">Debian est un syst" +
-            "ème d\'exploitation libre pour votre ordinateur. Un système d\'exploitation est la" +
-            " suite des programmes de base et des utilitaires qui permettent à un ordinateur " +
-            "de fonctionner.</desc>\r\n            <desc lang=\"en\">Debian is a Unix-like comput" +
-            "er operating system and a Linux distribution that is composed entirely of free a" +
-            "nd open-source software, most of which is under the GNU General Public License, " +
-            "and packaged by a group of individuals known as the Debian Project.</desc>\r\n    " +
-            "        <desc lang=\"de\">Debian ist ein seit 1993 gemeinschaftlich entwickeltes f" +
-            "reies Betriebssystem. Debian GNU/Linux, das auf den grundlegenden Systemwerkzeug" +
-            "en des GNU-Projektes sowie dem Linux-Kernel basiert. Es ist eine der ältesten, e" +
-            "influssreichsten und am weitesten verbreiteten GNU/Linux-Distributionen.</desc>\r" +
-            "\n            <desc lang=\"ro\">Debian GNU/Linux este un sistem de operare compus d" +
-            "in software liber, și o distribuție populară și foarte influentă între distribuț" +
-            "iile GNU/Linux. Această distribuție este menținută la zi datorită efortului volu" +
-            "ntar depus de utilizatori de pe întreg mapamondul.</desc>\r\n            <desc lan" +
-            "g=\"ru\">Debian — операционная система, состоящая из свободного ПО с открытым исхо" +
-            "дным кодом. В настоящее время Debian GNU/Linux — один из самых популярных и важн" +
-            "ых дистрибутивов GNU/Linux, в первичной форме оказавший значительное влияние на " +
-            "развитие этого типа ОС в целом.</desc>\r\n            <desc lang=\"uk\">Debian (Debi" +
-            "an GNU/Linux) — комп’ютерна операційна система, основний дистрибутив якої склада" +
-            "ється тільки з вільного програмного забезпечення (main-секції архіву Debian). По" +
-            "пулярний та впливовий дистрибутив GNU/Linux. Багатоцільова операційна система, щ" +
-            "о використовується: настільними комп\'ютерами, лептопами, серверами, вбудованими " +
-            "системами.</desc>\r\n            <desc lang=\"zh-Hans\">Debian是由GPL和其他自由软体许可协议授权的自由软" +
-            "体组成的作业系统，由Debian计画（Debian Project）组织维护。</desc>\r\n            <desc lang=\"zh-Hant\"" +
-            ">Debian是由GPL和其他自由軟體許可協議授權的自由軟體組成的作業系統，由Debian計畫（Debian Project）組織維護。</desc>\r\n   " +
-            "         <desc lang=\"es\">Debian GNU/Linux es un sistema operativo libre, desarro" +
-            "llado por miles de voluntarios alrededor del mundo, que colaboran a través de In" +
-            "ternet.</desc>\r\n        </description>\r\n        <versions>\r\n            <version" +
-            ">\r\n                <hash>50ffc2920373b6168abb489f12ca4268</hash>\r\n              " +
-            "  <name>Debian 8.2.0 x86 CD</name>\r\n                <download>http://cdimage.deb" +
-            "ian.org/debian-cd/8.2.0/i386/iso-cd/debian-8.2.0-i386-CD-1.iso</download>\r\n     " +
-            "           <filenameRegex>debian-8.2.0-i386-CD-1.iso</filenameRegex>\r\n          " +
-            "  </version>\r\n            <version>\r\n                <hash>eb23f1b3aac17bf79c6de" +
-            "a38e930c083</hash>\r\n                <name>Debian 8.2.0 x86 DVD</name>\r\n         " +
-            "       <download>http://cdimage.debian.org/debian-cd/8.2.0/i386/iso-dvd/debian-8" +
-            ".2.0-i386-DVD-1.iso</download>\r\n                <filenameRegex>debian-8.2.0-i386" +
-            "-DVD-1.iso</filenameRegex>\r\n            </version>\r\n            <version>\r\n     " +
-            "           <hash>5e172c7df6ab46ded2f2b44df22e1ca2</hash>\r\n                <name>" +
-            "Debian 8.2.0 x64 CD</name>\r\n                <download>http://cdimage.debian.org/" +
-            "debian-cd/8.2.0/amd64/iso-cd/debian-8.2.0-amd64-CD-1.iso</download>\r\n           " +
-            "     <filenameRegex>debian-8.2.0-amd64-CD-1.iso</filenameRegex>\r\n            </v" +
-            "ersion>\r\n            <version>\r\n                <hash>6b753a489928c6be9e41c24568" +
-            "1dca7e</hash>\r\n                <name>Debian 8.2.0 x64 DVD</name>\r\n              " +
-            "  <download>http://cdimage.debian.org/debian-cd/8.2.0/amd64/iso-dvd/debian-8.2.0" +
-            "-amd64-DVD-1.iso</download>\r\n                <filenameRegex>debian-8.2.0-amd64-D" +
-            "VD-1.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n           " +
-            " </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Dr Web Li" +
-            "veDisk</name>\r\n        <category>10</category>\r\n        <filenameRegex>^drweb-li" +
-            "vedisk-(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=" +
-            "\"fr\">Dr.Web est une entreprise de développement d\'antivirus russe, et porte le n" +
-            "om de son produit phare, Dr.Web. Initialement sorti en 1992, c\'est rapidement de" +
-            "venu l\'antivirus le plus utilisé en Russie. Dr.Web est une des quelques</desc>\r\n" +
-            "            <desc lang=\"en\">Dr.Web is a Russian anti-malware company, and the na" +
-            "me of its flagship software suite. First released in 1992, it became the first a" +
-            "nti-virus service in Russia. Doctor Web is one of a few anti-virus vendors in th" +
-            "e world that owns its technologies for detecting and curing malware.</desc>\r\n   " +
-            "         <desc lang=\"de\">Doctor Web, Ltd. ist Anbieter eigenentwickelter IT-Sich" +
-            "erheitslösungen und Managed Security Services für IT-Provider. Die Antivirensoft" +
-            "ware Dr.Web wird seit 1992 vom Firmengründer Igor Danilov (* 1964) entwickelt.</" +
-            "desc>\r\n            <desc lang=\"ro\">Dr. Web este o suită de software anti-malware" +
-            ", precum și numele companiei rusești care îl produce. Lansat în 1992, Dr. Web a " +
-            "fost primul serviciu anti-virus din Rusia.</desc>\r\n            <desc lang=\"ru\">D" +
-            "r.Web (рус. Доктор Веб) — общее название семейства программного антивирусного ПО" +
-            " для различных платформ (Windows, OS X, Linux, мобильные платформы) и линейки пр" +
-            "ограммно-аппаратных решений (Dr.Web Office Shield), а также решений для обеспече" +
-            "ния безопасности всех узлов корпоративной сети (Dr.Web Enterprise Suite).</desc>" +
-            "\r\n            <desc lang=\"uk\">Dr. Web — антивіруси цього сімейства призначені дл" +
-            "я захисту від поштових і мережевих черв\'яків, руткітів, файлових вірусів, троянс" +
-            "ьких програм, стелс-вірусів, поліморфних вірусів, рекламного ПЗ (adware), потенц" +
-            "ійно небезпечного ПЗ, хакерських утиліт, програм-люків, програм-жартів, від спам" +
-            "у, фішинг-повідомлень і технічного спаму.</desc>\r\n            <desc lang=\"zh-Han" +
-            "s\">Dr.Web（又名大蜘蛛）是来自 俄罗斯Doctor Web软体公司所开发的防毒软体。Dr.Web Anti-Virus在1992年首次发布，为俄罗斯第一" +
-            "所提供防毒服务的供应商。总部设于圣彼得堡，创始人为Igor Daniloff。</desc>\r\n            <desc lang=\"zh-Hant\"" +
-            ">Dr.Web（又名大蜘蛛）是來自 俄羅斯Doctor Web軟體公司所開發的防毒軟體。Dr.Web Anti-Virus在1992年首次發布，為俄羅斯第一所提" +
-            "供防毒服務的供應商。總部設於聖彼得堡，創始人為Igor Daniloff。</desc>\r\n            <desc lang=\"es\">Dr. We" +
-            "b es una suite de antivirus Ruso. Fue lanzado en 1992 y se convirtió en el prime" +
-            "r servicio antivirus en Rusia.</desc>\r\n        </description>\r\n        <versions" +
-            ">\r\n            <version>\r\n                <hash></hash>\r\n                <name>D" +
-            "r Web LiveDisk 9.0.0</name>\r\n                <download>http://download.geo.drweb" +
-            ".com/pub/drweb/livedisk/drweb-livedisk-900-cd.iso</download>\r\n                <f" +
-            "ilenameRegex>drweb-livedisk-900-cd.iso</filenameRegex>\r\n                <isLates" +
-            "t>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    " +
-            "<app>\r\n        <name>FreeBSD</name>\r\n        <category>3</category>\r\n        <fi" +
-            "lenameRegex>^FreeBSD-(.*).iso$</filenameRegex>\r\n        <description>\r\n         " +
-            "   <desc lang=\"fr\">FreeBSD est un système d\'exploitation UNIX libre. Le nom vien" +
-            "t de l\'association d\'une part de free qui signifie à la fois \"libre\" et \"gratuit" +
-            "\" dans l\'anglais courant, et d\'autre part de Berkeley software distribution (BSD" +
-            "), l\'UNIX développé à l\'université de Berkeley.</desc>\r\n            <desc lang=\"" +
-            "en\">FreeBSD is a free Unix-like operating system descended from Research Unix vi" +
-            "a the Berkeley Software Distribution (BSD). Although for legal reasons FreeBSD c" +
-            "annot use the Unix trademark, it is a direct descendant of BSD, which was histor" +
-            "ically also called \"BSD Unix\" or \"Berkeley Unix\".</desc>\r\n            <desc lang" +
-            "=\"de\">FreeBSD ist ein freies und vollständiges unixoides Betriebssystem, das dir" +
-            "ekt von der Berkeley Software Distribution abstammt. Mit einer Community aus fas" +
-            "t 390 dauerhaft aktiven, offiziellen und Tausenden mitwirkenden Entwicklern gehö" +
-            "rt FreeBSD zu den größten Open-Source-Projekten. Obwohl der Fokus der Entwickler" +
-            " auf der Erstellung einer stabilen Software-Plattform für Server und Appliances " +
-            "liegt, wird es auch auf Desktop-Computern verwendet.</desc>\r\n            <desc l" +
-            "ang=\"ro\">FreeBSD este un sistem de operare liber Unix-like descendent din AT&amp" +
-            ";T UNIX(r) prin ramura Berkeley Software Distribution (BSD), mai exact provine d" +
-            "in sistemele de operare 386BSD și 4.4BSD. Rulează pe calculatoare cu procesoare " +
-            "compatibile cu familia Intel x86, dar și pe procesoare DEC Alpha, UltraSPARC(r) " +
-            "(al firmei Sun Microsystems), Itanium (IA-64), AMD64, PowerPC, PC-98, ARM și MIP" +
-            "S.</desc>\r\n            <desc lang=\"ru\">FreeBSD — свободная Unix-подобная операци" +
-            "онная система, потомок AT&amp;T Unix по линии BSD, созданной в университете Берк" +
-            "ли. FreeBSD работает на PC-совместимых системах семейства x86, включая Microsoft" +
-            " Xbox, а также на DEC Alpha, Sun UltraSPARC, IA-64, AMD64, PowerPC, NEC PC-98, A" +
-            "RM. Готовится поддержка архитектуры MIPS.</desc>\r\n            <desc lang=\"uk\">Fr" +
-            "eeBSD — UNIX-подібна операційна система, коріння якої тягнеться від AT&amp;T UNI" +
-            "X, через Berkeley Software Distribution (BSD) гілку операційних систем 386BSD та" +
-            " 4.4BSD. Працює на Intel x86 (IA-32), сумісних з ПК системах (включно з Microsof" +
-            "t Xbox, а також DEC Alpha, Sun, Itanium (IA-64), AMD64, PowerPC та NEC PC-98 арх" +
-            "ітектурах.</desc>\r\n            <desc lang=\"zh-Hans\">FreeBSD是一种自由的类Unix操作系统，它起源于A" +
-            "T&amp;T Unix，是经过BSD、386BSD（英语：386BSD）和4.4BSD（英语：Berkeley Software Distribution）发" +
-            "展而来的类Unix的一个重要分支。虽然出于法律原因FreeBSD不能称为Unix，但它是BSD的直接后裔，而BSD历史上被称为BSD Unix或Berkeley" +
-            " Unix。FreeBSD拥有超过200名活跃开发者和上千名贡献者。</desc>\r\n            <desc lang=\"zh-Hant\">Free" +
-            "BSD是一種自由的類Unix操作系統，它起源於AT&amp;T Unix，是經過BSD、386BSD（英語：386BSD）和4.4BSD（英語：Berkeley" +
-            " Software Distribution）發展而來的類Unix的一個重要分支。雖然出於法律原因FreeBSD不能稱為Unix，但它是BSD的直接後裔，而BS" +
-            "D歷史上被稱為BSD Unix或Berkeley Unix。FreeBSD擁有超過200名活躍開發者和上千名貢獻者。</desc>\r\n            <" +
-            "desc lang=\"es\">FreeBSD es un sistema operativo libre para computadoras basado en" +
-            " las CPU de arquitectura Intel, incluyendo procesadores Intel 80386, Intel 80486" +
-            " (versiones SX y DX), y Pentium. También funciona en procesadores compatibles co" +
-            "n Intel como AMD y Cyrix. Actualmente también es posible utilizarlo hasta en onc" +
-            "e arquitecturas distintas como Alpha, AMD64, IA-64, MIPS, PowerPC y UltraSPARC.<" +
-            "/desc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n     " +
-            "           <hash>b38c407d9f3870ad7583f3f62e8b0a68</hash>\r\n                <name>" +
-            "FreeBSD 10.2 x86</name>\r\n                <download>http://ftp.freebsd.org/pub/Fr" +
-            "eeBSD/releases/i386/i386/ISO-IMAGES/10.2/FreeBSD-10.2-RELEASE-i386-dvd1.iso</dow" +
-            "nload>\r\n                <filenameRegex>/FreeBSD-10.2-RELEASE-i386-(.*).iso</file" +
-            "nameRegex>\r\n            </version>\r\n            <version>\r\n                <hash" +
-            ">bbeb9d785d15d05333d1b99be88bc746</hash>\r\n                <name>FreeBSD 10.2 x64" +
-            "</name>\r\n                <download>http://ftp.freebsd.org/pub/FreeBSD/releases/a" +
-            "md64/amd64/ISO-IMAGES/10.2/FreeBSD-10.2-RELEASE-amd64-dvd1.iso</download>\r\n     " +
-            "           <filenameRegex>/FreeBSD-10.2-RELEASE-amd64-(.*).iso</filenameRegex>\r\n" +
-            "                <isLatest>true</isLatest>\r\n            </version>\r\n        </ver" +
-            "sions>\r\n    </app>\r\n    <app>\r\n        <name>FreeDOS</name>\r\n        <category>3" +
-            "</category>\r\n        <filenameRegex>^fd11src.iso$</filenameRegex>\r\n        <desc" +
-            "ription>\r\n            <desc lang=\"fr\">FreeDOS est un système d\'exploitation comp" +
-            "let, libre, et 100 % compatible MS-DOS.</desc>\r\n            <desc lang=\"en\">Free" +
-            "DOS (formerly Free-DOS and PD-DOS) is a free operating system for IBM PC compati" +
-            "ble computers. It intends to provide a complete DOS-compatible environment for r" +
-            "unning legacy software and supporting embedded systems.</desc>\r\n            <des" +
-            "c lang=\"de\">FreeDOS ist ein Betriebssystem aus der Gruppe der DOS-Betriebssystem" +
-            "e. Die Entwicklung von FreeDOS findet innerhalb des FreeDOS-Projekts statt, in d" +
-            "em sich mehrere Einzelprojekte zusammengefunden haben, um eine freie und kompati" +
-            "ble Alternative zum Betriebssystem MS-DOS zu schaffen, dessen Weiterentwicklung " +
-            "von seinem Hersteller Microsoft eingestellt wurde.</desc>\r\n            <desc lan" +
-            "g=\"ro\">FreeDOS (fostă gratuit Free-DOS și PD-DOS) este un sistem de operare pent" +
-            "ru computere compatibile IBM. FreeDOS este compus din mai multe programe diferit" +
-            "e, separate, care să acționeze ca \"pachete\" pentru a FreeDOS. Ca un membru al fa" +
-            "miliei DOS, acesta prevede în principal accesul la disc prin intermediul kernel-" +
-            "ului său și oferă management parțial al memoriei, dar nu implicit GUI (deși Open" +
-            " GEM este listat pe site-ul oficial FreeDOS). </desc>\r\n            <desc lang=\"r" +
-            "u\">FreeDOS — операционная система, совместимая с MS-DOS. FreeDOS распространяетс" +
-            "я на условиях GNU General Public License, включает несколько программ под другим" +
-            "и свободными и несвободными лицензиями.</desc>\r\n            <desc lang=\"uk\">Free" +
-            "DOS (колишній Free-DOS і PD-DOS) — операційна система для IBM-сумісних комп\'ютер" +
-            "ів, створена як вільна альтернатива DOS з оточенням з GNU утиліт. З областей зас" +
-            "тосування FreeDOS називається передустановлення на нові комп\'ютери, запуск стари" +
-            "х ігор, використання на вбудовуваній техніці, створення CD/Flash для установки п" +
-            "рошивок і налаштування материнської плати, навчання студентів основам побудови о" +
-            "пераційних систем, запуск музичного плеєра, використання в DOSEmu (емулятор DOS " +
-            "для Linux).</desc>\r\n            <desc lang=\"zh-Hans\">FreeDOS（曾叫做Free-DOS和PD-DOS）" +
-            "是一个在IBM PC兼容机下运行的操作系统。FreeDOS由许多不同的独立程序组成，这些程序就是整个FreeDOS项目中的\"包\"。</desc>\r\n      " +
-            "      <desc lang=\"zh-Hant\">FreeDOS（曾叫做Free-DOS和PD-DOS）是一個在IBM PC兼容機下運行的操作系統。Free" +
-            "DOS由許多不同的獨立程序組成，這些程序就是整個FreeDOS項目中的「包」。</desc>\r\n            <desc lang=\"es\">Free" +
-            "DOS es un proyecto que aspira a crear un sistema operativo libre que sea totalme" +
-            "nte compatible con las aplicaciones y los controladores de MS-DOS. El intérprete" +
-            " de línea de comandos usado por FreeDOS se llama FreeCOM.</desc>\r\n        </desc" +
-            "ription>\r\n        <versions>\r\n            <version>\r\n                <hash>c9bfc" +
-            "f2d08dbe8bdb1fe95fb339e0b2b</hash>\r\n                <name>FreeDOS 1.0 (ISO, inst" +
-            "all only)</name>\r\n                <download>http://www.freedos.org/download/down" +
-            "load/fdbasecd.iso</download>\r\n                <filenameRegex>fdbasecd.iso</filen" +
-            "ameRegex>\r\n            </version>\r\n            <version>\r\n                <hash>" +
-            "5008c37cf0506ed7a95b2cd8ecb7db77</hash>\r\n                <name>FreeDOS 1.0 (boot" +
-            "able floppy image)</name>\r\n                <download>http://www.ibiblio.org/pub/" +
-            "micro/pc-stuff/freedos/files/distributions/1.0/fdboot.img</download>\r\n          " +
-            "      <filenameRegex>fdboot.img</filenameRegex>\r\n            </version>\r\n       " +
-            "     <version>\r\n                <hash>2e0ab23bec79ff33071d80ea26f124dc</hash>\r\n " +
-            "               <name>FreeDOS 1.1 (ISO, install only, include source)</name>\r\n   " +
+            "me>Memtest86+</name>\r\n        <category>6</category>\r\n        <filenameRegex>^(?" +
+            ":memtest86(\\+|plus)[-_]([0-9.]+).iso|MEMTEST\\.IMG)$</filenameRegex>\r\n        <de" +
+            "scription>\r\n            <desc lang=\"de\">Memtest86+ ist eine Software, mit der ma" +
+            "n den Arbeitsspeicher eines Computers auf Fehler überprüfen kann.</desc>\r\n      " +
+            "      <desc lang=\"fr\">Memtest86+ permet d\'effectuer un diagnostic complet de la " +
+            "mémoire d\'un ordinateur.</desc>\r\n            <desc lang=\"en\">Memtest86+ is an op" +
+            "en source memory test software programs designed to test and stress test an x86 " +
+            "architecture computer\'s RAM.</desc>\r\n            <desc lang=\"es\">Memtest86+ es u" +
+            "n programa informático para ordenadores compatibles con x86. Su finalidad es pas" +
+            "ar una prueba de stress a la memoria RAM del ordenador para encontrar errores en" +
+            " los módulos propiamente dichos o en los datapaths (chipset, controladoras de me" +
+            "moria).</desc>\r\n        </description>\r\n        <versions>\r\n            <version" +
+            ">\r\n                <hash>0f3d162f0c2f42da1455993ac4df396b</hash>\r\n              " +
+            "  <name>Memtest86+ 5.01</name>\r\n                <download>https://dl.dropboxuser" +
+            "content.com/u/98959151/memtest86plus-501.iso</download>\r\n                <filena" +
+            "meRegex>memtest86plus_501.iso</filenameRegex>\r\n                <isLatest>true</i" +
+            "sLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n  " +
+            "      <name>Memtest86</name>\r\n        <category>6</category>\r\n        <filenameR" +
+            "egex>^Memtest86-([0-9.]+).iso$</filenameRegex>\r\n        <description>\r\n         " +
+            "   <desc lang=\"de\">Memtest86 ist eine Software, mit der man den Arbeitsspeicher " +
+            "eines Computers auf Fehler überprüfen kann.</desc>\r\n            <desc lang=\"fr\">" +
+            "Memtest86 permet d\'effectuer un diagnostic complet de la mémoire d\'un ordinateur" +
+            ".</desc>\r\n            <desc lang=\"en\">Memtest86 is an open source memory test so" +
+            "ftware programs designed to test and stress test an x86 architecture computer\'s " +
+            "RAM.</desc>\r\n            <desc lang=\"es\">Memtest86 es un programa informático pa" +
+            "ra ordenadores compatibles con x86. Su finalidad es pasar una prueba de stress a" +
+            " la memoria RAM del ordenador para encontrar errores en los módulos propiamente " +
+            "dichos o en los datapaths (chipset, controladoras de memoria).</desc>\r\n        <" +
+            "/description>\r\n        <versions>\r\n            <version>\r\n                <hash>" +
+            "0c7dd6227dabcb1a5e56c96f178f381d</hash>\r\n                <name>Memtest86 4.3.7</" +
+            "name>\r\n                <download>https://dl.dropboxusercontent.com/u/98959151/Me" +
+            "mtest86-4.3.7.iso</download>\r\n                <filenameRegex>Memtest86-4.3.7.iso" +
+            "</filenameRegex>\r\n            </version>\r\n            <version>\r\n               " +
+            " <hash>ad1310faef37409e1a1b845a5268cb76</hash>\r\n                <name>Memtest86 " +
+            "6.2.0</name>\r\n                <download>https://dl.dropboxusercontent.com/u/9895" +
+            "9151/Memtest86-6.2.0.iso</download>\r\n                <filenameRegex>Memtest86-6." +
+            "2.0.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            " +
+            "</version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Redo Backu" +
+            "p and Recovery</name>\r\n        <category>4</category>\r\n        <filenameRegex>^r" +
+            "edobackup-livecd-([0-9.]+).iso$</filenameRegex>\r\n        <description>\r\n        " +
+            "    <desc lang=\"fr\">Redo Backup est un système de sauvegarde, de restauration et" +
+            " d\'édition de partition.</desc>\r\n            <desc lang=\"en\">Redo Backup is an e" +
+            "asy rescue system with GUI tools for full system backup, bare metal recovery and" +
+            " partition editing.</desc>\r\n        </description>\r\n        <versions>\r\n        " +
+            "    <version>\r\n                <hash>f84b757242c1b050f8cbed7142197d81</hash>\r\n  " +
+            "              <name>Redo Backup and Recovery 1.0.4</name>\r\n                <down" +
+            "load>http://downloads.sourceforge.net/project/redobackup/redobackup-livecd-1.0.4" +
+            ".iso</download>\r\n                <filenameRegex>redobackup-livecd-1.0.4.iso</fil" +
+            "enameRegex>\r\n                <isLatest>true</isLatest>\r\n            </version>\r\n" +
+            "        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Ultimate Boot CD 4 DOS" +
+            "</name>\r\n        <category>9</category>\r\n        <filenameRegex>^ubcd[0-9]{2,3}." +
+            "iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=\"fr\">UBCD 4 " +
+            "DOS est un système qui regroupe plein d\'outils utiles.</desc>\r\n            <desc" +
+            " lang=\"en\">UBCD 4 DOS is a system that regroups lots of useful utilities.</desc>" +
+            "\r\n        </description>\r\n        <versions>\r\n            <version>\r\n           " +
+            "     <hash>a5617e0bdd3ccc3cb3a1b1dd20396d7a</hash>\r\n                <name>Ultima" +
+            "te Boot CD 4 DOS 5.3.0</name>\r\n                <download>http://ftp.cc.uoc.gr/mi" +
+            "rrors/linux/ubcd/ubcd530.iso</download>\r\n                <filenameRegex>ubcd530." +
+            "iso</filenameRegex>\r\n            </version>\r\n            <version>\r\n            " +
+            "    <hash></hash>\r\n                <name>Ultimate Boot CD 4 DOS 5.3.5</name>\r\n  " +
+            "              <download>http://ftp.cc.uoc.gr/mirrors/linux/ubcd/ubcd535.iso</dow" +
+            "nload>\r\n                <filenameRegex>ubcd535.iso</filenameRegex>\r\n            " +
+            "    <isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    " +
+            "</app>\r\n    <app>\r\n        <name>Arch Linux</name>\r\n        <category>3</categor" +
+            "y>\r\n        <filenameRegex>^archlinux-(.*).iso$</filenameRegex>\r\n        <descri" +
+            "ption>\r\n            <desc lang=\"fr\">Arch Linux est une distribution Linux créée " +
+            "par Judd Vinet qui met l\'accent sur la simplicité (selon le principe KISS). Judd" +
+            " a été inspiré par une autre distribution Linux appelée Crux Linux.</desc>\r\n    " +
+            "        <desc lang=\"en\">Arch Linux is a Linux distribution for computers based o" +
+            "n IA-32 and x86-64 architectures. It is composed predominantly of free and open-" +
+            "source software, and supports community involvement.</desc>\r\n            <desc l" +
+            "ang=\"de\">Arch Linux ist eine i686- und AMD64-optimierte Linux-Distribution mit R" +
+            "olling Releases, dessen Entwicklerteam dem KISS-Prinzip folgt. Zugunsten der Ein" +
+            "fachheit wird auf grafische Installations- und Konfigurationshilfen verzichtet.<" +
+            "/desc>\r\n            <desc lang=\"ro\">Arch Linux este o distribuție de Linux creat" +
+            "ă de Judd Vinet. Inspirată de CRUX, această distribuție are ca obiectiv rapidita" +
+            "tea și simplitatea, adresându-se utilizatorilor avansați.</desc>\r\n            <d" +
+            "esc lang=\"ru\">Arch - \"легковесный\", простой и гибкий дистрибутив Linux, оптимизи" +
+            "рованный для архитектур i686 и x86-64, использующий последние стабильные версии " +
+            "программ и дополняемый поддерживаемым сообществом репозиторием AUR.</desc>\r\n    " +
+            "        <desc lang=\"uk\">Arch Linux - мінімалістичний, гнучкий дистрибутив Linux," +
+            " оптимізований для архітектур i686 та x86-64. Використовує останні стабільні вер" +
+            "сії програм і доповнюється AUR-репозиторієм (який підтримуєтсья користувачами).<" +
+            "/desc>\r\n            <desc lang=\"zh-Hans\">Arch Linux是朝向轻量（lightweight）以及简单（simple" +
+            "）的Linux发行版。其中“简单”（Simplicity）被定义为“避免不必要或复杂的修改”，也就是说，是由开发者角度定义，而非使用者角度思考。</desc>\r" +
+            "\n            <desc lang=\"zh-Hant\">Arch Linux是朝向輕量（lightweight）以及簡單（simple）的Linux" +
+            "發行版。其中「簡單」（Simplicity）被定義為「避免不必要或複雜的修改」，也就是說，是由開發者角度定義，而非使用者角度思考。</desc>\r\n      " +
+            "      <desc lang=\"es\">Arch Linux es una distribución Linux para computadoras i68" +
+            "6 y x86-64. Se compone predominantemente de software libre y de código abierto (" +
+            "FOSS), y apoya la participación comunitaria.</desc>\r\n        </description>\r\n   " +
+            "     <versions>\r\n            <version>\r\n                <hash>bbcd48b73851ae8f31" +
+            "c08f83a86b8ef2</hash>\r\n                <name>Arch Linux 2015.12.01</name>\r\n     " +
+            "           <download>http://mirror.rackspace.com/archlinux/iso/2015.12.01/archli" +
+            "nux-2015.12.01-dual.iso</download>\r\n                <filenameRegex>archlinux-201" +
+            "5.12.01-dual.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n   " +
+            "         </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>B" +
+            "ackTrack</name>\r\n        <category>3</category>\r\n        <filenameRegex>^(BT|bt)" +
+            "\\d(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=\"en\">" +
+            "BackTrack is a Linux distribution that focused on security based on the Ubuntu L" +
+            "inux distribution aimed at digital forensics and penetration testing use.</desc>" +
+            "\r\n            <desc lang=\"fr\">BackTrack est une distribution Linux, basée sur Sl" +
+            "ackware jusqu\'à la version 3 et Ubuntu depuis la version 4, apparue en 2006. Ell" +
+            "e est née de la fusion de Whax et Auditor. Son objectif est de fournir une distr" +
+            "ibution regroupant l\'ensemble des outils nécessaires aux tests de sécurité d\'un " +
+            "réseau.</desc>\r\n            <desc lang=\"de\">BackTrack (zu Deutsch etwa Zurückver" +
+            "folgung) ist eine von einer Live-CD, einem USB-Stick oder über ein Netzwerk boot" +
+            "ende Linux-Distribution zur Überprüfung der Sicherheit einzelner Rechner in Netz" +
+            "werken sowie der Gesamtsicherheit des Netzwerks.</desc>\r\n            <desc lang=" +
+            "\"ro\"><<Back|Track este o distribuție de Linux (distribuită ca LiveDistro) ce est" +
+            "e rezultatul unirii dintre WHAX și Auditor Security Collection. Are ca avantaj d" +
+            "esignul și structura modulară al distribuției SLAX ce permit utilizatorului incl" +
+            "uderea scripturilor, uneltelor sau kernel-urilor personalizate.</desc>\r\n        " +
+            "    <desc lang=\"uk\">BackTrack - дистрибутив Linux, що розповсюджується у вигляді" +
+            " LiveCD, створений на базі Debian, доповнений утилітами для пен-тестінгу програм" +
+            ", мереж та систем. За кількістю спеціалізованих програм з аудиту й злому систем " +
+            "безпеки, BackTrack є одним з найкращих дистрибутивів.</desc>\r\n            <desc " +
+            "lang=\"es\">BackTrack es una distribución GNU/Linux en formato LiveCD pensada y di" +
+            "señada para la auditoría de seguridad y relacionada con la seguridad informática" +
+            " en general. Actualmente tiene una gran popularidad y aceptación en la comunidad" +
+            " que se mueve en torno a la seguridad informática.</desc>\r\n            <desc lan" +
+            "g=\"zh-Hans\">BackTrack 是一个基于Ubuntu GNU/Linux的发行版本，主要用做数字取证和入侵测试。他的名字引用自回溯法（backtr" +
+            "acking）。</desc>\r\n            <desc lang=\"zh-Hant\">BackTrack 是一個基於Ubuntu GNU/Linu" +
+            "x的發行版本，主要用做數字取證和入侵測試。他的名字引用自回溯法（backtracking）。</desc>\r\n        </description>\r\n " +
+            "       <versions>\r\n            <version>\r\n                <hash>aafff8ff5b71fdb6" +
+            "fccdded49a6541a0</hash>\r\n                <name>BackTrack 5 R3 GNOME x86</name>\r\n" +
+            "                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-GNO" +
+            "ME-32.iso</download>\r\n                <filenameRegex>BT5R3-GNOME-32.iso</filenam" +
+            "eRegex>\r\n            </version>\r\n            <version>\r\n                <hash>8c" +
+            "d98b693ce542b671edecaed48ab06d</hash>\r\n                <name>BackTrack 5 R3 GNOM" +
+            "E x64</name>\r\n                <download>http://ftp.cc.uoc.gr/mirrors/linux/backt" +
+            "rack/BT5R3-GNOME-64.iso</download>\r\n                <filenameRegex>BT5R3-GNOME-6" +
+            "4.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </" +
+            "version>\r\n            <version>\r\n                <hash>d324687fb891e695089745d46" +
+            "1268576</hash>\r\n                <name>BackTrack 5 R3 KDE x86</name>\r\n           " +
+            "     <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-KDE-32.iso</do" +
+            "wnload>\r\n                <filenameRegex>BT5R3-KDE-32.iso</filenameRegex>\r\n      " +
+            "      </version>\r\n            <version>\r\n                <hash>981b897b7fdf34fb1" +
+            "431ba84fe93249f</hash>\r\n                <name>BackTrack 5 R3 KDE x64</name>\r\n   " +
+            "             <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-KDE-64" +
+            ".iso</download>\r\n                <filenameRegex>BT5R3-KDE-64.iso</filenameRegex>" +
+            "\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <n" +
+            "ame>CentOS</name>\r\n        <category>3</category>\r\n        <filenameRegex>^CentO" +
+            "S-(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=\"fr\">" +
+            "CentOS (Community ENTerprise Operating System) est une distribution GNU/Linux pr" +
+            "incipalement destinée aux serveurs. Tous ses paquets, à l\'exception du logo, son" +
+            "t des paquets compilés à partir des sources de la distribution RHEL (Red Hat Ent" +
+            "erprise Linux), éditée par la société Red Hat.</desc>\r\n            <desc lang=\"e" +
+            "n\">CentOS (abbreviated from Community ENTerprise Operating System) is a Linux di" +
+            "stribution that attempts to provide a free, enterprise-class, community-supporte" +
+            "d computing platform which aims to be functionally compatible with its upstream " +
+            "source, Red Hat Enterprise Linux (RHEL).</desc>\r\n            <desc lang=\"de\">Cen" +
+            "tOS (Community ENTerprise Operating System) ist eine Linux-Distribution, die auf" +
+            " der Distribution Red Hat Enterprise Linux (RHEL) des Unternehmens Red Hat aufba" +
+            "ut. Die Distribution wird von einer offenen Gruppe von freiwilligen Entwicklern " +
+            "betreut, gepflegt und weiterentwickelt.</desc>\r\n            <desc lang=\"ro\">Comm" +
+            "unity ENTerprise Operating System (CentOS) este un sistem de operare GNU/Linux, " +
+            "liber și gratuit, bazat pe cel liber, dar comercial (plătit), Red Hat Enterprise" +
+            " Linux, de la firma Red Hat. El a luat naștere pentru a oferi o distribuție grat" +
+            "uită pentru afaceri, care dorește să mențină compatibilitate binară de 100% cu c" +
+            "ea originală.</desc>\r\n            <desc lang=\"ru\">CentOS (англ. Community ENTerp" +
+            "rise Operating System) - дистрибутив Linux, основанный на коммерческом Red Hat E" +
+            "nterprise Linux компании Red Hat и совместимый с ним. Срок поддержки каждой верс" +
+            "ии CentOS составляет 10 лет.</desc>\r\n            <desc lang=\"uk\">CentOS (Communi" +
+            "ty ENTerprise Operating System) — вільно доступний дистрибутив Лінукс на основі " +
+            "комерційного дистрибутиву Red Hat Enterprise Linux компанії Red Hat.</desc>\r\n   " +
+            "         <desc lang=\"zh-Hans\">CentOS（Community ENTerprise Operating System）是Linu" +
+            "x发行版之一，它是来自于Red Hat Enterprise Linux依照开放原始码规定释出的原始码所编译而成。由于出自同样的原始码，因此有些要求高度稳定性的" +
+            "伺服器以CentOS替代商业版的Red Hat Enterprise Linux使用。</desc>\r\n            <desc lang=\"zh-H" +
+            "ant\">CentOS（Community ENTerprise Operating System）是Linux發行版之一，它是來自於Red Hat Enter" +
+            "prise Linux依照開放原始碼規定釋出的原始碼所編譯而成。由於出自同樣的原始碼，因此有些要求高度穩定性的伺服器以CentOS替代商業版的Red Hat E" +
+            "nterprise Linux使用。</desc>\r\n            <desc lang=\"es\">CentOS (Community ENTerpr" +
+            "ise Operating System) es una bifurcación a nivel binario de la distribución Linu" +
+            "x Red Hat Enterprise Linux RHEL, compilado por voluntarios a partir del código f" +
+            "uente publicado por Red Hat.</desc>\r\n        </description>\r\n        <versions>\r" +
+            "\n            <version>\r\n                <hash>sha256:6540a8dffdf7a7b61f51c9ff1a8" +
+            "616a817214f883c1dce9a8c63b477276c61be</hash>\r\n                <name>CentOS 7 x86" +
+            "_64</name>\r\n                <download>http://buildlogs.centos.org/rolling/7/isos" +
+            "/x86_64/CentOS-7-x86_64-DVD.iso</download>\r\n                <filenameRegex>/Cent" +
+            "OS-7-x86_64-(.*).iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r" +
+            "\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <na" +
+            "me>Damn Small Linux</name>\r\n        <category>3</category>\r\n        <filenameReg" +
+            "ex>^dsl-(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc lang" +
+            "=\"fr\">Damn Small Linux, couramment abrégé sous le sigle DSL, est une distributio" +
+            "n GNU/Linux basée sur la Knoppix, elle-même basée sur le système de paquets du s" +
+            "ystème Debian GNU/Linux. DSL est considérée comme un miniLinux et peut être inst" +
+            "allée sur des machines très anciennes, comme des i486 (un syslinux est même four" +
+            "ni pour les machines trop anciennes pour isolinux).</desc>\r\n            <desc la" +
+            "ng=\"en\">Damn Small Linux (commonly abbreviated DSL) is a computer operating syst" +
+            "em for the x86 family of personal computers. It was designed to run graphical ap" +
+            "plications on older PC hardware—for example, machines with 486/early Pentium pro" +
+            "cessors and very little memory. DSL is a Live CD with a size of 50 MB.</desc>\r\n " +
+            "           <desc lang=\"de\">Damn Small Linux ist eine englischsprachige Linux-Dis" +
+            "tribution, die sich von einer Visitenkarten-CD (50 MB) starten lässt. Das Damn-S" +
+            "mall-Linux-Projekt wurde von John Andrews und Robert Shingledecker ins Leben ger" +
+            "ufen und basierte ursprünglich auf Knoppix. Heute basiert Damn Small Linux auf D" +
+            "ebian GNU/Linux.</desc>\r\n            <desc lang=\"ro\">Damn Small Linux, cunoscut " +
+            "și sub numele DSL este o distribuție gratuită a sistemului de operare Linux pent" +
+            "ru calculatore personale. Sistemul de operare a fost proiectat pentru folosire p" +
+            "e calculatoare PC mai vechi, de exemplu, calculatoare cu procesoare Intel 80386/" +
+            "Intel 80486/sau primele procesoare Pentium, și cu memorie redusă. DSL este boota" +
+            "bil de pe CD (LiveCD), având dimensiunea de aproximativ 50 MB.</desc>\r\n         " +
+            "   <desc lang=\"ru\">Damn Small Linux (DSL; англ. Damn Small Linux — чертовски мал" +
+            "енький Линукс) — дистрибутив Linux на основе Debian для архитектуры x86, загружа" +
+            "емый с LiveCD-\"визитки\". Также он может быть установлен на жёсткий диск, USB Fla" +
+            "sh Drive и т. п.</desc>\r\n            <desc lang=\"uk\">Damn Small Linux — дистрибу" +
+            "тив Linux на базі Debian. У новій версії представлена нова версія ядра Linux 2.4" +
+            ".31, додана підтримка Prism 2, оновлені деякі додатки. Damn Small Linux — це Liv" +
+            "e CD невеликого розміру (лише 50 Мб).</desc>\r\n            <desc lang=\"zh-Hans\">D" +
+            "amn Small Linux简称DSL，是种供x86系列个人电脑使用的作业系统。最早这个project是由一位非科班出身的电脑玩家John Andrews基于" +
+            "好奇想试试看又小又合用的Linux能做到怎样？结果做出了一张小光碟的LiveCD，而后日渐发展而成。</desc>\r\n            <desc lan" +
+            "g=\"zh-Hant\">Damn Small Linux簡稱DSL，是種供x86系列個人電腦使用的作業系統。最早這個project是由一位非科班出身的電腦玩家J" +
+            "ohn Andrews基於好奇想試試看又小又合用的Linux能做到怎樣？結果做出了一張小光碟的LiveCD，而後日漸發展而成。</desc>\r\n        " +
+            "    <desc lang=\"es\">Damn Small Linux (abreviado como DSL) es una distribución Li" +
+            "nux LiveCD funcional y completa, basada en Knoppix pensada para funcionar en com" +
+            "putadoras de la familia x86 con muy pocos recursos o antiguos, como los procesad" +
+            "ores Intel 80486 y siguientes.</desc>\r\n        </description>\r\n        <versions" +
+            ">\r\n            <version>\r\n                <hash>705e76ea3675c60ad3b3f7ce87fe9e6a" +
+            "</hash>\r\n                <name>Damn Small Linux 4.4.10 (initrd)</name>\r\n        " +
+            "        <download>http://distro.ibiblio.org/damnsmall/current/dsl-4.4.10-initrd." +
+            "iso</download>\r\n                <filenameRegex>dsl-4.4.10-initrd.iso</filenameRe" +
+            "gex>\r\n            </version>\r\n            <version>\r\n                <hash>fe33c" +
+            "ec8a9972d41aa0e9fe1fa14c8b6</hash>\r\n                <name>Damn Small Linux 4.4.1" +
+            "0 (syslinux)</name>\r\n                <download>http://distro.ibiblio.org/damnsma" +
+            "ll/current/dsl-4.4.10-syslinux.iso</download>\r\n                <filenameRegex>ds" +
+            "l-4.4.10-syslinux.iso</filenameRegex>\r\n            </version>\r\n            <vers" +
+            "ion>\r\n                <hash>5cb7e0d4506c249b78bbe0cd4695b865</hash>\r\n           " +
+            "     <name>Damn Small Linux 4.4.10 (standard)</name>\r\n                <download>" +
+            "http://distro.ibiblio.org/damnsmall/current/dsl-4.4.10.iso</download>\r\n         " +
+            "       <filenameRegex>dsl-4.4.10.iso</filenameRegex>\r\n            </version>\r\n  " +
+            "      </versions>\r\n    </app>\r\n    <app>\r\n        <name>Debian</name>\r\n        <" +
+            "category>3</category>\r\n        <filenameRegex>^debian-(.*).iso$</filenameRegex>\r" +
+            "\n        <description>\r\n            <desc lang=\"fr\">Debian est un système d\'expl" +
+            "oitation libre pour votre ordinateur. Un système d\'exploitation est la suite des" +
+            " programmes de base et des utilitaires qui permettent à un ordinateur de fonctio" +
+            "nner.</desc>\r\n            <desc lang=\"en\">Debian is a Unix-like computer operati" +
+            "ng system and a Linux distribution that is composed entirely of free and open-so" +
+            "urce software, most of which is under the GNU General Public License, and packag" +
+            "ed by a group of individuals known as the Debian Project.</desc>\r\n            <d" +
+            "esc lang=\"de\">Debian ist ein seit 1993 gemeinschaftlich entwickeltes freies Betr" +
+            "iebssystem. Debian GNU/Linux, das auf den grundlegenden Systemwerkzeugen des GNU" +
+            "-Projektes sowie dem Linux-Kernel basiert. Es ist eine der ältesten, einflussrei" +
+            "chsten und am weitesten verbreiteten GNU/Linux-Distributionen.</desc>\r\n         " +
+            "   <desc lang=\"ro\">Debian GNU/Linux este un sistem de operare compus din softwar" +
+            "e liber, și o distribuție populară și foarte influentă între distribuțiile GNU/L" +
+            "inux. Această distribuție este menținută la zi datorită efortului voluntar depus" +
+            " de utilizatori de pe întreg mapamondul.</desc>\r\n            <desc lang=\"ru\">Deb" +
+            "ian — операционная система, состоящая из свободного ПО с открытым исходным кодом" +
+            ". В настоящее время Debian GNU/Linux — один из самых популярных и важных дистриб" +
+            "утивов GNU/Linux, в первичной форме оказавший значительное влияние на развитие э" +
+            "того типа ОС в целом.</desc>\r\n            <desc lang=\"uk\">Debian (Debian GNU/Lin" +
+            "ux) — комп’ютерна операційна система, основний дистрибутив якої складається тіль" +
+            "ки з вільного програмного забезпечення (main-секції архіву Debian). Популярний т" +
+            "а впливовий дистрибутив GNU/Linux. Багатоцільова операційна система, що використ" +
+            "овується: настільними комп\'ютерами, лептопами, серверами, вбудованими системами." +
+            "</desc>\r\n            <desc lang=\"zh-Hans\">Debian是由GPL和其他自由软体许可协议授权的自由软体组成的作业系统，由" +
+            "Debian计画（Debian Project）组织维护。</desc>\r\n            <desc lang=\"zh-Hant\">Debian是由G" +
+            "PL和其他自由軟體許可協議授權的自由軟體組成的作業系統，由Debian計畫（Debian Project）組織維護。</desc>\r\n            <" +
+            "desc lang=\"es\">Debian GNU/Linux es un sistema operativo libre, desarrollado por " +
+            "miles de voluntarios alrededor del mundo, que colaboran a través de Internet.</d" +
+            "esc>\r\n        </description>\r\n        <versions>\r\n            <version>\r\n       " +
+            "         <hash>50ffc2920373b6168abb489f12ca4268</hash>\r\n                <name>De" +
+            "bian 8.2.0 x86 CD</name>\r\n                <download>http://cdimage.debian.org/de" +
+            "bian-cd/8.2.0/i386/iso-cd/debian-8.2.0-i386-CD-1.iso</download>\r\n               " +
+            " <filenameRegex>debian-8.2.0-i386-CD-1.iso</filenameRegex>\r\n            </versio" +
+            "n>\r\n            <version>\r\n                <hash>eb23f1b3aac17bf79c6dea38e930c08" +
+            "3</hash>\r\n                <name>Debian 8.2.0 x86 DVD</name>\r\n                <do" +
+            "wnload>http://cdimage.debian.org/debian-cd/8.2.0/i386/iso-dvd/debian-8.2.0-i386-" +
+            "DVD-1.iso</download>\r\n                <filenameRegex>debian-8.2.0-i386-DVD-1.iso" +
+            "</filenameRegex>\r\n            </version>\r\n            <version>\r\n               " +
+            " <hash>5e172c7df6ab46ded2f2b44df22e1ca2</hash>\r\n                <name>Debian 8.2" +
+            ".0 x64 CD</name>\r\n                <download>http://cdimage.debian.org/debian-cd/" +
+            "8.2.0/amd64/iso-cd/debian-8.2.0-amd64-CD-1.iso</download>\r\n                <file" +
+            "nameRegex>debian-8.2.0-amd64-CD-1.iso</filenameRegex>\r\n            </version>\r\n " +
+            "           <version>\r\n                <hash>6b753a489928c6be9e41c245681dca7e</ha" +
+            "sh>\r\n                <name>Debian 8.2.0 x64 DVD</name>\r\n                <downloa" +
+            "d>http://cdimage.debian.org/debian-cd/8.2.0/amd64/iso-dvd/debian-8.2.0-amd64-DVD" +
+            "-1.iso</download>\r\n                <filenameRegex>debian-8.2.0-amd64-DVD-1.iso</" +
+            "filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </version" +
+            ">\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Dr Web LiveDisk</na" +
+            "me>\r\n        <category>10</category>\r\n        <filenameRegex>^drweb-livedisk-(.*" +
+            ").iso$</filenameRegex>\r\n        <description>\r\n            <desc lang=\"fr\">Dr.We" +
+            "b est une entreprise de développement d\'antivirus russe, et porte le nom de son " +
+            "produit phare, Dr.Web. Initialement sorti en 1992, c\'est rapidement devenu l\'ant" +
+            "ivirus le plus utilisé en Russie. Dr.Web est une des quelques</desc>\r\n          " +
+            "  <desc lang=\"en\">Dr.Web is a Russian anti-malware company, and the name of its " +
+            "flagship software suite. First released in 1992, it became the first anti-virus " +
+            "service in Russia. Doctor Web is one of a few anti-virus vendors in the world th" +
+            "at owns its technologies for detecting and curing malware.</desc>\r\n            <" +
+            "desc lang=\"de\">Doctor Web, Ltd. ist Anbieter eigenentwickelter IT-Sicherheitslös" +
+            "ungen und Managed Security Services für IT-Provider. Die Antivirensoftware Dr.We" +
+            "b wird seit 1992 vom Firmengründer Igor Danilov (* 1964) entwickelt.</desc>\r\n   " +
+            "         <desc lang=\"ro\">Dr. Web este o suită de software anti-malware, precum ș" +
+            "i numele companiei rusești care îl produce. Lansat în 1992, Dr. Web a fost primu" +
+            "l serviciu anti-virus din Rusia.</desc>\r\n            <desc lang=\"ru\">Dr.Web (рус" +
+            ". Доктор Веб) — общее название семейства программного антивирусного ПО для разли" +
+            "чных платформ (Windows, OS X, Linux, мобильные платформы) и линейки программно-а" +
+            "ппаратных решений (Dr.Web Office Shield), а также решений для обеспечения безопа" +
+            "сности всех узлов корпоративной сети (Dr.Web Enterprise Suite).</desc>\r\n        " +
+            "    <desc lang=\"uk\">Dr. Web — антивіруси цього сімейства призначені для захисту " +
+            "від поштових і мережевих черв\'яків, руткітів, файлових вірусів, троянських прогр" +
+            "ам, стелс-вірусів, поліморфних вірусів, рекламного ПЗ (adware), потенційно небез" +
+            "печного ПЗ, хакерських утиліт, програм-люків, програм-жартів, від спаму, фішинг-" +
+            "повідомлень і технічного спаму.</desc>\r\n            <desc lang=\"zh-Hans\">Dr.Web（" +
+            "又名大蜘蛛）是来自 俄罗斯Doctor Web软体公司所开发的防毒软体。Dr.Web Anti-Virus在1992年首次发布，为俄罗斯第一所提供防毒服务的供应" +
+            "商。总部设于圣彼得堡，创始人为Igor Daniloff。</desc>\r\n            <desc lang=\"zh-Hant\">Dr.Web（又名" +
+            "大蜘蛛）是來自 俄羅斯Doctor Web軟體公司所開發的防毒軟體。Dr.Web Anti-Virus在1992年首次發布，為俄羅斯第一所提供防毒服務的供應商。" +
+            "總部設於聖彼得堡，創始人為Igor Daniloff。</desc>\r\n            <desc lang=\"es\">Dr. Web es una s" +
+            "uite de antivirus Ruso. Fue lanzado en 1992 y se convirtió en el primer servicio" +
+            " antivirus en Rusia.</desc>\r\n        </description>\r\n        <versions>\r\n       " +
+            "     <version>\r\n                <hash></hash>\r\n                <name>Dr Web Live" +
+            "Disk 9.0.0</name>\r\n                <download>http://download.geo.drweb.com/pub/d" +
+            "rweb/livedisk/drweb-livedisk-900-cd.iso</download>\r\n                <filenameReg" +
+            "ex>drweb-livedisk-900-cd.iso</filenameRegex>\r\n                <isLatest>true</is" +
+            "Latest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n   " +
+            "     <name>FreeBSD</name>\r\n        <category>3</category>\r\n        <filenameRege" +
+            "x>^FreeBSD-(.*).iso$</filenameRegex>\r\n        <description>\r\n            <desc l" +
+            "ang=\"fr\">FreeBSD est un système d\'exploitation UNIX libre. Le nom vient de l\'ass" +
+            "ociation d\'une part de free qui signifie à la fois \"libre\" et \"gratuit\" dans l\'a" +
+            "nglais courant, et d\'autre part de Berkeley software distribution (BSD), l\'UNIX " +
+            "développé à l\'université de Berkeley.</desc>\r\n            <desc lang=\"en\">FreeBS" +
+            "D is a free Unix-like operating system descended from Research Unix via the Berk" +
+            "eley Software Distribution (BSD). Although for legal reasons FreeBSD cannot use " +
+            "the Unix trademark, it is a direct descendant of BSD, which was historically als" +
+            "o called \"BSD Unix\" or \"Berkeley Unix\".</desc>\r\n            <desc lang=\"de\">Free" +
+            "BSD ist ein freies und vollständiges unixoides Betriebssystem, das direkt von de" +
+            "r Berkeley Software Distribution abstammt. Mit einer Community aus fast 390 daue" +
+            "rhaft aktiven, offiziellen und Tausenden mitwirkenden Entwicklern gehört FreeBSD" +
+            " zu den größten Open-Source-Projekten. Obwohl der Fokus der Entwickler auf der E" +
+            "rstellung einer stabilen Software-Plattform für Server und Appliances liegt, wir" +
+            "d es auch auf Desktop-Computern verwendet.</desc>\r\n            <desc lang=\"ro\">F" +
+            "reeBSD este un sistem de operare liber Unix-like descendent din AT&T UNIX(r) pri" +
+            "n ramura Berkeley Software Distribution (BSD), mai exact provine din sistemele d" +
+            "e operare 386BSD și 4.4BSD. Rulează pe calculatoare cu procesoare compatibile cu" +
+            " familia Intel x86, dar și pe procesoare DEC Alpha, UltraSPARC(r) (al firmei Sun" +
+            " Microsystems), Itanium (IA-64), AMD64, PowerPC, PC-98, ARM și MIPS.</desc>\r\n   " +
+            "         <desc lang=\"ru\">FreeBSD — свободная Unix-подобная операционная система," +
+            " потомок AT&T Unix по линии BSD, созданной в университете Беркли. FreeBSD работа" +
+            "ет на PC-совместимых системах семейства x86, включая Microsoft Xbox, а также на " +
+            "DEC Alpha, Sun UltraSPARC, IA-64, AMD64, PowerPC, NEC PC-98, ARM. Готовится подд" +
+            "ержка архитектуры MIPS.</desc>\r\n            <desc lang=\"uk\">FreeBSD — UNIX-подіб" +
+            "на операційна система, коріння якої тягнеться від AT&T UNIX, через Berkeley Soft" +
+            "ware Distribution (BSD) гілку операційних систем 386BSD та 4.4BSD. Працює на Int" +
+            "el x86 (IA-32), сумісних з ПК системах (включно з Microsoft Xbox, а також DEC Al" +
+            "pha, Sun, Itanium (IA-64), AMD64, PowerPC та NEC PC-98 архітектурах.</desc>\r\n   " +
+            "         <desc lang=\"zh-Hans\">FreeBSD是一种自由的类Unix操作系统，它起源于AT&T Unix，是经过BSD、386BSD" +
+            "（英语：386BSD）和4.4BSD（英语：Berkeley Software Distribution）发展而来的类Unix的一个重要分支。虽然出于法律原因F" +
+            "reeBSD不能称为Unix，但它是BSD的直接后裔，而BSD历史上被称为BSD Unix或Berkeley Unix。FreeBSD拥有超过200名活跃开发者" +
+            "和上千名贡献者。</desc>\r\n            <desc lang=\"zh-Hant\">FreeBSD是一種自由的類Unix操作系統，它起源於AT&" +
+            "T Unix，是經過BSD、386BSD（英語：386BSD）和4.4BSD（英語：Berkeley Software Distribution）發展而來的類U" +
+            "nix的一個重要分支。雖然出於法律原因FreeBSD不能稱為Unix，但它是BSD的直接後裔，而BSD歷史上被稱為BSD Unix或Berkeley Unix。" +
+            "FreeBSD擁有超過200名活躍開發者和上千名貢獻者。</desc>\r\n            <desc lang=\"es\">FreeBSD es un s" +
+            "istema operativo libre para computadoras basado en las CPU de arquitectura Intel" +
+            ", incluyendo procesadores Intel 80386, Intel 80486 (versiones SX y DX), y Pentiu" +
+            "m. También funciona en procesadores compatibles con Intel como AMD y Cyrix. Actu" +
+            "almente también es posible utilizarlo hasta en once arquitecturas distintas como" +
+            " Alpha, AMD64, IA-64, MIPS, PowerPC y UltraSPARC.</desc>\r\n        </description>" +
+            "\r\n        <versions>\r\n            <version>\r\n                <hash>b38c407d9f387" +
+            "0ad7583f3f62e8b0a68</hash>\r\n                <name>FreeBSD 10.2 x86</name>\r\n     " +
+            "           <download>http://ftp.freebsd.org/pub/FreeBSD/releases/i386/i386/ISO-I" +
+            "MAGES/10.2/FreeBSD-10.2-RELEASE-i386-dvd1.iso</download>\r\n                <filen" +
+            "ameRegex>/FreeBSD-10.2-RELEASE-i386-(.*).iso</filenameRegex>\r\n            </vers" +
+            "ion>\r\n            <version>\r\n                <hash>bbeb9d785d15d05333d1b99be88bc" +
+            "746</hash>\r\n                <name>FreeBSD 10.2 x64</name>\r\n                <down" +
+            "load>http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/10.2/Fre" +
+            "eBSD-10.2-RELEASE-amd64-dvd1.iso</download>\r\n                <filenameRegex>/Fre" +
+            "eBSD-10.2-RELEASE-amd64-(.*).iso</filenameRegex>\r\n                <isLatest>true" +
+            "</isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n    <app>\r" +
+            "\n        <name>FreeDOS</name>\r\n        <category>9</category>\r\n        <filename" +
+            "Regex>^fd11src.iso$</filenameRegex>\r\n        <description>\r\n            <desc la" +
+            "ng=\"fr\">FreeDOS est un système d\'exploitation complet, libre, et 100 % compatibl" +
+            "e MS-DOS.</desc>\r\n            <desc lang=\"en\">FreeDOS (formerly Free-DOS and PD-" +
+            "DOS) is a free operating system for IBM PC compatible computers. It intends to p" +
+            "rovide a complete DOS-compatible environment for running legacy software and sup" +
+            "porting embedded systems.</desc>\r\n            <desc lang=\"de\">FreeDOS ist ein Be" +
+            "triebssystem aus der Gruppe der DOS-Betriebssysteme. Die Entwicklung von FreeDOS" +
+            " findet innerhalb des FreeDOS-Projekts statt, in dem sich mehrere Einzelprojekte" +
+            " zusammengefunden haben, um eine freie und kompatible Alternative zum Betriebssy" +
+            "stem MS-DOS zu schaffen, dessen Weiterentwicklung von seinem Hersteller Microsof" +
+            "t eingestellt wurde.</desc>\r\n            <desc lang=\"ro\">FreeDOS (fostă gratuit " +
+            "Free-DOS și PD-DOS) este un sistem de operare pentru computere compatibile IBM. " +
+            "FreeDOS este compus din mai multe programe diferite, separate, care să acționeze" +
+            " ca \"pachete\" pentru a FreeDOS. Ca un membru al familiei DOS, acesta prevede în " +
+            "principal accesul la disc prin intermediul kernel-ului său și oferă management p" +
+            "arțial al memoriei, dar nu implicit GUI (deși Open GEM este listat pe site-ul of" +
+            "icial FreeDOS). </desc>\r\n            <desc lang=\"ru\">FreeDOS — операционная сист" +
+            "ема, совместимая с MS-DOS. FreeDOS распространяется на условиях GNU General Publ" +
+            "ic License, включает несколько программ под другими свободными и несвободными ли" +
+            "цензиями.</desc>\r\n            <desc lang=\"uk\">FreeDOS (колишній Free-DOS і PD-DO" +
+            "S) — операційна система для IBM-сумісних комп\'ютерів, створена як вільна альтерн" +
+            "атива DOS з оточенням з GNU утиліт. З областей застосування FreeDOS називається " +
+            "передустановлення на нові комп\'ютери, запуск старих ігор, використання на вбудов" +
+            "уваній техніці, створення CD/Flash для установки прошивок і налаштування материн" +
+            "ської плати, навчання студентів основам побудови операційних систем, запуск музи" +
+            "чного плеєра, використання в DOSEmu (емулятор DOS для Linux).</desc>\r\n          " +
+            "  <desc lang=\"zh-Hans\">FreeDOS（曾叫做Free-DOS和PD-DOS）是一个在IBM PC兼容机下运行的操作系统。FreeDOS由" +
+            "许多不同的独立程序组成，这些程序就是整个FreeDOS项目中的\"包\"。</desc>\r\n            <desc lang=\"zh-Hant\">Fre" +
+            "eDOS（曾叫做Free-DOS和PD-DOS）是一個在IBM PC兼容機下運行的操作系統。FreeDOS由許多不同的獨立程序組成，這些程序就是整個FreeDO" +
+            "S項目中的「包」。</desc>\r\n            <desc lang=\"es\">FreeDOS es un proyecto que aspira " +
+            "a crear un sistema operativo libre que sea totalmente compatible con las aplicac" +
+            "iones y los controladores de MS-DOS. El intérprete de línea de comandos usado po" +
+            "r FreeDOS se llama FreeCOM.</desc>\r\n        </description>\r\n        <versions>\r\n" +
+            "            <version>\r\n                <hash>c9bfcf2d08dbe8bdb1fe95fb339e0b2b</h" +
+            "ash>\r\n                <name>FreeDOS 1.0 (ISO, install only)</name>\r\n            " +
+            "    <download>http://www.freedos.org/download/download/fdbasecd.iso</download>\r\n" +
+            "                <filenameRegex>fdbasecd.iso</filenameRegex>\r\n            </versi" +
+            "on>\r\n            <version>\r\n                <hash>5008c37cf0506ed7a95b2cd8ecb7db" +
+            "77</hash>\r\n                <name>FreeDOS 1.0 (bootable floppy image)</name>\r\n   " +
             "             <download>http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/d" +
-            "istributions/1.1/fd11src.iso</download>\r\n                <filenameRegex>fd11src." +
-            "iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n            </ve" +
-            "rsion>\r\n        </versions>\r\n    </app>\r\n    <app>\r\n        <name>Kaspersky Resc" +
-            "ue Disk</name>\r\n        <category>10</category>\r\n        <filenameRegex>^kav_res" +
-            "cue_(.*).iso$</filenameRegex>\r\n        <description></description>\r\n        <ver" +
-            "sions>\r\n            <version>\r\n                <hash></hash>\r\n                <n" +
-            "ame>Kaspersky Rescue Disk 10</name>\r\n                <download>http://rescuedisk" +
-            ".kaspersky-labs.com/rescuedisk/updatable/kav_rescue_10.iso</download>\r\n         " +
-            "       <filenameRegex>kav_rescue_10.iso</filenameRegex>\r\n                <isLate" +
-            "st>true</isLatest>\r\n            </version>\r\n        </versions>\r\n    </app>\r\n   " +
-            " <!--\r\n\tCategories:\r\n\t\r\n\t-1\t\tNone\r\n\t0\t\tBackup\r\n\t1\t\tBIOS\r\n\t2\t\tCPU\r\n\t3\t\tLinux\r\n\t4\t" +
-            "\tPartition\r\n\t5\t\tPassword\r\n\t6\t\tRAM\r\n\t7\t\tRecovery\r\n\t8\t\tTesting\r\n\t9\t\tUtility\r\n\t10\t\t" +
-            "Antivirus\r\n\t11\t\tWindows\r\n\t\r\n\t-->\r\n</apps>")]
+            "istributions/1.0/fdboot.img</download>\r\n                <filenameRegex>fdboot.im" +
+            "g</filenameRegex>\r\n            </version>\r\n            <version>\r\n              " +
+            "  <hash>2e0ab23bec79ff33071d80ea26f124dc</hash>\r\n                <name>FreeDOS 1" +
+            ".1 (ISO, install only, include source)</name>\r\n                <download>http://" +
+            "www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/fd11src.iso</" +
+            "download>\r\n                <filenameRegex>fd11src.iso</filenameRegex>\r\n         " +
+            "       <isLatest>true</isLatest>\r\n            </version>\r\n        </versions>\r\n " +
+            "   </app>\r\n    <app>\r\n        <name>Kaspersky Rescue Disk</name>\r\n        <categ" +
+            "ory>10</category>\r\n        <filenameRegex>^kav_rescue_(.*).iso$</filenameRegex>\r" +
+            "\n        <description></description>\r\n        <versions>\r\n            <version>\r" +
+            "\n                <hash></hash>\r\n                <name>Kaspersky Rescue Disk 10</" +
+            "name>\r\n                <download>http://rescuedisk.kaspersky-labs.com/rescuedisk" +
+            "/updatable/kav_rescue_10.iso</download>\r\n                <filenameRegex>kav_resc" +
+            "ue_10.iso</filenameRegex>\r\n                <isLatest>true</isLatest>\r\n          " +
+            "  </version>\r\n        </versions>\r\n    </app>\r\n    <!--\r\n\tCategories:\r\n\t\r\n\t-1\t\tN" +
+            "one\r\n\t0\t\tBackup\r\n\t1\t\tBIOS\r\n\t2\t\tCPU\r\n\t3\t\tLinux\r\n\t4\t\tPartition\r\n\t5\t\tPassword\r\n\t6\t\t" +
+            "RAM\r\n\t7\t\tRecovery\r\n\t8\t\tTesting\r\n\t9\t\tUtility\r\n\t10\t\tAntivirus\r\n\t11\t\tWindows\r\n\t\r\n\t-" +
+            "->\r\n</apps>")]
         public string AppsXml {
             get {
                 return ((string)(this["AppsXml"]));
             }
             set {
                 this["AppsXml"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstLaunch {
+            get {
+                return ((bool)(this["FirstLaunch"]));
+            }
+            set {
+                this["FirstLaunch"] = value;
             }
         }
     }

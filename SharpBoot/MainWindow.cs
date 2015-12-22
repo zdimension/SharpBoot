@@ -226,6 +226,9 @@ namespace SharpBoot
 
         public MainWindow()
         {
+            if (Settings.Default.FirstLaunch)
+                this.Hide();
+
             DoubleBuffered = true;
             SetStyle(
                 ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer |
@@ -264,6 +267,14 @@ namespace SharpBoot
             updTmr = new Timer(300000);
             updTmr.Elapsed += UpdTmr_Elapsed;
             updTmr.Enabled = true;
+
+            if (Settings.Default.FirstLaunch)
+            {
+                var firstlaunch = new FirstLaunch();
+                firstlaunch.ShowDialog();
+
+                Show();
+            }
         }
 
         private void UpdTmr_Elapsed(object sender, System.Timers.ElapsedEventArgs e)

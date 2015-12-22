@@ -103,6 +103,12 @@
     <Compile Include="EditCodeFrm.Designer.cs">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirstLaunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirstLaunch.Designer.cs">
+      <DependentUpon>FirstLaunch.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenIsoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,9 @@
     </Compile>
     <Compile Include="TestFrm.Designer.cs">
       <DependentUpon>TestFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThreeStateButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="USBFrm.cs">
       <SubType>Form</SubType>
@@ -449,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCodeFrm.zh-Hant.resx">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirstLaunch.resx">
+      <DependentUpon>FirstLaunch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.cs.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
@@ -723,6 +735,9 @@
     <None Include="Resources\compile1.png" />
     <None Include="Resources\edit_package.png" />
     <None Include="Resources\arrow_refresh.png" />
+    <None Include="Resources\chevron_left.png" />
+    <None Include="Resources\chevron_left_h.png" />
+    <None Include="Resources\chevron_left_d.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

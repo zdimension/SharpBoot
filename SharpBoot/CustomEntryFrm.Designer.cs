@@ -56,9 +56,9 @@
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 325);
+            this.panel1.Location = new System.Drawing.Point(0, 321);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 59);
+            this.panel1.Size = new System.Drawing.Size(448, 59);
             this.panel1.TabIndex = 12;
             // 
             // btnOK
@@ -67,7 +67,7 @@
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Enabled = false;
             this.btnOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOK.Location = new System.Drawing.Point(277, 18);
+            this.btnOK.Location = new System.Drawing.Point(273, 18);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 5;
@@ -79,7 +79,7 @@
             this.btnAnnul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnul.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAnnul.Location = new System.Drawing.Point(358, 18);
+            this.btnAnnul.Location = new System.Drawing.Point(354, 18);
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.Size = new System.Drawing.Size(75, 23);
             this.btnAnnul.TabIndex = 4;
@@ -91,7 +91,7 @@
             this.cbxEntryType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEntryType.FormattingEnabled = true;
             this.cbxEntryType.Items.AddRange(new object[] {
-            "Windows ntldr",
+            "Windows ntldr/setupldr.bin/bootmgr/grldr",
             "Grub4DOS grldr",
             "NT/2000/XP cmldr",
             "FreeDOS kernel.sys",
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(452, 384);
+            this.ClientSize = new System.Drawing.Size(448, 380);
             this.ControlBox = false;
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.tbxDest);

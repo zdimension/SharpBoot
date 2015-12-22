@@ -36,7 +36,7 @@ namespace SharpBoot
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.btnCustomEntry = new System.Windows.Forms.Button();
             this.btnUSB = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@ namespace SharpBoot
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxBootloader = new System.Windows.Forms.ComboBox();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,7 +91,6 @@ namespace SharpBoot
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblDragHere = new System.Windows.Forms.Label();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
             this.pnlBottom.SuspendLayout();
             this.gbxTest.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -228,6 +228,16 @@ namespace SharpBoot
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnChecksum
+            // 
+            resources.ApplyResources(this.btnChecksum, "btnChecksum");
+            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
+            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
+            this.btnChecksum.Name = "btnChecksum";
+            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
+            this.btnChecksum.UseVisualStyleBackColor = true;
+            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
             // 
             // cmsChecksum
             // 
@@ -525,16 +535,6 @@ namespace SharpBoot
             this.lblDragHere.BackColor = System.Drawing.Color.White;
             this.lblDragHere.ForeColor = System.Drawing.Color.DarkGray;
             this.lblDragHere.Name = "lblDragHere";
-            // 
-            // btnChecksum
-            // 
-            resources.ApplyResources(this.btnChecksum, "btnChecksum");
-            this.btnChecksum.ContextMenuStrip = this.cmsChecksum;
-            this.btnChecksum.Image = global::SharpBoot.Properties.Resources.gear_in;
-            this.btnChecksum.Name = "btnChecksum";
-            this.btnChecksum.SplitMenuStrip = this.cmsChecksum;
-            this.btnChecksum.UseVisualStyleBackColor = true;
-            this.btnChecksum.Click += new System.EventHandler(this.btnChecksum_Click);
             // 
             // MainWindow
             // 
