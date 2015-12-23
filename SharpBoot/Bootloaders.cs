@@ -159,6 +159,8 @@ namespace SharpBoot
 
         public void SetImage(Image image, Size sz)
         {
+            if (image == null) return;
+
             var width = sz.Width;
             var height = sz.Height;
 
