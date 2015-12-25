@@ -224,9 +224,11 @@ namespace SharpBoot
 
         private Dictionary<string, string> CustomFiles = new Dictionary<string, string>();
 
+        private bool dev_FirstLaunch = false;
+
         public MainWindow()
         {
-            if (Settings.Default.FirstLaunch)
+            if (Settings.Default.FirstLaunch && dev_FirstLaunch)
                 this.Hide();
 
             DoubleBuffered = true;
@@ -268,7 +270,7 @@ namespace SharpBoot
             updTmr.Elapsed += UpdTmr_Elapsed;
             updTmr.Enabled = true;
 
-            if (Settings.Default.FirstLaunch)
+            if (Settings.Default.FirstLaunch && dev_FirstLaunch)
             {
                 var firstlaunch = new FirstLaunch();
                 firstlaunch.ShowDialog();
