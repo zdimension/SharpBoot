@@ -252,4 +252,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>磁碟區標籤</value>
+  </data>
 </root>

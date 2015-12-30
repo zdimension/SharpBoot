@@ -29,7 +29,7 @@ namespace SharpBoot
     {
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 988);
+            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + SelectedBootloader().Archive.Length + Resources.basedisk.Length);
 
             menuStrip.Renderer = Windows7Renderer.Instance;
 
@@ -317,7 +317,7 @@ namespace SharpBoot
             //mniUpdate.Visible = false;
         }
 
-        private static void g_GenerationFinished(GenIsoFrm g)
+        private void g_GenerationFinished(GenIsoFrm g)
         {
             Program.ClrTmp();
 
@@ -325,7 +325,7 @@ namespace SharpBoot
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
             if (
-                MessageBox.Show(Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
+                MessageBox.Show(this, Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 QEMUISO.LaunchQemu(g.OutputFilepath, g._usb);
@@ -427,6 +427,7 @@ namespace SharpBoot
 
         public IBootloader SelectedBootloader()
         {
+            if(cbxBootloader == null || cbxBootloader.SelectedItem == null) return new Syslinux();
             var selload = cbxBootloader.SelectedItem.ToString().ToLower().Trim();
             if (selload.StartsWith("syslinux")) selload = "syslinux";
 
@@ -700,11 +701,23 @@ namespace SharpBoot
             }
         }
 
+        private bool changTitle = false;
+
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {
-            var pos = txtTitle.SelectionStart;
-            txtTitle.Text = txtTitle.Text.RemoveAccent();
-            txtTitle.SelectionStart = pos;
+            if (changTitle) return;
+            var pos = txtTitle.SelectionStart - 1;
+            var t = new Dictionary<int, int>();
+            changTitle = true;
+            var old = txtTitle.Text;
+            txtTitle.Text = txtTitle.Text.RemoveAccent(out t);
+            changTitle = false;
+            if(pos == old.Length)
+            {
+                txtTitle.SelectionStart = txtTitle.Text.Length;
+            }
+            else txtTitle.SelectionStart = t.ContainsKey(pos) ? t[pos] : 0;
+            txtTitle.SelectionStart++;
         }
 
         private void btnInstBoot_Click(object sender, EventArgs e)
@@ -755,6 +768,8 @@ namespace SharpBoot
         {
             CheckGrub4Dos();
             Program.SupportAccent = SelectedBootloader().SupportAccent;
+            txtTitle_TextChanged(sender, e);
+            SetSize();
         }
 
         private void cbxBackType_SelectedIndexChanged(object sender, EventArgs e)

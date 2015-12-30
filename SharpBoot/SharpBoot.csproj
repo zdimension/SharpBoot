@@ -36,6 +36,8 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Awesomium.Core, Version=1.6.6.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214" />
+    <Reference Include="Awesomium.Windows.Forms, Version=1.6.6.0, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Pinyin4net">
       <HintPath>..\..\..\..\Téléchargements\Pinyin4net.dll</HintPath>
@@ -117,12 +119,6 @@
     </Compile>
     <Compile Include="GroupedComboBox.cs" />
     <Compile Include="ImageLine.cs" />
-    <Compile Include="DropDownSelector.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DropDownSelector.Designer.cs">
-      <DependentUpon>DropDownSelector.cs</DependentUpon>
-    </Compile>
     <Compile Include="ISOCat.cs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,22 +159,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MainWindow.zh-Hant.resx</DependentUpon>
     </Compile>
-    <Compile Include="PathSelector.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PathSelector.Designer.cs">
-      <DependentUpon>PathSelector.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="SelectorCtrl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SelectorCtrl.Designer.cs">
-      <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </Compile>
     <Compile Include="Strings.cs.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -411,6 +395,9 @@
     <EmbeddedResource Include="CustomFileFrm.es.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.fr.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomFileFrm.it.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -483,9 +470,6 @@
     <EmbeddedResource Include="GenIsoFrm.ro.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DropDownSelector.resx">
-      <DependentUpon>DropDownSelector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.ru.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,12 +531,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.zh-Hant.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PathSelector.resx">
-      <DependentUpon>PathSelector.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SelectorCtrl.resx">
-      <DependentUpon>SelectorCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.cs.resx">
       <Generator>ResXFileCodeGenerator</Generator>

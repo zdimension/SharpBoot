@@ -32,12 +32,12 @@ namespace SharpBoot
         {
             this.lblHeader = new System.Windows.Forms.Label();
             this.pnlBottom = new System.Windows.Forms.Panel();
+            this.btnRight = new SharpBoot.ThreeStateButton();
+            this.btnLeft = new SharpBoot.ThreeStateButton();
             this.btnSkip = new System.Windows.Forms.Button();
             this.tablessControl1 = new SharpBoot.TablessControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btnRight = new SharpBoot.ThreeStateButton();
-            this.btnLeft = new SharpBoot.ThreeStateButton();
             this.pnlBottom.SuspendLayout();
             this.tablessControl1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +67,41 @@ namespace SharpBoot
             this.pnlBottom.Name = "pnlBottom";
             this.pnlBottom.Size = new System.Drawing.Size(684, 60);
             this.pnlBottom.TabIndex = 14;
+            // 
+            // btnRight
+            // 
+            this.btnRight.BackgroundImage = global::SharpBoot.Properties.Resources.chevron_left;
+            this.btnRight.DownImage = global::SharpBoot.Properties.Resources.chevron_left_d;
+            this.btnRight.FlatAppearance.BorderSize = 0;
+            this.btnRight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRight.HoverImage = global::SharpBoot.Properties.Resources.chevron_left_h;
+            this.btnRight.Location = new System.Drawing.Point(350, 14);
+            this.btnRight.Name = "btnRight";
+            this.btnRight.NormalImage = global::SharpBoot.Properties.Resources.chevron_left;
+            this.btnRight.Size = new System.Drawing.Size(32, 32);
+            this.btnRight.TabIndex = 2;
+            this.btnRight.UseVisualStyleBackColor = true;
+            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
+            // 
+            // btnLeft
+            // 
+            this.btnLeft.BackgroundImage = global::SharpBoot.Properties.Resources.chevron_left;
+            this.btnLeft.DownImage = global::SharpBoot.Properties.Resources.chevron_left_d;
+            this.btnLeft.FlatAppearance.BorderSize = 0;
+            this.btnLeft.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnLeft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLeft.HoverImage = global::SharpBoot.Properties.Resources.chevron_left_h;
+            this.btnLeft.Location = new System.Drawing.Point(303, 14);
+            this.btnLeft.Name = "btnLeft";
+            this.btnLeft.NormalImage = global::SharpBoot.Properties.Resources.chevron_left;
+            this.btnLeft.Size = new System.Drawing.Size(32, 32);
+            this.btnLeft.TabIndex = 1;
+            this.btnLeft.UseVisualStyleBackColor = true;
+            this.btnLeft.Visible = false;
+            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
             // 
             // btnSkip
             // 
@@ -110,41 +145,6 @@ namespace SharpBoot
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btnRight
-            // 
-            this.btnRight.BackgroundImage = global::SharpBoot.Properties.Resources.chevron_left;
-            this.btnRight.DownImage = global::SharpBoot.Properties.Resources.chevron_left_d;
-            this.btnRight.FlatAppearance.BorderSize = 0;
-            this.btnRight.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnRight.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRight.HoverImage = global::SharpBoot.Properties.Resources.chevron_left_h;
-            this.btnRight.Location = new System.Drawing.Point(350, 14);
-            this.btnRight.Name = "btnRight";
-            this.btnRight.NormalImage = global::SharpBoot.Properties.Resources.chevron_left;
-            this.btnRight.Size = new System.Drawing.Size(32, 32);
-            this.btnRight.TabIndex = 2;
-            this.btnRight.UseVisualStyleBackColor = true;
-            this.btnRight.Click += new System.EventHandler(this.btnRight_Click);
-            // 
-            // btnLeft
-            // 
-            this.btnLeft.BackgroundImage = global::SharpBoot.Properties.Resources.chevron_left;
-            this.btnLeft.DownImage = global::SharpBoot.Properties.Resources.chevron_left_d;
-            this.btnLeft.FlatAppearance.BorderSize = 0;
-            this.btnLeft.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnLeft.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLeft.HoverImage = global::SharpBoot.Properties.Resources.chevron_left_h;
-            this.btnLeft.Location = new System.Drawing.Point(303, 14);
-            this.btnLeft.Name = "btnLeft";
-            this.btnLeft.NormalImage = global::SharpBoot.Properties.Resources.chevron_left;
-            this.btnLeft.Size = new System.Drawing.Size(32, 32);
-            this.btnLeft.TabIndex = 1;
-            this.btnLeft.UseVisualStyleBackColor = true;
-            this.btnLeft.Visible = false;
-            this.btnLeft.Click += new System.EventHandler(this.btnLeft_Click);
-            // 
             // FirstLaunch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -158,6 +158,7 @@ namespace SharpBoot
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FirstLaunch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.pnlBottom.ResumeLayout(false);
             this.tablessControl1.ResumeLayout(false);
             this.ResumeLayout(false);

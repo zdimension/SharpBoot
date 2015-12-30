@@ -252,4 +252,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>返回</value>
   </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>卷标</value>
+  </data>
 </root>

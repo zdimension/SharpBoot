@@ -220,6 +220,12 @@ namespace SharpBoot
 
         public static string RemoveAccent(this string str)
         {
+            var t = new Dictionary<int, int>();
+            return RemoveAccent(str, out t);
+        }
+
+        public static string RemoveAccent(this string str, out Dictionary<int, int> charIndexes)
+        {
             var replchar = new Dictionary<string, string>
             {
                 {"і", "i"}, // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
@@ -231,19 +237,41 @@ namespace SharpBoot
             str = replchar.Aggregate(str, (current, rc) => current.Replace(rc.Key, rc.Value));
 
             str = str.Normalize(NormalizationForm.FormC);
-            str = str.ChineseToPinyin();
+            //str = str.ChineseToPinyin();
 
             var supported =
                 string.Concat(
                     Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => GetEnc().GetString(new[] {(byte) x})[0]));
-            var normalizedString = str.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder();
 
-            for (var i = 0; i < str.Length; i++)
+            charIndexes = new Dictionary<int, int>();
+
+            for (int i = 0; i < str.Length; i++)
             {
-                stringBuilder.Append((supported.Contains(str[i]) || char.IsWhiteSpace(str[i]))
-                    ? str[i]
-                    : normalizedString[i]);
+                var t = str[i];
+                var newidx = i;
+                if (supported.Contains(t) || char.IsWhiteSpace(t))
+                {
+                    stringBuilder.Append(t);
+                }
+                else
+                {
+                    var ctp = t.ToString().ChineseToPinyin();
+                    if (ctp == t.ToString())
+                    {
+                        stringBuilder.Append(
+                            Encoding.UTF8.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(t + "")));
+
+                        
+                    }
+                    else
+                    {
+                        stringBuilder.Append(ctp);
+                    }
+
+                    newidx = stringBuilder.Length - 1;
+                }
+                charIndexes.Add(i, newidx);
             }
 
 

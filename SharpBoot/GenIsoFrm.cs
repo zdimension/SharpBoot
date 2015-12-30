@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 using SharpBoot.Properties;
 
 namespace SharpBoot
@@ -42,7 +43,6 @@ namespace SharpBoot
         {
             ChangeProgress(100, 100, "");
             GenerationFinished?.Invoke(this, e);
-
             BeginInvoke(new CloseDelegate(CloseD));
         }
 
@@ -188,9 +188,21 @@ namespace SharpBoot
                         return;
                     }
                     ChangeProgress(0, 100, Strings.Formatting);
+                    var askform = new AskPath();
+                    askform.SetTextMode(Text, Strings.VolumeLabel, string.Concat(Title.Where(char.IsLetter)));
+                    var volumeLabel = "";
+                    if(askform.ShowDialog(this) == DialogResult.OK)
+                    {
+                        volumeLabel = askform.FileName;
+                    }
+                    else
+                    {
+                        abort = true;
+                        return;
+                    }
                     uint res = 1;
                     if ((res = Utils.FormatDrive(OutputFilepath.Substring(0, 2), filesystem,
-                        label: string.Concat(Title.Where(char.IsLetter)))) == 0)
+                        label: volumeLabel)) == 0)
                     {
                         ChangeProgress(100, 100, Strings.Formatting);
 

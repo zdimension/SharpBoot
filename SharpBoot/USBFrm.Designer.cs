@@ -31,10 +31,11 @@ namespace SharpBoot
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(USBFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(USBFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPercent = new System.Windows.Forms.Label();
             this.pbxPrg = new System.Windows.Forms.ProgressBar();
+            this.btnOK = new System.Windows.Forms.Button();
             this.btnAnnul = new System.Windows.Forms.Button();
             this.cbxUSB = new System.Windows.Forms.ComboBox();
             this.lblHeader = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@ namespace SharpBoot
             this.lblCbx = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,14 @@ namespace SharpBoot
             // 
             resources.ApplyResources(this.pbxPrg, "pbxPrg");
             this.pbxPrg.Name = "pbxPrg";
+            // 
+            // btnOK
+            // 
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Image = global::SharpBoot.Properties.Resources.accept_button;
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnAnnul
             // 
@@ -115,14 +123,6 @@ namespace SharpBoot
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnOK
-            // 
-            resources.ApplyResources(this.btnOK, "btnOK");
-            this.btnOK.Image = global::SharpBoot.Properties.Resources.accept_button;
-            this.btnOK.Name = "btnOK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // USBFrm
             // 

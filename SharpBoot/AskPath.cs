@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace SharpBoot
@@ -17,6 +18,15 @@ namespace SharpBoot
         private void tbxDest_TextChanged(object sender, EventArgs e)
         {
             btnOK.Enabled = !(string.IsNullOrWhiteSpace(tbxDest.Text));
+        }
+
+        public void SetTextMode(string title, string message, string def = "")
+        {
+            Text = title;
+            label1.Text = message;
+            btnBrowse.Visible = false;
+            tbxDest.Text = def;
+            tbxDest.Size = new Size(431, tbxDest.Height);
         }
 
         private void btnBrowse_Click(object sender, EventArgs e)

@@ -31,7 +31,7 @@ namespace SharpBoot
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(GenIsoFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenIsoFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAnnul = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -42,9 +42,9 @@ namespace SharpBoot
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnAnnul

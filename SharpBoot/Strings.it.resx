@@ -255,4 +255,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancella</value>
   </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Etichetta di volume:</value>
+  </data>
 </root>

@@ -32,7 +32,7 @@ namespace SharpBoot
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnOK = new System.Windows.Forms.Button();
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
             this.richTextBox1 = new SharpBoot.DisabledRichTextBox();

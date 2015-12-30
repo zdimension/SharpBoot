@@ -252,4 +252,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Volumebezeichnung:</value>
+  </data>
 </root>

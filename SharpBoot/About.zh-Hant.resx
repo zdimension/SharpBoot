@@ -132,7 +132,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABS
-        DQAAAk1TRnQBSQFMAgEBCgEAAYQBAgGEAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        DQAAAk1TRnQBSQFMAgEBCgEAAYwBAgGMAQIBEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAATADAAEBAQABCAYAAQwYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -196,6 +196,22 @@
   </data>
   <data name="richTextBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>556, 319</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>SharpBoot
+Copyright © 2014-2015 zdimension 
+
+{0}
+- 7-zip 9.20 © 2013 Igor Pavlov  http://www.7-zip.org/
+- QEMU 1.5.1 © Various authors  http://www.qemu.org/
+- ImageMagick 6.8.9-Q16 © 1999-2014 ImageMagick Studio LLC  http://www.imagemagick.org/
+- Syslinux 6.03 © H. Peter Anvin et al  http://www.syslinux.org/
+- Grub4DOS 0.4.6a ; grubinst 1.1  https://gna.org/projects/grub4dos/
+- GroupedComboBox © 2014 Bradley Smith  http://www.brad-smith.info/blog/archives/104
+- Windows 7 Renderer © 2011 Andrea Martinelli  https://windows7renderer.codeplex.com/
+- LibZ 1.1.0.2 © 2013-2014 Milosz Krajewski  https://github.com/MiloszKrajewski/LibZ
+- pinyin4net © 2012 YangKuang  https://github.com/YangKuang/pinyin4net
+- FatCow Hosting Icons © 2015 FatCow Web Hosting  http://www.fatcow.com/free-icons</value>
   </data>
   <data name="rbnHelpTranslate.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 430</value>

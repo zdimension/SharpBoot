@@ -31,7 +31,7 @@ namespace SharpBoot
         /// </summary>
         private void InitializeComponent()
         {
-            var resources = new System.ComponentModel.ComponentResourceManager(typeof(AddIso));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddIso));
             this.btnAnnul = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
@@ -65,10 +65,10 @@ namespace SharpBoot
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnOK
@@ -95,8 +95,8 @@ namespace SharpBoot
             // 
             // txtFile
             // 
-            resources.ApplyResources(this.txtFile, "txtFile");
             this.txtFile.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txtFile, "txtFile");
             this.txtFile.Name = "txtFile";
             this.txtFile.ReadOnly = true;
             this.txtFile.TextChanged += new System.EventHandler(this.txtFile_TextChanged);
@@ -130,9 +130,9 @@ namespace SharpBoot
             // 
             // cbxVersion
             // 
-            resources.ApplyResources(this.cbxVersion, "cbxVersion");
             this.cbxVersion.DisplayMember = "Name";
             this.cbxVersion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cbxVersion, "cbxVersion");
             this.cbxVersion.FormattingEnabled = true;
             this.cbxVersion.Name = "cbxVersion";
             // 
@@ -148,50 +148,50 @@ namespace SharpBoot
             // 
             // rtbIsoDesc
             // 
-            resources.ApplyResources(this.rtbIsoDesc, "rtbIsoDesc");
             this.rtbIsoDesc.BackColor = System.Drawing.Color.White;
             this.rtbIsoDesc.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbIsoDesc.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.rtbIsoDesc, "rtbIsoDesc");
             this.rtbIsoDesc.Name = "rtbIsoDesc";
             // 
             // cbxDetIso
             // 
-            resources.ApplyResources(this.cbxDetIso, "cbxDetIso");
             this.cbxDetIso.DataSource = null;
             this.cbxDetIso.DisplayMember = "Name";
             this.cbxDetIso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDetIso.FormattingEnabled = true;
             this.cbxDetIso.GroupMember = "Category";
             this.cbxDetIso.ImageMember = null;
+            resources.ApplyResources(this.cbxDetIso, "cbxDetIso");
             this.cbxDetIso.Name = "cbxDetIso";
             this.cbxDetIso.ValueMember = "Val";
             this.cbxDetIso.SelectedIndexChanged += new System.EventHandler(this.cbxDetIso_SelectedIndexChanged);
             // 
             // cbxISOS
             // 
-            resources.ApplyResources(this.cbxISOS, "cbxISOS");
             this.cbxISOS.DataSource = null;
             this.cbxISOS.DisplayMember = "Name";
             this.cbxISOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxISOS.FormattingEnabled = true;
             this.cbxISOS.GroupMember = "Category";
             this.cbxISOS.ImageMember = null;
+            resources.ApplyResources(this.cbxISOS, "cbxISOS");
             this.cbxISOS.Name = "cbxISOS";
             this.cbxISOS.ValueMember = "Val";
             this.cbxISOS.SelectedIndexChanged += new System.EventHandler(this.cbxISOS_SelectedIndexChanged);
             // 
             // pbxLoading
             // 
-            resources.ApplyResources(this.pbxLoading, "pbxLoading");
             this.pbxLoading.BackColor = System.Drawing.Color.Transparent;
             this.pbxLoading.Image = global::SharpBoot.Properties.Resources.ajax_loader;
+            resources.ApplyResources(this.pbxLoading, "pbxLoading");
             this.pbxLoading.Name = "pbxLoading";
             this.pbxLoading.TabStop = false;
             // 
             // btnBrowse
             // 
-            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Image = global::SharpBoot.Properties.Resources.folder;
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);

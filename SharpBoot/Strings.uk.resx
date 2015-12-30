@@ -255,4 +255,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>Відмінити</value>
   </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Позначка тому:</value>
+  </data>
 </root>

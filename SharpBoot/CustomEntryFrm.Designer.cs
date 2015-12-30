@@ -56,9 +56,9 @@
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 321);
+            this.panel1.Location = new System.Drawing.Point(0, 317);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(448, 59);
+            this.panel1.Size = new System.Drawing.Size(444, 59);
             this.panel1.TabIndex = 12;
             // 
             // btnOK
@@ -67,7 +67,7 @@
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOK.Enabled = false;
             this.btnOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOK.Location = new System.Drawing.Point(273, 18);
+            this.btnOK.Location = new System.Drawing.Point(269, 18);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 5;
@@ -79,7 +79,7 @@
             this.btnAnnul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAnnul.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAnnul.Location = new System.Drawing.Point(354, 18);
+            this.btnAnnul.Location = new System.Drawing.Point(350, 18);
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.Size = new System.Drawing.Size(75, 23);
             this.btnAnnul.TabIndex = 4;
@@ -102,7 +102,7 @@
             "ReactOS freeldr"});
             this.cbxEntryType.Location = new System.Drawing.Point(11, 53);
             this.cbxEntryType.Name = "cbxEntryType";
-            this.cbxEntryType.Size = new System.Drawing.Size(432, 23);
+            this.cbxEntryType.Size = new System.Drawing.Size(421, 23);
             this.cbxEntryType.TabIndex = 13;
             this.cbxEntryType.SelectedIndexChanged += new System.EventHandler(this.cbxEntryType_SelectedIndexChanged);
             // 
@@ -110,7 +110,7 @@
             // 
             this.btnBrowse.Image = global::SharpBoot.Properties.Resources.folder;
             this.btnBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBrowse.Location = new System.Drawing.Point(413, 105);
+            this.btnBrowse.Location = new System.Drawing.Point(402, 105);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(31, 25);
             this.btnBrowse.TabIndex = 15;
@@ -121,7 +121,7 @@
             // 
             this.tbxDest.Location = new System.Drawing.Point(11, 106);
             this.tbxDest.Name = "tbxDest";
-            this.tbxDest.Size = new System.Drawing.Size(396, 23);
+            this.tbxDest.Size = new System.Drawing.Size(385, 23);
             this.tbxDest.TabIndex = 14;
             this.tbxDest.TextChanged += new System.EventHandler(this.tbxDest_TextChanged);
             // 
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(448, 380);
+            this.ClientSize = new System.Drawing.Size(444, 376);
             this.ControlBox = false;
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.tbxDest);
@@ -144,6 +144,7 @@
             this.Name = "CustomEntryFrm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
