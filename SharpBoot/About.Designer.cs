@@ -35,12 +35,12 @@ namespace SharpBoot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnOK = new System.Windows.Forms.Button();
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
-            this.richTextBox1 = new SharpBoot.DisabledRichTextBox();
-            this.rtbMyWebsite = new SharpBoot.DisabledRichTextBox();
-            this.rbnHelpTranslate = new SharpBoot.DisabledRichTextBox();
             this.lvTranslators = new SharpBoot.CustomListView();
             this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBox1 = new SharpBoot.DisabledRichTextBox();
+            this.rtbMyWebsite = new SharpBoot.DisabledRichTextBox();
+            this.rbnHelpTranslate = new SharpBoot.DisabledRichTextBox();
             this.SuspendLayout();
             // 
             // btnOK
@@ -64,33 +64,6 @@ namespace SharpBoot
             this.ilTranslators.Images.SetKeyName(7, "flag_spain.png");
             this.ilTranslators.Images.SetKeyName(8, "flag_czech_republic.png");
             this.ilTranslators.Images.SetKeyName(9, "flag_italy.png");
-            // 
-            // richTextBox1
-            // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            // 
-            // rtbMyWebsite
-            // 
-            resources.ApplyResources(this.rtbMyWebsite, "rtbMyWebsite");
-            this.rtbMyWebsite.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbMyWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rtbMyWebsite.Name = "rtbMyWebsite";
-            this.rtbMyWebsite.ReadOnly = true;
-            this.rtbMyWebsite.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            // 
-            // rbnHelpTranslate
-            // 
-            resources.ApplyResources(this.rbnHelpTranslate, "rbnHelpTranslate");
-            this.rbnHelpTranslate.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rbnHelpTranslate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbnHelpTranslate.Name = "rbnHelpTranslate";
-            this.rbnHelpTranslate.ReadOnly = true;
-            this.rbnHelpTranslate.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // lvTranslators
             // 
@@ -128,6 +101,33 @@ namespace SharpBoot
             // clmnURL
             // 
             resources.ApplyResources(this.clmnURL, "clmnURL");
+            // 
+            // richTextBox1
+            // 
+            resources.ApplyResources(this.richTextBox1, "richTextBox1");
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            // 
+            // rtbMyWebsite
+            // 
+            resources.ApplyResources(this.rtbMyWebsite, "rtbMyWebsite");
+            this.rtbMyWebsite.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbMyWebsite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rtbMyWebsite.Name = "rtbMyWebsite";
+            this.rtbMyWebsite.ReadOnly = true;
+            this.rtbMyWebsite.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            // 
+            // rbnHelpTranslate
+            // 
+            resources.ApplyResources(this.rbnHelpTranslate, "rbnHelpTranslate");
+            this.rbnHelpTranslate.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rbnHelpTranslate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbnHelpTranslate.Name = "rbnHelpTranslate";
+            this.rbnHelpTranslate.ReadOnly = true;
+            this.rbnHelpTranslate.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // About
             // 
