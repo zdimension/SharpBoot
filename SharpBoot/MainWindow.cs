@@ -29,7 +29,7 @@ namespace SharpBoot
     {
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + SelectedBootloader().Archive.Length + Resources.basedisk.Length);
+            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + SelectedBootloader().TotalSize + Utils.SIZE_BASEDISK);
 
             menuStrip.Renderer = Windows7Renderer.Instance;
 
@@ -263,12 +263,8 @@ namespace SharpBoot
                 {
                 }
             };
-            mniUpdate.Visible = true;
-            checkForUpdates();
 
-            updTmr = new Timer(300000);
-            updTmr.Elapsed += UpdTmr_Elapsed;
-            updTmr.Enabled = true;
+
 
             if (Settings.Default.FirstLaunch && dev_FirstLaunch)
             {
@@ -277,15 +273,6 @@ namespace SharpBoot
 
                 Show();
             }
-        }
-
-        private void UpdTmr_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            mniUpdate.Visible = true;
-
-            ISOInfo.RefreshISOs();
-            mniUpdate.Visible = true;
-            checkForUpdates();
         }
 
         private bool update_available;
@@ -562,11 +549,19 @@ namespace SharpBoot
             Cursor = Cursors.Default;
         }
 
+        private void theupdate()
+        {
+            mniUpdate.Visible = true;
+            checkForUpdates();
+            mniUpdate.Visible = true;
+            ISOInfo.RefreshISOs();
+        }
+
         private void MainWindow_Load(object sender, EventArgs e)
         {
             SetSize();
             centerDragndrop();
-            UpdTmr_Elapsed(this, null);
+            theupdate();
         }
 
         private bool changing;

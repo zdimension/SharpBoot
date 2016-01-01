@@ -36,6 +36,8 @@ namespace SharpBoot
         Size Resolution { get; set; }
 
         bool SupportAccent { get; set; }
+
+        long TotalSize { get; set; }
     }
 
     public class Syslinux : IBootloader
@@ -189,6 +191,7 @@ namespace SharpBoot
 
         public string BinFile { get; set; } = "boot/syslinux/isolinux.bin";
         public byte[] Archive { get; set; } = Resources.syslinux1;
+        public long TotalSize { get; set; } = 1064874;
 
         private static string splitwidth(string s, int w)
         {
@@ -392,6 +395,8 @@ namespace SharpBoot
 
         public string BinFile { get; set; } = "grldr";
         public byte[] Archive { get; set; } = Resources.grub4dos;
+
+        public long TotalSize { get; set; } = 280911;
     }
 
     public class SyslinuxTheme

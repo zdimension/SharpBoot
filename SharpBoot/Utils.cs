@@ -18,6 +18,9 @@ namespace SharpBoot
 {
     public static class Utils
     {
+        public const long SIZE_BASEDISK = 0;
+
+
         public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
 
         public static string FormatEx(this string s, params object[] args)
