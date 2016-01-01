@@ -191,7 +191,7 @@ namespace SharpBoot
                     var askform = new AskPath();
                     askform.SetTextMode(Text, Strings.VolumeLabel, string.Concat(Title.Where(char.IsLetter)));
                     var volumeLabel = "";
-                    if(askform.ShowDialog(this) == DialogResult.OK)
+                    if(askform.ShowDialog() == DialogResult.OK)
                     {
                         volumeLabel = askform.FileName;
                     }
@@ -524,8 +524,11 @@ namespace SharpBoot
         private void SetCancel()
         {
             ChangeProgress(0, 100, Strings.OpCancelled);
-            btnAnnul.Text = Strings.Close;
-            btnAnnul.DialogResult = DialogResult.Cancel;
+            btnAnnul.Invoke((MethodInvoker) (() =>
+            {
+                btnAnnul.Text = Strings.Close;
+                btnAnnul.DialogResult = DialogResult.Cancel;
+            }));
         }
 
         private void GenF(string f)
@@ -541,7 +544,7 @@ namespace SharpBoot
                 }
             }
 
-            OnFinished(EventArgs.Empty);
+            Invoke((MethodInvoker) (() => OnFinished(EventArgs.Empty)));
 
             Program.ClrTmp();
         }

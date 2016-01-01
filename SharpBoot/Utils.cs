@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -20,7 +21,12 @@ namespace SharpBoot
     {
         public const long SIZE_BASEDISK = 0;
 
-
+        public static byte[] ToByteArray(this Image img)
+        {
+            var ms = new MemoryStream();
+            img.Save(ms, ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
         public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
 
         public static string FormatEx(this string s, params object[] args)

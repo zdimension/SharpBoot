@@ -352,6 +352,7 @@ namespace SharpBoot
             var ext = new SevenZipExtractor();
             ext.Extract(Path.Combine(convertdir, "convert.7z"), convertdir);
 
+
             var p = new Process
             {
                 StartInfo =
@@ -365,6 +366,14 @@ namespace SharpBoot
             p.StartInfo.Arguments += " ../sharpboot.bmp ../sharpboot.xpm.lzma";
             Thread.Sleep(300);
             var begin = DateTime.Now;
+            while(!File.Exists(p.StartInfo.FileName))
+            {
+                if ((DateTime.Now - begin).TotalSeconds > 15)
+                {
+                    break;
+                }
+            }
+            begin = DateTime.Now;
             p.Start();
             while (!File.Exists(Path.Combine(WorkingDir, "sharpboot.xpm.lzma")))
             {
@@ -373,7 +382,7 @@ namespace SharpBoot
                     p.Start();
                     continue;
                 }
-                if ((DateTime.Now - begin).TotalSeconds > 1000)
+                if ((DateTime.Now - begin).TotalSeconds > 15)
                 {
                     break;
                 }

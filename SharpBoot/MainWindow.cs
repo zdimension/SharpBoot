@@ -29,7 +29,7 @@ namespace SharpBoot
     {
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + SelectedBootloader().TotalSize + Utils.SIZE_BASEDISK);
+            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + SelectedBootloader().TotalSize + Utils.SIZE_BASEDISK + SelectedBackground.Length);
 
             menuStrip.Renderer = Windows7Renderer.Instance;
 
@@ -37,6 +37,16 @@ namespace SharpBoot
         }
 
         private Dictionary<string, Tuple<CultureInfo, bool>> lngs = new Dictionary<string, Tuple<CultureInfo, bool>>();
+
+        public byte[] SelectedBackground
+            =>
+                cbxBackType.SelectedIndex == 0
+                    ? Resources.sharpboot
+                    : cbxBackType.SelectedIndex == 1
+                        ? File.Exists(txtBackFile.Text) ? Image.FromFile(txtBackFile.Text).ToByteArray() : new byte[] {}
+                        : new byte[] {};
+
+
 
 
         private void loadlng()
@@ -590,9 +600,12 @@ namespace SharpBoot
             }
         }*/
 
+        private bool selectingboot = false;
+
         public void CheckGrub4Dos()
         {
-            if (cbxBackType.SelectedIndex == 0 && cbxBootloader.SelectedIndex == 1) cbxBackType.SelectedIndex = 2;
+            if (cbxBackType.SelectedIndex == 0 && cbxBootloader.SelectedIndex == 1 && selectingboot) cbxBackType.SelectedIndex = 2;
+            selectingboot = false;
             cbxRes.Enabled = !(cbxBackType.SelectedIndex == 2 && cbxBootloader.SelectedIndex == 1);
             if (cbxBackType.SelectedIndex == 1 && File.Exists(txtBackFile.Text) && cbxBootloader.SelectedIndex == 1)
             {
@@ -761,6 +774,7 @@ namespace SharpBoot
 
         private void cbxBootloader_SelectedIndexChanged(object sender, EventArgs e)
         {
+            selectingboot = true;
             CheckGrub4Dos();
             Program.SupportAccent = SelectedBootloader().SupportAccent;
             txtTitle_TextChanged(sender, e);
@@ -773,6 +787,7 @@ namespace SharpBoot
             if (cbxBackType.SelectedIndex != 1) txtBackFile.Text = "";
             CheckFields();
             CheckGrub4Dos();
+            SetSize();
         }
 
         private void lvIsos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -844,6 +859,11 @@ namespace SharpBoot
                 SetSize();
                 lvIsos.Rows.Add(im.Name, Program.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
             }
+        }
+
+        private void txtBackFile_TextChanged(object sender, EventArgs e)
+        {
+            SetSize();
         }
     }
 }
