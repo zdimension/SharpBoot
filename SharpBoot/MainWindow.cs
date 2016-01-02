@@ -86,6 +86,7 @@ namespace SharpBoot
             centerDragndrop();
             lngs.Clear();
             loadlng();
+            LoadResolutions();
             cbxBootloader.SelectedIndex = 0;
             cbxRes.SelectedIndex = 0;
             cbxBackType.SelectedIndex = 0;
@@ -524,9 +525,13 @@ namespace SharpBoot
                 {
                     cbxRes.SelectedIndex = 1;
                 }
-                else
+                else if(img.Width >= 912 && img.Width < 1152)
                 {
                     cbxRes.SelectedIndex = 2;
+                }
+                else
+                {
+                    cbxRes.SelectedIndex = 3;
                 }
 
                 txtBackFile.Text = ofpI.FileName;
@@ -859,6 +864,19 @@ namespace SharpBoot
                 SetSize();
                 lvIsos.Rows.Add(im.Name, Program.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
             }
+        }
+
+        private void LoadResolutions()
+        {
+            var res = new[]
+            {
+                new {Val = new Size(640, 480), Disp = "640x480", Ratio = "4/3 (1.33)"},
+                new {Val = new Size(800, 600), Disp = "800x600", Ratio = "4/3 (1.33)"},
+                new {Val = new Size(1024, 768), Disp = "1024x768", Ratio = "4/3 (1.33)"},
+                new {Val = new Size(1280, 1024), Disp = "1280x1024", Ratio = "5/4 (1.25)"}
+            };
+            cbxRes.Sorted = false;
+            cbxRes.DataSource = res;
         }
 
         private void txtBackFile_TextChanged(object sender, EventArgs e)

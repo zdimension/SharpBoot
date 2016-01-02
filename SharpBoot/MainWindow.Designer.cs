@@ -47,7 +47,6 @@ namespace SharpBoot
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCustomCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbxRes = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbxBootloader = new System.Windows.Forms.ComboBox();
             this.btnAbout = new System.Windows.Forms.Button();
@@ -90,6 +89,7 @@ namespace SharpBoot
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblDragHere = new System.Windows.Forms.Label();
+            this.cbxRes = new GroupedComboBox();
             this.btnChecksum = new wyDay.Controls.SplitButton();
             this.pnlBottom.SuspendLayout();
             this.gbxTest.SuspendLayout();
@@ -191,17 +191,6 @@ namespace SharpBoot
             this.groupBox3.Controls.Add(this.cbxRes);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            // 
-            // cbxRes
-            // 
-            this.cbxRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxRes.FormattingEnabled = true;
-            this.cbxRes.Items.AddRange(new object[] {
-            resources.GetString("cbxRes.Items"),
-            resources.GetString("cbxRes.Items1"),
-            resources.GetString("cbxRes.Items2")});
-            resources.ApplyResources(this.cbxRes, "cbxRes");
-            this.cbxRes.Name = "cbxRes";
             // 
             // groupBox2
             // 
@@ -527,6 +516,19 @@ namespace SharpBoot
             this.lblDragHere.ForeColor = System.Drawing.Color.DarkGray;
             this.lblDragHere.Name = "lblDragHere";
             // 
+            // cbxRes
+            // 
+            this.cbxRes.AutoSort = false;
+            this.cbxRes.DataSource = null;
+            this.cbxRes.DisplayMember = "Disp";
+            this.cbxRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxRes.FormattingEnabled = true;
+            this.cbxRes.GroupMember = "Ratio";
+            this.cbxRes.ImageMember = null;
+            resources.ApplyResources(this.cbxRes, "cbxRes");
+            this.cbxRes.Name = "cbxRes";
+            this.cbxRes.ValueMember = "Val";
+            // 
             // btnChecksum
             // 
             resources.ApplyResources(this.btnChecksum, "btnChecksum");
@@ -612,7 +614,7 @@ namespace SharpBoot
         private GroupBox groupBox2;
         private ComboBox cbxBootloader;
         private GroupBox groupBox3;
-        private ComboBox cbxRes;
+        private GroupedComboBox cbxRes;
         private ComboBox cbxBackType;
         private Button btnUSB;
         private ToolStripMenuItem mD5ToolStripMenuItem;

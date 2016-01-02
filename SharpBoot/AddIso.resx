@@ -150,30 +150,6 @@
   <data name="&gt;&gt;btnAnnul.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="btnOK.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 18</value>
-  </data>
-  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
-  </data>
-  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="btnOK.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
   </data>
@@ -209,6 +185,42 @@
   </data>
   <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnOK.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>340, 18</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btnOK.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -526,7 +538,7 @@
     <value>rtbIsoDesc</value>
   </data>
   <data name="&gt;&gt;rtbIsoDesc.Type" xml:space="preserve">
-    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtbIsoDesc.Parent" xml:space="preserve">
     <value>$this</value>
@@ -553,7 +565,7 @@
     <value>cbxDetIso</value>
   </data>
   <data name="&gt;&gt;cbxDetIso.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxDetIso.Parent" xml:space="preserve">
     <value>$this</value>
@@ -580,7 +592,7 @@
     <value>cbxISOS</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Parent" xml:space="preserve">
     <value>$this</value>

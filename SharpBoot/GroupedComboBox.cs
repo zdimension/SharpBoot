@@ -1087,7 +1087,7 @@ public class GroupedComboBox : ComboBox, IComparer
         // rebuild the collection and sort using custom logic
         _internalItems.Clear();
         foreach (var item in _bindingSource) _internalItems.Add(item);
-        _internalItems.Sort(this);
+        if(AutoSort) _internalItems.Sort(this);
 
         // bind the underlying ComboBox to the sorted collection
         if (_internalSource == null)
@@ -1100,6 +1100,8 @@ public class GroupedComboBox : ComboBox, IComparer
             _internalSource.ResetBindings(false);
         }
     }
+
+    public bool AutoSort { get; set; } = true;
 
     /// <summary>
     ///     Changes the control style to allow user-painting in DropDownList mode (when using buffered painting).
