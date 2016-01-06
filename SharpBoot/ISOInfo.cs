@@ -129,12 +129,12 @@ namespace SharpBoot
             try
             {
                 var wc = new WebClient {Encoding = Encoding.UTF8};
-                var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
-                appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
+                var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
+                appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
 
                 while (!appsxml.Contains("</apps>"))
                 {
-                    appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php?s");
+                    appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
                 }
                 Settings.Default.AppsXml = appsxml;
 
