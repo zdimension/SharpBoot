@@ -272,7 +272,8 @@ namespace SharpBoot
 
         private void ClientOnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            lblSpeed.Text = Program.GetSizeString(e.BytesReceived / (long) sw.Elapsed.TotalSeconds) + "/s";
+            if(sw.Elapsed.TotalSeconds >= 1)
+                lblSpeed.Text = Program.GetSizeString(e.BytesReceived / (long) sw.Elapsed.TotalSeconds) + "/s";
             setprg(e.ProgressPercentage);
 
             lblProg.Text = Program.GetSizeString(e.BytesReceived) + " / " + Program.GetSizeString(e.TotalBytesToReceive);
