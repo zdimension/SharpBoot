@@ -473,7 +473,7 @@ namespace SharpBoot
             new SLTEntry("cmdmark", "#c000ffff", "#00000000", ShadowType.std),
             new SLTEntry("cmdline", "#c0ffffff", "#00000000", ShadowType.std),
             new SLTEntry("pwdborder", "#80ffffff", "#20ffffff", ShadowType.rev),
-            new SLTEntry("pwdheader", "##80ff8080", "#20ffffff", ShadowType.rev),
+            new SLTEntry("pwdheader", "#80ff8080", "#20ffffff", ShadowType.rev),
             new SLTEntry("pwdentry", "#80ffffff", "#20ffffff", ShadowType.rev),
             new SLTEntry("timeout_msg", "#80ffffff", "#00000000", ShadowType.std),
             new SLTEntry("timeout", "#c0ffffff", "#00000000", ShadowType.std),

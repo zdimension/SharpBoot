@@ -258,11 +258,10 @@ namespace SharpBoot
             File.WriteAllBytes(Path.Combine(archs, "bloader.7z"), bloader.Archive);
             if (!_usb) File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
 
-            ChangeProgress(0, 100, Strings.ExtractBaseDisk);
+            ChangeProgress(0, 100, Strings.ExtractBaseDisk + " 1/6");
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
-            ChangeProgressBar(10, 100);
+            ChangeProgress(10, 100, Strings.ExtractBaseDisk + " 2/6");
             ext.Extract(Path.Combine(archs, "bloader.7z"), isodir);
-
             if (bloader is Syslinux)
             {
                 var theme = new SyslinuxTheme
@@ -270,7 +269,7 @@ namespace SharpBoot
                     Resolution = Res,
                     noback = IsoBackgroundImage == "$$NONE$$"
                 };
-                ChangeProgressBar(20, 100);
+                ChangeProgress(20, 100, Strings.ExtractBaseDisk + " 3/6");
                 File.WriteAllText(Path.Combine(sylp, "theme.cfg"), theme.GetCode());
                 if (Program.UseCyrillicFont)
                 {
@@ -285,16 +284,16 @@ namespace SharpBoot
             }
 
             Image img = null;
-            ChangeProgressBar(30, 100);
+            ChangeProgress(30, 100, Strings.ExtractBaseDisk + " 4/6");
             if (IsoBackgroundImage == "")
             {
                 var ms = new MemoryStream(Resources.sharpboot);
                 img = Image.FromStream(ms);
             }
             else if (IsoBackgroundImage != "$$NONE$$") img = Image.FromFile(IsoBackgroundImage);
-            ChangeProgressBar(35, 100);
+            ChangeProgress(35, 100, Strings.ExtractBaseDisk + " 5/6");
             bloader.SetImage(img, Res);
-            ChangeProgressBar(45, 100);
+            ChangeProgress(45, 100, Strings.ExtractBaseDisk + " 6/6");
             if (!_usb)
             {
                 ChangeProgress(50, 100, Strings.Extracting.FormatEx("Mkisofs"));
