@@ -55,10 +55,10 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnOK
@@ -100,7 +100,6 @@
             // 
             // lvFiles
             // 
-            resources.ApplyResources(this.lvFiles, "lvFiles");
             this.lvFiles.AllowDrop = true;
             this.lvFiles.AllowUserToAddRows = false;
             this.lvFiles.AllowUserToResizeRows = false;
@@ -121,10 +120,13 @@
             this.lvFiles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmnLocal,
             this.clmnRemote});
+            resources.ApplyResources(this.lvFiles, "lvFiles");
             this.lvFiles.GridColor = System.Drawing.SystemColors.Window;
             this.lvFiles.Name = "lvFiles";
             this.lvFiles.RowHeadersVisible = false;
             this.lvFiles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.lvFiles.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lvFiles_CellDoubleClick);
+            this.lvFiles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.lvFiles_CellDoubleClick);
             this.lvFiles.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.lvFiles_CellValidated);
             this.lvFiles.SelectionChanged += new System.EventHandler(this.lvFiles_SelectionChanged);
             this.lvFiles.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvFiles_DragDrop);
@@ -156,7 +158,6 @@
             // 
             // ofpFile
             // 
-            resources.ApplyResources(this.ofpFile, "ofpFile");
             this.ofpFile.Multiselect = true;
             // 
             // CustomFileFrm

@@ -408,6 +408,13 @@ namespace SharpBoot
         public long TotalSize { get; set; } = 280911;
     }
 
+    public interface IBootloaderTheme
+    {
+        Size Resolution { get; set; }
+
+        string GetCode();
+    }
+
     public class SyslinuxTheme
     {
         public int Margin { get; set; } = 4;
@@ -451,22 +458,32 @@ namespace SharpBoot
                    (Program.UseCyrillicFont ? "FONT /boot/syslinux/cyrillic_cp866.psf\n" : "");
         }
 
-        public List<ThemeEntry> Entries = new List<ThemeEntry>
+        public List<SLTEntry> Entries = new List<SLTEntry>
         {
-            new ThemeEntry("border", "#ffffffff", "#ee000000", ShadowType.std),
-            new ThemeEntry("title", "#ffffffff", "#ee000000", ShadowType.std),
-            new ThemeEntry("sel", "#ffffffff", "#85000000", ShadowType.std),
-            new ThemeEntry("unsel", "#ffffffff", "#ee000000", ShadowType.std),
-            new ThemeEntry("pwdheader", "#ff000000", "#99ffffff", ShadowType.rev),
-            new ThemeEntry("pwdborder", "#ff000000", "#99ffffff", ShadowType.rev),
-            new ThemeEntry("pwdentry", "#ff000000", "#99ffffff", ShadowType.rev),
-            new ThemeEntry("hotkey", "#ff00ff00", "#ee000000", ShadowType.std),
-            new ThemeEntry("hotsel", "#ffffffff", "#85000000", ShadowType.std)
+            new SLTEntry("screen", "#80ffffff", "#00000000", ShadowType.std),
+            new SLTEntry("border", "#ffffffff", "#ee000000", ShadowType.std),
+            new SLTEntry("title", "#ffffffff", "#ee000000", ShadowType.std),
+            new SLTEntry("unsel", "#ffffffff", "#ee000000", ShadowType.std),
+            new SLTEntry("hotkey", "#ff00ff00", "#ee000000", ShadowType.std),
+            new SLTEntry("sel", "#ffffffff", "#85000000", ShadowType.std),
+            new SLTEntry("hotsel", "#ffffffff", "#85000000", ShadowType.std),
+            new SLTEntry("disabled", "#60cccccc", "#00000000", ShadowType.std),
+            new SLTEntry("scrollbar", "#40000000", "#00000000", ShadowType.std),
+            new SLTEntry("tabmsg", "#90ffff00", "#00000000", ShadowType.std),
+            new SLTEntry("cmdmark", "#c000ffff", "#00000000", ShadowType.std),
+            new SLTEntry("cmdline", "#c0ffffff", "#00000000", ShadowType.std),
+            new SLTEntry("pwdborder", "#80ffffff", "#20ffffff", ShadowType.rev),
+            new SLTEntry("pwdheader", "##80ff8080", "#20ffffff", ShadowType.rev),
+            new SLTEntry("pwdentry", "#80ffffff", "#20ffffff", ShadowType.rev),
+            new SLTEntry("timeout_msg", "#80ffffff", "#00000000", ShadowType.std),
+            new SLTEntry("timeout", "#c0ffffff", "#00000000", ShadowType.std),
+            new SLTEntry("help", "#c0ffffff", "#00000000", ShadowType.std)
         };
 
-        public class ThemeEntry
+        // SLTEntry = SysLinux Theme Entry
+        public class SLTEntry
         {
-            public ThemeEntry(string name, Color foreground, Color background, ShadowType shadowType = ShadowType.none)
+            public SLTEntry(string name, Color foreground, Color background, ShadowType shadowType = ShadowType.none)
             {
                 Name = name;
                 Foreground = foreground;
@@ -474,7 +491,7 @@ namespace SharpBoot
                 ShadowType = shadowType;
             }
 
-            public ThemeEntry(string name, string foreground, string background, ShadowType shadowType = ShadowType.none)
+            public SLTEntry(string name, string foreground, string background, ShadowType shadowType = ShadowType.none)
                 : this(name, ColorTranslator.FromHtml(foreground), ColorTranslator.FromHtml(background), shadowType)
             {
             }

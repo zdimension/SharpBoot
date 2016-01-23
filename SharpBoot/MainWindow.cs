@@ -401,15 +401,12 @@ namespace SharpBoot
                         g.IsoBackgroundImage = "$$NONE$$";
                         break;
                 }
-                var selsize = cbxRes.SelectedItem.ToString();
-                selsize = selsize.Replace("x", " ");
-                var ssize = selsize.Split(' ');
 
                 var bl = SelectedBootloader();
 
                 g.bloader = bl;
                 Program.SupportAccent = bl.SupportAccent;
-                g.Res = new Size(int.Parse(ssize[0]), int.Parse(ssize[1]));
+                g.Res = ((dynamic)cbxRes.SelectedItem).Val;
                 g.Images =
                     CurImages.Select(
                         x =>
@@ -882,6 +879,12 @@ namespace SharpBoot
         private void txtBackFile_TextChanged(object sender, EventArgs e)
         {
             SetSize();
+        }
+
+        private void editThemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ted = new ThemeEditor();
+            ted.ShowDialog(this);
         }
     }
 }

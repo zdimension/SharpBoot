@@ -8,6 +8,7 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Windows.Forms;
 using System.Xml.Linq;
 using SharpBoot.Properties;
 
@@ -136,6 +137,7 @@ namespace SharpBoot
                 {
                     appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
                 }
+
                 Settings.Default.AppsXml = appsxml;
 
                 Settings.Default.LastAppsUpdate = DateTime.Now;
@@ -205,8 +207,9 @@ namespace SharpBoot
                                         )).ToArray()
                             ) {NoDL = x.Element("noDl") != null && x.Element("noDl").Value == "true"}).ToList();
                 }
-                catch
+                catch(Exception e)
                 {
+                    MessageBox.Show(e.Message);
                 }
                 UpdateFinished(null, EventArgs.Empty);
             });

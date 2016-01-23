@@ -123,7 +123,7 @@ namespace SharpBoot
         public static void SafeDel(string d)
         {
             var i = 0;
-            while (Directory.Exists(d) && i < 10)
+            while (Directory.Exists(d) && i < 3)
             {
                 try
                 {
@@ -131,7 +131,6 @@ namespace SharpBoot
                 }
                 catch
                 {
-                    continue;
                 }
                 i++;
             }

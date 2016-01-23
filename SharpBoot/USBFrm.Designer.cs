@@ -48,12 +48,12 @@ namespace SharpBoot
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.lblPercent);
             this.panel1.Controls.Add(this.pbxPrg);
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // lblPercent
@@ -118,8 +118,8 @@ namespace SharpBoot
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Image = global::SharpBoot.Properties.Resources.arrow_refresh;
             resources.ApplyResources(this.btnRefresh, "btnRefresh");
+            this.btnRefresh.Image = global::SharpBoot.Properties.Resources.arrow_refresh;
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);

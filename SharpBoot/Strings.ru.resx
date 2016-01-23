@@ -196,7 +196,7 @@
     <value>Установить</value>
   </data>
   <data name="InstallABootLoader" xml:space="preserve">
-    <value>Установить загрузчик на флеш-памьять</value>
+    <value>Установить загрузчик на флеш-память</value>
   </data>
   <data name="InstallingBoot" xml:space="preserve">
     <value>Установка {0} на {1}</value>
@@ -214,7 +214,7 @@
     <value>Главное меню</value>
   </data>
   <data name="NeedAdmin" xml:space="preserve">
-    <value>Вы должны иметь права администратора для того что бы отформатировать флеш-памьять.</value>
+    <value>Вы должны иметь права администратора для того что бы отформатировать флеш-память.</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>

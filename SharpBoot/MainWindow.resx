@@ -391,6 +391,9 @@ the ISO or IMG file here</value>
   <data name="groupBox3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <data name="cbxRes.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="cbxRes.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 22</value>
   </data>
@@ -1048,6 +1051,15 @@ the ISO or IMG file here</value>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
     <value>Install bootloader on USB key</value>
   </data>
+  <data name="editThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 20</value>
+  </data>
+  <data name="editThemeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Edit theme</value>
+  </data>
+  <data name="editThemeToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="menuStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1128,9 +1140,6 @@ the ISO or IMG file here</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>1006, 738</value>
@@ -1280,6 +1289,12 @@ the ISO or IMG file here</value>
     <value>installBootloaderOnUSBKeyToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;installBootloaderOnUSBKeyToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;editThemeToolStripMenuItem.Name" xml:space="preserve">
+    <value>editThemeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;editThemeToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;openFileDialog.Name" xml:space="preserve">

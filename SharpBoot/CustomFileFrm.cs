@@ -105,7 +105,7 @@ namespace SharpBoot
 
         private void lvFiles_CellValidated(object sender, DataGridViewCellEventArgs e)
         {
-            var cell = lvFiles.Rows[e.RowIndex].Cells[e.ColumnIndex];
+            var cell = lvFiles.Rows[e.RowIndex].Cells[1];
             var cv = cell.Value?.ToString() ?? "";
             if (string.IsNullOrWhiteSpace(cv) || cv.EndsWith("/"))
             {
@@ -118,6 +118,19 @@ namespace SharpBoot
                 {
                     cell.Value = "/" + cv;
                 }
+            }
+        }
+
+        private void lvFiles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                ofpFile.Multiselect = false;
+                if (ofpFile.ShowDialog() == DialogResult.OK)
+                {
+                    lvFiles.Rows[e.RowIndex].Cells[0].Value = ofpFile.FileName;
+                }
+                ofpFile.Multiselect = true;
             }
         }
     }

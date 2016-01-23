@@ -36,8 +36,6 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Awesomium.Core, Version=1.6.6.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214" />
-    <Reference Include="Awesomium.Windows.Forms, Version=1.6.6.0, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Pinyin4net">
       <HintPath>..\..\..\..\Téléchargements\Pinyin4net.dll</HintPath>
@@ -104,6 +102,9 @@
     </Compile>
     <Compile Include="EditCodeFrm.Designer.cs">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FakeVGA.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="FirstLaunch.cs">
       <SubType>Form</SubType>
@@ -207,6 +208,12 @@
     </Compile>
     <Compile Include="TestFrm.Designer.cs">
       <DependentUpon>TestFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThemeEditor.Designer.cs">
+      <DependentUpon>ThemeEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="ThreeStateButton.cs">
       <SubType>Component</SubType>
@@ -563,6 +570,9 @@
     <EmbeddedResource Include="TestFrm.resx">
       <DependentUpon>TestFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ThemeEditor.resx">
+      <DependentUpon>ThemeEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.cs.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -648,6 +658,7 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
+    <EmbeddedResource Include="MorePerfectDOSVGA.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -716,6 +727,7 @@
     <None Include="Resources\chevron_left.png" />
     <None Include="Resources\chevron_left_h.png" />
     <None Include="Resources\chevron_left_d.png" />
+    <None Include="Resources\application_form_edit.png" />
     <Content Include="Resources\grubinst.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

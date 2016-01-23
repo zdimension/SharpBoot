@@ -9,6 +9,7 @@ using System.Linq;
 using System.Management;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Security.RightsManagement;
 using System.Text;
 using System.Windows.Forms;
 using SharpBoot.Properties;
@@ -27,6 +28,17 @@ namespace SharpBoot
             img.Save(ms, ImageFormat.Jpeg);
             return ms.ToArray();
         }
+
+        public static Bitmap DrawFilledRectangle(int w, int h, Color c)
+        {
+            var bmp = new Bitmap(w, h);
+            using (var g = Graphics.FromImage(bmp))
+            {
+                g.FillRectangle(new SolidBrush(c), 0, 0, w, h);
+            }
+            return bmp;
+        }
+
         public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
 
         public static string FormatEx(this string s, params object[] args)
@@ -40,6 +52,41 @@ namespace SharpBoot
             var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it"};
             var index = dc.IndexOf(twocode);
             return index == -1 ? null : About.Flags[index];
+        }
+
+
+        public static List<string> Wrap(this string text, int maxLength)
+        {
+     
+            // Return empty list of strings if the text was empty
+            if (text.Length == 0) return new List<string>();
+     
+            var words = text.Split(' ');
+            var lines = new List<string>();
+            var currentLine = "";
+     
+            foreach (var currentWord in words)
+            {
+     
+                if ((currentLine.Length > maxLength) ||
+                    ((currentLine.Length + currentWord.Length) > maxLength))
+                {
+                    lines.Add(currentLine);
+                    currentLine = "";
+                }
+     
+                if (currentLine.Length > 0)
+                    currentLine += " " + currentWord;
+                else
+                    currentLine += currentWord;
+     
+            }
+     
+            if (currentLine.Length > 0)
+                lines.Add(currentLine);
+     
+            
+            return lines;
         }
 
         public static string FileMD5(string fileName)

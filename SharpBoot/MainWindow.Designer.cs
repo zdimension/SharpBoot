@@ -86,6 +86,7 @@ namespace SharpBoot
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.installBootloaderOnUSBKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.lblDragHere = new System.Windows.Forms.Label();
@@ -401,7 +402,8 @@ namespace SharpBoot
             this.updateAvailableToolStripMenuItem,
             this.languageToolStripMenuItem,
             this.addFilesToolStripMenuItem,
-            this.installBootloaderOnUSBKeyToolStripMenuItem});
+            this.installBootloaderOnUSBKeyToolStripMenuItem,
+            this.editThemeToolStripMenuItem});
             resources.ApplyResources(this.menuStrip, "menuStrip");
             this.menuStrip.Name = "menuStrip";
             // 
@@ -498,6 +500,13 @@ namespace SharpBoot
             resources.ApplyResources(this.installBootloaderOnUSBKeyToolStripMenuItem, "installBootloaderOnUSBKeyToolStripMenuItem");
             this.installBootloaderOnUSBKeyToolStripMenuItem.Click += new System.EventHandler(this.btnInstBoot_Click);
             // 
+            // editThemeToolStripMenuItem
+            // 
+            this.editThemeToolStripMenuItem.Image = global::SharpBoot.Properties.Resources.application_form_edit;
+            this.editThemeToolStripMenuItem.Name = "editThemeToolStripMenuItem";
+            resources.ApplyResources(this.editThemeToolStripMenuItem, "editThemeToolStripMenuItem");
+            this.editThemeToolStripMenuItem.Click += new System.EventHandler(this.editThemeToolStripMenuItem_Click);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.DefaultExt = "sbt";
@@ -521,6 +530,7 @@ namespace SharpBoot
             this.cbxRes.AutoSort = false;
             this.cbxRes.DataSource = null;
             this.cbxRes.DisplayMember = "Disp";
+            this.cbxRes.DropDownHeight = 110;
             this.cbxRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRes.FormattingEnabled = true;
             this.cbxRes.GroupMember = "Ratio";
@@ -632,6 +642,7 @@ namespace SharpBoot
         private ToolStripMenuItem addFilesToolStripMenuItem;
         private ToolStripMenuItem installBootloaderOnUSBKeyToolStripMenuItem;
         private Button btnCustomEntry;
+        private ToolStripMenuItem editThemeToolStripMenuItem;
     }
 }
 
