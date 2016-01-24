@@ -240,9 +240,8 @@ namespace SharpBoot
         public MainWindow()
         {
             if (Settings.Default.FirstLaunch && dev_FirstLaunch)
-                this.Hide();
+                Hide();
 
-            DoubleBuffered = true;
             SetStyle(
                 ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer |
                 ControlStyles.ResizeRedraw,
@@ -321,7 +320,7 @@ namespace SharpBoot
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
-
+            if (g.filesystem == "NTFS" && g.bloader is Grub4DOS) return;
             if (
                 MessageBox.Show(this, Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -377,8 +376,12 @@ namespace SharpBoot
         {
             Form ask = null;
             if (usb)
-                ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true,
-                    "FAT32 " + Strings.Recommended, "FAT16", "FAT12");
+            {
+                object[] fs = CurImages.Any(x => x.SizeB >= uint.MaxValue)
+                    ? new[] {"NTFS " + Strings.Recommended, "FAT32", "FAT16", "FAT12"}
+                    : new[] {"FAT32 " + Strings.Recommended, "FAT16", "FAT12", "NTFS"};
+                ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true, fs);
+            }
             else ask = new AskPath();
             if (ask.ShowDialog() == DialogResult.OK)
             {
@@ -422,7 +425,7 @@ namespace SharpBoot
 
         public IBootloader SelectedBootloader()
         {
-            if(cbxBootloader == null || cbxBootloader.SelectedItem == null) return new Syslinux();
+            if(cbxBootloader?.SelectedItem == null) return new Syslinux();
             var selload = cbxBootloader.SelectedItem.ToString().ToLower().Trim();
             if (selload.StartsWith("syslinux")) selload = "syslinux";
 
@@ -592,17 +595,7 @@ namespace SharpBoot
                 );
         }
 
-        /*private void ReplaceFontRecursive(Control parent, Font f1, Font f2)
-        {
-            if (parent.Font == f1) parent.Font = f2;
-            foreach (Control ct in parent.Controls)
-            {
-                if (ct.Font == f1) ct.Font = f2;
-                ReplaceFontRecursive(ct, f1, f2);
-            }
-        }*/
-
-        private bool selectingboot = false;
+        private bool selectingboot;
 
         public void CheckGrub4Dos()
         {
@@ -700,18 +693,10 @@ namespace SharpBoot
                                 new XElement("Path", x.Cells[4].Value))))));
 
                 doc.Save(saveFileDialog.FileName);
-                /*if(File.Exists(saveFileDialog.FileName)) File.Delete(saveFileDialog.FileName);
-                using (var ms = File.OpenWrite(saveFileDialog.FileName))
-                {
-                    var fmt = new BinaryFormatter();
-                    fmt.Serialize(ms, doc);
-                    ms.Flush();
-                    ms.Close();
-                }*/
             }
         }
 
-        private bool changTitle = false;
+        private bool changTitle;
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {
