@@ -22,6 +22,27 @@ namespace SharpBoot
     {
         public const long SIZE_BASEDISK = 0;
 
+        public static string GetPhysicalPath(string letter)
+        {
+            letter = letter.Substring(0, 2);
+
+            var deviceId = "";
+
+            var queryResults = new ManagementObjectSearcher(
+                    $"ASSOCIATORS OF {{Win32_LogicalDisk.DeviceID='{letter}'}} WHERE AssocClass = Win32_LogicalDiskToPartition");
+            var partitions = queryResults.Get();
+            foreach (var partition in partitions)
+            {
+                queryResults = new ManagementObjectSearcher(
+                    $"ASSOCIATORS OF {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} WHERE AssocClass = Win32_DiskDriveToDiskPartition");
+                var drives = queryResults.Get();
+                foreach (var drive in drives)
+                    deviceId = drive["DeviceID"].ToString();
+            }
+
+            return deviceId;
+        }
+
         public static byte[] ToByteArray(this Image img)
         {
             var ms = new MemoryStream();

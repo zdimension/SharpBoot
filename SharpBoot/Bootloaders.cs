@@ -549,18 +549,8 @@ namespace SharpBoot
             var driveletter = l.ToLower().Substring(0, 2);
             if (bl == Bootloaders.Grub4Dos)
             {
-                var deviceId = string.Empty;
-                var queryResults = new ManagementObjectSearcher(
-                    $"ASSOCIATORS OF {{Win32_LogicalDisk.DeviceID='{driveletter}'}} WHERE AssocClass = Win32_LogicalDiskToPartition");
-                var partitions = queryResults.Get();
-                foreach (var partition in partitions)
-                {
-                    queryResults = new ManagementObjectSearcher(
-                        $"ASSOCIATORS OF {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} WHERE AssocClass = Win32_DiskDriveToDiskPartition");
-                    var drives = queryResults.Get();
-                    foreach (var drive in drives)
-                        deviceId = drive["DeviceID"].ToString();
-                }
+                var deviceId = Utils.GetPhysicalPath(driveletter);
+                
                 p.StartInfo.Arguments = " --skip-mbr-test (hd" + string.Concat(deviceId.Where(char.IsDigit)) + ")";
             }
             else
