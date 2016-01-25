@@ -719,7 +719,7 @@ namespace SharpBoot
         {
             //new InstallBoot().ShowDialog(this);
             var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false,
-                "Syslinux " + Strings.Recommended, "Grub4Dos");
+                "Syslinux " + Strings.Recommended, "Grub4DOS", "Grub2");
             frm.BtnClicked += (o, args) =>
             {
                 frm.ProgressVisible = true;
@@ -728,7 +728,7 @@ namespace SharpBoot
                 frm.SetProgress(100);
                 MessageBox.Show(
                     string.Format(Strings.BootloaderInstalled,
-                        (frm.TheComboBox.SelectedIndex == 1 ? "Grub4Dos" : "Syslinux"),
+                        (frm.TheComboBox.SelectedIndex == 1 ? "Grub4DOS" : "Syslinux"),
                         frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
             };
             frm.ShowDialog(this);

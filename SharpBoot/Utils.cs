@@ -12,6 +12,7 @@ using System.Security.Cryptography;
 using System.Security.RightsManagement;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32.SafeHandles;
 using SharpBoot.Properties;
 // ReSharper disable UnusedMember.Local
 // ReSharper disable EventNeverSubscribedTo.Local
@@ -21,6 +22,16 @@ namespace SharpBoot
     public static class Utils
     {
         public const long SIZE_BASEDISK = 0;
+
+        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern SafeFileHandle CreateFile(string lpFileName, UInt32 dwDesiredAccess, UInt32 dwShareMode, IntPtr pSecurityAttributes, UInt32 dwCreationDisposition, UInt32 dwFlagsAndAttributes, IntPtr hTemplateFile);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern UInt32 QueryDosDevice(string DeviceName, IntPtr TargetPath, UInt32 ucchMax);
+
+        [DllImport("kernel32.dll", ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern bool DeviceIoControl(IntPtr hDevice, uint dwIoControlCode, IntPtr lpInBuffer, uint nInBufferSize, IntPtr lpOutBuffer, uint nOutBufferSize, out uint lpBytesReturned, IntPtr lpOverlapped);
+
 
         public static string GetPhysicalPath(string letter)
         {

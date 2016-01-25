@@ -22,6 +22,7 @@
     <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS;UNMANAGED, COMPRESS, LZMA_STREAM, CS4</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -97,6 +98,8 @@
     <Compile Include="DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DiskStream.cs" />
+    <Compile Include="DriveAccess.cs" />
     <Compile Include="EditCodeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
