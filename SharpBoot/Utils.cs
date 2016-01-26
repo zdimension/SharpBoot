@@ -237,6 +237,20 @@ namespace SharpBoot
             return (~ct.Aggregate(0xffffffff, (current, t) => (current >> 8) ^ table[t])).ToString("x8");
         }
 
+        public static string GetBootloaderString(Bootloaders b)
+        {
+            switch (b)
+            {
+                    case Bootloaders.Syslinux:
+                    return "Syslinux";
+                    case Bootloaders.Grub4DOS:
+                    return "Grub4DOS";
+                    case Bootloaders.Grub2:
+                    return "Grub2";
+            }
+            return "????";
+        }
+
 
         // http://stackoverflow.com/a/10018438/2196124
         public static bool IsExternalDisk(string driveLetter)

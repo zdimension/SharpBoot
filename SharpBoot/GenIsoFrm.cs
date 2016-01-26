@@ -429,7 +429,7 @@ namespace SharpBoot
 
             if (_usb)
             {
-                ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, bloader.Name, OutputFilepath));
+                ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, bloader.DisplayName, OutputFilepath));
                 BootloaderInst.Install(OutputFilepath, bloader.FolderName);
                 GenF(f);
             }

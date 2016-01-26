@@ -17,13 +17,7 @@ using W7R;
 using Timer = System.Timers.Timer;
 
 namespace SharpBoot
-{
-    public enum Bootloader
-    {
-        Syslinux = 0,
-        Grub4Dos = 1
-    }
-
+{ 
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
     public partial class MainWindow : Form
     {

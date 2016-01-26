@@ -303,16 +303,6 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
-        internal static byte[] grldr {
-            get {
-                object obj = ResourceManager.GetObject("grldr", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
         internal static byte[] grub4dos {
             get {
                 object obj = ResourceManager.GetObject("grub4dos", resourceCulture);

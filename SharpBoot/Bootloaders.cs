@@ -13,48 +13,34 @@ using SharpBoot.Properties;
 
 namespace SharpBoot
 {
-    public interface IBootloader
+    public abstract class IBootloader
     {
-        string GetCode(BootMenu menu);
-
-        string GetCode(BootMenuItem item);
-
-        void SetImage(Image img, Size sz);
-
-        string BinFile { get; set; }
-
-        byte[] Archive { get; set; }
-
-        string FolderName { get; set; }
-        string Name { get; set; }
-
-        string FileExt { get; set; }
-
-        string WorkingDir { get; set; }
-
-        string CmdArgs { get; set; }
-
-        Size Resolution { get; set; }
-
-        bool SupportAccent { get; set; }
-
-        long TotalSize { get; set; }
+        public abstract string GetCode(BootMenu menu);
+        public abstract string GetCode(BootMenuItem item);
+        public abstract void SetImage(Image img, Size sz);
+        public abstract string BinFile { get; set; }
+        public abstract byte[] Archive { get; set; }
+        public abstract string FolderName { get; set; }
+        public abstract string DisplayName { get; set; }
+        public abstract string FileExt { get; set; }
+        public string WorkingDir { get; set; }
+        public abstract string CmdArgs { get; set; }
+        public Size Resolution { get; set; } = new Size(640, 480);
+        public abstract bool SupportAccent { get; set; }
+        public abstract long TotalSize { get; set; }
     }
 
     public class Syslinux : IBootloader
     {
-        public string CmdArgs { get; set; } = " -iso-level 4 ";
-        public string WorkingDir { get; set; } = "";
+        public override string CmdArgs { get; set; } = " -iso-level 4 ";
+        public override string FolderName { get; set; } = "syslinux";
+        public override string DisplayName { get; set; } = "Syslinux";
 
-        public string FolderName { get; set; } = "syslinux";
-        public string Name { get; set; } = "Syslinux";
+        public override string FileExt { get; set; } = ".cfg";
 
-        public string FileExt { get; set; } = ".cfg";
+        public override bool SupportAccent { get; set; } = true;
 
-        public Size Resolution { get; set; } = new Size(640, 480);
-        public bool SupportAccent { get; set; } = true;
-
-        public string GetCode(BootMenu menu)
+        public override string GetCode(BootMenu menu)
         {
             var code = "";
 
@@ -77,7 +63,7 @@ namespace SharpBoot
             return code;
         }
 
-        public string GetCode(BootMenuItem item)
+        public override string GetCode(BootMenuItem item)
         {
             if (item.CustomCode != "") return item.CustomCode;
 
@@ -160,7 +146,7 @@ namespace SharpBoot
             return code;
         }
 
-        public void SetImage(Image image, Size sz)
+        public override void SetImage(Image image, Size sz)
         {
             if (image == null) return;
 
@@ -190,9 +176,9 @@ namespace SharpBoot
             destImage.Save(Path.Combine(WorkingDir, "sharpboot.jpg"), ImageFormat.Jpeg);
         }
 
-        public string BinFile { get; set; } = "boot/syslinux/isolinux.bin";
-        public byte[] Archive { get; set; } = Resources.syslinux1;
-        public long TotalSize { get; set; } = 1064874;
+        public override string BinFile { get; set; } = "boot/syslinux/isolinux.bin";
+        public override byte[] Archive { get; set; } = Resources.syslinux1;
+        public override long TotalSize { get; set; } = 1064874;
 
         private static string splitwidth(string s, int w)
         {
@@ -225,17 +211,13 @@ namespace SharpBoot
 
     public class Grub4DOS : IBootloader
     {
-        public string CmdArgs { get; set; } = " ";
-        public string WorkingDir { get; set; } = "";
+        public override string DisplayName { get; set; } = "Grub4DOS";
+        public override string FileExt { get; set; } = ".lst";
+        public override string CmdArgs { get; set; } = "";
+        public override string FolderName { get; set; } = "grub4dos";
+        public override bool SupportAccent { get; set; } = false;
 
-        public string Name { get; set; } = "Grub4DOS";
-        public string FileExt { get; set; } = ".lst";
-        public string FolderName { get; set; } = "grub4dos";
-
-        public Size Resolution { get; set; } = new Size(640, 480);
-        public bool SupportAccent { get; set; } = false;
-
-        public string GetCode(BootMenu menu)
+        public override string GetCode(BootMenu menu)
         {
             var code = "";
 
@@ -256,7 +238,7 @@ namespace SharpBoot
             return code;
         }
 
-        public string GetCode(BootMenuItem item)
+        public override string GetCode(BootMenuItem item)
         {
             if (item.CustomCode != "") return item.CustomCode;
 
@@ -311,7 +293,7 @@ namespace SharpBoot
 
         private bool noback;
 
-        public void SetImage(Image image, Size sz)
+        public override void SetImage(Image image, Size sz)
         {
             if (image == null)
             {
@@ -403,10 +385,10 @@ namespace SharpBoot
             }
         }
 
-        public string BinFile { get; set; } = "grldr";
-        public byte[] Archive { get; set; } = Resources.grub4dos;
+        public override string BinFile { get; set; } = "grldr";
+        public override byte[] Archive { get; set; } = Resources.grub4dos;
 
-        public long TotalSize { get; set; } = 280911;
+        public override long TotalSize { get; set; } = 280911;
     }
 
     public interface IBootloaderTheme
@@ -513,7 +495,7 @@ namespace SharpBoot
     public enum Bootloaders
     {
         Syslinux = 0,
-        Grub4Dos = 1,
+        Grub4DOS = 1,
         Grub2 = 2
     }
 
@@ -526,7 +508,7 @@ namespace SharpBoot
 
         public static void Install(string l, string bl)
         {
-            if (bl == "grub4dos") Install(l, Bootloaders.Grub4Dos);
+            if (bl == "grub4dos") Install(l, Bootloaders.Grub4DOS);
             if (bl == "syslinux") Install(l, Bootloaders.Syslinux);
         }
 
@@ -619,11 +601,11 @@ namespace SharpBoot
                 return;
             }
 
-            var exename = bl == Bootloaders.Grub4Dos ? "grubinst.exe" : "syslinux.exe";
+            var exename = bl == Bootloaders.Grub4DOS ? "grubinst.exe" : "syslinux.exe";
 
             var d = Program.GetTemporaryDirectory();
             var exepath = Path.Combine(d, exename);
-            File.WriteAllBytes(exepath, bl == Bootloaders.Grub4Dos ? Resources.grubinst : Resources.syslinux);
+            File.WriteAllBytes(exepath, bl == Bootloaders.Grub4DOS ? Resources.grubinst : Resources.syslinux);
 
             var p = new Process
             {
@@ -636,11 +618,11 @@ namespace SharpBoot
                 }
             };
             var driveletter = l.ToLower().Substring(0, 2);
-            if (bl == Bootloaders.Grub4Dos)
+            if (bl == Bootloaders.Grub4DOS)
             {
                 var deviceId = Utils.GetPhysicalPath(driveletter);
                 
-                p.StartInfo.Arguments = " --skip-mbr-test (hd" + string.Concat(deviceId.Where(char.IsDigit)) + ")";
+                p.StartInfo.Arguments = " --skip-mbr-test --no-backup-mbr -t=0 (hd" + string.Concat(deviceId.Where(char.IsDigit)) + ")";
             }
             else
             {
@@ -648,10 +630,6 @@ namespace SharpBoot
             }
             p.Start();
             p.WaitForExit();
-            if (bl == Bootloaders.Grub4Dos)
-            {
-                File.WriteAllBytes(Path.Combine(driveletter, "grldr"), Resources.grldr);
-            }
 
             Program.SafeDel(d);
         }
