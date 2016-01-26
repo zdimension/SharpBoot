@@ -371,9 +371,10 @@ namespace SharpBoot
             Form ask = null;
             if (usb)
             {
-                object[] fs = CurImages.Any(x => x.SizeB >= uint.MaxValue)
-                    ? new[] {"NTFS " + Strings.Recommended, "FAT32", "FAT16", "FAT12"}
-                    : new[] {"FAT32 " + Strings.Recommended, "FAT16", "FAT12", "NTFS"};
+                var fs =
+                    new[] {"NTFS", "FAT32", "FAT16", "FAT12"}.AddRecommended(CurImages.Any(x => x.SizeB >= uint.MaxValue)
+                        ? 0
+                        : 1);
                 ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true, fs);
             }
             else ask = new AskPath();
@@ -385,7 +386,7 @@ namespace SharpBoot
                 g.GenerationFinished += delegate { g_GenerationFinished(g); };
 
                 g.Title = txtTitle.Text;
-                if (usb) g.filesystem = ((USBFrm) ask).TheComboBox.SelectedItem.ToString().Split(' ')[0].ToUpper();
+                if (usb) g.filesystem = ((USBFrm) ask).TheComboBox.SelectedItem.ToString().RemoveRecommended();
                 switch (cbxBackType.SelectedIndex)
                 {
                     case 0:

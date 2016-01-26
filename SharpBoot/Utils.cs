@@ -251,6 +251,21 @@ namespace SharpBoot
             return "????";
         }
 
+        public static string[] AddRecommended(this string[] arr, int recIndex)
+        {
+            var a = ((string[])arr.Clone()).ToList();
+            var f = a[recIndex] + " " + Strings.Recommended;
+            a.RemoveAt(recIndex);
+            a.Sort();
+            a.Insert(0, f);
+            return a.ToArray();
+        }
+
+        public static string RemoveRecommended(this string s)
+        {
+            return s.Replace(" " + Strings.Recommended, "");
+        }
+
 
         // http://stackoverflow.com/a/10018438/2196124
         public static bool IsExternalDisk(string driveLetter)

@@ -182,30 +182,7 @@ namespace SharpBoot
 
         private static string splitwidth(string s, int w)
         {
-            var words = s.Split(' ');
-            var lines = new List<string>();
-            var currentLine = "";
-
-            foreach (var currentWord in words)
-            {
-                if ((currentLine.Length > w) ||
-                    ((currentLine.Length + currentWord.Length) > w))
-                {
-                    lines.Add(currentLine);
-                    currentLine = "";
-                }
-
-                if (currentLine.Length > 0)
-                    currentLine += " " + currentWord;
-                else
-                    currentLine += currentWord;
-            }
-
-            if (currentLine.Length > 0)
-                lines.Add(currentLine);
-
-
-            return string.Join("\n", lines);
+            return string.Join("\n", s.Wrap(w));
         }
     }
 
