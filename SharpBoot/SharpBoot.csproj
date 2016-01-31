@@ -123,41 +123,6 @@
     </Compile>
     <Compile Include="GroupedComboBox.cs" />
     <Compile Include="ImageLine.cs" />
-    <Compile Include="ISOCat.cs.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.cs.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.es.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.es.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.it.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.it.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.ru.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.ru.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.uk.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.uk.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.zh-Hans.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.zh-Hans.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.zh-Hant.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.zh-Hant.resx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.zh-Hant.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,26 +191,6 @@
     </Compile>
     <Compile Include="USBFrm.Designer.cs">
       <DependentUpon>USBFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.de.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.de.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.fr.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.fr.resx</DependentUpon>
-    </Compile>
-    <Compile Include="ISOCat.ro.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ISOCat.ro.resx</DependentUpon>
     </Compile>
     <Compile Include="ISOInfo.cs" />
     <Compile Include="LinkLabelEx.cs">
@@ -492,34 +437,6 @@
     <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.cs.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.cs.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.es.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.it.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.it.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.ru.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.ru.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.uk.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.uk.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.zh-Hans.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.zh-Hans.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.zh-Hant.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.zh-Hant.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.cs.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -596,22 +513,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.ro.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.de.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.de.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.fr.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.fr.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ISOCat.ro.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ISOCat.ro.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.de.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

@@ -7,6 +7,8 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Net;
+using System.Net.Cache;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Security.RightsManagement;
@@ -215,6 +217,72 @@ namespace SharpBoot
             }
             return formatted.ToString();
         }
+
+        public static string DownloadWithoutCache(string url, bool redl = true)
+        {
+            url = MakeURLRandom(url);
+            var res = "";
+            Stream remote = null;
+            WebResponse resp = null;
+            var proc = 0;
+            try
+            {
+                var req = WebRequest.Create(url);
+                req.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                if (req != null)
+                {
+                    resp = req.GetResponse();
+
+                    if (resp != null)
+                    {
+                        remote = resp.GetResponseStream();
+
+                        var mem = new MemoryStream();
+                        var buf = new byte[1024];
+                        var br = 0;
+                        do
+                        {
+                            br = remote.Read(buf, 0, 1024);
+                            mem.Write(buf, 0, br);
+                            proc += br;
+                        } while (br > 0);
+                        mem.Position = 0;
+                        res = new StreamReader(mem).ReadToEnd();
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                resp?.Close();
+                remote?.Close();
+            }
+
+            return res;
+        }
+
+        public static string RandomString(int Size)
+        {
+            string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+            var chars = Enumerable.Range(0, Size)
+                                   .Select(x => input[CurrentRandom.Next(0, input.Length)]);
+            return new string(chars.ToArray());
+        }
+
+        public static string MakeURLRandom(string url)
+        {
+            if (url.Contains("?")) url += "&";
+            else url += "?";
+            url += RandomString(5);
+            url += "=";
+            url += RandomString(5);
+            return url;
+        }
+
+        public static Random CurrentRandom;
 
         public static string CRC32(string ct)
         {

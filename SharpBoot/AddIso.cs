@@ -36,7 +36,7 @@ namespace SharpBoot
                 iso2.Insert(0,
                     new
                     {
-                        Val = new ISOInfo("", new Dictionary<CultureInfo, string>(), IsoCategory.None),
+                        Val = new ISOInfo("", new Dictionary<CultureInfo, string>(), ISOCat.Empty),
                         Name = Strings.Other,
                         Category = "",
                         Hash = ""

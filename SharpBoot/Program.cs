@@ -37,6 +37,8 @@ namespace SharpBoot
         {
             ClrTmp();
 
+            Utils.CurrentRandom = new Random();
+
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
             //ISOInfo.RefreshISOs();

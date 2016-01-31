@@ -36,47 +36,8 @@ namespace SharpBoot
         }
     }
 
-    public enum IsoCategory
-    {
-        None = -1,
-
-        Backup = 0,
-        Bios = 1,
-        CPU = 2,
-        Linux = 3,
-        Partition = 4,
-        Password = 5,
-        RAM = 6,
-        Recovery = 7,
-        Testing = 8,
-        Utility = 9,
-        Antivirus = 10,
-        Windows = 11
-    }
-
     public class ISOInfo
     {
-        public static string GetCatString(IsoCategory ct)
-        {
-            var inttocat = new Dictionary<int, string>
-            {
-                {-1, ""},
-                {0, ISOCat.Backup},
-                {1, ISOCat.Bios},
-                {2, ISOCat.CPU},
-                {3, ISOCat.Linux},
-                {4, ISOCat.Partition},
-                {5, ISOCat.Password},
-                {6, ISOCat.RAM},
-                {7, ISOCat.Recovery},
-                {8, ISOCat.Testing},
-                {9, ISOCat.Utility},
-                {10, ISOCat.Antivirus},
-                {11, ISOCat.Windows}
-            };
-            return inttocat[(int) ct];
-        }
-
         public string Name { get; set; }
 
         public string Description
@@ -85,9 +46,9 @@ namespace SharpBoot
                     ? Descriptions[Thread.CurrentThread.CurrentUICulture]
                     : (Descriptions.ContainsKey(new CultureInfo("en")) ? Descriptions[new CultureInfo("en")] : "");
 
-        public string CategoryTxt => GetCatString(Category);
+        public string CategoryTxt => Category.GetName();
 
-        public IsoCategory Category { get; set; }
+        public ISOCat Category { get; set; }
 
         //public string DownloadLink { get; set; }
 
@@ -110,7 +71,7 @@ namespace SharpBoot
 
         public Dictionary<CultureInfo, string> Descriptions { get; set; }
 
-        public ISOInfo(string name, Dictionary<CultureInfo, string> descs, IsoCategory cat, string fn = "",
+        public ISOInfo(string name, Dictionary<CultureInfo, string> descs, ISOCat cat, string fn = "",
             params ISOV[] vers)
         {
             Name = name;
@@ -130,13 +91,15 @@ namespace SharpBoot
             try
             {
                 var wc = new WebClient {Encoding = Encoding.UTF8};
-                var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
+                /*var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
                 appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
 
                 while (!appsxml.Contains("</apps>"))
                 {
                     appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
-                }
+                }*/
+
+                var appsxml = Utils.DownloadWithoutCache("http://www.zdimension.tk/sharpboot/apps.php?s");
 
                 Settings.Default.AppsXml = appsxml;
 
@@ -155,9 +118,9 @@ namespace SharpBoot
             {
                 var wc = new WebClient {Encoding = Encoding.UTF8};
                 // ReSharper disable once UnusedVariable
-                var temporary = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php");
+                var temporary = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
                 // Strangely when a PHP page is updated you need to request it twice to see the update
-                var lastappsdate = DateTime.Parse(wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.php"));
+                var lastappsdate = DateTime.Parse(wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml"));
                 return lastappsdate > Settings.Default.LastAppsUpdate;
             }
             catch
@@ -185,15 +148,24 @@ namespace SharpBoot
                     UpdateISOs();
 
                     var xd = XDocument.Parse(Settings.Default.AppsXml);
+                    var root = xd.Element("apps");
 
-                    ISOs = xd.Element("apps").Elements("app").Select(x =>
+                    Settings.Default.AppDBVersion = int.Parse(root.Attribute("version").Value);
+
+                    ISOCat.Categories = root.Element("categories").Elements("cat").Select(x =>
+                        new ISOCat(int.Parse(x.Attribute("id").Value), x.Attribute("def").Value,
+                            x.Elements("text")
+                                .Select(y => new {lang = new CultureInfo(y.Attribute("lang").Value), val = y.Value})
+                                .ToDictionary(z => z.lang, z => z.val))).ToDictionary(x => x.ID, x => x);
+
+                    ISOs = root.Elements("app").Select(x =>
                         new ISOInfo(
                             x.Element("name").Value,
                             x.Element("description")
                                 .Elements("desc")
                                 .Select(y => new {Lang = new CultureInfo(y.Attribute("lang").Value), Val = y.Value})
                                 .ToDictionary(k => k.Lang, k => k.Val),
-                            (IsoCategory) int.Parse(x.Element("category").Value),
+                            ISOCat.Categories[int.Parse(x.Element("category").Value)],
                             x.Element("filenameRegex").Value,
                             x.Element("versions").IsEmpty
                                 ? new ISOV[] {}
@@ -268,6 +240,50 @@ namespace SharpBoot
             }
 
             return resk;
+        }
+    }
+
+    public class ISOCat
+    {
+        private static Dictionary<int, ISOCat> _categories = new Dictionary<int, ISOCat> {{-1, Empty}};
+
+        /// <summary>
+        /// Initialise une nouvelle instance de la classe <see cref="ISOCat"/>.
+        /// </summary>
+        public ISOCat(int id, string englishName, Dictionary<CultureInfo, string> names)
+        {
+            ID = id;
+            EnglishName = englishName;
+            Names = names;
+        }
+
+        public int ID { get; set; }
+
+        public string EnglishName { get; set; }
+
+        public Dictionary<CultureInfo, string> Names { get; set; }
+         
+        public string GetName()
+        {
+            return GetName(Thread.CurrentThread.CurrentUICulture);
+        }
+
+        public string GetName(CultureInfo c)
+        {
+            return Names.ContainsKey(c) ? Names[c] : EnglishName;
+        }
+
+        public static ISOCat Empty => new ISOCat(-1, "", new Dictionary<CultureInfo, string>());
+
+        public static Dictionary<int, ISOCat> Categories
+        {
+            get { return _categories; }
+            set
+            {
+                _categories = value;
+                if (!_categories.ContainsKey(-1))
+                    _categories.Add(-1, Empty);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using SharpBoot.Properties;
 
 namespace SharpBoot
 {
@@ -16,7 +17,8 @@ namespace SharpBoot
         {
             InitializeComponent();
             richTextBox1.Text = richTextBox1.Text.Insert(9, " " + Program.GetVersion())
-                .Replace("{0}", Strings.SharpBootUsesSoft);
+                .Replace("{0}", Settings.Default.AppDBVersion.ToString())
+                .Replace("{1}", Strings.SharpBootUsesSoft);
             if (Program.IsWin) Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
