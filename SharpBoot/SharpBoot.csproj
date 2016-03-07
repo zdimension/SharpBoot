@@ -574,7 +574,6 @@
     </Compile>
     <None Include="Resources\866_8x16.psf" />
     <None Include="Resources\basedisk.7z" />
-    <None Include="Resources\grldr" />
     <None Include="Resources\grub2.7z" />
     <None Include="Resources\grub4dos.7z" />
     <None Include="Resources\imagemagick.7z" />

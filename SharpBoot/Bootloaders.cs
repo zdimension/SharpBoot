@@ -195,7 +195,7 @@ namespace SharpBoot
                     UseShellExecute = true,
                     FileName = exepath,
                     Verb = "runas",
-                    Arguments = " -m -a " + l.ToLower().Substring(0, 2)
+                    Arguments = " -i -m -a " + l.ToLower().Substring(0, 2)
                 }
             };
             p.Start();
