@@ -407,7 +407,7 @@ the ISO or IMG file here</value>
     <value>cbxRes</value>
   </data>
   <data name="&gt;&gt;cbxRes.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxRes.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -441,12 +441,6 @@ the ISO or IMG file here</value>
   </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
-  </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (recommended)</value>
-  </data>
-  <data name="cbxBootloader.Items1" xml:space="preserve">
-    <value>Grub4DOS</value>
   </data>
   <data name="cbxBootloader.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 22</value>
@@ -605,7 +599,7 @@ the ISO or IMG file here</value>
     <value>btnChecksum</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Type" xml:space="preserve">
-    <value>wyDay.Controls.SplitButton, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>wyDay.Controls.SplitButton, SharpBoot, Version=4.2.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Parent" xml:space="preserve">
     <value>panel1</value>

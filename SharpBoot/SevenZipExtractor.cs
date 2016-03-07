@@ -29,7 +29,7 @@ namespace SharpBoot
             Program.SafeDel(Path.GetDirectoryName(SevenZipPath));
         }
 
-        public void Extract(string arch, string output, bool wait = true)
+        public void Extract(string arch, string output, bool wait = true, int maxDelay = 5)
         {
             var p = new Process
             {
@@ -43,14 +43,18 @@ namespace SharpBoot
             };
 
             p.Exited += delegate { OnFinished(); };
-
+            var sp = new Stopwatch();
+            sp.Start();
             p.Start();
 
             if(wait)
             {
                 while (!p.HasExited)
                 {
-
+                    if(sp.Elapsed.Seconds > maxDelay)
+                    {
+                        break;
+                    }
                 }
             }
         }

@@ -143,9 +143,6 @@ fichier ISO ou IMG ici</value>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Résolution</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (recommandé)</value>
-  </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> À propos de SharpBoot</value>
   </data>

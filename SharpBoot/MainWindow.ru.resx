@@ -139,9 +139,6 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Разрешение экрана</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (рекомендовано)</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Загрузчик</value>
   </data>

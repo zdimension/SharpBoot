@@ -204,9 +204,6 @@ namespace SharpBoot
             // 
             this.cbxBootloader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxBootloader.FormattingEnabled = true;
-            this.cbxBootloader.Items.AddRange(new object[] {
-            resources.GetString("cbxBootloader.Items"),
-            resources.GetString("cbxBootloader.Items1")});
             resources.ApplyResources(this.cbxBootloader, "cbxBootloader");
             this.cbxBootloader.Name = "cbxBootloader";
             this.cbxBootloader.SelectedIndexChanged += new System.EventHandler(this.cbxBootloader_SelectedIndexChanged);

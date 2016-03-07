@@ -191,11 +191,6 @@ namespace SharpBoot
         public static List<ISOInfo> ISOs = new List<ISOInfo>();
 
 
-        public static ISOInfo FromFile(string f)
-        {
-            return null;
-        }
-
         [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
         public static ISOV GetFromFile(string filename, bool fast)
         {

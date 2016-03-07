@@ -25,8 +25,11 @@ namespace SharpBoot
     {
         public const long SIZE_BASEDISK = 0;
 
-        [DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
-        public static extern SafeFileHandle CreateFile(string lpFileName, UInt32 dwDesiredAccess, UInt32 dwShareMode, IntPtr pSecurityAttributes, UInt32 dwCreationDisposition, UInt32 dwFlagsAndAttributes, IntPtr hTemplateFile);
+        public const int FILE_ATTRIBUTE_SYSTEM = 0x4;
+        public const int FILE_FLAG_SEQUENTIAL_SCAN = 0x8;
+
+        [DllImport("Kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+        public static extern SafeFileHandle CreateFile(string fileName, [MarshalAs(UnmanagedType.U4)] FileAccess fileAccess, [MarshalAs(UnmanagedType.U4)] FileShare fileShare, IntPtr securityAttributes, [MarshalAs(UnmanagedType.U4)] FileMode creationDisposition, int flags, IntPtr template);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern UInt32 QueryDosDevice(string DeviceName, IntPtr TargetPath, UInt32 ucchMax);
@@ -126,7 +129,7 @@ namespace SharpBoot
         public static string FileMD5(string fileName)
         {
             StringBuilder formatted;
-            using (var fs = new FileStream(fileName, FileMode.Open))
+            using (var fs = File.OpenRead(fileName))
             using (var bs = new BufferedStream(fs))
             {
                 using (MD5 md5 = new MD5CryptoServiceProvider())
@@ -145,7 +148,7 @@ namespace SharpBoot
         public static string FileSHA1(string fileName)
         {
             StringBuilder formatted;
-            using (var fs = new FileStream(fileName, FileMode.Open))
+            using (var fs = File.OpenRead(fileName))
             using (var bs = new BufferedStream(fs))
             {
                 using (var sha1 = new SHA1Managed())
@@ -164,7 +167,7 @@ namespace SharpBoot
         public static string FileSHA256(string fileName)
         {
             StringBuilder formatted;
-            using (var fs = new FileStream(fileName, FileMode.Open))
+            using (var fs = File.OpenRead(fileName))
             using (var bs = new BufferedStream(fs))
             {
                 using (SHA256 sha256 = new SHA256Managed())
@@ -183,7 +186,7 @@ namespace SharpBoot
         public static string FileSHA384(string fileName)
         {
             StringBuilder formatted;
-            using (var fs = new FileStream(fileName, FileMode.Open))
+            using (var fs = File.OpenRead(fileName))
             using (var bs = new BufferedStream(fs))
             {
                 using (SHA384 sha384 = new SHA384Managed())
@@ -202,7 +205,7 @@ namespace SharpBoot
         public static string FileSHA512(string fileName)
         {
             StringBuilder formatted;
-            using (var fs = new FileStream(fileName, FileMode.Open))
+            using (var fs = File.OpenRead(fileName))
             using (var bs = new BufferedStream(fs))
             {
                 using (SHA512 sha512 = new SHA512Managed())
@@ -305,28 +308,19 @@ namespace SharpBoot
             return (~ct.Aggregate(0xffffffff, (current, t) => (current >> 8) ^ table[t])).ToString("x8");
         }
 
-        public static string GetBootloaderString(Bootloaders b)
+        public static List<string> AddRecommended(this List<string> arr, int recIndex)
         {
-            switch (b)
-            {
-                    case Bootloaders.Syslinux:
-                    return "Syslinux";
-                    case Bootloaders.Grub4DOS:
-                    return "Grub4DOS";
-                    case Bootloaders.Grub2:
-                    return "Grub2";
-            }
-            return "????";
+            var a = arr.ToList();
+            var f = a[recIndex] + " " + Strings.Recommended;
+            a.RemoveAt(recIndex);
+            //a.Sort();
+            a.Insert(0, f);
+            return a;
         }
 
         public static string[] AddRecommended(this string[] arr, int recIndex)
         {
-            var a = ((string[])arr.Clone()).ToList();
-            var f = a[recIndex] + " " + Strings.Recommended;
-            a.RemoveAt(recIndex);
-            a.Sort();
-            a.Insert(0, f);
-            return a.ToArray();
+            return AddRecommended(arr.ToList(), recIndex).ToArray();
         }
 
         public static string RemoveRecommended(this string s)

@@ -146,9 +146,6 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Risoluzione</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (consigliato)</value>
-  </data>
   <data name="btnAbout.Text" xml:space="preserve">
     <value> Info SharpBoot</value>
   </data>

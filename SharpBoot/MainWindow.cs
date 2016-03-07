@@ -81,6 +81,10 @@ namespace SharpBoot
             lngs.Clear();
             loadlng();
             LoadResolutions();
+            foreach (var bl in Bootloaders.Bloaders.Select(x => x.DisplayName).ToArray().AddRecommended(0))
+            {
+                cbxBootloader.Items.Add(bl);
+            }
             cbxBootloader.SelectedIndex = 0;
             cbxRes.SelectedIndex = 0;
             cbxBackType.SelectedIndex = 0;
@@ -420,17 +424,8 @@ namespace SharpBoot
 
         public IBootloader SelectedBootloader()
         {
-            if(cbxBootloader?.SelectedItem == null) return new Syslinux();
-            var selload = cbxBootloader.SelectedItem.ToString().ToLower().Trim();
-            if (selload.StartsWith("syslinux")) selload = "syslinux";
-
-            IBootloader bl = null;
-            if (selload == "syslinux") bl = new Syslinux();
-            if (selload == "grub4dos")
-            {
-                bl = new Grub4DOS();
-            }
-            return bl;
+            if(cbxBootloader.SelectedIndex == -1) return new Syslinux();
+            return Bootloaders.Bloaders[cbxBootloader.SelectedIndex];
         }
 
         public void CheckFields()
@@ -592,12 +587,13 @@ namespace SharpBoot
 
         private bool selectingboot;
 
+
         public void CheckGrub4Dos()
         {
-            if (cbxBackType.SelectedIndex == 0 && cbxBootloader.SelectedIndex == 1 && selectingboot) cbxBackType.SelectedIndex = 2;
+            if (cbxBackType.SelectedIndex == 0 && SelectedBootloader() is Grub4DOS && selectingboot) cbxBackType.SelectedIndex = 2;
             selectingboot = false;
-            cbxRes.Enabled = !(cbxBackType.SelectedIndex == 2 && cbxBootloader.SelectedIndex == 1);
-            if (cbxBackType.SelectedIndex == 1 && File.Exists(txtBackFile.Text) && cbxBootloader.SelectedIndex == 1)
+            cbxRes.Enabled = !(cbxBackType.SelectedIndex == 2 && SelectedBootloader() is Grub4DOS);
+            if (cbxBackType.SelectedIndex == 1 && File.Exists(txtBackFile.Text) && SelectedBootloader() is Grub4DOS)
             {
                 var img = Image.FromFile(txtBackFile.Text);
                 switch (img.Width)
@@ -712,18 +708,18 @@ namespace SharpBoot
 
         private void btnInstBoot_Click(object sender, EventArgs e)
         {
-            //new InstallBoot().ShowDialog(this);
             var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false,
-                "Syslinux " + Strings.Recommended, "Grub4DOS", "Grub2");
+                cbxBootloader.Items.Cast<string>().ToArray());
             frm.BtnClicked += (o, args) =>
             {
                 frm.ProgressVisible = true;
                 frm.SetProgress(5);
-                BootloaderInst.Install(frm.SelectedUSB.Name, (Bootloaders) frm.TheComboBox.SelectedIndex);
+                var bl = Bootloaders.Bloaders[frm.TheComboBox.SelectedIndex];
+                BootloaderInst.Install(frm.SelectedUSB.Name, bl);
                 frm.SetProgress(100);
                 MessageBox.Show(
                     string.Format(Strings.BootloaderInstalled,
-                        (frm.TheComboBox.SelectedIndex == 1 ? "Grub4DOS" : "Syslinux"),
+                        bl.DisplayName,
                         frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
             };
             frm.ShowDialog(this);

@@ -123,9 +123,6 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rozlišení obrazovky</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (doporučené)</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value> Kontrolní součet</value>
   </data>

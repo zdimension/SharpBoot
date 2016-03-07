@@ -139,9 +139,6 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>屏幕分辨率</value>
   </data>
-  <data name="cbxBootloader.Items" xml:space="preserve">
-    <value>Syslinux (推荐)</value>
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>啟動引導器</value>
   </data>
