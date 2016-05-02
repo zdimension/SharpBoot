@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 14.00
-# Visual Studio 2015
-VisualStudioVersion = 12.0.30501.0
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpBoot", "SharpBoot\SharpBoot.csproj", "{7EA17673-BEC5-4E2D-B51E-98FAA9C9B178}"
 EndProject
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(CodealikeProperties) = postSolution
+		SolutionGuid = ef9d50c6-b112-42f8-970f-658f3ab2802f
 	EndGlobalSection
 EndGlobal

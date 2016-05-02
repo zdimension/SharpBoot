@@ -420,6 +420,8 @@ namespace SharpBoot
                 File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main), Program.GetEnc());
             else if (bloader is Grub4DOS)
                 File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
+            else if(bloader is Grub2)
+                File.WriteAllText(Path.Combine(sylp, "grub.cfg"), bloader.GetCode(main));
 
             if (bwkISO.CancellationPending)
             {

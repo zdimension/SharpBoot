@@ -1,8 +1,8 @@
 # SharpBoot
 SharpBoot is a program for creating multiboot ISOs or USB keys by choosing other ISO files and putting them in categories.
-You can choose between Syslinux and Grub4DOS, you can choose filesystem (when making an USB key) between FAT12, FAT16 or FAT32, you can choose resolution between 640x480, 800x600, 1024x768 or 1280x1024.
+You can choose between Syslinux and Grub4DOS, you can choose filesystem (when making an USB key) between FAT12, FAT16, FAT32 or NTFS, you can choose resolution between 640x480, 800x600, 1024x768 or 1280x1024.
 You can also pick a custom background image (automatically resized to chosen resolution).
-![SharpBoot 4.2](https://i.imgur.com/Qox1uWk.png)
+![SharpBoot 4.3](https://i.imgur.com/Qox1uWk.png)
 
 # Translators
 <table>

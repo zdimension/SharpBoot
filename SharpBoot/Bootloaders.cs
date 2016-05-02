@@ -481,31 +481,111 @@ namespace SharpBoot
     {
         public override string GetCode(BootMenu menu)
         {
-            throw new NotImplementedException();
+            var code = "";
+
+            code += $"set gfxmode={Resolution.Width}x{Resolution.Height}\n";
+            code += "insmod video_bochs\ninsmod video_cirrus\ninsmod png\n";
+            code += "background_image /win32-loader/sharpboot.png\n";
+
+            menu.Items.ForEach(x => code += GetCode(x));
+
+            return code;
         }
 
         public override string GetCode(BootMenuItem item)
         {
-            throw new NotImplementedException();
+            if (item.CustomCode != "") return item.CustomCode;
+
+            var code = "";
+
+            code += "menuentry \"" + item.Name.RemoveAccent() + "\" {\n";
+
+            if (item.Type == EntryType.BootHDD)
+            {
+                code += "insmod part_msdos\n";
+                code += "insmod chain\n";
+                code += "chainloader (hd0,0)\n";
+            }
+            else if(item.Type == EntryType.Category)
+            {
+  code += "configfile /win32-loader/" + item.IsoName + ".cfg\n";
+            }
+            else
+            {
+                code += $"search -f \"--set-root /images/{item.IsoName}\"\n";
+                switch (item.Type)
+                {
+                    case EntryType.ISO:
+                        code += $"drivemap \"/images/{item.IsoName}\" '(hd32)'\ndrivemap '--hook' ''\nset root='(hd32)'\nchainloader +1\n";
+                        break;
+                    case EntryType.IMG:
+                        code += $"linux /memdisk\ninitrd /images/{item.IsoName}\n";
+                        break;
+                    case EntryType.NTLDR:
+                        code += $"insmod part_msdos\ninsmod ntldr\ninsmod ntfs\nntldr /images/{item.IsoName}";
+                        break;
+                    case EntryType.GRLDR:
+                    case EntryType.CMLDR:
+                    case EntryType.FreeDOS:
+                    case EntryType.MS_DOS:
+                    case EntryType.MS_DOS_7:
+                    case EntryType.PC_DOS:
+                    case EntryType.DRMK:
+                    case EntryType.ReactOS:
+                        code += string.Format(
+                            "ls /images/{0} || find --set-root /images/{0}\nchainloader /images/{0}\n",
+                            item.IsoName);
+                        break;
+                }
+            }
+
+            code += "}\n";
+
+            return code;
         }
 
-        public override void SetImage(Image img, Size sz)
+        public override void SetImage(Image image, Size sz)
         {
-            throw new NotImplementedException();
+            if (image == null) return;
+
+            var width = sz.Width;
+            var height = sz.Height;
+
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height, PixelFormat.Format16bppRgb555);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            destImage.Save(Path.Combine(WorkingDir, "sharpboot.png"), ImageFormat.Png);
         }
 
         public override string BinFile { get; set; } = "g2ldr";
         public override byte[] Archive { get; set; } = Resources.grub2;
-        public override string FolderName { get; set; } = "grub2";
+        public override string FolderName { get; set; } = "../win32-loader";
         public override string DisplayName { get; set; } = "Grub2";
         public override string FileExt { get; set; } = ".cfg";
         public override string CmdArgs { get; set; } = "";
-        public override bool SupportAccent { get; set; } = false;
+        public override bool SupportAccent { get; set; } = true;
         public override long TotalSize { get; set; } = 180335;
 
         public override void Install(string l)
         {
-            /*var d = Program.GetTemporaryDirectory();
+            var d = Program.GetTemporaryDirectory();
             var exepath = Path.Combine(d, "grubinst.exe");
             File.WriteAllBytes(exepath, Resources.grubinst);
 
@@ -525,8 +605,8 @@ namespace SharpBoot
             p.Start();
             p.WaitForExit();
 
-            Program.SafeDel(d);*/
-            var grub2_mbr = new byte[432]
+            Program.SafeDel(d);
+            /*var grub2_mbr = new byte[432]
             {
                 0xEB, 0x63, 0x90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -585,7 +665,7 @@ namespace SharpBoot
                     src.Position = 0;
                     src.Write(mbr, 0, 512);
                 }
-            }
+            }*/
         }
     }
 

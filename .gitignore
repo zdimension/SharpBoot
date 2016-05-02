@@ -3,3 +3,7 @@
 ################################################################################
 
 /SharpBoot/MorePerfectDOSVGA.ttf
+/SharpBoot/MorePerfectDOSVGA2.ttf
+/SharpBoot/obj
+/SharpBoot/bin/Debug/SharpBoot.vshost.exe.manifest
+*.userprefs
