@@ -138,12 +138,6 @@
   <data name="ExtractBaseDisk" xml:space="preserve">
     <value>Se extrage discul de bază</value>
   </data>
-  <data name="ExtractImageMagick" xml:space="preserve">
-    <value>Se extrage ImageMagick...</value>
-  </data>
-  <data name="ExtractMkisofs" xml:space="preserve">
-    <value>Se extrage Mkisofs...</value>
-  </data>
   <data name="GenMainMenu" xml:space="preserve">
     <value>Se generează meniul principal.</value>
   </data>
@@ -161,9 +155,6 @@
   </data>
   <data name="ChkOf" xml:space="preserve">
     <value>{0} checksum al {1}:</value>
-  </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
   </data>
   <data name="IsoCreated" xml:space="preserve">
     <value>Fișierul ISO a fost creat cu succes.\nAi vrea sa îl încerci folosind QEMU?</value>
@@ -234,9 +225,6 @@
   <data name="NeedAdmin" xml:space="preserve">
     <value>Ai nevoie de drepturi administrative pentru a formata cheia USB.</value>
   </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Inchide</value>
   </data>
@@ -257,5 +245,14 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Etichetă volum:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Navighează</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>Despre SharpBoot</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>Se extrage {0}...</value>
   </data>
 </root>

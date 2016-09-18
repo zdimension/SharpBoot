@@ -169,9 +169,6 @@
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 90</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>瀏覽</value>
-  </data>
   <data name="rbnDown.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 10pt</value>
   </data>

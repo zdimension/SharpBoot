@@ -150,9 +150,6 @@
   <data name="Extracting" xml:space="preserve">
     <value>{0} wird extrahiert...</value>
   </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
-  </data>
   <data name="GenMainMenu" xml:space="preserve">
     <value>Generiere Hauptmenü...</value>
   </data>
@@ -231,9 +228,6 @@
   <data name="Filesystem" xml:space="preserve">
     <value>Dateisystem:</value>
   </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Schließen</value>
   </data>
@@ -254,5 +248,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Volumebezeichnung:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Durchsuche</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>Über SharpBoot</value>
   </data>
 </root>

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Upravit kód</value>
+    <value>Upravit kód</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rozlišení obrazovky</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> Kontrolní součet</value>
+    <value>Kontrolní součet</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Výchozí</value>
@@ -135,9 +135,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Žádný</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Procházet</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Obrázek pozadí</value>
   </data>
@@ -145,7 +142,7 @@
     <value>Titul</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Vymazat</value>
+    <value>Vymazat</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Celková velikost</value>

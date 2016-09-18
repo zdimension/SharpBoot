@@ -117,7 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Acerca de SharpBoot</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 30</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Adicionar um ficheiro ISO</value>
+  </data>
+  <data name="rbnFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 19</value>
+  </data>
+  <data name="rbnFile.Text" xml:space="preserve">
+    <value>Deste computador</value>
+  </data>
+  <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 19</value>
+  </data>
+  <data name="rbnDown.Text" xml:space="preserve">
+    <value>Descarregar um ficheiro ISO verificado</value>
+  </data>
+  <data name="sfdIso.Title" xml:space="preserve">
+    <value>Descarregar um ficheiro ISO</value>
   </data>
 </root>

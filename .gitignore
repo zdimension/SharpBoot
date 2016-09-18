@@ -7,3 +7,6 @@
 /SharpBoot/obj
 /SharpBoot/bin/Debug/SharpBoot.vshost.exe.manifest
 *.userprefs
+/SharpBoot/bin/Debug
+/.vs/SharpBoot/v14
+/SharpBoot.sln.DotSettings.user

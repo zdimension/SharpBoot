@@ -24,6 +24,9 @@ namespace SharpBoot
             Closing += AddIso_Closing;
             btnOK.Text = Strings.OK;
             btnAnnul.Text = Strings.Cancel;
+            btnBrowse.Text = Strings.Browse;
+            ofpIso.Title = label1.Text;
+            sfdIso.Filter = Strings.ISOImg + " (*.iso)|*.iso";
             while (ISOInfo.ISOs.Count == 0) Thread.Sleep(50);
             while (cbxDetIso.Items.Count < 2)
             {

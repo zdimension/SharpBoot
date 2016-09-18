@@ -91,6 +91,11 @@ namespace SharpBoot
             updateAvailableToolStripMenuItem.Visible = update_available;
             addFilesToolStripMenuItem.Text = Strings.AddFiles;
             btnCustomEntry.Text = Strings.AddCustomEntry;
+            btnBackBrowse.Text = Strings.Browse;
+            btnAbout.Text = " " + Strings.AboutSharpBoot;
+            btnChecksum.Text = " " + btnChecksum.Text;
+            btnCustomCode.Text = " " + btnCustomCode.Text;
+            btnRemISO.Text = " " + btnRemISO.Text;
             Program.editcode = btnCustomCode.Text.Substring(1);
             Program.fpath = lvIsos.Columns[4].HeaderText;
         }

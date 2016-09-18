@@ -258,4 +258,10 @@
   <data name="VolumeLabel" xml:space="preserve">
     <value>Volume label:</value>
   </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>About SharpBoot</value>
+  </data>
 </root>

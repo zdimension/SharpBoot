@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,85 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnUSB.Text" xml:space="preserve">
+    <value>Criar pen USB multiboot</value>
+  </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>Experimente o ficheiro de imagem de disco</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Arraste o ficheiro ISO ou IMG para aqui</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>Criar ISO</value>
+  </data>
+  <data name="btnCustomCode.Text" xml:space="preserve">
+    <value>Editar código</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Resolução</value>
+  </data>
+  <data name="cbxBackType.Items" xml:space="preserve">
+    <value>Pré-definido</value>
+  </data>
+  <data name="cbxBackType.Items1" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+  <data name="cbxBackType.Items2" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>Imagem de fundo</value>
+  </data>
+  <data name="gbxTitle.Text" xml:space="preserve">
+    <value>Título</value>
+  </data>
+  <data name="btnRemISO.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Tamanho total</value>
+  </data>
+  <data name="clmnName.HeaderText" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="clmnSize.HeaderText" xml:space="preserve">
+    <value>Tamanho</value>
+  </data>
+  <data name="clmnCate.HeaderText" xml:space="preserve">
+    <value>Categoria</value>
+  </data>
+  <data name="clmnDescr.HeaderText" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="clmnFilePath.HeaderText" xml:space="preserve">
+    <value>Localização do ficheiro</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>A&amp;brir</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Guardar</value>
+  </data>
+  <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
+    <value>A&amp;dicionar informação de ISO automaticamente</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Sair</value>
+  </data>
+  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Adicionar ISO</value>
+  </data>
+  <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>Atualização disponível</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Linguagem</value>
+  </data>
+  <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instalar o bootloader na pen USB</value>
+  </data>
+  <data name="lblDragHere.Text" xml:space="preserve">
+    <value>Arrastar ficheiros aqui</value>
+  </data>
 </root>

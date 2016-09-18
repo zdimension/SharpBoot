@@ -141,22 +141,16 @@
     <value>Crea ISO</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Modifica codice</value>
+    <value>Modifica codice</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Risoluzione</value>
-  </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> Info SharpBoot</value>
   </data>
   <data name="cbxBackType.Items1" xml:space="preserve">
     <value>Personalizzata</value>
   </data>
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Nessuno</value>
-  </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Sfoglia...</value>
   </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Immagine di sfondo</value>
@@ -165,7 +159,7 @@
     <value>Nome</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Elimina</value>
+    <value>Elimina</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Grandezza totale</value>

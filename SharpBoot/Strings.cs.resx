@@ -120,21 +120,6 @@
   <data name="BootFromHDD" xml:space="preserve">
     <value>Boot z prvního pevného disku</value>
   </data>
-  <data name="BootloaderInstalled" xml:space="preserve">
-    <value>{0} has successfully been installed to drive {1}.</value>
-  </data>
-  <data name="CalcIn" xml:space="preserve">
-    <value>Calculated in {0}</value>
-  </data>
-  <data name="ChangesNeedRestart" xml:space="preserve">
-    <value>Changes will take effect after restarting the application.</value>
-  </data>
-  <data name="ChkOf" xml:space="preserve">
-    <value>{0} checksum of {1}:</value>
-  </data>
-  <data name="ChooseBootloader" xml:space="preserve">
-    <value>Choose the bootloader you want to install:</value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Zavřít</value>
   </data>
@@ -144,44 +129,17 @@
   <data name="CopyISOfiles" xml:space="preserve">
     <value>Kopírování souborů ISO</value>
   </data>
-  <data name="CouldntDetect" xml:space="preserve">
-    <value>Could not detect which operating system is in this disc image.</value>
-  </data>
-  <data name="CreateMultibootUsb" xml:space="preserve">
-    <value>Create multiboot USB key</value>
-  </data>
-  <data name="CreatingISO" xml:space="preserve">
-    <value>Creating ISO file...</value>
-  </data>
-  <data name="CreatingUSB" xml:space="preserve">
-    <value>Creating multiboot USB key...</value>
-  </data>
   <data name="DownComplete" xml:space="preserve">
     <value>Stahování dokončeno.</value>
   </data>
   <data name="Download" xml:space="preserve">
     <value>Stahování</value>
   </data>
-  <data name="ExtractBaseDisk" xml:space="preserve">
-    <value>Extracting base disk...</value>
-  </data>
   <data name="Extracting" xml:space="preserve">
     <value>Těžba {0}</value>
   </data>
   <data name="Filesystem" xml:space="preserve">
     <value>Systém souborů:</value>
-  </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
-  </data>
-  <data name="FormatError" xml:space="preserve">
-    <value>Undetermined error while formatting.</value>
-  </data>
-  <data name="Formatting" xml:space="preserve">
-    <value>Formatting</value>
-  </data>
-  <data name="FormatWillErase" xml:space="preserve">
-    <value>Start the formatting operation?\nThis will DESTROY any data on the target!</value>
   </data>
   <data name="GenMainMenu" xml:space="preserve">
     <value>Generování hlavní menu</value>
@@ -195,53 +153,17 @@
   <data name="Init" xml:space="preserve">
     <value>Inicializace</value>
   </data>
-  <data name="Install" xml:space="preserve">
-    <value>Install</value>
-  </data>
-  <data name="InstallABootLoader" xml:space="preserve">
-    <value>Install a bootloader on a USB key</value>
-  </data>
-  <data name="InstallingBoot" xml:space="preserve">
-    <value>Installing {0} on {1}...</value>
-  </data>
-  <data name="IsoCreated" xml:space="preserve">
-    <value>The ISO file has been successfully created.\nWould you like to try it on QEMU?</value>
-  </data>
-  <data name="IsoCreatedTitle" xml:space="preserve">
-    <value>ISO created</value>
-  </data>
-  <data name="ISOImg" xml:space="preserve">
-    <value>ISO image</value>
-  </data>
   <data name="MainMenu" xml:space="preserve">
     <value>Hlavní nabídka</value>
   </data>
-  <data name="NeedAdmin" xml:space="preserve">
-    <value>You must have administrator rights to format the USB key.</value>
-  </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="OpCancelled" xml:space="preserve">
     <value>Operace byla zrušena</value>
-  </data>
-  <data name="Other" xml:space="preserve">
-    <value>Other</value>
-  </data>
-  <data name="PartitionTooBig" xml:space="preserve">
-    <value>The selected partition is too big for {0}</value>
   </data>
   <data name="PicFilter" xml:space="preserve">
     <value>Obrázky</value>
   </data>
   <data name="Recommended" xml:space="preserve">
     <value>(doporučené)</value>
-  </data>
-  <data name="SharpBootUsesSoft" xml:space="preserve">
-    <value>SharpBoot uses the following software:</value>
-  </data>
-  <data name="SizeSuffixes" xml:space="preserve">
-    <value>,K,M,G,T,P,E,Z,Y</value>
   </data>
   <data name="FileAlreadyExists" xml:space="preserve">
     <value>Soubor již existuje.</value>
@@ -257,5 +179,14 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Jmenovka svazku:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Procházet</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Nainstalovat</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>Bitová kopie ISO</value>
   </data>
 </root>

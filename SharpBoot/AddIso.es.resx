@@ -130,13 +130,13 @@
   <data name="rbnFile.Text" xml:space="preserve">
     <value>De tu Computador</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Buscar</value>
-  </data>
   <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 19</value>
   </data>
   <data name="rbnDown.Text" xml:space="preserve">
     <value>Descargar una archivo ISO verificado</value>
+  </data>
+  <data name="sfdIso.Title" xml:space="preserve">
+    <value>Descargar una archivo ISO</value>
   </data>
 </root>

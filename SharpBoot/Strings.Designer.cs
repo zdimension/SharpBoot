@@ -61,6 +61,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à About SharpBoot.
+        /// </summary>
+        internal static string AboutSharpBoot {
+            get {
+                return ResourceManager.GetString("AboutSharpBoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Add Custom Entry.
         /// </summary>
         internal static string AddCustomEntry {
@@ -93,6 +102,15 @@ namespace SharpBoot {
         internal static string BootloaderInstalled {
             get {
                 return ResourceManager.GetString("BootloaderInstalled", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Browse.
+        /// </summary>
+        internal static string Browse {
+            get {
+                return ResourceManager.GetString("Browse", resourceCulture);
             }
         }
         

@@ -124,9 +124,6 @@
   <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
     <value>495, 426</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>確定</value>
-  </data>
   <data name="richTextBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
@@ -141,8 +138,5 @@
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>582, 461</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>關於 SharpBoot</value>
   </data>
 </root>

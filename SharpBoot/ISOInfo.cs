@@ -107,8 +107,9 @@ namespace SharpBoot
 
                 Settings.Default.Save();
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.Message);
             }
         }
 

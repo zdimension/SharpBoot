@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomEntryFrm));
             this.lblHeader = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
@@ -41,49 +42,29 @@
             // 
             // lblHeader
             // 
-            this.lblHeader.AutoSize = true;
-            this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 15.75F);
-            this.lblHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblHeader.Location = new System.Drawing.Point(10, 11);
+            resources.ApplyResources(this.lblHeader, "lblHeader");
             this.lblHeader.Name = "lblHeader";
-            this.lblHeader.Size = new System.Drawing.Size(207, 30);
-            this.lblHeader.TabIndex = 11;
-            this.lblHeader.Text = "Header custom entry";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnOK);
             this.panel1.Controls.Add(this.btnAnnul);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 317);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(444, 59);
-            this.panel1.TabIndex = 12;
             // 
             // btnOK
             // 
-            this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnOK, "btnOK");
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Enabled = false;
-            this.btnOK.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnOK.Location = new System.Drawing.Point(269, 18);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
             // 
             // btnAnnul
             // 
-            this.btnAnnul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.btnAnnul, "btnAnnul");
             this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAnnul.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAnnul.Location = new System.Drawing.Point(350, 18);
             this.btnAnnul.Name = "btnAnnul";
-            this.btnAnnul.Size = new System.Drawing.Size(75, 23);
-            this.btnAnnul.TabIndex = 4;
-            this.btnAnnul.Text = "Cancel";
             this.btnAnnul.UseVisualStyleBackColor = true;
             // 
             // cbxEntryType
@@ -91,61 +72,50 @@
             this.cbxEntryType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEntryType.FormattingEnabled = true;
             this.cbxEntryType.Items.AddRange(new object[] {
-            "Windows ntldr/setupldr.bin/bootmgr/grldr",
-            "Grub4DOS grldr",
-            "NT/2000/XP cmldr",
-            "FreeDOS kernel.sys",
-            "MS-DOS io.sys",
-            "MS-DOS 7+ io.sys",
-            "PC-DOS ibmbio.com",
-            "DRMK dellbio.bin",
-            "ReactOS freeldr"});
-            this.cbxEntryType.Location = new System.Drawing.Point(11, 53);
+            resources.GetString("cbxEntryType.Items"),
+            resources.GetString("cbxEntryType.Items1"),
+            resources.GetString("cbxEntryType.Items2"),
+            resources.GetString("cbxEntryType.Items3"),
+            resources.GetString("cbxEntryType.Items4"),
+            resources.GetString("cbxEntryType.Items5"),
+            resources.GetString("cbxEntryType.Items6"),
+            resources.GetString("cbxEntryType.Items7"),
+            resources.GetString("cbxEntryType.Items8")});
+            resources.ApplyResources(this.cbxEntryType, "cbxEntryType");
             this.cbxEntryType.Name = "cbxEntryType";
-            this.cbxEntryType.Size = new System.Drawing.Size(421, 23);
-            this.cbxEntryType.TabIndex = 13;
             this.cbxEntryType.SelectedIndexChanged += new System.EventHandler(this.cbxEntryType_SelectedIndexChanged);
             // 
             // btnBrowse
             // 
             this.btnBrowse.Image = global::SharpBoot.Properties.Resources.folder;
-            this.btnBrowse.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBrowse.Location = new System.Drawing.Point(402, 105);
+            resources.ApplyResources(this.btnBrowse, "btnBrowse");
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(31, 25);
-            this.btnBrowse.TabIndex = 15;
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // tbxDest
             // 
-            this.tbxDest.Location = new System.Drawing.Point(11, 106);
+            resources.ApplyResources(this.tbxDest, "tbxDest");
             this.tbxDest.Name = "tbxDest";
-            this.tbxDest.Size = new System.Drawing.Size(385, 23);
-            this.tbxDest.TabIndex = 14;
             this.tbxDest.TextChanged += new System.EventHandler(this.tbxDest_TextChanged);
             // 
             // CustomEntryFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(444, 376);
             this.ControlBox = false;
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.tbxDest);
             this.Controls.Add(this.cbxEntryType);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblHeader);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CustomEntryFrm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = " ";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

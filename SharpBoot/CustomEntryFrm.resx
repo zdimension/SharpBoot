@@ -117,7 +117,253 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblHeader.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblHeader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 15.75pt</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblHeader.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lblHeader.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 11</value>
+  </data>
+  <data name="lblHeader.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 30</value>
+  </data>
+  <data name="lblHeader.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblHeader.Text" xml:space="preserve">
+    <value>Header custom entry</value>
+  </data>
+  <data name="&gt;&gt;lblHeader.Name" xml:space="preserve">
+    <value>lblHeader</value>
+  </data>
+  <data name="&gt;&gt;lblHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblHeader.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblHeader.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnOK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnOK.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnOK.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 18</value>
+  </data>
+  <data name="btnOK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="btnOK.Text" xml:space="preserve">
+    <value>&lt;OK&gt;</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
+    <value>btnOK</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnOK.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnOK.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnAnnul.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="btnAnnul.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAnnul.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 18</value>
+  </data>
+  <data name="btnAnnul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btnAnnul.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnAnnul.Text" xml:space="preserve">
+    <value>&lt;Cancel&gt;</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
+    <value>btnAnnul</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;btnAnnul.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 313</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 59</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="cbxEntryType.Items" xml:space="preserve">
+    <value>Windows ntldr/setupldr.bin/bootmgr/grldr</value>
+  </data>
+  <data name="cbxEntryType.Items1" xml:space="preserve">
+    <value>Grub4DOS grldr</value>
+  </data>
+  <data name="cbxEntryType.Items2" xml:space="preserve">
+    <value>NT/2000/XP cmldr</value>
+  </data>
+  <data name="cbxEntryType.Items3" xml:space="preserve">
+    <value>FreeDOS kernel.sys</value>
+  </data>
+  <data name="cbxEntryType.Items4" xml:space="preserve">
+    <value>MS-DOS io.sys</value>
+  </data>
+  <data name="cbxEntryType.Items5" xml:space="preserve">
+    <value>MS-DOS 7+ io.sys</value>
+  </data>
+  <data name="cbxEntryType.Items6" xml:space="preserve">
+    <value>PC-DOS ibmbio.com</value>
+  </data>
+  <data name="cbxEntryType.Items7" xml:space="preserve">
+    <value>DRMK dellbio.bin</value>
+  </data>
+  <data name="cbxEntryType.Items8" xml:space="preserve">
+    <value>ReactOS freeldr</value>
+  </data>
+  <data name="cbxEntryType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 53</value>
+  </data>
+  <data name="cbxEntryType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>421, 23</value>
+  </data>
+  <data name="cbxEntryType.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;cbxEntryType.Name" xml:space="preserve">
+    <value>cbxEntryType</value>
+  </data>
+  <data name="&gt;&gt;cbxEntryType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cbxEntryType.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cbxEntryType.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnBrowse.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 105</value>
+  </data>
+  <data name="btnBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 25</value>
+  </data>
+  <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Name" xml:space="preserve">
+    <value>btnBrowse</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnBrowse.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tbxDest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 106</value>
+  </data>
+  <data name="tbxDest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>385, 23</value>
+  </data>
+  <data name="tbxDest.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;tbxDest.Name" xml:space="preserve">
+    <value>tbxDest</value>
+  </data>
+  <data name="&gt;&gt;tbxDest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbxDest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tbxDest.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="ofp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>440, 372</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="&gt;&gt;ofp.Name" xml:space="preserve">
+    <value>ofp</value>
+  </data>
+  <data name="&gt;&gt;ofp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CustomEntryFrm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

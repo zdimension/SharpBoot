@@ -135,9 +135,6 @@
   <data name="btnAnnul.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
     <value>btnAnnul</value>
   </data>
@@ -203,9 +200,6 @@
   </data>
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
-  </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
   </data>
   <data name="btnOK.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
     <value>ImageBeforeText</value>
@@ -342,9 +336,6 @@
   <data name="ofpIso.Filter" xml:space="preserve">
     <value>Disk image file (*.iso; *.img)|*.iso;*.img</value>
   </data>
-  <data name="ofpIso.Title" xml:space="preserve">
-    <value>Add ISO</value>
-  </data>
   <data name="lblPercent.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
@@ -362,9 +353,6 @@
   </data>
   <data name="lblPercent.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
-  </data>
-  <data name="lblPercent.Text" xml:space="preserve">
-    <value>0%</value>
   </data>
   <data name="lblPercent.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -414,11 +402,8 @@
   <metadata name="sfdIso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>103, 17</value>
   </metadata>
-  <data name="sfdIso.Filter" xml:space="preserve">
-    <value>ISO image (*.iso)|*.iso</value>
-  </data>
   <data name="sfdIso.Title" xml:space="preserve">
-    <value>Download iso file</value>
+    <value>Download ISO file</value>
   </data>
   <data name="cbxVersion.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -465,9 +450,6 @@
   <data name="lblSpeed.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
-  <data name="lblSpeed.Text" xml:space="preserve">
-    <value>0.0 MB/s</value>
-  </data>
   <data name="lblSpeed.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -501,9 +483,6 @@
   <data name="lblProg.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
-  <data name="lblProg.Text" xml:space="preserve">
-    <value>0 B / 0 B</value>
-  </data>
   <data name="lblProg.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -528,9 +507,6 @@
   <data name="rtbIsoDesc.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
-  <data name="rtbIsoDesc.Text" xml:space="preserve">
-    <value />
-  </data>
   <data name="rtbIsoDesc.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -538,7 +514,7 @@
     <value>rtbIsoDesc</value>
   </data>
   <data name="&gt;&gt;rtbIsoDesc.Type" xml:space="preserve">
-    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.DisabledRichTextBox, SharpBoot, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;rtbIsoDesc.Parent" xml:space="preserve">
     <value>$this</value>
@@ -565,7 +541,7 @@
     <value>cbxDetIso</value>
   </data>
   <data name="&gt;&gt;cbxDetIso.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxDetIso.Parent" xml:space="preserve">
     <value>$this</value>
@@ -592,7 +568,7 @@
     <value>cbxISOS</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Type" xml:space="preserve">
-    <value>GroupedComboBox, SharpBoot, Version=4.1.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>GroupedComboBox, SharpBoot, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxISOS.Parent" xml:space="preserve">
     <value>$this</value>
@@ -638,9 +614,6 @@
   </data>
   <data name="btnBrowse.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
-  </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Browse</value>
   </data>
   <data name="btnBrowse.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>

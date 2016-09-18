@@ -223,7 +223,7 @@
     <value>12</value>
   </data>
   <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancel</value>
+    <value>&lt;Cancel&gt;</value>
   </data>
   <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
     <value>516, 80</value>

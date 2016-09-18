@@ -134,7 +134,7 @@
     <value>做ISO</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> 编辑代码</value>
+    <value>编辑代码</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>屏幕分辨率</value>
@@ -142,11 +142,8 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>啟動引導器</value>
   </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> 关于SharpBoot</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> 校验</value>
+    <value>校验</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>缺省</value>
@@ -157,9 +154,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>没有</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>浏览</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>背景</value>
   </data>
@@ -167,7 +161,7 @@
     <value>标题</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> 删除</value>
+    <value>删除</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>总大小</value>

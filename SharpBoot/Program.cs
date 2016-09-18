@@ -232,7 +232,8 @@ namespace SharpBoot
                 {"і", "i"}, // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
                 {"ї", "ï"},
                 {"І", "I"},
-                {"Ї", "Ï"}
+                {"Ї", "Ï"},
+                {"у́", "y"}
             };
 
             str = replchar.Aggregate(str, (current, rc) => current.Replace(rc.Key, rc.Value));

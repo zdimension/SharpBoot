@@ -138,7 +138,7 @@
     <value>Створити ISO-файл</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Текст програми</value>
+    <value>Текст програми</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Розширення екрану</value>
@@ -146,11 +146,8 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Завантажувач</value>
   </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> Про SharpBoot</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> Хєшсумма</value>
+    <value>Хєшсумма</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Стандартна</value>
@@ -161,9 +158,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Нічого</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Огляд</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Фонова картинка</value>
   </data>
@@ -171,7 +165,7 @@
     <value>Заголовок</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Видалити</value>
+    <value>Видалити</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Всього</value>
@@ -195,13 +189,13 @@
     <value>341, 22</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Відкрити</value>
+    <value>&amp;Відкрити</value>
   </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>341, 22</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Зберегти</value>
+    <value>&amp;Зберегти</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>338, 6</value>
@@ -216,7 +210,7 @@
     <value>341, 22</value>
   </data>
   <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Автоматично додати інформацію про ISO-образ</value>
+    <value>&amp;Автоматично додати інформацію про ISO-образ</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>338, 6</value>
@@ -225,7 +219,7 @@
     <value>341, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Вийти</value>
+    <value>&amp;Вийти</value>
   </data>
   <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 20</value>

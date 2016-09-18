@@ -168,9 +168,6 @@
   <data name="Filesystem" xml:space="preserve">
     <value>檔案系統</value>
   </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
-  </data>
   <data name="FormatError" xml:space="preserve">
     <value>格式化时发生未确定的错误.</value>
   </data>
@@ -254,5 +251,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>卷标</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>关于SharpBoot</value>
   </data>
 </root>

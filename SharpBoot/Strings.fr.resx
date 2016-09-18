@@ -231,9 +231,6 @@
   <data name="Filesystem" xml:space="preserve">
     <value>Système de fichiers :</value>
   </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -254,5 +251,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Nom de volume :</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parcourir</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>À propos de SharpBoot</value>
   </data>
 </root>

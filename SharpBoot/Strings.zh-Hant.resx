@@ -171,9 +171,6 @@
   <data name="PicFilter" xml:space="preserve">
     <value>圖片</value>
   </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
-  </data>
   <data name="BootloaderInstalled" xml:space="preserve">
     <value>{0} 已成功地安裝至 {1}.</value>
   </data>
@@ -254,5 +251,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>磁碟區標籤</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>瀏覽</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>關於 SharpBoot</value>
   </data>
 </root>

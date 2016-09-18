@@ -23,6 +23,7 @@ namespace SharpBoot
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
             rtbMyWebsite.DeselectAll();
+            Text = Strings.AboutSharpBoot;
         }
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)

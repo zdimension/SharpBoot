@@ -168,9 +168,6 @@
   <data name="Filesystem" xml:space="preserve">
     <value>Sistema de archivos:</value>
   </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
-  </data>
   <data name="FormatError" xml:space="preserve">
     <value>Error indeterminado mientras se formateaba.</value>
   </data>
@@ -216,9 +213,6 @@
   <data name="NeedAdmin" xml:space="preserve">
     <value>Debes tener permisos de adminstrador para formatear el USB.</value>
   </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Other" xml:space="preserve">
     <value>Otro</value>
   </data>
@@ -233,9 +227,6 @@
   </data>
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot utiliza los siguiente programas:</value>
-  </data>
-  <data name="SizeSuffixes" xml:space="preserve">
-    <value>,K,M,G,T,P,E,Z,Y</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Cerrar</value>
@@ -257,5 +248,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Etiqueta del volumen:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>Acerca de SharpBoot</value>
   </data>
 </root>

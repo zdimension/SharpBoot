@@ -156,6 +156,7 @@ namespace SharpBoot
             // 
             // cbxDetIso
             // 
+            this.cbxDetIso.AutoSort = true;
             this.cbxDetIso.DataSource = null;
             this.cbxDetIso.DisplayMember = "Name";
             this.cbxDetIso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -169,6 +170,7 @@ namespace SharpBoot
             // 
             // cbxISOS
             // 
+            this.cbxISOS.AutoSort = true;
             this.cbxISOS.DataSource = null;
             this.cbxISOS.DisplayMember = "Name";
             this.cbxISOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;

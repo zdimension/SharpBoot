@@ -130,9 +130,6 @@
   <data name="rbnFile.Text" xml:space="preserve">
     <value>С вашего компьютера</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Обзор</value>
-  </data>
   <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 19</value>
   </data>

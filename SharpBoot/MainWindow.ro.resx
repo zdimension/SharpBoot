@@ -134,13 +134,10 @@
     <value>Crează ISO</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Editare Cod</value>
+    <value>Editare Cod</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Rezoluție</value>
-  </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> Despre SharpBoot</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Implicit</value>
@@ -151,9 +148,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Nimic</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Navighează</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Imagine de fundal</value>
   </data>
@@ -161,7 +155,7 @@
     <value>Titlu</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Șterge</value>
+    <value>Șterge</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Mărime totală</value>

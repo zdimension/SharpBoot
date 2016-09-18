@@ -130,17 +130,11 @@
   <data name="rbnFile.Text" xml:space="preserve">
     <value>Din calculatorul tău</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Navighează</value>
-  </data>
   <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 19</value>
   </data>
   <data name="rbnDown.Text" xml:space="preserve">
     <value>Descarca un fișier ISO verificat</value>
-  </data>
-  <data name="sfdIso.Filter" xml:space="preserve">
-    <value>Imagine ISO (*.iso)|*.iso</value>
   </data>
   <data name="sfdIso.Title" xml:space="preserve">
     <value>Descarca un fișier ISO</value>

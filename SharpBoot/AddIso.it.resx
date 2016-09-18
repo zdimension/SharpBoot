@@ -136,7 +136,4 @@
   <data name="rbnDown.Text" xml:space="preserve">
     <value>Scarica e verifica ISO</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Sfoglia...</value>
-  </data>
 </root>

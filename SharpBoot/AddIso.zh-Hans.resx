@@ -157,9 +157,6 @@
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 90</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>浏览</value>
-  </data>
   <data name="rbnDown.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 165</value>
   </data>

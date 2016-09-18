@@ -134,16 +134,13 @@
     <value>ISO erstellen</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Code bearbeiten</value>
+    <value>Code bearbeiten</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Auflösung</value>
   </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> Über SharpBoot</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> Prüfsumme</value>
+    <value>Prüfsumme</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Standard</value>
@@ -154,9 +151,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Keins</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Durchsuche</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Hintergrundbild</value>
   </data>
@@ -164,7 +158,7 @@
     <value>Titel</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Lösche</value>
+    <value>Lösche</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Gesamtgröße</value>

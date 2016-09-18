@@ -138,13 +138,10 @@ fichier ISO ou IMG ici</value>
     <value>Créer le fichier ISO</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Modifier le code</value>
+    <value>Modifier le code</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Résolution</value>
-  </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> À propos de SharpBoot</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Par défaut</value>
@@ -155,9 +152,6 @@ fichier ISO ou IMG ici</value>
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Aucun</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Parcourir</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Image de fond</value>
   </data>
@@ -165,7 +159,7 @@ fichier ISO ou IMG ici</value>
     <value>Titre</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value>  Supprimer</value>
+    <value> Supprimer</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Taille totale</value>
@@ -235,9 +229,6 @@ fichier ISO ou IMG ici</value>
   </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Installer un bootloader sur une clé USB</value>
-  </data>
-  <data name="menuStrip.Text" xml:space="preserve">
-    <value>menuStrip1</value>
   </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 25</value>

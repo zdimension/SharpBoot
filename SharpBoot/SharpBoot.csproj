@@ -148,6 +148,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.it.resx</DependentUpon>
     </Compile>
+    <Compile Include="Strings.pt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.pt.resx</DependentUpon>
+    </Compile>
     <Compile Include="Strings.ru.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,35 +236,7 @@
     </Compile>
     <Compile Include="Utils.cs" />
     <Compile Include="W7R.cs" />
-    <EmbeddedResource Include="About.de.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About.es.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About.fr.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About.it.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="About.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About.ro.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About.ru.resx">
-      <DependentUpon>About.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="About.uk.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -287,6 +264,9 @@
     <EmbeddedResource Include="AddIso.it.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.pt.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddIso.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,6 +292,9 @@
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.it.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.pt.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.ru.resx">
@@ -356,6 +339,9 @@
     <EmbeddedResource Include="CustomFileFrm.it.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.pt.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomFileFrm.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,34 +357,10 @@
     <EmbeddedResource Include="CustomFileFrm.zh-Hans.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.cs.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.de.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.es.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.it.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
+    <EmbeddedResource Include="CustomFileFrm.zh-Hant.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCodeFrm.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.ro.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.ru.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.uk.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.zh-Hans.resx">
-      <DependentUpon>EditCodeFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.zh-Hant.resx">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirstLaunch.resx">
@@ -417,6 +379,9 @@
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.it.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.pt.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.resx">
@@ -447,6 +412,9 @@
     <EmbeddedResource Include="MainWindow.it.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.pt.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.ru.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,6 +438,10 @@
     <EmbeddedResource Include="Strings.it.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Strings.pt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.pt.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -506,6 +478,9 @@
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.it.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.pt.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.resx">

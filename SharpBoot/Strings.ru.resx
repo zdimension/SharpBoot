@@ -216,9 +216,6 @@
   <data name="NeedAdmin" xml:space="preserve">
     <value>Вы должны иметь права администратора для того что бы отформатировать флеш-память.</value>
   </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="Other" xml:space="preserve">
     <value>Другое</value>
   </data>
@@ -257,5 +254,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Метка тома:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Обзор</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>О SharpBoot...</value>
   </data>
 </root>

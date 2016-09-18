@@ -138,9 +138,6 @@
   <data name="btnOK.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="btnOK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="&gt;&gt;btnOK.Name" xml:space="preserve">
     <value>btnOK</value>
   </data>
@@ -167,9 +164,6 @@
   </data>
   <data name="btnAnnul.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
-  </data>
-  <data name="btnAnnul.Text" xml:space="preserve">
-    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;btnAnnul.Name" xml:space="preserve">
     <value>btnAnnul</value>
@@ -219,9 +213,6 @@
   <data name="lblFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="lblFilePath.Text" xml:space="preserve">
-    <value>File path: thefilepath</value>
-  </data>
   <data name="&gt;&gt;lblFilePath.Name" xml:space="preserve">
     <value>lblFilePath</value>
   </data>
@@ -252,9 +243,6 @@
   <data name="lblHeader.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="lblHeader.Text" xml:space="preserve">
-    <value>Header edit code</value>
-  </data>
   <data name="&gt;&gt;lblHeader.Name" xml:space="preserve">
     <value>lblHeader</value>
   </data>
@@ -281,9 +269,6 @@
   </data>
   <data name="rtbCode.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
-  </data>
-  <data name="rtbCode.Text" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;rtbCode.Name" xml:space="preserve">
     <value>rtbCode</value>

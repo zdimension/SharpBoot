@@ -134,7 +134,7 @@
     <value>Crear ISO</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> Editar código</value>
+    <value>Editar código</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Resolución</value>
@@ -142,11 +142,8 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>Secuencia de arranque</value>
   </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> Acerca de SharpBoot</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> Verificación</value>
+    <value>Verificación</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>Por defecto</value>
@@ -157,9 +154,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>Ninguno</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>Buscar</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>Imagen de fondo</value>
   </data>
@@ -167,7 +161,7 @@
     <value>Titulo</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> Eliminar</value>
+    <value>Eliminar</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Tamaño total</value>

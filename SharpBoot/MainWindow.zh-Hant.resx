@@ -138,7 +138,7 @@
     <value>建立 ISO</value>
   </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
-    <value> 編輯程式碼</value>
+    <value>編輯程式碼</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>解析度</value>
@@ -146,11 +146,8 @@
   <data name="groupBox2.Text" xml:space="preserve">
     <value>啟動引導器</value>
   </data>
-  <data name="btnAbout.Text" xml:space="preserve">
-    <value> 關於 SharpBoot</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
-    <value> 驗證碼</value>
+    <value>驗證碼</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>預設</value>
@@ -161,9 +158,6 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>無</value>
   </data>
-  <data name="btnBackBrowse.Text" xml:space="preserve">
-    <value>瀏覽</value>
-  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>背景圖像</value>
   </data>
@@ -171,7 +165,7 @@
     <value>標題</value>
   </data>
   <data name="btnRemISO.Text" xml:space="preserve">
-    <value> 刪除</value>
+    <value>刪除</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>總計大小</value>

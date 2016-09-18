@@ -130,17 +130,11 @@
   <data name="rbnFile.Text" xml:space="preserve">
     <value>Von deinem Computer</value>
   </data>
-  <data name="btnBrowse.Text" xml:space="preserve">
-    <value>Durchsuche</value>
-  </data>
   <data name="rbnDown.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 19</value>
   </data>
   <data name="rbnDown.Text" xml:space="preserve">
     <value>Verifizierte ISO Datei herunterladen</value>
-  </data>
-  <data name="sfdIso.Filter" xml:space="preserve">
-    <value>ISO Abbild (*.iso)|*.iso</value>
   </data>
   <data name="sfdIso.Title" xml:space="preserve">
     <value>ISO Datei herunterladen</value>

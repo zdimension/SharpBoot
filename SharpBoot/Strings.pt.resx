@@ -117,4 +117,142 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BootFromHDD" xml:space="preserve">
+    <value>Arrancar a partir do primeiro disco</value>
+  </data>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>As alterações terão efeito depois de reiniciar a aplicação.</value>
+  </data>
+  <data name="Copying" xml:space="preserve">
+    <value>A copiar {0}</value>
+  </data>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>A copiar ficheiros ISO...</value>
+  </data>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>A criar ficheiro ISO...</value>
+  </data>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>A extrair o disco de base...</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>A extrair {0}...</value>
+  </data>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>A criar o menu principal...</value>
+  </data>
+  <data name="GenMenu" xml:space="preserve">
+    <value>A criar o menu {0}</value>
+  </data>
+  <data name="GenMenus" xml:space="preserve">
+    <value>A criar menus...</value>
+  </data>
+  <data name="Init" xml:space="preserve">
+    <value>Inicializando...</value>
+  </data>
+  <data name="CalcIn" xml:space="preserve">
+    <value>Calculado em {0}</value>
+  </data>
+  <data name="ChkOf" xml:space="preserve">
+    <value>Checksum {0} de {1}:</value>
+  </data>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>Não foi possível detetar que sistema operativo se encontra nesta imagem de disco.</value>
+  </data>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>O ficheiro ISO foi criado com sucesso.\nTestá-lo no QEMU?</value>
+  </data>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>ISO criado</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>Imagem ISO</value>
+  </data>
+  <data name="PicFilter" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="BootloaderInstalled" xml:space="preserve">
+    <value>{0} foi instalado com sucesso em {1}.</value>
+  </data>
+  <data name="DownComplete" xml:space="preserve">
+    <value>Descarregamento completo.</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Descarregar</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Menu principal</value>
+  </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Criar pen USB multiboot</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Erro indeterminado durante a formatação.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>A formatar</value>
+  </data>
+  <data name="FormatWillErase" xml:space="preserve">
+    <value>Começar o processo de formatação?\nTodos os dados serão DESTRUÍDOS!</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Necessita de permissões de administrador para formatar a pen USB.</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Outro</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>A partição selecionada é demasiado grande para {0}</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>A instalar {0} em {1}</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>O SharpBoot utiliza o seguinte software:</value>
+  </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Escolha o bootloader que pretende instalar:</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Instalar</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Instalat um bootloader numa pen USB</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(recomendado)</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Criar pen USB multiboot</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>Sistema de ficheiros:</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>Operação cancelada</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>O ficheiro já existe.</value>
+  </data>
+  <data name="AddFiles" xml:space="preserve">
+    <value>Adicionar ficheiros</value>
+  </data>
+  <data name="AddCustomEntry" xml:space="preserve">
+    <value>Adicionar entrada personalizada</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Etiqueta de volume:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>Sobre o SharpBoot</value>
+  </data>
 </root>

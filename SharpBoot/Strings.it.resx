@@ -171,9 +171,6 @@
   <data name="Filesystem" xml:space="preserve">
     <value>File system:</value>
   </data>
-  <data name="FileUnit" xml:space="preserve">
-    <value>B</value>
-  </data>
   <data name="FormatError" xml:space="preserve">
     <value>Errore indeterminato durante la formattazione.</value>
   </data>
@@ -219,9 +216,6 @@
   <data name="NeedAdmin" xml:space="preserve">
     <value>Devi essere Amministratore per formattare la chiavetta USB.</value>
   </data>
-  <data name="OK" xml:space="preserve">
-    <value>OK</value>
-  </data>
   <data name="OpCancelled" xml:space="preserve">
     <value>Operazione cancellata</value>
   </data>
@@ -240,9 +234,6 @@
   <data name="SharpBootUsesSoft" xml:space="preserve">
     <value>SharpBoot usa i seguenti software</value>
   </data>
-  <data name="SizeSuffixes" xml:space="preserve">
-    <value>,K,M,G,T,P,E,Z,Y</value>
-  </data>
   <data name="FileAlreadyExists" xml:space="preserve">
     <value>File già esistente.</value>
   </data>
@@ -257,5 +248,11 @@
   </data>
   <data name="VolumeLabel" xml:space="preserve">
     <value>Etichetta di volume:</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>Info SharpBoot</value>
   </data>
 </root>
