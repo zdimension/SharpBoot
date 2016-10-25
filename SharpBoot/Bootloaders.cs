@@ -778,7 +778,7 @@ namespace SharpBoot
     {
         public static IBootloader Syslinux = new Syslinux();
         public static IBootloader Grub4DOS = new Grub4DOS();
-        public static IBootloader Grub2 = new Grub2();
+        //public static IBootloader Grub2 = new Grub2();
 
         public static List<IBootloader> Bloaders
         {
