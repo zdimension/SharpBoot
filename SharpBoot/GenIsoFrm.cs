@@ -460,8 +460,12 @@ namespace SharpBoot
 
             p.OutputDataReceived += new DataReceivedEventHandler(a);
             p.ErrorDataReceived += new DataReceivedEventHandler(a);*/
-
-                p.Exited += delegate { GenF(f); };
+                bool exitCaught = false;
+                p.Exited += delegate
+                {
+                    exitCaught = true;
+                    GenF(f);
+                };
 
                 Thread.Sleep(500);
 
@@ -470,17 +474,26 @@ namespace SharpBoot
                     abort = true;
                     return;
                 }
-
+                ChangeProgress(33, 100, string.Format(Strings.Extracting, "Mkisofs"));
+                int iter = 0;
                 while (true)
                 {
+                    if (iter == 5)
+                    {
+                        MessageBox.Show("Extraction of Mkisofs failed after: 5 attempts. Aborting.");
+                        abort = true;
+                        return;
+                    }
                     if (!File.Exists(mkisofsexe))
                     {
+                        
                         if (!Directory.Exists(archs)) Directory.CreateDirectory(archs);
                         File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
                         ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
                     }
                     else break;
                     Thread.Sleep(500);
+                    iter++;
                 }
                 try
                 {
@@ -505,7 +518,10 @@ namespace SharpBoot
                 }
             }*/
                 if (!p.HasExited)
-                    p.WaitForExit();
+                    p.WaitForExit(2000);
+                Thread.Sleep(500);
+                if (!exitCaught)
+                    GenF(f);
             }
             Program.SupportAccent = false;
 
@@ -534,7 +550,8 @@ namespace SharpBoot
 
         private void GenF(string f)
         {
-            while (Directory.Exists(f))
+            int iter = 0;
+            while (Directory.Exists(f) && iter < 10)
             {
                 try
                 {
@@ -543,6 +560,7 @@ namespace SharpBoot
                 catch
                 {
                 }
+                iter++;
             }
 
             Invoke((MethodInvoker) (() => OnFinished(EventArgs.Empty)));

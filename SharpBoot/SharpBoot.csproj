@@ -261,7 +261,13 @@
     <EmbeddedResource Include="AddIso.fr.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.hu.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddIso.it.resx">
+      <DependentUpon>AddIso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddIso.pl.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddIso.pt.resx">
@@ -291,7 +297,13 @@
     <EmbeddedResource Include="AskPath.es.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.hu.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AskPath.it.resx">
+      <DependentUpon>AskPath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AskPath.pl.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AskPath.pt.resx">
@@ -336,7 +348,13 @@
     <EmbeddedResource Include="CustomFileFrm.fr.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.hu.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomFileFrm.it.resx">
+      <DependentUpon>CustomFileFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFileFrm.pl.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomFileFrm.pt.resx">
@@ -378,7 +396,13 @@
     <EmbeddedResource Include="GenIsoFrm.fr.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.hu.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.it.resx">
+      <DependentUpon>GenIsoFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenIsoFrm.pl.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenIsoFrm.pt.resx">
@@ -409,7 +433,13 @@
     <EmbeddedResource Include="MainWindow.es.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.hu.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.it.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.pl.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.pt.resx">
@@ -435,10 +465,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.hu.resx" />
     <EmbeddedResource Include="Strings.it.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.it.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Strings.pl.resx" />
     <EmbeddedResource Include="Strings.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.pt.Designer.cs</LastGenOutput>
@@ -477,7 +509,13 @@
     <EmbeddedResource Include="USBFrm.fr.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.hu.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.it.resx">
+      <DependentUpon>USBFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USBFrm.pl.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="USBFrm.pt.resx">

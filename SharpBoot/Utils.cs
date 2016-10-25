@@ -27,9 +27,11 @@ namespace SharpBoot
 
         public const int FILE_ATTRIBUTE_SYSTEM = 0x4;
         public const int FILE_FLAG_SEQUENTIAL_SCAN = 0x8;
+        public const int FILE_FLAG_NO_BUFFERING = 0x20000000;
 
         [DllImport("Kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        public static extern SafeFileHandle CreateFile(string fileName, [MarshalAs(UnmanagedType.U4)] FileAccess fileAccess, [MarshalAs(UnmanagedType.U4)] FileShare fileShare, IntPtr securityAttributes, [MarshalAs(UnmanagedType.U4)] FileMode creationDisposition, int flags, IntPtr template);
+        public static extern SafeFileHandle CreateFile([MarshalAs(UnmanagedType.LPTStr)] string fileName, uint fileAccess, uint fileShare, IntPtr securityAttributes, uint creationDisposition, uint flags, IntPtr template);
+        //public static extern SafeFileHandle CreateFile(string fileName, [MarshalAs(UnmanagedType.U4)] FileAccess fileAccess, [MarshalAs(UnmanagedType.U4)] FileShare fileShare, IntPtr securityAttributes, [MarshalAs(UnmanagedType.U4)] FileMode creationDisposition, int flags, IntPtr template);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern UInt32 QueryDosDevice(string DeviceName, IntPtr TargetPath, UInt32 ucchMax);
@@ -37,6 +39,29 @@ namespace SharpBoot
         [DllImport("kernel32.dll", ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern bool DeviceIoControl(IntPtr hDevice, uint dwIoControlCode, IntPtr lpInBuffer, uint nInBufferSize, IntPtr lpOutBuffer, uint nOutBufferSize, out uint lpBytesReturned, IntPtr lpOverlapped);
 
+        public static void InstallMBR(string l, byte[] theMbr)
+        {
+            var mbr = new byte[512];
+
+            using (
+                var device = Utils.CreateFile(Utils.GetPhysicalPath(l.ToLower().Substring(0, 2)),
+                    0x80000000 | 0x40000000,
+                    1 | 2, IntPtr.Zero, 3,
+                    /*Utils.FILE_ATTRIBUTE_SYSTEM | Utils.FILE_FLAG_SEQUENTIAL_SCAN*/ Utils.FILE_FLAG_NO_BUFFERING, IntPtr.Zero))
+            {
+                if (device.IsInvalid)
+                {
+                    throw new IOException("Unable to access drive. Win32 Error Code " + Marshal.GetLastWin32Error());
+                }
+                using (FileStream src = new FileStream(device, FileAccess.ReadWrite))
+                {
+                    src.Read(mbr, 0, 512);
+                    Array.Copy(theMbr, mbr, theMbr.Length);
+                    src.Position = 0;
+                    src.Write(mbr, 0, 512);
+                }
+            }
+        }
 
         public static string GetPhysicalPath(string letter)
         {
@@ -86,7 +111,7 @@ namespace SharpBoot
         public static Image GetFlag(string twocode)
         {
             if (twocode == "en") return Resources.flag_usa;
-            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it", "pt"};
+            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it", "pt", "pl"};
             var index = dc.IndexOf(twocode);
             return index == -1 ? null : About.Flags[index];
         }

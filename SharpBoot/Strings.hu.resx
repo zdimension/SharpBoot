@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+		Microsoft ResX Schema
+
+		Version 1.3
+
+		The primary goals of this format is to allow a simple XML format 
+		that is mostly human readable. The generation and parsing of the 
+		various data types are done through the TypeConverter classes 
+		associated with the data types.
+
+		Example:
+
+		... ado.net/XML headers & schema ...
+		<resheader name="resmimetype">text/microsoft-resx</resheader>
+		<resheader name="version">1.3</resheader>
+		<resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+		<resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+		<data name="Name1">this is my long string</data>
+		<data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+		<data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+			[base64 mime encoded serialized .NET Framework object]
+		</data>
+		<data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+			[base64 mime encoded string representing a byte array form of the .NET Framework object]
+		</data>
+
+		There are any number of "resheader" rows that contain simple 
+		name/value pairs.
+
+		Each data row contains a name, and value. The row also contains a 
+		type or mimetype. Type corresponds to a .NET class that support 
+		text/value conversion through the TypeConverter architecture. 
+		Classes that don't support this are serialized and stored with the 
+		mimetype set.
+
+		The mimetype is used for serialized objects, and tells the 
+		ResXResourceReader how to depersist the object. This is currently not 
+		extensible. For a given mimetype the value must be set accordingly:
+
+		Note - application/x-microsoft.net.object.binary.base64 is the format 
+		that the ResXResourceWriter will generate, however the reader can 
+		read any of the formats listed below.
+
+		mimetype: application/x-microsoft.net.object.binary.base64
+		value   : The object must be serialized with 
+			: System.Serialization.Formatters.Binary.BinaryFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.soap.base64
+		value   : The object must be serialized with 
+			: System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+			: and then encoded with base64 encoding.
+
+		mimetype: application/x-microsoft.net.object.bytearray.base64
+		value   : The object must be serialized into a byte array 
+			: using a System.ComponentModel.TypeConverter
+			: and then encoded with base64 encoding.
+	-->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="VolumeLabel" xml:space="preserve">
+    <value>Kötet címke:</value>
+  </data>
+  <data name="AddFiles" xml:space="preserve">
+    <value>Fájlok hozzáadása</value>
+  </data>
+  <data name="FileAlreadyExists" xml:space="preserve">
+    <value>A fájl már létezik</value>
+  </data>
+  <data name="OpCancelled" xml:space="preserve">
+    <value>A művelet megszakítva</value>
+  </data>
+  <data name="Filesystem" xml:space="preserve">
+    <value>Fájlrendszer</value>
+  </data>
+  <data name="ChooseBootloader" xml:space="preserve">
+    <value>Válassz telepítendő betöltő rekordot</value>
+  </data>
+  <data name="Recommended" xml:space="preserve">
+    <value>(ajánlott)</value>
+  </data>
+  <data name="Install" xml:space="preserve">
+    <value>Telepítés</value>
+  </data>
+  <data name="BootloaderInstalled" xml:space="preserve">
+    <value>{0} sikeresen installálva ide {1}.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Bezár</value>
+  </data>
+  <data name="CreatingISO" xml:space="preserve">
+    <value>ISO fájl készítése...</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Letöltés</value>
+  </data>
+  <data name="DownComplete" xml:space="preserve">
+    <value>Letöltés kész.</value>
+  </data>
+  <data name="CreateMultibootUsb" xml:space="preserve">
+    <value>Multiboot USB készítése</value>
+  </data>
+  <data name="CreatingUSB" xml:space="preserve">
+    <value>Készül a multiboot USB...</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Egyéb</value>
+  </data>
+  <data name="PartitionTooBig" xml:space="preserve">
+    <value>A kiválasztott partíció túl nagy {0} esetén</value>
+  </data>
+  <data name="InstallingBoot" xml:space="preserve">
+    <value>Telepítődik a {0} a {1} meghajtón...</value>
+  </data>
+  <data name="NeedAdmin" xml:space="preserve">
+    <value>Rendszergazdai jogok szükségesek az USB formázásához.</value>
+  </data>
+  <data name="MainMenu" xml:space="preserve">
+    <value>Főmenü</value>
+  </data>
+  <data name="FormatError" xml:space="preserve">
+    <value>Ismeretlen hiba lépett fel formázás közben.</value>
+  </data>
+  <data name="Formatting" xml:space="preserve">
+    <value>Formázás</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="CouldntDetect" xml:space="preserve">
+    <value>Az operációs rendszer nem azonosítható ebben az image-ben.</value>
+  </data>
+  <data name="ISOImg" xml:space="preserve">
+    <value>ISO képfájl</value>
+  </data>
+  <data name="CalcIn" xml:space="preserve">
+    <value>Kalkulált {0}</value>
+  </data>
+  <data name="ChkOf" xml:space="preserve">
+    <value>{0} ellenőrző összege {1}</value>
+  </data>
+  <data name="PicFilter" xml:space="preserve">
+    <value>Képek</value>
+  </data>
+  <data name="IsoCreated" xml:space="preserve">
+    <value>Az ISO fájl sikeresen elkészült.\nAkarod tesztelni QEMU-ban?</value>
+  </data>
+  <data name="IsoCreatedTitle" xml:space="preserve">
+    <value>Az ISO fájl elkészült</value>
+  </data>
+  <data name="InstallABootLoader" xml:space="preserve">
+    <value>Betöltő rekord installálása USB-re</value>
+  </data>
+  <data name="AboutSharpBoot" xml:space="preserve">
+    <value>A SharpBoot-ról</value>
+  </data>
+  <data name="BootFromHDD" xml:space="preserve">
+    <value>Rendszer indítása az első merevlemezről</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Tallózás</value>
+  </data>
+  <data name="ChangesNeedRestart" xml:space="preserve">
+    <value>A változtatások érvényesítéséhez újra kell indítani az alkalmazást.</value>
+  </data>
+  <data name="Copying" xml:space="preserve">
+    <value>Másolás</value>
+  </data>
+  <data name="CopyISOfiles" xml:space="preserve">
+    <value>ISO fájlok másolása...</value>
+  </data>
+  <data name="Extracting" xml:space="preserve">
+    <value>Kitömörítés {0} ...</value>
+  </data>
+  <data name="ExtractBaseDisk" xml:space="preserve">
+    <value>Alaplemez kitömörítése...</value>
+  </data>
+  <data name="GenMainMenu" xml:space="preserve">
+    <value>Főmenü generálása...</value>
+  </data>
+  <data name="GenMenu" xml:space="preserve">
+    <value>Menü generálása {0}</value>
+  </data>
+  <data name="GenMenus" xml:space="preserve">
+    <value>Menük generálása...</value>
+  </data>
+  <data name="Init" xml:space="preserve">
+    <value>Inicializálás...</value>
+  </data>
+  <data name="SharpBootUsesSoft" xml:space="preserve">
+    <value>A SharpBoot eseket a szoftvereket használja:</value>
+  </data>
+</root>

@@ -217,4 +217,7 @@
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
+  <data name="sfdIso.Title" xml:space="preserve">
+    <value>下载一个验证的ISO</value>
+  </data>
 </root>

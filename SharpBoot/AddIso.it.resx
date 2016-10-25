@@ -136,4 +136,7 @@
   <data name="rbnDown.Text" xml:space="preserve">
     <value>Scarica e verifica ISO</value>
   </data>
+  <data name="sfdIso.Title" xml:space="preserve">
+    <value>Scarica e verifica ISO</value>
+  </data>
 </root>

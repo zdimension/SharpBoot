@@ -130,7 +130,9 @@ namespace SharpBoot
             }
         }
 
-        public static event EventHandler UpdateFinished = delegate { };
+        public static event EventHandler UpdateFinished = delegate { IsUpdating = false; };
+
+        public static bool IsUpdating = false;
 
 
         public static void RefreshISOs()
@@ -138,7 +140,7 @@ namespace SharpBoot
             /*bool upd = IsUpdateAvailable();
 
             if (upd)*/
-
+            IsUpdating = true;
             var th = new Thread(() =>
             {
                 try
@@ -195,6 +197,7 @@ namespace SharpBoot
         [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
         public static ISOV GetFromFile(string filename, bool fast)
         {
+            while (IsUpdating) Thread.Sleep(100);
             ISOV resk = null;
 
             var s = ISOs.FirstOrDefault(x => Regex.IsMatch(Path.GetFileName(filename), x.Filename));
