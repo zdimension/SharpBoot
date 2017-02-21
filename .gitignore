@@ -11,3 +11,9 @@
 /.vs/SharpBoot/v14
 /SharpBoot.sln.DotSettings.user
 /SharpBoot/bin/Release
+/SharpBoot/Resources/SharpBoot.AdminProcess.exe.config
+/SharpBoot/Resources/SharpBoot.AdminProcess.vshost.exe.config
+/SharpBoot/Resources/SharpBoot.AdminProcess.vshost.exe.manifest
+/SharpBoot.AdminProcess/bin/Release
+/SharpBoot.AdminProcess/obj
+/SharpBoot/Resources/System.Net.Http.xml

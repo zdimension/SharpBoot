@@ -627,6 +627,7 @@
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\SharpBoot.AdminProcess.exe" />
     <None Include="Resources\page_white_add.png" />
     <None Include="Resources\script_edit.png" />
     <None Include="Resources\package_go.png" />

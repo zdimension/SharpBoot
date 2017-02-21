@@ -23,6 +23,29 @@ namespace SharpBoot
 {
     public static class Utils
     {
+        public static void CallAdminProcess(params string[] args)
+        {
+            var d = Program.GetTemporaryDirectory();
+            var exepath = Path.Combine(d, "adminprocess.exe");
+            File.WriteAllBytes(exepath, Resources.adminprocess);
+
+            var p = new Process
+            {
+                StartInfo =
+                {
+                    CreateNoWindow = true,
+                    UseShellExecute = true,
+                    FileName = exepath,
+                    Verb = "runas",
+                    Arguments = string.Join(" ", args)
+                }
+            };
+            p.Start();
+            p.WaitForExit();
+
+            Program.SafeDel(d);
+        }
+
         public const long SIZE_BASEDISK = 0;
 
         public const int FILE_ATTRIBUTE_SYSTEM = 0x4;
@@ -628,5 +651,7 @@ namespace SharpBoot
         }
 
         #endregion
+
+        
     }
 }

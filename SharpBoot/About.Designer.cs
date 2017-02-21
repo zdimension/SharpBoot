@@ -76,6 +76,7 @@ namespace SharpBoot
             this.lvTranslators.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.clmnName,
             this.clmnURL});
+            this.lvTranslators.FullRowSelect = true;
             this.lvTranslators.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.lvTranslators.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items"))),

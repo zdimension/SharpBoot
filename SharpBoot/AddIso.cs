@@ -27,7 +27,17 @@ namespace SharpBoot
             btnBrowse.Text = Strings.Browse;
             ofpIso.Title = label1.Text;
             sfdIso.Filter = Strings.ISOImg + " (*.iso)|*.iso";
-            while (ISOInfo.ISOs.Count == 0) Thread.Sleep(50);
+            int iter = 0;
+            while (ISOInfo.ISOs.Count == 0 && iter < 20)
+            {
+                Thread.Sleep(50);
+                iter++;
+            }
+            if (ISOInfo.ISOs.Count == 0)
+            {
+                MessageBox.Show("If you see this message (honestly, you shouldn't ever see it), then something horribly wrong that shouldn't happen has happened.");
+
+            }
             while (cbxDetIso.Items.Count < 2)
             {
                 var isos =

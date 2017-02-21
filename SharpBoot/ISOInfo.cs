@@ -134,6 +134,8 @@ namespace SharpBoot
 
         public static bool IsUpdating = false;
 
+        public static int AppDBVersion = -1;
+
 
         public static void RefreshISOs()
         {
@@ -148,39 +150,91 @@ namespace SharpBoot
                     Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-                    UpdateISOs();
+                    var wc = new WebClient { Encoding = Encoding.UTF8 };
+                    /*var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
+                    appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
 
-                    var xd = XDocument.Parse(Settings.Default.AppsXml);
-                    var root = xd.Element("apps");
+                    while (!appsxml.Contains("</apps>"))
+                    {
+                        appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
+                    }*/
 
-                    Settings.Default.AppDBVersion = int.Parse(root.Attribute("version").Value);
+                    /*var check = Utils.DownloadWithoutCache("http://www.zdimension.ml/sharpboot/apps.php?c");
+                    if (check != "All your base are belong to us")
+                    {
+                        MessageBox.Show("The update server is down. Update aborted.\n" +
+                                        "Go to the GitHub repository, a fix release will be released in a few hours.\n" +
+                                        "If not, file an issue.");
+                        UpdateFinished(null, EventArgs.Empty);
+                        return;
+                    }*/
 
-                    ISOCat.Categories = root.Element("categories").Elements("cat").Select(x =>
-                        new ISOCat(int.Parse(x.Attribute("id").Value), x.Attribute("def").Value,
-                            x.Elements("text")
-                                .Select(y => new {lang = new CultureInfo(y.Attribute("lang").Value), val = y.Value})
-                                .ToDictionary(z => z.lang, z => z.val))).ToDictionary(x => x.ID, x => x);
+                    var appsxml = Utils.DownloadWithoutCache("https://cdn.rawgit.com/zdimension/SharpBoot-AppDB/master/apps.xml");
 
-                    ISOs = root.Elements("app").Select(x =>
-                        new ISOInfo(
-                            x.Element("name").Value,
-                            x.Element("description")
-                                .Elements("desc")
-                                .Select(y => new {Lang = new CultureInfo(y.Attribute("lang").Value), Val = y.Value})
-                                .ToDictionary(k => k.Lang, k => k.Val),
-                            ISOCat.Categories[int.Parse(x.Element("category").Value)],
-                            x.Element("filenameRegex").Value,
-                            x.Element("versions").IsEmpty
-                                ? new ISOV[] {}
-                                : x.Element("versions").Elements("version").Select(y =>
-                                    new ISOV(
-                                        y.Element("hash").Value,
-                                        y.Element("name").Value,
-                                        y.Element("download").Value,
-                                        y.Element("filenameRegex").Value,
-                                        (y.Element("isLatest") != null && y.Element("isLatest").Value == "true")
-                                        )).ToArray()
-                            ) {NoDL = x.Element("noDl") != null && x.Element("noDl").Value == "true"}).ToList();
+                    if (appsxml.Substring(appsxml.Length - 38, 37) != "<!--All your base are belong to us-->")
+                    {
+                        UpdateFinished(null, EventArgs.Empty);
+                        return;
+                    }
+
+                    try
+                    {
+                        XDocument xd;
+                        try
+                        {
+                            xd = XDocument.Parse(appsxml);
+                        }
+                        catch
+                        {
+                            appsxml = Resources.DefaultISOs;
+                            xd = XDocument.Parse(appsxml);
+                        }
+
+                        var root = xd.Element("apps");
+
+                        var ver = int.Parse(root.Attribute("version").Value);
+
+                        var isocat = root.Element("categories").Elements("cat").Select(x =>
+                            new ISOCat(int.Parse(x.Attribute("id").Value), x.Attribute("def").Value,
+                                x.Elements("text")
+                                    .Select(y => new {lang = new CultureInfo(y.Attribute("lang").Value), val = y.Value})
+                                    .ToDictionary(z => z.lang, z => z.val))).ToDictionary(x => x.ID, x => x);
+
+                        var isos = root.Elements("app").Select(x =>
+                            new ISOInfo(
+                                x.Element("name").Value,
+                                x.Element("description")
+                                    .Elements("desc")
+                                    .Select(y => new {Lang = new CultureInfo(y.Attribute("lang").Value), Val = y.Value})
+                                    .ToDictionary(k => k.Lang, k => k.Val),
+                                isocat[int.Parse(x.Element("category").Value)],
+                                x.Element("filenameRegex").Value,
+                                x.Element("versions").IsEmpty
+                                    ? new ISOV[] {}
+                                    : x.Element("versions").Elements("version").Select(y =>
+                                        new ISOV(
+                                            y.Element("hash").Value,
+                                            y.Element("name").Value,
+                                            y.Element("download").Value,
+                                            y.Element("filenameRegex").Value,
+                                            (y.Element("isLatest") != null && y.Element("isLatest").Value == "true")
+                                            )).ToArray()
+                                ) {NoDL = x.Element("noDl") != null && x.Element("noDl").Value == "true"}).ToList();
+
+                        AppDBVersion = ver;
+                        ISOCat.Categories = isocat;
+                        ISOs = isos;
+                        Settings.Default.AppsXml = appsxml;
+
+                        Settings.Default.LastAppsUpdate = DateTime.Now;
+
+                        Settings.Default.Save();
+                    }
+                    catch
+                    {
+                        
+                    }
+                    
                 }
                 catch(Exception e)
                 {

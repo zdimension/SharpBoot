@@ -203,7 +203,7 @@ namespace SharpBoot
 
             Program.SafeDel(d);*/
 
-            var syslinux_mbr = new byte[440]
+            /*var syslinux_mbr = new byte[440]
             {
                 0x33, 0xc0, 0xfa, 0x8e, 0xd8, 0x8e, 0xd0, 0xbc, 0x00, 0x7c, 0x89, 0xe6,
   0x06, 0x57, 0x8e, 0xc0, 0xfb, 0xfc, 0xbf, 0x00, 0x06, 0xb9, 0x00, 0x01,
@@ -244,7 +244,9 @@ namespace SharpBoot
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
             };
 
-            Utils.InstallMBR(l, syslinux_mbr);
+            Utils.InstallMBR(l, syslinux_mbr);*/
+
+            Utils.CallAdminProcess("syslinux", l);
         }
 
         private static string splitwidth(string s, int w)
@@ -457,7 +459,7 @@ namespace SharpBoot
             p.WaitForExit();
 
             Program.SafeDel(d);*/
-            var grub_mbr = new byte[423]
+            /*var grub_mbr = new byte[423]
             {
                 0xEB, 0x5E, 0x90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -497,7 +499,9 @@ namespace SharpBoot
                 0x00, 0x3F, 0xFF
             };
 
-            Utils.InstallMBR(l, grub_mbr);
+            Utils.InstallMBR(l, grub_mbr);*/
+
+            Utils.CallAdminProcess("grub4dos", l);
         }
     }
 
@@ -507,9 +511,17 @@ namespace SharpBoot
         {
             var code = "";
 
+            code += "insmod ntfs\n";
+            code += "insmod exfat\n";
+            code += "insmod fat\n";
+            code += "loadfont /boot/grub/unicode.pf2\n";
+            code += "insmod all_video\n";
             code += $"set gfxmode={Resolution.Width}x{Resolution.Height}\n";
-            code += "insmod video_bochs\ninsmod video_cirrus\ninsmod png\n";
-            code += "background_image /win32-loader/sharpboot.png\n";
+            code += "insmod gfxterm\n";
+            code += "terminal_output gfxterm\n";
+            code += "insmod png\n";
+            code += "background_image /boot/grub/sharpboot.png\n";
+            code += "\n";
 
             menu.Items.ForEach(x => code += GetCode(x));
 
@@ -524,43 +536,45 @@ namespace SharpBoot
 
             code += "menuentry \"" + item.Name.RemoveAccent() + "\" {\n";
 
-            if (item.Type == EntryType.BootHDD)
+            switch (item.Type)
             {
-                code += "insmod part_msdos\n";
-                code += "insmod chain\n";
-                code += "chainloader (hd0,0)\n";
-            }
-            else if(item.Type == EntryType.Category)
-            {
-  code += "configfile /win32-loader/" + item.IsoName + ".cfg\n";
-            }
-            else
-            {
-                code += $"search -f \"--set-root /images/{item.IsoName}\"\n";
-                switch (item.Type)
-                {
-                    case EntryType.ISO:
-                        code += $"drivemap \"/images/{item.IsoName}\" '(hd32)'\ndrivemap '--hook' ''\nset root='(hd32)'\nchainloader +1\n";
-                        break;
-                    case EntryType.IMG:
-                        code += $"linux /memdisk\ninitrd /images/{item.IsoName}\n";
-                        break;
-                    case EntryType.NTLDR:
-                        code += $"insmod part_msdos\ninsmod ntldr\ninsmod ntfs\nntldr /images/{item.IsoName}";
-                        break;
-                    case EntryType.GRLDR:
-                    case EntryType.CMLDR:
-                    case EntryType.FreeDOS:
-                    case EntryType.MS_DOS:
-                    case EntryType.MS_DOS_7:
-                    case EntryType.PC_DOS:
-                    case EntryType.DRMK:
-                    case EntryType.ReactOS:
-                        code += string.Format(
-                            "ls /images/{0} || find --set-root /images/{0}\nchainloader /images/{0}\n",
-                            item.IsoName);
-                        break;
-                }
+                case EntryType.BootHDD:
+                    code += "insmod part_msdos\n";
+                    code += "insmod chain\n";
+                    code += "chainloader (hd0,0)\n";
+                    break;
+                case EntryType.Category:
+                    code += "configfile /boot/grub/" + item.IsoName + ".cfg\n";
+                    break;
+                default:
+                    code += $"search --file --set root --no-floppy \"/images/{item.IsoName}\"\n";
+                    switch (item.Type)
+                    {
+                        case EntryType.ISO:
+                            code += string.Format("set opt='ls /images/{0} || find --set-root /images/{0};map /images/{0} (0xff);map --hook;root (0xff);chainloader (0xff);boot\"'\n", item.IsoName);
+                            code += "linux /boot/grub/grub.exe --config-file=$opt\n";
+                            break;
+                        case EntryType.IMG:
+                            code += $"linux16 /boot/grub/memdisk\ninitrd16 /images/{item.IsoName}\n";
+                            break;
+                        case EntryType.NTLDR:
+                            code += $"insmod part_msdos\ninsmod ntldr\ninsmod ntfs\nntldr /images/{item.IsoName}";
+                            break;
+                        case EntryType.GRLDR:
+                        case EntryType.CMLDR:
+                        case EntryType.FreeDOS:
+                        case EntryType.MS_DOS:
+                        case EntryType.MS_DOS_7:
+                        case EntryType.PC_DOS:
+                        case EntryType.DRMK:
+                        case EntryType.ReactOS:
+                            code += string.Format(
+                                "set opt='ls /images/{0} || find --set-root /images/{0};chainloader /images/{0};boot'\n",
+                                item.IsoName);
+                            code += "linux /boot/grub/grub.exe --config-file=$opt\n";
+                            break;
+                    }
+                    break;
             }
 
             code += "}\n";
@@ -598,9 +612,9 @@ namespace SharpBoot
             destImage.Save(Path.Combine(WorkingDir, "sharpboot.png"), ImageFormat.Png);
         }
 
-        public override string BinFile { get; set; } = "g2ldr";
+        public override string BinFile { get; set; } = "boot/grub/eltorito.img";
         public override byte[] Archive { get; set; } = Resources.grub2;
-        public override string FolderName { get; set; } = "../win32-loader";
+        public override string FolderName { get; set; } = "grub";
         public override string DisplayName { get; set; } = "Grub2";
         public override string FileExt { get; set; } = ".cfg";
         public override string CmdArgs { get; set; } = "";
@@ -630,7 +644,7 @@ namespace SharpBoot
             p.WaitForExit();
 
             Program.SafeDel(d);*/
-            var grub2_mbr = new byte[432]
+            /*var grub2_mbr = new byte[432]
             {
                 0xEB, 0x63, 0x90, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
                 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -670,7 +684,9 @@ namespace SharpBoot
                 0x01, 0x00, 0xB4, 0x0E, 0xCD, 0x10, 0xAC, 0x3C, 0x00, 0x75, 0xF4, 0xC3
             };
 
-            Utils.InstallMBR(l, grub2_mbr);
+            Utils.InstallMBR(l, grub2_mbr);*/
+
+            Utils.CallAdminProcess("grub2", l);
         }
     }
 
@@ -778,7 +794,7 @@ namespace SharpBoot
     {
         public static IBootloader Syslinux = new Syslinux();
         public static IBootloader Grub4DOS = new Grub4DOS();
-        //public static IBootloader Grub2 = new Grub2();
+        public static IBootloader Grub2 = new Grub2();
 
         public static List<IBootloader> Bloaders
         {

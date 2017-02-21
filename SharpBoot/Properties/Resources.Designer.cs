@@ -101,6 +101,16 @@ namespace SharpBoot.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Byte[].
+        /// </summary>
+        internal static byte[] adminprocess {
+            get {
+                object obj = ResourceManager.GetObject("adminprocess", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap ajax_loader {
@@ -207,6 +217,27 @@ namespace SharpBoot.Properties {
             get {
                 object obj = ResourceManager.GetObject("compile1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; ?&gt;
+        ///&lt;apps version=&quot;41&quot;&gt;
+        ///    &lt;categories&gt;
+        ///        &lt;cat id=&quot;0&quot; def=&quot;Backup&quot;&gt;
+        ///            &lt;text lang=&quot;de&quot;&gt;Sicherungskopie&lt;/text&gt;
+        ///            &lt;text lang=&quot;es&quot;&gt;Respaldo&lt;/text&gt;
+        ///            &lt;text lang=&quot;zh-Hans&quot;&gt;备份&lt;/text&gt;
+        ///            &lt;text lang=&quot;ru&quot;&gt;Резервная копия&lt;/text&gt;
+        ///            &lt;text lang=&quot;cs&quot;&gt;Zálohování&lt;/text&gt;
+        ///            &lt;text lang=&quot;uk&quot;&gt;Резервна копія&lt;/text&gt;
+        ///            &lt;text lang=&quot;zh-Hant&quot;&gt;備份&lt;/text&gt;
+        ///            &lt;text lang=&quot;fr&quot;&gt;Sauvegarde&lt;/text&gt;
+        ///            &lt;text lang=&quot;pt&quot;&gt;Cópi [le reste de la chaîne a été tronqué]&quot;;.
+        /// </summary>
+        internal static string DefaultISOs {
+            get {
+                return ResourceManager.GetString("DefaultISOs", resourceCulture);
             }
         }
         

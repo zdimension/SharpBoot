@@ -17,13 +17,14 @@ namespace SharpBoot
         {
             InitializeComponent();
             richTextBox1.Text = richTextBox1.Text.Insert(9, " " + Program.GetVersion())
-                .Replace("{0}", Settings.Default.AppDBVersion.ToString())
+                .Replace("{0}", ISOInfo.AppDBVersion.ToString())
                 .Replace("{1}", Strings.SharpBootUsesSoft);
             if (Program.IsWin) Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
             rtbMyWebsite.DeselectAll();
             Text = Strings.AboutSharpBoot;
+            btnOK.Text = Strings.OK;
         }
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)

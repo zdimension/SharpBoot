@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("zdimension")]
 [assembly: AssemblyProduct("SharpBoot")]
-[assembly: AssemblyCopyright("Copyright © zdimension 2014-2016")]
+[assembly: AssemblyCopyright("Copyright © zdimension 2014-2017")]
 [assembly: AssemblyTrademark("SharpBoot")]
 [assembly: AssemblyCulture("")]
 
@@ -39,6 +39,6 @@ using System.Runtime.InteropServices;
 // en utilisant '*', comme indiqué ci-dessous :
 // [assembly: AssemblyVersion("1.0.*")]
 
-[assembly: AssemblyVersion("4.5")]
-[assembly: AssemblyFileVersion("4.5")]
+[assembly: AssemblyVersion("4.5.2")]
+[assembly: AssemblyFileVersion("4.5.2")]
 [assembly: NeutralResourcesLanguage("en")]
