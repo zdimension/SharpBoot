@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
@@ -169,12 +170,11 @@ namespace SharpBoot
                         return;
                     }*/
 
-                    var appsxml = Utils.DownloadWithoutCache("https://cdn.rawgit.com/zdimension/SharpBoot-AppDB/master/apps.xml");
+                    var appsxml = Utils.DownloadWithoutCache("https://gitcdn.xyz/repo/zdimension/SharpBoot-AppDB/master/apps.xml");
 
-                    if (appsxml.Substring(appsxml.Length - 38, 37) != "<!--All your base are belong to us-->")
+                    if (appsxml.Substring(appsxml.Length - 37, 37) != "<!--All your base are belong to us-->")
                     {
-                        UpdateFinished(null, EventArgs.Empty);
-                        return;
+                        appsxml = Resources.DefaultISOs;
                     }
 
                     try
@@ -252,9 +252,11 @@ namespace SharpBoot
         public static ISOV GetFromFile(string filename, bool fast)
         {
             while (IsUpdating) Thread.Sleep(100);
+
             ISOV resk = null;
 
-            var s = ISOs.FirstOrDefault(x => Regex.IsMatch(Path.GetFileName(filename), x.Filename));
+            var s = ISOs.FirstOrDefault(x => Regex.IsMatch(Path.GetFileName(filename), x.Filename)); // find by filename regex
+
             /*if (s != null)
             {
                 resk = s.LatestVersion ?? new ISOV("nover", s.Name, "", s.Filename, true) {Parent=s};
@@ -273,25 +275,33 @@ namespace SharpBoot
                     var st =
                         sta.FirstOrDefault(
                             x =>
-                                x.Filename.StartsWith("/")
-                                    ? Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1))
-                                    : string.Equals(Path.GetFileName(filename).Trim(), x.Filename.Trim(),
-                                        StringComparison.CurrentCultureIgnoreCase));
+                                !x.Filename.StartsWith("/") && 
+                                string.Equals(Path.GetFileName(filename).Trim(), x.Filename.Trim(),
+                                        StringComparison.CurrentCultureIgnoreCase)); // find by version filename regex or string
+
                     if (st == null)
                     {
-                        var md5 = fast ? "" : Utils.FileHash(filename, "md5");
-                        st = (fast
-                            ? null
-                            : sta.FirstOrDefault(
-                                x =>
-                                    x.Hash ==
-                                    (x.Hash.Contains(':') ? Utils.FileHash(filename, x.Hash.Split(':')[0]) : md5)));
+                        st =
+                        sta.FirstOrDefault(
+                            x =>
+                                x.Filename.StartsWith("/") &&
+                                    Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1)));
+
+                        if (st == null)
+                        {
+                            var md5 = fast ? "" : Utils.FileHash(filename, "md5");
+                            st = (fast
+                                ? null
+                                : sta.FirstOrDefault(
+                                    x =>
+                                        x.Hash ==
+                                        (x.Hash.Contains(':') ? Utils.FileHash(filename, x.Hash.Split(':')[0]) : md5)));
+                        }
                     }
 
                     resk = st ?? (s == null ? null : new ISOV("nover", s.Name, "", s.Filename, true) {Parent = s});
                 }
             }
-
             return resk;
         }
     }

@@ -48,8 +48,6 @@ namespace SharpBoot
             this.btnCustomCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbxRes = new GroupedComboBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbxBootloader = new System.Windows.Forms.ComboBox();
             this.btnAbout = new System.Windows.Forms.Button();
             this.btnChecksum = new wyDay.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -96,7 +94,6 @@ namespace SharpBoot
             this.gbxTest.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.cmsChecksum.SuspendLayout();
             this.gbxBckd.SuspendLayout();
             this.gbxTitle.SuspendLayout();
@@ -169,7 +166,6 @@ namespace SharpBoot
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.btnCustomCode);
             this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.btnAbout);
             this.panel1.Controls.Add(this.btnChecksum);
             this.panel1.Controls.Add(this.gbxBckd);
@@ -196,31 +192,14 @@ namespace SharpBoot
             // cbxRes
             // 
             resources.ApplyResources(this.cbxRes, "cbxRes");
-            this.cbxRes.AutoSort = false;
             this.cbxRes.DataSource = null;
             this.cbxRes.DisplayMember = "Disp";
             this.cbxRes.DropDownHeight = 110;
             this.cbxRes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRes.FormattingEnabled = true;
             this.cbxRes.GroupMember = "Ratio";
-            this.cbxRes.ImageMember = null;
             this.cbxRes.Name = "cbxRes";
             this.cbxRes.ValueMember = "Val";
-            // 
-            // groupBox2
-            // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.cbxBootloader);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.TabStop = false;
-            // 
-            // cbxBootloader
-            // 
-            resources.ApplyResources(this.cbxBootloader, "cbxBootloader");
-            this.cbxBootloader.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxBootloader.FormattingEnabled = true;
-            this.cbxBootloader.Name = "cbxBootloader";
-            this.cbxBootloader.SelectedIndexChanged += new System.EventHandler(this.cbxBootloader_SelectedIndexChanged);
             // 
             // btnAbout
             // 
@@ -559,6 +538,7 @@ namespace SharpBoot
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
+            this.Icon = global::SharpBoot.Properties.Resources.logo;
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.pnlBottom.ResumeLayout(false);
@@ -568,7 +548,6 @@ namespace SharpBoot
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.cmsChecksum.ResumeLayout(false);
             this.gbxBckd.ResumeLayout(false);
             this.gbxBckd.PerformLayout();
@@ -619,8 +598,6 @@ namespace SharpBoot
         private ToolStripMenuItem btnSha256;
         private ToolStripMenuItem btnSha512;
         private ToolStripMenuItem btnSha384;
-        private GroupBox groupBox2;
-        private ComboBox cbxBootloader;
         private GroupBox groupBox3;
         private GroupedComboBox cbxRes;
         private ComboBox cbxBackType;

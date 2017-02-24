@@ -84,7 +84,7 @@ namespace SharpBoot
 
         private static string GetPath(string local)
         {
-            return "/" + Path.GetFileName(local).RemoveAccent();
+            return "/" + Path.GetFileName(local);
         }
 
         private void lvFiles_DragEnter(object sender, DragEventArgs e)

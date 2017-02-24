@@ -119,22 +119,22 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnOK.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 9pt</value>
+    <value>Microsoft JhengHei UI, 9pt</value>
   </data>
   <data name="btnAnnul.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 11pt</value>
+    <value>Microsoft JhengHei UI, 11pt</value>
   </data>
   <data name="btnAnnul.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
   <data name="lblHeader.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 15.75pt</value>
+    <value>Microsoft JhengHei UI, 15.75pt</value>
   </data>
   <data name="lblHeader.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 28</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 11pt</value>
+    <value>Microsoft JhengHei UI, 11pt</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 20</value>
@@ -143,7 +143,7 @@
     <value>選取你的 USB 隨身碟:</value>
   </data>
   <data name="lblCbx.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft YaHei UI, 11pt</value>
+    <value>Microsoft JhengHei UI, 11pt</value>
   </data>
   <data name="lblCbx.Size" type="System.Drawing.Size, System.Drawing">
     <value>69, 20</value>

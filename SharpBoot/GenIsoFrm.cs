@@ -145,8 +145,6 @@ namespace SharpBoot
             }
         }
 
-        public IBootloader bloader { get; set; }
-
         public Size Res { get; set; }
 
         public bool abort;
@@ -239,13 +237,10 @@ namespace SharpBoot
                 return;
             }
 
-            var sylp = Path.Combine(isodir, "boot", bloader.FolderName);
+            var workingDir = Path.Combine(isodir, "boot", "grub");
 
-            bloader.WorkingDir = sylp;
-            bloader.Resolution = Res;
-
-            if (!Directory.Exists(sylp))
-                Directory.CreateDirectory(sylp);
+            if (!Directory.Exists(workingDir))
+                Directory.CreateDirectory(workingDir);
 
             var isoroot = Path.Combine(isodir, "images");
 
@@ -255,28 +250,10 @@ namespace SharpBoot
             Directory.CreateDirectory(archs);
 
             File.WriteAllBytes(Path.Combine(archs, "basedisk.7z"), Resources.basedisk);
-            File.WriteAllBytes(Path.Combine(archs, "bloader.7z"), bloader.Archive);
             if (!_usb) File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk + " 1/6");
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
-            ChangeProgress(10, 100, Strings.ExtractBaseDisk + " 2/6");
-            ext.Extract(Path.Combine(archs, "bloader.7z"), isodir);
-            if (bloader is Syslinux)
-            {
-                var theme = new SyslinuxTheme
-                {
-                    Resolution = Res,
-                    noback = IsoBackgroundImage == "$$NONE$$"
-                };
-                ChangeProgress(20, 100, Strings.ExtractBaseDisk + " 3/6");
-                File.WriteAllText(Path.Combine(sylp, "theme.cfg"), theme.GetCode());
-                if (Program.UseCyrillicFont)
-                {
-                    File.WriteAllBytes(Path.Combine(sylp, "cyrillic_cp866.psf"), Resources._866_8x16);
-                }
-            }
-
             if (bwkISO.CancellationPending)
             {
                 abort = true;
@@ -292,7 +269,7 @@ namespace SharpBoot
             }
             else if (IsoBackgroundImage != "$$NONE$$") img = Image.FromFile(IsoBackgroundImage);
             ChangeProgress(35, 100, Strings.ExtractBaseDisk + " 5/6");
-            bloader.SetImage(img, Res);
+            Grub2.SetImage(img, Res, workingDir);
             ChangeProgress(45, 100, Strings.ExtractBaseDisk + " 6/6");
             if (!_usb)
             {
@@ -367,7 +344,7 @@ namespace SharpBoot
 
 
             var main = new BootMenu(Title, true);
-            main.Items.Add(new BootMenuItem(Strings.BootFromHDD.RemoveAccent(), Strings.BootFromHDD.RemoveAccent(),
+            main.Items.Add(new BootMenuItem(Strings.BootFromHDD, Strings.BootFromHDD,
                 EntryType.BootHDD));
 
             var ii = 0;
@@ -387,7 +364,7 @@ namespace SharpBoot
                     ChangeProgress(ii, Categories.Count, Strings.GenMainMenu);
                     Images.Where(x => x.Category == c).All(x =>
                     {
-                        main.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
+                        main.Items.Add(new BootMenuItem(x.Name, x.Description,
                             x.EntryType, x.FilePath, false, x.CustomCode));
                         return true;
                     });
@@ -398,13 +375,13 @@ namespace SharpBoot
                     var t = new BootMenu(c, false);
                     Images.Where(x => x.Category == c).All(x =>
                     {
-                        t.Items.Add(new BootMenuItem(x.Name.RemoveAccent(), x.Description.RemoveAccent(),
+                        t.Items.Add(new BootMenuItem(x.Name, x.Description,
                             x.EntryType, x.FilePath, false, x.CustomCode));
                         return true;
                     });
 
-                    File.WriteAllText(Path.Combine(sylp, Utils.CRC32(c)) + bloader.FileExt,
-                        bloader.GetCode(t), Program.GetEnc());
+                    File.WriteAllText(Path.Combine(workingDir, Utils.CRC32(c)) + ".cfg",
+                        Grub2.GetCode(t), Program.GetEnc());
                     main.Items.Add(new BootMenuItem(c, c, EntryType.Category, Utils.CRC32(c), false));
                 }
 
@@ -416,12 +393,7 @@ namespace SharpBoot
                     return;
                 }
             }
-            if (bloader is Syslinux)
-                File.WriteAllText(Path.Combine(sylp, "syslinux.cfg"), bloader.GetCode(main), Program.GetEnc());
-            else if (bloader is Grub4DOS)
-                File.WriteAllText(Path.Combine(isodir, "menu.lst"), bloader.GetCode(main));
-            else if(bloader is Grub2)
-                File.WriteAllText(Path.Combine(sylp, "grub.cfg"), bloader.GetCode(main));
+            File.WriteAllText(Path.Combine(workingDir, "grub.cfg"), Grub2.GetCode(main));
 
             if (bwkISO.CancellationPending)
             {
@@ -431,8 +403,8 @@ namespace SharpBoot
 
             if (_usb)
             {
-                ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, bloader.DisplayName, OutputFilepath));
-                bloader.Install(OutputFilepath);
+                ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, "Grub2", OutputFilepath));
+                Grub2.Install(OutputFilepath);
                 GenF(f);
             }
             else
@@ -445,14 +417,12 @@ namespace SharpBoot
                     StartInfo =
                     {
                         UseShellExecute = false,
-                        FileName = mkisofsexe
-                        /*RedirectStandardOutput = true,
-                    RedirectStandardError = true*/
+                        FileName = mkisofsexe,
+                        RedirectStandardOutput = true,
+                        CreateNoWindow = true
                     }
                 };
-                p.StartInfo.Arguments += " " + bloader.CmdArgs +
-                                         " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b " +
-                                         bloader.BinFile;
+                p.StartInfo.Arguments += " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b boot/grub/eltorito.img";
                 p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + isodir + "\"";
                 p.EnableRaisingEvents = true;
 
@@ -495,9 +465,40 @@ namespace SharpBoot
                     Thread.Sleep(500);
                     iter++;
                 }
+                ChangeProgress(43, 100, Strings.CreatingISO);
                 try
                 {
+                    p.OutputDataReceived += (sender, args) =>
+                    {
+                        try
+                        {
+                            if (args?.Data == null) return;
+                            var o = args.Data.Trim();
+                            if (!o.Contains('%')) return;
+                            var pp = o.Substring(1, 5).Trim();
+                            decimal d;
+                            if (decimal.TryParse(pp, out d))
+                            {
+                                if (o[0] == ' ' && o[3] == '.' && o[6] == '%')
+                                {
+                                    ChangeProgress(Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)), 100, Strings.CreatingISO + "\t" + pp + "%");
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            
+                        }
+                    };
                     p.Start();
+                    p.BeginOutputReadLine();
+                    p.WaitForExit();
+                    /*while (!p.WaitForExit(1))
+                    {
+                        System.Threading.Thread.Sleep(500);
+                        p.Refresh();
+                        Application.DoEvents();
+                    }*/
                 }
                 catch (FileNotFoundException)
                 {
@@ -517,14 +518,11 @@ namespace SharpBoot
                     }
                 }
             }*/
-                if (!p.HasExited)
-                    p.WaitForExit(2000);
+                
                 Thread.Sleep(500);
                 if (!exitCaught)
                     GenF(f);
             }
-            Program.SupportAccent = false;
-
             ext.Close();
         }
 

@@ -27,7 +27,6 @@ namespace SharpBoot
         public static string editcode = "";
         public static string fpath = "";
 
-        public static bool SupportAccent = false;
 
         /// <summary>
         ///     Point d'entrée principal de l'application.
@@ -35,14 +34,15 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
-            ClrTmp();
+            ClrTmp(true);
 
             Utils.CurrentRandom = new Random();
 
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
-            //ISOInfo.RefreshISOs();
-
+            if (Settings.Default.AppsXml == "") Settings.Default.AppsXml = Resources.DefaultISOs;
+            ISOInfo.RefreshISOs();
+            
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
@@ -53,7 +53,9 @@ namespace SharpBoot
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new FirstLaunch());
+
+            ClrTmp();
         }
 
         private static void CurrentDomainOnUnhandledException(object sender,
@@ -93,10 +95,10 @@ namespace SharpBoot
             }
         }
 
-        public static void ClrTmp()
+        public static void ClrTmp(bool first = false)
         {
             Directory.GetDirectories(Path.GetTempPath())
-                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_") && !QEMUISO.Paths.Contains(x))
+                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_") && (first || !QEMUISO.Paths.Contains(x)))
                 .ToList()
                 .ForEach(SafeDel);
         }
@@ -219,66 +221,7 @@ namespace SharpBoot
             return (Math.Sign(file) * num) + " " + suf[place];
         }
 
-        public static string RemoveAccent(this string str)
-        {
-            var t = new Dictionary<int, int>();
-            return RemoveAccent(str, out t);
-        }
-
-        public static string RemoveAccent(this string str, out Dictionary<int, int> charIndexes)
-        {
-            var replchar = new Dictionary<string, string>
-            {
-                {"і", "i"}, // Cyrillic 'i' to Latin 'i' (not supported by the cyrillic font)
-                {"ї", "ï"},
-                {"І", "I"},
-                {"Ї", "Ï"},
-                {"у́", "y"}
-            };
-
-            str = replchar.Aggregate(str, (current, rc) => current.Replace(rc.Key, rc.Value));
-
-            str = str.Normalize(NormalizationForm.FormC);
-            //str = str.ChineseToPinyin();
-
-            var supported =
-                string.Concat(
-                    Enumerable.Range(0, SupportAccent ? 256 : 128).Select(x => GetEnc().GetString(new[] {(byte) x})[0]));
-            var stringBuilder = new StringBuilder();
-
-            charIndexes = new Dictionary<int, int>();
-
-            for (int i = 0; i < str.Length; i++)
-            {
-                var t = str[i];
-                var newidx = i;
-                if (supported.Contains(t) || char.IsWhiteSpace(t))
-                {
-                    stringBuilder.Append(t);
-                }
-                else
-                {
-                    var ctp = t.ToString().ChineseToPinyin();
-                    if (ctp == t.ToString())
-                    {
-                        stringBuilder.Append(
-                            Encoding.UTF8.GetString(Encoding.GetEncoding("ISO-8859-8").GetBytes(t + "")));
-
-                        
-                    }
-                    else
-                    {
-                        stringBuilder.Append(ctp);
-                    }
-
-                    newidx = stringBuilder.Length - 1;
-                }
-                charIndexes.Add(i, newidx);
-            }
-
-
-            return stringBuilder.ToString();
-        }
+        
 
 
         public static string GetTemporaryDirectory()

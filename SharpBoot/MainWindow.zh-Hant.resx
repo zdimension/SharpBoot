@@ -120,6 +120,12 @@
   <data name="btnUSB.Text" xml:space="preserve">
     <value>建立多重啟動 USB 隨身碟</value>
   </data>
+  <data name="gbxTest.Text" xml:space="preserve">
+    <value>試驗磁碟映像文件</value>
+  </data>
+  <data name="btnGen.Text" xml:space="preserve">
+    <value>建立 ISO</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -131,23 +137,17 @@
   <data name="label1.Text" xml:space="preserve">
     <value>拖曳&amp;放置 ISO 或 IMG 文件至這裡</value>
   </data>
-  <data name="gbxTest.Text" xml:space="preserve">
-    <value>試驗磁碟映像文件</value>
-  </data>
-  <data name="btnGen.Text" xml:space="preserve">
-    <value>建立 ISO</value>
-  </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
     <value>編輯程式碼</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>解析度</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>啟動引導器</value>
-  </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value>驗證碼</value>
+  </data>
+  <data name="gbxBckd.Text" xml:space="preserve">
+    <value>背景圖像</value>
   </data>
   <data name="cbxBackType.Items" xml:space="preserve">
     <value>預設</value>
@@ -157,9 +157,6 @@
   </data>
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>無</value>
-  </data>
-  <data name="gbxBckd.Text" xml:space="preserve">
-    <value>背景圖像</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>標題</value>
@@ -185,64 +182,79 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>文件路徑</value>
   </data>
+  <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft JhengHei UI, 9pt</value>
+  </data>
+  <data name="sharpBootToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 20</value>
+  </data>
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
     <value>開啟</value>
   </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
     <value>儲存</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
-    <value>新增 ISO</value>
+    <value>169, 6</value>
   </data>
   <data name="automaticallyAddISOInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>自動加入 ISO 資訊</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
+    <value>169, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+    <value>172, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>離開</value>
   </data>
+  <data name="addISOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 20</value>
+  </data>
+  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
+    <value>新增 ISO</value>
+  </data>
   <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 20</value>
+    <value>83, 20</value>
   </data>
   <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
     <value>更新可用</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
+    <value>43, 20</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>語言</value>
   </data>
+  <data name="addFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 20</value>
+  </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
+    <value>196, 20</value>
   </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
     <value>安裝啟動引導器至 USB 隨身碟</value>
   </data>
+  <data name="editThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 25</value>
+    <value>145, 25</value>
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>將文件拖至此處</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft JhengHei UI, 9pt</value>
   </data>
 </root>

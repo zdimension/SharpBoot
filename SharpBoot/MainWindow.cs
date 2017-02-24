@@ -23,7 +23,7 @@ namespace SharpBoot
     {
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + SelectedBootloader().TotalSize + Utils.SIZE_BASEDISK + SelectedBackground.Length);
+            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + Utils.SIZE_BASEDISK + SelectedBackground.Length); // TODO: Update the bloader size
 
             menuStrip.Renderer = Windows7Renderer.Instance;
 
@@ -37,8 +37,8 @@ namespace SharpBoot
                 cbxBackType.SelectedIndex == 0
                     ? Resources.sharpboot
                     : cbxBackType.SelectedIndex == 1
-                        ? File.Exists(txtBackFile.Text) ? Image.FromFile(txtBackFile.Text).ToByteArray() : new byte[] {}
-                        : new byte[] {};
+                        ? File.Exists(txtBackFile.Text) ? Image.FromFile(txtBackFile.Text).ToByteArray() : new byte[0]
+                        : new byte[0];
 
 
 
@@ -81,11 +81,6 @@ namespace SharpBoot
             lngs.Clear();
             loadlng();
             LoadResolutions();
-            foreach (var bl in Bootloaders.Bloaders.Select(x => x.DisplayName).ToArray().AddRecommended(0))
-            {
-                cbxBootloader.Items.Add(bl);
-            }
-            cbxBootloader.SelectedIndex = 0;
             cbxRes.SelectedIndex = 0;
             cbxBackType.SelectedIndex = 0;
             updateAvailableToolStripMenuItem.Visible = update_available;
@@ -323,11 +318,11 @@ namespace SharpBoot
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
-            if (g.filesystem == "NTFS" && g.bloader is Grub4DOS) return;
             if (
                 MessageBox.Show(this, Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                if(g.filesystem == "NTFS") Thread.Sleep(1500);
                 QEMUISO.LaunchQemu(g.OutputFilepath, g._usb);
             }
         }
@@ -409,28 +404,17 @@ namespace SharpBoot
                         break;
                 }
 
-                var bl = SelectedBootloader();
-
-                g.bloader = bl;
-                Program.SupportAccent = bl.SupportAccent;
                 g.Res = ((dynamic)cbxRes.SelectedItem).Val;
                 g.Images =
                     CurImages.Select(
                         x =>
-                            new ImageLine(x.Name.RemoveAccent(), x.FilePath, x.Description.RemoveAccent(),
-                                x.Category.RemoveAccent(), x.CustomCode, x.EntryType)).ToList();
+                            new ImageLine(x.Name, x.FilePath, x.Description,
+                                x.Category, x.CustomCode, x.EntryType)).ToList();
                 g.CustomFiles = CustomFiles;
                 g.ShowDialog(this);
 
                 Program.ClrTmp();
-                Program.SupportAccent = false;
             }
-        }
-
-        public IBootloader SelectedBootloader()
-        {
-            if(cbxBootloader.SelectedIndex == -1) return new Syslinux();
-            return Bootloaders.Bloaders[cbxBootloader.SelectedIndex];
         }
 
         public void CheckFields()
@@ -589,34 +573,6 @@ namespace SharpBoot
                 lvIsos.Height / 2 - lblDragHere.Height / 2 + lvIsos.Location.Y
                 );
         }
-
-        private bool selectingboot;
-
-
-        public void CheckGrub4Dos()
-        {
-            if (cbxBackType.SelectedIndex == 0 && SelectedBootloader() is Grub4DOS && selectingboot) cbxBackType.SelectedIndex = 2;
-            selectingboot = false;
-            cbxRes.Enabled = !(cbxBackType.SelectedIndex == 2 && SelectedBootloader() is Grub4DOS);
-            if (cbxBackType.SelectedIndex == 1 && File.Exists(txtBackFile.Text) && SelectedBootloader() is Grub4DOS)
-            {
-                var img = Image.FromFile(txtBackFile.Text);
-                switch (img.Width)
-                {
-                    case 800:
-                        cbxRes.SelectedIndex = 1;
-                        break;
-                    case 1024:
-                        cbxRes.SelectedIndex = 2;
-                        break;
-                    default:
-                        cbxRes.SelectedIndex = 0;
-                        break;
-                }
-            }
-        }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             new About().ShowDialog(this);
@@ -655,7 +611,6 @@ namespace SharpBoot
                 var c = d.Element("SharpBoot");
 
                 txtTitle.Text = c.Element("Name").Value;
-                cbxBootloader.SelectedIndex = Convert.ToInt32(c.Element("Bootloader").Value);
                 cbxRes.SelectedIndex = Convert.ToInt32(c.Element("Resolution").Value);
                 cbxBackType.SelectedIndex = Convert.ToInt32(c.Element("Backtype").Value);
                 txtBackFile.Text = c.Element("Backpath").Value;
@@ -677,7 +632,6 @@ namespace SharpBoot
                 var doc =
                     new XDocument(new XElement("SharpBoot",
                         new XElement("Name", txtTitle.Text),
-                        new XElement("Bootloader", cbxBootloader.SelectedIndex),
                         new XElement("Resolution", cbxRes.SelectedIndex),
                         new XElement("Backtype", cbxBackType.SelectedIndex),
                         new XElement("Backpath", txtBackFile.Text),
@@ -696,7 +650,7 @@ namespace SharpBoot
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {
-            if (changTitle) return;
+            /*if (changTitle) return;
             var pos = txtTitle.SelectionStart - 1;
             var t = new Dictionary<int, int>();
             changTitle = true;
@@ -708,23 +662,21 @@ namespace SharpBoot
                 txtTitle.SelectionStart = txtTitle.Text.Length;
             }
             else txtTitle.SelectionStart = t.ContainsKey(pos) ? t[pos] : 0;
-            txtTitle.SelectionStart++;
+            txtTitle.SelectionStart++;*/
         }
 
         private void btnInstBoot_Click(object sender, EventArgs e)
         {
-            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false,
-                cbxBootloader.Items.Cast<string>().ToArray());
+            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false, "Grub2");
             frm.BtnClicked += (o, args) =>
             {
                 frm.ProgressVisible = true;
                 frm.SetProgress(5);
-                var bl = Bootloaders.Bloaders[frm.TheComboBox.SelectedIndex];
-                BootloaderInst.Install(frm.SelectedUSB.Name, bl);
+                Grub2.Install(frm.SelectedUSB.Name);
                 frm.SetProgress(100);
                 MessageBox.Show(
                     string.Format(Strings.BootloaderInstalled,
-                        bl.DisplayName,
+                        "Grub2",
                         frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
             };
             frm.ShowDialog(this);
@@ -755,21 +707,11 @@ namespace SharpBoot
             CheckFields();
         }
 
-        private void cbxBootloader_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            selectingboot = true;
-            CheckGrub4Dos();
-            Program.SupportAccent = SelectedBootloader().SupportAccent;
-            txtTitle_TextChanged(sender, e);
-            SetSize();
-        }
-
         private void cbxBackType_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtBackFile.Enabled = btnBackBrowse.Enabled = cbxBackType.SelectedIndex == 1;
             if (cbxBackType.SelectedIndex != 1) txtBackFile.Text = "";
             CheckFields();
-            CheckGrub4Dos();
             SetSize();
         }
 
@@ -813,7 +755,7 @@ namespace SharpBoot
                 selectediline().EntryType,
                 cit.Cells[4].Value?.ToString() ?? "") {Start = false};
 
-            var cod = SelectedBootloader().GetCode(bmi);
+            var cod = Grub2.GetCode(bmi);
 
             var edfrm = new EditCodeFrm("/images/" + Path.GetFileName(cit.Cells[4].Value.ToString())) {Code = cod};
             if (edfrm.ShowDialog(this) == DialogResult.OK)

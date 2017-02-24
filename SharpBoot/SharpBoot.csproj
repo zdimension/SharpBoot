@@ -37,11 +37,14 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="Pinyin4net">
-      <HintPath>..\..\..\..\Téléchargements\Pinyin4net.dll</HintPath>
+    <Reference Include="DropDownControls">
+      <HintPath>..\libs\DropDownControls.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -76,7 +79,6 @@
     </Compile>
     <Compile Include="Bootloaders.cs" />
     <Compile Include="BootMenu.cs" />
-    <Compile Include="ChineseToPinYin.cs" />
     <Compile Include="CustomEntry.cs" />
     <Compile Include="CustomEntryFrm.cs">
       <SubType>Form</SubType>
@@ -122,7 +124,6 @@
     <Compile Include="GenIsoFrm.Designer.cs">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupedComboBox.cs" />
     <Compile Include="ImageLine.cs" />
     <Compile Include="MainWindow.zh-Hant.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -576,7 +577,6 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
-    <EmbeddedResource Include="MorePerfectDOSVGA.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -586,10 +586,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\866_8x16.psf" />
     <None Include="Resources\basedisk.7z" />
-    <None Include="Resources\grub2.7z" />
-    <None Include="Resources\grub4dos.7z" />
     <None Include="Resources\imagemagick.7z" />
     <None Include="Resources\mkisofs.7z" />
   </ItemGroup>
@@ -620,10 +617,6 @@
     <None Include="Resources\folder.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\syslinux.7z" />
-    <None Include="Resources\syslinux.exe" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -647,7 +640,12 @@
     <None Include="Resources\chevron_left_h.png" />
     <None Include="Resources\chevron_left_d.png" />
     <None Include="Resources\application_form_edit.png" />
-    <Content Include="Resources\grubinst.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sharpboot.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

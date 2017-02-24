@@ -223,8 +223,11 @@ namespace SharpBoot
             {
                 Invoke((MethodInvoker) (() => pbxLoading.Visible = true));
 
+                var sw = new Stopwatch();
+                sw.Start();
                 var resk = ISOInfo.GetFromFile(ISOPath, false);
-
+                sw.Stop();
+                MessageBox.Show(sw.Elapsed.ToString());
 
                 Invoke((MethodInvoker) (() =>
                 {

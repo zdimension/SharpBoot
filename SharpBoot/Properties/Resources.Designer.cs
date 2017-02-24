@@ -71,16 +71,6 @@ namespace SharpBoot.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        internal static byte[] _866_8x16 {
-            get {
-                object obj = ResourceManager.GetObject("_866_8x16", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap accept_button {
@@ -334,40 +324,20 @@ namespace SharpBoot.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Byte[].
         /// </summary>
-        internal static byte[] grub2 {
-            get {
-                object obj = ResourceManager.GetObject("grub2", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        internal static byte[] grub4dos {
-            get {
-                object obj = ResourceManager.GetObject("grub4dos", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        internal static byte[] grubinst {
-            get {
-                object obj = ResourceManager.GetObject("grubinst", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
         internal static byte[] imagemagick {
             get {
                 object obj = ResourceManager.GetObject("imagemagick", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Icon semblable à (Icône).
+        /// </summary>
+        internal static System.Drawing.Icon logo {
+            get {
+                object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
@@ -442,22 +412,11 @@ namespace SharpBoot.Properties {
         }
         
         /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
+        ///   Recherche une ressource localisée de type System.IO.UnmanagedMemoryStream semblable à System.IO.MemoryStream.
         /// </summary>
-        internal static byte[] syslinux {
+        internal static System.IO.UnmanagedMemoryStream sharpboot2 {
             get {
-                object obj = ResourceManager.GetObject("syslinux", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Recherche une ressource localisée de type System.Byte[].
-        /// </summary>
-        internal static byte[] syslinux1 {
-            get {
-                object obj = ResourceManager.GetObject("syslinux1", resourceCulture);
-                return ((byte[])(obj));
+                return ResourceManager.GetStream("sharpboot2", resourceCulture);
             }
         }
         

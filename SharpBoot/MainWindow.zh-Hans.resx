@@ -117,30 +117,90 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnCustomEntry.Location" type="System.Drawing.Point, System.Drawing">
+    <value>654, 14</value>
+  </data>
+  <data name="btnCustomEntry.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 118</value>
+  </data>
+  <data name="btnUSB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>874, 14</value>
+  </data>
+  <data name="btnUSB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 118</value>
+  </data>
   <data name="btnUSB.Text" xml:space="preserve">
     <value>做Multiboot的U片</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 43</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 15</value>
+    <value>125, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>单击及拖动ISO到这里</value>
   </data>
+  <data name="gbxTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>462, 14</value>
+  </data>
+  <data name="gbxTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 118</value>
+  </data>
   <data name="gbxTest.Text" xml:space="preserve">
     <value>在QEMU尝试</value>
+  </data>
+  <data name="btnGen.Location" type="System.Drawing.Point, System.Drawing">
+    <value>764, 14</value>
+  </data>
+  <data name="btnGen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 118</value>
   </data>
   <data name="btnGen.Text" xml:space="preserve">
     <value>做ISO</value>
   </data>
+  <data name="txImInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 14</value>
+  </data>
+  <data name="txImInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 117</value>
+  </data>
+  <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 647</value>
+  </data>
+  <data name="pnlBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>990, 145</value>
+  </data>
+  <data name="btnCustomCode.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 394</value>
+  </data>
+  <data name="btnCustomCode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 52</value>
+  </data>
   <data name="btnCustomCode.Text" xml:space="preserve">
     <value>编辑代码</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 328</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>屏幕分辨率</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>啟動引導器</value>
+  <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 564</value>
+  </data>
+  <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 52</value>
+  </data>
+  <data name="btnChecksum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 451</value>
+  </data>
+  <data name="btnChecksum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 52</value>
   </data>
   <data name="btnChecksum.Text" xml:space="preserve">
     <value>校验</value>
@@ -154,17 +214,65 @@
   <data name="cbxBackType.Items2" xml:space="preserve">
     <value>没有</value>
   </data>
+  <data name="cbxBackType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="cbxBackType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 25</value>
+  </data>
+  <data name="txtBackFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 53</value>
+  </data>
+  <data name="btnBackBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 86</value>
+  </data>
+  <data name="btnBackBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>178, 26</value>
+  </data>
+  <data name="gbxBckd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 135</value>
+  </data>
+  <data name="gbxBckd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 120</value>
+  </data>
   <data name="gbxBckd.Text" xml:space="preserve">
     <value>背景</value>
+  </data>
+  <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="gbxTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
   </data>
   <data name="gbxTitle.Text" xml:space="preserve">
     <value>标题</value>
   </data>
+  <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 507</value>
+  </data>
+  <data name="btnRemISO.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 52</value>
+  </data>
   <data name="btnRemISO.Text" xml:space="preserve">
     <value>删除</value>
   </data>
+  <data name="tbxSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 25</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 69</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 59</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>总大小</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>790, 25</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 622</value>
   </data>
   <data name="clmnName.HeaderText" xml:space="preserve">
     <value>名字</value>
@@ -181,64 +289,103 @@
   <data name="clmnFilePath.HeaderText" xml:space="preserve">
     <value>文件的位置</value>
   </data>
+  <data name="lvIsos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 25</value>
+  </data>
+  <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>790, 622</value>
+  </data>
+  <data name="menuStrip.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="openToolStripMenuItem.Text" xml:space="preserve">
     <value>打开</value>
   </data>
   <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="saveToolStripMenuItem.Text" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 6</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
-  </data>
-  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
-    <value>加入一个ISO</value>
+    <value>178, 6</value>
   </data>
   <data name="automaticallyAddISOInfoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="automaticallyAddISOInfoToolStripMenuItem.Text" xml:space="preserve">
     <value>加入ISO信息得自动</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 6</value>
+    <value>178, 6</value>
   </data>
   <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>183, 22</value>
+    <value>181, 22</value>
   </data>
   <data name="exitToolStripMenuItem.Text" xml:space="preserve">
     <value>退 出</value>
   </data>
+  <data name="sharpBootToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 21</value>
+  </data>
+  <data name="addISOToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 21</value>
+  </data>
+  <data name="addISOToolStripMenuItem.Text" xml:space="preserve">
+    <value>加入一个ISO</value>
+  </data>
+  <data name="mniUpdate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 21</value>
+  </data>
   <data name="updateAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 20</value>
+    <value>84, 21</value>
   </data>
   <data name="updateAvailableToolStripMenuItem.Text" xml:space="preserve">
     <value>更新可用</value>
   </data>
   <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 20</value>
+    <value>44, 21</value>
   </data>
   <data name="languageToolStripMenuItem.Text" xml:space="preserve">
     <value>语言</value>
   </data>
+  <data name="addFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 21</value>
+  </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
+    <value>200, 21</value>
   </data>
   <data name="installBootloaderOnUSBKeyToolStripMenuItem.Text" xml:space="preserve">
     <value>安装启动引导器至 USB 随身碟</value>
   </data>
+  <data name="editThemeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 21</value>
+  </data>
+  <data name="menuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>990, 25</value>
+  </data>
+  <data name="lblDragHere.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 86</value>
+  </data>
   <data name="lblDragHere.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 25</value>
+    <value>146, 25</value>
   </data>
   <data name="lblDragHere.Text" xml:space="preserve">
     <value>将文件拖至此处</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 17</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>990, 792</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1006, 831</value>
   </data>
 </root>

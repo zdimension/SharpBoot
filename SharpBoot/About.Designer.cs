@@ -35,12 +35,15 @@ namespace SharpBoot
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.btnOK = new System.Windows.Forms.Button();
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.lvTranslators = new SharpBoot.CustomListView();
             this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.richTextBox1 = new SharpBoot.DisabledRichTextBox();
             this.rtbMyWebsite = new SharpBoot.DisabledRichTextBox();
             this.rbnHelpTranslate = new SharpBoot.DisabledRichTextBox();
+            this.disabledRichTextBox1 = new SharpBoot.DisabledRichTextBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnOK
@@ -67,6 +70,12 @@ namespace SharpBoot
             this.ilTranslators.Images.SetKeyName(10, "flag_portugal.png");
             this.ilTranslators.Images.SetKeyName(11, "flag_poland.png");
             this.ilTranslators.Images.SetKeyName(12, "flag_hungary.png");
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Name = "label1";
             // 
             // lvTranslators
             // 
@@ -109,15 +118,6 @@ namespace SharpBoot
             // 
             resources.ApplyResources(this.clmnURL, "clmnURL");
             // 
-            // richTextBox1
-            // 
-            resources.ApplyResources(this.richTextBox1, "richTextBox1");
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            // 
             // rtbMyWebsite
             // 
             resources.ApplyResources(this.rtbMyWebsite, "rtbMyWebsite");
@@ -136,21 +136,42 @@ namespace SharpBoot
             this.rbnHelpTranslate.ReadOnly = true;
             this.rbnHelpTranslate.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
+            // disabledRichTextBox1
+            // 
+            resources.ApplyResources(this.disabledRichTextBox1, "disabledRichTextBox1");
+            this.disabledRichTextBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.disabledRichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.disabledRichTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.disabledRichTextBox1.Name = "disabledRichTextBox1";
+            this.disabledRichTextBox1.ReadOnly = true;
+            this.disabledRichTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            // 
+            // pbLogo
+            // 
+            resources.ApplyResources(this.pbLogo, "pbLogo");
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
+            // 
             // About
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lvTranslators);
+            this.Controls.Add(this.disabledRichTextBox1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.rbnHelpTranslate);
             this.Controls.Add(this.rtbMyWebsite);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "About";
             this.ShowInTaskbar = false;
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -162,9 +183,11 @@ namespace SharpBoot
         private CustomListView lvTranslators;
         private ColumnHeader clmnName;
         private ImageList ilTranslators;
-        private DisabledRichTextBox richTextBox1;
         private DisabledRichTextBox rtbMyWebsite;
         private DisabledRichTextBox rbnHelpTranslate;
         private ColumnHeader clmnURL;
+        private Label label1;
+        private DisabledRichTextBox disabledRichTextBox1;
+        private PictureBox pbLogo;
     }
 }

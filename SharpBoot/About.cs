@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
+using System.Reflection;
 using System.Windows.Forms;
 using SharpBoot.Properties;
 
@@ -16,7 +19,7 @@ namespace SharpBoot
         public About()
         {
             InitializeComponent();
-            richTextBox1.Text = richTextBox1.Text.Insert(9, " " + Program.GetVersion())
+            label1.Text = label1.Text.Insert(9, " " + Program.GetVersion())
                 .Replace("{0}", ISOInfo.AppDBVersion.ToString())
                 .Replace("{1}", Strings.SharpBootUsesSoft);
             if (Program.IsWin) Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
@@ -25,6 +28,11 @@ namespace SharpBoot
             rtbMyWebsite.DeselectAll();
             Text = Strings.AboutSharpBoot;
             btnOK.Text = Strings.OK;
+            pbLogo.Image = new Icon(Resources.logo, 48, 48).ToBitmap();
+            FormClosing += (sender, args) =>
+            {
+                mp.Stop();
+            };
         }
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)
@@ -43,6 +51,14 @@ namespace SharpBoot
         {
             if (e.LinkText != "")
                 Process.Start(e.LinkText);
+        }
+
+        private SoundPlayer mp = new SoundPlayer(Resources.sharpboot2); // shhhh...
+
+        private void pbLogo_Click(object sender, EventArgs e)
+        {
+            mp.Stop();
+            mp.Play(); // don't tell tumblr
         }
     }
 }

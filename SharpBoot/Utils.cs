@@ -110,7 +110,7 @@ namespace SharpBoot
         public static byte[] ToByteArray(this Image img)
         {
             var ms = new MemoryStream();
-            img.Save(ms, ImageFormat.Jpeg);
+            img.Save(ms, ImageFormat.Png);
             return ms.ToArray();
         }
 

@@ -16,8 +16,8 @@ namespace SharpBoot
         {
             InitializeComponent();
 
-            TheBootloader = new Syslinux();
-            SetSyslinux();
+            /*TheBootloader = new Syslinux();
+            SetSyslinux();*/
 
             //fakeVGA1.BackgroundImage = Utils.DrawFilledRectangle(640, 480, Color.White);
             fakeVGA1.BackgroundImage = Image.FromStream(new MemoryStream(Properties.Resources.sharpboot));
@@ -28,7 +28,7 @@ namespace SharpBoot
             fakeVGA1.Write(10, 10, "test", Color.Red, Color.Transparent);
         }
 
-        public IBootloader TheBootloader { get; set; }
+        //public IBootloader TheBootloader { get; set; }
 
         public void DrawSyslinuxBG(Graphics g)
         {
