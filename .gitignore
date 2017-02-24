@@ -2,8 +2,6 @@
 # Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/SharpBoot/MorePerfectDOSVGA.ttf
-/SharpBoot/MorePerfectDOSVGA2.ttf
 /SharpBoot/obj
 /SharpBoot/bin/Debug/SharpBoot.vshost.exe.manifest
 *.userprefs
