@@ -583,6 +583,8 @@
     <None Include="app.manifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="bin\Debug\merge.bat" />
+    <None Include="bin\Release\merge.bat" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -652,6 +654,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sharpboot.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\libz.exe" />
+    <Content Include="bin\Release\libz.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
