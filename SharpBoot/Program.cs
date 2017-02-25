@@ -61,18 +61,21 @@ namespace SharpBoot
         private static void CurrentDomainOnUnhandledException(object sender,
             UnhandledExceptionEventArgs unhandledExceptionEventArgs)
         {
-            if (unhandledExceptionEventArgs.ExceptionObject is FileNotFoundException)
-                MessageBox.Show(((FileNotFoundException) unhandledExceptionEventArgs.ExceptionObject).FileName);
-            MessageBox.Show(unhandledExceptionEventArgs.ExceptionObject.ToString(), "Unhandled exception");
+            HandleUnhandled((Exception) unhandledExceptionEventArgs.ExceptionObject);
         }
 
         public static bool UseCyrillicFont => GetEnc().CodePage == 866;
 
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            if (e.Exception is FileNotFoundException)
-                MessageBox.Show(((FileNotFoundException) e.Exception).FileName);
-            MessageBox.Show(e.Exception.Message + "\n" + e.Exception.StackTrace, "Thread exception");
+            HandleUnhandled(e.Exception, "Thread exception");
+        }
+        
+        private static void HandleUnhandled(Exception ex, string title = "Unhandled exception")
+        {
+            if (ex is FileNotFoundException)
+                MessageBox.Show(((FileNotFoundException)ex).FileName);
+            MessageBox.Show(title + ": \n" + ex.Message + "\n\n" + ex.StackTrace, title);
         }
 
         public static string GetVersion()
@@ -176,6 +179,11 @@ namespace SharpBoot
             Linux,
             Mac
         }
+
+        public static bool IsMono => Type.GetType("Mono.Runtime") != null;
+
+        public static bool IsLinux => RunningPlatform() == Platform.Linux;
+        
 
         /// http://stackoverflow.com/q/10138040/2196124
         public static Platform RunningPlatform()

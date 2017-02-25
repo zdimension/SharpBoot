@@ -271,19 +271,37 @@ namespace SharpBoot
 
         public static string DownloadWithoutCache(string url, bool redl = true)
         {
+            Console.WriteLine("mark 1");
             url = MakeURLRandom(url);
             var res = "";
             Stream remote = null;
             WebResponse resp = null;
             var proc = 0;
+            Console.WriteLine("mark 2");
             try
             {
                 var req = WebRequest.Create(url);
-                req.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                Console.WriteLine("mark 3");
                 if (req != null)
                 {
-                    resp = req.GetResponse();
-
+                    Console.WriteLine("mark 3.1");
+                    req.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                    Console.WriteLine("mark 3.2");
+                    try
+                    {
+                        resp = req.GetResponse();
+                    }
+                    catch(WebException e)
+                    {
+                        if (Program.IsMono && Program.IsLinux)
+                        {
+                            var p = new Process() {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
+                            p.Start();
+                            p.WaitForExit(10000);
+                            resp = req.GetResponse();
+                        }
+                    }
+                    Console.WriteLine("mark 4");
                     if (resp != null)
                     {
                         remote = resp.GetResponseStream();
@@ -298,9 +316,12 @@ namespace SharpBoot
                             proc += br;
                         } while (br > 0);
                         mem.Position = 0;
+                        Console.WriteLine("len: " + mem.Length);
                         res = new StreamReader(mem).ReadToEnd();
                     }
+                    else MessageBox.Show("resp is null");
                 }
+                else MessageBox.Show("req is null");
             }
             catch
             {

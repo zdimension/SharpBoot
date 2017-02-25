@@ -110,7 +110,7 @@ namespace SharpBoot
             }
             catch(Exception e)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show("Error in UpdateISOs: \n" + e.Message + "\n\n" + e.StackTrace);
             }
         }
 
@@ -151,28 +151,9 @@ namespace SharpBoot
                     Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-                    var wc = new WebClient { Encoding = Encoding.UTF8 };
-                    /*var appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
-                    appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
-
-                    while (!appsxml.Contains("</apps>"))
-                    {
-                        appsxml = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
-                    }*/
-
-                    /*var check = Utils.DownloadWithoutCache("http://www.zdimension.ml/sharpboot/apps.php?c");
-                    if (check != "All your base are belong to us")
-                    {
-                        MessageBox.Show("The update server is down. Update aborted.\n" +
-                                        "Go to the GitHub repository, a fix release will be released in a few hours.\n" +
-                                        "If not, file an issue.");
-                        UpdateFinished(null, EventArgs.Empty);
-                        return;
-                    }*/
-
                     var appsxml = Utils.DownloadWithoutCache("https://gitcdn.xyz/repo/zdimension/SharpBoot-AppDB/master/apps.xml");
 
-                    if (appsxml.Substring(appsxml.Length - 37, 37) != "<!--All your base are belong to us-->")
+                    if (appsxml?.Length > 40 && appsxml.Substring(appsxml.Length - 37, 37) != "<!--All your base are belong to us-->")
                     {
                         appsxml = Resources.DefaultISOs;
                     }
@@ -238,7 +219,7 @@ namespace SharpBoot
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show(e.Message);
+                    MessageBox.Show("Error in RefreshISOs: \n" + e.Message + "\n\n" + e.StackTrace);
                 }
                 UpdateFinished(null, EventArgs.Empty);
             });

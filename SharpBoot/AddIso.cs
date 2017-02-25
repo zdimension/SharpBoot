@@ -227,7 +227,6 @@ namespace SharpBoot
                 sw.Start();
                 var resk = ISOInfo.GetFromFile(ISOPath, false);
                 sw.Stop();
-                MessageBox.Show(sw.Elapsed.ToString());
 
                 Invoke((MethodInvoker) (() =>
                 {

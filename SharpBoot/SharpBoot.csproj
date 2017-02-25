@@ -41,9 +41,6 @@
     <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DropDownControls">
-      <HintPath>..\libs\DropDownControls.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -124,6 +121,9 @@
     <Compile Include="GenIsoFrm.Designer.cs">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupedComboBox\BufferedPainter.cs" />
+    <Compile Include="GroupedComboBox\GroupedComboBox.cs" />
+    <Compile Include="GroupedComboBox\Interop.cs" />
     <Compile Include="ImageLine.cs" />
     <Compile Include="MainWindow.zh-Hant.Designer.cs">
       <AutoGen>True</AutoGen>
