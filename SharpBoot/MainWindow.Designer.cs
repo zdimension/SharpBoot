@@ -536,9 +536,9 @@ namespace SharpBoot
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
+            this.Icon = global::SharpBoot.Properties.Resources.logo;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";
-            this.Icon = global::SharpBoot.Properties.Resources.logo;
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.SizeChanged += new System.EventHandler(this.MainWindow_SizeChanged);
             this.pnlBottom.ResumeLayout(false);

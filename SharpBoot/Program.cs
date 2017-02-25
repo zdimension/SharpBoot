@@ -53,7 +53,7 @@ namespace SharpBoot
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FirstLaunch());
+            Application.Run(new MainWindow());
 
             ClrTmp();
         }

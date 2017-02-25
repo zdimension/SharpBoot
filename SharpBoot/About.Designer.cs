@@ -36,13 +36,13 @@ namespace SharpBoot
             this.btnOK = new System.Windows.Forms.Button();
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
             this.lvTranslators = new SharpBoot.CustomListView();
             this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rtbMyWebsite = new SharpBoot.DisabledRichTextBox();
             this.rbnHelpTranslate = new SharpBoot.DisabledRichTextBox();
             this.disabledRichTextBox1 = new SharpBoot.DisabledRichTextBox();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +76,13 @@ namespace SharpBoot
             resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Name = "label1";
+            // 
+            // pbLogo
+            // 
+            resources.ApplyResources(this.pbLogo, "pbLogo");
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.TabStop = false;
+            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // lvTranslators
             // 
@@ -145,13 +152,6 @@ namespace SharpBoot
             this.disabledRichTextBox1.Name = "disabledRichTextBox1";
             this.disabledRichTextBox1.ReadOnly = true;
             this.disabledRichTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            // 
-            // pbLogo
-            // 
-            resources.ApplyResources(this.pbLogo, "pbLogo");
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.TabStop = false;
-            this.pbLogo.Click += new System.EventHandler(this.pbLogo_Click);
             // 
             // About
             // 
