@@ -66,9 +66,11 @@ namespace SharpBoot
             foreach (var x in result)
             {
                 var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name));
+                mnit.Tag = x.Name;
                 mnit.Click += (sender, args) => LngItemClick(mnit);
                 languageToolStripMenuItem.DropDownItems.Add(mnit);
-                lngs.Add(x.NativeName, new Tuple<CultureInfo, bool>(x, x != systemLng));
+
+                lngs.Add(x.Name, new Tuple<CultureInfo, bool>(x, x != systemLng));
             }
         }
 
@@ -97,7 +99,7 @@ namespace SharpBoot
 
         private void LngItemClick(ToolStripItem it)
         {
-            var tmp = lngs[it.Text];
+            var tmp = lngs[it.Tag.ToString()];
 
             if (Program.GetCulture().Equals(tmp.Item1)) return;
 
@@ -205,7 +207,7 @@ namespace SharpBoot
 
             foreach (ToolStripMenuItem mni in languageToolStripMenuItem.DropDownItems)
             {
-                if (lngs[mni.Text].Item1.Equals(ci))
+                if (lngs[mni.Tag.ToString()].Item1.Equals(ci))
                 {
                     found = true;
                     mni.Checked = true;
@@ -441,7 +443,7 @@ namespace SharpBoot
                 if (files.Count == 1)
                 {
                     if (Path.GetExtension(files[0]).ToLower() != ".iso" &&
-                        Path.GetExtension(files[0]).ToLower() != ".img" && !files[0].EndsWith("\\"))
+                        Path.GetExtension(files[0]).ToLower() != ".img" && !files[0].EndsWith(Program.DirCharStr))
                         return;
                 }
                 else
@@ -457,7 +459,7 @@ namespace SharpBoot
         {
             var t = ((string[]) e.Data.GetData(DataFormats.FileDrop));
             var a = t[0];
-            QEMUISO.LaunchQemu(a, a.EndsWith("\\"));
+            QEMUISO.LaunchQemu(a, a.EndsWith(Program.DirCharStr));
         }
 
         private void lvIsos_SelectionChanged(object sender, EventArgs e)

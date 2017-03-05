@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.ComponentModel;
 using System.Windows.Forms.VisualStyles;
 using BufferedPainting;
+using SharpBoot;
 
 /// <summary>
 /// Represents a Windows combo box control that, when bound to a data source, is capable of 
@@ -104,12 +105,15 @@ public class GroupedComboBox : ComboBox, IComparer {
 		_textFormatFlags = TextFormatFlags.EndEllipsis | TextFormatFlags.NoPrefix | TextFormatFlags.SingleLine | TextFormatFlags.VerticalCenter;
 		_sortComparer = Comparer.Default;
 
-        _bufferedPainter = new BufferedPainter<ComboBoxState>(this);
-        _bufferedPainter.DefaultState = ComboBoxState.Normal;
-        _bufferedPainter.PaintVisualState += new EventHandler<BufferedPaintEventArgs<ComboBoxState>>(_bufferedPainter_PaintVisualState);
-        _bufferedPainter.AddTransition(ComboBoxState.Normal, ComboBoxState.Hot, 250);
-        _bufferedPainter.AddTransition(ComboBoxState.Hot, ComboBoxState.Normal, 350);
-        _bufferedPainter.AddTransition(ComboBoxState.Pressed, ComboBoxState.Normal, 350);
+	    if (Program.IsWin)
+	    {
+	        _bufferedPainter = new BufferedPainter<ComboBoxState>(this);
+	        _bufferedPainter.DefaultState = ComboBoxState.Normal;
+	        _bufferedPainter.PaintVisualState += new EventHandler<BufferedPaintEventArgs<ComboBoxState>>(_bufferedPainter_PaintVisualState);
+	        _bufferedPainter.AddTransition(ComboBoxState.Normal, ComboBoxState.Hot, 250);
+	        _bufferedPainter.AddTransition(ComboBoxState.Hot, ComboBoxState.Normal, 350);
+	        _bufferedPainter.AddTransition(ComboBoxState.Pressed, ComboBoxState.Normal, 350);
+	    }
 
         ToggleStyle();
 	}
@@ -460,14 +464,14 @@ public class GroupedComboBox : ComboBox, IComparer {
     /// Changes the control style to allow user-painting in DropDownList mode (when using buffered painting).
     /// </summary>
     protected void ToggleStyle() {
-        if (_bufferedPainter.BufferedPaintSupported && (DropDownStyle == ComboBoxStyle.DropDownList)) {
+        if (Program.IsWin && _bufferedPainter != null && _bufferedPainter.BufferedPaintSupported && (DropDownStyle == ComboBoxStyle.DropDownList)) {
             _bufferedPainter.Enabled = true;
             SetStyle(ControlStyles.UserPaint, true);
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
         else {
-            _bufferedPainter.Enabled = false;
+            if(Program.IsWin && _bufferedPainter != null) _bufferedPainter.Enabled = false;
             SetStyle(ControlStyles.UserPaint, false);
             SetStyle(ControlStyles.AllPaintingInWmPaint, false);
             SetStyle(ControlStyles.SupportsTransparentBackColor, false);

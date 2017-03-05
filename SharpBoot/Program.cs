@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -34,6 +35,11 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
+            ServicePointManager.ServerCertificateValidationCallback += delegate
+            {
+                return true;
+            };
+
             ClrTmp(true);
 
             Utils.CurrentRandom = new Random();
@@ -77,6 +83,9 @@ namespace SharpBoot
                 MessageBox.Show(((FileNotFoundException)ex).FileName);
             MessageBox.Show(title + ": \n" + ex.Message + "\n\n" + ex.StackTrace, title);
         }
+
+        public static readonly char DirChar = Path.DirectorySeparatorChar;
+        public static readonly string DirCharStr = Path.DirectorySeparatorChar.ToString();
 
         public static string GetVersion()
         {
