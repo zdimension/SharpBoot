@@ -8,7 +8,7 @@
 /SharpBoot/bin/Debug/SharpBoot.vshost.exe.manifest
 *.userprefs
 /SharpBoot/bin/Debug
-/.vs/SharpBoot/v14
+/.vs/
 /SharpBoot.sln.DotSettings.user
 /SharpBoot/bin/Release
 /SharpBoot/Resources/SharpBoot.AdminProcess.exe.config
