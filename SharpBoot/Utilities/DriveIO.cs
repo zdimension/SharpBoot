@@ -97,10 +97,22 @@ namespace SharpBoot.Utilities
             try
             {
                 var di = new DriveInfo(driveLetter);
-                long maxsize = -1;
-                if (fileSystem == "FAT12") maxsize = 16777216;
-                if (fileSystem == "FAT16") maxsize = 4294967296;
-                if (di.TotalSize >= maxsize && maxsize != -1)
+                long maxsize;
+
+                switch (fileSystem)
+                {
+                    case "FAT12":
+                        maxsize = 16777216;
+                        break;
+                    case "FAT16":
+                        maxsize = 4294967296;
+                        break;
+                    default:
+                        maxsize = -1;
+                        break;
+                }
+
+                if (maxsize != -1 && di.TotalSize >= maxsize)
                 {
                     return FormatResult.PartitionTooBig;
                 }
@@ -116,17 +128,15 @@ namespace SharpBoot.Utilities
             {
                 p.Start();
             }
-            catch (Win32Exception e)
+            catch (Win32Exception e) 
+                when (e.NativeErrorCode == WinError.ERROR_CANCELLED)
             {
-                switch (e.NativeErrorCode)
-                {
-                    case WinError.ERROR_CANCELLED:
-                        return FormatResult.UserCancelled;
-                    case WinError.ERROR_ACCESS_DENIED:
-                        return FormatResult.AccessDenied;
-                    default:
-                        return FormatResult.GenericError;
-                }
+                return FormatResult.UserCancelled;
+            }
+            catch (Win32Exception e)
+                when (e.NativeErrorCode == WinError.ERROR_ACCESS_DENIED)
+            {
+                return FormatResult.AccessDenied;
             }
             catch
             {
