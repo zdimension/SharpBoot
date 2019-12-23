@@ -205,9 +205,10 @@ namespace SharpBoot.Forms
                         return;
                     }
 
-                    uint res = 1;
-                    if ((res = Utils.FormatDrive(OutputFilepath.Substring(0, 2), filesystem,
-                            label: volumeLabel)) == 0)
+                    var res = DriveIO.FormatDrive(OutputFilepath.Substring(0, 2), filesystem,
+                        label: volumeLabel);
+
+                    if (res == DriveIO.FormatResult.Success)
                     {
                         ChangeProgress(100, 100, Strings.Formatting);
 
@@ -216,12 +217,12 @@ namespace SharpBoot.Forms
 
                     switch (res)
                     {
-                        case 3:
+                        case DriveIO.FormatResult.AccessDenied:
                             MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                             abort = true;
                             return;
-                        case 2:
+                        case DriveIO.FormatResult.UserCancelled:
                             abort = true;
                             return;
                     }
@@ -389,9 +390,9 @@ namespace SharpBoot.Forms
                             x.EntryType, x.FilePath, false, x.CustomCode));
                     }
 
-                    File.WriteAllText(Path.Combine(workingDir, Utils.CRC32(c)) + ".cfg",
+                    File.WriteAllText(Path.Combine(workingDir, Hash.CRC32(c)) + ".cfg",
                         Grub2.GetCode(t), Program.GetEnc());
-                    main.Items.Add(new BootMenuItem(c, c, EntryType.Category, Utils.CRC32(c), false));
+                    main.Items.Add(new BootMenuItem(c, c, EntryType.Category, Hash.CRC32(c), false));
                 }
 
                 ii++;

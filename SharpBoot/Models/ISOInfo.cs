@@ -228,13 +228,13 @@ namespace SharpBoot.Models
 
                         if (st == null)
                         {
-                            var md5 = fast ? "" : Utils.FileHash(filename, "md5");
+                            var md5 = fast ? "" : Hash.FileHash(filename, "md5");
                             st = fast
                                 ? null
                                 : sta.FirstOrDefault(
                                     x =>
                                         x.Hash ==
-                                        (x.Hash.Contains(':') ? Utils.FileHash(filename, x.Hash.Split(':')[0]) : md5));
+                                        (x.Hash.Contains(':') ? Hash.FileHash(filename, x.Hash.Split(':')[0]) : md5));
                         }
                     }
 

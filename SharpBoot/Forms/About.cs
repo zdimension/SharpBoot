@@ -22,7 +22,7 @@ namespace SharpBoot.Forms
             label1.Text = label1.Text.Insert(9, " " + Program.GetVersion())
                 .Replace("{0}", ISOInfo.AppDBVersion.ToString())
                 .Replace("{1}", Strings.SharpBootUsesSoft);
-            if (Program.IsWin) Utils.SetWindowTheme(lvTranslators.Handle, "explorer", null);
+            if (Program.IsWin) UxTheme.SetWindowTheme(lvTranslators.Handle, "explorer", null);
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
             rtbMyWebsite.DeselectAll();

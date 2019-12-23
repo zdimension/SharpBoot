@@ -54,7 +54,7 @@ namespace SharpBoot.Forms
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
 
             SetSize();
-            if (Program.IsWin) Utils.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
+            if (Program.IsWin) UxTheme.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
 
 
             ISOInfo.UpdateFinished += (o, args) =>
@@ -101,7 +101,7 @@ namespace SharpBoot.Forms
 
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + Utils.SIZE_BASEDISK +
+            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + DriveIO.SIZE_BASEDISK +
                                                  SelectedBackground.Length); // TODO: Update the bloader size
         }
 
@@ -666,22 +666,22 @@ namespace SharpBoot.Forms
 
         private void btnSha1_Click(object sender, EventArgs e)
         {
-            chksum("SHA-1", () => Utils.FileSHA1(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-1", () => Hash.FileSHA1(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void btnSha256_Click(object sender, EventArgs e)
         {
-            chksum("SHA-256", () => Utils.FileSHA256(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-256", () => Hash.FileSHA256(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void btnSha512_Click(object sender, EventArgs e)
         {
-            chksum("SHA-512", () => Utils.FileSHA512(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-512", () => Hash.FileSHA512(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void btnSha384_Click(object sender, EventArgs e)
         {
-            chksum("SHA-384", () => Utils.FileSHA384(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("SHA-384", () => Hash.FileSHA384(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void lvIsos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -709,7 +709,7 @@ namespace SharpBoot.Forms
 
         private void mD5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            chksum("MD5", () => Utils.FileMD5(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum("MD5", () => Hash.FileMD5(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
         }
 
         private void updateAvailableToolStripMenuItem_Click(object sender, EventArgs e)

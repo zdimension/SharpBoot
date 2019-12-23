@@ -421,7 +421,7 @@ namespace SharpBoot.Controls
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WinApiConstants.WM_EXITMENULOOP)
+            if (m.Msg == WindowMessage.WM_EXITMENULOOP)
             {
                 //this message is only sent when a ContextMenu is closed (not a ContextMenuStrip)
                 _isSplitMenuVisible = false;

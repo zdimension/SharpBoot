@@ -209,6 +209,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DriveIO.cs" />
+    <Compile Include="Utilities\Hash.cs" />
     <Compile Include="Utilities\QEMUISO.cs" />
     <Compile Include="Utilities\SevenZipExtractor.cs" />
     <Compile Include="Controls\SplitButton.cs">
@@ -237,6 +239,7 @@
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="Utilities\W7R.cs" />
     <Compile Include="Utilities\WinApiConstants.cs" />
+    <Compile Include="Utilities\XCopy.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>

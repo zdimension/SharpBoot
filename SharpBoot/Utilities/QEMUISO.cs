@@ -37,7 +37,7 @@ namespace SharpBoot.Utilities
             if (usb)
             {
                 var logicalDiskId = iso.Substring(0, 2);
-                var deviceId = Utils.GetPhysicalPath(logicalDiskId);
+                var deviceId = DriveIO.GetPhysicalPath(logicalDiskId);
                 p.StartInfo.Arguments = " -L . -boot c  -drive file=" + deviceId +
                                         ",if=ide,index=0,media=disk -m 512 -localtime";
                 p.StartInfo.UseShellExecute = true;

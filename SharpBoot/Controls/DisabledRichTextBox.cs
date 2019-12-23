@@ -8,7 +8,7 @@ namespace SharpBoot.Controls
     {
         protected override void WndProc(ref Message m)
         {
-            if (!(m.Msg == WinApiConstants.WM_SETFOCUS || m.Msg == WinApiConstants.WM_ENABLE || m.Msg == WinApiConstants.WM_SETCURSOR))
+            if (!(m.Msg == WindowMessage.WM_SETFOCUS || m.Msg == WindowMessage.WM_ENABLE || m.Msg == WindowMessage.WM_SETCURSOR))
                 base.WndProc(ref m);
         }
     }

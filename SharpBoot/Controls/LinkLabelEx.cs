@@ -17,7 +17,7 @@ namespace SharpBoot.Controls
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WinApiConstants.WM_SETCURSOR)
+            if (m.Msg == WindowMessage.WM_SETCURSOR)
             {
                 // Set the cursor to use the system hand cursor
                 SetCursor(LoadCursor(IntPtr.Zero, WinApiConstants.IDC_HAND));
