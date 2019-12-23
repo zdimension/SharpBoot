@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("zdimension")]
 [assembly: AssemblyProduct("SharpBoot")]
-[assembly: AssemblyCopyright("Copyright © zdimension 2014-2017")]
+[assembly: AssemblyCopyright("Copyright © zdimension 2014-2019")]
 [assembly: AssemblyTrademark("SharpBoot")]
 [assembly: AssemblyCulture("")]
 
