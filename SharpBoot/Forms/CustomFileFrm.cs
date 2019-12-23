@@ -13,7 +13,7 @@ namespace SharpBoot.Forms
         {
             InitializeComponent();
 
-            if (Program.IsWin) UxTheme.SetWindowTheme(lvFiles.Handle, "EXPLORER", null);
+            if (Utils.IsWin) UxTheme.SetWindowTheme(lvFiles.Handle, "EXPLORER", null);
 
             lblHeader.Text = Strings.AddFiles;
             btnOK.Text = Strings.OK;

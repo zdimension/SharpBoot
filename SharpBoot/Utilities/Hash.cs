@@ -54,7 +54,7 @@ namespace SharpBoot.Utilities
 
         public static string CRC32(string ct)
         {
-            return CRC32(Program.GetEnc().GetBytes(ct));
+            return CRC32(Utils.GetEnc().GetBytes(ct));
         }
 
         public static string CRC32(byte[] ct)

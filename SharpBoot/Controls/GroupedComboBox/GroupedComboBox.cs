@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using SharpBoot.Utilities;
 
 namespace SharpBoot.Controls.GroupedComboBox
 {
@@ -41,7 +42,7 @@ namespace SharpBoot.Controls.GroupedComboBox
                                TextFormatFlags.VerticalCenter;
             _sortComparer = Comparer.Default;
 
-            if (Program.IsWin)
+            if (Utils.IsWin)
             {
                 _bufferedPainter = new BufferedPainter<ComboBoxState>(this) {DefaultState = ComboBoxState.Normal};
                 _bufferedPainter.PaintVisualState +=
@@ -496,7 +497,7 @@ namespace SharpBoot.Controls.GroupedComboBox
         /// </summary>
         protected void ToggleStyle()
         {
-            if (Program.IsWin && _bufferedPainter != null && _bufferedPainter.BufferedPaintSupported &&
+            if (Utils.IsWin && _bufferedPainter != null && _bufferedPainter.BufferedPaintSupported &&
                 DropDownStyle == ComboBoxStyle.DropDownList)
             {
                 _bufferedPainter.Enabled = true;
@@ -506,7 +507,7 @@ namespace SharpBoot.Controls.GroupedComboBox
             }
             else
             {
-                if (Program.IsWin && _bufferedPainter != null) _bufferedPainter.Enabled = false;
+                if (Utils.IsWin && _bufferedPainter != null) _bufferedPainter.Enabled = false;
                 SetStyle(ControlStyles.UserPaint, false);
                 SetStyle(ControlStyles.AllPaintingInWmPaint, false);
                 SetStyle(ControlStyles.SupportsTransparentBackColor, false);

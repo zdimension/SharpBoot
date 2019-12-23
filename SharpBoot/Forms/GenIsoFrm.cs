@@ -160,7 +160,7 @@ namespace SharpBoot.Forms
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
 
-            var f = Program.GetTemporaryDirectory();
+            var f = Utils.GetTemporaryDirectory();
 
             lblStatus.Text = Strings.Init;
             Thread.Sleep(1000);
@@ -297,7 +297,7 @@ namespace SharpBoot.Forms
             }
 
             ChangeProgressBar(60, 100);
-            Program.SafeDel(archs);
+            Utils.SafeDel(archs);
 
             if (bwkISO.CancellationPending)
             {
@@ -397,7 +397,7 @@ namespace SharpBoot.Forms
                     }
 
                     File.WriteAllText(Path.Combine(workingDir, Hash.CRC32(c)) + ".cfg",
-                        Grub2.GetCode(t), Program.GetEnc());
+                        Grub2.GetCode(t), Utils.GetEnc());
                     main.Items.Add(new BootMenuItem(c, c, EntryType.Category, Hash.CRC32(c), false));
                 }
 
@@ -584,7 +584,7 @@ namespace SharpBoot.Forms
 
             Invoke((MethodInvoker) (() => OnFinished(EventArgs.Empty)));
 
-            Program.ClrTmp();
+            Utils.ClrTmp();
         }
 
         private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

@@ -49,12 +49,12 @@ namespace SharpBoot.Forms
             InitAfterLng();
             changing = true;
             loadlng();
-            var c = Program.GetCulture();
+            var c = Utils.GetCulture();
             setlngitem(c);
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
 
             SetSize();
-            if (Program.IsWin) UxTheme.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
+            if (Utils.IsWin) UxTheme.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
 
 
             ISOInfo.UpdateFinished += (o, args) =>
@@ -101,7 +101,7 @@ namespace SharpBoot.Forms
 
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + DriveIO.SIZE_BASEDISK +
+            tbxSize.Text = Utils.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + DriveIO.SIZE_BASEDISK +
                                                  SelectedBackground.Length); // TODO: Update the bloader size
         }
 
@@ -161,16 +161,16 @@ namespace SharpBoot.Forms
         {
             var tmp = lngs[it.Tag.ToString()];
 
-            if (Program.GetCulture().Equals(tmp.Item1)) return;
+            if (Utils.GetCulture().Equals(tmp.Item1)) return;
 
             if (!tmp.Item2)
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
-                setlngitem(Program.GetCulture());
+                setlngitem(Utils.GetCulture());
                 return;
             }
 
-            Program.SetAppLng(tmp.Item1);
+            Utils.SetAppLng(tmp.Item1);
 
             if (changing && FieldsEmpty())
                 InitAfterLng();
@@ -250,7 +250,7 @@ namespace SharpBoot.Forms
             SetSize();
 
 
-            lvIsos.Rows.Add(name, Program.GetFileSizeString(filePath), cat, desc, filePath);
+            lvIsos.Rows.Add(name, Utils.GetFileSizeString(filePath), cat, desc, filePath);
         }
 
         public void setlngitem(CultureInfo ci)
@@ -304,7 +304,7 @@ namespace SharpBoot.Forms
 
         private void g_GenerationFinished(GenIsoFrm g)
         {
-            Program.ClrTmp();
+            Utils.ClrTmp();
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
@@ -407,7 +407,7 @@ namespace SharpBoot.Forms
                 g.CustomFiles = CustomFiles;
                 g.ShowDialog(this);
 
-                Program.ClrTmp();
+                Utils.ClrTmp();
             }
         }
 
@@ -603,7 +603,7 @@ namespace SharpBoot.Forms
                     CurImages.Add(new ImageLine(a.Element("Nom").Value, a.Element("Path").Value,
                         a.Element("Desc").Value,
                         a.Element("Cat").Value));
-                    lvIsos.Rows.Add(a.Element("Nom").Value, Program.GetFileSizeString(a.Element("Path").Value),
+                    lvIsos.Rows.Add(a.Element("Nom").Value, Utils.GetFileSizeString(a.Element("Path").Value),
                         a.Element("Cat").Value, a.Element("Desc").Value, a.Element("Path").Value);
                 }
             }
@@ -764,7 +764,7 @@ namespace SharpBoot.Forms
                     "", entryfrm.SelectedType);
                 CurImages.Add(im);
                 SetSize();
-                lvIsos.Rows.Add(im.Name, Program.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
+                lvIsos.Rows.Add(im.Name, Utils.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
             }
         }
 

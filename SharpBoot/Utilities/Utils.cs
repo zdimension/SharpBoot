@@ -4,17 +4,21 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
 using System.Net;
 using System.Net.Cache;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using Microsoft.Win32.SafeHandles;
 using SharpBoot.Forms;
+using SharpBoot.Models;
 using SharpBoot.Properties;
 
 // ReSharper disable UnusedMember.Local
@@ -30,7 +34,7 @@ namespace SharpBoot.Utilities
 
         public static void CallAdminProcess(params string[] args)
         {
-            var d = Program.GetTemporaryDirectory();
+            var d = GetTemporaryDirectory();
             var exepath = Path.Combine(d, "adminprocess.exe");
             File.WriteAllBytes(exepath, Resources.adminprocess);
 
@@ -42,13 +46,13 @@ namespace SharpBoot.Utilities
                     UseShellExecute = true,
                     FileName = exepath,
                     Verb = "runas",
-                    Arguments = string.Join(" ", args)
+                    Arguments = String.Join(" ", args)
                 }
             };
             p.Start();
             p.WaitForExit();
 
-            Program.SafeDel(d);
+            SafeDel(d);
         }
 
         public static byte[] ToByteArray(this Image img)
@@ -82,7 +86,7 @@ namespace SharpBoot.Utilities
                 }
                 catch (WebException)
                 {
-                    if (Program.IsMono && Program.IsLinux)
+                    if (IsMono && IsLinux)
                     {
                         var p = new Process {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
                         p.Start();
@@ -168,7 +172,140 @@ namespace SharpBoot.Utilities
         // thanks http://www.codeproject.com/Articles/115598/Formatting-a-Drive-using-C-and-WMI
         public static string FormatEx(this string s, params object[] args)
         {
-            return string.Format(s, args);
+            return String.Format(s, args);
+        }
+
+        public enum Platform
+        {
+            Windows,
+            Linux,
+            Mac
+        }
+
+        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
+        public static bool IsMono => Type.GetType("Mono.Runtime") != null;
+        public static bool IsLinux => RunningPlatform() == Platform.Linux;
+        public static bool IsWin => RunningPlatform() == Platform.Windows;
+
+        public static void HandleUnhandled(Exception ex, string title = "Unhandled exception")
+        {
+            if (ex is FileNotFoundException)
+                MessageBox.Show(((FileNotFoundException) ex).FileName);
+            MessageBox.Show(title + ": \n" + ex.Message + "\n\n" + ex.StackTrace, title);
+        }
+
+        public static string GetVersion()
+        {
+            var v = Assembly.GetEntryAssembly().GetName().Version;
+            return v.Major + "." + v.Minor + (v.Build == 0 ? "" : "." + v.Build);
+        }
+
+        public static Encoding GetEnc()
+        {
+            switch (Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName)
+            {
+                case "ru":
+                case "uk":
+                    return Encoding.GetEncoding(866);
+                default:
+                    return Encoding.GetEncoding(437);
+            }
+        }
+
+        public static void ClrTmp(bool first = false)
+        {
+            Directory.GetDirectories(Path.GetTempPath())
+                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_") && (first || !QEMUISO.Paths.Contains(x)))
+                .ToList()
+                .ForEach(SafeDel);
+        }
+
+        public static void SafeDel(string d)
+        {
+            for (var i = 0; i < 3 && Directory.Exists(d); i++)
+            {
+                try
+                {
+                    Directory.Delete(d, true);
+                }
+                catch
+                {
+                    // ignored
+                }
+            }
+        }
+
+        public static void SetAppLng(CultureInfo c)
+        {
+            Settings.Default.Lang = c.Name;
+            Settings.Default.Save();
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+            Settings.Default.Save();
+            ISOInfo.RefreshISOs();
+        }
+
+        public static CultureInfo GetCulture()
+        {
+            return new CultureInfo(Settings.Default.Lang);
+        }
+
+        public static string GetFileSizeString(string file)
+        {
+            var b = new FileInfo(file).Length;
+            return GetSizeString(b);
+        }
+
+        [DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
+        public static extern long StrFormatByteSize(long fileSize, StringBuilder buffer, int bufferSize);
+
+        /// http://stackoverflow.com/q/10138040/2196124
+        public static Platform RunningPlatform()
+        {
+            switch (Environment.OSVersion.Platform)
+            {
+                case PlatformID.Unix:
+                    // Well, there are chances MacOSX is reported as Unix instead of MacOSX.
+                    // Instead of platform check, we'll do a feature checks (Mac specific root folders)
+                    if (Directory.Exists("/Applications")
+                        & Directory.Exists("/System")
+                        & Directory.Exists("/Users")
+                        & Directory.Exists("/Volumes"))
+                        return Platform.Mac;
+                    else
+                        return Platform.Linux;
+
+                case PlatformID.MacOSX:
+                    return Platform.Mac;
+
+                default:
+                    return Platform.Windows;
+            }
+        }
+
+        public static string GetSizeString(long file)
+        {
+            if (UseSystemSize.Contains(Thread.CurrentThread.CurrentUICulture))
+            {
+                var sb = new StringBuilder(20);
+                StrFormatByteSize(file, sb, sb.Capacity);
+                return sb.ToString();
+            }
+
+            var suf = Strings.SizeSuffixes.Split(',').Select(x => x + Strings.FileUnit).ToArray();
+            if (file == 0)
+                return "0 " + suf[0];
+            var bytes = Math.Abs(file);
+            var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
+            var num = Math.Round(bytes / Math.Pow(1024, place), 1);
+            return Math.Sign(file) * num + " " + suf[place];
+        }
+
+        public static string GetTemporaryDirectory()
+        {
+            var tempDirectory = Path.Combine(Path.GetTempPath(), "SharpBoot_" + Path.GetRandomFileName());
+            Directory.CreateDirectory(tempDirectory);
+            return tempDirectory;
         }
     }
 }

@@ -19,10 +19,10 @@ namespace SharpBoot.Forms
         public About()
         {
             InitializeComponent();
-            label1.Text = label1.Text.Insert(9, " " + Program.GetVersion())
+            label1.Text = label1.Text.Insert(9, " " + Utils.GetVersion())
                 .Replace("{0}", ISOInfo.AppDBVersion.ToString())
                 .Replace("{1}", Strings.SharpBootUsesSoft);
-            if (Program.IsWin) UxTheme.SetWindowTheme(lvTranslators.Handle, "explorer", null);
+            if (Utils.IsWin) UxTheme.SetWindowTheme(lvTranslators.Handle, "explorer", null);
             rtbMyWebsite.SelectAll();
             rtbMyWebsite.SelectionAlignment = HorizontalAlignment.Right;
             rtbMyWebsite.DeselectAll();

@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using SharpBoot.Models;
+using SharpBoot.Utilities;
 
 namespace SharpBoot.Forms
 {
@@ -46,7 +47,7 @@ namespace SharpBoot.Forms
                 cbxUSB.Items.Add(new driveitem
                 {
                     Disp =
-                        drive.VolumeLabel + " (" + drive.Name + ")         " + Program.GetSizeString(drive.TotalSize) +
+                        drive.VolumeLabel + " (" + drive.Name + ")         " + Utils.GetSizeString(drive.TotalSize) +
                         " " + drive.DriveFormat,
                     Value = drive
                 });
