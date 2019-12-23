@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SharpBoot.Utilities;
 
 namespace SharpBoot.Controls
 {
@@ -8,9 +9,6 @@ namespace SharpBoot.Controls
 
     public class LinkLabelEx : LinkLabel
     {
-        private const int WM_SETCURSOR = 0x0020;
-        private const int IDC_HAND = 32649;
-
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr LoadCursor(IntPtr hInstance, int lpCursorName);
 
@@ -19,10 +17,10 @@ namespace SharpBoot.Controls
 
         protected override void WndProc(ref Message m)
         {
-            if (m.Msg == WM_SETCURSOR)
+            if (m.Msg == WinApiConstants.WM_SETCURSOR)
             {
                 // Set the cursor to use the system hand cursor
-                SetCursor(LoadCursor(IntPtr.Zero, IDC_HAND));
+                SetCursor(LoadCursor(IntPtr.Zero, WinApiConstants.IDC_HAND));
 
                 // Indicate that the message has been handled
                 m.Result = IntPtr.Zero;
