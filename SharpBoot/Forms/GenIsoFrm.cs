@@ -440,7 +440,7 @@ namespace SharpBoot.Forms
                     }
                 };
                 p.StartInfo.Arguments +=
-                    " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b boot/grub/eltorito.img";
+                    " -publisher \"SharpBoot\" -iso-level 3 -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b boot/grub/eltorito.img";
                 p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + isodir + "\"";
                 p.EnableRaisingEvents = true;
 
