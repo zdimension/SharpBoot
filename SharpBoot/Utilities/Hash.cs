@@ -9,89 +9,47 @@ namespace SharpBoot.Utilities
 {
     public class Hash
     {
-        public static string FileMD5(string fileName)
+        public static string FileHash<T>(string fileName)
+            where T : HashAlgorithm, new()
         {
             StringBuilder formatted;
             using (var fs = File.OpenRead(fileName))
             using (var bs = new BufferedStream(fs))
             {
-                using (MD5 md5 = new MD5CryptoServiceProvider())
+                using (var ha = new T())
                 {
-                    var hash = md5.ComputeHash(bs);
+                    var hash = ha.ComputeHash(bs);
                     formatted = new StringBuilder(2 * hash.Length);
                     foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }
             }
 
             return formatted.ToString();
+        }
+
+        public static string FileMD5(string fileName)
+        {
+            return FileHash<MD5CryptoServiceProvider>(fileName);
         }
 
         public static string FileSHA1(string fileName)
         {
-            StringBuilder formatted;
-            using (var fs = File.OpenRead(fileName))
-            using (var bs = new BufferedStream(fs))
-            {
-                using (var sha1 = new SHA1Managed())
-                {
-                    var hash = sha1.ComputeHash(bs);
-                    formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
-                }
-            }
-
-            return formatted.ToString();
+            return FileHash<SHA1CryptoServiceProvider>(fileName);
         }
 
         public static string FileSHA256(string fileName)
         {
-            StringBuilder formatted;
-            using (var fs = File.OpenRead(fileName))
-            using (var bs = new BufferedStream(fs))
-            {
-                using (SHA256 sha256 = new SHA256Managed())
-                {
-                    var hash = sha256.ComputeHash(bs);
-                    formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
-                }
-            }
-
-            return formatted.ToString();
+            return FileHash<SHA256CryptoServiceProvider>(fileName);
         }
 
         public static string FileSHA384(string fileName)
         {
-            StringBuilder formatted;
-            using (var fs = File.OpenRead(fileName))
-            using (var bs = new BufferedStream(fs))
-            {
-                using (SHA384 sha384 = new SHA384Managed())
-                {
-                    var hash = sha384.ComputeHash(bs);
-                    formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
-                }
-            }
-
-            return formatted.ToString();
+            return FileHash<SHA384CryptoServiceProvider>(fileName);
         }
 
         public static string FileSHA512(string fileName)
         {
-            StringBuilder formatted;
-            using (var fs = File.OpenRead(fileName))
-            using (var bs = new BufferedStream(fs))
-            {
-                using (SHA512 sha512 = new SHA512Managed())
-                {
-                    var hash = sha512.ComputeHash(bs);
-                    formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
-                }
-            }
-
-            return formatted.ToString();
+            return FileHash<SHA512CryptoServiceProvider>(fileName);
         }
 
         public static string CRC32(string ct)
