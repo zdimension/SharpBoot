@@ -34,18 +34,19 @@ namespace SharpBoot.Utilities
             };
             p.StartInfo.FileName = Path.Combine(f, "qemu.exe");
             p.StartInfo.WorkingDirectory = f;
+            p.StartInfo.Arguments = " -m 1536 -M pc -cpu max ";
             if (usb)
             {
                 var logicalDiskId = iso.Substring(0, 2);
                 var deviceId = DriveIO.GetPhysicalPath(logicalDiskId);
-                p.StartInfo.Arguments = " -L . -boot c  -drive file=" + deviceId +
-                                        ",if=ide,index=0,media=disk -m 512 -localtime";
+                p.StartInfo.Arguments += "-boot c -drive file=" + deviceId +
+                                        ",if=ide,index=0,media=disk,format=raw ";
                 p.StartInfo.UseShellExecute = true;
                 p.StartInfo.Verb = "runas";
             }
             else
             {
-                p.StartInfo.Arguments = "-m 512 -localtime -M pc " + (floppy ? "-fda" : "-cdrom") + " \"" + iso + "\"";
+                p.StartInfo.Arguments = (floppy ? "-fda" : "-cdrom") + " \"" + iso + "\"";
             }
 
             Thread.Sleep(300);
