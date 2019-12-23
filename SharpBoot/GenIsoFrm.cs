@@ -314,6 +314,7 @@ namespace SharpBoot
                     }
                     catch
                     {
+                        // ignored
                     }
             }
 
@@ -338,6 +339,7 @@ namespace SharpBoot
                     }
                     catch
                     {
+                        // ignored
                     }
             }
 
@@ -369,23 +371,21 @@ namespace SharpBoot
                 if (string.IsNullOrWhiteSpace(c))
                 {
                     ChangeProgress(ii, Categories.Count, Strings.GenMainMenu);
-                    Images.Where(x => x.Category == c).All(x =>
+                    foreach(var x in Images.Where(x => x.Category == c))
                     {
                         main.Items.Add(new BootMenuItem(x.Name, x.Description,
                             x.EntryType, x.FilePath, false, x.CustomCode));
-                        return true;
-                    });
+                    }
                 }
                 else
                 {
                     ChangeProgress(ii, Categories.Count, string.Format(Strings.GenMenu, c));
                     var t = new BootMenu(c, false);
-                    Images.Where(x => x.Category == c).All(x =>
+                    foreach (var x in Images.Where(x => x.Category == c))
                     {
                         t.Items.Add(new BootMenuItem(x.Name, x.Description,
                             x.EntryType, x.FilePath, false, x.CustomCode));
-                        return true;
-                    });
+                    }
 
                     File.WriteAllText(Path.Combine(workingDir, Utils.CRC32(c)) + ".cfg",
                         Grub2.GetCode(t), Program.GetEnc());
@@ -491,8 +491,7 @@ namespace SharpBoot
                             var o = args.Data.Trim();
                             if (!o.Contains('%')) return;
                             var pp = o.Substring(1, 5).Trim();
-                            decimal d;
-                            if (decimal.TryParse(pp, out d))
+                            if (decimal.TryParse(pp, out var d))
                                 if (o[0] == ' ' && o[3] == '.' && o[6] == '%')
                                     ChangeProgress(Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)),
                                         100, Strings.CreatingISO + "\t" + pp + "%");
@@ -589,8 +588,8 @@ namespace SharpBoot
 
             if (e.Error != null)
             {
-                if (e.Error is FileNotFoundException)
-                    MessageBox.Show("File not found: " + ((FileNotFoundException) e.Error).FileName);
+                if (e.Error is FileNotFoundException exception)
+                    MessageBox.Show("File not found: " + exception.FileName);
                 else throw new Exception("Error: " + e.Error.Message + "\n", e.Error);
             }
         }

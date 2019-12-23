@@ -10,7 +10,7 @@ using System.Windows.Forms;
 // ReSharper disable UnusedVariable
 // ReSharper disable NotAccessedField.Local
 
-namespace W7R
+namespace SharpBoot
 {
     internal class Windows7ColorTable : ProfessionalColorTable
     {
@@ -289,7 +289,7 @@ namespace W7R
         #endregion
     }
 
-    internal sealed class Utils
+    internal sealed class W7RUtils
     {
         private static bool _installed;
 
@@ -661,25 +661,25 @@ namespace W7R
         private static bool LooksPressed(ToolStripItem item)
         {
             var parent = item.GetCurrentParent();
-            if (parent is MenuStrip) return false;
-            if (parent is ContextMenuStrip) return false;
-            if (parent is ToolStripDropDown) return false;
+            switch (parent)
+            {
+                case MenuStrip _:
+                case ContextMenuStrip _:
+                case ToolStripDropDown _:
+                    return false;
+            }
 
             if (item.Pressed) return true;
 
-
+            switch (item)
             {
-                var a = item as ToolStripDropDownButton;
-                if (a != null && a.IsOnDropDown) return true;
+                case ToolStripDropDownButton a when a.IsOnDropDown:
+                    return true;
+                case ToolStripSplitButton a when a.IsOnDropDown:
+                    return true;
+                default:
+                    return false;
             }
-
-            {
-                var a = item as ToolStripSplitButton;
-                if (a != null && a.IsOnDropDown) return true;
-            }
-
-
-            return false;
         }
 
         #region OnRenderItemImage
@@ -698,8 +698,7 @@ namespace W7R
 
             if (e.Image != null)
             {
-                var checkbox = e.Item as ToolStripMenuItem;
-                if (checkbox == null || checkbox.CheckState == CheckState.Unchecked)
+                if (!(e.Item is ToolStripMenuItem checkbox) || checkbox.CheckState == CheckState.Unchecked)
                 {
                     var newrect = AdjustDrawRectangle(e.Item, e.ImageRectangle);
                     if (e.Item.Enabled)
@@ -1388,8 +1387,7 @@ namespace W7R
             }
 
             {
-                var a = item as ToolStripSplitButton;
-                if (a != null)
+                if (item is ToolStripSplitButton a)
                 {
                     a.DropDownButtonWidth = 17;
 
@@ -1411,8 +1409,7 @@ namespace W7R
 
 
             {
-                var a = item as ToolStripDropDownButton;
-                if (a != null)
+                if (item is ToolStripDropDownButton a)
                     switch (a.DisplayStyle)
                     {
                         case ToolStripItemDisplayStyle.Image:
@@ -1431,8 +1428,7 @@ namespace W7R
 
 
             {
-                var a = item as ToolStripButton;
-                if (a != null)
+                if (item is ToolStripButton a)
                     switch (a.DisplayStyle)
                     {
                         case ToolStripItemDisplayStyle.Image:

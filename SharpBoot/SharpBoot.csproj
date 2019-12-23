@@ -98,8 +98,6 @@
     <Compile Include="DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DiskStream.cs" />
-    <Compile Include="DriveAccess.cs" />
     <Compile Include="EditCodeFrm.cs">
       <SubType>Form</SubType>
     </Compile>

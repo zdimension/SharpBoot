@@ -13,8 +13,8 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using SharpBoot.Properties;
-using W7R;
 using Timer = System.Timers.Timer;
+// ReSharper disable PossibleNullReferenceException
 
 namespace SharpBoot
 {
@@ -22,8 +22,6 @@ namespace SharpBoot
     public partial class MainWindow : Form
     {
         private bool changing;
-
-        private bool changTitle;
 
         public List<ImageLine> CurImages = new List<ImageLine>();
 
@@ -69,6 +67,7 @@ namespace SharpBoot
                 }
                 catch
                 {
+                    // ignored
                 }
             };
 
@@ -104,10 +103,6 @@ namespace SharpBoot
         {
             tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + Utils.SIZE_BASEDISK +
                                                  SelectedBackground.Length); // TODO: Update the bloader size
-
-            menuStrip.Renderer = Windows7Renderer.Instance;
-
-            cmsChecksum.Renderer = Windows7Renderer.Instance;
         }
 
 
@@ -131,12 +126,11 @@ namespace SharpBoot
             lngs.Clear();
             foreach (var x in result)
             {
-                var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name));
-                mnit.Tag = x.Name;
+                var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name)) {Tag = x.Name};
                 mnit.Click += (sender, args) => LngItemClick(mnit);
                 languageToolStripMenuItem.DropDownItems.Add(mnit);
 
-                lngs.Add(x.Name, new Tuple<CultureInfo, bool>(x, x != systemLng));
+                lngs.Add(x.Name, new Tuple<CultureInfo, bool>(x, !Equals(x, systemLng)));
             }
         }
 
@@ -302,6 +296,7 @@ namespace SharpBoot
             }
             catch
             {
+                // ignored
             }
 
             //mniUpdate.Visible = false;
@@ -353,11 +348,10 @@ namespace SharpBoot
 
         private void lvIsos_DragDrop(object sender, DragEventArgs e)
         {
-            ((string[]) e.Data.GetData(DataFormats.FileDrop)).All(x =>
+            foreach (var x in (string[]) e.Data.GetData(DataFormats.FileDrop))
             {
                 AddImage(x);
-                return true;
-            });
+            }
         }
 
         private void btnGen_Click(object sender, EventArgs e)

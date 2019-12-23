@@ -61,10 +61,7 @@ namespace SharpBoot
             }
             else
             {
-                if (isHover)
-                    BackgroundImage = HoverImage;
-                else
-                    BackgroundImage = NormalImage;
+                BackgroundImage = isHover ? HoverImage : NormalImage;
             }
 
             Invalidate();

@@ -265,68 +265,53 @@ namespace SharpBoot
 
         public static string DownloadWithoutCache(string url, bool redl = true)
         {
-            Console.WriteLine("mark 1");
             url = MakeURLRandom(url);
             var res = "";
             Stream remote = null;
             WebResponse resp = null;
-            var proc = 0;
-            Console.WriteLine("mark 2");
             try
             {
                 var req = WebRequest.Create(url);
-                Console.WriteLine("mark 3");
-                if (req != null)
+                req.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
+                try
                 {
-                    Console.WriteLine("mark 3.1");
-                    req.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
-                    Console.WriteLine("mark 3.2");
-                    try
+                    resp = req.GetResponse();
+                }
+                catch (WebException)
+                {
+                    if (Program.IsMono && Program.IsLinux)
                     {
+                        var p = new Process {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
+                        p.Start();
+                        p.WaitForExit(10000);
                         resp = req.GetResponse();
                     }
-                    catch (WebException e)
-                    {
-                        if (Program.IsMono && Program.IsLinux)
-                        {
-                            var p = new Process {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
-                            p.Start();
-                            p.WaitForExit(10000);
-                            resp = req.GetResponse();
-                        }
-                    }
+                }
 
-                    Console.WriteLine("mark 4");
-                    if (resp != null)
-                    {
-                        remote = resp.GetResponseStream();
+                if (resp != null)
+                {
+                    remote = resp.GetResponseStream();
 
-                        var mem = new MemoryStream();
-                        var buf = new byte[1024];
-                        var br = 0;
-                        do
-                        {
-                            br = remote.Read(buf, 0, 1024);
-                            mem.Write(buf, 0, br);
-                            proc += br;
-                        } while (br > 0);
-
-                        mem.Position = 0;
-                        Console.WriteLine("len: " + mem.Length);
-                        res = new StreamReader(mem).ReadToEnd();
-                    }
-                    else
+                    var mem = new MemoryStream();
+                    var buf = new byte[1024];
+                    var br = 0;
+                    do
                     {
-                        MessageBox.Show("resp is null");
-                    }
+                        br = remote.Read(buf, 0, 1024);
+                        mem.Write(buf, 0, br);
+                    } while (br > 0);
+
+                    mem.Position = 0;
+                    res = new StreamReader(mem).ReadToEnd();
                 }
                 else
                 {
-                    MessageBox.Show("req is null");
+                    MessageBox.Show("resp is null");
                 }
             }
             catch
             {
+                // ignored
             }
             finally
             {

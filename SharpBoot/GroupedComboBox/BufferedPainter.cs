@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace BufferedPainting
+namespace SharpBoot.GroupedComboBox
 {
     /// <summary>
     ///     Attaches to a System.Windows.Forms.Control and provides buffered
@@ -145,7 +145,7 @@ namespace BufferedPainting
         /// <param name="e">BufferedPaintEventArgs instance.</param>
         protected virtual void OnPaintVisualState(BufferedPaintEventArgs<TState> e)
         {
-            if (PaintVisualState != null) PaintVisualState(this, e);
+            PaintVisualState?.Invoke(this, e);
         }
 
         /// <summary>
@@ -206,26 +206,25 @@ namespace BufferedPainting
         private void ApplyCondition(VisualStateTriggerTypes type, ref TState stateIfTrue)
         {
             foreach (var trigger in Triggers.Where(x => x.Type == type))
-                if (trigger != null)
+            {
+                var bounds = trigger.Bounds != Rectangle.Empty ? trigger.Bounds : Control.ClientRectangle;
+
+                var inRect = bounds.Contains(Control.PointToClient(Cursor.Position));
+                var other = true;
+
+                switch (type)
                 {
-                    var bounds = trigger.Bounds != Rectangle.Empty ? trigger.Bounds : Control.ClientRectangle;
-
-                    var inRect = bounds.Contains(Control.PointToClient(Cursor.Position));
-                    var other = true;
-
-                    switch (type)
-                    {
-                        case VisualStateTriggerTypes.Focused:
-                            other = Control.Focused;
-                            inRect = true;
-                            break;
-                        case VisualStateTriggerTypes.Pushed:
-                            other = (Control.MouseButtons & MouseButtons.Left) == MouseButtons.Left;
-                            break;
-                    }
-
-                    if (other && inRect) stateIfTrue = trigger.State;
+                    case VisualStateTriggerTypes.Focused:
+                        other = Control.Focused;
+                        inRect = true;
+                        break;
+                    case VisualStateTriggerTypes.Pushed:
+                        other = (Control.MouseButtons & MouseButtons.Left) == MouseButtons.Left;
+                        break;
                 }
+
+                if (other && inRect) stateIfTrue = trigger.State;
+            }
         }
 
         /// <summary>
@@ -314,17 +313,15 @@ namespace BufferedPainting
                         animParams.dwDuration = 0;
                         if (stateChanged)
                         {
-                            var transition = Transitions.Where(x =>
-                                    Equals(x.FromState, _currentState) && Equals(x.ToState, _newState))
-                                .SingleOrDefault();
-                            animParams.dwDuration = transition != null ? transition.Duration : DefaultDuration;
+                            var transition = Transitions
+                                .SingleOrDefault(x => Equals(x.FromState, _currentState) && Equals(x.ToState, _newState));
+                            animParams.dwDuration = transition?.Duration ?? DefaultDuration;
                         }
 
                         var rc = Control.ClientRectangle;
-                        IntPtr hdcFrom, hdcTo;
                         var hbpAnimation = Interop.BeginBufferedAnimation(Control.Handle, hdc, ref rc,
-                            Interop.BP_BUFFERFORMAT.BPBF_COMPATIBLEBITMAP, IntPtr.Zero, ref animParams, out hdcFrom,
-                            out hdcTo);
+                            Interop.BP_BUFFERFORMAT.BPBF_COMPATIBLEBITMAP, IntPtr.Zero, ref animParams, out var hdcFrom,
+                            out var hdcTo);
                         if (hbpAnimation != IntPtr.Zero)
                         {
                             if (hdcFrom != IntPtr.Zero)
@@ -411,9 +408,9 @@ namespace BufferedPainting
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            if (obj is BufferedPaintTransition<TState>)
+            if (obj is BufferedPaintTransition<TState> transition)
                 return ((IEquatable<BufferedPaintTransition<TState>>) this).Equals(
-                    (BufferedPaintTransition<TState>) obj);
+                    transition);
             return base.Equals(obj);
         }
 

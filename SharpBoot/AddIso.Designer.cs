@@ -47,8 +47,8 @@ namespace SharpBoot
             this.lblSpeed = new System.Windows.Forms.Label();
             this.lblProg = new System.Windows.Forms.Label();
             this.rtbIsoDesc = new SharpBoot.DisabledRichTextBox();
-            this.cbxDetIso = new GroupedComboBox();
-            this.cbxISOS = new GroupedComboBox();
+            this.cbxDetIso = new GroupedComboBox.GroupedComboBox();
+            this.cbxISOS = new GroupedComboBox.GroupedComboBox();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -237,7 +237,7 @@ namespace SharpBoot
         private TextBox txtFile;
         private Button btnBrowse;
         private RadioButton rbnDown;
-        private GroupedComboBox cbxISOS;
+        private GroupedComboBox.GroupedComboBox cbxISOS;
         private OpenFileDialog ofpIso;
         private Label lblPercent;
         private ProgressBar pbxPrg;
@@ -245,7 +245,7 @@ namespace SharpBoot
         private ComboBox cbxVersion;
         private Label lblSpeed;
         private Label lblProg;
-        private GroupedComboBox cbxDetIso;
+        private GroupedComboBox.GroupedComboBox cbxDetIso;
         private PictureBox pbxLoading;
         private DisabledRichTextBox rtbIsoDesc;
     }

@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using SharpBoot.Properties;
-using wyDay.Controls;
 
 namespace SharpBoot
 {
@@ -47,9 +46,9 @@ namespace SharpBoot
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCustomCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbxRes = new GroupedComboBox();
+            this.cbxRes = new GroupedComboBox.GroupedComboBox();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.btnChecksum = new wyDay.Controls.SplitButton();
+            this.btnChecksum = new SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -599,7 +598,7 @@ namespace SharpBoot
         private ToolStripMenuItem btnSha512;
         private ToolStripMenuItem btnSha384;
         private GroupBox groupBox3;
-        private GroupedComboBox cbxRes;
+        private GroupedComboBox.GroupedComboBox cbxRes;
         private ComboBox cbxBackType;
         private Button btnUSB;
         private ToolStripMenuItem mD5ToolStripMenuItem;

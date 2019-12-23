@@ -30,11 +30,10 @@ namespace SharpBoot
             set
             {
                 lvFiles.Rows.Clear();
-                value.All(x =>
+                foreach (var x in value.ToList())
                 {
                     lvFiles.Rows.Add(x.Key, x.Value);
-                    return true;
-                });
+                }
             }
         }
 
