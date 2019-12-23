@@ -37,7 +37,6 @@ namespace SharpBoot
 
         public void DrawGrub4DOSBG(Graphics g)
         {
-
         }
 
 

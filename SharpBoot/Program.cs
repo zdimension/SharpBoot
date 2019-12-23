@@ -35,10 +35,7 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
-            ServicePointManager.ServerCertificateValidationCallback += delegate
-            {
-                return true;
-            };
+            ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };
 
             ClrTmp(true);
 
@@ -48,7 +45,7 @@ namespace SharpBoot
 
             if (Settings.Default.AppsXml == "") Settings.Default.AppsXml = Resources.DefaultISOs;
             ISOInfo.RefreshISOs();
-            
+
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
@@ -76,11 +73,11 @@ namespace SharpBoot
         {
             HandleUnhandled(e.Exception, "Thread exception");
         }
-        
+
         private static void HandleUnhandled(Exception ex, string title = "Unhandled exception")
         {
             if (ex is FileNotFoundException)
-                MessageBox.Show(((FileNotFoundException)ex).FileName);
+                MessageBox.Show(((FileNotFoundException) ex).FileName);
             MessageBox.Show(title + ": \n" + ex.Message + "\n\n" + ex.StackTrace, title);
         }
 
@@ -148,6 +145,7 @@ namespace SharpBoot
                 catch
                 {
                 }
+
                 i++;
             }
         }
@@ -192,7 +190,7 @@ namespace SharpBoot
         public static bool IsMono => Type.GetType("Mono.Runtime") != null;
 
         public static bool IsLinux => RunningPlatform() == Platform.Linux;
-        
+
 
         /// http://stackoverflow.com/q/10138040/2196124
         public static Platform RunningPlatform()
@@ -237,8 +235,6 @@ namespace SharpBoot
             var num = Math.Round(bytes / Math.Pow(1024, place), 1);
             return (Math.Sign(file) * num) + " " + suf[place];
         }
-
-        
 
 
         public static string GetTemporaryDirectory()

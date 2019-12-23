@@ -170,12 +170,14 @@ namespace SharpBoot
             {
                 // format
                 if (
-                    MessageBox.Show(Strings.FormatWillErase.Replace(@"\n", "\n"), "SharpBoot", MessageBoxButtons.YesNo) !=
+                    MessageBox.Show(Strings.FormatWillErase.Replace(@"\n", "\n"), "SharpBoot",
+                        MessageBoxButtons.YesNo) !=
                     DialogResult.Yes)
                 {
                     abort = true;
                     return;
                 }
+
                 var tries = 1;
                 while (true)
                 {
@@ -185,11 +187,12 @@ namespace SharpBoot
                         abort = true;
                         return;
                     }
+
                     ChangeProgress(0, 100, Strings.Formatting);
                     var askform = new AskPath();
                     askform.SetTextMode(Text, Strings.VolumeLabel, string.Concat(Title.Where(char.IsLetter)));
                     var volumeLabel = "";
-                    if(askform.ShowDialog() == DialogResult.OK)
+                    if (askform.ShowDialog() == DialogResult.OK)
                     {
                         volumeLabel = askform.FileName;
                     }
@@ -198,9 +201,10 @@ namespace SharpBoot
                         abort = true;
                         return;
                     }
+
                     uint res = 1;
                     if ((res = Utils.FormatDrive(OutputFilepath.Substring(0, 2), filesystem,
-                        label: volumeLabel)) == 0)
+                            label: volumeLabel)) == 0)
                     {
                         ChangeProgress(100, 100, Strings.Formatting);
 
@@ -219,6 +223,7 @@ namespace SharpBoot
                                 abort = true;
                                 return;
                         }
+
                         if (
                             MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
                                 MessageBoxIcon.Error) == DialogResult.Cancel)
@@ -227,6 +232,7 @@ namespace SharpBoot
                             return;
                         }
                     }
+
                     tries++;
                 }
             }
@@ -268,6 +274,7 @@ namespace SharpBoot
                 img = Image.FromStream(ms);
             }
             else if (IsoBackgroundImage != "$$NONE$$") img = Image.FromFile(IsoBackgroundImage);
+
             ChangeProgress(35, 100, Strings.ExtractBaseDisk + " 5/6");
             Grub2.SetImage(img, Res, workingDir);
             ChangeProgress(45, 100, Strings.ExtractBaseDisk + " 6/6");
@@ -277,6 +284,7 @@ namespace SharpBoot
 
                 ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
             }
+
             ChangeProgressBar(60, 100);
             Program.SafeDel(archs);
 
@@ -308,6 +316,7 @@ namespace SharpBoot
                     }
                 }
             }
+
             ChangeProgressBar(0, CustomFiles.Count);
 
             for (var i = 0; i < CustomFiles.Count; i++)
@@ -393,6 +402,7 @@ namespace SharpBoot
                     return;
                 }
             }
+
             File.WriteAllText(Path.Combine(workingDir, "grub.cfg"), Grub2.GetCode(main));
 
             if (bwkISO.CancellationPending)
@@ -422,7 +432,8 @@ namespace SharpBoot
                         CreateNoWindow = true
                     }
                 };
-                p.StartInfo.Arguments += " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b boot/grub/eltorito.img";
+                p.StartInfo.Arguments +=
+                    " -publisher \"SharpBoot\" -no-emul-boot -boot-load-size 4 -boot-info-table -r -J -b boot/grub/eltorito.img";
                 p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + isodir + "\"";
                 p.EnableRaisingEvents = true;
 
@@ -444,6 +455,7 @@ namespace SharpBoot
                     abort = true;
                     return;
                 }
+
                 ChangeProgress(33, 100, string.Format(Strings.Extracting, "Mkisofs"));
                 int iter = 0;
                 while (true)
@@ -454,17 +466,19 @@ namespace SharpBoot
                         abort = true;
                         return;
                     }
+
                     if (!File.Exists(mkisofsexe))
                     {
-                        
                         if (!Directory.Exists(archs)) Directory.CreateDirectory(archs);
                         File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
                         ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
                     }
                     else break;
+
                     Thread.Sleep(500);
                     iter++;
                 }
+
                 ChangeProgress(43, 100, Strings.CreatingISO);
                 try
                 {
@@ -481,13 +495,13 @@ namespace SharpBoot
                             {
                                 if (o[0] == ' ' && o[3] == '.' && o[6] == '%')
                                 {
-                                    ChangeProgress(Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)), 100, Strings.CreatingISO + "\t" + pp + "%");
+                                    ChangeProgress(Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)),
+                                        100, Strings.CreatingISO + "\t" + pp + "%");
                                 }
                             }
                         }
                         catch
                         {
-                            
                         }
                     };
                     p.Start();
@@ -518,11 +532,12 @@ namespace SharpBoot
                     }
                 }
             }*/
-                
+
                 Thread.Sleep(500);
                 if (!exitCaught)
                     GenF(f);
             }
+
             ext.Close();
         }
 
@@ -558,6 +573,7 @@ namespace SharpBoot
                 catch
                 {
                 }
+
                 iter++;
             }
 
@@ -573,6 +589,7 @@ namespace SharpBoot
                 abort = true;
                 SetCancel();
             }
+
             if (e.Error != null)
             {
                 if (e.Error is FileNotFoundException)

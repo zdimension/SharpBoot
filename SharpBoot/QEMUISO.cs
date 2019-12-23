@@ -48,6 +48,7 @@ namespace SharpBoot
             {
                 p.StartInfo.Arguments = "-m 512 -localtime -M pc " + (floppy ? "-fda" : "-cdrom") + " \"" + iso + "\"";
             }
+
             Thread.Sleep(300);
             p.Start();
             ext.Close();

@@ -334,7 +334,8 @@ namespace wyDay.Controls
             PaintArrow(g);
 
             //paint the image and text in the "button" part of the splitButton
-            PaintTextandImage(g, new Rectangle(0, 0, ClientRectangle.Width - SplitSectionWidth, ClientRectangle.Height));
+            PaintTextandImage(g,
+                new Rectangle(0, 0, ClientRectangle.Width - SplitSectionWidth, ClientRectangle.Height));
 
             // draw the focus rectangle.
             if (State != PushButtonState.Pressed && Focused && ShowFocusCues)
@@ -370,7 +371,7 @@ namespace wyDay.Controls
             if (!string.IsNullOrEmpty(Text))
             {
                 TextRenderer.DrawText(g, Text, Font, text_rectangle, Enabled ? ForeColor : SystemColors.ControlDark,
-                        textFormatFlags);
+                    textFormatFlags);
             }
         }
 
@@ -398,7 +399,7 @@ namespace wyDay.Controls
                 bounds.Top + 2,
                 17,
                 bounds.Height - (State != PushButtonState.Pressed ? 1 : 0) - 2
-                );
+            );
 
             var buttonClip = buttonBounds;
             buttonClip.Inflate(-2, -2);
@@ -413,6 +414,7 @@ namespace wyDay.Controls
                 catch
                 {
                 }
+
                 g.SetClip(oldClip, CombineMode.Replace);
             }
 
@@ -775,6 +777,7 @@ namespace wyDay.Controls
                     x = outer.Right - inner.Width;
                     break;
             }
+
             switch (align)
             {
                 case ContentAlignment.TopCenter:

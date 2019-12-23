@@ -16,6 +16,7 @@ using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32.SafeHandles;
 using SharpBoot.Properties;
+
 // ReSharper disable UnusedMember.Local
 // ReSharper disable EventNeverSubscribedTo.Local
 
@@ -53,14 +54,17 @@ namespace SharpBoot
         public const int FILE_FLAG_NO_BUFFERING = 0x20000000;
 
         [DllImport("Kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
-        public static extern SafeFileHandle CreateFile([MarshalAs(UnmanagedType.LPTStr)] string fileName, uint fileAccess, uint fileShare, IntPtr securityAttributes, uint creationDisposition, uint flags, IntPtr template);
+        public static extern SafeFileHandle CreateFile([MarshalAs(UnmanagedType.LPTStr)] string fileName,
+            uint fileAccess, uint fileShare, IntPtr securityAttributes, uint creationDisposition, uint flags,
+            IntPtr template);
         //public static extern SafeFileHandle CreateFile(string fileName, [MarshalAs(UnmanagedType.U4)] FileAccess fileAccess, [MarshalAs(UnmanagedType.U4)] FileShare fileShare, IntPtr securityAttributes, [MarshalAs(UnmanagedType.U4)] FileMode creationDisposition, int flags, IntPtr template);
 
         [DllImport("kernel32.dll", SetLastError = true)]
         public static extern UInt32 QueryDosDevice(string DeviceName, IntPtr TargetPath, UInt32 ucchMax);
 
         [DllImport("kernel32.dll", ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]
-        public static extern bool DeviceIoControl(IntPtr hDevice, uint dwIoControlCode, IntPtr lpInBuffer, uint nInBufferSize, IntPtr lpOutBuffer, uint nOutBufferSize, out uint lpBytesReturned, IntPtr lpOverlapped);
+        public static extern bool DeviceIoControl(IntPtr hDevice, uint dwIoControlCode, IntPtr lpInBuffer,
+            uint nInBufferSize, IntPtr lpOutBuffer, uint nOutBufferSize, out uint lpBytesReturned, IntPtr lpOverlapped);
 
         public static void InstallMBR(string l, byte[] theMbr)
         {
@@ -70,12 +74,14 @@ namespace SharpBoot
                 var device = Utils.CreateFile(Utils.GetPhysicalPath(l.ToLower().Substring(0, 2)),
                     0x80000000 | 0x40000000,
                     1 | 2, IntPtr.Zero, 3,
-                    /*Utils.FILE_ATTRIBUTE_SYSTEM | Utils.FILE_FLAG_SEQUENTIAL_SCAN*/ Utils.FILE_FLAG_NO_BUFFERING, IntPtr.Zero))
+                    /*Utils.FILE_ATTRIBUTE_SYSTEM | Utils.FILE_FLAG_SEQUENTIAL_SCAN*/ Utils.FILE_FLAG_NO_BUFFERING,
+                    IntPtr.Zero))
             {
                 if (device.IsInvalid)
                 {
                     throw new IOException("Unable to access drive. Win32 Error Code " + Marshal.GetLastWin32Error());
                 }
+
                 using (FileStream src = new FileStream(device, FileAccess.ReadWrite))
                 {
                     src.Read(mbr, 0, 512);
@@ -93,7 +99,7 @@ namespace SharpBoot
             var deviceId = "";
 
             var queryResults = new ManagementObjectSearcher(
-                    $"ASSOCIATORS OF {{Win32_LogicalDisk.DeviceID='{letter}'}} WHERE AssocClass = Win32_LogicalDiskToPartition");
+                $"ASSOCIATORS OF {{Win32_LogicalDisk.DeviceID='{letter}'}} WHERE AssocClass = Win32_LogicalDiskToPartition");
             var partitions = queryResults.Get();
             foreach (var partition in partitions)
             {
@@ -121,6 +127,7 @@ namespace SharpBoot
             {
                 g.FillRectangle(new SolidBrush(c), 0, 0, w, h);
             }
+
             return bmp;
         }
 
@@ -134,7 +141,8 @@ namespace SharpBoot
         public static Image GetFlag(string twocode)
         {
             if (twocode == "en") return Resources.flag_usa;
-            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it", "pt", "pl", "hu"};
+            var dc = new List<string>
+                {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it", "pt", "pl", "hu"};
             var index = dc.IndexOf(twocode);
             return index == -1 ? null : About.Flags[index];
         }
@@ -142,35 +150,32 @@ namespace SharpBoot
 
         public static List<string> Wrap(this string text, int maxLength)
         {
-     
             // Return empty list of strings if the text was empty
             if (text.Length == 0) return new List<string>();
-     
+
             var words = text.Split(' ');
             var lines = new List<string>();
             var currentLine = "";
-     
+
             foreach (var currentWord in words)
             {
-     
                 if ((currentLine.Length > maxLength) ||
                     ((currentLine.Length + currentWord.Length) > maxLength))
                 {
                     lines.Add(currentLine);
                     currentLine = "";
                 }
-     
+
                 if (currentLine.Length > 0)
                     currentLine += " " + currentWord;
                 else
                     currentLine += currentWord;
-     
             }
-     
+
             if (currentLine.Length > 0)
                 lines.Add(currentLine);
-     
-            
+
+
             return lines;
         }
 
@@ -190,6 +195,7 @@ namespace SharpBoot
                     }
                 }
             }
+
             return formatted.ToString();
         }
 
@@ -209,6 +215,7 @@ namespace SharpBoot
                     }
                 }
             }
+
             return formatted.ToString();
         }
 
@@ -228,6 +235,7 @@ namespace SharpBoot
                     }
                 }
             }
+
             return formatted.ToString();
         }
 
@@ -247,6 +255,7 @@ namespace SharpBoot
                     }
                 }
             }
+
             return formatted.ToString();
         }
 
@@ -266,6 +275,7 @@ namespace SharpBoot
                     }
                 }
             }
+
             return formatted.ToString();
         }
 
@@ -291,7 +301,7 @@ namespace SharpBoot
                     {
                         resp = req.GetResponse();
                     }
-                    catch(WebException e)
+                    catch (WebException e)
                     {
                         if (Program.IsMono && Program.IsLinux)
                         {
@@ -301,6 +311,7 @@ namespace SharpBoot
                             resp = req.GetResponse();
                         }
                     }
+
                     Console.WriteLine("mark 4");
                     if (resp != null)
                     {
@@ -315,6 +326,7 @@ namespace SharpBoot
                             mem.Write(buf, 0, br);
                             proc += br;
                         } while (br > 0);
+
                         mem.Position = 0;
                         Console.WriteLine("len: " + mem.Length);
                         res = new StreamReader(mem).ReadToEnd();
@@ -325,7 +337,6 @@ namespace SharpBoot
             }
             catch
             {
-
             }
             finally
             {
@@ -340,7 +351,7 @@ namespace SharpBoot
         {
             string input = "abcdefghijklmnopqrstuvwxyz0123456789";
             var chars = Enumerable.Range(0, Size)
-                                   .Select(x => input[CurrentRandom.Next(0, input.Length)]);
+                .Select(x => input[CurrentRandom.Next(0, input.Length)]);
             return new string(chars.ToArray());
         }
 
@@ -374,6 +385,7 @@ namespace SharpBoot
                         cur = cur >> 1;
                 table[i] = cur;
             }
+
             return (~ct.Aggregate(0xffffffff, (current, t) => (current >> 8) ^ table[t])).ToString("x8");
         }
 
@@ -407,7 +419,7 @@ namespace SharpBoot
             // browse all USB WMI physical disks
             foreach (
                 ManagementObject drive in
-                    new ManagementObjectSearcher("select DeviceID, MediaType,InterfaceType from Win32_DiskDrive").Get())
+                new ManagementObjectSearcher("select DeviceID, MediaType,InterfaceType from Win32_DiskDrive").Get())
             {
                 // associate physical disks with partitions
                 var partitionCollection =
@@ -416,16 +428,16 @@ namespace SharpBoot
                         "where AssocClass = Win32_DiskDriveToDiskPartition").Get();
 
                 foreach (var logicalCollection in from ManagementObject partition in partitionCollection
-                                                  where partition != null
-                                                  select new ManagementObjectSearcher(
-                                                      $"associators of {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} " +
-                                                      "where AssocClass= Win32_LogicalDiskToPartition").Get())
+                    where partition != null
+                    select new ManagementObjectSearcher(
+                        $"associators of {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} " +
+                        "where AssocClass= Win32_LogicalDiskToPartition").Get())
                 {
                     foreach (var volumeEnumerator in from ManagementObject logical in logicalCollection
-                                                     where logical != null
-                                                     select new ManagementObjectSearcher(
-                                                         $"select DeviceID from Win32_LogicalDisk where Name='{logical["Name"]}'")
-                                                         .Get().GetEnumerator())
+                        where logical != null
+                        select new ManagementObjectSearcher(
+                                $"select DeviceID from Win32_LogicalDisk where Name='{logical["Name"]}'")
+                            .Get().GetEnumerator())
                     {
                         volumeEnumerator.MoveNext();
 
@@ -536,6 +548,7 @@ namespace SharpBoot
             {
                 return 1;
             }
+
             var finished = p.WaitForExit(20000);
             return (uint) (finished ? 0 : 1);
         }
@@ -672,7 +685,5 @@ namespace SharpBoot
         }
 
         #endregion
-
-        
     }
 }

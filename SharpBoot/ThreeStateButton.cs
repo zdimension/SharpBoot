@@ -17,28 +17,40 @@ namespace SharpBoot
         {
             DoubleBuffered = true;
             SetStyle(ControlStyles.AllPaintingInWmPaint
-                | ControlStyles.DoubleBuffer
-                | ControlStyles.OptimizedDoubleBuffer
-                | ControlStyles.ResizeRedraw, true);
+                     | ControlStyles.DoubleBuffer
+                     | ControlStyles.OptimizedDoubleBuffer
+                     | ControlStyles.ResizeRedraw, true);
             SetBackImage();
         }
 
         public Image NormalImage
         {
             get { return _normalImage; }
-            set { _normalImage = value; SetBackImage(); }
+            set
+            {
+                _normalImage = value;
+                SetBackImage();
+            }
         }
 
         public Image HoverImage
         {
             get { return _hoverImage; }
-            set { _hoverImage = value; SetBackImage(); }
+            set
+            {
+                _hoverImage = value;
+                SetBackImage();
+            }
         }
 
         public Image DownImage
         {
             get { return _downImage; }
-            set { _downImage = value; SetBackImage(); }
+            set
+            {
+                _downImage = value;
+                SetBackImage();
+            }
         }
 
         private bool isHover = false;
@@ -46,13 +58,13 @@ namespace SharpBoot
 
         private void SetBackImage()
         {
-            if(isDown)
+            if (isDown)
             {
                 BackgroundImage = DownImage;
             }
             else
             {
-                if(isHover)
+                if (isHover)
                 {
                     BackgroundImage = HoverImage;
                 }
@@ -61,6 +73,7 @@ namespace SharpBoot
                     BackgroundImage = NormalImage;
                 }
             }
+
             Invalidate();
         }
 

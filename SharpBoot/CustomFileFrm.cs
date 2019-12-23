@@ -130,6 +130,7 @@ namespace SharpBoot
                 {
                     lvFiles.Rows[e.RowIndex].Cells[0].Value = ofpFile.FileName;
                 }
+
                 ofpFile.Multiselect = true;
             }
         }

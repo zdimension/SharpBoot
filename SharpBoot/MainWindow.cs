@@ -17,13 +17,14 @@ using W7R;
 using Timer = System.Timers.Timer;
 
 namespace SharpBoot
-{ 
+{
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
     public partial class MainWindow : Form
     {
         public void SetSize()
         {
-            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + Utils.SIZE_BASEDISK + SelectedBackground.Length); // TODO: Update the bloader size
+            tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + Utils.SIZE_BASEDISK +
+                                                 SelectedBackground.Length); // TODO: Update the bloader size
 
             menuStrip.Renderer = Windows7Renderer.Instance;
 
@@ -41,14 +42,12 @@ namespace SharpBoot
                         : new byte[0];
 
 
-
-
         private void loadlng()
         {
             languageToolStripMenuItem.DropDownItems.Clear();
-            var result = fromresx(typeof (Strings));
+            var result = fromresx(typeof(Strings));
 
-            result.AddRange(fromresx(typeof (ISOCat)));
+            result.AddRange(fromresx(typeof(ISOCat)));
 
             var systemLng = CultureInfo.InstalledUICulture;
             if (!systemLng.IsNeutralCulture)
@@ -149,6 +148,7 @@ namespace SharpBoot
                     //NOP
                 }
             }
+
             return result;
         }
 
@@ -275,7 +275,6 @@ namespace SharpBoot
             };
 
 
-
             if (Settings.Default.FirstLaunch && dev_FirstLaunch)
             {
                 var firstlaunch = new FirstLaunch();
@@ -324,7 +323,7 @@ namespace SharpBoot
                 MessageBox.Show(this, Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if(g.filesystem == "NTFS") Thread.Sleep(1500);
+                if (g.filesystem == "NTFS") Thread.Sleep(1500);
                 QEMUISO.LaunchQemu(g.OutputFilepath, g._usb);
             }
         }
@@ -378,12 +377,14 @@ namespace SharpBoot
             if (usb)
             {
                 var fs =
-                    new[] {"NTFS", "FAT32", "FAT16", "FAT12"}.AddRecommended(CurImages.Any(x => x.SizeB >= uint.MaxValue)
-                        ? 0
-                        : 1);
+                    new[] {"NTFS", "FAT32", "FAT16", "FAT12"}.AddRecommended(
+                        CurImages.Any(x => x.SizeB >= uint.MaxValue)
+                            ? 0
+                            : 1);
                 ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true, fs);
             }
             else ask = new AskPath();
+
             if (ask.ShowDialog() == DialogResult.OK)
             {
                 var fn = "";
@@ -406,7 +407,7 @@ namespace SharpBoot
                         break;
                 }
 
-                g.Res = ((dynamic)cbxRes.SelectedItem).Val;
+                g.Res = ((dynamic) cbxRes.SelectedItem).Val;
                 g.Images =
                     CurImages.Select(
                         x =>
@@ -482,7 +483,8 @@ namespace SharpBoot
             var newdesc = lvIsos.SelectedRows[0].Cells[3].Value?.ToString() ?? "";
 
             var ind =
-                CurImages.IndexOf(CurImages.Single(x => x.FilePath == lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+                CurImages.IndexOf(CurImages.Single(x =>
+                    x.FilePath == lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
             var nw = new ImageLine(newname, lvIsos.SelectedRows[0].Cells[4].Value.ToString(), newdesc, newcat);
             CurImages.RemoveAt(ind);
             CurImages.Insert(ind, nw);
@@ -506,7 +508,7 @@ namespace SharpBoot
                 {
                     cbxRes.SelectedIndex = 1;
                 }
-                else if(img.Width >= 912 && img.Width < 1152)
+                else if (img.Width >= 912 && img.Width < 1152)
                 {
                     cbxRes.SelectedIndex = 2;
                 }
@@ -537,7 +539,7 @@ namespace SharpBoot
             var a = DateTime.Now;
             var t = a - d;
             txImInfo.Text = string.Format(Strings.ChkOf, n,
-                Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
+                                Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
             txImInfo.Text += sb + "\r\n";
             /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
                              "s";*/
@@ -573,8 +575,9 @@ namespace SharpBoot
             lblDragHere.Location = new Point(
                 lvIsos.Width / 2 - lblDragHere.Width / 2 + lvIsos.Location.X,
                 lvIsos.Height / 2 - lblDragHere.Height / 2 + lvIsos.Location.Y
-                );
+            );
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             new About().ShowDialog(this);
@@ -619,7 +622,8 @@ namespace SharpBoot
 
                 foreach (XElement a in c.Elements("ISOs").Nodes())
                 {
-                    CurImages.Add(new ImageLine(a.Element("Nom").Value, a.Element("Path").Value, a.Element("Desc").Value,
+                    CurImages.Add(new ImageLine(a.Element("Nom").Value, a.Element("Path").Value,
+                        a.Element("Desc").Value,
                         a.Element("Cat").Value));
                     lvIsos.Rows.Add(a.Element("Nom").Value, Program.GetFileSizeString(a.Element("Path").Value),
                         a.Element("Cat").Value, a.Element("Desc").Value, a.Element("Path").Value);

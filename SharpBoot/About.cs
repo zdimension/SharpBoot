@@ -29,10 +29,7 @@ namespace SharpBoot
             Text = Strings.AboutSharpBoot;
             btnOK.Text = Strings.OK;
             pbLogo.Image = new Icon(Resources.logo, 48, 48).ToBitmap();
-            FormClosing += (sender, args) =>
-            {
-                mp.Stop();
-            };
+            FormClosing += (sender, args) => { mp.Stop(); };
         }
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)

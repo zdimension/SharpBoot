@@ -5,8 +5,8 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-internal static class Interop {
-
+internal static class Interop
+{
     [DllImport("uxtheme")]
     public static extern IntPtr BufferedPaintInit();
 
@@ -15,13 +15,13 @@ internal static class Interop {
 
     [DllImport("uxtheme")]
     public static extern IntPtr BeginBufferedAnimation(
-        IntPtr hwnd, 
-        IntPtr hdcTarget, 
-        ref Rectangle rcTarget, 
-        BP_BUFFERFORMAT dwFormat, 
-        IntPtr pPaintParams, 
-        ref BP_ANIMATIONPARAMS pAnimationParams, 
-        out IntPtr phdcFrom, 
+        IntPtr hwnd,
+        IntPtr hdcTarget,
+        ref Rectangle rcTarget,
+        BP_BUFFERFORMAT dwFormat,
+        IntPtr pPaintParams,
+        ref BP_ANIMATIONPARAMS pAnimationParams,
+        out IntPtr phdcFrom,
         out IntPtr phdcTo
     );
 
@@ -35,25 +35,28 @@ internal static class Interop {
     [DllImport("uxtheme")]
     public static extern IntPtr BufferedPaintStopAllAnimations(IntPtr hwnd);
 
-	[StructLayout(LayoutKind.Sequential)]
-	internal struct BP_ANIMATIONPARAMS {
-		public Int32 cbSize, dwFlags;
-		public BP_ANIMATIONSTYLE style;
-		public Int32 dwDuration;
-	}
+    [StructLayout(LayoutKind.Sequential)]
+    internal struct BP_ANIMATIONPARAMS
+    {
+        public Int32 cbSize, dwFlags;
+        public BP_ANIMATIONSTYLE style;
+        public Int32 dwDuration;
+    }
 
-	internal enum BP_BUFFERFORMAT {
-		BPBF_COMPATIBLEBITMAP,
-		BPBF_DIB,
-		BPBF_TOPDOWNDIB,
-		BPBF_TOPDOWNMONODIB
-	}
+    internal enum BP_BUFFERFORMAT
+    {
+        BPBF_COMPATIBLEBITMAP,
+        BPBF_DIB,
+        BPBF_TOPDOWNDIB,
+        BPBF_TOPDOWNMONODIB
+    }
 
-	[Flags]
-	internal enum BP_ANIMATIONSTYLE {
-		BPAS_NONE = 0,
-		BPAS_LINEAR = 1,
-		BPAS_CUBIC = 2,
-		BPAS_SINE = 3
-	}
+    [Flags]
+    internal enum BP_ANIMATIONSTYLE
+    {
+        BPAS_NONE = 0,
+        BPAS_LINEAR = 1,
+        BPAS_CUBIC = 2,
+        BPAS_SINE = 3
+    }
 }

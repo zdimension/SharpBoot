@@ -40,6 +40,7 @@ namespace SharpBoot
                 m_ScreenMemory[i] = 32;
                 m_ScreenMemory[i + 1] = 7;
             }
+
             Refresh();
         }
 
@@ -49,7 +50,7 @@ namespace SharpBoot
 
             try
             {
-                MemLoc = (ushort)(Address - ScreenMemoryLocation);
+                MemLoc = (ushort) (Address - ScreenMemoryLocation);
             }
             catch (Exception)
             {
@@ -71,15 +72,15 @@ namespace SharpBoot
 
             try
             {
-                MemLoc = (ushort)(Address - ScreenMemoryLocation);
+                MemLoc = (ushort) (Address - ScreenMemoryLocation);
             }
             catch (Exception)
             {
-                return (byte)0;
+                return (byte) 0;
             }
 
             if (MemLoc < 0 || MemLoc > MEM_SIZE - 1)
-                return (byte)0;
+                return (byte) 0;
 
             return m_ScreenMemory[MemLoc];
         }
@@ -110,7 +111,7 @@ namespace SharpBoot
             var bmp = new Bitmap(Width, Height);
             var bmpGraphics = Graphics.FromImage(bmp);
 
-            foreach(var c in Strings)
+            foreach (var c in Strings)
             {
                 bmpGraphics.FillRectangle(new SolidBrush(c.Item3),
                     new Rectangle(c.Item1, TextRenderer.MeasureText(c.Item4, fnt)));
@@ -136,10 +137,8 @@ namespace SharpBoot
             base.OnPaintBackground(e);
             AfterPaintBackground(this, e);
         }
-        [Browsable(true)]
-        public event PaintEventHandler AfterPaintBackground = delegate { };
 
- 
+        [Browsable(true)] public event PaintEventHandler AfterPaintBackground = delegate { };
 
 
         public void Write(int x, int y, string s, Color f, Color b)
@@ -148,7 +147,7 @@ namespace SharpBoot
             Refresh();
         }
 
-        public List<Tuple<Point, Color, Color, string>> Strings = new List<Tuple<Point, Color, Color, string>>();  
+        public List<Tuple<Point, Color, Color, string>> Strings = new List<Tuple<Point, Color, Color, string>>();
     }
 
     public enum VGAColor : byte

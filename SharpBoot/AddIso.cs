@@ -33,11 +33,13 @@ namespace SharpBoot
                 Thread.Sleep(50);
                 iter++;
             }
+
             if (ISOInfo.ISOs.Count == 0)
             {
-                MessageBox.Show("If you see this message (honestly, you shouldn't ever see it), then something horribly wrong that shouldn't happen has happened.");
-
+                MessageBox.Show(
+                    "If you see this message (honestly, you shouldn't ever see it), then something horribly wrong that shouldn't happen has happened.");
             }
+
             while (cbxDetIso.Items.Count < 2)
             {
                 var isos =
@@ -65,6 +67,7 @@ namespace SharpBoot
                 cbxISOS.SelectedItem = null;
                 cbxVersion.SelectedItem = null;
             }
+
             rtbIsoDesc.Text = "";
         }
 
@@ -144,6 +147,7 @@ namespace SharpBoot
                         break;
                     }
                 }
+
                 rtbIsoDesc.Text = selinfo.Description;
             }
             else cbxVersion.Enabled = cbxVersion.Visible = rtbIsoDesc.Visible = false;
@@ -249,6 +253,7 @@ namespace SharpBoot
                             }
                         }
                     }
+
                     pbxLoading.Visible = false;
                 }));
                 changing = false;
@@ -271,6 +276,7 @@ namespace SharpBoot
                 {
                     sfdIso.FileName = Path.GetFileName(IsoV.DownloadLink);
                 }
+
                 if (sfdIso.ShowDialog(this) == DialogResult.OK)
                 {
                     btnOK.Enabled = false;
@@ -287,11 +293,12 @@ namespace SharpBoot
 
         private void ClientOnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
-            if(sw.Elapsed.TotalSeconds >= 1)
+            if (sw.Elapsed.TotalSeconds >= 1)
                 lblSpeed.Text = Program.GetSizeString(e.BytesReceived / (long) sw.Elapsed.TotalSeconds) + "/s";
             setprg(e.ProgressPercentage);
 
-            lblProg.Text = Program.GetSizeString(e.BytesReceived) + " / " + Program.GetSizeString(e.TotalBytesToReceive);
+            lblProg.Text = Program.GetSizeString(e.BytesReceived) + " / " +
+                           Program.GetSizeString(e.TotalBytesToReceive);
         }
 
         private void btnAnnul_Click(object sender, EventArgs e)

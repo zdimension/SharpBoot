@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly:
     AssemblyDescription(
         "SharpBoot is a program for creating multiboot ISOs by choosing other ISO files and putting them in categories."
-        )]
+    )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("zdimension")]
 [assembly: AssemblyProduct("SharpBoot")]

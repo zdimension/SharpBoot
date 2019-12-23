@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
+
 // ReSharper disable UnusedMember.Local
 // ReSharper disable UnusedVariable
 // ReSharper disable NotAccessedField.Local
@@ -613,7 +614,7 @@ namespace W7R
             Color.Transparent,
             Color.Transparent,
             Color.FromArgb(212, 212, 212), Color.FromArgb(195, 195, 195)
-            );
+        );
 
         private static GradientItemColors _itemToolItemSelectedColors = new GradientItemColors( /****/
             _r1, _r2, _r3, _r4, _r5, _r6, _r7, _r8, _r9, _rA);
@@ -943,6 +944,7 @@ namespace W7R
                                     using (var tickPen = new Pen(_contextCheckTick, _contextCheckTickThickness))
                                         e.Graphics.DrawPath(tickPen, tickPath);
                                 }
+
                                 break;
                             case CheckState.Indeterminate:
                                 // Create a path for the indeterminate diamond
@@ -952,6 +954,7 @@ namespace W7R
                                     using (var tickBrush = new SolidBrush(_contextCheckTick))
                                         e.Graphics.FillPath(tickBrush, tickPath);
                                 }
+
                                 break;
                         }
                     }
@@ -1329,6 +1332,7 @@ namespace W7R
                         //backBrush.Blend = _statusStripBlend;
                         e.Graphics.FillRectangle(backBrush, backRect);
                     }
+
                     var topRect = new Rectangle(0, 0, (int) backRect.Width, 5);
                     using (
                         var backBrush = new LinearGradientBrush(topRect, _statusBarDark, _statusBarLight,
@@ -1441,7 +1445,8 @@ namespace W7R
                         // Draw the light and dark lines on the left hand side
                         e.Graphics.DrawLine(lightPen, marginRect.Left - 1, marginRect.Top, marginRect.Left - 1,
                             marginRect.Bottom);
-                        e.Graphics.DrawLine(darkPen, marginRect.Left, marginRect.Top, marginRect.Left, marginRect.Bottom);
+                        e.Graphics.DrawLine(darkPen, marginRect.Left, marginRect.Top, marginRect.Left,
+                            marginRect.Bottom);
                     }
                 }
             }
@@ -1788,7 +1793,7 @@ namespace W7R
             using (
                 LinearGradientBrush insideBrush1 = new LinearGradientBrush(backRect1I, colors.InsideTop1,
                     colors.InsideTop2, 90f),
-                    insideBrush2 = new LinearGradientBrush(backRect2I, colors.InsideBottom1, colors.InsideBottom2, 90f))
+                insideBrush2 = new LinearGradientBrush(backRect2I, colors.InsideBottom1, colors.InsideBottom2, 90f))
             {
                 g.FillRectangle(insideBrush1, backRect1);
                 g.FillRectangle(insideBrush2, backRect2);
@@ -1805,7 +1810,7 @@ namespace W7R
             using (
                 LinearGradientBrush fillBrush1 = new LinearGradientBrush(backRect1I, colors.FillTop1, colors.FillTop2,
                     90f),
-                    fillBrush2 = new LinearGradientBrush(backRect2I, colors.FillBottom1, colors.FillBottom2, 90f))
+                fillBrush2 = new LinearGradientBrush(backRect2I, colors.FillBottom1, colors.FillBottom2, 90f))
             {
                 // Reduce rect one more time for the innermost drawing
                 backRect.Inflate(-1, -1);

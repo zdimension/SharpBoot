@@ -60,7 +60,9 @@ namespace SharpBoot
                     switch (item.Type)
                     {
                         case EntryType.ISO:
-                            code += string.Format("set opt='ls /images/{0} || find --set-root /images/{0};map /images/{0} (0xff);map --hook;root (0xff);chainloader (0xff);boot'\n", item.IsoName);
+                            code += string.Format(
+                                "set opt='ls /images/{0} || find --set-root /images/{0};map /images/{0} (0xff);map --hook;root (0xff);chainloader (0xff);boot'\n",
+                                item.IsoName);
                             code += "linux /boot/grub/grub.exe --config-file=$opt\n";
                             break;
                         case EntryType.IMG:
@@ -83,6 +85,7 @@ namespace SharpBoot
                             code += "linux /boot/grub/grub.exe --config-file=$opt\n";
                             break;
                     }
+
                     break;
             }
 
