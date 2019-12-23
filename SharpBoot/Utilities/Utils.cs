@@ -42,7 +42,7 @@ namespace SharpBoot.Utilities
                     UseShellExecute = true,
                     FileName = exepath,
                     Verb = "runas",
-                    Arguments = String.Join(" ", args)
+                    Arguments = string.Join(" ", args)
                 }
             };
             p.Start();
@@ -168,7 +168,7 @@ namespace SharpBoot.Utilities
         // thanks http://www.codeproject.com/Articles/115598/Formatting-a-Drive-using-C-and-WMI
         public static string FormatEx(this string s, params object[] args)
         {
-            return String.Format(s, args);
+            return string.Format(s, args);
         }
     }
 }
