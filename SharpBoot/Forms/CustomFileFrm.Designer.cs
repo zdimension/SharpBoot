@@ -136,7 +136,6 @@
             // 
             this.clmnLocal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmnLocal.FillWeight = 50F;
-            resources.ApplyResources(this.clmnLocal, "clmnLocal");
             this.clmnLocal.Name = "clmnLocal";
             this.clmnLocal.ReadOnly = true;
             this.clmnLocal.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -145,7 +144,6 @@
             // 
             this.clmnRemote.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.clmnRemote.FillWeight = 50F;
-            resources.ApplyResources(this.clmnRemote, "clmnRemote");
             this.clmnRemote.Name = "clmnRemote";
             this.clmnRemote.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
@@ -162,9 +160,11 @@
             // 
             // CustomFileFrm
             // 
+            this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnAnnul;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblHeader);

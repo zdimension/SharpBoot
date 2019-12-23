@@ -133,7 +133,7 @@
     <value>10, 11</value>
   </data>
   <data name="lblHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 30</value>
+    <value>0, 30</value>
   </data>
   <data name="lblHeader.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>

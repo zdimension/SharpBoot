@@ -42,13 +42,14 @@ namespace SharpBoot.Forms
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.btnAnnul);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // btnAnnul
             // 
+            this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btnAnnul, "btnAnnul");
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.UseVisualStyleBackColor = true;
@@ -75,6 +76,7 @@ namespace SharpBoot.Forms
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnAnnul;
             this.ControlBox = false;
             this.Controls.Add(this.pbx);
             this.Controls.Add(this.lblStatus);

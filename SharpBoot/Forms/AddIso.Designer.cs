@@ -48,9 +48,9 @@ namespace SharpBoot.Forms
             this.cbxVersion = new System.Windows.Forms.ComboBox();
             this.lblSpeed = new System.Windows.Forms.Label();
             this.lblProg = new System.Windows.Forms.Label();
-            this.rtbIsoDesc = new DisabledRichTextBox();
-            this.cbxDetIso = new GroupedComboBox();
-            this.cbxISOS = new GroupedComboBox();
+            this.rtbIsoDesc = new SharpBoot.Controls.DisabledRichTextBox();
+            this.cbxDetIso = new SharpBoot.Controls.GroupedComboBox.GroupedComboBox();
+            this.cbxISOS = new SharpBoot.Controls.GroupedComboBox.GroupedComboBox();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -198,9 +198,11 @@ namespace SharpBoot.Forms
             // 
             // AddIso
             // 
+            this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnAnnul;
             this.Controls.Add(this.rtbIsoDesc);
             this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.cbxDetIso);

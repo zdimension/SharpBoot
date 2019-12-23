@@ -126,9 +126,11 @@ namespace SharpBoot.Forms
             // 
             // USBFrm
             // 
+            this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btnAnnul;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.lblCbx);

@@ -38,12 +38,12 @@ namespace SharpBoot.Forms
             this.ilTranslators = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.lvTranslators = new CustomListView();
+            this.lvTranslators = new SharpBoot.Controls.CustomListView();
             this.clmnName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clmnURL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.rtbMyWebsite = new DisabledRichTextBox();
-            this.rbnHelpTranslate = new DisabledRichTextBox();
-            this.disabledRichTextBox1 = new DisabledRichTextBox();
+            this.rtbMyWebsite = new SharpBoot.Controls.DisabledRichTextBox();
+            this.rbnHelpTranslate = new SharpBoot.Controls.DisabledRichTextBox();
+            this.disabledRichTextBox1 = new SharpBoot.Controls.DisabledRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,7 @@ namespace SharpBoot.Forms
             this.clmnURL});
             this.lvTranslators.FullRowSelect = true;
             this.lvTranslators.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lvTranslators.HideSelection = false;
             this.lvTranslators.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items"))),
             ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvTranslators.Items1"))),
@@ -156,6 +157,7 @@ namespace SharpBoot.Forms
             // 
             // About
             // 
+            this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pbLogo);

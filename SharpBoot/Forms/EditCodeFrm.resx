@@ -208,7 +208,7 @@
     <value>12, 53</value>
   </data>
   <data name="lblFilePath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 15</value>
+    <value>0, 15</value>
   </data>
   <data name="lblFilePath.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -238,7 +238,7 @@
     <value>10, 11</value>
   </data>
   <data name="lblHeader.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 30</value>
+    <value>0, 30</value>
   </data>
   <data name="lblHeader.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -269,6 +269,9 @@
   </data>
   <data name="rtbCode.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
+  </data>
+  <data name="rtbCode.Text" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;rtbCode.Name" xml:space="preserve">
     <value>rtbCode</value>
