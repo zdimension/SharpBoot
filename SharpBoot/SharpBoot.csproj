@@ -236,6 +236,7 @@
     </Compile>
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="Utilities\W7R.cs" />
+    <Compile Include="Utilities\WinApiConstants.cs" />
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
