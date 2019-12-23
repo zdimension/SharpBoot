@@ -120,9 +120,9 @@ namespace SharpBoot
             {
                 var wc = new WebClient {Encoding = Encoding.UTF8};
                 // ReSharper disable once UnusedVariable
-                var temporary = wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml");
+                var temporary = wc.DownloadString("https://zdimension.fr/sharpboot/apps.xml");
                 // Strangely when a PHP page is updated you need to request it twice to see the update
-                var lastappsdate = DateTime.Parse(wc.DownloadString("http://www.zdimension.tk/sharpboot/apps.xml"));
+                var lastappsdate = DateTime.Parse(wc.DownloadString("https://zdimension.fr/sharpboot/apps.xml"));
                 return lastappsdate > Settings.Default.LastAppsUpdate;
             }
             catch
@@ -151,7 +151,7 @@ namespace SharpBoot
                     Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-                    var appsxml = Utils.DownloadWithoutCache("https://gitcdn.xyz/repo/zdimension/SharpBoot-AppDB/master/apps.xml");
+                    var appsxml = Utils.DownloadWithoutCache("https://zdimension.fr/sharpboot/apps.xml");
 
                     if (appsxml?.Length > 40 && appsxml.Substring(appsxml.Length - 37, 37) != "<!--All your base are belong to us-->")
                     {
