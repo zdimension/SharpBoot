@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -11,7 +10,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using SharpBoot.Forms;
+using SharpBoot.Models;
 using SharpBoot.Properties;
+using SharpBoot.Utilities;
 
 namespace SharpBoot
 {
@@ -24,15 +26,10 @@ namespace SharpBoot
             Mac
         }
 
-        public static string SevenZipPath = "";
-
         public static string editcode = "";
         public static string fpath = "";
 
-        public static readonly char DirChar = Path.DirectorySeparatorChar;
         public static readonly string DirCharStr = Path.DirectorySeparatorChar.ToString();
-
-        public static bool UseCyrillicFont => GetEnc().CodePage == 866;
 
         public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
 
@@ -41,12 +38,6 @@ namespace SharpBoot
         public static bool IsLinux => RunningPlatform() == Platform.Linux;
 
         public static bool IsWin => RunningPlatform() == Platform.Windows;
-
-        public static IDictionary<TKey, TValue> ToDictionary<TKey, TValue>(
-            this IEnumerable<KeyValuePair<TKey, TValue>> list)
-        {
-            return list.ToDictionary(x => x.Key, x => x.Value);
-        }
 
 
         /// <summary>
@@ -143,15 +134,9 @@ namespace SharpBoot
             }
         }
 
-        public static string ShortLang()
-        {
-            return GetCulture().Name;
-        }
-
         public static void SafeDel(string d)
         {
-            var i = 0;
-            while (Directory.Exists(d) && i < 3)
+            for (var i = 0; i < 3 && Directory.Exists(d); i++)
             {
                 try
                 {
@@ -159,9 +144,8 @@ namespace SharpBoot
                 }
                 catch
                 {
+                    // ignored
                 }
-
-                i++;
             }
         }
 
@@ -173,11 +157,6 @@ namespace SharpBoot
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
             Settings.Default.Save();
             ISOInfo.RefreshISOs();
-        }
-
-        public static string ToHexArgb(this Color c)
-        {
-            return "#" + c.A.ToString("X2") + c.R.ToString("X2") + c.G.ToString("X2") + c.B.ToString("X2");
         }
 
 
