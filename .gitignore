@@ -17,3 +17,5 @@
 /SharpBoot.AdminProcess/bin/Release
 /SharpBoot.AdminProcess/obj
 /SharpBoot/Resources/System.Net.Http.xml
+SharpBoot/Resources/SharpBoot.AdminProcess.exe
+SharpBoot/Resources/SharpBoot.AdminProcess.pdb
