@@ -56,74 +56,74 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.cs">
+    <Compile Include="Forms\About.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="About.Designer.cs">
+    <Compile Include="Forms\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddIso.cs">
+    <Compile Include="Forms\AddIso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddIso.Designer.cs">
+    <Compile Include="Forms\AddIso.Designer.cs">
       <DependentUpon>AddIso.cs</DependentUpon>
     </Compile>
-    <Compile Include="AskPath.cs">
+    <Compile Include="Forms\AskPath.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AskPath.Designer.cs">
+    <Compile Include="Forms\AskPath.Designer.cs">
       <DependentUpon>AskPath.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bootloaders.cs" />
-    <Compile Include="BootMenu.cs" />
-    <Compile Include="CustomEntry.cs" />
-    <Compile Include="CustomEntryFrm.cs">
+    <Compile Include="Models\Bootloaders.cs" />
+    <Compile Include="Models\BootMenu.cs" />
+    <Compile Include="Models\CustomEntry.cs" />
+    <Compile Include="Forms\CustomEntryFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomEntryFrm.Designer.cs">
+    <Compile Include="Forms\CustomEntryFrm.Designer.cs">
       <DependentUpon>CustomEntryFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomFileFrm.cs">
+    <Compile Include="Forms\CustomFileFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomFileFrm.Designer.cs">
+    <Compile Include="Forms\CustomFileFrm.Designer.cs">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomListView.cs">
+    <Compile Include="Controls\CustomListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CustomTextBox.cs">
+    <Compile Include="Controls\CustomTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DisabledRichTextBox.cs">
+    <Compile Include="Controls\DisabledRichTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="EditCodeFrm.cs">
+    <Compile Include="Forms\EditCodeFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCodeFrm.Designer.cs">
+    <Compile Include="Forms\EditCodeFrm.Designer.cs">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FakeVGA.cs">
+    <Compile Include="Controls\FakeVGA.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FirstLaunch.cs">
+    <Compile Include="Forms\FirstLaunch.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FirstLaunch.Designer.cs">
+    <Compile Include="Forms\FirstLaunch.Designer.cs">
       <DependentUpon>FirstLaunch.cs</DependentUpon>
     </Compile>
-    <Compile Include="GenIsoFrm.cs">
+    <Compile Include="Forms\GenIsoFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenIsoFrm.Designer.cs">
+    <Compile Include="Forms\GenIsoFrm.Designer.cs">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupedComboBox\BufferedPainter.cs" />
-    <Compile Include="GroupedComboBox\GroupedComboBox.cs" />
-    <Compile Include="GroupedComboBox\Interop.cs" />
-    <Compile Include="ImageLine.cs" />
-    <Compile Include="MainWindow.zh-Hant.Designer.cs">
+    <Compile Include="Controls\GroupedComboBox\BufferedPainter.cs" />
+    <Compile Include="Controls\GroupedComboBox\GroupedComboBox.cs" />
+    <Compile Include="Controls\GroupedComboBox\Interop.cs" />
+    <Compile Include="Models\ImageLine.cs" />
+    <Compile Include="Forms\MainWindow.zh-Hant.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MainWindow.zh-Hant.resx</DependentUpon>
@@ -173,45 +173,45 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.zh-Hant.resx</DependentUpon>
     </Compile>
-    <Compile Include="TablessControl.cs">
+    <Compile Include="Controls\TablessControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TestFrm.cs">
+    <Compile Include="Forms\TestFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TestFrm.Designer.cs">
+    <Compile Include="Forms\TestFrm.Designer.cs">
       <DependentUpon>TestFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThemeEditor.cs">
+    <Compile Include="Forms\ThemeEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ThemeEditor.Designer.cs">
+    <Compile Include="Forms\ThemeEditor.Designer.cs">
       <DependentUpon>ThemeEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThreeStateButton.cs">
+    <Compile Include="Controls\ThreeStateButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="USBFrm.cs">
+    <Compile Include="Forms\USBFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="USBFrm.Designer.cs">
+    <Compile Include="Forms\USBFrm.Designer.cs">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ISOInfo.cs" />
-    <Compile Include="LinkLabelEx.cs">
+    <Compile Include="Models\ISOInfo.cs" />
+    <Compile Include="Controls\LinkLabelEx.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MainWindow.cs">
+    <Compile Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindow.Designer.cs">
+    <Compile Include="Forms\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QEMUISO.cs" />
-    <Compile Include="SevenZipExtractor.cs" />
-    <Compile Include="SplitButton.cs">
+    <Compile Include="Utilities\QEMUISO.cs" />
+    <Compile Include="Utilities\SevenZipExtractor.cs" />
+    <Compile Include="Controls\SplitButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Strings.de.Designer.cs">
@@ -234,315 +234,325 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.ro.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils.cs" />
-    <Compile Include="W7R.cs" />
-    <EmbeddedResource Include="About.resx">
+    <Compile Include="Utilities\Utils.cs" />
+    <Compile Include="Utilities\W7R.cs" />
+    <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="About.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\About.zh-Hans.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="About.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\About.zh-Hant.resx">
       <DependentUpon>About.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.cs.resx">
+    <EmbeddedResource Include="Forms\AddIso.cs.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.de.resx">
+    <EmbeddedResource Include="Forms\AddIso.de.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.es.resx">
+    <EmbeddedResource Include="Forms\AddIso.es.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.fr.resx">
+    <EmbeddedResource Include="Forms\AddIso.fr.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.hu.resx">
+    <EmbeddedResource Include="Forms\AddIso.hu.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.it.resx">
+    <EmbeddedResource Include="Forms\AddIso.it.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.pl.resx">
+    <EmbeddedResource Include="Forms\AddIso.pl.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.pt.resx">
+    <EmbeddedResource Include="Forms\AddIso.pt.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.resx">
+    <EmbeddedResource Include="Forms\AddIso.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.ro.resx">
+    <EmbeddedResource Include="Forms\AddIso.ro.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.ru.resx">
+    <EmbeddedResource Include="Forms\AddIso.ru.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.uk.resx">
+    <EmbeddedResource Include="Forms\AddIso.uk.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\AddIso.zh-Hans.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddIso.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\AddIso.zh-Hant.resx">
       <DependentUpon>AddIso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.cs.resx">
+    <EmbeddedResource Include="Forms\AskPath.cs.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.es.resx">
+    <EmbeddedResource Include="Forms\AskPath.es.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.hu.resx">
+    <EmbeddedResource Include="Forms\AskPath.hu.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.it.resx">
+    <EmbeddedResource Include="Forms\AskPath.it.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.pl.resx">
+    <EmbeddedResource Include="Forms\AskPath.pl.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.pt.resx">
+    <EmbeddedResource Include="Forms\AskPath.pt.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.ru.resx">
+    <EmbeddedResource Include="Forms\AskPath.ru.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.uk.resx">
+    <EmbeddedResource Include="Forms\AskPath.uk.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\AskPath.zh-Hans.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.de.resx">
+    <EmbeddedResource Include="Forms\AskPath.de.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.fr.resx">
+    <EmbeddedResource Include="Forms\AskPath.fr.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.resx">
+    <EmbeddedResource Include="Forms\AskPath.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.ro.resx">
+    <EmbeddedResource Include="Forms\AskPath.ro.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AskPath.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\AskPath.zh-Hant.resx">
       <DependentUpon>AskPath.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomEntryFrm.resx">
+    <EmbeddedResource Include="Forms\CustomEntryFrm.resx">
       <DependentUpon>CustomEntryFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.cs.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.cs.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.de.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.de.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.es.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.es.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.fr.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.fr.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.hu.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.hu.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.it.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.it.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.pl.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.pl.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.pt.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.pt.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.ro.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.ro.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.ru.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.ru.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.uk.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.uk.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.zh-Hans.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomFileFrm.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\CustomFileFrm.zh-Hant.resx">
       <DependentUpon>CustomFileFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCodeFrm.resx">
+    <EmbeddedResource Include="Forms\EditCodeFrm.resx">
       <DependentUpon>EditCodeFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FirstLaunch.resx">
+    <EmbeddedResource Include="Forms\FirstLaunch.resx">
       <DependentUpon>FirstLaunch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.cs.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.cs.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.de.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.de.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.es.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.es.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.fr.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.fr.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.hu.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.hu.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.it.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.it.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.pl.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.pl.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.pt.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.pt.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.ro.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.ro.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.ru.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.ru.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.uk.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.uk.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.zh-Hans.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GenIsoFrm.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\GenIsoFrm.zh-Hant.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.cs.resx">
+    <EmbeddedResource Include="Forms\MainWindow.cs.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.es.resx">
+    <EmbeddedResource Include="Forms\MainWindow.es.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.hu.resx">
+    <EmbeddedResource Include="Forms\MainWindow.hu.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.it.resx">
+    <EmbeddedResource Include="Forms\MainWindow.it.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.pl.resx">
+    <EmbeddedResource Include="Forms\MainWindow.pl.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.pt.resx">
+    <EmbeddedResource Include="Forms\MainWindow.pt.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.ru.resx">
+    <EmbeddedResource Include="Forms\MainWindow.ru.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.uk.resx">
+    <EmbeddedResource Include="Forms\MainWindow.uk.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\MainWindow.zh-Hans.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\MainWindow.zh-Hant.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.cs.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.cs.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.hu.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.hu.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.it.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.it.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.pl.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.pl.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.pt.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.ru.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ru.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.uk.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.uk.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hant.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.zh-Hant.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.zh-Hans.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.zh-Hans.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TestFrm.resx">
+    <EmbeddedResource Include="Forms\TestFrm.resx">
       <DependentUpon>TestFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThemeEditor.resx">
+    <EmbeddedResource Include="Forms\ThemeEditor.resx">
       <DependentUpon>ThemeEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.cs.resx">
+    <EmbeddedResource Include="Forms\USBFrm.cs.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.de.resx">
+    <EmbeddedResource Include="Forms\USBFrm.de.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.es.resx">
+    <EmbeddedResource Include="Forms\USBFrm.es.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.fr.resx">
+    <EmbeddedResource Include="Forms\USBFrm.fr.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.hu.resx">
+    <EmbeddedResource Include="Forms\USBFrm.hu.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.it.resx">
+    <EmbeddedResource Include="Forms\USBFrm.it.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.pl.resx">
+    <EmbeddedResource Include="Forms\USBFrm.pl.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.pt.resx">
+    <EmbeddedResource Include="Forms\USBFrm.pt.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.resx">
+    <EmbeddedResource Include="Forms\USBFrm.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.ro.resx">
+    <EmbeddedResource Include="Forms\USBFrm.ro.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.de.resx">
+    <EmbeddedResource Include="Forms\MainWindow.de.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.fr.resx">
+    <EmbeddedResource Include="Forms\MainWindow.fr.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
+    <EmbeddedResource Include="Forms\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.ro.resx">
+    <EmbeddedResource Include="Forms\MainWindow.ro.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -553,10 +563,12 @@
     <EmbeddedResource Include="Strings.de.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.fr.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.fr.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -565,17 +577,18 @@
     <EmbeddedResource Include="Strings.ro.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.ro.Designer.cs</LastGenOutput>
+      <DependentUpon>Strings.resx</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.ru.resx">
+    <EmbeddedResource Include="Forms\USBFrm.ru.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.uk.resx">
+    <EmbeddedResource Include="Forms\USBFrm.uk.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.zh-Hans.resx">
+    <EmbeddedResource Include="Forms\USBFrm.zh-Hans.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USBFrm.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\USBFrm.zh-Hant.resx">
       <DependentUpon>USBFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest">
@@ -657,6 +670,7 @@
     <Content Include="bin\Debug\libz.exe" />
     <Content Include="bin\Release\libz.exe" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
