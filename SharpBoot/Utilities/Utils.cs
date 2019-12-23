@@ -307,5 +307,17 @@ namespace SharpBoot.Utilities
             Directory.CreateDirectory(tempDirectory);
             return tempDirectory;
         }
+
+        public static void InvokeIfRequired(this ISynchronizeInvoke obj, MethodInvoker action)
+        {
+            if (obj.InvokeRequired)
+            {
+                obj.Invoke(action, new object[0]);
+            }
+            else
+            {
+                action();
+            }
+        }
     }
 }

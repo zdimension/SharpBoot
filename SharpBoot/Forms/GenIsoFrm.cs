@@ -16,30 +16,15 @@ using SharpBoot.Utilities;
 namespace SharpBoot.Forms
 {
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
-    public partial class GenIsoFrm : Form
+    public class GenIsoFrm : WorkerFrm
     {
-        public delegate void ChangeProgressBarDelegate(int val, int max);
-
-        public delegate void ChangeStatusDelegate(string stat);
-
-        public delegate void CloseDelegate();
-
         public bool _usb;
-
-        public bool abort;
-
-        private bool closeonclick;
 
         public string filesystem = "";
 
-
-        private readonly bool usethread = true;
-
         public GenIsoFrm(string output, bool usb)
         {
-            InitializeComponent();
-            lblStatus.Text = Strings.Init;
-            btnAnnul.Text = Strings.Cancel;
+            Load += GenIsoFrm_Load;
             OutputFilepath = output;
             _usb = usb;
         }
@@ -68,20 +53,6 @@ namespace SharpBoot.Forms
 
         public Dictionary<string, string> CustomFiles { get; set; }
 
-        public event EventHandler GenerationFinished;
-
-        protected virtual void OnFinished(EventArgs e)
-        {
-            ChangeProgress(100, 100, "");
-            GenerationFinished?.Invoke(this, e);
-            BeginInvoke(new CloseDelegate(CloseD));
-        }
-
-        public void CloseD()
-        {
-            Close();
-        }
-
         public void AddImage(ImageLine i)
         {
             Images.Add(i);
@@ -90,79 +61,18 @@ namespace SharpBoot.Forms
                 Categories.Add(i.Category);
         }
 
-        public void ChangeProgressBar(int val, int max)
-        {
-            if (pbx.InvokeRequired)
-            {
-                pbx.Invoke((MethodInvoker) (() =>
-                {
-                    pbx.Maximum = max;
-                    pbx.Value = val;
-                }));
-            }
-            else
-            {
-                pbx.Maximum = max;
-                pbx.Value = val;
-            }
-        }
-
-        public void ChangeStatus(string stat)
-        {
-            if (lblStatus.InvokeRequired) lblStatus.Invoke((MethodInvoker) (() => lblStatus.Text = stat));
-            else lblStatus.Text = stat;
-        }
-
-        public void ChangeProgress(int val, int max, string stat)
-        {
-            ChangeProgressBar(val, max);
-
-            ChangeStatus(stat);
-        }
-
-
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-
-
-            if (bwkISO.IsBusy)
-                bwkISO.CancelAsync();
-        }
-
         private void GenIsoFrm_Load(object sender, EventArgs e)
         {
             if (_usb) Text = Strings.CreatingUSB;
-            Show();
-            if (usethread)
-                bwkISO.RunWorkerAsync();
-            else
-                Generate();
         }
 
-        private void btnAnnul_Click(object sender, EventArgs e)
+        public override void DoWork()
         {
-            if (closeonclick)
-            {
-                DialogResult = DialogResult.Cancel;
-                Close();
-            }
-            else
-            {
-                bwkISO.CancelAsync();
-                SetCancel();
-            }
-        }
-
-        public void Generate()
-        {
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
 
             var f = Utils.GetTemporaryDirectory();
 
-            lblStatus.Text = Strings.Init;
+            ChangeStatus(Strings.Init);
             Thread.Sleep(1000);
 
             var ext = new SevenZipExtractor();
@@ -245,7 +155,7 @@ namespace SharpBoot.Forms
                 }
             }
 
-            if (bwkISO.CancellationPending)
+            if (bwkWorker.CancellationPending)
             {
                 abort = true;
                 return;
@@ -268,7 +178,7 @@ namespace SharpBoot.Forms
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk + " 1/6");
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
-            if (bwkISO.CancellationPending)
+            if (bwkWorker.CancellationPending)
             {
                 abort = true;
                 return;
@@ -299,7 +209,7 @@ namespace SharpBoot.Forms
             ChangeProgressBar(60, 100);
             Utils.SafeDel(archs);
 
-            if (bwkISO.CancellationPending)
+            if (bwkWorker.CancellationPending)
             {
                 abort = true;
                 return;
@@ -352,7 +262,7 @@ namespace SharpBoot.Forms
                     }
             }
 
-            if (bwkISO.CancellationPending)
+            if (bwkWorker.CancellationPending)
             {
                 abort = true;
                 return;
@@ -369,7 +279,7 @@ namespace SharpBoot.Forms
 
             //var itype = new Func<string, EntryType>(fn => Path.GetExtension(fn).ToLower() == ".img" ? EntryType.IMG : EntryType.ISO);
 
-            if (bwkISO.CancellationPending)
+            if (bwkWorker.CancellationPending)
             {
                 abort = true;
                 return;
@@ -403,7 +313,7 @@ namespace SharpBoot.Forms
 
                 ii++;
 
-                if (bwkISO.CancellationPending)
+                if (bwkWorker.CancellationPending)
                 {
                     abort = true;
                     return;
@@ -412,7 +322,7 @@ namespace SharpBoot.Forms
 
             File.WriteAllText(Path.Combine(workingDir, "grub.cfg"), Grub2.GetCode(main));
 
-            if (bwkISO.CancellationPending)
+            if (bwkWorker.CancellationPending)
             {
                 abort = true;
                 return;
@@ -457,7 +367,7 @@ namespace SharpBoot.Forms
 
                 Thread.Sleep(500);
 
-                if (bwkISO.CancellationPending)
+                if (bwkWorker.CancellationPending)
                 {
                     abort = true;
                     return;
@@ -546,26 +456,6 @@ namespace SharpBoot.Forms
             ext.Close();
         }
 
-        private void bwkISO_DoWork(object sender, DoWorkEventArgs e)
-        {
-            Generate();
-            if (abort)
-            {
-                closeonclick = true;
-                SetCancel();
-            }
-        }
-
-        private void SetCancel()
-        {
-            ChangeProgress(0, 100, Strings.OpCancelled);
-            btnAnnul.Invoke((MethodInvoker) (() =>
-            {
-                btnAnnul.Text = Strings.Close;
-                btnAnnul.DialogResult = DialogResult.Cancel;
-            }));
-        }
-
         private void GenF(string f)
         {
             var iter = 0;
@@ -582,25 +472,7 @@ namespace SharpBoot.Forms
                 iter++;
             }
 
-            Invoke((MethodInvoker) (() => OnFinished(EventArgs.Empty)));
-
             Utils.ClrTmp();
-        }
-
-        private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            if (e.Cancelled)
-            {
-                abort = true;
-                SetCancel();
-            }
-
-            if (e.Error != null)
-            {
-                if (e.Error is FileNotFoundException exception)
-                    MessageBox.Show("File not found: " + exception.FileName);
-                else throw new Exception("Error: " + e.Error.Message + "\n", e.Error);
-            }
         }
     }
 }

@@ -381,7 +381,7 @@ namespace SharpBoot.Forms
                 var fn = "";
                 fn = usb ? ((USBFrm) ask).SelectedUSB.Name.ToUpper().Substring(0, 3) : ((AskPath) ask).FileName;
                 var g = new GenIsoFrm(fn, usb);
-                g.GenerationFinished += delegate { g_GenerationFinished(g); };
+                g.WorkFinished += delegate { g_GenerationFinished(g); };
 
                 g.Title = txtTitle.Text;
                 if (usb) g.filesystem = ((USBFrm) ask).TheComboBox.SelectedItem.ToString().RemoveRecommended();
@@ -513,21 +513,38 @@ namespace SharpBoot.Forms
 
         private void chksum(string n, Func<string> f)
         {
-            var d = DateTime.Now;
             Cursor = Cursors.WaitCursor;
 
+            var frm = new GenericTask(n);
+            var res = "";
+            frm.WorkHandler = () =>
+            {
+                var d = DateTime.Now;
+                
 
-            var sb = f();
+                var sb = f();
 
-            var a = DateTime.Now;
-            var t = a - d;
-            txImInfo.Text = string.Format(Strings.ChkOf, n,
-                                Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
-            txImInfo.Text += sb + "\r\n";
-            /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
-                             "s";*/
-            txImInfo.Text += string.Format(Strings.CalcIn, t);
-            Cursor = Cursors.Default;
+                var a = DateTime.Now;
+                var t = a - d;
+
+                res = string.Format(Strings.ChkOf, n,
+                                    Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
+                res += sb + "\r\n";
+                /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
+                                 "s";*/
+                res += string.Format(Strings.CalcIn, t);
+            };
+
+            frm.WorkFinished += delegate
+            {
+                this.InvokeIfRequired(() =>
+                {
+                    Cursor = Cursors.Default;
+                    txImInfo.Text = res;
+                });
+            };
+
+            frm.ShowDialog(this);
         }
 
         private void theupdate()

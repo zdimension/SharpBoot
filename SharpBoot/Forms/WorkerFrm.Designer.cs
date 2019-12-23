@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace SharpBoot.Forms
 {
-    partial class GenIsoFrm
+    partial class WorkerFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,15 @@ namespace SharpBoot.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenIsoFrm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkerFrm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAnnul = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pbx = new System.Windows.Forms.ProgressBar();
-            this.bwkISO = new System.ComponentModel.BackgroundWorker();
+            this.bwkWorker = new System.ComponentModel.BackgroundWorker();
+            this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,26 +67,36 @@ namespace SharpBoot.Forms
             resources.ApplyResources(this.pbx, "pbx");
             this.pbx.Name = "pbx";
             // 
-            // bwkISO
+            // bwkWorker
             // 
-            this.bwkISO.WorkerSupportsCancellation = true;
-            this.bwkISO.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkISO_DoWork);
-            this.bwkISO.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkISO_RunWorkerCompleted);
+            this.bwkWorker.WorkerSupportsCancellation = true;
+            this.bwkWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkISO_DoWork);
+            this.bwkWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkISO_RunWorkerCompleted);
             // 
-            // GenIsoFrm
+            // pbxLoading
+            // 
+            this.pbxLoading.BackColor = System.Drawing.Color.Transparent;
+            this.pbxLoading.Image = global::SharpBoot.Properties.Resources.ajax_loader;
+            resources.ApplyResources(this.pbxLoading, "pbxLoading");
+            this.pbxLoading.Name = "pbxLoading";
+            this.pbxLoading.TabStop = false;
+            // 
+            // WorkerFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnAnnul;
             this.ControlBox = false;
+            this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.pbx);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "GenIsoFrm";
-            this.Load += new System.EventHandler(this.GenIsoFrm_Load);
+            this.Name = "WorkerFrm";
+            this.Load += new System.EventHandler(this.WorkerFrm_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,6 +108,7 @@ namespace SharpBoot.Forms
         private Button btnAnnul;
         private Label lblStatus;
         private ProgressBar pbx;
-        private BackgroundWorker bwkISO;
+        protected BackgroundWorker bwkWorker;
+        private PictureBox pbxLoading;
     }
 }

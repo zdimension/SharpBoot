@@ -74,6 +74,15 @@
     <Compile Include="Forms\AskPath.Designer.cs">
       <DependentUpon>AskPath.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GenericTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkerFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WorkerFrm.Designer.cs">
+      <DependentUpon>WorkerFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Bootloaders.cs" />
     <Compile Include="Models\BootMenu.cs" />
     <Compile Include="Models\CustomEntry.cs" />
@@ -115,9 +124,6 @@
     </Compile>
     <Compile Include="Forms\GenIsoFrm.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GenIsoFrm.Designer.cs">
-      <DependentUpon>GenIsoFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\GroupedComboBox\BufferedPainter.cs" />
     <Compile Include="Controls\GroupedComboBox\GroupedComboBox.cs" />
@@ -387,6 +393,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FirstLaunch.resx">
       <DependentUpon>FirstLaunch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkerFrm.resx">
+      <DependentUpon>WorkerFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GenIsoFrm.cs.resx">
       <DependentUpon>GenIsoFrm.cs</DependentUpon>
