@@ -16,15 +16,12 @@ namespace SharpBoot
 
         public EntryType SelectedType { get; set; } = EntryType.Nope;
 
+        public string FilePath => ofp.FileName;
+
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            if (ofp.ShowDialog(this) == DialogResult.OK)
-            {
-                tbxDest.Text = ofp.FileName;
-            }
+            if (ofp.ShowDialog(this) == DialogResult.OK) tbxDest.Text = ofp.FileName;
         }
-
-        public string FilePath => ofp.FileName;
 
         private void cbxEntryType_SelectedIndexChanged(object sender, EventArgs e)
         {

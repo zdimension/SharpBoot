@@ -15,7 +15,21 @@ namespace SharpBoot
 {
     public partial class AddIso : Form
     {
-        public string ISOPath { get; set; }
+        private bool changing;
+
+        private WebClient client;
+
+        public string DownFile = "";
+
+        private bool fempty;
+
+        public ISOV IsoV;
+
+
+        private Stopwatch sw;
+
+
+        private Thread th;
 
         public AddIso()
         {
@@ -27,7 +41,7 @@ namespace SharpBoot
             btnBrowse.Text = Strings.Browse;
             ofpIso.Title = label1.Text;
             sfdIso.Filter = Strings.ISOImg + " (*.iso)|*.iso";
-            int iter = 0;
+            var iter = 0;
             while (ISOInfo.ISOs.Count == 0 && iter < 20)
             {
                 Thread.Sleep(50);
@@ -35,10 +49,8 @@ namespace SharpBoot
             }
 
             if (ISOInfo.ISOs.Count == 0)
-            {
                 MessageBox.Show(
                     "If you see this message (honestly, you shouldn't ever see it), then something horribly wrong that shouldn't happen has happened.");
-            }
 
             while (cbxDetIso.Items.Count < 2)
             {
@@ -71,12 +83,18 @@ namespace SharpBoot
             rtbIsoDesc.Text = "";
         }
 
+        public string ISOPath { get; set; }
+
+        private ISOInfo selinfo => cbxISOS.SelectedItem == null ? null : ((dynamic) cbxISOS.SelectedItem).Val;
+
+        private ISOInfo selinfo2 => cbxDetIso.SelectedItem == null ? null : ((dynamic) cbxDetIso.SelectedItem).Val;
+
+        public bool IsDownload => rbnDown.Checked;
+
         private void AddIso_Closing(object sender, CancelEventArgs e)
         {
             th?.Abort();
         }
-
-        private bool fempty;
 
         private void AddIso_Load(object sender, EventArgs e)
         {
@@ -113,13 +131,9 @@ namespace SharpBoot
 
         private void txtFile_TextChanged(object sender, EventArgs e)
         {
-            btnOK.Enabled = !(string.IsNullOrWhiteSpace(txtFile.Text));
+            btnOK.Enabled = !string.IsNullOrWhiteSpace(txtFile.Text);
             ISOPath = txtFile.Text;
         }
-
-        private ISOInfo selinfo => cbxISOS.SelectedItem == null ? null : ((dynamic) cbxISOS.SelectedItem).Val;
-
-        private ISOInfo selinfo2 => cbxDetIso.SelectedItem == null ? null : ((dynamic) cbxDetIso.SelectedItem).Val;
 
         private ISOV selinfoversion()
         {
@@ -140,17 +154,18 @@ namespace SharpBoot
                 var latest = selinfo.LatestVersion;
                 cbxVersion.SelectedIndex = 0;
                 for (var i = 0; i < ds.Count; i++)
-                {
                     if (ds[i].Value == latest)
                     {
                         cbxVersion.SelectedIndex = i;
                         break;
                     }
-                }
 
                 rtbIsoDesc.Text = selinfo.Description;
             }
-            else cbxVersion.Enabled = cbxVersion.Visible = rtbIsoDesc.Visible = false;
+            else
+            {
+                cbxVersion.Enabled = cbxVersion.Visible = rtbIsoDesc.Visible = false;
+            }
         }
 
         private void setprg(int v)
@@ -158,8 +173,6 @@ namespace SharpBoot
             pbxPrg.Value = v;
             lblPercent.Text = v + " %";
         }
-
-        private WebClient client;
 
         public void DownloadStuff()
         {
@@ -194,14 +207,10 @@ namespace SharpBoot
             Close();
         }
 
-        public bool IsDownload => rbnDown.Checked;
-
-        public string DownFile = "";
-
         public void CheckNotEmpty()
         {
             if (rbnFile.Checked)
-                btnOK.Enabled = !(string.IsNullOrWhiteSpace(txtFile.Text));
+                btnOK.Enabled = !string.IsNullOrWhiteSpace(txtFile.Text);
             else
                 btnOK.Enabled = cbxISOS.SelectedIndex != -1;
         }
@@ -215,11 +224,6 @@ namespace SharpBoot
                 md5stuff();
             }
         }
-
-
-        private Thread th;
-
-        private bool changing;
 
         private void md5stuff()
         {
@@ -265,17 +269,12 @@ namespace SharpBoot
             th.Start();
         }
 
-        public ISOV IsoV;
-
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (IsDownload)
             {
                 IsoV = selinfoversion();
-                if (IsoV != null && IsoV.DownloadLink != "")
-                {
-                    sfdIso.FileName = Path.GetFileName(IsoV.DownloadLink);
-                }
+                if (IsoV != null && IsoV.DownloadLink != "") sfdIso.FileName = Path.GetFileName(IsoV.DownloadLink);
 
                 if (sfdIso.ShowDialog(this) == DialogResult.OK)
                 {
@@ -287,9 +286,6 @@ namespace SharpBoot
                 }
             }
         }
-
-
-        private Stopwatch sw;
 
         private void ClientOnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
@@ -311,14 +307,12 @@ namespace SharpBoot
         {
             if (changing) return;
             if (cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null)
-            {
                 IsoV = cbxDetIso.SelectedIndex == 0
                     ? new ISOV("other", "")
-                    : (selinfo2 == null
+                    : selinfo2 == null
                         ? null
-                        : (selinfo2.LatestVersion ??
-                           new ISOV("nover", selinfo2.Name, "", selinfo2.Filename, true) {Parent = selinfo2}));
-            }
+                        : selinfo2.LatestVersion ??
+                          new ISOV("nover", selinfo2.Name, "", selinfo2.Filename, true) {Parent = selinfo2};
         }
     }
 }

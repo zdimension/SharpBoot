@@ -48,15 +48,9 @@ namespace SharpBoot
             p.Start();
 
             if (wait)
-            {
                 while (!p.HasExited)
-                {
                     if (sp.Elapsed.Seconds > maxDelay)
-                    {
                         break;
-                    }
-                }
-            }
         }
     }
 }

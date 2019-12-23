@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Media;
-using System.Reflection;
 using System.Windows.Forms;
 using SharpBoot.Properties;
 
@@ -13,7 +11,7 @@ namespace SharpBoot
 {
     public partial class About : Form
     {
-        public static List<Image> Flags => new About().ilTranslators.Images.Cast<Image>().ToList();
+        private readonly SoundPlayer mp = new SoundPlayer(Resources.sharpboot2); // shhhh...
 
 
         public About()
@@ -32,6 +30,8 @@ namespace SharpBoot
             FormClosing += (sender, args) => { mp.Stop(); };
         }
 
+        public static List<Image> Flags => new About().ilTranslators.Images.Cast<Image>().ToList();
+
         private void lvTranslators_DoubleClick(object sender, EventArgs e)
         {
             if (lvTranslators.SelectedItems.Count == 1)
@@ -49,8 +49,6 @@ namespace SharpBoot
             if (e.LinkText != "")
                 Process.Start(e.LinkText);
         }
-
-        private SoundPlayer mp = new SoundPlayer(Resources.sharpboot2); // shhhh...
 
         private void pbLogo_Click(object sender, EventArgs e)
         {

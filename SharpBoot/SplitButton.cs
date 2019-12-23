@@ -12,21 +12,21 @@ namespace wyDay.Controls
 {
     public class SplitButton : Button
     {
-        private PushButtonState _state;
-
-
         private const int SplitSectionWidth = 18;
 
-        private static int BorderSize = SystemInformation.Border3DSize.Width * 2;
-        private bool skipNextOpen;
+        private static readonly int BorderSize = SystemInformation.Border3DSize.Width * 2;
+        private PushButtonState _state;
         private Rectangle dropDownRectangle;
-        private bool showSplit;
+
+        private bool isMouseEntered;
 
         private bool isSplitMenuVisible;
+        private ContextMenu m_SplitMenu;
 
 
         private ContextMenuStrip m_SplitMenuStrip;
-        private ContextMenu m_SplitMenu;
+        private bool showSplit;
+        private bool skipNextOpen;
 
         private TextFormatFlags textFormatFlags = TextFormatFlags.Default;
 
@@ -34,98 +34,6 @@ namespace wyDay.Controls
         {
             AutoSize = true;
         }
-
-        #region Properties
-
-        [Browsable(false)]
-        public override ContextMenuStrip ContextMenuStrip
-        {
-            get { return SplitMenuStrip; }
-            set { SplitMenuStrip = value; }
-        }
-
-        [DefaultValue(null)]
-        public ContextMenu SplitMenu
-        {
-            get { return m_SplitMenu; }
-            set
-            {
-                //remove the event handlers for the old SplitMenu
-                if (m_SplitMenu != null)
-                {
-                    m_SplitMenu.Popup -= SplitMenu_Popup;
-                }
-
-                //add the event handlers for the new SplitMenu
-                if (value != null)
-                {
-                    ShowSplit = true;
-                    value.Popup += SplitMenu_Popup;
-                }
-                else
-                    ShowSplit = false;
-
-                m_SplitMenu = value;
-            }
-        }
-
-        [DefaultValue(null)]
-        public ContextMenuStrip SplitMenuStrip
-        {
-            get { return m_SplitMenuStrip; }
-            set
-            {
-                //remove the event handlers for the old SplitMenuStrip
-                if (m_SplitMenuStrip != null)
-                {
-                    m_SplitMenuStrip.Closing -= SplitMenuStrip_Closing;
-                    m_SplitMenuStrip.Opening -= SplitMenuStrip_Opening;
-                }
-
-                //add the event handlers for the new SplitMenuStrip
-                if (value != null)
-                {
-                    ShowSplit = true;
-                    value.Closing += SplitMenuStrip_Closing;
-                    value.Opening += SplitMenuStrip_Opening;
-                }
-                else
-                    ShowSplit = false;
-
-
-                m_SplitMenuStrip = value;
-            }
-        }
-
-        [DefaultValue(false)]
-        public bool ShowSplit
-        {
-            set
-            {
-                if (value != showSplit)
-                {
-                    showSplit = value;
-                    Invalidate();
-
-                    Parent?.PerformLayout();
-                }
-            }
-        }
-
-        private PushButtonState State
-        {
-            get { return _state; }
-            set
-            {
-                if (!_state.Equals(value))
-                {
-                    _state = value;
-                    Invalidate();
-                }
-            }
-        }
-
-        #endregion Properties
 
         protected override bool IsInputKey(Keys keyData)
         {
@@ -144,9 +52,7 @@ namespace wyDay.Controls
             }
 
             if (!State.Equals(PushButtonState.Pressed) && !State.Equals(PushButtonState.Disabled))
-            {
                 State = PushButtonState.Default;
-            }
         }
 
         protected override void OnKeyDown(KeyEventArgs kevent)
@@ -154,14 +60,10 @@ namespace wyDay.Controls
             if (showSplit)
             {
                 if (kevent.KeyCode.Equals(Keys.Down) && !isSplitMenuVisible)
-                {
                     ShowContextMenuStrip();
-                }
 
                 else if (kevent.KeyCode.Equals(Keys.Space) && kevent.Modifiers == Keys.None)
-                {
                     State = PushButtonState.Pressed;
-                }
             }
 
             base.OnKeyDown(kevent);
@@ -171,17 +73,11 @@ namespace wyDay.Controls
         {
             if (kevent.KeyCode.Equals(Keys.Space))
             {
-                if (MouseButtons == MouseButtons.None)
-                {
-                    State = PushButtonState.Normal;
-                }
+                if (MouseButtons == MouseButtons.None) State = PushButtonState.Normal;
             }
             else if (kevent.KeyCode.Equals(Keys.Apps))
             {
-                if (MouseButtons == MouseButtons.None && !isSplitMenuVisible)
-                {
-                    ShowContextMenuStrip();
-                }
+                if (MouseButtons == MouseButtons.None && !isSplitMenuVisible) ShowContextMenuStrip();
             }
 
             base.OnKeyUp(kevent);
@@ -203,12 +99,8 @@ namespace wyDay.Controls
             }
 
             if (!State.Equals(PushButtonState.Pressed) && !State.Equals(PushButtonState.Disabled))
-            {
                 State = PushButtonState.Normal;
-            }
         }
-
-        private bool isMouseEntered;
 
         protected override void OnMouseEnter(EventArgs e)
         {
@@ -221,9 +113,7 @@ namespace wyDay.Controls
             isMouseEntered = true;
 
             if (!State.Equals(PushButtonState.Pressed) && !State.Equals(PushButtonState.Disabled))
-            {
                 State = PushButtonState.Hot;
-            }
         }
 
         protected override void OnMouseLeave(EventArgs e)
@@ -237,9 +127,7 @@ namespace wyDay.Controls
             isMouseEntered = false;
 
             if (!State.Equals(PushButtonState.Pressed) && !State.Equals(PushButtonState.Disabled))
-            {
                 State = Focused ? PushButtonState.Default : PushButtonState.Normal;
-            }
         }
 
         protected override void OnMouseDown(MouseEventArgs e)
@@ -255,13 +143,9 @@ namespace wyDay.Controls
                 skipNextOpen = true;
 
             if (dropDownRectangle.Contains(e.Location) && !isSplitMenuVisible && e.Button == MouseButtons.Left)
-            {
                 ShowContextMenuStrip();
-            }
             else
-            {
                 State = PushButtonState.Pressed;
-            }
         }
 
         protected override void OnMouseUp(MouseEventArgs mevent)
@@ -282,9 +166,7 @@ namespace wyDay.Controls
                 SetButtonDrawState();
 
                 if (ClientRectangle.Contains(mevent.Location) && !dropDownRectangle.Contains(mevent.Location))
-                {
                     OnClick(new EventArgs());
-                }
             }
         }
 
@@ -321,7 +203,7 @@ namespace wyDay.Controls
                 new Rectangle(internalBorder - 1,
                     internalBorder - 1,
                     bounds.Width - dropDownRectangle.Width - internalBorder,
-                    bounds.Height - (internalBorder * 2) + 2);
+                    bounds.Height - internalBorder * 2 + 2);
 
 
             if (RightToLeft == RightToLeft.Yes)
@@ -339,9 +221,7 @@ namespace wyDay.Controls
 
             // draw the focus rectangle.
             if (State != PushButtonState.Pressed && Focused && ShowFocusCues)
-            {
                 ControlPaint.DrawFocusRectangle(g, focusRect);
-            }
         }
 
         private void PaintTextandImage(Graphics g, Rectangle bounds)
@@ -369,10 +249,8 @@ namespace wyDay.Controls
 
             //draw the text
             if (!string.IsNullOrEmpty(Text))
-            {
                 TextRenderer.DrawText(g, Text, Font, text_rectangle, Enabled ? ForeColor : SystemColors.ControlDark,
                     textFormatFlags);
-            }
         }
 
         private static ComboBoxState getSt(PushButtonState st)
@@ -482,8 +360,8 @@ namespace wyDay.Controls
             }
 
             // Pad the result
-            ret_size.Height += (Padding.Vertical + 6);
-            ret_size.Width += (Padding.Horizontal + 6);
+            ret_size.Height += Padding.Vertical + 6;
+            ret_size.Width += Padding.Horizontal + 6;
 
             //pad the splitButton arrow region
             if (showSplit)
@@ -491,6 +369,164 @@ namespace wyDay.Controls
 
             return ret_size;
         }
+
+        public void ShowContextMenuStrip()
+        {
+            if (skipNextOpen)
+            {
+                // we were called because we're closing the context menu strip
+                // when clicking the dropdown button.
+                skipNextOpen = false;
+                return;
+            }
+
+            State = PushButtonState.Pressed;
+
+            if (m_SplitMenu != null)
+                m_SplitMenu.Show(this, new Point(0, Height));
+            else
+                m_SplitMenuStrip?.Show(this, new Point(0, Height), ToolStripDropDownDirection.BelowRight);
+        }
+
+        private void SplitMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+            isSplitMenuVisible = true;
+        }
+
+        private void SplitMenuStrip_Closing(object sender, ToolStripDropDownClosingEventArgs e)
+        {
+            isSplitMenuVisible = false;
+
+            SetButtonDrawState();
+
+            if (e.CloseReason == ToolStripDropDownCloseReason.AppClicked)
+                skipNextOpen = dropDownRectangle.Contains(PointToClient(Cursor.Position)) &&
+                               MouseButtons == MouseButtons.Left;
+        }
+
+
+        private void SplitMenu_Popup(object sender, EventArgs e)
+        {
+            isSplitMenuVisible = true;
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            //0x0212 == WM_EXITMENULOOP
+            if (m.Msg == 0x0212)
+            {
+                //this message is only sent when a ContextMenu is closed (not a ContextMenuStrip)
+                isSplitMenuVisible = false;
+                SetButtonDrawState();
+            }
+
+            base.WndProc(ref m);
+        }
+
+        private void SetButtonDrawState()
+        {
+            if (Bounds.Contains(Parent.PointToClient(Cursor.Position)))
+                State = PushButtonState.Hot;
+            else if (Focused)
+                State = PushButtonState.Default;
+            else if (!Enabled)
+                State = PushButtonState.Disabled;
+            else
+                State = PushButtonState.Normal;
+        }
+
+        #region Properties
+
+        [Browsable(false)]
+        public override ContextMenuStrip ContextMenuStrip
+        {
+            get => SplitMenuStrip;
+            set => SplitMenuStrip = value;
+        }
+
+        [DefaultValue(null)]
+        public ContextMenu SplitMenu
+        {
+            get => m_SplitMenu;
+            set
+            {
+                //remove the event handlers for the old SplitMenu
+                if (m_SplitMenu != null) m_SplitMenu.Popup -= SplitMenu_Popup;
+
+                //add the event handlers for the new SplitMenu
+                if (value != null)
+                {
+                    ShowSplit = true;
+                    value.Popup += SplitMenu_Popup;
+                }
+                else
+                {
+                    ShowSplit = false;
+                }
+
+                m_SplitMenu = value;
+            }
+        }
+
+        [DefaultValue(null)]
+        public ContextMenuStrip SplitMenuStrip
+        {
+            get => m_SplitMenuStrip;
+            set
+            {
+                //remove the event handlers for the old SplitMenuStrip
+                if (m_SplitMenuStrip != null)
+                {
+                    m_SplitMenuStrip.Closing -= SplitMenuStrip_Closing;
+                    m_SplitMenuStrip.Opening -= SplitMenuStrip_Opening;
+                }
+
+                //add the event handlers for the new SplitMenuStrip
+                if (value != null)
+                {
+                    ShowSplit = true;
+                    value.Closing += SplitMenuStrip_Closing;
+                    value.Opening += SplitMenuStrip_Opening;
+                }
+                else
+                {
+                    ShowSplit = false;
+                }
+
+
+                m_SplitMenuStrip = value;
+            }
+        }
+
+        [DefaultValue(false)]
+        public bool ShowSplit
+        {
+            set
+            {
+                if (value != showSplit)
+                {
+                    showSplit = value;
+                    Invalidate();
+
+                    Parent?.PerformLayout();
+                }
+            }
+        }
+
+        private PushButtonState State
+        {
+            get => _state;
+            set
+            {
+                if (!_state.Equals(value))
+                {
+                    _state = value;
+                    Invalidate();
+                }
+            }
+        }
+
+        #endregion Properties
 
         #region Button Layout Calculations
 
@@ -769,7 +805,7 @@ namespace wyDay.Controls
                 case ContentAlignment.BottomCenter:
                 case ContentAlignment.MiddleCenter:
                 case ContentAlignment.TopCenter:
-                    x = Math.Max(outer.X + ((outer.Width - inner.Width) / 2), outer.Left);
+                    x = Math.Max(outer.X + (outer.Width - inner.Width) / 2, outer.Left);
                     break;
                 case ContentAlignment.BottomRight:
                 case ContentAlignment.MiddleRight:
@@ -801,84 +837,5 @@ namespace wyDay.Controls
         }
 
         #endregion Button Layout Calculations
-
-        public void ShowContextMenuStrip()
-        {
-            if (skipNextOpen)
-            {
-                // we were called because we're closing the context menu strip
-                // when clicking the dropdown button.
-                skipNextOpen = false;
-                return;
-            }
-
-            State = PushButtonState.Pressed;
-
-            if (m_SplitMenu != null)
-            {
-                m_SplitMenu.Show(this, new Point(0, Height));
-            }
-            else
-            {
-                m_SplitMenuStrip?.Show(this, new Point(0, Height), ToolStripDropDownDirection.BelowRight);
-            }
-        }
-
-        private void SplitMenuStrip_Opening(object sender, CancelEventArgs e)
-        {
-            isSplitMenuVisible = true;
-        }
-
-        private void SplitMenuStrip_Closing(object sender, ToolStripDropDownClosingEventArgs e)
-        {
-            isSplitMenuVisible = false;
-
-            SetButtonDrawState();
-
-            if (e.CloseReason == ToolStripDropDownCloseReason.AppClicked)
-            {
-                skipNextOpen = (dropDownRectangle.Contains(PointToClient(Cursor.Position))) &&
-                               MouseButtons == MouseButtons.Left;
-            }
-        }
-
-
-        private void SplitMenu_Popup(object sender, EventArgs e)
-        {
-            isSplitMenuVisible = true;
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            //0x0212 == WM_EXITMENULOOP
-            if (m.Msg == 0x0212)
-            {
-                //this message is only sent when a ContextMenu is closed (not a ContextMenuStrip)
-                isSplitMenuVisible = false;
-                SetButtonDrawState();
-            }
-
-            base.WndProc(ref m);
-        }
-
-        private void SetButtonDrawState()
-        {
-            if (Bounds.Contains(Parent.PointToClient(Cursor.Position)))
-            {
-                State = PushButtonState.Hot;
-            }
-            else if (Focused)
-            {
-                State = PushButtonState.Default;
-            }
-            else if (!Enabled)
-            {
-                State = PushButtonState.Disabled;
-            }
-            else
-            {
-                State = PushButtonState.Normal;
-            }
-        }
     }
 }

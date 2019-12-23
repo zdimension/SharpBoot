@@ -38,9 +38,9 @@ internal static class Interop
     [StructLayout(LayoutKind.Sequential)]
     internal struct BP_ANIMATIONPARAMS
     {
-        public Int32 cbSize, dwFlags;
+        public int cbSize, dwFlags;
         public BP_ANIMATIONSTYLE style;
-        public Int32 dwDuration;
+        public int dwDuration;
     }
 
     internal enum BP_BUFFERFORMAT

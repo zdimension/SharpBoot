@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using SharpBoot.Properties;
 
 namespace SharpBoot
 {
@@ -20,7 +16,7 @@ namespace SharpBoot
             SetSyslinux();*/
 
             //fakeVGA1.BackgroundImage = Utils.DrawFilledRectangle(640, 480, Color.White);
-            fakeVGA1.BackgroundImage = Image.FromStream(new MemoryStream(Properties.Resources.sharpboot));
+            fakeVGA1.BackgroundImage = Image.FromStream(new MemoryStream(Resources.sharpboot));
         }
 
         private void ThemeEditor_Load(object sender, EventArgs e)

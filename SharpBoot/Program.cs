@@ -17,16 +17,36 @@ namespace SharpBoot
 {
     public static class Program
     {
+        public enum Platform
+        {
+            Windows,
+            Linux,
+            Mac
+        }
+
         public static string SevenZipPath = "";
+
+        public static string editcode = "";
+        public static string fpath = "";
+
+        public static readonly char DirChar = Path.DirectorySeparatorChar;
+        public static readonly string DirCharStr = Path.DirectorySeparatorChar.ToString();
+
+        public static bool UseCyrillicFont => GetEnc().CodePage == 866;
+
+        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
+
+        public static bool IsMono => Type.GetType("Mono.Runtime") != null;
+
+        public static bool IsLinux => RunningPlatform() == Platform.Linux;
+
+        public static bool IsWin => RunningPlatform() == Platform.Windows;
 
         public static IDictionary<TKey, TValue> ToDictionary<TKey, TValue>(
             this IEnumerable<KeyValuePair<TKey, TValue>> list)
         {
             return list.ToDictionary(x => x.Key, x => x.Value);
         }
-
-        public static string editcode = "";
-        public static string fpath = "";
 
 
         /// <summary>
@@ -67,8 +87,6 @@ namespace SharpBoot
             HandleUnhandled((Exception) unhandledExceptionEventArgs.ExceptionObject);
         }
 
-        public static bool UseCyrillicFont => GetEnc().CodePage == 866;
-
         private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
         {
             HandleUnhandled(e.Exception, "Thread exception");
@@ -81,16 +99,11 @@ namespace SharpBoot
             MessageBox.Show(title + ": \n" + ex.Message + "\n\n" + ex.StackTrace, title);
         }
 
-        public static readonly char DirChar = Path.DirectorySeparatorChar;
-        public static readonly string DirCharStr = Path.DirectorySeparatorChar.ToString();
-
         public static string GetVersion()
         {
             var v = Assembly.GetEntryAssembly().GetName().Version;
             return v.Major + "." + v.Minor + (v.Build == 0 ? "" : "." + v.Build);
         }
-
-        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
 
         public static Encoding GetEnc()
         {
@@ -180,17 +193,6 @@ namespace SharpBoot
         [DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
         public static extern long StrFormatByteSize(long fileSize, StringBuilder buffer, int bufferSize);
 
-        public enum Platform
-        {
-            Windows,
-            Linux,
-            Mac
-        }
-
-        public static bool IsMono => Type.GetType("Mono.Runtime") != null;
-
-        public static bool IsLinux => RunningPlatform() == Platform.Linux;
-
 
         /// http://stackoverflow.com/q/10138040/2196124
         public static Platform RunningPlatform()
@@ -216,8 +218,6 @@ namespace SharpBoot
             }
         }
 
-        public static bool IsWin => RunningPlatform() == Platform.Windows;
-
         public static string GetSizeString(long file)
         {
             if (UseSystemSize.Contains(Thread.CurrentThread.CurrentUICulture))
@@ -233,7 +233,7 @@ namespace SharpBoot
             var bytes = Math.Abs(file);
             var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
             var num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return (Math.Sign(file) * num) + " " + suf[place];
+            return Math.Sign(file) * num + " " + suf[place];
         }
 
 

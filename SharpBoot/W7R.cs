@@ -14,36 +14,63 @@ namespace W7R
 {
     internal class Windows7ColorTable : ProfessionalColorTable
     {
+        #region Check
+
+        /// <summary>
+        ///     Gets the solid color to use when the check box is selected and gradients are being used.
+        /// </summary>
+        public override Color CheckBackground => _checkBack;
+
+        #endregion
+
+        #region ImageMargin
+
+        /// <summary>
+        ///     Gets the starting color of the gradient used in the image margin of a ToolStripDropDownMenu.
+        /// </summary>
+        public override Color ImageMarginGradientBegin => _imageMargin;
+
+        #endregion
+
+        #region MenuBorder
+
+        /// <summary>
+        ///     Gets the border color or a MenuStrip.
+        /// </summary>
+        public override Color MenuBorder => _menuBorder;
+
+        #endregion
+
         #region Static Fixed Colors - Blue Color Scheme
 
-        private static Color _contextMenuBack = Color.FromArgb(250, 250, 250);
-        private static Color _buttonPressedBegin = Color.FromArgb(248, 181, 106);
-        private static Color _buttonPressedEnd = Color.FromArgb(255, 208, 134);
-        private static Color _buttonPressedMiddle = Color.FromArgb(251, 140, 60);
-        private static Color _buttonSelectedBegin = Color.FromArgb(255, 255, 222);
-        private static Color _buttonSelectedEnd = Color.FromArgb(255, 203, 136);
-        private static Color _buttonSelectedMiddle = Color.FromArgb(255, 225, 172);
-        private static Color _menuItemSelectedBegin = Color.FromArgb(255, 213, 103);
-        private static Color _menuItemSelectedEnd = Color.FromArgb(255, 228, 145);
-        private static Color _checkBack = Color.FromArgb(234, 242, 250);
-        private static Color _gripDark = Color.FromArgb(111, 157, 217);
-        private static Color _gripLight = Color.FromArgb(255, 255, 255);
-        private static Color _imageMargin = Color.FromArgb(241, 241, 241);
-        private static Color _menuBorder = Color.FromArgb(134, 134, 134);
-        private static Color _overflowBegin = Color.FromArgb(167, 204, 251);
-        private static Color _overflowEnd = Color.FromArgb(101, 147, 207);
-        private static Color _overflowMiddle = Color.FromArgb(167, 204, 251);
-        private static Color _menuToolBack = Color.FromArgb(191, 219, 255);
-        private static Color _separatorDark = Color.FromArgb(154, 198, 255);
-        private static Color _separatorLight = Color.FromArgb(255, 255, 255);
-        private static Color _statusStripLight = Color.FromArgb(215, 229, 247);
-        private static Color _statusStripDark = Color.FromArgb(172, 201, 238);
-        private static Color _toolStripBorder = Color.FromArgb(111, 157, 217);
-        private static Color _toolStripContentEnd = Color.FromArgb(164, 195, 235);
-        private static Color _toolStripBegin = Color.FromArgb(227, 239, 255);
-        private static Color _toolStripEnd = Color.FromArgb(152, 186, 230);
-        private static Color _toolStripMiddle = Color.FromArgb(222, 236, 255);
-        private static Color _buttonBorder = Color.FromArgb(121, 153, 194);
+        private static readonly Color _contextMenuBack = Color.FromArgb(250, 250, 250);
+        private static readonly Color _buttonPressedBegin = Color.FromArgb(248, 181, 106);
+        private static readonly Color _buttonPressedEnd = Color.FromArgb(255, 208, 134);
+        private static readonly Color _buttonPressedMiddle = Color.FromArgb(251, 140, 60);
+        private static readonly Color _buttonSelectedBegin = Color.FromArgb(255, 255, 222);
+        private static readonly Color _buttonSelectedEnd = Color.FromArgb(255, 203, 136);
+        private static readonly Color _buttonSelectedMiddle = Color.FromArgb(255, 225, 172);
+        private static readonly Color _menuItemSelectedBegin = Color.FromArgb(255, 213, 103);
+        private static readonly Color _menuItemSelectedEnd = Color.FromArgb(255, 228, 145);
+        private static readonly Color _checkBack = Color.FromArgb(234, 242, 250);
+        private static readonly Color _gripDark = Color.FromArgb(111, 157, 217);
+        private static readonly Color _gripLight = Color.FromArgb(255, 255, 255);
+        private static readonly Color _imageMargin = Color.FromArgb(241, 241, 241);
+        private static readonly Color _menuBorder = Color.FromArgb(134, 134, 134);
+        private static readonly Color _overflowBegin = Color.FromArgb(167, 204, 251);
+        private static readonly Color _overflowEnd = Color.FromArgb(101, 147, 207);
+        private static readonly Color _overflowMiddle = Color.FromArgb(167, 204, 251);
+        private static readonly Color _menuToolBack = Color.FromArgb(191, 219, 255);
+        private static readonly Color _separatorDark = Color.FromArgb(154, 198, 255);
+        private static readonly Color _separatorLight = Color.FromArgb(255, 255, 255);
+        private static readonly Color _statusStripLight = Color.FromArgb(215, 229, 247);
+        private static readonly Color _statusStripDark = Color.FromArgb(172, 201, 238);
+        private static readonly Color _toolStripBorder = Color.FromArgb(111, 157, 217);
+        private static readonly Color _toolStripContentEnd = Color.FromArgb(164, 195, 235);
+        private static readonly Color _toolStripBegin = Color.FromArgb(227, 239, 255);
+        private static readonly Color _toolStripEnd = Color.FromArgb(152, 186, 230);
+        private static readonly Color _toolStripMiddle = Color.FromArgb(222, 236, 255);
+        private static readonly Color _buttonBorder = Color.FromArgb(121, 153, 194);
 
         #endregion
 
@@ -94,15 +121,6 @@ namespace W7R
 
         #endregion
 
-        #region Check
-
-        /// <summary>
-        ///     Gets the solid color to use when the check box is selected and gradients are being used.
-        /// </summary>
-        public override Color CheckBackground => _checkBack;
-
-        #endregion
-
         #region Grip
 
         /// <summary>
@@ -114,24 +132,6 @@ namespace W7R
         ///     Gets the color to use for highlight effects on the grip or move handle.
         /// </summary>
         public override Color GripLight => _gripLight;
-
-        #endregion
-
-        #region ImageMargin
-
-        /// <summary>
-        ///     Gets the starting color of the gradient used in the image margin of a ToolStripDropDownMenu.
-        /// </summary>
-        public override Color ImageMarginGradientBegin => _imageMargin;
-
-        #endregion
-
-        #region MenuBorder
-
-        /// <summary>
-        ///     Gets the border color or a MenuStrip.
-        /// </summary>
-        public override Color MenuBorder => _menuBorder;
 
         #endregion
 
@@ -308,8 +308,8 @@ namespace W7R
     {
         #region Instance Fields
 
-        private Graphics _g;
-        private SmoothingMode _old;
+        private readonly Graphics _g;
+        private readonly SmoothingMode _old;
 
         #endregion
 
@@ -344,8 +344,8 @@ namespace W7R
     {
         #region Instance Fields
 
-        private Graphics _g;
-        private TextRenderingHint _old;
+        private readonly Graphics _g;
+        private readonly TextRenderingHint _old;
 
         #endregion
 
@@ -380,8 +380,8 @@ namespace W7R
     {
         #region Instance Fields
 
-        private Graphics _g;
-        private Region _old;
+        private readonly Graphics _g;
+        private readonly Region _old;
 
         #endregion
 
@@ -434,316 +434,6 @@ namespace W7R
 
         public static Windows7Renderer Instance => _instance ?? (_instance = new Windows7Renderer());
 
-        #region GradientItemColors
-
-        private class GradientItemColors
-        {
-            #region Public Fields
-
-            public Color InsideTop1;
-            public Color InsideTop2;
-            public Color InsideBottom1;
-            public Color InsideBottom2;
-            public Color FillTop1;
-            public Color FillTop2;
-            public Color FillBottom1;
-            public Color FillBottom2;
-            public Color Border1;
-            public Color Border2;
-
-            #endregion
-
-            #region Identity
-
-            public GradientItemColors(Color insideTop1, Color insideTop2,
-                Color insideBottom1, Color insideBottom2,
-                Color fillTop1, Color fillTop2,
-                Color fillBottom1, Color fillBottom2,
-                Color border1, Color border2)
-            {
-                InsideTop1 = insideTop1;
-                InsideTop2 = insideTop2;
-                InsideBottom1 = insideBottom1;
-                InsideBottom2 = insideBottom2;
-                FillTop1 = fillTop1;
-                FillTop2 = fillTop2;
-                FillBottom1 = fillBottom1;
-                FillBottom2 = fillBottom2;
-                Border1 = border1;
-                Border2 = border2;
-            }
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Static Metrics
-
-        private const int _gripOffset = 1;
-        private const int _gripSquare = 2;
-        private const int _gripSize = 3;
-        private const int _gripMove = 4;
-        private const int _gripLines = 3;
-        private const int _checkInset = 0;
-        private const int _marginInset = 2;
-        private const int _separatorInset = 25;
-        private const float _cutToolItemMenu = 1.0f;
-        private const float _cutContextMenu = 0f;
-        private const float _cutMenuItemBack = 1.2f;
-        private const float _contextCheckTickThickness = 1.6f;
-        private static Blend _statusStripBlend;
-
-        #endregion
-
-        #region Static Colors
-
-        private static Color _c1 = Color.FromArgb(167, 167, 167);
-        private static Color _c2 = Color.FromArgb(21, 66, 139);
-        private static Color _c3 = Color.FromArgb(76, 83, 92);
-        private static Color _c4 = Color.FromArgb(250, 250, 250);
-        private static Color _c5 = Color.FromArgb(248, 248, 248);
-        private static Color _c6 = Color.FromArgb(243, 243, 243);
-        private static Color _r1 = Color.FromArgb(255, 255, 251);
-        private static Color _r2 = Color.FromArgb(255, 249, 227);
-        private static Color _r3 = Color.FromArgb(255, 242, 201);
-        private static Color _r4 = Color.FromArgb(248, 251, 254);
-
-        private static Color _r5 = Color.FromArgb(248, 251, 254);
-        private static Color _r6 = Color.FromArgb(237, 242, 250);
-
-        private static Color _r7 = Color.FromArgb(215, 228, 244);
-        private static Color _r8 = Color.FromArgb(193, 210, 232);
-
-
-        private static Color _r9 = Color.FromArgb(187, 202, 219);
-        private static Color _rA = Color.FromArgb(177, 195, 216);
-
-        private static Color _rB = Color.FromArgb(182, 190, 192);
-        private static Color _rC = Color.FromArgb(155, 163, 167);
-
-        private static Color _rD = Color.FromArgb(201, 212, 228);
-        private static Color _rE = Color.FromArgb(177, 195, 216);
-        private static Color _rF = Color.FromArgb(170, 188, 211);
-        private static Color _rG = Color.FromArgb(207, 220, 237);
-
-        private static Color _rH = Color.FromArgb(221, 232, 241);
-        private static Color _rI = Color.FromArgb(216, 228, 241);
-        private static Color _rJ = Color.FromArgb(207, 220, 237);
-        private static Color _rK = Color.FromArgb(207, 219, 236);
-
-        private static Color _rL = Color.FromArgb(249, 192, 103);
-        private static Color _rM = Color.FromArgb(250, 195, 93);
-        private static Color _rN = Color.FromArgb(248, 190, 81);
-        private static Color _rO = Color.FromArgb(255, 208, 49);
-        private static Color _rP = Color.FromArgb(254, 214, 168);
-        private static Color _rQ = Color.FromArgb(252, 180, 100);
-        private static Color _rR = Color.FromArgb(252, 161, 54);
-        private static Color _rS = Color.FromArgb(254, 238, 170);
-        private static Color _rT = Color.FromArgb(249, 202, 113);
-        private static Color _rU = Color.FromArgb(250, 205, 103);
-        private static Color _rV = Color.FromArgb(248, 200, 91);
-        private static Color _rW = Color.FromArgb(255, 218, 59);
-        private static Color _rX = Color.FromArgb(254, 185, 108);
-        private static Color _rY = Color.FromArgb(252, 161, 54);
-        private static Color _rZ = Color.FromArgb(254, 238, 170);
-
-
-        //private static Color clrBGTop1 = Color.FromArgb(255, 253, 255, 254);
-        //private static Color clrBGTop2 = Color.FromArgb(255, 222, 231, 240);
-        //private static Color clrBGBottom1 = Color.FromArgb(255, 231, 240, 249);
-        //private static Color clrBGBottom2 = Color.FromArgb(255, 224, 232, 243);
-        //private static Color clrBGBorder = Color.FromArgb(255, 235, 243, 254);
-        //private static Color clrBGGreen = Color.FromArgb(0, 255, 255, 255);
-        //private static Color clrBtnDarkBorder = Color.FromArgb(200, 3, 50, 81);
-        //private static Color clrBtnLightBorder = Color.FromArgb(200, 216, 228, 236);
-
-
-        private static Color clrWindows7text = Color.FromArgb(30, 57, 91);
-        private static Color clrWindows7topBegin = Color.FromArgb(250, 252, 253);
-        private static Color clrWindows7topEnd = Color.FromArgb(230, 240, 250);
-        private static Color clrWindows7bottomBegin = Color.FromArgb(220, 230, 244);
-        private static Color clrWindows7bottomEnd = Color.FromArgb(221, 233, 247);
-        private static Color clrWindows7bottomBorder3 = Color.FromArgb(228, 239, 251);
-        private static Color clrWindows7bottomBorder2 = Color.FromArgb(205, 218, 234);
-        private static Color clrWindows7bottomBorder1 = Color.FromArgb(160, 175, 195);
-
-
-        // Color scheme values
-        private static Color _textDisabled = _c1;
-
-        private static Color _textMenuStripItem = Color.Black;
-        private static Color _textStatusStripItem = clrWindows7text;
-        private static Color _textContextMenuItem = clrWindows7text;
-
-        private static Color _arrowDisabled = _c1;
-        private static Color _arrowLight = Color.FromArgb(106, 126, 197);
-        private static Color _arrowDark = clrWindows7text;
-        private static Color _separatorMenuDark = Color.FromArgb(226, 227, 227);
-        private static Color _separatorMenuLight = Color.FromArgb(255, 255, 255);
-        private static Color _contextMenuBack = Color.FromArgb(240, 240, 240);
-        private static Color _contextCheckBorder = Color.FromArgb(175, 208, 247);
-        private static Color _contextCheckTick = Color.FromArgb(12, 18, 161);
-        private static Color _statusStripBorderDark = Color.FromArgb(86, 125, 176);
-        private static Color _statusStripBorderLight = Color.White;
-        private static Color _gripDark = Color.FromArgb(114, 152, 204);
-        private static Color _gripLight = _c5;
-
-
-        private static Color _statusBarDark = Color.FromArgb(204, 217, 234);
-        private static Color _statusBarLight = Color.FromArgb(241, 245, 251);
-
-        private static GradientItemColors _itemContextItemEnabledColors = new GradientItemColors(
-            Color.FromArgb(127, 242, 244, 246),
-            Color.FromArgb(127, 236, 241, 247),
-            Color.FromArgb(127, 231, 238, 247),
-            Color.FromArgb(127, 236, 241, 247),
-            Color.Transparent,
-            Color.Transparent,
-            Color.Transparent,
-            Color.Transparent,
-            Color.FromArgb(174, 207, 247), Color.FromArgb(174, 207, 247));
-
-        private static GradientItemColors _itemDisabledColors = new GradientItemColors(
-            Color.FromArgb(127, 242, 244, 246),
-            Color.FromArgb(127, 236, 241, 247),
-            Color.FromArgb(127, 231, 238, 247),
-            Color.FromArgb(127, 236, 241, 247),
-            Color.Transparent,
-            Color.Transparent,
-            Color.Transparent,
-            Color.Transparent,
-            Color.FromArgb(212, 212, 212), Color.FromArgb(195, 195, 195)
-        );
-
-        private static GradientItemColors _itemToolItemSelectedColors = new GradientItemColors( /****/
-            _r1, _r2, _r3, _r4, _r5, _r6, _r7, _r8, _r9, _rA);
-
-        private static GradientItemColors _itemToolItemPressedColors = new GradientItemColors( /*****/
-            _rD, _rE, _rF, _rG, _rH, _rI, _rJ, _rK, _r9, _rA);
-
-        private static GradientItemColors _itemToolItemCheckedColors = new GradientItemColors( /*****/
-            _rD, _rE, _rF, _rG, _rH, _rI, _rJ, _rK, _r9, _rA);
-
-        //new GradientItemColors(/*****/ _rL, _rM, _rN, _rO, _rP, _rQ, _rR, _rS, _r9, _rA);
-        private static GradientItemColors _itemToolItemCheckPressColors = new GradientItemColors( /*****/
-            _rD, _rE, _rF, _rG, _rH, _rI, _rJ, _rK, _r9, _rA);
-
-        //new GradientItemColors(/**/ _rT, _rU, _rV, _rW, _rX, _rI, _rY, _rZ, _r9, _rA);
-
-        #endregion
-
-        #region Identity
-
-        static Windows7Renderer()
-        {
-            // One time creation of the blend for the status strip gradient brush
-            _statusStripBlend = new Blend
-            {
-                Positions = new[] {0.0f, 0.25f, 0.25f, 0.57f, 0.86f, 1.0f},
-                Factors = new[] {0.1f, 0.6f, 1.0f, 0.4f, 0.0f, 0.95f}
-            };
-        }
-
-
-        protected override void InitializeItem(ToolStripItem item)
-        {
-            base.InitializeItem(item);
-
-            if (item.DisplayStyle == ToolStripItemDisplayStyle.Image)
-            {
-                var m = item.Margin;
-                m.Left += 4;
-                m.Right += 4;
-                item.Margin = m;
-            }
-
-            {
-                var a = item as ToolStripSplitButton;
-                if (a != null)
-                {
-                    a.DropDownButtonWidth = 17;
-
-                    switch (a.DisplayStyle)
-                    {
-                        case ToolStripItemDisplayStyle.Image:
-                            a.Padding = new Padding(3, 0, 3, 0);
-                            break;
-                        case ToolStripItemDisplayStyle.Text:
-                            a.Padding = new Padding(14, 3, 15, 3);
-                            break;
-                        default:
-                            a.Padding = new Padding(25, 3, 0, 3);
-                            a.TextAlign = ContentAlignment.MiddleRight;
-                            break;
-                    }
-                }
-            }
-
-
-            {
-                var a = item as ToolStripDropDownButton;
-                if (a != null)
-                {
-                    switch (a.DisplayStyle)
-                    {
-                        case ToolStripItemDisplayStyle.Image:
-                            a.Padding = new Padding(7, 0, 7, 0);
-                            break;
-                        // a.Margin = new Padding(4, 0, 4, 0);
-                        case ToolStripItemDisplayStyle.Text:
-                            a.Padding = new Padding(14, 3, 15, 3);
-                            break;
-                        default:
-                            a.Padding = new Padding(25, 3, 0, 3);
-                            a.TextAlign = ContentAlignment.MiddleRight;
-                            break;
-                    }
-                }
-            }
-
-
-            {
-                var a = item as ToolStripButton;
-                if (a != null)
-                {
-                    switch (a.DisplayStyle)
-                    {
-                        case ToolStripItemDisplayStyle.Image:
-                            a.Padding = new Padding(4, 0, 4, 0);
-                            break;
-                        // a.Margin = new Padding(4, 0, 4, 0);
-                        case ToolStripItemDisplayStyle.Text:
-                            a.Padding = new Padding(15, 3, 15, 3);
-                            break;
-                        default:
-                            a.Padding = new Padding(25, 3, 0, 3);
-                            a.TextAlign = ContentAlignment.MiddleRight;
-                            break;
-                    }
-                }
-            }
-
-            if (item is ToolStripSeparator)
-            {
-                item.Height++;
-            }
-
-            if (item is ToolStripOverflowButton)
-            {
-                item.Width += 25;
-            }
-        }
-
-
-        public Windows7Renderer()
-            : base(new Windows7ColorTable())
-        {
-            RoundedEdges = false;
-        }
-
-        #endregion
-
         #region OnRenderArrow
 
         /// <summary>
@@ -753,9 +443,8 @@ namespace W7R
         protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e)
         {
             // Cannot paint a zero sized area
-            if ((e.ArrowRectangle.Width > 0) &&
-                (e.ArrowRectangle.Height > 0))
-            {
+            if (e.ArrowRectangle.Width > 0 &&
+                e.ArrowRectangle.Height > 0)
                 // Create a path that is used to fill the arrow
                 using (var arrowPath = CreateArrowPath(e.Item,
                     e.ArrowRectangle,
@@ -777,13 +466,9 @@ namespace W7R
                     {
                         var parent = e.Item.GetCurrentParent();
                         if (parent is ToolStripDropDown || parent is MenuStrip || parent is ContextMenuStrip)
-                        {
                             color2 = Color.Black;
-                        }
                         else
-                        {
                             color2 = _arrowDark;
-                        }
                     }
 
 
@@ -813,9 +498,10 @@ namespace W7R
                     //  e.Graphics.FillPath(arrowBrush, arrowPath);
                     //     e.Graphics.CompositingQuality=SmoothingMode.None;
                     using (var arrowBrush = new SolidBrush(color2))
+                    {
                         e.Graphics.FillPath(arrowBrush, arrowPath);
+                    }
                 }
-            }
         }
 
         #endregion
@@ -898,9 +584,9 @@ namespace W7R
             }
 
             // Can we extend downwards?
-            if (checkBox.Height <= (e.Item.Bounds.Height - (_checkInset * 2)))
+            if (checkBox.Height <= e.Item.Bounds.Height - _checkInset * 2)
             {
-                var diff = e.Item.Bounds.Height - (_checkInset * 2) - checkBox.Height;
+                var diff = e.Item.Bounds.Height - _checkInset * 2 - checkBox.Height;
                 checkBox.Height += diff;
             }
 
@@ -915,11 +601,15 @@ namespace W7R
                 {
                     // Fill the background in a solid color
                     using (var fillBrush = new SolidBrush(ColorTable.CheckBackground))
+                    {
                         e.Graphics.FillPath(fillBrush, borderPath);
+                    }
 
                     // Draw the border around the check box
                     using (var borderPen = new Pen(_contextCheckBorder))
+                    {
                         e.Graphics.DrawPath(borderPen, borderPath);
+                    }
 
                     // If there is not an image, then we can draw the tick, square etc...
                     if (e.Image != null)
@@ -942,7 +632,9 @@ namespace W7R
                                 {
                                     // Draw the tick with a thickish brush
                                     using (var tickPen = new Pen(_contextCheckTick, _contextCheckTickThickness))
+                                    {
                                         e.Graphics.DrawPath(tickPen, tickPath);
+                                    }
                                 }
 
                                 break;
@@ -952,7 +644,9 @@ namespace W7R
                                 {
                                     // Draw the tick with a thickish brush
                                     using (var tickBrush = new SolidBrush(_contextCheckTick))
+                                    {
                                         e.Graphics.FillPath(tickBrush, tickPath);
+                                    }
                                 }
 
                                 break;
@@ -960,68 +654,6 @@ namespace W7R
                     }
                 }
             }
-        }
-
-        #endregion
-
-        #region OnRenderItemText
-
-        /// <summary>
-        ///     Raises the RenderItemText event.
-        /// </summary>
-        /// <param name="e">An ToolStripItemTextRenderEventArgs containing the event data.</param>
-        protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
-        {
-            if ((e.ToolStrip is MenuStrip) ||
-                (e.ToolStrip != null) ||
-                (e.ToolStrip is ContextMenuStrip) ||
-                (e.ToolStrip is ToolStripDropDownMenu))
-            {
-                // We set the color depending on the enabled state
-                if (!e.Item.Enabled)
-                    e.TextColor = _textDisabled;
-                else
-                {
-                    /*    if ((e.ToolStrip is MenuStrip) && !e.Item.Pressed && !e.Item.Selected)
-                            e.TextColor = _textMenuStripItem;*/
-                    if ((e.ToolStrip is StatusStrip) && !e.Item.Pressed && !e.Item.Selected)
-                        e.TextColor = _textStatusStripItem;
-                    else if ((e.ToolStrip is MenuStrip))
-                        e.TextColor = _textStatusStripItem;
-                    else if (e.ToolStrip is ToolStripDropDown)
-                        e.TextColor = Color.Black;
-                    else
-                        e.TextColor = _textContextMenuItem;
-                }
-
-                e.TextRectangle = AdjustDrawRectangle(e.Item, e.TextRectangle);
-                if (e.Item.Image != null && e.ToolStrip is MenuStrip)
-                {
-                    e.TextRectangle = new Rectangle(e.TextRectangle.X + 5, e.TextRectangle.Y, e.TextRectangle.Width,
-                        e.TextRectangle.Height);
-                }
-
-                // All text is draw using the ClearTypeGridFit text rendering hint
-                using (var clearTypeGridFit = new UseClearTypeGridFit(e.Graphics))
-                    base.OnRenderItemText(e);
-            }
-            else
-            {
-                base.OnRenderItemText(e);
-            }
-        }
-
-        private Rectangle AdjustDrawRectangle(ToolStripItem item, Rectangle rectangle)
-        {
-            if (LooksPressed(item))
-            {
-                var r = rectangle;
-                r.X++;
-                r.Y++;
-                return r;
-            }
-
-            return rectangle;
         }
 
         #endregion
@@ -1076,10 +708,12 @@ namespace W7R
                         e.Graphics.DrawImageUnscaledAndClipped(e.Image, newrect);
                     }
                     else
+                    {
                         ControlPaint.DrawImageDisabled(e.Graphics, e.Image,
                             newrect.X,
                             newrect.Y,
                             Color.Transparent);
+                    }
                 }
             }
 
@@ -1105,43 +739,41 @@ namespace W7R
         /// <param name="e">An ToolStripItemRenderEventArgs containing the event data.</param>
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
         {
-            if ((e.ToolStrip is MenuStrip) ||
-                (e.ToolStrip is ContextMenuStrip) ||
-                (e.ToolStrip is ToolStripDropDownMenu))
-            {
+            if (e.ToolStrip is MenuStrip ||
+                e.ToolStrip is ContextMenuStrip ||
+                e.ToolStrip is ToolStripDropDownMenu)
                 /* if ((e.Item.Pressed) && (e.ToolStrip is MenuStrip))
-                 {
-                     // Draw the menu/tool strip as a header for a context menu item
-                     DrawContextMenuHeader(e.Graphics, e.Item);
-                 }
-                 else*/
+                     {
+                         // Draw the menu/tool strip as a header for a context menu item
+                         DrawContextMenuHeader(e.Graphics, e.Item);
+                     }
+                     else*/
+            {
+                // We only draw a background if the item is selected and enabled
+                if (e.Item.Selected)
                 {
-                    // We only draw a background if the item is selected and enabled
-                    if (e.Item.Selected)
+                    if (e.Item.Enabled)
                     {
-                        if (e.Item.Enabled)
-                        {
-                            // Do we draw as a menu strip or context menu item?
-                            /*  if (e.ToolStrip is MenuStrip)
+                        // Do we draw as a menu strip or context menu item?
+                        /*  if (e.ToolStrip is MenuStrip)
                                   DrawGradientToolItem(e.Graphics, e.Item, _itemToolItemSelectedColors);
                               else*/
-                            DrawGradientContextMenuItem(e.Graphics, e.Item, _itemContextItemEnabledColors);
-                        }
-                        else
-                        {
-                            // Get the mouse position in tool strip coordinates
-                            var mousePos = e.ToolStrip.PointToClient(Control.MousePosition);
+                        DrawGradientContextMenuItem(e.Graphics, e.Item, _itemContextItemEnabledColors);
+                    }
+                    else
+                    {
+                        // Get the mouse position in tool strip coordinates
+                        var mousePos = e.ToolStrip.PointToClient(Control.MousePosition);
 
-                            // If the mouse is not in the item area, then draw disabled
-                            //if (!e.Item.Bounds.Contains(mousePos))
-                            //{
-                            // Do we draw as a menu strip or context menu item?
-                            if (e.ToolStrip is MenuStrip)
-                                DrawGradientToolItem(e.Graphics, e.Item, _itemDisabledColors);
-                            else
-                                DrawGradientContextMenuItem(e.Graphics, e.Item, _itemDisabledColors);
-                            //}
-                        }
+                        // If the mouse is not in the item area, then draw disabled
+                        //if (!e.Item.Bounds.Contains(mousePos))
+                        //{
+                        // Do we draw as a menu strip or context menu item?
+                        if (e.ToolStrip is MenuStrip)
+                            DrawGradientToolItem(e.Graphics, e.Item, _itemDisabledColors);
+                        else
+                            DrawGradientContextMenuItem(e.Graphics, e.Item, _itemDisabledColors);
+                        //}
                     }
                 }
             }
@@ -1199,7 +831,7 @@ namespace W7R
                 lightBrush = new SolidBrush(_gripLight))
             {
                 // Do we need to invert the drawing edge?
-                var rtl = (e.ToolStrip.RightToLeft == RightToLeft.Yes);
+                var rtl = e.ToolStrip.RightToLeft == RightToLeft.Yes;
 
                 // Find vertical position of the lowest grip line
                 var y = e.AffectedBounds.Bottom - _gripSize * 2 + 1;
@@ -1208,9 +840,9 @@ namespace W7R
                 for (var i = _gripLines; i >= 1; i--)
                 {
                     // Find the rightmost grip position on the line
-                    var x = (rtl
+                    var x = rtl
                         ? e.AffectedBounds.Left + 1
-                        : e.AffectedBounds.Right - _gripSize * 2 + 1);
+                        : e.AffectedBounds.Right - _gripSize * 2 + 1;
 
                     // Draw grips from right to left on line
                     for (var j = 0; j < i; j++)
@@ -1219,7 +851,7 @@ namespace W7R
                         DrawGripGlyph(e.Graphics, x, y, darkBrush, lightBrush);
 
                         // Move left to next grip position
-                        x -= (rtl ? -_gripMove : _gripMove);
+                        x -= rtl ? -_gripMove : _gripMove;
                     }
 
                     // Move upwards to next grip line
@@ -1242,9 +874,8 @@ namespace W7R
             base.OnRenderToolStripContentPanelBackground(e);
 
             // Cannot paint a zero sized area
-            if ((e.ToolStripContentPanel.Width > 0) &&
-                (e.ToolStripContentPanel.Height > 0))
-            {
+            if (e.ToolStripContentPanel.Width > 0 &&
+                e.ToolStripContentPanel.Height > 0)
                 using (var backBrush = new LinearGradientBrush(e.ToolStripContentPanel.ClientRectangle,
                     ColorTable.ToolStripContentPanelGradientEnd,
                     ColorTable.ToolStripContentPanelGradientBegin,
@@ -1252,7 +883,6 @@ namespace W7R
                 {
                     e.Graphics.FillRectangle(backBrush, e.ToolStripContentPanel.ClientRectangle);
                 }
-            }
         }
 
         #endregion
@@ -1265,20 +895,17 @@ namespace W7R
         /// <param name="e">An ToolStripSeparatorRenderEventArgs containing the event data.</param>
         protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
         {
-            if ((e.ToolStrip is ContextMenuStrip) ||
-                (e.ToolStrip is ToolStripDropDownMenu))
-            {
+            if (e.ToolStrip is ContextMenuStrip ||
+                e.ToolStrip is ToolStripDropDownMenu)
                 // Create the light and dark line pens
                 using (Pen lightPen = new Pen(_separatorMenuLight),
                     darkPen = new Pen(_separatorMenuDark))
                 {
                     DrawSeparator(e.Graphics, e.Vertical, e.Item.Bounds,
                         lightPen, darkPen, _separatorInset,
-                        (e.ToolStrip.RightToLeft == RightToLeft.Yes));
+                        e.ToolStrip.RightToLeft == RightToLeft.Yes);
                 }
-            }
             else if (e.ToolStrip is StatusStrip)
-            {
                 // Create the light and dark line pens
                 using (Pen lightPen = new Pen(ColorTable.SeparatorLight),
                     darkPen = new Pen(ColorTable.SeparatorDark))
@@ -1286,11 +913,8 @@ namespace W7R
                     DrawSeparator(e.Graphics, e.Vertical, e.Item.Bounds,
                         lightPen, darkPen, 0, false);
                 }
-            }
             else
-            {
                 base.OnRenderSeparator(e);
-            }
         }
 
         #endregion
@@ -1303,8 +927,8 @@ namespace W7R
         /// <param name="e">An ToolStripRenderEventArgs containing the event data.</param>
         protected override void OnRenderToolStripBackground(ToolStripRenderEventArgs e)
         {
-            if ((e.ToolStrip is ContextMenuStrip) ||
-                (e.ToolStrip is ToolStripDropDownMenu))
+            if (e.ToolStrip is ContextMenuStrip ||
+                e.ToolStrip is ToolStripDropDownMenu)
             {
                 // Create border and clipping paths
                 using (GraphicsPath borderPath = CreateBorderPath(e.AffectedBounds, _cutContextMenu),
@@ -1315,7 +939,9 @@ namespace W7R
                     {
                         // Create the background brush
                         using (var backBrush = new SolidBrush(_contextMenuBack))
+                        {
                             e.Graphics.FillPath(backBrush, borderPath);
+                        }
                     }
                 }
             }
@@ -1325,7 +951,7 @@ namespace W7R
                 var backRect = new RectangleF(0, 1.5f, e.ToolStrip.Width, e.ToolStrip.Height - 2);
 
                 // Cannot paint a zero sized area
-                if ((backRect.Width > 0) && (backRect.Height > 0))
+                if (backRect.Width > 0 && backRect.Height > 0)
                 {
                     using (var backBrush = new SolidBrush(_statusBarLight))
                     {
@@ -1348,7 +974,7 @@ namespace W7R
                 //  base.OnRenderToolStripBackground(e);
                 var toolStrip = e.ToolStrip;
 
-                if ((toolStrip.Height > 0) && (toolStrip.Width > 0))
+                if (toolStrip.Height > 0 && toolStrip.Width > 0)
                 {
                     var height = toolStrip.Height;
                     var center = height / 2;
@@ -1361,21 +987,31 @@ namespace W7R
                     using (
                         var topBrush = new LinearGradientBrush(topRect, clrWindows7topBegin, clrWindows7topEnd,
                             LinearGradientMode.Vertical))
+                    {
                         e.Graphics.FillRectangle(topBrush, topRect);
+                    }
 
                     using (
                         var bottomBrush = new LinearGradientBrush(bottomRect, clrWindows7bottomBegin,
                             clrWindows7bottomEnd, LinearGradientMode.Vertical))
+                    {
                         e.Graphics.FillRectangle(bottomBrush, bottomRect);
+                    }
 
                     using (var pen3 = new Pen(clrWindows7bottomBorder3))
+                    {
                         e.Graphics.DrawLine(pen3, 0, height - 3, width, height - 3);
+                    }
 
                     using (var pen2 = new Pen(clrWindows7bottomBorder2))
+                    {
                         e.Graphics.DrawLine(pen2, 0, height - 2, width, height - 2);
+                    }
 
                     using (var pen1 = new Pen(clrWindows7bottomBorder1))
+                    {
                         e.Graphics.DrawLine(pen1, 0, height - 1, width, height - 1);
+                    }
 
 
                     // e.Graphics.FillRectangle(new SolidBrush(clrBGTop2), e.AffectedBounds);
@@ -1405,14 +1041,14 @@ namespace W7R
         /// <param name="e">An ToolStripRenderEventArgs containing the event data.</param>
         protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
         {
-            if ((e.ToolStrip is ContextMenuStrip) ||
-                (e.ToolStrip is ToolStripDropDownMenu))
+            if (e.ToolStrip is ContextMenuStrip ||
+                e.ToolStrip is ToolStripDropDownMenu)
             {
                 // Start with the total margin area
                 var marginRect = e.AffectedBounds;
 
                 // Do we need to draw with separator on the opposite edge?
-                var rtl = (e.ToolStrip.RightToLeft == RightToLeft.Yes);
+                var rtl = e.ToolStrip.RightToLeft == RightToLeft.Yes;
 
                 marginRect.Y += _marginInset;
                 marginRect.Height -= _marginInset * 2;
@@ -1426,7 +1062,9 @@ namespace W7R
 
                 // Draw the entire margine area in a solid color
                 using (var backBrush = new SolidBrush(ColorTable.ImageMarginGradientBegin))
+                {
                     e.Graphics.FillRectangle(backBrush, marginRect);
+                }
 
                 // Create the light and dark line pens
                 using (Pen lightPen = new Pen(_separatorMenuLight),
@@ -1466,19 +1104,23 @@ namespace W7R
         /// <param name="e">An ToolStripRenderEventArgs containing the event data.</param>
         protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         {
-            if ((e.ToolStrip is ContextMenuStrip) ||
-                (e.ToolStrip is ToolStripDropDownMenu))
+            if (e.ToolStrip is ContextMenuStrip ||
+                e.ToolStrip is ToolStripDropDownMenu)
             {
                 // If there is a connected area to be drawn
                 if (!e.ConnectedArea.IsEmpty)
                     using (var excludeBrush = new SolidBrush(_contextMenuBack))
+                    {
                         e.Graphics.FillRectangle(excludeBrush, e.ConnectedArea);
+                    }
+
                 /* var k = e.ToolStrip as ToolStripDropDownMenu;
                  var q = k.Parent;*/
                 var connectedArea = Rectangle.Empty;
 
                 // Create border and clipping paths
-                using (GraphicsPath borderPath = CreateBorderPath(e.AffectedBounds, connectedArea, _cutContextMenu),
+                using (GraphicsPath borderPath =
+                        CreateBorderPath(e.AffectedBounds, connectedArea, _cutContextMenu),
                     insidePath = CreateInsideBorderPath(e.AffectedBounds, connectedArea, _cutContextMenu),
                     clipPath = CreateClipBorderPath(e.AffectedBounds, connectedArea, _cutContextMenu))
                 {
@@ -1516,10 +1158,372 @@ namespace W7R
                        e.Graphics.DrawLine(lightBorder, 0, 1, e.ToolStrip.Width, 1);
                    }*/
             }
+        }
+
+        #endregion
+
+        #region GradientItemColors
+
+        private class GradientItemColors
+        {
+            #region Identity
+
+            public GradientItemColors(Color insideTop1, Color insideTop2,
+                Color insideBottom1, Color insideBottom2,
+                Color fillTop1, Color fillTop2,
+                Color fillBottom1, Color fillBottom2,
+                Color border1, Color border2)
+            {
+                InsideTop1 = insideTop1;
+                InsideTop2 = insideTop2;
+                InsideBottom1 = insideBottom1;
+                InsideBottom2 = insideBottom2;
+                FillTop1 = fillTop1;
+                FillTop2 = fillTop2;
+                FillBottom1 = fillBottom1;
+                FillBottom2 = fillBottom2;
+                Border1 = border1;
+                Border2 = border2;
+            }
+
+            #endregion
+
+            #region Public Fields
+
+            public readonly Color InsideTop1;
+            public readonly Color InsideTop2;
+            public readonly Color InsideBottom1;
+            public readonly Color InsideBottom2;
+            public readonly Color FillTop1;
+            public readonly Color FillTop2;
+            public readonly Color FillBottom1;
+            public readonly Color FillBottom2;
+            public readonly Color Border1;
+            public readonly Color Border2;
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Static Metrics
+
+        private const int _gripOffset = 1;
+        private const int _gripSquare = 2;
+        private const int _gripSize = 3;
+        private const int _gripMove = 4;
+        private const int _gripLines = 3;
+        private const int _checkInset = 0;
+        private const int _marginInset = 2;
+        private const int _separatorInset = 25;
+        private const float _cutToolItemMenu = 1.0f;
+        private const float _cutContextMenu = 0f;
+        private const float _cutMenuItemBack = 1.2f;
+        private const float _contextCheckTickThickness = 1.6f;
+        private static Blend _statusStripBlend;
+
+        #endregion
+
+        #region Static Colors
+
+        private static readonly Color _c1 = Color.FromArgb(167, 167, 167);
+        private static Color _c2 = Color.FromArgb(21, 66, 139);
+        private static Color _c3 = Color.FromArgb(76, 83, 92);
+        private static Color _c4 = Color.FromArgb(250, 250, 250);
+        private static readonly Color _c5 = Color.FromArgb(248, 248, 248);
+        private static Color _c6 = Color.FromArgb(243, 243, 243);
+        private static readonly Color _r1 = Color.FromArgb(255, 255, 251);
+        private static readonly Color _r2 = Color.FromArgb(255, 249, 227);
+        private static readonly Color _r3 = Color.FromArgb(255, 242, 201);
+        private static readonly Color _r4 = Color.FromArgb(248, 251, 254);
+
+        private static readonly Color _r5 = Color.FromArgb(248, 251, 254);
+        private static readonly Color _r6 = Color.FromArgb(237, 242, 250);
+
+        private static readonly Color _r7 = Color.FromArgb(215, 228, 244);
+        private static readonly Color _r8 = Color.FromArgb(193, 210, 232);
+
+
+        private static readonly Color _r9 = Color.FromArgb(187, 202, 219);
+        private static readonly Color _rA = Color.FromArgb(177, 195, 216);
+
+        private static Color _rB = Color.FromArgb(182, 190, 192);
+        private static Color _rC = Color.FromArgb(155, 163, 167);
+
+        private static readonly Color _rD = Color.FromArgb(201, 212, 228);
+        private static readonly Color _rE = Color.FromArgb(177, 195, 216);
+        private static readonly Color _rF = Color.FromArgb(170, 188, 211);
+        private static readonly Color _rG = Color.FromArgb(207, 220, 237);
+
+        private static readonly Color _rH = Color.FromArgb(221, 232, 241);
+        private static readonly Color _rI = Color.FromArgb(216, 228, 241);
+        private static readonly Color _rJ = Color.FromArgb(207, 220, 237);
+        private static readonly Color _rK = Color.FromArgb(207, 219, 236);
+
+        private static Color _rL = Color.FromArgb(249, 192, 103);
+        private static Color _rM = Color.FromArgb(250, 195, 93);
+        private static Color _rN = Color.FromArgb(248, 190, 81);
+        private static Color _rO = Color.FromArgb(255, 208, 49);
+        private static Color _rP = Color.FromArgb(254, 214, 168);
+        private static Color _rQ = Color.FromArgb(252, 180, 100);
+        private static Color _rR = Color.FromArgb(252, 161, 54);
+        private static Color _rS = Color.FromArgb(254, 238, 170);
+        private static Color _rT = Color.FromArgb(249, 202, 113);
+        private static Color _rU = Color.FromArgb(250, 205, 103);
+        private static Color _rV = Color.FromArgb(248, 200, 91);
+        private static Color _rW = Color.FromArgb(255, 218, 59);
+        private static Color _rX = Color.FromArgb(254, 185, 108);
+        private static Color _rY = Color.FromArgb(252, 161, 54);
+        private static Color _rZ = Color.FromArgb(254, 238, 170);
+
+
+        //private static Color clrBGTop1 = Color.FromArgb(255, 253, 255, 254);
+        //private static Color clrBGTop2 = Color.FromArgb(255, 222, 231, 240);
+        //private static Color clrBGBottom1 = Color.FromArgb(255, 231, 240, 249);
+        //private static Color clrBGBottom2 = Color.FromArgb(255, 224, 232, 243);
+        //private static Color clrBGBorder = Color.FromArgb(255, 235, 243, 254);
+        //private static Color clrBGGreen = Color.FromArgb(0, 255, 255, 255);
+        //private static Color clrBtnDarkBorder = Color.FromArgb(200, 3, 50, 81);
+        //private static Color clrBtnLightBorder = Color.FromArgb(200, 216, 228, 236);
+
+
+        private static readonly Color clrWindows7text = Color.FromArgb(30, 57, 91);
+        private static readonly Color clrWindows7topBegin = Color.FromArgb(250, 252, 253);
+        private static readonly Color clrWindows7topEnd = Color.FromArgb(230, 240, 250);
+        private static readonly Color clrWindows7bottomBegin = Color.FromArgb(220, 230, 244);
+        private static readonly Color clrWindows7bottomEnd = Color.FromArgb(221, 233, 247);
+        private static readonly Color clrWindows7bottomBorder3 = Color.FromArgb(228, 239, 251);
+        private static readonly Color clrWindows7bottomBorder2 = Color.FromArgb(205, 218, 234);
+        private static readonly Color clrWindows7bottomBorder1 = Color.FromArgb(160, 175, 195);
+
+
+        // Color scheme values
+        private static readonly Color _textDisabled = _c1;
+
+        private static Color _textMenuStripItem = Color.Black;
+        private static readonly Color _textStatusStripItem = clrWindows7text;
+        private static readonly Color _textContextMenuItem = clrWindows7text;
+
+        private static readonly Color _arrowDisabled = _c1;
+        private static Color _arrowLight = Color.FromArgb(106, 126, 197);
+        private static readonly Color _arrowDark = clrWindows7text;
+        private static readonly Color _separatorMenuDark = Color.FromArgb(226, 227, 227);
+        private static readonly Color _separatorMenuLight = Color.FromArgb(255, 255, 255);
+        private static readonly Color _contextMenuBack = Color.FromArgb(240, 240, 240);
+        private static readonly Color _contextCheckBorder = Color.FromArgb(175, 208, 247);
+        private static readonly Color _contextCheckTick = Color.FromArgb(12, 18, 161);
+        private static Color _statusStripBorderDark = Color.FromArgb(86, 125, 176);
+        private static Color _statusStripBorderLight = Color.White;
+        private static readonly Color _gripDark = Color.FromArgb(114, 152, 204);
+        private static readonly Color _gripLight = _c5;
+
+
+        private static readonly Color _statusBarDark = Color.FromArgb(204, 217, 234);
+        private static readonly Color _statusBarLight = Color.FromArgb(241, 245, 251);
+
+        private static readonly GradientItemColors _itemContextItemEnabledColors = new GradientItemColors(
+            Color.FromArgb(127, 242, 244, 246),
+            Color.FromArgb(127, 236, 241, 247),
+            Color.FromArgb(127, 231, 238, 247),
+            Color.FromArgb(127, 236, 241, 247),
+            Color.Transparent,
+            Color.Transparent,
+            Color.Transparent,
+            Color.Transparent,
+            Color.FromArgb(174, 207, 247), Color.FromArgb(174, 207, 247));
+
+        private static readonly GradientItemColors _itemDisabledColors = new GradientItemColors(
+            Color.FromArgb(127, 242, 244, 246),
+            Color.FromArgb(127, 236, 241, 247),
+            Color.FromArgb(127, 231, 238, 247),
+            Color.FromArgb(127, 236, 241, 247),
+            Color.Transparent,
+            Color.Transparent,
+            Color.Transparent,
+            Color.Transparent,
+            Color.FromArgb(212, 212, 212), Color.FromArgb(195, 195, 195)
+        );
+
+        private static readonly GradientItemColors _itemToolItemSelectedColors = new GradientItemColors( /****/
+            _r1, _r2, _r3, _r4, _r5, _r6, _r7, _r8, _r9, _rA);
+
+        private static readonly GradientItemColors _itemToolItemPressedColors = new GradientItemColors( /*****/
+            _rD, _rE, _rF, _rG, _rH, _rI, _rJ, _rK, _r9, _rA);
+
+        private static readonly GradientItemColors _itemToolItemCheckedColors = new GradientItemColors( /*****/
+            _rD, _rE, _rF, _rG, _rH, _rI, _rJ, _rK, _r9, _rA);
+
+        //new GradientItemColors(/*****/ _rL, _rM, _rN, _rO, _rP, _rQ, _rR, _rS, _r9, _rA);
+        private static readonly GradientItemColors _itemToolItemCheckPressColors =
+            new GradientItemColors( /*****/
+                _rD, _rE, _rF, _rG, _rH, _rI, _rJ, _rK, _r9, _rA);
+
+        //new GradientItemColors(/**/ _rT, _rU, _rV, _rW, _rX, _rI, _rY, _rZ, _r9, _rA);
+
+        #endregion
+
+        #region Identity
+
+        static Windows7Renderer()
+        {
+            // One time creation of the blend for the status strip gradient brush
+            _statusStripBlend = new Blend
+            {
+                Positions = new[] {0.0f, 0.25f, 0.25f, 0.57f, 0.86f, 1.0f},
+                Factors = new[] {0.1f, 0.6f, 1.0f, 0.4f, 0.0f, 0.95f}
+            };
+        }
+
+
+        protected override void InitializeItem(ToolStripItem item)
+        {
+            base.InitializeItem(item);
+
+            if (item.DisplayStyle == ToolStripItemDisplayStyle.Image)
+            {
+                var m = item.Margin;
+                m.Left += 4;
+                m.Right += 4;
+                item.Margin = m;
+            }
+
+            {
+                var a = item as ToolStripSplitButton;
+                if (a != null)
+                {
+                    a.DropDownButtonWidth = 17;
+
+                    switch (a.DisplayStyle)
+                    {
+                        case ToolStripItemDisplayStyle.Image:
+                            a.Padding = new Padding(3, 0, 3, 0);
+                            break;
+                        case ToolStripItemDisplayStyle.Text:
+                            a.Padding = new Padding(14, 3, 15, 3);
+                            break;
+                        default:
+                            a.Padding = new Padding(25, 3, 0, 3);
+                            a.TextAlign = ContentAlignment.MiddleRight;
+                            break;
+                    }
+                }
+            }
+
+
+            {
+                var a = item as ToolStripDropDownButton;
+                if (a != null)
+                    switch (a.DisplayStyle)
+                    {
+                        case ToolStripItemDisplayStyle.Image:
+                            a.Padding = new Padding(7, 0, 7, 0);
+                            break;
+                        // a.Margin = new Padding(4, 0, 4, 0);
+                        case ToolStripItemDisplayStyle.Text:
+                            a.Padding = new Padding(14, 3, 15, 3);
+                            break;
+                        default:
+                            a.Padding = new Padding(25, 3, 0, 3);
+                            a.TextAlign = ContentAlignment.MiddleRight;
+                            break;
+                    }
+            }
+
+
+            {
+                var a = item as ToolStripButton;
+                if (a != null)
+                    switch (a.DisplayStyle)
+                    {
+                        case ToolStripItemDisplayStyle.Image:
+                            a.Padding = new Padding(4, 0, 4, 0);
+                            break;
+                        // a.Margin = new Padding(4, 0, 4, 0);
+                        case ToolStripItemDisplayStyle.Text:
+                            a.Padding = new Padding(15, 3, 15, 3);
+                            break;
+                        default:
+                            a.Padding = new Padding(25, 3, 0, 3);
+                            a.TextAlign = ContentAlignment.MiddleRight;
+                            break;
+                    }
+            }
+
+            if (item is ToolStripSeparator) item.Height++;
+
+            if (item is ToolStripOverflowButton) item.Width += 25;
+        }
+
+
+        public Windows7Renderer()
+            : base(new Windows7ColorTable())
+        {
+            RoundedEdges = false;
+        }
+
+        #endregion
+
+        #region OnRenderItemText
+
+        /// <summary>
+        ///     Raises the RenderItemText event.
+        /// </summary>
+        /// <param name="e">An ToolStripItemTextRenderEventArgs containing the event data.</param>
+        protected override void OnRenderItemText(ToolStripItemTextRenderEventArgs e)
+        {
+            if (e.ToolStrip is MenuStrip ||
+                e.ToolStrip != null ||
+                e.ToolStrip is ContextMenuStrip ||
+                e.ToolStrip is ToolStripDropDownMenu)
+            {
+                // We set the color depending on the enabled state
+                if (!e.Item.Enabled)
+                {
+                    e.TextColor = _textDisabled;
+                }
+                else
+                {
+                    /*    if ((e.ToolStrip is MenuStrip) && !e.Item.Pressed && !e.Item.Selected)
+                            e.TextColor = _textMenuStripItem;*/
+                    if (e.ToolStrip is StatusStrip && !e.Item.Pressed && !e.Item.Selected)
+                        e.TextColor = _textStatusStripItem;
+                    else if (e.ToolStrip is MenuStrip)
+                        e.TextColor = _textStatusStripItem;
+                    else if (e.ToolStrip is ToolStripDropDown)
+                        e.TextColor = Color.Black;
+                    else
+                        e.TextColor = _textContextMenuItem;
+                }
+
+                e.TextRectangle = AdjustDrawRectangle(e.Item, e.TextRectangle);
+                if (e.Item.Image != null && e.ToolStrip is MenuStrip)
+                    e.TextRectangle = new Rectangle(e.TextRectangle.X + 5, e.TextRectangle.Y,
+                        e.TextRectangle.Width,
+                        e.TextRectangle.Height);
+
+                // All text is draw using the ClearTypeGridFit text rendering hint
+                using (var clearTypeGridFit = new UseClearTypeGridFit(e.Graphics))
+                {
+                    base.OnRenderItemText(e);
+                }
+            }
             else
             {
-                //   base.OnRenderToolStripBorder(e);
+                base.OnRenderItemText(e);
             }
+        }
+
+        private Rectangle AdjustDrawRectangle(ToolStripItem item, Rectangle rectangle)
+        {
+            if (LooksPressed(item))
+            {
+                var r = rectangle;
+                r.X++;
+                r.Y++;
+                return r;
+            }
+
+            return rectangle;
         }
 
         #endregion
@@ -1598,30 +1602,24 @@ namespace W7R
                 if (splitButton.Enabled)
                 {
                     if (!splitButton.Pressed && splitButton.ButtonPressed)
-                    {
                         // large
                         //DrawGradientToolItem(g, splitButton, _itemToolItemCheckPressColors);
                         DrawGradientToolSplitItem(g, splitButton,
                             _itemToolItemPressedColors,
                             _itemToolItemPressedColors,
                             _itemContextItemEnabledColors);
-                    }
                     else if (splitButton.Pressed && !splitButton.ButtonPressed)
-                    {
                         // small
                         //DrawContextMenuHeader(g, splitButton);
                         DrawGradientToolSplitItem(g, splitButton,
                             _itemToolItemPressedColors,
                             _itemToolItemPressedColors,
                             _itemContextItemEnabledColors);
-                    }
                     else
-                    {
                         DrawGradientToolSplitItem(g, splitButton,
                             _itemToolItemSelectedColors,
                             _itemToolItemSelectedColors,
                             _itemContextItemEnabledColors);
-                    }
                 }
                 else
                 {
@@ -1654,8 +1652,8 @@ namespace W7R
             var backRectDrop = splitButton.DropDownButtonBounds;
 
             // Cannot paint zero sized areas
-            if ((backRect.Width > 0) && (backRectDrop.Width > 0) &&
-                (backRect.Height > 0) && (backRectDrop.Height > 0))
+            if (backRect.Width > 0 && backRectDrop.Width > 0 &&
+                backRect.Height > 0 && backRectDrop.Height > 0)
             {
                 // Area that is the normal button starts as everything
                 var backRectButton = backRect;
@@ -1700,8 +1698,11 @@ namespace W7R
 
                         // Convert the brush to a pen for DrawPath call
                         using (var splitPen = new Pen(splitBrush))
-                            g.DrawLine(splitPen, backRect.X + splitOffset, backRect.Top + 1, backRect.X + splitOffset,
+                        {
+                            g.DrawLine(splitPen, backRect.X + splitOffset, backRect.Top + 1,
+                                backRect.X + splitOffset,
                                 backRect.Bottom - 1);
+                        }
                     }
 
                     // Draw the border of the entire item
@@ -1725,11 +1726,15 @@ namespace W7R
                 {
                     // Draw the entire background area first
                     using (var backBrush = new SolidBrush(_separatorMenuLight))
+                    {
                         g.FillPath(backBrush, borderPath);
+                    }
 
                     // Draw the border
                     using (var borderPen = new Pen(ColorTable.MenuBorder))
+                    {
                         g.DrawPath(borderPen, borderPath);
+                    }
                 }
             }
         }
@@ -1746,7 +1751,7 @@ namespace W7R
             backRect.X++;
             backRect.Width -= 2;
 
-            if ((backRect.Width > 0) && (backRect.Height > 0))
+            if (backRect.Width > 0 && backRect.Height > 0)
             {
                 // Draw the background of the entire item
                 DrawGradientBack(g, backRect, colors);
@@ -1765,7 +1770,7 @@ namespace W7R
             GradientItemColors colors)
         {
             // Cannot paint a zero sized area
-            if ((backRect.Width > 0) && (backRect.Height > 0))
+            if (backRect.Width > 0 && backRect.Height > 0)
             {
                 // Draw the background of the entire item
                 DrawGradientBack(g, backRect, colors);
@@ -1793,7 +1798,8 @@ namespace W7R
             using (
                 LinearGradientBrush insideBrush1 = new LinearGradientBrush(backRect1I, colors.InsideTop1,
                     colors.InsideTop2, 90f),
-                insideBrush2 = new LinearGradientBrush(backRect2I, colors.InsideBottom1, colors.InsideBottom2, 90f))
+                insideBrush2 = new LinearGradientBrush(backRect2I, colors.InsideBottom1, colors.InsideBottom2,
+                    90f))
             {
                 g.FillRectangle(insideBrush1, backRect1);
                 g.FillRectangle(insideBrush2, backRect2);
@@ -1808,14 +1814,15 @@ namespace W7R
             backRect2I.Inflate(1, 1);
 
             using (
-                LinearGradientBrush fillBrush1 = new LinearGradientBrush(backRect1I, colors.FillTop1, colors.FillTop2,
+                LinearGradientBrush fillBrush1 = new LinearGradientBrush(backRect1I, colors.FillTop1,
+                    colors.FillTop2,
                     90f),
                 fillBrush2 = new LinearGradientBrush(backRect2I, colors.FillBottom1, colors.FillBottom2, 90f))
             {
                 // Reduce rect one more time for the innermost drawing
                 backRect.Inflate(-1, -1);
 
-                y2 = (backRect.Height / 2) + 1;
+                y2 = backRect.Height / 2 + 1;
                 backRect1 = new Rectangle(backRect.X, backRect.Y, backRect.Width, y2);
                 backRect2 = new Rectangle(backRect.X, backRect.Y + y2, backRect.Width, backRect.Height - y2);
 
@@ -1847,7 +1854,9 @@ namespace W7R
                     {
                         // Create border path around the entire item
                         using (var borderPath = CreateBorderPath(backRect, _cutMenuItemBack))
+                        {
                             g.DrawPath(borderPen, borderPath);
+                        }
                     }
                 }
             }
@@ -1916,10 +1925,10 @@ namespace W7R
             var x3 = rect.Right - cut;
             var y0 = rect.Y + cut;
             var y3 = rect.Bottom - cut;
-            var cutBack = (cut == 0f ? 1 : cut);
+            var cutBack = cut == 0f ? 1 : cut;
 
             // Does the exclude intercept the top line
-            if ((rect.Y >= exclude.Top) && (rect.Y <= exclude.Bottom))
+            if (rect.Y >= exclude.Top && rect.Y <= exclude.Bottom)
             {
                 var x1 = exclude.X - 1 - cut;
                 var x2 = exclude.Right + cut;
@@ -2044,8 +2053,8 @@ namespace W7R
             int x, y;
 
             // Find the correct starting position, which depends on direction
-            if ((direction == ArrowDirection.Left) ||
-                (direction == ArrowDirection.Right))
+            if (direction == ArrowDirection.Left ||
+                direction == ArrowDirection.Right)
             {
                 x = rect.Right - (rect.Width - 4) / 2;
                 y = rect.Y + rect.Height / 2;
@@ -2056,8 +2065,8 @@ namespace W7R
                 y = rect.Bottom - (rect.Height - 3) / 2;
 
                 // The drop down button is position 1 pixel incorrectly when in RTL
-                if ((item is ToolStripDropDownButton) &&
-                    (item.RightToLeft == RightToLeft.Yes))
+                if (item is ToolStripDropDownButton &&
+                    item.RightToLeft == RightToLeft.Yes)
                     x++;
 
                 if (item is ToolStripDropDownButton)

@@ -26,8 +26,13 @@ namespace SharpBoot
         public bool ProgressVisible
         {
             get { return pbxPrg.Visible = true; }
-            set { pbxPrg.Visible = lblPercent.Visible = value; }
+            set => pbxPrg.Visible = lblPercent.Visible = value;
         }
+
+        // ReSharper disable once ConvertToAutoPropertyWhenPossible
+        public ComboBox TheComboBox => comboBox;
+
+        public DriveInfo SelectedUSB => ((driveitem) cbxUSB.SelectedItem).Value;
 
         public void loadkeys()
         {
@@ -37,7 +42,6 @@ namespace SharpBoot
                 DriveInfo.GetDrives()
                     .Where(d => (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed) && d.IsReady)
             )
-            {
                 cbxUSB.Items.Add(new driveitem
                 {
                     Disp =
@@ -45,7 +49,6 @@ namespace SharpBoot
                         " " + drive.DriveFormat,
                     Value = drive
                 });
-            }
         }
 
 
@@ -54,16 +57,11 @@ namespace SharpBoot
             btnOK.Enabled = cbxUSB.SelectedIndex != -1;
         }
 
-        // ReSharper disable once ConvertToAutoPropertyWhenPossible
-        public ComboBox TheComboBox => comboBox;
-
         public void SetProgress(int v)
         {
             pbxPrg.Value = v;
             lblPercent.Text = v + " %";
         }
-
-        public DriveInfo SelectedUSB => ((driveitem) cbxUSB.SelectedItem).Value;
 
 
         public event EventHandler BtnClicked = (sender, args) => { };

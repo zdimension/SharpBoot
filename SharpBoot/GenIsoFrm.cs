@@ -9,7 +9,6 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using Microsoft.VisualBasic;
 using SharpBoot.Properties;
 
 namespace SharpBoot
@@ -17,6 +16,32 @@ namespace SharpBoot
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
     public partial class GenIsoFrm : Form
     {
+        public delegate void ChangeProgressBarDelegate(int val, int max);
+
+        public delegate void ChangeStatusDelegate(string stat);
+
+        public delegate void CloseDelegate();
+
+        public bool _usb;
+
+        public bool abort;
+
+        private bool closeonclick;
+
+        public string filesystem = "";
+
+
+        private readonly bool usethread = true;
+
+        public GenIsoFrm(string output, bool usb)
+        {
+            InitializeComponent();
+            lblStatus.Text = Strings.Init;
+            btnAnnul.Text = Strings.Cancel;
+            OutputFilepath = output;
+            _usb = usb;
+        }
+
         public List<ImageLine> Images { get; set; }
 
 
@@ -37,6 +62,10 @@ namespace SharpBoot
 
         public string OutputFilepath { get; set; }
 
+        public Size Res { get; set; }
+
+        public Dictionary<string, string> CustomFiles { get; set; }
+
         public event EventHandler GenerationFinished;
 
         protected virtual void OnFinished(EventArgs e)
@@ -46,14 +75,10 @@ namespace SharpBoot
             BeginInvoke(new CloseDelegate(CloseD));
         }
 
-        public delegate void CloseDelegate();
-
         public void CloseD()
         {
             Close();
         }
-
-        public string filesystem = "";
 
         public void AddImage(ImageLine i)
         {
@@ -63,29 +88,16 @@ namespace SharpBoot
                 Categories.Add(i.Category);
         }
 
-        public delegate void ChangeProgressBarDelegate(int val, int max);
-
-        public bool _usb;
-
-        public GenIsoFrm(string output, bool usb)
-        {
-            InitializeComponent();
-            lblStatus.Text = Strings.Init;
-            btnAnnul.Text = Strings.Cancel;
-            OutputFilepath = output;
-            _usb = usb;
-        }
-
-        public delegate void ChangeStatusDelegate(string stat);
-
         public void ChangeProgressBar(int val, int max)
         {
             if (pbx.InvokeRequired)
+            {
                 pbx.Invoke((MethodInvoker) (() =>
                 {
                     pbx.Maximum = max;
                     pbx.Value = val;
                 }));
+            }
             else
             {
                 pbx.Maximum = max;
@@ -116,9 +128,6 @@ namespace SharpBoot
                 bwkISO.CancelAsync();
         }
 
-
-        private bool usethread = true;
-
         private void GenIsoFrm_Load(object sender, EventArgs e)
         {
             if (_usb) Text = Strings.CreatingUSB;
@@ -128,8 +137,6 @@ namespace SharpBoot
             else
                 Generate();
         }
-
-        private bool closeonclick;
 
         private void btnAnnul_Click(object sender, EventArgs e)
         {
@@ -144,12 +151,6 @@ namespace SharpBoot
                 SetCancel();
             }
         }
-
-        public Size Res { get; set; }
-
-        public bool abort;
-
-        public Dictionary<string, string> CustomFiles { get; set; }
 
         public void Generate()
         {
@@ -210,27 +211,25 @@ namespace SharpBoot
 
                         break;
                     }
-                    else
-                    {
-                        switch (res)
-                        {
-                            case 3:
-                                MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                                abort = true;
-                                return;
-                            case 2:
-                                abort = true;
-                                return;
-                        }
 
-                        if (
-                            MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
-                                MessageBoxIcon.Error) == DialogResult.Cancel)
-                        {
+                    switch (res)
+                    {
+                        case 3:
+                            MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                             abort = true;
                             return;
-                        }
+                        case 2:
+                            abort = true;
+                            return;
+                    }
+
+                    if (
+                        MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
+                            MessageBoxIcon.Error) == DialogResult.Cancel)
+                    {
+                        abort = true;
+                        return;
                     }
 
                     tries++;
@@ -273,7 +272,10 @@ namespace SharpBoot
                 var ms = new MemoryStream(Resources.sharpboot);
                 img = Image.FromStream(ms);
             }
-            else if (IsoBackgroundImage != "$$NONE$$") img = Image.FromFile(IsoBackgroundImage);
+            else if (IsoBackgroundImage != "$$NONE$$")
+            {
+                img = Image.FromFile(IsoBackgroundImage);
+            }
 
             ChangeProgress(35, 100, Strings.ExtractBaseDisk + " 5/6");
             Grub2.SetImage(img, Res, workingDir);
@@ -303,7 +305,6 @@ namespace SharpBoot
                 while (!Directory.Exists(isoroot))
                     Directory.CreateDirectory(isoroot);
                 for (var j = 0; j < 5; j++)
-                {
                     try
                     {
                         XCopy.Copy(current, Path.Combine(isoroot, Path.GetFileName(current)), true,
@@ -314,7 +315,6 @@ namespace SharpBoot
                     catch
                     {
                     }
-                }
             }
 
             ChangeProgressBar(0, CustomFiles.Count);
@@ -329,7 +329,6 @@ namespace SharpBoot
                 while (!Directory.Exists(isodir))
                     Directory.CreateDirectory(isodir);
                 for (var j = 0; j < 5; j++)
-                {
                     try
                     {
                         XCopy.Copy(local, Path.Combine(isodir, remote), true,
@@ -340,7 +339,6 @@ namespace SharpBoot
                     catch
                     {
                     }
-                }
             }
 
             if (bwkISO.CancellationPending)
@@ -441,7 +439,7 @@ namespace SharpBoot
 
             p.OutputDataReceived += new DataReceivedEventHandler(a);
             p.ErrorDataReceived += new DataReceivedEventHandler(a);*/
-                bool exitCaught = false;
+                var exitCaught = false;
                 p.Exited += delegate
                 {
                     exitCaught = true;
@@ -457,7 +455,7 @@ namespace SharpBoot
                 }
 
                 ChangeProgress(33, 100, string.Format(Strings.Extracting, "Mkisofs"));
-                int iter = 0;
+                var iter = 0;
                 while (true)
                 {
                     if (iter == 5)
@@ -473,7 +471,10 @@ namespace SharpBoot
                         File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
                         ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
                     }
-                    else break;
+                    else
+                    {
+                        break;
+                    }
 
                     Thread.Sleep(500);
                     iter++;
@@ -492,13 +493,9 @@ namespace SharpBoot
                             var pp = o.Substring(1, 5).Trim();
                             decimal d;
                             if (decimal.TryParse(pp, out d))
-                            {
                                 if (o[0] == ' ' && o[3] == '.' && o[6] == '%')
-                                {
                                     ChangeProgress(Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)),
                                         100, Strings.CreatingISO + "\t" + pp + "%");
-                                }
-                            }
                         }
                         catch
                         {
@@ -563,7 +560,7 @@ namespace SharpBoot
 
         private void GenF(string f)
         {
-            int iter = 0;
+            var iter = 0;
             while (Directory.Exists(f) && iter < 10)
             {
                 try
@@ -593,9 +590,7 @@ namespace SharpBoot
             if (e.Error != null)
             {
                 if (e.Error is FileNotFoundException)
-                {
                     MessageBox.Show("File not found: " + ((FileNotFoundException) e.Error).FileName);
-                }
                 else throw new Exception("Error: " + e.Error.Message + "\n", e.Error);
             }
         }

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using SharpBoot.Properties;
 
 namespace SharpBoot
 {
@@ -20,7 +15,7 @@ namespace SharpBoot
             btnRight.HoverImage.RotateFlip(RotateFlipType.RotateNoneFlipX);
             btnRight.DownImage.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
-            Properties.Settings.Default.FirstLaunch = false;
+            Settings.Default.FirstLaunch = false;
         }
 
         private void btnLeft_Click(object sender, EventArgs e)

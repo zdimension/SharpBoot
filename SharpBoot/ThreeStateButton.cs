@@ -1,17 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SharpBoot
 {
     public class ThreeStateButton : Button
     {
-        private Image _normalImage;
-        private Image _hoverImage;
         private Image _downImage;
+        private Image _hoverImage;
+        private Image _normalImage;
+        private bool isDown;
+
+        private bool isHover;
 
         public ThreeStateButton()
         {
@@ -25,7 +25,7 @@ namespace SharpBoot
 
         public Image NormalImage
         {
-            get { return _normalImage; }
+            get => _normalImage;
             set
             {
                 _normalImage = value;
@@ -35,7 +35,7 @@ namespace SharpBoot
 
         public Image HoverImage
         {
-            get { return _hoverImage; }
+            get => _hoverImage;
             set
             {
                 _hoverImage = value;
@@ -45,16 +45,13 @@ namespace SharpBoot
 
         public Image DownImage
         {
-            get { return _downImage; }
+            get => _downImage;
             set
             {
                 _downImage = value;
                 SetBackImage();
             }
         }
-
-        private bool isHover = false;
-        private bool isDown = false;
 
         private void SetBackImage()
         {
@@ -65,13 +62,9 @@ namespace SharpBoot
             else
             {
                 if (isHover)
-                {
                     BackgroundImage = HoverImage;
-                }
                 else
-                {
                     BackgroundImage = NormalImage;
-                }
             }
 
             Invalidate();

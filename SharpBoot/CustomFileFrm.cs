@@ -12,10 +12,7 @@ namespace SharpBoot
         {
             InitializeComponent();
 
-            if (Program.IsWin)
-            {
-                Utils.SetWindowTheme(lvFiles.Handle, "EXPLORER", null);
-            }
+            if (Program.IsWin) Utils.SetWindowTheme(lvFiles.Handle, "EXPLORER", null);
 
             lblHeader.Text = Strings.AddFiles;
             btnOK.Text = Strings.OK;
@@ -54,21 +51,14 @@ namespace SharpBoot
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow r in lvFiles.SelectedRows)
-            {
-                lvFiles.Rows.Remove(r);
-            }
+            foreach (DataGridViewRow r in lvFiles.SelectedRows) lvFiles.Rows.Remove(r);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (ofpFile.ShowDialog() == DialogResult.OK)
-            {
                 foreach (var f in ofpFile.FileNames)
-                {
                     AddFile(f);
-                }
-            }
         }
 
         private void AddFile(string local, string remote)
@@ -89,18 +79,13 @@ namespace SharpBoot
 
         private void lvFiles_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                e.Effect = DragDropEffects.Copy;
-            }
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
         }
 
         private void lvFiles_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
                 ((string[]) e.Data.GetData(DataFormats.FileDrop)).ToList().ForEach(AddFile);
-            }
         }
 
         private void lvFiles_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -114,10 +99,7 @@ namespace SharpBoot
             }
             else
             {
-                if (!cv.StartsWith("/"))
-                {
-                    cell.Value = "/" + cv;
-                }
+                if (!cv.StartsWith("/")) cell.Value = "/" + cv;
             }
         }
 
@@ -126,10 +108,7 @@ namespace SharpBoot
             if (e.ColumnIndex == 0)
             {
                 ofpFile.Multiselect = false;
-                if (ofpFile.ShowDialog() == DialogResult.OK)
-                {
-                    lvFiles.Rows[e.RowIndex].Cells[0].Value = ofpFile.FileName;
-                }
+                if (ofpFile.ShowDialog() == DialogResult.OK) lvFiles.Rows[e.RowIndex].Cells[0].Value = ofpFile.FileName;
 
                 ofpFile.Multiselect = true;
             }

@@ -4,33 +4,36 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
-using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Windows.Forms;
 
 namespace SharpBoot
 {
     public class FakeVGA : UserControl
     {
+        public const long MEM_SIZE = 5120;
+
+        private readonly byte[] m_ScreenMemory;
+
+        public List<Tuple<Point, Color, Color, string>> Strings = new List<Tuple<Point, Color, Color, string>>();
+
+        public FakeVGA()
+        {
+            BackColor = Color.Black;
+
+            m_ScreenMemory = new byte[MEM_SIZE];
+
+            Reset();
+        }
+
+        public ushort ScreenMemoryLocation { get; set; }
+
         protected override void SetBoundsCore(int x, int y, int width, int height, BoundsSpecified specified)
         {
             // EDIT: ADD AN EXTRA HEIGHT VALIDATION TO AVOID INITIALIZATION PROBLEMS
             // BITWISE 'AND' OPERATION: IF ZERO THEN HEIGHT IS NOT INVOLVED IN THIS OPERATION
             base.SetBoundsCore(x, y, 640, 480, specified);
-        }
-
-        private byte[] m_ScreenMemory;
-        public ushort ScreenMemoryLocation { get; set; }
-
-        public FakeVGA()
-        {
-            this.BackColor = Color.Black;
-
-            m_ScreenMemory = new byte[MEM_SIZE];
-
-            Reset();
         }
 
         public void Reset()
@@ -64,8 +67,6 @@ namespace SharpBoot
             Refresh();
         }
 
-        public const long MEM_SIZE = 5120;
-
         public byte Peek(ushort Address)
         {
             ushort MemLoc;
@@ -76,11 +77,11 @@ namespace SharpBoot
             }
             catch (Exception)
             {
-                return (byte) 0;
+                return 0;
             }
 
             if (MemLoc < 0 || MemLoc > MEM_SIZE - 1)
-                return (byte) 0;
+                return 0;
 
             return m_ScreenMemory[MemLoc];
         }
@@ -146,8 +147,6 @@ namespace SharpBoot
             Strings.Add(new Tuple<Point, Color, Color, string>(new Point(x, y), f, b, s));
             Refresh();
         }
-
-        public List<Tuple<Point, Color, Color, string>> Strings = new List<Tuple<Point, Color, Color, string>>();
     }
 
     public enum VGAColor : byte

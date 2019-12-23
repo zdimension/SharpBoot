@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using Microsoft.Win32.SafeHandles;
 
 namespace SharpBoot
@@ -12,9 +9,9 @@ namespace SharpBoot
     {
         public const int DEFAULT_SECTOR_SIZE = 512;
         private const int BUFFER_SIZE = 4096;
+        private readonly FileAccess desiredAccess;
 
         private string diskID;
-        private FileAccess desiredAccess;
         private SafeFileHandle fileHandle;
 
 
@@ -29,7 +26,55 @@ namespace SharpBoot
             //     unlock the volumes on Close() or in destructor
 
 
-            this.fileHandle = this.openFile(diskID, desiredAccess);
+            fileHandle = openFile(diskID, desiredAccess);
+        }
+
+        public override bool CanRead =>
+            desiredAccess == FileAccess.Read || desiredAccess == FileAccess.ReadWrite
+                ? true
+                : false;
+
+        public override bool CanWrite =>
+            desiredAccess == FileAccess.Write || desiredAccess == FileAccess.ReadWrite
+                ? true
+                : false;
+
+        /// <summary>
+        ///     En cas de substitution dans une classe dérivée, obtient la longueur du flux en octets.
+        /// </summary>
+        /// <returns>
+        ///     Longue valeur représentant la longueur du flux en octets.
+        /// </returns>
+        /// <exception cref="T:System.NotSupportedException">Une classe dérivée de Stream ne prend pas en charge la recherche. </exception>
+        /// <exception cref="T:System.ObjectDisposedException">Des méthodes ont été appelées après que le flux a été fermé. </exception>
+        public override long Length { get; }
+
+        public override bool CanSeek => true;
+
+        public override long Position
+        {
+            get => (long) PositionU;
+            set => PositionU = (ulong) value;
+        }
+
+        public ulong PositionU
+        {
+            get
+            {
+                ulong n = 0;
+                if (!DeviceIO.SetFilePointerEx(fileHandle, 0, out n, (uint) SeekOrigin.Current))
+                    Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
+                return n;
+            }
+            set
+            {
+                /*if (value > (this.LengthU - 1))
+                    throw new EndOfStreamException("Cannot set position beyond the end of the disk.");*/
+
+                ulong n = 0;
+                if (!DeviceIO.SetFilePointerEx(fileHandle, value, out n, (uint) SeekOrigin.Begin))
+                    Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
+            }
         }
 
         private SafeFileHandle openFile(string id, FileAccess desiredAccess)
@@ -51,7 +96,7 @@ namespace SharpBoot
                     break;
             }
 
-            SafeFileHandle ptr = DeviceIO.CreateFile(
+            var ptr = DeviceIO.CreateFile(
                 id,
                 access,
                 DeviceIO.FILE_SHARE_WRITE,
@@ -60,72 +105,9 @@ namespace SharpBoot
                 DeviceIO.FILE_FLAG_WRITE_THROUGH,
                 IntPtr.Zero);
 
-            if (ptr.IsInvalid)
-            {
-                Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
-            }
+            if (ptr.IsInvalid) Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
 
             return ptr;
-        }
-
-        public override bool CanRead
-        {
-            get
-            {
-                return (this.desiredAccess == FileAccess.Read || this.desiredAccess == FileAccess.ReadWrite)
-                    ? true
-                    : false;
-            }
-        }
-
-        public override bool CanWrite
-        {
-            get
-            {
-                return (this.desiredAccess == FileAccess.Write || this.desiredAccess == FileAccess.ReadWrite)
-                    ? true
-                    : false;
-            }
-        }
-
-        /// <summary>
-        /// En cas de substitution dans une classe dérivée, obtient la longueur du flux en octets. 
-        /// </summary>
-        /// <returns>
-        /// Longue valeur représentant la longueur du flux en octets.
-        /// </returns>
-        /// <exception cref="T:System.NotSupportedException">Une classe dérivée de Stream ne prend pas en charge la recherche. </exception><exception cref="T:System.ObjectDisposedException">Des méthodes ont été appelées après que le flux a été fermé. </exception>
-        public override long Length { get; }
-
-        public override bool CanSeek
-        {
-            get { return true; }
-        }
-
-        public override long Position
-        {
-            get { return (long) PositionU; }
-            set { PositionU = (ulong) value; }
-        }
-
-        public ulong PositionU
-        {
-            get
-            {
-                ulong n = 0;
-                if (!DeviceIO.SetFilePointerEx(this.fileHandle, 0, out n, (uint) SeekOrigin.Current))
-                    Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
-                return n;
-            }
-            set
-            {
-                /*if (value > (this.LengthU - 1))
-                    throw new EndOfStreamException("Cannot set position beyond the end of the disk.");*/
-
-                ulong n = 0;
-                if (!DeviceIO.SetFilePointerEx(this.fileHandle, value, out n, (uint) SeekOrigin.Begin))
-                    Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
-            }
         }
 
         public override void Flush()
@@ -137,11 +119,11 @@ namespace SharpBoot
 
         public override void Close()
         {
-            if (this.fileHandle != null)
+            if (fileHandle != null)
             {
-                DeviceIO.CloseHandle(this.fileHandle);
-                this.fileHandle.SetHandleAsInvalid();
-                this.fileHandle = null;
+                DeviceIO.CloseHandle(fileHandle);
+                fileHandle.SetHandleAsInvalid();
+                fileHandle = null;
             }
 
             base.Close();
@@ -162,7 +144,7 @@ namespace SharpBoot
             uint n = 0;
             fixed (byte* p = buffer)
             {
-                if (!DeviceIO.ReadFile(this.fileHandle, p + offset, count, &n, IntPtr.Zero))
+                if (!DeviceIO.ReadFile(fileHandle, p + offset, count, &n, IntPtr.Zero))
                     Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
             }
 
@@ -179,7 +161,7 @@ namespace SharpBoot
             uint n = 0;
             fixed (byte* p = buffer)
             {
-                if (!DeviceIO.WriteFile(this.fileHandle, p + offset, count, &n, IntPtr.Zero))
+                if (!DeviceIO.WriteFile(fileHandle, p + offset, count, &n, IntPtr.Zero))
                     Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
             }
         }
@@ -192,16 +174,16 @@ namespace SharpBoot
         public ulong SeekU(ulong offset, SeekOrigin origin)
         {
             ulong n = 0;
-            if (!DeviceIO.SetFilePointerEx(this.fileHandle, offset, out n, (uint) origin))
+            if (!DeviceIO.SetFilePointerEx(fileHandle, offset, out n, (uint) origin))
                 Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
             return n;
         }
     }
 
     /// <summary>
-    /// P/Invoke wrappers around Win32 functions and constants.
+    ///     P/Invoke wrappers around Win32 functions and constants.
     /// </summary>
-    internal partial class DeviceIO
+    internal class DeviceIO
     {
         #region Constants used in unmanaged functions
 
@@ -210,12 +192,12 @@ namespace SharpBoot
         public const uint FILE_SHARE_DELETE = 0x00000004;
         public const uint OPEN_EXISTING = 3;
 
-        public const uint GENERIC_READ = (0x80000000);
-        public const uint GENERIC_WRITE = (0x40000000);
+        public const uint GENERIC_READ = 0x80000000;
+        public const uint GENERIC_WRITE = 0x40000000;
 
         public const uint FILE_FLAG_NO_BUFFERING = 0x20000000;
         public const uint FILE_FLAG_WRITE_THROUGH = 0x80000000;
-        public const uint FILE_READ_ATTRIBUTES = (0x0080);
+        public const uint FILE_READ_ATTRIBUTES = 0x0080;
         public const uint FILE_WRITE_ATTRIBUTES = 0x0100;
         public const uint ERROR_INSUFFICIENT_BUFFER = 122;
 
@@ -224,7 +206,7 @@ namespace SharpBoot
         #region Unamanged function declarations
 
         [DllImport("kernel32.dll", SetLastError = true)]
-        public static unsafe extern SafeFileHandle CreateFile(
+        public static extern SafeFileHandle CreateFile(
             string FileName,
             uint DesiredAccess,
             uint ShareMode,

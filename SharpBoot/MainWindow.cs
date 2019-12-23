@@ -21,6 +21,85 @@ namespace SharpBoot
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
     public partial class MainWindow : Form
     {
+        private bool changing;
+
+        private bool changTitle;
+
+        public List<ImageLine> CurImages = new List<ImageLine>();
+
+        private Dictionary<string, string> CustomFiles = new Dictionary<string, string>();
+
+        private readonly bool dev_FirstLaunch = false;
+
+        private readonly Dictionary<string, Tuple<CultureInfo, bool>> lngs =
+            new Dictionary<string, Tuple<CultureInfo, bool>>();
+
+        private bool update_available;
+
+        public Timer updTmr;
+
+        public MainWindow()
+        {
+            if (Settings.Default.FirstLaunch && dev_FirstLaunch)
+                Hide();
+
+            SetStyle(
+                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer |
+                ControlStyles.ResizeRedraw,
+                true);
+
+            InitAfterLng();
+            changing = true;
+            loadlng();
+            var c = Program.GetCulture();
+            setlngitem(c);
+            automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
+
+            SetSize();
+            if (Program.IsWin) Utils.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
+
+
+            ISOInfo.UpdateFinished += (o, args) =>
+            {
+                try
+                {
+                    if (InvokeRequired)
+                        Invoke((MethodInvoker) (() => mniUpdate.Visible = false));
+                    else mniUpdate.Visible = false;
+                }
+                catch
+                {
+                }
+            };
+
+
+            if (Settings.Default.FirstLaunch && dev_FirstLaunch)
+            {
+                var firstlaunch = new FirstLaunch();
+                firstlaunch.ShowDialog();
+
+                Show();
+            }
+        }
+
+        public byte[] SelectedBackground
+            =>
+                cbxBackType.SelectedIndex == 0
+                    ? Resources.sharpboot
+                    : cbxBackType.SelectedIndex == 1
+                        ? File.Exists(txtBackFile.Text) ? Image.FromFile(txtBackFile.Text).ToByteArray() : new byte[0]
+                        : new byte[0];
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                var handleParam = base.CreateParams;
+                handleParam.ExStyle |= 0x02000000; // WS_EX_COMPOSITED       
+                return handleParam;
+            }
+        }
+
         public void SetSize()
         {
             tbxSize.Text = Program.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + Utils.SIZE_BASEDISK +
@@ -30,16 +109,6 @@ namespace SharpBoot
 
             cmsChecksum.Renderer = Windows7Renderer.Instance;
         }
-
-        private Dictionary<string, Tuple<CultureInfo, bool>> lngs = new Dictionary<string, Tuple<CultureInfo, bool>>();
-
-        public byte[] SelectedBackground
-            =>
-                cbxBackType.SelectedIndex == 0
-                    ? Resources.sharpboot
-                    : cbxBackType.SelectedIndex == 1
-                        ? File.Exists(txtBackFile.Text) ? Image.FromFile(txtBackFile.Text).ToByteArray() : new byte[0]
-                        : new byte[0];
 
 
         private void loadlng()
@@ -54,9 +123,7 @@ namespace SharpBoot
                 systemLng = systemLng.Parent;
 
             if (result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
-            {
                 result.Add(systemLng);
-            }
 
             result = result.Distinct().ToList();
             result.Sort((x, y) => string.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
@@ -112,13 +179,8 @@ namespace SharpBoot
             Program.SetAppLng(tmp.Item1);
 
             if (changing && FieldsEmpty())
-            {
                 InitAfterLng();
-            }
-            else if (!FieldsEmpty())
-            {
-                MessageBox.Show(Strings.ChangesNeedRestart);
-            }
+            else if (!FieldsEmpty()) MessageBox.Show(Strings.ChangesNeedRestart);
 
             changing = false;
 
@@ -134,7 +196,6 @@ namespace SharpBoot
 
             var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
             foreach (var culture in cultures)
-            {
                 try
                 {
                     if (culture.Equals(CultureInfo.InvariantCulture)) continue; //do not use "==", won't work
@@ -147,12 +208,9 @@ namespace SharpBoot
                 {
                     //NOP
                 }
-            }
 
             return result;
         }
-
-        public List<ImageLine> CurImages = new List<ImageLine>();
 
 
         public void AddImage(string filePath, ISOV ver = null)
@@ -174,7 +232,7 @@ namespace SharpBoot
             {
                 if (automaticallyAddISOInfoToolStripMenuItem.Checked && ver?.Hash != "other")
                 {
-                    ver = ver ?? (ISOInfo.GetFromFile(filePath, new FileInfo(filePath).Length > 750000000));
+                    ver = ver ?? ISOInfo.GetFromFile(filePath, new FileInfo(filePath).Length > 750000000);
                     if (ver == null)
                     {
                         MessageBox.Show(Path.GetFileName(filePath) + "\n\n" + Strings.CouldntDetect, "SharpBoot",
@@ -206,7 +264,6 @@ namespace SharpBoot
             var found = false;
 
             foreach (ToolStripMenuItem mni in languageToolStripMenuItem.DropDownItems)
-            {
                 if (lngs[mni.Tag.ToString()].Item1.Equals(ci))
                 {
                     found = true;
@@ -214,77 +271,14 @@ namespace SharpBoot
                     languageToolStripMenuItem.Image = mni.Image;
                     break;
                 }
-                else mni.Checked = false;
-            }
+                else
+                {
+                    mni.Checked = false;
+                }
 
             // ReSharper disable once TailRecursiveCall
             if (!found) setlngitem(new CultureInfo("en"));
         }
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                var handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000; // WS_EX_COMPOSITED       
-                return handleParam;
-            }
-        }
-
-        public Timer updTmr;
-
-        private Dictionary<string, string> CustomFiles = new Dictionary<string, string>();
-
-        private bool dev_FirstLaunch = false;
-
-        public MainWindow()
-        {
-            if (Settings.Default.FirstLaunch && dev_FirstLaunch)
-                Hide();
-
-            SetStyle(
-                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer |
-                ControlStyles.ResizeRedraw,
-                true);
-
-            InitAfterLng();
-            changing = true;
-            loadlng();
-            var c = Program.GetCulture();
-            setlngitem(c);
-            automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
-
-            SetSize();
-            if (Program.IsWin)
-            {
-                Utils.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
-            }
-
-
-            ISOInfo.UpdateFinished += (o, args) =>
-            {
-                try
-                {
-                    if (InvokeRequired)
-                        Invoke((MethodInvoker) (() => mniUpdate.Visible = false));
-                    else mniUpdate.Visible = false;
-                }
-                catch
-                {
-                }
-            };
-
-
-            if (Settings.Default.FirstLaunch && dev_FirstLaunch)
-            {
-                var firstlaunch = new FirstLaunch();
-                firstlaunch.ShowDialog();
-
-                Show();
-            }
-        }
-
-        private bool update_available;
 
         private void checkForUpdates()
         {
@@ -345,8 +339,8 @@ namespace SharpBoot
                 else
                 {
                     if (
-                        !(files.Any(
-                            x => Path.GetExtension(x).ToLower() == ".iso" || Path.GetExtension(x).ToLower() == ".img")))
+                        !files.Any(
+                            x => Path.GetExtension(x).ToLower() == ".iso" || Path.GetExtension(x).ToLower() == ".img"))
                     {
                         e.Effect = DragDropEffects.None;
                         return;
@@ -383,7 +377,10 @@ namespace SharpBoot
                             : 1);
                 ask = new USBFrm(Strings.CreateMultibootUsb, Strings.Filesystem, Strings.OK, true, fs);
             }
-            else ask = new AskPath();
+            else
+            {
+                ask = new AskPath();
+            }
 
             if (ask.ShowDialog() == DialogResult.OK)
             {
@@ -424,7 +421,7 @@ namespace SharpBoot
         {
             lblDragHere.Visible = lvIsos.Rows.Count == 0;
             btnGen.Enabled = btnUSB.Enabled = !(lvIsos.Rows.Count == 0 ||
-                                                (cbxBackType.SelectedIndex == 1 && !File.Exists(txtBackFile.Text)));
+                                                cbxBackType.SelectedIndex == 1 && !File.Exists(txtBackFile.Text));
         }
 
         private void btnRemISO_Click(object sender, EventArgs e)
@@ -458,7 +455,7 @@ namespace SharpBoot
 
         private void gbxTest_DragDrop(object sender, DragEventArgs e)
         {
-            var t = ((string[]) e.Data.GetData(DataFormats.FileDrop));
+            var t = (string[]) e.Data.GetData(DataFormats.FileDrop);
             var a = t[0];
             QEMUISO.LaunchQemu(a, a.EndsWith(Program.DirCharStr));
         }
@@ -501,21 +498,13 @@ namespace SharpBoot
             {
                 var img = Image.FromFile(ofpI.FileName);
                 if (img.Width < 720)
-                {
                     cbxRes.SelectedIndex = 0;
-                }
                 else if (img.Width >= 720 && img.Width < 912)
-                {
                     cbxRes.SelectedIndex = 1;
-                }
                 else if (img.Width >= 912 && img.Width < 1152)
-                {
                     cbxRes.SelectedIndex = 2;
-                }
                 else
-                {
                     cbxRes.SelectedIndex = 3;
-                }
 
                 txtBackFile.Text = ofpI.FileName;
 
@@ -562,8 +551,6 @@ namespace SharpBoot
             theupdate();
         }
 
-        private bool changing;
-
         public bool FieldsEmpty()
         {
             return lvIsos.Rows.Count == 0 && txtTitle.Text == "SharpBoot" && txtBackFile.Text.Length == 0;
@@ -591,10 +578,7 @@ namespace SharpBoot
         private void addISOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var fr = new AddIso();
-            if (fr.ShowDialog() == DialogResult.OK)
-            {
-                AddImage(fr.ISOPath, fr.IsoV);
-            }
+            if (fr.ShowDialog() == DialogResult.OK) AddImage(fr.ISOPath, fr.IsoV);
         }
 
         private void automaticallyAddISOInfoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -651,8 +635,6 @@ namespace SharpBoot
                 doc.Save(saveFileDialog.FileName);
             }
         }
-
-        private bool changTitle;
 
         private void txtTitle_TextChanged(object sender, EventArgs e)
         {

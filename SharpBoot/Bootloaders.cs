@@ -1,22 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Management;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Threading;
-using SharpBoot.Properties;
 
 namespace SharpBoot
 {
     public static class Grub2
     {
-        public static string GetCode(BootMenu menu, Size res = default(Size))
+        public static string GetCode(BootMenu menu, Size res = default)
         {
             var code = "";
 
@@ -25,7 +16,7 @@ namespace SharpBoot
             code += "insmod fat\n";
             code += "loadfont /boot/grub/unicode.pf2\n";
             code += "insmod all_video\n";
-            code += "set gfxmode=" + (res == default(Size) ? "auto" : $"{res.Width}x{res.Height}") + "\n";
+            code += "set gfxmode=" + (res == default ? "auto" : $"{res.Width}x{res.Height}") + "\n";
             code += "insmod gfxterm\n";
             code += "terminal_output gfxterm\n";
             code += "insmod png\n";

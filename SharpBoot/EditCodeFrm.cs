@@ -13,15 +13,15 @@ namespace SharpBoot
             btnAnnul.Text = Strings.Cancel;
         }
 
-        public string Code
-        {
-            get { return rtbCode.Text; }
-            set { rtbCode.Text = value; }
-        }
-
         public EditCodeFrm(string fname) : this()
         {
             lblFilePath.Text = Program.fpath + ": " + fname;
+        }
+
+        public string Code
+        {
+            get => rtbCode.Text;
+            set => rtbCode.Text = value;
         }
 
         private void rtbCode_TextChanged(object sender, EventArgs e)

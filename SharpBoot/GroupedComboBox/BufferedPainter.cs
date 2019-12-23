@@ -12,125 +12,41 @@ using System.Windows.Forms.VisualStyles;
 namespace BufferedPainting
 {
     /// <summary>
-    /// Attaches to a System.Windows.Forms.Control and provides buffered 
-    /// painting functionality.
-    /// <para>
-    /// Uses TState to represent the visual state of the control. Animations 
-    /// are attached to transitions between states.
-    /// </para>
+    ///     Attaches to a System.Windows.Forms.Control and provides buffered
+    ///     painting functionality.
+    ///     <para>
+    ///         Uses TState to represent the visual state of the control. Animations
+    ///         are attached to transitions between states.
+    ///     </para>
     /// </summary>
     /// <typeparam name="TState">Any type representing the visual state of the control.</typeparam>
     public class BufferedPainter<TState>
     {
-        bool _animationsNeedCleanup;
-        bool _enabled;
-        TState _currentState;
-        TState _newState;
-        TState _defaultState;
-        Size _oldSize;
+        private bool _animationsNeedCleanup;
+        private TState _currentState;
+        private TState _defaultState;
+        private TState _newState;
+        private Size _oldSize;
 
         /// <summary>
-        /// Fired when the control must be painted in a particular state.
-        /// </summary>
-        public event EventHandler<BufferedPaintEventArgs<TState>> PaintVisualState;
-
-        /// <summary>
-        /// Raises the PaintVisualState event.
-        /// </summary>
-        /// <param name="e">BufferedPaintEventArgs instance.</param>
-        protected virtual void OnPaintVisualState(BufferedPaintEventArgs<TState> e)
-        {
-            if (PaintVisualState != null) PaintVisualState(this, e);
-        }
-
-        /// <summary>
-        /// Gets whether buffered painting is supported for the current OS/configuration.
-        /// </summary>
-        public bool BufferedPaintSupported { get; private set; }
-
-        /// <summary>
-        /// Gets the control this instance is attached to.
-        /// </summary>
-        public Control Control { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the default animation duration (in milliseconds) for state transitions. The default is zero (not animated).
-        /// </summary>
-        public int DefaultDuration { get; set; }
-
-        /// <summary>
-        /// Gets or sets whether animation is enabled.
-        /// </summary>
-        public bool Enabled
-        {
-            get { return _enabled; }
-            set { _enabled = value; }
-        }
-
-        /// <summary>
-        /// Gets or sets the default visual state. The default value is 'default(TState)'.
-        /// </summary>
-        public TState DefaultState
-        {
-            get { return _defaultState; }
-            set
-            {
-                bool usingOldDefault = Object.Equals(_currentState, _defaultState);
-                _defaultState = value;
-                if (usingOldDefault) _currentState = _newState = _defaultState;
-            }
-        }
-
-        /// <summary>
-        /// Gets the collection of state transitions and their animation durations. 
-        /// Only one item for each unique state transition is permitted.
-        /// </summary>
-        public ICollection<BufferedPaintTransition<TState>> Transitions { get; private set; }
-
-        /// <summary>
-        /// Gets the collection of state change triggers. 
-        /// Only one item for each unique combination of type and visual state is permitted.
-        /// </summary>
-        public ICollection<VisualStateTrigger<TState>> Triggers { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the current visual state.
-        /// </summary>
-        public TState State
-        {
-            get { return _currentState; }
-            set
-            {
-                bool diff = !Object.Equals(_currentState, value);
-                _newState = value;
-                if (diff)
-                {
-                    if (_animationsNeedCleanup && Control.IsHandleCreated)
-                        Interop.BufferedPaintStopAllAnimations(Control.Handle);
-                    Control.Invalidate();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Initialises a new instance of the BufferedPainter class.
+        ///     Initialises a new instance of the BufferedPainter class.
         /// </summary>
         /// <param name="control">
-        /// Control this instance is attached to.
-        /// <para>
-        /// For best results, use a control which does not paint its background.
-        /// </para>
-        /// <para>
-        /// Note: Buffered painting does not work if the OptimizedDoubleBuffer flag is set for the control.
-        /// </para> 
+        ///     Control this instance is attached to.
+        ///     <para>
+        ///         For best results, use a control which does not paint its background.
+        ///     </para>
+        ///     <para>
+        ///         Note: Buffered painting does not work if the OptimizedDoubleBuffer flag is set for the control.
+        ///     </para>
         /// </param>
         public BufferedPainter(Control control)
         {
             Transitions = new HashSet<BufferedPaintTransition<TState>>();
             Triggers = new HashSet<VisualStateTrigger<TState>>();
 
-            _enabled = true;
-            _defaultState = _currentState = _newState = default(TState);
+            Enabled = true;
+            _defaultState = _currentState = _newState = default;
 
             Control = control;
             _oldSize = Control.Size;
@@ -138,10 +54,10 @@ namespace BufferedPainting
             // buffered painting requires Windows Vista and above with themes supported and enabled (i.e. Basic/Aero theme, not Classic)
             BufferedPaintSupported = IsSupported();
 
-            Control.Resize += new EventHandler(Control_Resize);
-            Control.Disposed += new EventHandler(Control_Disposed);
-            Control.Paint += new PaintEventHandler(Control_Paint);
-            Control.HandleCreated += new EventHandler(Control_HandleCreated);
+            Control.Resize += Control_Resize;
+            Control.Disposed += Control_Disposed;
+            Control.Paint += Control_Paint;
+            Control.HandleCreated += Control_HandleCreated;
 
             Control.MouseEnter += (o, e) => EvalTriggers();
             Control.MouseLeave += (o, e) => EvalTriggers();
@@ -153,17 +69,97 @@ namespace BufferedPainting
         }
 
         /// <summary>
-        /// Returns a value indicating whether buffered painting is supported under the current OS and configuration.
+        ///     Gets whether buffered painting is supported for the current OS/configuration.
+        /// </summary>
+        public bool BufferedPaintSupported { get; }
+
+        /// <summary>
+        ///     Gets the control this instance is attached to.
+        /// </summary>
+        public Control Control { get; }
+
+        /// <summary>
+        ///     Gets or sets the default animation duration (in milliseconds) for state transitions. The default is zero (not
+        ///     animated).
+        /// </summary>
+        public int DefaultDuration { get; set; }
+
+        /// <summary>
+        ///     Gets or sets whether animation is enabled.
+        /// </summary>
+        public bool Enabled { get; set; }
+
+        /// <summary>
+        ///     Gets or sets the default visual state. The default value is 'default(TState)'.
+        /// </summary>
+        public TState DefaultState
+        {
+            get => _defaultState;
+            set
+            {
+                var usingOldDefault = Equals(_currentState, _defaultState);
+                _defaultState = value;
+                if (usingOldDefault) _currentState = _newState = _defaultState;
+            }
+        }
+
+        /// <summary>
+        ///     Gets the collection of state transitions and their animation durations.
+        ///     Only one item for each unique state transition is permitted.
+        /// </summary>
+        public ICollection<BufferedPaintTransition<TState>> Transitions { get; }
+
+        /// <summary>
+        ///     Gets the collection of state change triggers.
+        ///     Only one item for each unique combination of type and visual state is permitted.
+        /// </summary>
+        public ICollection<VisualStateTrigger<TState>> Triggers { get; }
+
+        /// <summary>
+        ///     Gets or sets the current visual state.
+        /// </summary>
+        public TState State
+        {
+            get => _currentState;
+            set
+            {
+                var diff = !Equals(_currentState, value);
+                _newState = value;
+                if (diff)
+                {
+                    if (_animationsNeedCleanup && Control.IsHandleCreated)
+                        Interop.BufferedPaintStopAllAnimations(Control.Handle);
+                    Control.Invalidate();
+                }
+            }
+        }
+
+        /// <summary>
+        ///     Fired when the control must be painted in a particular state.
+        /// </summary>
+        public event EventHandler<BufferedPaintEventArgs<TState>> PaintVisualState;
+
+        /// <summary>
+        ///     Raises the PaintVisualState event.
+        /// </summary>
+        /// <param name="e">BufferedPaintEventArgs instance.</param>
+        protected virtual void OnPaintVisualState(BufferedPaintEventArgs<TState> e)
+        {
+            if (PaintVisualState != null) PaintVisualState(this, e);
+        }
+
+        /// <summary>
+        ///     Returns a value indicating whether buffered painting is supported under the current OS and configuration.
         /// </summary>
         /// <returns></returns>
         internal static bool IsSupported()
         {
-            return (Environment.OSVersion.Version.Major >= 6) && VisualStyleRenderer.IsSupported &&
+            return Environment.OSVersion.Version.Major >= 6 && VisualStyleRenderer.IsSupported &&
                    Application.RenderWithVisualStyles;
         }
 
         /// <summary>
-        /// Short-hand method for adding a state transition.
+        ///     Short-hand method for adding a state transition.
         /// </summary>
         /// <param name="fromState">The previous visual state.</param>
         /// <param name="toState">The new visual state.</param>
@@ -174,26 +170,26 @@ namespace BufferedPainting
         }
 
         /// <summary>
-        /// Short-hand method for adding a state change trigger.
+        ///     Short-hand method for adding a state change trigger.
         /// </summary>
         /// <param name="type">Type of trigger.</param>
         /// <param name="state">Visual state applied when the trigger occurs.</param>
         /// <param name="bounds">Bounds within which the trigger applies.</param>
         /// <param name="anchor">How the bounds are anchored to the control.</param>
-        public void AddTrigger(VisualStateTriggerTypes type, TState state, Rectangle bounds = default(Rectangle),
+        public void AddTrigger(VisualStateTriggerTypes type, TState state, Rectangle bounds = default,
             AnchorStyles anchor = AnchorStyles.Top | AnchorStyles.Left)
         {
             Triggers.Add(new VisualStateTrigger<TState>(type, state, bounds, anchor));
         }
 
         /// <summary>
-        /// Evaluates all state change triggers.
+        ///     Evaluates all state change triggers.
         /// </summary>
         private void EvalTriggers()
         {
             if (!Triggers.Any()) return;
 
-            TState newState = DefaultState;
+            var newState = DefaultState;
 
             ApplyCondition(VisualStateTriggerTypes.Focused, ref newState);
             ApplyCondition(VisualStateTriggerTypes.Hot, ref newState);
@@ -203,20 +199,19 @@ namespace BufferedPainting
         }
 
         /// <summary>
-        /// Helper method for EvalTriggers().
+        ///     Helper method for EvalTriggers().
         /// </summary>
         /// <param name="type">Type of trigger to search for.</param>
         /// <param name="stateIfTrue">Reference to the visual state variable to update (if the trigger occurs).</param>
         private void ApplyCondition(VisualStateTriggerTypes type, ref TState stateIfTrue)
         {
-            foreach (VisualStateTrigger<TState> trigger in Triggers.Where(x => x.Type == type))
-            {
+            foreach (var trigger in Triggers.Where(x => x.Type == type))
                 if (trigger != null)
                 {
-                    Rectangle bounds = (trigger.Bounds != Rectangle.Empty) ? trigger.Bounds : Control.ClientRectangle;
+                    var bounds = trigger.Bounds != Rectangle.Empty ? trigger.Bounds : Control.ClientRectangle;
 
-                    bool inRect = bounds.Contains(Control.PointToClient(Cursor.Position));
-                    bool other = true;
+                    var inRect = bounds.Contains(Control.PointToClient(Cursor.Position));
+                    var other = true;
 
                     switch (type)
                     {
@@ -231,11 +226,10 @@ namespace BufferedPainting
 
                     if (other && inRect) stateIfTrue = trigger.State;
                 }
-            }
         }
 
         /// <summary>
-        /// Deactivates buffered painting.
+        ///     Deactivates buffered painting.
         /// </summary>
         private void CleanupAnimations()
         {
@@ -251,7 +245,7 @@ namespace BufferedPainting
             }
         }
 
-        void Control_HandleCreated(object sender, EventArgs e)
+        private void Control_HandleCreated(object sender, EventArgs e)
         {
             if (BufferedPaintSupported)
             {
@@ -260,7 +254,7 @@ namespace BufferedPainting
             }
         }
 
-        void Control_Disposed(object sender, EventArgs e)
+        private void Control_Disposed(object sender, EventArgs e)
         {
             if (_animationsNeedCleanup)
             {
@@ -269,60 +263,50 @@ namespace BufferedPainting
             }
         }
 
-        void Control_Resize(object sender, EventArgs e)
+        private void Control_Resize(object sender, EventArgs e)
         {
             // resizing stops all playing animations
             if (_animationsNeedCleanup && Control.IsHandleCreated)
                 Interop.BufferedPaintStopAllAnimations(Control.Handle);
 
             // update trigger bounds according to anchor styles
-            foreach (VisualStateTrigger<TState> trigger in Triggers)
-            {
+            foreach (var trigger in Triggers)
                 if (trigger.Bounds != Rectangle.Empty)
                 {
-                    Rectangle newBounds = trigger.Bounds;
+                    var newBounds = trigger.Bounds;
 
                     if ((trigger.Anchor & AnchorStyles.Left) != AnchorStyles.Left)
-                    {
-                        newBounds.X += (Control.Width - _oldSize.Width);
-                    }
+                        newBounds.X += Control.Width - _oldSize.Width;
 
                     if ((trigger.Anchor & AnchorStyles.Top) != AnchorStyles.Top)
-                    {
-                        newBounds.Y += (Control.Height - _oldSize.Height);
-                    }
+                        newBounds.Y += Control.Height - _oldSize.Height;
 
                     if ((trigger.Anchor & AnchorStyles.Right) == AnchorStyles.Right)
-                    {
-                        newBounds.Width += (Control.Width - _oldSize.Width);
-                    }
+                        newBounds.Width += Control.Width - _oldSize.Width;
 
                     if ((trigger.Anchor & AnchorStyles.Bottom) == AnchorStyles.Bottom)
-                    {
-                        newBounds.Height += (Control.Height - _oldSize.Height);
-                    }
+                        newBounds.Height += Control.Height - _oldSize.Height;
 
                     trigger.Bounds = newBounds;
                 }
-            }
 
             // save old size for next resize
             _oldSize = Control.Size;
         }
 
-        void Control_Paint(object sender, PaintEventArgs e)
+        private void Control_Paint(object sender, PaintEventArgs e)
         {
             if (BufferedPaintSupported && Enabled)
             {
-                bool stateChanged = !Object.Equals(_currentState, _newState);
+                var stateChanged = !Equals(_currentState, _newState);
 
-                IntPtr hdc = e.Graphics.GetHdc();
+                var hdc = e.Graphics.GetHdc();
                 if (hdc != IntPtr.Zero)
                 {
                     // see if this paint was generated by a soft-fade animation
                     if (!Interop.BufferedPaintRenderAnimation(Control.Handle, hdc))
                     {
-                        Interop.BP_ANIMATIONPARAMS animParams = new Interop.BP_ANIMATIONPARAMS();
+                        var animParams = new Interop.BP_ANIMATIONPARAMS();
                         animParams.cbSize = Marshal.SizeOf(animParams);
                         animParams.style = Interop.BP_ANIMATIONSTYLE.BPAS_LINEAR;
 
@@ -330,34 +314,30 @@ namespace BufferedPainting
                         animParams.dwDuration = 0;
                         if (stateChanged)
                         {
-                            BufferedPaintTransition<TState> transition = Transitions.Where(x =>
-                                    Object.Equals(x.FromState, _currentState) && Object.Equals(x.ToState, _newState))
+                            var transition = Transitions.Where(x =>
+                                    Equals(x.FromState, _currentState) && Equals(x.ToState, _newState))
                                 .SingleOrDefault();
-                            animParams.dwDuration = (transition != null) ? transition.Duration : DefaultDuration;
+                            animParams.dwDuration = transition != null ? transition.Duration : DefaultDuration;
                         }
 
-                        Rectangle rc = Control.ClientRectangle;
+                        var rc = Control.ClientRectangle;
                         IntPtr hdcFrom, hdcTo;
-                        IntPtr hbpAnimation = Interop.BeginBufferedAnimation(Control.Handle, hdc, ref rc,
+                        var hbpAnimation = Interop.BeginBufferedAnimation(Control.Handle, hdc, ref rc,
                             Interop.BP_BUFFERFORMAT.BPBF_COMPATIBLEBITMAP, IntPtr.Zero, ref animParams, out hdcFrom,
                             out hdcTo);
                         if (hbpAnimation != IntPtr.Zero)
                         {
                             if (hdcFrom != IntPtr.Zero)
-                            {
-                                using (Graphics g = Graphics.FromHdc(hdcFrom))
+                                using (var g = Graphics.FromHdc(hdcFrom))
                                 {
                                     OnPaintVisualState(new BufferedPaintEventArgs<TState>(_currentState, g));
                                 }
-                            }
 
                             if (hdcTo != IntPtr.Zero)
-                            {
-                                using (Graphics g = Graphics.FromHdc(hdcTo))
+                                using (var g = Graphics.FromHdc(hdcTo))
                                 {
                                     OnPaintVisualState(new BufferedPaintEventArgs<TState>(_newState, g));
                                 }
-                            }
 
                             _currentState = _newState;
                             Interop.EndBufferedAnimation(hbpAnimation, true);
@@ -381,29 +361,14 @@ namespace BufferedPainting
     }
 
     /// <summary>
-    /// Represents a transition between two visual states. Describes the duration of the animation. 
-    /// Two transitions are considered equal if they represent the same change in visual state.
+    ///     Represents a transition between two visual states. Describes the duration of the animation.
+    ///     Two transitions are considered equal if they represent the same change in visual state.
     /// </summary>
     /// <typeparam name="TState">Any type representing the visual state of the control.</typeparam>
     public class BufferedPaintTransition<TState> : IEquatable<BufferedPaintTransition<TState>>
     {
         /// <summary>
-        /// Gets the previous visual state.
-        /// </summary>
-        public TState FromState { get; private set; }
-
-        /// <summary>
-        /// Gets the new visual state.
-        /// </summary>
-        public TState ToState { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the duration (in milliseconds) of the animation.
-        /// </summary>
-        public int Duration { get; set; }
-
-        /// <summary>
-        /// Initialises a new instance of the BufferedPaintTransition class.
+        ///     Initialises a new instance of the BufferedPaintTransition class.
         /// </summary>
         /// <param name="fromState">The previous visual state.</param>
         /// <param name="toState">The new visual state.</param>
@@ -416,7 +381,31 @@ namespace BufferedPainting
         }
 
         /// <summary>
-        /// Determines if two instances are equal.
+        ///     Gets the previous visual state.
+        /// </summary>
+        public TState FromState { get; }
+
+        /// <summary>
+        ///     Gets the new visual state.
+        /// </summary>
+        public TState ToState { get; }
+
+        /// <summary>
+        ///     Gets or sets the duration (in milliseconds) of the animation.
+        /// </summary>
+        public int Duration { get; set; }
+
+        #region IEquatable<BufferedPaintAnimation<TState>> Members
+
+        bool IEquatable<BufferedPaintTransition<TState>>.Equals(BufferedPaintTransition<TState> other)
+        {
+            return Equals(FromState, other.FromState) && Equals(ToState, other.ToState);
+        }
+
+        #endregion
+
+        /// <summary>
+        ///     Determines if two instances are equal.
         /// </summary>
         /// <param name="obj">The object to compare.</param>
         /// <returns></returns>
@@ -425,63 +414,33 @@ namespace BufferedPainting
             if (obj is BufferedPaintTransition<TState>)
                 return ((IEquatable<BufferedPaintTransition<TState>>) this).Equals(
                     (BufferedPaintTransition<TState>) obj);
-            else
-                return base.Equals(obj);
+            return base.Equals(obj);
         }
 
         /// <summary>
-        /// Serves as a hash function for a particular type.
+        ///     Serves as a hash function for a particular type.
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
         {
             return ((object) FromState ?? 0).GetHashCode() ^ ((object) ToState ?? 0).GetHashCode();
         }
-
-        #region IEquatable<BufferedPaintAnimation<TState>> Members
-
-        bool IEquatable<BufferedPaintTransition<TState>>.Equals(BufferedPaintTransition<TState> other)
-        {
-            return Object.Equals(this.FromState, other.FromState) && Object.Equals(this.ToState, other.ToState);
-        }
-
-        #endregion
     }
 
     /// <summary>
-    /// Represents a trigger for a particular visual state. 
-    /// Two triggers are considered equal if they are of the same type and visual state.
+    ///     Represents a trigger for a particular visual state.
+    ///     Two triggers are considered equal if they are of the same type and visual state.
     /// </summary>
     /// <typeparam name="TState">Any type representing the visual state of the control.</typeparam>
     public class VisualStateTrigger<TState> : IEquatable<VisualStateTrigger<TState>>
     {
         /// <summary>
-        /// Gets the type of trigger.
-        /// </summary>
-        public VisualStateTriggerTypes Type { get; private set; }
-
-        /// <summary>
-        /// Gets the visual state applied when the trigger occurs.
-        /// </summary>
-        public TState State { get; private set; }
-
-        /// <summary>
-        /// Gets or sets the bounds within which the trigger applies.
-        /// </summary>
-        public Rectangle Bounds { get; set; }
-
-        /// <summary>
-        /// Gets or sets how the bounds are anchored to the edge of the control.
-        /// </summary>
-        public AnchorStyles Anchor { get; set; }
-
-        /// <summary>
-        /// Initialises a new instance of the VisualStateTrigger class.
+        ///     Initialises a new instance of the VisualStateTrigger class.
         /// </summary>
         /// <param name="type">Type of trigger.</param>
         /// <param name="state">Visual state applied when the trigger occurs.</param>
         /// <param name="bounds">Bounds within which the trigger applies.</param>
-        public VisualStateTrigger(VisualStateTriggerTypes type, TState state, Rectangle bounds = default(Rectangle),
+        public VisualStateTrigger(VisualStateTriggerTypes type, TState state, Rectangle bounds = default,
             AnchorStyles anchor = AnchorStyles.Top | AnchorStyles.Left)
         {
             Type = type;
@@ -491,7 +450,36 @@ namespace BufferedPainting
         }
 
         /// <summary>
-        /// Determines if two instances are equal.
+        ///     Gets the type of trigger.
+        /// </summary>
+        public VisualStateTriggerTypes Type { get; }
+
+        /// <summary>
+        ///     Gets the visual state applied when the trigger occurs.
+        /// </summary>
+        public TState State { get; }
+
+        /// <summary>
+        ///     Gets or sets the bounds within which the trigger applies.
+        /// </summary>
+        public Rectangle Bounds { get; set; }
+
+        /// <summary>
+        ///     Gets or sets how the bounds are anchored to the edge of the control.
+        /// </summary>
+        public AnchorStyles Anchor { get; set; }
+
+        #region IEquatable<VisualStateTrigger<TState>> Members
+
+        bool IEquatable<VisualStateTrigger<TState>>.Equals(VisualStateTrigger<TState> other)
+        {
+            return Type == other.Type && Equals(State, other.State);
+        }
+
+        #endregion
+
+        /// <summary>
+        ///     Determines if two instances are equal.
         /// </summary>
         /// <param name="obj">The object to compare.</param>
         /// <returns></returns>
@@ -499,68 +487,48 @@ namespace BufferedPainting
         {
             if (obj is BufferedPaintTransition<TState>)
                 return ((IEquatable<VisualStateTrigger<TState>>) this).Equals((VisualStateTrigger<TState>) obj);
-            else
-                return base.Equals(obj);
+            return base.Equals(obj);
         }
 
         /// <summary>
-        /// Serves as a hash function for a particular type.
+        ///     Serves as a hash function for a particular type.
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
         {
             return Type.GetHashCode() ^ ((object) State ?? 0).GetHashCode();
         }
-
-        #region IEquatable<VisualStateTrigger<TState>> Members
-
-        bool IEquatable<VisualStateTrigger<TState>>.Equals(VisualStateTrigger<TState> other)
-        {
-            return (this.Type == other.Type) && Object.Equals(this.State, other.State);
-        }
-
-        #endregion
     }
 
     /// <summary>
-    /// Represents the types of trigger which can change the visual state of a control.
+    ///     Represents the types of trigger which can change the visual state of a control.
     /// </summary>
     public enum VisualStateTriggerTypes
     {
         /// <summary>
-        /// The control receives input focus.
+        ///     The control receives input focus.
         /// </summary>
         Focused,
 
         /// <summary>
-        /// The mouse is over the control.
+        ///     The mouse is over the control.
         /// </summary>
         Hot,
 
         /// <summary>
-        /// The left mouse button is pressed on the control.
+        ///     The left mouse button is pressed on the control.
         /// </summary>
         Pushed
     }
 
     /// <summary>
-    /// EventArgs class for the BufferedPainter.PaintVisualState event.
+    ///     EventArgs class for the BufferedPainter.PaintVisualState event.
     /// </summary>
     /// <typeparam name="TState">Any type representing the visual state of the control.</typeparam>
     public class BufferedPaintEventArgs<TState> : EventArgs
     {
         /// <summary>
-        /// Gets the visual state to paint.
-        /// </summary>
-        public TState State { get; private set; }
-
-        /// <summary>
-        /// Gets the Graphics object on which to paint.
-        /// </summary>
-        public Graphics Graphics { get; private set; }
-
-        /// <summary>
-        /// Initialises a new instance of the BufferedPaintEventArgs class.
+        ///     Initialises a new instance of the BufferedPaintEventArgs class.
         /// </summary>
         /// <param name="state">Visual state to paint.</param>
         /// <param name="graphics">Graphics object on which to paint.</param>
@@ -569,5 +537,15 @@ namespace BufferedPainting
             State = state;
             Graphics = graphics;
         }
+
+        /// <summary>
+        ///     Gets the visual state to paint.
+        /// </summary>
+        public TState State { get; }
+
+        /// <summary>
+        ///     Gets the Graphics object on which to paint.
+        /// </summary>
+        public Graphics Graphics { get; }
     }
 }

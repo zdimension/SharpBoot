@@ -11,7 +11,6 @@ using System.Net;
 using System.Net.Cache;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
-using System.Security.RightsManagement;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32.SafeHandles;
@@ -24,6 +23,16 @@ namespace SharpBoot
 {
     public static class Utils
     {
+        public const long SIZE_BASEDISK = 0;
+
+        public const int FILE_ATTRIBUTE_SYSTEM = 0x4;
+        public const int FILE_FLAG_SEQUENTIAL_SCAN = 0x8;
+        public const int FILE_FLAG_NO_BUFFERING = 0x20000000;
+
+        public static Random CurrentRandom;
+
+        public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
+
         public static void CallAdminProcess(params string[] args)
         {
             var d = Program.GetTemporaryDirectory();
@@ -47,12 +56,6 @@ namespace SharpBoot
             Program.SafeDel(d);
         }
 
-        public const long SIZE_BASEDISK = 0;
-
-        public const int FILE_ATTRIBUTE_SYSTEM = 0x4;
-        public const int FILE_FLAG_SEQUENTIAL_SCAN = 0x8;
-        public const int FILE_FLAG_NO_BUFFERING = 0x20000000;
-
         [DllImport("Kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         public static extern SafeFileHandle CreateFile([MarshalAs(UnmanagedType.LPTStr)] string fileName,
             uint fileAccess, uint fileShare, IntPtr securityAttributes, uint creationDisposition, uint flags,
@@ -60,7 +63,7 @@ namespace SharpBoot
         //public static extern SafeFileHandle CreateFile(string fileName, [MarshalAs(UnmanagedType.U4)] FileAccess fileAccess, [MarshalAs(UnmanagedType.U4)] FileShare fileShare, IntPtr securityAttributes, [MarshalAs(UnmanagedType.U4)] FileMode creationDisposition, int flags, IntPtr template);
 
         [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern UInt32 QueryDosDevice(string DeviceName, IntPtr TargetPath, UInt32 ucchMax);
+        public static extern uint QueryDosDevice(string DeviceName, IntPtr TargetPath, uint ucchMax);
 
         [DllImport("kernel32.dll", ExactSpelling = true, SetLastError = true, CharSet = CharSet.Auto)]
         public static extern bool DeviceIoControl(IntPtr hDevice, uint dwIoControlCode, IntPtr lpInBuffer,
@@ -71,18 +74,16 @@ namespace SharpBoot
             var mbr = new byte[512];
 
             using (
-                var device = Utils.CreateFile(Utils.GetPhysicalPath(l.ToLower().Substring(0, 2)),
+                var device = CreateFile(GetPhysicalPath(l.ToLower().Substring(0, 2)),
                     0x80000000 | 0x40000000,
                     1 | 2, IntPtr.Zero, 3,
-                    /*Utils.FILE_ATTRIBUTE_SYSTEM | Utils.FILE_FLAG_SEQUENTIAL_SCAN*/ Utils.FILE_FLAG_NO_BUFFERING,
+                    /*Utils.FILE_ATTRIBUTE_SYSTEM | Utils.FILE_FLAG_SEQUENTIAL_SCAN*/ FILE_FLAG_NO_BUFFERING,
                     IntPtr.Zero))
             {
                 if (device.IsInvalid)
-                {
                     throw new IOException("Unable to access drive. Win32 Error Code " + Marshal.GetLastWin32Error());
-                }
 
-                using (FileStream src = new FileStream(device, FileAccess.ReadWrite))
+                using (var src = new FileStream(device, FileAccess.ReadWrite))
                 {
                     src.Read(mbr, 0, 512);
                     Array.Copy(theMbr, mbr, theMbr.Length);
@@ -131,8 +132,6 @@ namespace SharpBoot
             return bmp;
         }
 
-        public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
-
         public static string FormatEx(this string s, params object[] args)
         {
             return string.Format(s, args);
@@ -159,8 +158,8 @@ namespace SharpBoot
 
             foreach (var currentWord in words)
             {
-                if ((currentLine.Length > maxLength) ||
-                    ((currentLine.Length + currentWord.Length) > maxLength))
+                if (currentLine.Length > maxLength ||
+                    currentLine.Length + currentWord.Length > maxLength)
                 {
                     lines.Add(currentLine);
                     currentLine = "";
@@ -189,10 +188,7 @@ namespace SharpBoot
                 {
                     var hash = md5.ComputeHash(bs);
                     formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash)
-                    {
-                        formatted.AppendFormat("{0:x2}", b);
-                    }
+                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }
             }
 
@@ -209,10 +205,7 @@ namespace SharpBoot
                 {
                     var hash = sha1.ComputeHash(bs);
                     formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash)
-                    {
-                        formatted.AppendFormat("{0:x2}", b);
-                    }
+                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }
             }
 
@@ -229,10 +222,7 @@ namespace SharpBoot
                 {
                     var hash = sha256.ComputeHash(bs);
                     formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash)
-                    {
-                        formatted.AppendFormat("{0:x2}", b);
-                    }
+                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }
             }
 
@@ -249,10 +239,7 @@ namespace SharpBoot
                 {
                     var hash = sha384.ComputeHash(bs);
                     formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash)
-                    {
-                        formatted.AppendFormat("{0:x2}", b);
-                    }
+                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }
             }
 
@@ -269,10 +256,7 @@ namespace SharpBoot
                 {
                     var hash = sha512.ComputeHash(bs);
                     formatted = new StringBuilder(2 * hash.Length);
-                    foreach (var b in hash)
-                    {
-                        formatted.AppendFormat("{0:x2}", b);
-                    }
+                    foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }
             }
 
@@ -305,7 +289,7 @@ namespace SharpBoot
                     {
                         if (Program.IsMono && Program.IsLinux)
                         {
-                            var p = new Process() {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
+                            var p = new Process {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
                             p.Start();
                             p.WaitForExit(10000);
                             resp = req.GetResponse();
@@ -331,9 +315,15 @@ namespace SharpBoot
                         Console.WriteLine("len: " + mem.Length);
                         res = new StreamReader(mem).ReadToEnd();
                     }
-                    else MessageBox.Show("resp is null");
+                    else
+                    {
+                        MessageBox.Show("resp is null");
+                    }
                 }
-                else MessageBox.Show("req is null");
+                else
+                {
+                    MessageBox.Show("req is null");
+                }
             }
             catch
             {
@@ -349,7 +339,7 @@ namespace SharpBoot
 
         public static string RandomString(int Size)
         {
-            string input = "abcdefghijklmnopqrstuvwxyz0123456789";
+            var input = "abcdefghijklmnopqrstuvwxyz0123456789";
             var chars = Enumerable.Range(0, Size)
                 .Select(x => input[CurrentRandom.Next(0, input.Length)]);
             return new string(chars.ToArray());
@@ -364,8 +354,6 @@ namespace SharpBoot
             url += RandomString(5);
             return url;
         }
-
-        public static Random CurrentRandom;
 
         public static string CRC32(string ct)
         {
@@ -432,26 +420,24 @@ namespace SharpBoot
                     select new ManagementObjectSearcher(
                         $"associators of {{Win32_DiskPartition.DeviceID='{partition["DeviceID"]}'}} " +
                         "where AssocClass= Win32_LogicalDiskToPartition").Get())
+                foreach (var volumeEnumerator in from ManagementObject logical in logicalCollection
+                    where logical != null
+                    select new ManagementObjectSearcher(
+                            $"select DeviceID from Win32_LogicalDisk where Name='{logical["Name"]}'")
+                        .Get().GetEnumerator())
                 {
-                    foreach (var volumeEnumerator in from ManagementObject logical in logicalCollection
-                        where logical != null
-                        select new ManagementObjectSearcher(
-                                $"select DeviceID from Win32_LogicalDisk where Name='{logical["Name"]}'")
-                            .Get().GetEnumerator())
+                    volumeEnumerator.MoveNext();
+
+                    var volume = (ManagementObject) volumeEnumerator.Current;
+
+                    if (
+                        driveLetter.ToLowerInvariant()
+                            .Equals(volume["DeviceID"].ToString().ToLowerInvariant()) &&
+                        (drive["MediaType"].ToString().ToLowerInvariant().Contains("external") ||
+                         drive["InterfaceType"].ToString().ToLowerInvariant().Contains("usb")))
                     {
-                        volumeEnumerator.MoveNext();
-
-                        var volume = (ManagementObject) volumeEnumerator.Current;
-
-                        if (
-                            driveLetter.ToLowerInvariant()
-                                .Equals(volume["DeviceID"].ToString().ToLowerInvariant()) &&
-                            (drive["MediaType"].ToString().ToLowerInvariant().Contains("external") ||
-                             drive["InterfaceType"].ToString().ToLowerInvariant().Contains("usb")))
-                        {
-                            retVal = true;
-                            break;
-                        }
+                        retVal = true;
+                        break;
                     }
                 }
             }
@@ -561,6 +547,17 @@ namespace SharpBoot
     /// </summary>
     public class XCopy
     {
+        private string Destination;
+        private int FilePercentCompleted;
+
+        private int IsCancelled;
+        private string Source;
+
+        private XCopy()
+        {
+            IsCancelled = 0;
+        }
+
         public static void Copy(string source, string destination, bool overwrite, bool nobuffering)
         {
             new XCopy().CopyInternal(source, destination, overwrite, nobuffering, null);
@@ -574,16 +571,6 @@ namespace SharpBoot
 
         private event EventHandler Completed;
         private event EventHandler<ProgressChangedEventArgs> ProgressChanged;
-
-        private int IsCancelled;
-        private int FilePercentCompleted;
-        private string Source;
-        private string Destination;
-
-        private XCopy()
-        {
-            IsCancelled = 0;
-        }
 
         private void CopyInternal(string source, string destination, bool overwrite, bool nobuffering,
             EventHandler<ProgressChangedEventArgs> handler)
@@ -625,7 +612,7 @@ namespace SharpBoot
                 FilePercentCompleted = (int) percent;
 
                 var handler = ProgressChanged;
-                handler?.Invoke(this, new ProgressChangedEventArgs((int) FilePercentCompleted, null));
+                handler?.Invoke(this, new ProgressChangedEventArgs(FilePercentCompleted, null));
             }
         }
 
@@ -676,7 +663,7 @@ namespace SharpBoot
             CopyProgressCallbackReason reason, IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData)
         {
             if (reason == CopyProgressCallbackReason.CALLBACK_CHUNK_FINISHED)
-                OnProgressChanged((transferred / (double) total) * 100.0);
+                OnProgressChanged(transferred / (double) total * 100.0);
 
             if (transferred >= total)
                 OnCompleted();
