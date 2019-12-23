@@ -222,20 +222,26 @@ namespace SharpBoot.Forms
                                 MessageBoxIcon.Error);
                             abort = true;
                             return;
+                        case DriveIO.FormatResult.PartitionTooBig:
+                            MessageBox.Show(string.Format(Strings.PartitionTooBig, filesystem), "SharpBoot",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            abort = true;
+                            return;
                         case DriveIO.FormatResult.UserCancelled:
                             abort = true;
                             return;
-                    }
+                        default:
+                            if (
+                                MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
+                                    MessageBoxIcon.Error) == DialogResult.Cancel)
+                            {
+                                abort = true;
+                                return;
+                            }
 
-                    if (
-                        MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
-                            MessageBoxIcon.Error) == DialogResult.Cancel)
-                    {
-                        abort = true;
-                        return;
+                            tries++;
+                            break;
                     }
-
-                    tries++;
                 }
             }
 
