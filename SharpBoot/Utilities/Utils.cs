@@ -485,7 +485,7 @@ namespace SharpBoot.Utilities
                 var di = new DriveInfo(driveLetter);
                 long maxsize = -1;
                 if (fileSystem == "FAT12") maxsize = 16777216;
-                if (fileSystem == "FAT16") maxsize = 4000000000;
+                if (fileSystem == "FAT16") maxsize = 4294967296;
                 if (di.TotalSize >= maxsize && maxsize != -1)
                 {
                     MessageBox.Show(string.Format(Strings.PartitionTooBig, fileSystem), "SharpBoot",
