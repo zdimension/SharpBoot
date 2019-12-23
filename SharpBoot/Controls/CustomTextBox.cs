@@ -2,7 +2,7 @@
 
 namespace SharpBoot.Controls
 {
-    public class CustomTextBox : TextBox
+    public sealed class CustomTextBox : TextBox
     {
         public CustomTextBox()
         {

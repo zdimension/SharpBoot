@@ -2,7 +2,7 @@
 
 namespace SharpBoot.Controls
 {
-    public class CustomListView : ListView
+    public sealed class CustomListView : ListView
     {
         public CustomListView()
         {
