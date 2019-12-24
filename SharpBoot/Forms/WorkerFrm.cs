@@ -41,6 +41,8 @@ namespace SharpBoot.Forms
                 pbxLoading.InvokeIfRequired(() => { pbxLoading.Image = Resources.accept_button; });
             }
 
+            ChangeAdditional("");
+
             WorkFinished?.Invoke(this, e);
 
             if (!abort)
