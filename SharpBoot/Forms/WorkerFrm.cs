@@ -35,9 +35,16 @@ namespace SharpBoot.Forms
 
         protected virtual void OnFinished(EventArgs e)
         {
-            ChangeProgress(100, 100, "");
+            if (!abort)
+            {
+                ChangeProgress(100, 100, "");
+                pbxLoading.InvokeIfRequired(() => { pbxLoading.Image = Resources.accept_button; });
+            }
+
             WorkFinished?.Invoke(this, e);
-            this.InvokeIfRequired(Close);
+
+            if (!abort)
+                this.InvokeIfRequired(Close);
         }
 
         public void ChangeProgressBar(int val, int max)
@@ -107,14 +114,14 @@ namespace SharpBoot.Forms
 
         public abstract void DoWork();
 
-        private void bwkISO_DoWork(object sender, DoWorkEventArgs e)
+        private void bwkWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
             DoWork();
 
-            Invoke((MethodInvoker)(() => OnFinished(EventArgs.Empty)));
+            this.InvokeIfRequired(() => OnFinished(EventArgs.Empty));
         }
 
         private void SetCancel()
@@ -126,9 +133,11 @@ namespace SharpBoot.Forms
                 btnAnnul.Text = Strings.Close;
                 btnAnnul.DialogResult = DialogResult.Cancel;
             });
+
+            pbxLoading.InvokeIfRequired(() => { pbxLoading.Image = Resources.delete; });
         }
 
-        private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void bwkWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (e.Error != null)
             {
