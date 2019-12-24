@@ -308,6 +308,10 @@ namespace SharpBoot.Forms
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+
+            if (g.abort)
+                return;
+
             if (
                 MessageBox.Show(this, Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -378,8 +382,7 @@ namespace SharpBoot.Forms
 
             if (ask.ShowDialog() == DialogResult.OK)
             {
-                var fn = "";
-                fn = usb ? ((USBFrm) ask).SelectedUSB.Name.ToUpper().Substring(0, 3) : ((AskPath) ask).FileName;
+                var fn = usb ? ((USBFrm) ask).SelectedUSB.Name.ToUpper().Substring(0, 3) : ((AskPath) ask).FileName;
                 var g = new GenIsoFrm(fn, usb);
                 g.WorkFinished += delegate { g_GenerationFinished(g); };
 
