@@ -70,8 +70,8 @@ namespace SharpBoot.Forms
             // bwkWorker
             // 
             this.bwkWorker.WorkerSupportsCancellation = true;
-            this.bwkWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkISO_DoWork);
-            this.bwkWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkISO_RunWorkerCompleted);
+            this.bwkWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkWorker_DoWork);
+            this.bwkWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkWorker_RunWorkerCompleted);
             // 
             // pbxLoading
             // 
