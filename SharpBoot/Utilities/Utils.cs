@@ -50,7 +50,16 @@ namespace SharpBoot.Utilities
                     Arguments = string.Join(" ", args)
                 }
             };
-            p.Start();
+
+            try
+            {
+                p.Start();
+            }
+            catch (Win32Exception e) when (e.NativeErrorCode == WinError.ERROR_CANCELLED)
+            {
+                throw new OperationCanceledException(Strings.OpCancelled, e);
+            }
+
             p.WaitForExit();
 
             SafeDel(d);

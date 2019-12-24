@@ -15,6 +15,7 @@ using System.Xml.Linq;
 using SharpBoot.Models;
 using SharpBoot.Properties;
 using SharpBoot.Utilities;
+using OperationCanceledException = System.OperationCanceledException;
 
 // ReSharper disable PossibleNullReferenceException
 
@@ -674,12 +675,19 @@ namespace SharpBoot.Forms
             {
                 frm.ProgressVisible = true;
                 frm.SetProgress(5);
-                Utils.CallAdminProcess(frm.TheComboBox.SelectedItem.ToString().ToLower(), frm.SelectedUSB.Name);
-                frm.SetProgress(100);
-                MessageBox.Show(
-                    string.Format(Strings.BootloaderInstalled,
-                        frm.TheComboBox.SelectedItem.ToString(),
-                        frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
+                try
+                {
+                    Utils.CallAdminProcess(frm.TheComboBox.SelectedItem.ToString().ToLower(), frm.SelectedUSB.Name);
+                    frm.SetProgress(100);
+                    MessageBox.Show(
+                        string.Format(Strings.BootloaderInstalled,
+                            frm.TheComboBox.SelectedItem.ToString(),
+                            frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
+                }
+                catch(OperationCanceledException)
+                {
+                    return;
+                }
             };
             frm.ShowDialog(this);
         }

@@ -5,7 +5,7 @@ using SharpBoot.Properties;
 
 namespace SharpBoot.Utilities
 {
-    public class SevenZipExtractor
+    public class SevenZipExtractor : IDisposable
     {
         public string SevenZipPath;
 
@@ -51,6 +51,11 @@ namespace SharpBoot.Utilities
                 while (!p.HasExited)
                     if (sp.Elapsed.Seconds > maxDelay)
                         break;
+        }
+
+        public void Dispose()
+        {
+            Close();
         }
     }
 }
