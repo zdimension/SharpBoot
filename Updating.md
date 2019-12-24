@@ -20,7 +20,13 @@
 4. Create the boot image
 ```
 ~/grub$ cd grub-core
-~/grub/grub-core$ ../grub-mkimage -d . biosdisk iso9660 linux ntfs fat configfile part_msdos -O i386-pc -p "(hd0,msdos1)/boot/grub" -o core.img
+~/grub/grub-core$ ../grub-mkimage -d . biosdisk iso9660 linux ntfs fat configfile part_msdos -O i386-pc -p "/boot/grub" -o core.img
 ~/grub/grub-core$ cat cdboot.img core.img > eltorito.img
 ```
-5. Replace `eltorito.img` by the newly generated one in `SharpBoot\Resources\basedisk.7z\boot\grub`.
+5. Replace the following files:
+
+| File | Target path |
+|------|-------------|
+| eltorito.img | `SharpBoot\Resources\basedisk.7z\boot\grub` |
+| boot.img | `SharpBoot.AdminProcess\Resources` |
+| core.img | `SharpBoot.AdminProcess\Resources` |
