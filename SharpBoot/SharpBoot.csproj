@@ -621,7 +621,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Resources\basedisk.7z" />
-    <None Include="Resources\imagemagick.7z" />
     <None Include="Resources\mkisofs.7z" />
   </ItemGroup>
   <ItemGroup>
