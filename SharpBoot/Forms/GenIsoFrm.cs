@@ -67,9 +67,11 @@ namespace SharpBoot.Forms
             Text = _usb ? Strings.CreatingUSB : Strings.CreatingISO;
         }
 
+        private string tmpdir;
+
         public override void DoWork()
         {
-            var f = Utils.GetTemporaryDirectory();
+            tmpdir = Utils.GetTemporaryDirectory();
 
             ChangeStatus(Strings.Init);
             Thread.Sleep(1000);
@@ -79,7 +81,7 @@ namespace SharpBoot.Forms
                 using (var ext = new SevenZipExtractor())
                 {
 
-                    var isodir = _usb ? OutputFilepath : Path.Combine(f, "iso");
+                    var isodir = _usb ? OutputFilepath : Path.Combine(tmpdir, "iso");
 
                     if (_usb)
                     {
@@ -98,12 +100,10 @@ namespace SharpBoot.Forms
 
                     var isoroot = Path.Combine(isodir, "images");
 
-                    var mkisofsexe = Path.Combine(f, "mkisofs", "mkisofs.exe");
-                    var archs = Path.Combine(f, "arch");
+                    var archs = Path.Combine(tmpdir, "arch");
                     Directory.CreateDirectory(archs);
 
                     File.WriteAllBytes(Path.Combine(archs, "basedisk.7z"), Resources.basedisk);
-                    if (!_usb) File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
 
                     ChangeProgress(0, 100, Strings.ExtractBaseDisk + " 1/6");
                     ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
@@ -114,13 +114,6 @@ namespace SharpBoot.Forms
                     }
 
                     ProcessBackgroundImage(workingDir);
-
-                    if (!_usb)
-                    {
-                        ChangeProgress(50, 100, Strings.Extracting.FormatEx("Mkisofs"));
-
-                        ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
-                    }
 
                     ChangeProgressBar(60, 100);
                     Utils.SafeDel(archs);
@@ -197,11 +190,11 @@ namespace SharpBoot.Forms
 
                     if (_usb)
                     {
-                        InstallBootloader(f);
+                        InstallBootloader();
                     }
                     else
                     {
-                        GenerateISO(f, mkisofsexe, archs, ext, isodir);
+                        GenerateISO(archs, ext, isodir);
                     }
                 }
             }
@@ -211,7 +204,7 @@ namespace SharpBoot.Forms
             }
             finally
             {
-                GenF(f);
+                Cleanup(tmpdir);
             }
         }
 
@@ -239,7 +232,7 @@ namespace SharpBoot.Forms
             WorkCancelled -= handler;
         }
 
-        private void GenF(string f)
+        private void Cleanup(string f)
         {
             var iter = 0;
             while (Directory.Exists(f) && iter < 10)
@@ -382,17 +375,21 @@ namespace SharpBoot.Forms
             }
         }
 
-        private void InstallBootloader(string f)
+        private void InstallBootloader()
         {
             ChangeProgress(23, 100, string.Format(Strings.InstallingBoot, "Grub2", OutputFilepath));
             Grub2.Install(OutputFilepath);
-            GenF(f);
         }
 
-        private void GenerateISO(string f, string mkisofsexe, string archs, SevenZipExtractor ext, string isodir)
+        private void GenerateISO(string archs, SevenZipExtractor ext, string isodir)
         {
+            File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
+            ChangeProgress(22, 100, Strings.Extracting.FormatEx("Mkisofs"));
+            ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(tmpdir, "mkisofs"));
+
+            var mkisofsexe = Path.Combine(tmpdir, "mkisofs", "mkisofs.exe");
             // TODO: Implement working progress printing (I can't get OutputDataReceived to work on my computer)
-            ChangeProgress(23, 100, Strings.CreatingISO);
+            ChangeProgress(30, 100, Strings.CreatingISO);
             Thread.Sleep(500);
             var p = new Process
             {
@@ -400,7 +397,7 @@ namespace SharpBoot.Forms
                 {
                     UseShellExecute = false,
                     FileName = mkisofsexe,
-                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
                     CreateNoWindow = true
                 }
             };
@@ -409,17 +406,6 @@ namespace SharpBoot.Forms
             p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + isodir + "\"";
             p.EnableRaisingEvents = true;
 
-            /*var a = new Action<object, DataReceivedEventArgs>((o, args) => MessageBox.Show(args.Data));
-
-        p.OutputDataReceived += new DataReceivedEventHandler(a);
-        p.ErrorDataReceived += new DataReceivedEventHandler(a);*/
-            var exitCaught = false;
-            p.Exited += delegate
-            {
-                exitCaught = true;
-                GenF(f);
-            };
-
             Thread.Sleep(500);
 
             if (IsCancelled)
@@ -427,85 +413,49 @@ namespace SharpBoot.Forms
                 return;
             }
 
-            ChangeProgress(33, 100, string.Format(Strings.Extracting, "Mkisofs"));
-            var iter = 0;
-            while (true)
-            {
-                if (iter == 5)
-                {
-                    MessageBox.Show("Extraction of Mkisofs failed after: 5 attempts. Aborting.");
-                    abort = true;
-                    return;
-                }
-
-                if (!File.Exists(mkisofsexe))
-                {
-                    if (!Directory.Exists(archs)) Directory.CreateDirectory(archs);
-                    File.WriteAllBytes(Path.Combine(archs, "mkisofs.7z"), Resources.mkisofs);
-                    ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(f, "mkisofs"));
-                }
-                else
-                {
-                    break;
-                }
-
-                Thread.Sleep(500);
-                iter++;
-            }
-
             ChangeProgress(43, 100, Strings.CreatingISO);
             try
             {
-                p.OutputDataReceived += (sender, args) =>
+                var started = DateTime.Now;
+                p.ErrorDataReceived += (sender, args) =>
                 {
+                    Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+
                     try
                     {
                         if (args?.Data == null) return;
                         var o = args.Data.Trim();
                         if (!o.Contains('%')) return;
-                        var pp = o.Substring(1, 5).Trim();
-                        if (decimal.TryParse(pp, out var d))
-                            if (o[0] == ' ' && o[3] == '.' && o[6] == '%')
+                        var pp = o.Substring(0, 5).Replace("%", "").Trim();
+                        if (double.TryParse(pp, NumberStyles.Float, CultureInfo.InvariantCulture, out var d))
+                            if (d >= 0 && d <= 100)
+                            {
+                                var rem = TimeSpan.FromSeconds((DateTime.Now - started).TotalSeconds / d *
+                                                               (100 - d));
+
                                 ChangeProgress(
                                     Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)),
-                                    100, Strings.CreatingISO + "\t" + pp + "%");
+                                    100, Strings.CreatingISO + " " + (d / 100).ToString("P"));
+
+                                ChangeAdditional(string.Format(Strings.RemainingTime, rem));
+                            }
                     }
                     catch
                     {
+                        // ignore
                     }
                 };
                 p.Start();
-                p.BeginOutputReadLine();
+                p.BeginErrorReadLine();
                 p.WaitForExit();
-                /*while (!p.WaitForExit(1))
-                {
-                    System.Threading.Thread.Sleep(500);
-                    p.Refresh();
-                    Application.DoEvents();
-                }*/
             }
-            catch (FileNotFoundException)
+            catch (Win32Exception e) when (e.NativeErrorCode == WinError.ERROR_CANCELLED)
             {
+                throw new OperationCanceledException(Strings.OpCancelled, e);
             }
-            /*p.BeginOutputReadLine();
-
-        using (var reader = p.StandardOutput)
-        {
-            while (!reader.EndOfStream)
-            {
-                var o = reader.ReadLine().Trim();
-                var pp = o.Substring(1, 5).Trim();
-                var d = decimal.Parse(pp);
-                if (o[0] == ' ' && o[3] == '.' && o[6] == '%')
-                {
-                    ChangeProgress(Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)), 100, Strings.CopyISOfiles + "\t" + pp + "%");
-                }
-            }
-        }*/
 
             Thread.Sleep(500);
-            if (!exitCaught)
-                GenF(f);
         }
     }
 }
