@@ -666,16 +666,16 @@ namespace SharpBoot.Forms
 
         private void btnInstBoot_Click(object sender, EventArgs e)
         {
-            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false, "Grub2");
+            var frm = new USBFrm(Strings.InstallABootLoader, Strings.ChooseBootloader, Strings.Install, false, "Grub2", "Grub4DOS", "Syslinux");
             frm.BtnClicked += (o, args) =>
             {
                 frm.ProgressVisible = true;
                 frm.SetProgress(5);
-                Grub2.Install(frm.SelectedUSB.Name);
+                Utils.CallAdminProcess(frm.TheComboBox.SelectedItem.ToString().ToLower(), frm.SelectedUSB.Name);
                 frm.SetProgress(100);
                 MessageBox.Show(
                     string.Format(Strings.BootloaderInstalled,
-                        "Grub2",
+                        frm.TheComboBox.SelectedItem.ToString(),
                         frm.SelectedUSB.Name), "SharpBoot", 0, MessageBoxIcon.Information);
             };
             frm.ShowDialog(this);

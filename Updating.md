@@ -12,14 +12,15 @@
 ```
 3. Build Grub
 ```sh
-~/grub$ ./autogen.sh
-~/grub$ ./configure --disable-nls
+~/grub$ ./bootstrap
+~/grub$ ./configure
 ~/grub$ make -j2
 ~/grub$ sudo make install
 ```
 4. Create the boot image
 ```
-~/grub$ ./grub-mkimage biosdisk iso9660 linux ntfs ext2 configfile -O i386-pc -p "/boot/grub" -o core.img
-~/grub$ cat grub-core/cdboot.img core.img > eltorito.img
+~/grub$ cd grub-core
+~/grub/grub-core$ ../grub-mkimage -d . biosdisk iso9660 linux ntfs fat configfile part_msdos -O i386-pc -p "(hd0,msdos1)/boot/grub" -o core.img
+~/grub/grub-core$ cat cdboot.img core.img > eltorito.img
 ```
 5. Replace `eltorito.img` by the newly generated one in `SharpBoot\Resources\basedisk.7z\boot\grub`.

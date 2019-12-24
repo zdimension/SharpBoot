@@ -43,10 +43,11 @@ namespace SharpBoot.Utilities
                 StartInfo =
                 {
                     CreateNoWindow = true,
+                    WindowStyle = ProcessWindowStyle.Hidden,
                     UseShellExecute = true,
                     FileName = exepath,
                     Verb = "runas",
-                    Arguments = String.Join(" ", args)
+                    Arguments = string.Join(" ", args)
                 }
             };
             p.Start();
