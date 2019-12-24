@@ -68,8 +68,6 @@ namespace SharpBoot.Forms
 
         public override void DoWork()
         {
-
-
             var f = Utils.GetTemporaryDirectory();
 
             ChangeStatus(Strings.Init);
@@ -87,7 +85,7 @@ namespace SharpBoot.Forms
                         MessageBoxButtons.YesNo) !=
                     DialogResult.Yes)
                 {
-                    abort = true;
+                    CancelWork();
                     return;
                 }
 
@@ -97,7 +95,7 @@ namespace SharpBoot.Forms
                     if (tries == 5)
                     {
                         MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        abort = true;
+                        CancelWork();
                         return;
                     }
 
@@ -111,7 +109,7 @@ namespace SharpBoot.Forms
                     }
                     else
                     {
-                        abort = true;
+                        CancelWork();
                         return;
                     }
 
@@ -130,22 +128,22 @@ namespace SharpBoot.Forms
                         case DriveIO.FormatResult.AccessDenied:
                             MessageBox.Show(Strings.NeedAdmin, "SharpBoot", MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
-                            abort = true;
+                            CancelWork();
                             return;
                         case DriveIO.FormatResult.PartitionTooBig:
                             MessageBox.Show(string.Format(Strings.PartitionTooBig, filesystem), "SharpBoot",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            abort = true;
+                            CancelWork();
                             return;
                         case DriveIO.FormatResult.UserCancelled:
-                            abort = true;
+                            CancelWork();
                             return;
                         default:
                             if (
                                 MessageBox.Show(Strings.FormatError, "SharpBoot", MessageBoxButtons.RetryCancel,
                                     MessageBoxIcon.Error) == DialogResult.Cancel)
                             {
-                                abort = true;
+                                CancelWork();
                                 return;
                             }
 
@@ -155,9 +153,8 @@ namespace SharpBoot.Forms
                 }
             }
 
-            if (bwkWorker.CancellationPending)
+            if (IsCancelled)
             {
-                abort = true;
                 return;
             }
 
@@ -168,7 +165,6 @@ namespace SharpBoot.Forms
 
             var isoroot = Path.Combine(isodir, "images");
 
-
             var mkisofsexe = Path.Combine(f, "mkisofs", "mkisofs.exe");
             var archs = Path.Combine(f, "arch");
             Directory.CreateDirectory(archs);
@@ -178,9 +174,9 @@ namespace SharpBoot.Forms
 
             ChangeProgress(0, 100, Strings.ExtractBaseDisk + " 1/6");
             ext.Extract(Path.Combine(archs, "basedisk.7z"), isodir);
-            if (bwkWorker.CancellationPending)
+
+            if (IsCancelled)
             {
-                abort = true;
                 return;
             }
 
@@ -209,9 +205,8 @@ namespace SharpBoot.Forms
             ChangeProgressBar(60, 100);
             Utils.SafeDel(archs);
 
-            if (bwkWorker.CancellationPending)
+            if (IsCancelled)
             {
-                abort = true;
                 return;
             }
 
@@ -223,18 +218,7 @@ namespace SharpBoot.Forms
                 ChangeProgress(i, Images.Count, string.Format(Strings.Copying, Path.GetFileName(current)));
                 while (!Directory.Exists(isoroot))
                     Directory.CreateDirectory(isoroot);
-                for (var j = 0; j < 5; j++)
-                    try
-                    {
-                        XCopy.Copy(current, Path.Combine(isoroot, Path.GetFileName(current)), true,
-                            true,
-                            (o, pce) => { ChangeProgressBar(pce.ProgressPercentage, 100); });
-                        break;
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
+                Utils.AttemptTry(() => CopyFile(current, Path.Combine(isoroot, Path.GetFileName(current))));
             }
 
             ChangeProgressBar(0, CustomFiles.Count);
@@ -248,26 +232,15 @@ namespace SharpBoot.Forms
                 ChangeProgress(i, CustomFiles.Count, string.Format(Strings.Copying, Path.GetFileName(local)));
                 while (!Directory.Exists(isodir))
                     Directory.CreateDirectory(isodir);
-                for (var j = 0; j < 5; j++)
-                    try
-                    {
-                        XCopy.Copy(local, Path.Combine(isodir, remote), true,
-                            true,
-                            (o, pce) => { ChangeProgressBar(pce.ProgressPercentage, 100); });
-                        break;
-                    }
-                    catch
-                    {
-                        // ignored
-                    }
+                Utils.AttemptTry(() => CopyFile(local, Path.Combine(isodir, remote)));
             }
 
-            if (bwkWorker.CancellationPending)
+            if (IsCancelled)
             {
-                abort = true;
                 return;
             }
 
+            ChangeAdditional("");
             ChangeProgress(0, Categories.Count, Strings.GenMenus);
 
 
@@ -279,9 +252,8 @@ namespace SharpBoot.Forms
 
             //var itype = new Func<string, EntryType>(fn => Path.GetExtension(fn).ToLower() == ".img" ? EntryType.IMG : EntryType.ISO);
 
-            if (bwkWorker.CancellationPending)
+            if (IsCancelled)
             {
-                abort = true;
                 return;
             }
 
@@ -313,18 +285,16 @@ namespace SharpBoot.Forms
 
                 ii++;
 
-                if (bwkWorker.CancellationPending)
+                if (IsCancelled)
                 {
-                    abort = true;
                     return;
                 }
             }
 
             File.WriteAllText(Path.Combine(workingDir, "grub.cfg"), Grub2.GetCode(main));
 
-            if (bwkWorker.CancellationPending)
+            if (IsCancelled)
             {
-                abort = true;
                 return;
             }
 
@@ -367,9 +337,8 @@ namespace SharpBoot.Forms
 
                 Thread.Sleep(500);
 
-                if (bwkWorker.CancellationPending)
+                if (IsCancelled)
                 {
-                    abort = true;
                     return;
                 }
 
@@ -454,6 +423,29 @@ namespace SharpBoot.Forms
             }
 
             ext.Close();
+        }
+
+        private void CopyFile(string source, string dest)
+        {
+            var tok = new CancellationTokenSource();
+
+            void handler(object sender, EventArgs e)
+            {
+                tok.Cancel();
+            }
+
+            WorkCancelled += handler;
+            var started = DateTime.Now;
+            XCopy.Copy(source, dest, true,
+                true,
+                (o, pce) =>
+                {
+                    var rem = TimeSpan.FromSeconds((DateTime.Now - started).TotalSeconds / pce.ProgressPercentage * (100 - pce.ProgressPercentage));
+
+                    ChangeProgressBar(pce.ProgressPercentage, 100);
+                    ChangeAdditional(string.Format(Strings.RemainingTime, rem));
+                }, tok.Token);
+            WorkCancelled -= handler;
         }
 
         private void GenF(string f)

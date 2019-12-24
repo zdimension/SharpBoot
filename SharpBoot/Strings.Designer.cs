@@ -475,6 +475,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Remaining time: {0:g}.
+        /// </summary>
+        internal static string RemainingTime {
+            get {
+                return ResourceManager.GetString("RemainingTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à SharpBoot uses the following software:.
         /// </summary>
         internal static string SharpBootUsesSoft {

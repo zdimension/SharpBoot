@@ -264,4 +264,7 @@
   <data name="AboutSharpBoot" xml:space="preserve">
     <value>About SharpBoot</value>
   </data>
+  <data name="RemainingTime" xml:space="preserve">
+    <value>Remaining time: {0:g}</value>
+  </data>
 </root>

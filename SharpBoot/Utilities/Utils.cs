@@ -56,6 +56,25 @@ namespace SharpBoot.Utilities
             SafeDel(d);
         }
 
+        public static void AttemptTry(Action func, int n=5)
+        {
+            for (var j = 0; j < n; j++)
+                try
+                {
+                    func();
+                    return;
+                }
+                catch (OperationCanceledException)
+                {
+                    return;
+                }
+                catch
+                {
+                    if (j == n - 1)
+                        throw;
+                }
+        }
+
         public static byte[] ToByteArray(this Image img)
         {
             var ms = new MemoryStream();

@@ -24,6 +24,7 @@ namespace SharpBoot.Utilities
     {
         public const int ERROR_ACCESS_DENIED = 5;
         public const int ERROR_CANCELLED = 1223;
+        public const int ERROR_REQUEST_ABORTED = 1235;
     }
 
     public static class UxTheme

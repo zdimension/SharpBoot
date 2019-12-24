@@ -38,6 +38,7 @@ namespace SharpBoot.Forms
             this.pbx = new System.Windows.Forms.ProgressBar();
             this.bwkWorker = new System.ComponentModel.BackgroundWorker();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
+            this.lblAdditional = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,6 @@ namespace SharpBoot.Forms
             // 
             // btnAnnul
             // 
-            this.btnAnnul.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btnAnnul, "btnAnnul");
             this.btnAnnul.Name = "btnAnnul";
             this.btnAnnul.UseVisualStyleBackColor = true;
@@ -81,13 +81,18 @@ namespace SharpBoot.Forms
             this.pbxLoading.Name = "pbxLoading";
             this.pbxLoading.TabStop = false;
             // 
+            // lblAdditional
+            // 
+            resources.ApplyResources(this.lblAdditional, "lblAdditional");
+            this.lblAdditional.Name = "lblAdditional";
+            // 
             // WorkerFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.btnAnnul;
             this.ControlBox = false;
+            this.Controls.Add(this.lblAdditional);
             this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.pbx);
             this.Controls.Add(this.lblStatus);
@@ -107,8 +112,9 @@ namespace SharpBoot.Forms
         private Panel panel1;
         private Button btnAnnul;
         private Label lblStatus;
-        private ProgressBar pbx;
         protected BackgroundWorker bwkWorker;
         private PictureBox pbxLoading;
+        private Label lblAdditional;
+        protected ProgressBar pbx;
     }
 }

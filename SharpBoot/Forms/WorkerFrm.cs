@@ -18,7 +18,7 @@ namespace SharpBoot.Forms
     [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
     public abstract partial class WorkerFrm : Form
     {
-        public bool abort;
+        public volatile bool abort;
 
         private bool closeonclick;
 
@@ -27,9 +27,11 @@ namespace SharpBoot.Forms
             InitializeComponent();
             lblStatus.Text = Strings.Init;
             btnAnnul.Text = Strings.Cancel;
+            lblAdditional.Text = "";
         }
 
         public event EventHandler WorkFinished;
+        public event EventHandler WorkCancelled;
 
         protected virtual void OnFinished(EventArgs e)
         {
@@ -50,6 +52,11 @@ namespace SharpBoot.Forms
         public void ChangeStatus(string stat)
         {
             lblStatus.InvokeIfRequired(() => lblStatus.Text = stat);
+        }
+
+        public void ChangeAdditional(string info)
+        {
+            lblAdditional.InvokeIfRequired(() => lblAdditional.Text = info);
         }
 
         public void ChangeProgress(int val, int max, string stat)
@@ -83,9 +90,19 @@ namespace SharpBoot.Forms
             }
             else
             {
-                bwkWorker.CancelAsync();
-                SetCancel();
+                CancelWork();
             }
+        }
+
+        public bool IsCancelled => abort || bwkWorker.CancellationPending;
+
+        public void CancelWork()
+        {
+            closeonclick = true;
+            abort = true;
+            bwkWorker.CancelAsync();
+            SetCancel();
+            WorkCancelled?.Invoke(this, EventArgs.Empty);
         }
 
         public abstract void DoWork();
@@ -96,12 +113,6 @@ namespace SharpBoot.Forms
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
             DoWork();
-
-            if (abort)
-            {
-                closeonclick = true;
-                SetCancel();
-            }
 
             Invoke((MethodInvoker)(() => OnFinished(EventArgs.Empty)));
         }
@@ -119,12 +130,6 @@ namespace SharpBoot.Forms
 
         private void bwkISO_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Cancelled)
-            {
-                abort = true;
-                SetCancel();
-            }
-
             if (e.Error != null)
             {
                 if (e.Error is FileNotFoundException exception)

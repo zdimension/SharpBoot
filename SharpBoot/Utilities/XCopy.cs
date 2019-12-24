@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace SharpBoot.Utilities
 {
@@ -13,26 +14,21 @@ namespace SharpBoot.Utilities
     {
         private string Destination;
         private int FilePercentCompleted;
-
         private bool IsCancelled;
+
         private string Source;
 
-        public static void Copy(string source, string destination, bool overwrite, bool nobuffering)
-        {
-            new XCopy().CopyInternal(source, destination, overwrite, nobuffering, null);
-        }
-
         public static void Copy(string source, string destination, bool overwrite, bool nobuffering,
-            EventHandler<ProgressChangedEventArgs> handler)
+            EventHandler<ProgressChangedEventArgs> handler, CancellationToken token = default)
         {
-            new XCopy().CopyInternal(source, destination, overwrite, nobuffering, handler);
+            new XCopy().CopyInternal(source, destination, overwrite, nobuffering, handler, token);
         }
 
         private event EventHandler Completed;
         private event EventHandler<ProgressChangedEventArgs> ProgressChanged;
 
         private void CopyInternal(string source, string destination, bool overwrite, bool nobuffering,
-            EventHandler<ProgressChangedEventArgs> handler)
+            EventHandler<ProgressChangedEventArgs> handler, CancellationToken token = default)
         {
             try
             {
@@ -50,9 +46,23 @@ namespace SharpBoot.Utilities
                 if (handler != null)
                     ProgressChanged += handler;
 
+                IsCancelled = false;
+
+                token.Register(() => IsCancelled = true);
+
                 if (!CopyFileEx(Source, Destination, CopyProgressHandler, IntPtr.Zero, ref IsCancelled,
                     copyFileFlags))
-                    throw new Win32Exception(Marshal.GetLastWin32Error());
+                {
+                    switch (Marshal.GetLastWin32Error())
+                    {
+                        case WinError.ERROR_CANCELLED:
+                        case WinError.ERROR_REQUEST_ABORTED:
+                            throw new OperationCanceledException(token);
+
+                        default:
+                            throw new Win32Exception(Marshal.GetLastWin32Error());
+                    }
+                }
             }
             catch (Exception)
             {
@@ -124,6 +134,9 @@ namespace SharpBoot.Utilities
 
             if (transferred >= total)
                 OnCompleted();
+
+            if (IsCancelled)
+                return CopyProgressResult.PROGRESS_CANCEL;
 
             return CopyProgressResult.PROGRESS_CONTINUE;
         }
