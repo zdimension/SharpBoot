@@ -452,7 +452,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>SharpBoot
 App DB v{0}
-Copyright © 2014-2017 zdimension 
+Copyright © 2014-2019 zdimension 
 {1}</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
@@ -802,7 +802,7 @@ Copyright © 2014-2017 zdimension
     <value>18</value>
   </data>
   <data name="rtbMyWebsite.Text" xml:space="preserve">
-    <value>http://www.zdimension.ml/sharpboot.php</value>
+    <value>https://zdimension.fr</value>
   </data>
   <data name="&gt;&gt;rtbMyWebsite.Name" xml:space="preserve">
     <value>rtbMyWebsite</value>
