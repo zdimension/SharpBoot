@@ -245,7 +245,7 @@
       <DependentUpon>Strings.ro.resx</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Utils.cs" />
-    <Compile Include="Utilities\W7R.cs" />
+    <Compile Include="Utilities\Windows7Renderer.cs" />
     <Compile Include="Utilities\WinApiConstants.cs" />
     <Compile Include="Utilities\XCopy.cs" />
     <EmbeddedResource Include="Forms\About.resx">
