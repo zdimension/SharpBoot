@@ -46,9 +46,9 @@ namespace SharpBoot
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-            Application.ApplicationExit += Application_ApplicationExit;
-            Application.ThreadException += Application_ThreadException;
-            AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
+            Application.ApplicationExit += delegate { Utils.ClrTmp(); };
+            Application.ThreadException += (_, e) => Utils.HandleUnhandled(e.Exception, "Thread exception");
+            AppDomain.CurrentDomain.UnhandledException += (_, e) => Utils.HandleUnhandled((Exception)e.ExceptionObject);
 
             W7RUtils.Install();
 
@@ -56,22 +56,6 @@ namespace SharpBoot
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWindow());
 
-            Utils.ClrTmp();
-        }
-
-        private static void CurrentDomainOnUnhandledException(object sender,
-            UnhandledExceptionEventArgs unhandledExceptionEventArgs)
-        {
-            Utils.HandleUnhandled((Exception) unhandledExceptionEventArgs.ExceptionObject);
-        }
-
-        private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
-        {
-            Utils.HandleUnhandled(e.Exception, "Thread exception");
-        }
-
-        private static void Application_ApplicationExit(object sender, EventArgs e)
-        {
             Utils.ClrTmp();
         }
 
