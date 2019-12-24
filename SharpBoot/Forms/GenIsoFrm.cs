@@ -63,7 +63,7 @@ namespace SharpBoot.Forms
 
         private void GenIsoFrm_Load(object sender, EventArgs e)
         {
-            if (_usb) Text = Strings.CreatingUSB;
+            Text = _usb ? Strings.CreatingUSB : Strings.CreatingISO;
         }
 
         public override void DoWork()
