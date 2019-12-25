@@ -232,10 +232,7 @@ namespace SharpBoot.Forms
             {
                 Invoke((MethodInvoker) (() => pbxLoading.Visible = true));
 
-                var sw = new Stopwatch();
-                sw.Start();
                 var resk = ISOInfo.GetFromFile(ISOPath, false);
-                sw.Stop();
 
                 Invoke((MethodInvoker) (() =>
                 {
@@ -288,7 +285,7 @@ namespace SharpBoot.Forms
             }
             else
             {
-                if (IsoV == null)
+                if (IsoV == null || IsoV.Hash == "other")
                     IsoV = ISOInfo.GetFromFile(ISOPath, true);
             }
         }
