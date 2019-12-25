@@ -46,7 +46,7 @@ namespace SharpBoot.Utilities
             }
             else
             {
-                p.StartInfo.Arguments = (floppy ? "-boot a -fda" : "-boot d -cdrom") + " \"" + iso + "\"";
+                p.StartInfo.Arguments += (floppy ? "-boot a -fda" : "-boot d -cdrom") + " \"" + iso + "\"";
             }
 
             Utils.WaitWhile(() => !File.Exists(p.StartInfo.FileName));
