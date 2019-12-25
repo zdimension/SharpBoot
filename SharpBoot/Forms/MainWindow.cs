@@ -277,32 +277,7 @@ namespace SharpBoot.Forms
             if (!found) setlngitem(new CultureInfo("en"));
         }
 
-        private void checkForUpdates()
         {
-            try
-            {
-                using (var wb = new WebClient())
-                {
-                    wb.Headers["User-Agent"] =
-                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.58 Safari/537.36";
-                    var ct = wb.DownloadString("https://api.github.com/repos/zdimension/SharpBoot/releases/latest");
-
-                    var lnid = ct.IndexOf("tag_name");
-                    ct = ct.Substring(lnid + 13);
-                    ct = ct.Substring(0, ct.IndexOf('"'));
-
-                    var v = Version.Parse(ct);
-                    //v = new Version(3, 7);
-                    updateAvailableToolStripMenuItem.Visible =
-                        update_available = v > Assembly.GetEntryAssembly().GetName().Version;
-                }
-            }
-            catch
-            {
-                // ignored
-            }
-
-            //mniUpdate.Visible = false;
         }
 
         private void g_GenerationFinished(GenIsoFrm g)
@@ -564,7 +539,8 @@ namespace SharpBoot.Forms
         private void CheckForUpdates()
         {
             mniUpdate.Visible = true;
-            checkForUpdates();
+            updateAvailableToolStripMenuItem.Visible = update_available = Updater.Check();
+
             mniUpdate.Visible = true;
             ISOInfo.RefreshISOs();
         }
