@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Resources;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using SharpBoot.Models;
@@ -42,19 +43,33 @@ namespace SharpBoot.Utilities
             return systemLng;
         }
 
-        public static List<CultureInfo> GetAvailableCultures()
+        public static bool IsSystemCultureSupported()
         {
-            var result = Localization.GetAvailableCultures(typeof(Strings));
+            var systemLng = GetSystemCulture();
 
-            result.AddRange(Localization.GetAvailableCultures(typeof(ISOCat)));
+            return GetAvailableCultures().Any(x => x.ThreeLetterISOLanguageName == systemLng.ThreeLetterISOLanguageName);
+        }
+
+        public static List<CultureInfo> GetDisplayCultures()
+        {
+            var result = GetAvailableCultures();
 
             var systemLng = GetSystemCulture();
 
-            if (result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
+            if (!IsSystemCultureSupported())
                 result.Add(systemLng);
 
             result = result.Distinct().ToList();
-            result.Sort((x, y) => String.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
+            result.Sort((x, y) => string.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
+
+            return result;
+        }
+
+        public static List<CultureInfo> GetAvailableCultures()
+        {
+            var result = GetAvailableCultures(typeof(Strings));
+
+            result.AddRange(GetAvailableCultures(typeof(ISOCat)));
 
             return result;
         }

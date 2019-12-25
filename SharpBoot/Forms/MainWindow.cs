@@ -113,7 +113,7 @@ namespace SharpBoot.Forms
             
             lngs.Clear();
 
-            foreach (var x in Localization.GetAvailableCultures())
+            foreach (var x in Localization.GetDisplayCultures())
             {
                 var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name)) {Tag = lngs.Count};
                 mnit.Click += (sender, args) => OnLanguageMenuItemClick(mnit);
@@ -152,7 +152,7 @@ namespace SharpBoot.Forms
 
             if (Utils.GetCulture().Equals(tmp)) return;
 
-            if (tmp.Equals(Localization.GetSystemCulture()))
+            if (tmp.Equals(Localization.GetSystemCulture()) && !Localization.IsSystemCultureSupported())
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
                 SetCurrentLanguageItem(Utils.GetCulture());
