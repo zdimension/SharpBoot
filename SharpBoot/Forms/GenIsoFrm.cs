@@ -74,7 +74,6 @@ namespace SharpBoot.Forms
             tmpdir = Utils.GetTemporaryDirectory();
 
             ChangeStatus(Strings.Init);
-            Thread.Sleep(1000);
 
             try
             {
@@ -376,7 +375,6 @@ namespace SharpBoot.Forms
             var mkisofsexe = Path.Combine(tmpdir, "mkisofs", "mkisofs.exe");
             // TODO: Implement working progress printing (I can't get OutputDataReceived to work on my computer)
             ChangeProgress(30, 100, Strings.CreatingISO);
-            Thread.Sleep(500);
             var p = new Process
             {
                 StartInfo =
@@ -436,8 +434,6 @@ namespace SharpBoot.Forms
             {
                 throw new OperationCanceledException(Strings.OpCancelled, e);
             }
-
-            Thread.Sleep(500);
         }
     }
 }
