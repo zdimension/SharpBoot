@@ -13,7 +13,6 @@ namespace SharpBoot.Utilities
 {
     public static class DriveIO
     {
-        public const long SIZE_BASEDISK = 0;
         public const int FILE_ATTRIBUTE_SYSTEM = 0x4;
         public const int FILE_FLAG_SEQUENTIAL_SCAN = 0x8;
         public const int FILE_FLAG_NO_BUFFERING = 0x20000000;

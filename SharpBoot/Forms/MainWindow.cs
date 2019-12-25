@@ -56,7 +56,7 @@ namespace SharpBoot.Forms
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
             cbxBackType.SelectedIndex = 2;
 
-            SetSize();
+            RefreshOutputSize();
             if (Utils.IsWin) UxTheme.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
 
 
@@ -102,10 +102,10 @@ namespace SharpBoot.Forms
             }
         }
 
-        public void SetSize()
+        public void RefreshOutputSize()
         {
-            tbxSize.Text = Utils.GetSizeString(CurImages.Sum(x => x.SizeB) + 8787466 + DriveIO.SIZE_BASEDISK +
-                                                 SelectedBackground.Length); // TODO: Update the bloader size
+            tbxSize.Text = Utils.GetSizeString(CurImages.Sum(x => x.SizeB) + Resources.basedisk.Length +
+                                                 SelectedBackground.Length);
         }
 
 
@@ -141,8 +141,8 @@ namespace SharpBoot.Forms
         {
             Controls.Clear();
             InitializeComponent();
-            SetSize();
             centerDragndrop();
+            RefreshOutputSize();
             lngs.Clear();
             loadlng();
             LoadResolutions();
@@ -250,7 +250,7 @@ namespace SharpBoot.Forms
                 typ: filePath.ToLower().EndsWith("img") ? EntryType.IMG : EntryType.ISO);
             CurImages.Add(im);
 
-            SetSize();
+            RefreshOutputSize();
 
 
             lvIsos.Rows.Add(name, Utils.GetFileSizeString(filePath), cat, desc, filePath);
@@ -432,7 +432,7 @@ namespace SharpBoot.Forms
             CurImages.RemoveAll(x => x.FilePath == fp);
             lvIsos.Rows.Remove(lvIsos.Rows.OfType<DataGridViewRow>().Single(x => x.Cells[4].Value.ToString() == fp));
 
-            SetSize();
+            RefreshOutputSize();
         }
 
         private void gbxTest_DragEnter(object sender, DragEventArgs e)
@@ -571,9 +571,9 @@ namespace SharpBoot.Forms
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            SetSize();
             centerDragndrop();
             theupdate();
+            RefreshOutputSize();
         }
 
         public bool FieldsEmpty()
@@ -732,7 +732,7 @@ namespace SharpBoot.Forms
             txtBackFile.Enabled = btnBackBrowse.Enabled = cbxBackType.SelectedIndex == 1;
             if (cbxBackType.SelectedIndex != 1) txtBackFile.Text = "";
             CheckFields();
-            SetSize();
+            RefreshOutputSize();
         }
 
         private void lvIsos_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -801,7 +801,7 @@ namespace SharpBoot.Forms
                 var im = new ImageLine(Path.GetFileNameWithoutExtension(entryfrm.FilePath), entryfrm.FilePath, "", "",
                     "", entryfrm.SelectedType);
                 CurImages.Add(im);
-                SetSize();
+                RefreshOutputSize();
                 lvIsos.Rows.Add(im.Name, Utils.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
             }
         }
@@ -821,7 +821,7 @@ namespace SharpBoot.Forms
 
         private void txtBackFile_TextChanged(object sender, EventArgs e)
         {
-            SetSize();
+            RefreshOutputSize();
         }
 
         private void editThemeToolStripMenuItem_Click(object sender, EventArgs e)
