@@ -141,8 +141,8 @@ namespace SharpBoot.Forms
         {
             Controls.Clear();
             InitializeComponent();
-            centerDragndrop();
             RefreshOutputSize();
+            ComputeDragBounds();
             lngs.Clear();
             loadlng();
             LoadResolutions();
@@ -571,9 +571,9 @@ namespace SharpBoot.Forms
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            centerDragndrop();
             theupdate();
             RefreshOutputSize();
+            ComputeDragBounds();
         }
 
         public bool FieldsEmpty()
@@ -582,7 +582,7 @@ namespace SharpBoot.Forms
         }
 
 
-        private void centerDragndrop()
+        private void ComputeDragBounds()
         {
             lblDragHere.Location = new Point(
                 lvIsos.Width / 2 - lblDragHere.Width / 2 + lvIsos.Location.X,
@@ -757,7 +757,7 @@ namespace SharpBoot.Forms
 
         private void MainWindow_SizeChanged(object sender, EventArgs e)
         {
-            centerDragndrop();
+            ComputeDragBounds();
         }
 
         private ImageLine selectediline()
