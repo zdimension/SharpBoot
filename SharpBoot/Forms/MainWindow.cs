@@ -54,6 +54,7 @@ namespace SharpBoot.Forms
             var c = Utils.GetCulture();
             setlngitem(c);
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
+            cbxBackType.SelectedIndex = 2;
 
             SetSize();
             if (Utils.IsWin) UxTheme.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
@@ -318,7 +319,9 @@ namespace SharpBoot.Forms
                 MessageBox.Show(this, Strings.IsoCreated.Replace(@"\n", "\n"), Strings.IsoCreatedTitle,
                     MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (g.filesystem == "NTFS") Thread.Sleep(1500);
+                if (g.filesystem == "NTFS")
+                    Thread.Sleep(1500); // let Windows notice the FS changes
+
                 QEMUISO.LaunchQemu(g.OutputFilepath, g._usb);
             }
         }
