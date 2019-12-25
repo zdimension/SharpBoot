@@ -58,6 +58,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ColorComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Forms\About.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -657,6 +660,7 @@
     <None Include="Resources\page_white_add.png" />
     <None Include="Resources\script_edit.png" />
     <None Include="Resources\package_go.png" />
+    <None Include="Resources\unifont.ttf" />
     <None Include="Resources\update_anim.gif" />
     <None Include="Resources\drive_disk.png" />
     <None Include="Resources\ajax-loader.gif" />

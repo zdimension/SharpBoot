@@ -7,22 +7,17 @@ using System.Drawing.Text;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SharpBoot.Properties;
 
 namespace SharpBoot.Controls
 {
     public class FakeVGA : UserControl
     {
-        public const long MEM_SIZE = 5120;
-
-        private readonly byte[] m_ScreenMemory;
-
-        public List<Tuple<Point, Color, Color, string>> Strings = new List<Tuple<Point, Color, Color, string>>();
+        public List<VGAString> Strings = new List<VGAString>();
 
         public FakeVGA()
         {
             BackColor = Color.Black;
-
-            m_ScreenMemory = new byte[MEM_SIZE];
 
             Reset();
         }
@@ -38,87 +33,34 @@ namespace SharpBoot.Controls
 
         public void Reset()
         {
-            for (var i = 0; i < MEM_SIZE; i += 2)
-            {
-                m_ScreenMemory[i] = 32;
-                m_ScreenMemory[i + 1] = 7;
-            }
+            Strings.Clear();
 
             Refresh();
         }
-
-        public void Poke(ushort Address, byte Value)
-        {
-            ushort MemLoc;
-
-            try
-            {
-                MemLoc = (ushort) (Address - ScreenMemoryLocation);
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
-            if (MemLoc < 0 || MemLoc > MEM_SIZE - 1)
-                return;
-
-            m_ScreenMemory[MemLoc] = Value;
-            Refresh();
-        }
-
-        public byte Peek(ushort Address)
-        {
-            ushort MemLoc;
-
-            try
-            {
-                MemLoc = (ushort) (Address - ScreenMemoryLocation);
-            }
-            catch (Exception)
-            {
-                return 0;
-            }
-
-            if (MemLoc < 0 || MemLoc > MEM_SIZE - 1)
-                return 0;
-
-            return m_ScreenMemory[MemLoc];
-        }
-
 
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             var pf = new PrivateFontCollection();
-            var fs = Assembly.GetExecutingAssembly().GetManifestResourceStream("SharpBoot.MorePerfectDOSVGA.ttf");
-            var il = (int) fs.Length;
+            var fontdata = Resources.unifont;
+            var il = fontdata.Length;
             var data = Marshal.AllocCoTaskMem(il);
-            var fontdata = new byte[fs.Length];
-            fs.Read(fontdata, 0, il);
             Marshal.Copy(fontdata, 0, data, il);
             pf.AddMemoryFont(data, il);
-            fs.Close();
             Marshal.FreeCoTaskMem(data);
-            var fnt = new Font(pf.Families[0], 6F);
 
-            /*var cline = 0;
-            foreach(var line in Text.Wrap(640))
-            {
-                TextRenderer.DrawText(e.Graphics, line, fnt, new Point(0, cline * 16), Color.Gray);
-                cline++;
-            }*/
+            var fnt = new Font(pf.Families[0], 16F);
 
             var bmp = new Bitmap(Width, Height);
             var bmpGraphics = Graphics.FromImage(bmp);
 
             foreach (var c in Strings)
             {
-                bmpGraphics.FillRectangle(new SolidBrush(c.Item3),
-                    new Rectangle(c.Item1, TextRenderer.MeasureText(c.Item4, fnt)));
+                bmpGraphics.FillRectangle(new SolidBrush(c.Background),
+                    new Rectangle(c.Position, new Size(8 * c.Value.Length, 16)));
                 bmpGraphics.CompositingQuality = CompositingQuality.HighSpeed;
                 bmpGraphics.TextRenderingHint = TextRenderingHint.SingleBitPerPixel;
-                bmpGraphics.DrawString(c.Item4, fnt, new SolidBrush(c.Item2), c.Item1.X, c.Item1.Y);
+                bmpGraphics.DrawString(c.Value, fnt, new SolidBrush(c.Foreground), c.Position.X, c.Position.Y);
             }
 
             e.Graphics.DrawImage(bmp, new Point(0, 0));
@@ -144,8 +86,39 @@ namespace SharpBoot.Controls
 
         public void Write(int x, int y, string s, Color f, Color b)
         {
-            Strings.Add(new Tuple<Point, Color, Color, string>(new Point(x, y), f, b, s));
+            Strings.Add(new VGAString(new Point(x, y), f, b, s));
             Refresh();
+        }
+    }
+
+    public class VGAString
+    {
+        private readonly Color? _foreground = null;
+        private readonly Color? _background = null;
+        private readonly Func<Color> _fgCallback;
+        private readonly Func<Color> _bgCallback;
+        public Point Position { get; }
+
+        public Color Foreground => _foreground ?? _fgCallback();
+
+        public Color Background => _background ?? _bgCallback();
+
+        public string Value { get; }
+
+        public VGAString(Point p, Color fg, Color bg, string val)
+        {
+            Position = p;
+            _foreground = fg;
+            _background = bg;
+            Value = val;
+        }
+
+        public VGAString(Point p, Func<Color> fg, Func<Color> bg, string val)
+        {
+            Position = p;
+            _fgCallback = fg;
+            _bgCallback = bg;
+            Value = val;
         }
     }
 

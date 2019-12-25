@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using SharpBoot.Controls;
 using SharpBoot.Properties;
 
 namespace SharpBoot.Forms
@@ -19,9 +21,33 @@ namespace SharpBoot.Forms
             fakeVGA1.BackgroundImage = Image.FromStream(new MemoryStream(Resources.sharpboot));
         }
 
+        private void AddString(int x, int y, string s, Color f, Color? b= null)
+        {
+            fakeVGA1.Write(10 + 8 * x, 10 + 16 * y, s, f, b ?? Color.Transparent);
+        }
+
+        private void InitGrub2()
+        {
+            var text = Color.FromArgb(0xa8, 0xa8, 0xa8);
+
+            grub2Strings = new List<VGAString>
+            {
+                new VGAString(new Point(2, 3), Bind(cbxMenuFG), Bind(cbxMenuBG), "┌"),
+                new VGAString(new Point(3, 3), Bind(cbxMenuFG), Bind(cbxMenuBG), new string('─', 68)),
+                new VGAString(new Point(80, 3), Bind(cbxMenuFG), Bind(cbxMenuBG), "┐")
+            };
+        }
+
+        private List<VGAString> grub2Strings = null;
+
+        private static Func<Color> Bind(ColorComboBox cbx)
+        {
+            return () => cbx.SelectedColor;
+        }
+
         private void ThemeEditor_Load(object sender, EventArgs e)
         {
-            fakeVGA1.Write(10, 10, "test", Color.Red, Color.Transparent);
+            InitGrub2();
         }
 
         //public IBootloader TheBootloader { get; set; }
