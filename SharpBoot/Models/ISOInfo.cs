@@ -114,6 +114,8 @@ namespace SharpBoot.Models
                         "<!--All your base are belong to us-->")
                         appsxml = Resources.DefaultISOs;
 
+                    appsxml = appsxml ?? Resources.DefaultISOs;
+
                     try
                     {
                         XDocument xd;
@@ -193,10 +195,6 @@ namespace SharpBoot.Models
             var s = ISOs.FirstOrDefault(x =>
                 Regex.IsMatch(Path.GetFileName(filename), x.Filename)); // find by filename regex
 
-            /*if (s != null)
-            {
-                resk = s.LatestVersion ?? new ISOV("nover", s.Name, "", s.Filename, true) {Parent=s};
-            }*/
             if (s != null && s.LatestVersion == null)
             {
                 resk = new ISOV("nover", s.Name, "", s.Filename, true) {Parent = s};
