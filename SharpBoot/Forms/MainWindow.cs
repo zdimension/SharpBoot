@@ -33,8 +33,7 @@ namespace SharpBoot.Forms
 
         private readonly bool dev_FirstLaunch = false;
 
-        private readonly Dictionary<string, Tuple<CultureInfo, bool>> lngs =
-            new Dictionary<string, Tuple<CultureInfo, bool>>();
+        private readonly List<CultureInfo> lngs = new List<CultureInfo>();
 
         private bool update_available;
 
@@ -108,32 +107,19 @@ namespace SharpBoot.Forms
                                                  SelectedBackground.Length);
         }
 
-
-        private void loadlng()
+        private void LoadLanguages()
         {
             languageToolStripMenuItem.DropDownItems.Clear();
-            var result = fromresx(typeof(Strings));
-
-            result.AddRange(fromresx(typeof(ISOCat)));
-
-            var systemLng = CultureInfo.InstalledUICulture;
-            if (!systemLng.IsNeutralCulture)
-                systemLng = systemLng.Parent;
-
-            if (result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
-                result.Add(systemLng);
-
-            result = result.Distinct().ToList();
-            result.Sort((x, y) => string.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
-
+            
             lngs.Clear();
-            foreach (var x in result)
+
+            foreach (var x in Localization.GetAvailableCultures())
             {
-                var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name)) {Tag = x.Name};
-                mnit.Click += (sender, args) => LngItemClick(mnit);
+                var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name)) {Tag = lngs.Count};
+                mnit.Click += (sender, args) => OnLanguageMenuItemClick(mnit);
                 languageToolStripMenuItem.DropDownItems.Add(mnit);
 
-                lngs.Add(x.Name, new Tuple<CultureInfo, bool>(x, !Equals(x, systemLng)));
+                lngs.Add(x);
             }
         }
 
@@ -146,7 +132,7 @@ namespace SharpBoot.Forms
             lngs.Clear();
             LoadLanguages();
             LoadResolutions();
-            cbxRes.SelectedIndex = 0;
+            cbxRes.SelectedIndex = 2;
             cbxBackType.SelectedIndex = 0;
             updateAvailableToolStripMenuItem.Visible = update_available;
             addFilesToolStripMenuItem.Text = Strings.AddFiles;
@@ -162,23 +148,22 @@ namespace SharpBoot.Forms
 
         private void OnLanguageMenuItemClick(ToolStripItem it)
         {
-            var tmp = lngs[it.Tag.ToString()];
+            var tmp = lngs[(int)it.Tag];
 
-            if (Utils.GetCulture().Equals(tmp.Item1)) return;
+            if (Utils.GetCulture().Equals(tmp)) return;
 
-            if (!tmp.Item2)
-            if (tmp.Equals(GetSystemCulture()))
+            if (tmp.Equals(Localization.GetSystemCulture()))
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
                 SetCurrentLanguageItem(Utils.GetCulture());
                 return;
             }
 
-            Utils.SetAppLng(tmp.Item1);
+            Utils.SetAppLng(tmp);
 
-            if (changing && FieldsEmpty())
+            if (changing && FieldsEmpty)
                 InitAfterLng();
-            else if (!FieldsEmpty()) MessageBox.Show(Strings.ChangesNeedRestart);
+            else if (!FieldsEmpty) MessageBox.Show(Strings.ChangesNeedRestart);
 
             changing = false;
 
