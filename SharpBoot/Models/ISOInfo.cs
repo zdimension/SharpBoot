@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
@@ -186,7 +187,7 @@ namespace SharpBoot.Models
 
 
         [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
-        public static ISOV GetFromFile(string filename, bool fast)
+        public static ISOV GetFromFile(string filename, bool fast, CancellationToken token=default)
         {
             while (IsUpdating) Thread.Sleep(100);
 
@@ -226,7 +227,7 @@ namespace SharpBoot.Models
 
                         if (st == null && !fast)
                         {
-                            var md5 = Hash.FileHash(filename, "md5");
+                            var md5 = Hash.FileHash<MD5CryptoServiceProvider>(filename, token);
                             st = sta.FirstOrDefault(
                                     x =>
                                         x.Hash ==

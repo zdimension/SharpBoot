@@ -226,13 +226,15 @@ namespace SharpBoot.Forms
             }
         }
 
+        private readonly CancellationTokenSource tokenSource = new CancellationTokenSource();
+
         private void md5stuff()
         {
             th = new Thread(() =>
             {
                 Invoke((MethodInvoker) (() => pbxLoading.Visible = true));
 
-                var resk = ISOInfo.GetFromFile(ISOPath, false);
+                var resk = ISOInfo.GetFromFile(ISOPath, false, tokenSource.Token);
 
                 Invoke((MethodInvoker) (() =>
                 {
@@ -285,9 +287,11 @@ namespace SharpBoot.Forms
             }
             else
             {
-                if (IsoV == null || IsoV.Hash == "other")
+                if (IsoV == null)
                     IsoV = ISOInfo.GetFromFile(ISOPath, true);
             }
+
+            tokenSource.Cancel();
         }
 
         private void ClientOnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
