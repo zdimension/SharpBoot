@@ -189,7 +189,7 @@ namespace SharpBoot.Models
         [SuppressMessage("ReSharper", "AssignNullToNotNullAttribute")]
         public static ISOV GetFromFile(string filename, bool fast, CancellationToken token=default)
         {
-            while (IsUpdating) Thread.Sleep(100);
+            Utils.WaitWhile(() => IsUpdating, 3000);
 
             ISOV resk;
 

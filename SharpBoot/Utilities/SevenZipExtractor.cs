@@ -50,9 +50,7 @@ namespace SharpBoot.Utilities
             p.Start();
 
             if (wait)
-                while (!p.HasExited)
-                    if (sp.Elapsed.Seconds > maxDelay)
-                        break;
+                p.WaitForExit(maxDelay);
         }
 
         public void Dispose()

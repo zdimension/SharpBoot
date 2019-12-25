@@ -43,11 +43,8 @@ namespace SharpBoot.Forms
             btnBrowse.Text = Strings.Browse;
             ofpIso.Title = label1.Text;
             sfdIso.Filter = Strings.ISOImg + " (*.iso)|*.iso";
-            
-            for (var iter = 0; ISOInfo.ISOs.Count == 0 && iter < 20; iter++)
-            {
-                Thread.Sleep(50);
-            }
+
+            Utils.WaitWhile(() => ISOInfo.ISOs.Count == 0, 1500);
 
             if (ISOInfo.ISOs.Count == 0)
                 MessageBox.Show(
