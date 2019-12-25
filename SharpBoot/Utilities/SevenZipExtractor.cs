@@ -42,6 +42,8 @@ namespace SharpBoot.Utilities
                 }
             };
 
+            Utils.WaitWhile(() => !File.Exists(p.StartInfo.FileName));
+
             p.Exited += delegate { OnFinished(); };
             var sp = new Stopwatch();
             sp.Start();

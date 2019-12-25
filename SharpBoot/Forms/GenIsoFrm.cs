@@ -392,7 +392,7 @@ namespace SharpBoot.Forms
             p.StartInfo.Arguments += " -o \"" + OutputFilepath + "\" \"" + isodir + "\"";
             p.EnableRaisingEvents = true;
 
-            Thread.Sleep(500);
+            Utils.WaitWhile(() => !File.Exists(p.StartInfo.FileName));
 
             if (IsCancelled)
             {

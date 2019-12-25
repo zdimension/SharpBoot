@@ -49,7 +49,7 @@ namespace SharpBoot.Utilities
                 p.StartInfo.Arguments = (floppy ? "-boot a -fda" : "-boot d -cdrom") + " \"" + iso + "\"";
             }
 
-            Thread.Sleep(300);
+            Utils.WaitWhile(() => !File.Exists(p.StartInfo.FileName));
             p.Start();
             ext.Close();
             p.Exited += (sender, args) =>

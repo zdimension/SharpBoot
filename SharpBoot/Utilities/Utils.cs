@@ -51,6 +51,8 @@ namespace SharpBoot.Utilities
                 }
             };
 
+            Utils.WaitWhile(() => !File.Exists(p.StartInfo.FileName));
+
             try
             {
                 p.Start();
@@ -272,6 +274,19 @@ namespace SharpBoot.Utilities
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
             Settings.Default.Save();
             ISOInfo.RefreshISOs();
+        }
+
+        public static bool WaitWhile(Func<bool> predicate, int max=3000)
+        {
+            var start = DateTime.Now;
+
+            while (predicate())
+            {
+                if (max != -1 && (DateTime.Now - start).TotalMilliseconds >= max)
+                    return false;
+            }
+
+            return true;
         }
 
         public static CultureInfo GetCulture()
