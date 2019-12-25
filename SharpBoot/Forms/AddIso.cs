@@ -43,11 +43,10 @@ namespace SharpBoot.Forms
             btnBrowse.Text = Strings.Browse;
             ofpIso.Title = label1.Text;
             sfdIso.Filter = Strings.ISOImg + " (*.iso)|*.iso";
-            var iter = 0;
-            while (ISOInfo.ISOs.Count == 0 && iter < 20)
+            
+            for (var iter = 0; ISOInfo.ISOs.Count == 0 && iter < 20; iter++)
             {
                 Thread.Sleep(50);
-                iter++;
             }
 
             if (ISOInfo.ISOs.Count == 0)
@@ -286,6 +285,11 @@ namespace SharpBoot.Forms
                     DownFile = sfdIso.FileName;
                     DownloadStuff();
                 }
+            }
+            else
+            {
+                if (IsoV == null)
+                    IsoV = ISOInfo.GetFromFile(ISOPath, true);
             }
         }
 

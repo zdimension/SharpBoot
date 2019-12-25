@@ -196,14 +196,14 @@
   <data name="lblProg.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 17</value>
   </data>
+  <data name="rtbIsoDesc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>49, 259</value>
+  </data>
   <data name="pbxLoading.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 126</value>
   </data>
   <data name="btnBrowse.Location" type="System.Drawing.Point, System.Drawing">
     <value>440, 90</value>
-  </data>
-  <data name="rtbIsoDesc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 259</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 17</value>
@@ -213,9 +213,5 @@
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
 </root>
