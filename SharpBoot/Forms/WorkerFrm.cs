@@ -33,6 +33,8 @@ namespace SharpBoot.Forms
         public event EventHandler WorkFinished;
         public event EventHandler WorkCancelled;
 
+        public CancellationTokenSource CancellationTokenSource { get; } = new CancellationTokenSource();
+
         protected virtual void OnFinished(EventArgs e)
         {
             if (!abort)
@@ -56,6 +58,15 @@ namespace SharpBoot.Forms
                 pbx.Maximum = max;
                 pbx.Value = val;
             });
+        }
+
+        public void ChangeProgressBarEstimate(int val, int max, DateTime started)
+        {
+            var rem =  TimeSpan.FromSeconds(val == 0 ? 0 : ((DateTime.Now - started).TotalSeconds / val *
+                                           (max - val)));
+
+            ChangeProgressBar(val, max);
+            ChangeAdditional(string.Format(Strings.RemainingTime, rem));
         }
 
         public void ChangeStatus(string stat)
@@ -109,6 +120,7 @@ namespace SharpBoot.Forms
         {
             closeonclick = true;
             abort = true;
+            CancellationTokenSource.Cancel();
             bwkWorker.CancelAsync();
             SetCancel();
             WorkCancelled?.Invoke(this, EventArgs.Empty);

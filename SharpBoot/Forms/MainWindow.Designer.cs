@@ -45,9 +45,9 @@ namespace SharpBoot.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCustomCode = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cbxRes = new GroupedComboBox();
+            this.cbxRes = new SharpBoot.Controls.GroupedComboBox.GroupedComboBox();
             this.btnAbout = new System.Windows.Forms.Button();
-            this.btnChecksum = new SplitButton();
+            this.btnChecksum = new SharpBoot.Controls.SplitButton();
             this.cmsChecksum = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mD5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnSha1 = new System.Windows.Forms.ToolStripMenuItem();

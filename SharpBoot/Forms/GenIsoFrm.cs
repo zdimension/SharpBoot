@@ -209,26 +209,13 @@ namespace SharpBoot.Forms
 
         private void CopyFile(string source, string dest)
         {
-            var tok = new CancellationTokenSource();
-
-            void handler(object sender, EventArgs e)
-            {
-                tok.Cancel();
-            }
-
-            WorkCancelled += handler;
             var started = DateTime.Now;
             XCopy.Copy(source, dest, true,
                 true,
                 (o, pce) =>
                 {
-                    var rem = TimeSpan.FromSeconds((DateTime.Now - started).TotalSeconds / pce.ProgressPercentage *
-                                                   (100 - pce.ProgressPercentage));
-
-                    ChangeProgressBar(pce.ProgressPercentage, 100);
-                    ChangeAdditional(string.Format(Strings.RemainingTime, rem));
-                }, tok.Token);
-            WorkCancelled -= handler;
+                    ChangeProgressBarEstimate(pce.ProgressPercentage, 100, started);
+                }, CancellationTokenSource.Token);
         }
 
         private void Cleanup(string f)
@@ -430,14 +417,10 @@ namespace SharpBoot.Forms
                         if (double.TryParse(pp, NumberStyles.Float, CultureInfo.InvariantCulture, out var d))
                             if (d >= 0 && d <= 100)
                             {
-                                var rem = TimeSpan.FromSeconds((DateTime.Now - started).TotalSeconds / d *
-                                                               (100 - d));
+                                ChangeStatus(Strings.CreatingISO + " " + (d / 100).ToString("P"));
 
-                                ChangeProgress(
-                                    Convert.ToInt32(Math.Round(d, 0, MidpointRounding.AwayFromZero)),
-                                    100, Strings.CreatingISO + " " + (d / 100).ToString("P"));
-
-                                ChangeAdditional(string.Format(Strings.RemainingTime, rem));
+                                ChangeProgressBarEstimate(
+                                    (int)Math.Round(d, 0, MidpointRounding.AwayFromZero), 100, started);
                             }
                     }
                     catch

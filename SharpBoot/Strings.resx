@@ -265,6 +265,6 @@
     <value>About SharpBoot</value>
   </data>
   <data name="RemainingTime" xml:space="preserve">
-    <value>Remaining time: {0:g}</value>
+    <value>Remaining time: {0:hh\:mm\:ss}</value>
   </data>
 </root>

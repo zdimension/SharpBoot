@@ -475,7 +475,7 @@ namespace SharpBoot {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Remaining time: {0:g}.
+        ///   Recherche une chaîne localisée semblable à Remaining time: {0:hh\:mm\:ss}.
         /// </summary>
         internal static string RemainingTime {
             get {

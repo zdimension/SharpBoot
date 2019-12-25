@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Reflection;
 using System.Resources;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -515,7 +516,8 @@ namespace SharpBoot.Forms
             btnChecksum.ShowContextMenuStrip();
         }
 
-        private void chksum(string n, Func<string> f)
+        private void chksum<T>(string n)
+            where T : HashAlgorithm, new()
         {
             Cursor = Cursors.WaitCursor;
 
@@ -524,9 +526,14 @@ namespace SharpBoot.Forms
             frm.WorkHandler = () =>
             {
                 var d = DateTime.Now;
-                
 
-                var sb = f();
+                var sb = Hash.FileHash<T>(
+                    lvIsos.SelectedRows[0].Cells[4].Value.ToString(), 
+                    frm.CancellationTokenSource.Token,
+                    (prog, size) =>
+                    {
+                        frm.ChangeProgressBarEstimate((int)(prog * 100 / size), 100, d);
+                    });
 
                 var a = DateTime.Now;
                 var t = a - d;
@@ -694,22 +701,22 @@ namespace SharpBoot.Forms
 
         private void btnSha1_Click(object sender, EventArgs e)
         {
-            chksum("SHA-1", () => Hash.FileSHA1(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum<SHA1CryptoServiceProvider>("SHA-1");
         }
 
         private void btnSha256_Click(object sender, EventArgs e)
         {
-            chksum("SHA-256", () => Hash.FileSHA256(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum<SHA256CryptoServiceProvider>("SHA-256");
         }
 
         private void btnSha512_Click(object sender, EventArgs e)
         {
-            chksum("SHA-512", () => Hash.FileSHA512(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum<SHA512CryptoServiceProvider>("SHA-512");
         }
 
         private void btnSha384_Click(object sender, EventArgs e)
         {
-            chksum("SHA-384", () => Hash.FileSHA384(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum<SHA384CryptoServiceProvider>("SHA-384");
         }
 
         private void lvIsos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -737,7 +744,7 @@ namespace SharpBoot.Forms
 
         private void mD5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            chksum("MD5", () => Hash.FileMD5(lvIsos.SelectedRows[0].Cells[4].Value.ToString()));
+            chksum<MD5CryptoServiceProvider>("MD5");
         }
 
         private void updateAvailableToolStripMenuItem_Click(object sender, EventArgs e)

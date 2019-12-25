@@ -4,12 +4,47 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SharpBoot.Utilities
 {
     public class Hash
     {
-        public static string FileHash<T>(string fileName)
+        // https://stackoverflow.com/a/53966139/2196124
+        public static async Task<byte[]> ComputeHashAsync(
+            HashAlgorithm hashAlgorithm, Stream stream,
+            CancellationToken cancellationToken = default,
+            Action<long, long> progress = null,
+            int bufferSize = 1024 * 1024)
+        {
+            long totalBytesRead = 0;
+            var size = stream.Length;
+            var readAheadBuffer = new byte[bufferSize];
+            var readAheadBytesRead = await stream.ReadAsync(readAheadBuffer, 0,
+                readAheadBuffer.Length, cancellationToken);
+            totalBytesRead += readAheadBytesRead;
+            do
+            {
+                var bytesRead = readAheadBytesRead;
+                var buffer = readAheadBuffer;
+                readAheadBuffer = new byte[bufferSize];
+                readAheadBytesRead = await stream.ReadAsync(readAheadBuffer, 0,
+                    readAheadBuffer.Length, cancellationToken);
+                totalBytesRead += readAheadBytesRead;
+
+                if (readAheadBytesRead == 0)
+                    hashAlgorithm.TransformFinalBlock(buffer, 0, bytesRead);
+                else
+                    hashAlgorithm.TransformBlock(buffer, 0, bytesRead, buffer, 0);
+                progress?.Invoke(totalBytesRead, size);
+                if (cancellationToken.IsCancellationRequested)
+                    cancellationToken.ThrowIfCancellationRequested();
+            } while (readAheadBytesRead != 0);
+            return hashAlgorithm.Hash;
+        }
+
+        public static string FileHash<T>(string fileName, CancellationToken cancellationToken = default, Action<long, long> progress = null)
             where T : HashAlgorithm, new()
         {
             StringBuilder formatted;
@@ -18,7 +53,7 @@ namespace SharpBoot.Utilities
             {
                 using (var ha = new T())
                 {
-                    var hash = ha.ComputeHash(bs);
+                    var hash = ComputeHashAsync(ha, bs, cancellationToken, progress).Result;
                     formatted = new StringBuilder(2 * hash.Length);
                     foreach (var b in hash) formatted.AppendFormat("{0:x2}", b);
                 }

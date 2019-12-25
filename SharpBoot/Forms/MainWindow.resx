@@ -329,7 +329,7 @@ the ISO or IMG file here</value>
     <value>Bottom</value>
   </data>
   <data name="pnlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 571</value>
+    <value>0, 513</value>
   </data>
   <data name="pnlBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>990, 128</value>
@@ -359,7 +359,7 @@ the ISO or IMG file here</value>
     <value>NoControl</value>
   </data>
   <data name="btnCustomCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 346</value>
+    <value>5, 288</value>
   </data>
   <data name="btnCustomCode.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
@@ -407,7 +407,7 @@ the ISO or IMG file here</value>
     <value>cbxRes</value>
   </data>
   <data name="&gt;&gt;cbxRes.Type" xml:space="preserve">
-    <value>GroupedComboBox, DropDownControls, Version=1.0.4.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.Controls.GroupedComboBox.GroupedComboBox, SharpBoot, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;cbxRes.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -416,7 +416,7 @@ the ISO or IMG file here</value>
     <value>0</value>
   </data>
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 289</value>
+    <value>6, 231</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 52</value>
@@ -446,7 +446,7 @@ the ISO or IMG file here</value>
     <value>NoControl</value>
   </data>
   <data name="btnAbout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 496</value>
+    <value>5, 438</value>
   </data>
   <data name="btnAbout.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
@@ -527,7 +527,7 @@ the ISO or IMG file here</value>
     <value>NoControl</value>
   </data>
   <data name="btnChecksum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 396</value>
+    <value>5, 338</value>
   </data>
   <data name="btnChecksum.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
@@ -548,7 +548,7 @@ the ISO or IMG file here</value>
     <value>btnChecksum</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Type" xml:space="preserve">
-    <value>wyDay.Controls.SplitButton, SharpBoot, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>SharpBoot.Controls.SplitButton, SharpBoot, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnChecksum.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -737,7 +737,7 @@ the ISO or IMG file here</value>
     <value>NoControl</value>
   </data>
   <data name="btnRemISO.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 446</value>
+    <value>5, 388</value>
   </data>
   <data name="btnRemISO.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 46</value>
@@ -824,7 +824,7 @@ the ISO or IMG file here</value>
     <value>790, 24</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 547</value>
+    <value>200, 489</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -902,7 +902,7 @@ the ISO or IMG file here</value>
     <value>0, 24</value>
   </data>
   <data name="lvIsos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>790, 547</value>
+    <value>790, 489</value>
   </data>
   <data name="lvIsos.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1085,13 +1085,16 @@ the ISO or IMG file here</value>
     <value>7, 15</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>990, 699</value>
+    <value>990, 641</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>1006, 738</value>
+    <value>1006, 680</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SharpBoot</value>
