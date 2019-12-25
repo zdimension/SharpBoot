@@ -373,7 +373,6 @@ namespace SharpBoot.Forms
             ext.Extract(Path.Combine(archs, "mkisofs.7z"), Path.Combine(tmpdir, "mkisofs"));
 
             var mkisofsexe = Path.Combine(tmpdir, "mkisofs", "mkisofs.exe");
-            // TODO: Implement working progress printing (I can't get OutputDataReceived to work on my computer)
             ChangeProgress(30, 100, Strings.CreatingISO);
             var p = new Process
             {
