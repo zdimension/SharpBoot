@@ -5,6 +5,7 @@ using System.Linq;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using SharpBoot.Models;
 
 namespace SharpBoot.Utilities
 {
@@ -29,6 +30,31 @@ namespace SharpBoot.Utilities
                 {
                     //NOP
                 }
+
+            return result;
+        }
+
+        public static CultureInfo GetSystemCulture()
+        {
+            var systemLng = CultureInfo.InstalledUICulture;
+            if (!systemLng.IsNeutralCulture)
+                systemLng = systemLng.Parent;
+            return systemLng;
+        }
+
+        public static List<CultureInfo> GetAvailableCultures()
+        {
+            var result = Localization.GetAvailableCultures(typeof(Strings));
+
+            result.AddRange(Localization.GetAvailableCultures(typeof(ISOCat)));
+
+            var systemLng = GetSystemCulture();
+
+            if (result.All(x => x.ThreeLetterISOLanguageName != systemLng.ThreeLetterISOLanguageName))
+                result.Add(systemLng);
+
+            result = result.Distinct().ToList();
+            result.Sort((x, y) => String.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
 
             return result;
         }
