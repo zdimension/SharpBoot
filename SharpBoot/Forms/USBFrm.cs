@@ -27,7 +27,7 @@ namespace SharpBoot.Forms
 
         public bool ProgressVisible
         {
-            get { return pbxPrg.Visible = true; }
+            get => pbxPrg.Visible;
             set => pbxPrg.Visible = lblPercent.Visible = value;
         }
 
