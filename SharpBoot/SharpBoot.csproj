@@ -222,6 +222,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\DriveIO.cs" />
     <Compile Include="Utilities\Hash.cs" />
+    <Compile Include="Utilities\Localization.cs" />
     <Compile Include="Utilities\QEMUISO.cs" />
     <Compile Include="Utilities\SevenZipExtractor.cs" />
     <Compile Include="Controls\SplitButton.cs">
@@ -247,6 +248,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.ro.resx</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Updater.cs" />
     <Compile Include="Utilities\Utils.cs" />
     <Compile Include="Utilities\Windows7Renderer.cs" />
     <Compile Include="Utilities\WinApiConstants.cs" />

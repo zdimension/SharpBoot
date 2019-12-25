@@ -167,6 +167,7 @@ namespace SharpBoot.Forms
             if (Utils.GetCulture().Equals(tmp.Item1)) return;
 
             if (!tmp.Item2)
+            if (tmp.Equals(GetSystemCulture()))
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
                 SetCurrentLanguageItem(Utils.GetCulture());
@@ -184,29 +185,6 @@ namespace SharpBoot.Forms
             SetCurrentLanguageItem(tmp);
 
             changing = true;
-        }
-
-        private static List<CultureInfo> fromresx(Type t)
-        {
-            var result = new List<CultureInfo>();
-            var rm = new ResourceManager(t);
-
-            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (var culture in cultures)
-                try
-                {
-                    if (culture.Equals(CultureInfo.InvariantCulture)) continue; //do not use "==", won't work
-
-                    var rs = rm.GetResourceSet(culture, true, false);
-                    if (rs != null)
-                        result.Add(culture);
-                }
-                catch (CultureNotFoundException)
-                {
-                    //NOP
-                }
-
-            return result;
         }
 
 
@@ -258,26 +236,15 @@ namespace SharpBoot.Forms
 
         private ToolStripMenuItem FindLanguageItem(CultureInfo ci)
         {
-            var found = false;
-
-            foreach (ToolStripMenuItem mni in languageToolStripMenuItem.DropDownItems)
-                if (lngs[mni.Tag.ToString()].Item1.Equals(ci))
-                {
-                    found = true;
-                    mni.Checked = true;
-                    languageToolStripMenuItem.Image = mni.Image;
-                    break;
-                }
-                else
-                {
-                    mni.Checked = false;
-                }
-
-            // ReSharper disable once TailRecursiveCall
-            if (!found) setlngitem(new CultureInfo("en"));
+            return languageToolStripMenuItem.DropDownItems.Cast<ToolStripMenuItem>()
+                .FirstOrDefault(mni => lngs[(int)mni.Tag].Equals(ci));
         }
 
+        public void SetCurrentLanguageItem(CultureInfo ci)
         {
+            var item = FindLanguageItem(ci) ?? FindLanguageItem(new CultureInfo("en"));
+            item.Checked = true;
+            languageToolStripMenuItem.Image = item.Image;
         }
 
         private void g_GenerationFinished(GenIsoFrm g)
@@ -547,7 +514,6 @@ namespace SharpBoot.Forms
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            theupdate();
             RefreshOutputSize();
             ComputeDragBounds();
             CheckForUpdates();
