@@ -226,12 +226,10 @@ namespace SharpBoot.Models
                                     x.Filename.StartsWith("/") &&
                                     Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1)));
 
-                        if (st == null)
+                        if (st == null && !fast)
                         {
-                            var md5 = fast ? "" : Hash.FileHash(filename, "md5");
-                            st = fast
-                                ? null
-                                : sta.FirstOrDefault(
+                            var md5 = Hash.FileHash(filename, "md5");
+                            st = sta.FirstOrDefault(
                                     x =>
                                         x.Hash ==
                                         (x.Hash.Contains(':') ? Hash.FileHash(filename, x.Hash.Split(':')[0]) : md5));
