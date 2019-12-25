@@ -227,7 +227,7 @@ namespace SharpBoot.Forms
             {
                 if (automaticallyAddISOInfoToolStripMenuItem.Checked && ver?.Hash != "other")
                 {
-                    ver = ver ?? ISOInfo.GetFromFile(filePath, new FileInfo(filePath).Length > 750000000);
+                    ver = ver ?? ISOInfo.GetFromFile(filePath, new FileInfo(filePath).Length > 10000000);
                     if (ver == null)
                     {
                         MessageBox.Show(Path.GetFileName(filePath) + "\n\n" + Strings.CouldntDetect, "SharpBoot",
