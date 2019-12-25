@@ -16,11 +16,11 @@ namespace SharpBoot.Utilities
             File.WriteAllBytes(SevenZipPath, Resources._7za);
         }
 
-        public event EventHandler ExtractionFinished;
+        public event Action ExtractionFinished;
 
         protected void OnFinished()
         {
-            ExtractionFinished?.Invoke(this, EventArgs.Empty);
+            ExtractionFinished?.Invoke();
         }
 
         public void Close()
@@ -29,7 +29,7 @@ namespace SharpBoot.Utilities
             Utils.SafeDel(Path.GetDirectoryName(SevenZipPath));
         }
 
-        public void Extract(string arch, string output, bool wait = true, int maxDelay = 5)
+        public void Extract(string arch, string output, bool wait = true, int maxDelay = -1)
         {
             var p = new Process
             {
