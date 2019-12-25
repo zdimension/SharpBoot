@@ -13,7 +13,7 @@ namespace SharpBoot.Forms
         {
             InitializeComponent();
             btnAnnul.Text = Strings.Cancel;
-            loadkeys();
+            LoadDrives();
         }
 
         public USBFrm(string header, string cbxt, string button, bool dialog = true, params object[] cbxitems) : this()
@@ -34,23 +34,23 @@ namespace SharpBoot.Forms
         // ReSharper disable once ConvertToAutoPropertyWhenPossible
         public ComboBox TheComboBox => comboBox;
 
-        public DriveInfo SelectedUSB => ((driveitem) cbxUSB.SelectedItem).Value;
+        public DriveInfo SelectedUSB => ((dynamic) cbxUSB.SelectedItem).Value;
 
-        public void loadkeys()
+
+        public void LoadDrives()
         {
-            cbxUSB.Items.Clear();
-            foreach (
-                var drive in
-                DriveInfo.GetDrives()
-                    .Where(d => (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed) && d.IsReady)
-            )
-                cbxUSB.Items.Add(new driveitem
+            cbxUSB.DataSource = DriveInfo.GetDrives()
+                .Where(d => 
+                    (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed)
+                    && d.IsReady
+                    && d.Name != Path.GetPathRoot(Environment.SystemDirectory))
+                .Select(drive => new
                 {
                     Disp =
                         drive.VolumeLabel + " (" + drive.Name + ")         " + Utils.GetSizeString(drive.TotalSize) +
                         " " + drive.DriveFormat,
                     Value = drive
-                });
+                }).ToList();
         }
 
 
@@ -66,16 +66,16 @@ namespace SharpBoot.Forms
         }
 
 
-        public event EventHandler BtnClicked = (sender, args) => { };
+        public event EventHandler BtnClicked;
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            BtnClicked(sender, e);
+            BtnClicked?.Invoke(sender, e);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            loadkeys();
+            LoadDrives();
         }
     }
 }

@@ -121,10 +121,4 @@ namespace SharpBoot.Models
             Utils.CallAdminProcess("grub2", l);
         }
     }
-
-    public class driveitem
-    {
-        public string Disp { get; set; }
-        public DriveInfo Value { get; set; }
-    }
 }
