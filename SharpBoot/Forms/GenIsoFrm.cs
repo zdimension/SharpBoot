@@ -116,7 +116,6 @@ namespace SharpBoot.Forms
                     ProcessBackgroundImage(workingDir);
 
                     ChangeProgressBar(60, 100);
-                    Utils.SafeDel(archs);
 
                     if (IsCancelled)
                     {
