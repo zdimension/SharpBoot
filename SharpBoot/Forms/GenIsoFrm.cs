@@ -167,7 +167,7 @@ namespace SharpBoot.Forms
                             }
 
                             File.WriteAllText(Path.Combine(workingDir, Hash.CRC32(c)) + ".cfg",
-                                Grub2.GetCode(t), Utils.GetEnc());
+                                Grub2.GetCode(t, Res), Utils.GetEnc());
                             main.Items.Add(new BootMenuItem(c, c, EntryType.Category, Hash.CRC32(c), false));
                         }
 
@@ -179,7 +179,7 @@ namespace SharpBoot.Forms
                         }
                     }
 
-                    File.WriteAllText(Path.Combine(workingDir, "grub.cfg"), Grub2.GetCode(main));
+                    File.WriteAllText(Path.Combine(workingDir, "grub.cfg"), Grub2.GetCode(main, Res));
 
                     if (IsCancelled)
                     {
