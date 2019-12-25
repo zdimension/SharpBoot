@@ -50,9 +50,9 @@ namespace SharpBoot.Forms
 
             InitAfterLng();
             changing = true;
-            loadlng();
+            LoadLanguages();
             var c = Utils.GetCulture();
-            setlngitem(c);
+            SetCurrentLanguageItem(c);
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
             cbxBackType.SelectedIndex = 2;
 
@@ -144,7 +144,7 @@ namespace SharpBoot.Forms
             RefreshOutputSize();
             ComputeDragBounds();
             lngs.Clear();
-            loadlng();
+            LoadLanguages();
             LoadResolutions();
             cbxRes.SelectedIndex = 0;
             cbxBackType.SelectedIndex = 0;
@@ -160,7 +160,7 @@ namespace SharpBoot.Forms
             Program.fpath = lvIsos.Columns[4].HeaderText;
         }
 
-        private void LngItemClick(ToolStripItem it)
+        private void OnLanguageMenuItemClick(ToolStripItem it)
         {
             var tmp = lngs[it.Tag.ToString()];
 
@@ -169,7 +169,7 @@ namespace SharpBoot.Forms
             if (!tmp.Item2)
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
-                setlngitem(Utils.GetCulture());
+                SetCurrentLanguageItem(Utils.GetCulture());
                 return;
             }
 
@@ -181,7 +181,7 @@ namespace SharpBoot.Forms
 
             changing = false;
 
-            setlngitem(tmp.Item1);
+            SetCurrentLanguageItem(tmp);
 
             changing = true;
         }
@@ -256,7 +256,7 @@ namespace SharpBoot.Forms
             lvIsos.Rows.Add(name, Utils.GetFileSizeString(filePath), cat, desc, filePath);
         }
 
-        public void setlngitem(CultureInfo ci)
+        private ToolStripMenuItem FindLanguageItem(CultureInfo ci)
         {
             var found = false;
 
@@ -561,7 +561,7 @@ namespace SharpBoot.Forms
             frm.ShowDialog(this);
         }
 
-        private void theupdate()
+        private void CheckForUpdates()
         {
             mniUpdate.Visible = true;
             checkForUpdates();
@@ -574,12 +574,10 @@ namespace SharpBoot.Forms
             theupdate();
             RefreshOutputSize();
             ComputeDragBounds();
+            CheckForUpdates();
         }
 
-        public bool FieldsEmpty()
-        {
-            return lvIsos.Rows.Count == 0 && txtTitle.Text == "SharpBoot" && txtBackFile.Text.Length == 0;
-        }
+        public bool FieldsEmpty => lvIsos.Rows.Count == 0 && txtTitle.Text == "SharpBoot" && txtBackFile.Text.Length == 0;
 
 
         private void ComputeDragBounds()
@@ -760,11 +758,7 @@ namespace SharpBoot.Forms
             ComputeDragBounds();
         }
 
-        private ImageLine selectediline()
-        {
-            var cit = lvIsos.SelectedRows[0];
-            return CurImages.First(x => x.Name == cit.Cells[0].Value?.ToString());
-        }
+        private ImageLine SelectedImage => CurImages.First(x => x.Name == lvIsos.SelectedRows[0].Cells[0].Value?.ToString());
 
         private void btnCustomCode_Click(object sender, EventArgs e)
         {
@@ -772,7 +766,7 @@ namespace SharpBoot.Forms
             var bmi = new BootMenuItem(
                 cit.Cells[0].Value?.ToString() ?? "",
                 cit.Cells[3].Value?.ToString() ?? "",
-                selectediline().EntryType,
+                SelectedImage.EntryType,
                 cit.Cells[4].Value?.ToString() ?? "") {Start = false};
 
             var cod = Grub2.GetCode(bmi);
