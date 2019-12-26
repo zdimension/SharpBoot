@@ -144,5 +144,17 @@ namespace SharpBoot.Utilities
 
             return p.WaitForExit(20000) ? FormatResult.Success : FormatResult.GenericError;
         }
+
+        public static bool IsValidDrive(this DriveInfo d)
+        {
+            return (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed)
+                   && d.IsReady
+                   && d.Name != Path.GetPathRoot(Environment.SystemDirectory);
+        }
+
+        public static IEnumerable<DriveInfo> GetValidDrives()
+        {
+            return DriveInfo.GetDrives().Where(IsValidDrive);
+        }
     }
 }

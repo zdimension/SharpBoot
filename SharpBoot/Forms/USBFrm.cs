@@ -39,11 +39,7 @@ namespace SharpBoot.Forms
 
         public void LoadDrives()
         {
-            cbxUSB.DataSource = DriveInfo.GetDrives()
-                .Where(d => 
-                    (d.DriveType == DriveType.Removable || d.DriveType == DriveType.Fixed)
-                    && d.IsReady
-                    && d.Name != Path.GetPathRoot(Environment.SystemDirectory))
+            cbxUSB.DataSource = DriveIO.GetValidDrives()
                 .Select(drive => new
                 {
                     Disp =
