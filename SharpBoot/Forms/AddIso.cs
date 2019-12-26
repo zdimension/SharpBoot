@@ -133,7 +133,7 @@ namespace SharpBoot.Forms
             ISOPath = txtFile.Text;
         }
 
-        private ISOV selinfoversion()
+        private ISOV SelectedISOV()
         {
             var ret = selinfo.Versions.FirstOrDefault(x => x.Name.Equals(((dynamic) cbxVersion.SelectedValue).Name));
             if (ret != default(ISOV)) return ret;
@@ -176,7 +176,7 @@ namespace SharpBoot.Forms
         {
             pbxPrg.Visible = lblPercent.Visible = lblSpeed.Visible = lblProg.Visible = true;
 
-            var dn = selinfoversion().DownloadLink;
+            var dn = SelectedISOV().DownloadLink;
 
             sw = new Stopwatch();
 
@@ -200,7 +200,7 @@ namespace SharpBoot.Forms
             btnOK.Enabled = true;
             ControlBox = true;
             ISOPath = DownFile;
-            IsoV = selinfoversion();
+            IsoV = SelectedISOV();
             DialogResult = DialogResult.OK;
             Close();
         }
@@ -219,13 +219,13 @@ namespace SharpBoot.Forms
             {
                 txtFile.Text = ofpIso.FileName;
                 cbxDetIso.Visible = true;
-                md5stuff();
+                DetectOS();
             }
         }
 
         private readonly CancellationTokenSource tokenSource = new CancellationTokenSource();
 
-        private void md5stuff()
+        private void DetectOS()
         {
             th = new Thread(() =>
             {
@@ -269,7 +269,7 @@ namespace SharpBoot.Forms
         {
             if (IsDownload)
             {
-                IsoV = selinfoversion();
+                IsoV = SelectedISOV();
                 if (IsoV != null && IsoV.DownloadLink != "") sfdIso.FileName = Path.GetFileName(IsoV.DownloadLink);
 
                 if (sfdIso.ShowDialog(this) == DialogResult.OK)
