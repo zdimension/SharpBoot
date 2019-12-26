@@ -7,7 +7,7 @@ using Microsoft.Win32.SafeHandles;
 
 namespace SharpBoot.Utilities
 {
-    public static class WinApiConstants
+    public static class WinApi
     {
         public const int IDC_HAND = 32649;
     }

@@ -34,7 +34,7 @@ namespace SharpBoot.Utilities
 
         public static void CallAdminProcess(params string[] args)
         {
-            var d = GetTemporaryDirectory();
+            var d = FileIO.GetTemporaryDirectory();
             var exepath = Path.Combine(d, "adminprocess.exe");
             File.WriteAllBytes(exepath, Resources.adminprocess);
 
@@ -64,7 +64,7 @@ namespace SharpBoot.Utilities
 
             p.WaitForExit();
 
-            SafeDel(d);
+            FileIO.SafeDel(d);
         }
 
         public static void AttemptTry(Action func, int n=5)
@@ -93,89 +93,12 @@ namespace SharpBoot.Utilities
             return ms.ToArray();
         }
 
-        public static Image GetFlag(string twocode)
-        {
-            if (twocode == "en") return Resources.flag_usa;
-            var dc = new List<string> {"de", "fr", "ro", "zh-Hans", "zh-Hant", "ru", "uk", "es", "cs", "it", "pt", "pl", "hu"};
-            var index = dc.IndexOf(twocode);
-            return index == -1 ? null : About.Flags[index];
-        }
-
-        public static string DownloadWithoutCache(string url, bool redl = true)
-        {
-            url = MakeURLRandom(url);
-            var res = "";
-            Stream remote = null;
-            WebResponse resp = null;
-            try
-            {
-                var req = WebRequest.Create(url);
-                req.CachePolicy = new HttpRequestCachePolicy(HttpRequestCacheLevel.NoCacheNoStore);
-                try
-                {
-                    resp = req.GetResponse();
-                }
-                catch (WebException)
-                {
-                    if (IsMono && IsLinux)
-                    {
-                        var p = new Process {StartInfo = new ProcessStartInfo("mozroots", "--import --sync")};
-                        p.Start();
-                        p.WaitForExit(10000);
-                        resp = req.GetResponse();
-                    }
-                }
-
-                if (resp != null)
-                {
-                    remote = resp.GetResponseStream();
-
-                    var mem = new MemoryStream();
-                    var buf = new byte[1024];
-                    var br = 0;
-                    do
-                    {
-                        br = remote.Read(buf, 0, 1024);
-                        mem.Write(buf, 0, br);
-                    } while (br > 0);
-
-                    mem.Position = 0;
-                    res = new StreamReader(mem).ReadToEnd();
-                }
-                else
-                {
-                    MessageBox.Show("resp is null");
-                }
-            }
-            catch
-            {
-                // ignored
-            }
-            finally
-            {
-                resp?.Close();
-                remote?.Close();
-            }
-
-            return res;
-        }
-
         public static string RandomString(int Size)
         {
             var input = "abcdefghijklmnopqrstuvwxyz0123456789";
             var chars = Enumerable.Range(0, Size)
                 .Select(x => input[CurrentRandom.Next(0, input.Length)]);
             return new string(chars.ToArray());
-        }
-
-        public static string MakeURLRandom(string url)
-        {
-            if (url.Contains("?")) url += "&";
-            else url += "?";
-            url += RandomString(5);
-            url += "=";
-            url += RandomString(5);
-            return url;
         }
 
         public static List<string> AddRecommended(this List<string> arr, int recIndex)
@@ -213,7 +136,6 @@ namespace SharpBoot.Utilities
             Mac
         }
 
-        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
         public static bool IsMono => Type.GetType("Mono.Runtime") != null;
         public static bool IsLinux => RunningPlatform() == Platform.Linux;
         public static bool IsWin => RunningPlatform() == Platform.Windows;
@@ -243,39 +165,6 @@ namespace SharpBoot.Utilities
             }
         }
 
-        public static void ClrTmp(bool first = false)
-        {
-            Directory.GetDirectories(Path.GetTempPath())
-                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_") && (first || !QEMUISO.Paths.Contains(x)))
-                .ToList()
-                .ForEach(SafeDel);
-        }
-
-        public static void SafeDel(string d)
-        {
-            for (var i = 0; i < 3 && Directory.Exists(d); i++)
-            {
-                try
-                {
-                    Directory.Delete(d, true);
-                }
-                catch
-                {
-                    // ignored
-                }
-            }
-        }
-
-        public static void SetAppLng(CultureInfo c)
-        {
-            Settings.Default.Lang = c.Name;
-            Settings.Default.Save();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
-            Settings.Default.Save();
-            ISOInfo.RefreshISOs();
-        }
-
         public static bool WaitWhile(Func<bool> predicate, int max=3000)
         {
             var start = DateTime.Now;
@@ -288,20 +177,6 @@ namespace SharpBoot.Utilities
 
             return true;
         }
-
-        public static CultureInfo GetCulture()
-        {
-            return new CultureInfo(Settings.Default.Lang);
-        }
-
-        public static string GetFileSizeString(string file)
-        {
-            var b = new FileInfo(file).Length;
-            return GetSizeString(b);
-        }
-
-        [DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
-        public static extern long StrFormatByteSize(long fileSize, StringBuilder buffer, int bufferSize);
 
         /// http://stackoverflow.com/q/10138040/2196124
         public static Platform RunningPlatform()
@@ -325,31 +200,6 @@ namespace SharpBoot.Utilities
                 default:
                     return Platform.Windows;
             }
-        }
-
-        public static string GetSizeString(long file)
-        {
-            if (UseSystemSize.Contains(Thread.CurrentThread.CurrentUICulture))
-            {
-                var sb = new StringBuilder(20);
-                StrFormatByteSize(file, sb, sb.Capacity);
-                return sb.ToString();
-            }
-
-            var suf = Strings.SizeSuffixes.Split(',').Select(x => x + Strings.FileUnit).ToArray();
-            if (file == 0)
-                return "0 " + suf[0];
-            var bytes = Math.Abs(file);
-            var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            var num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return Math.Sign(file) * num + " " + suf[place];
-        }
-
-        public static string GetTemporaryDirectory()
-        {
-            var tempDirectory = Path.Combine(Path.GetTempPath(), "SharpBoot_" + Path.GetRandomFileName());
-            Directory.CreateDirectory(tempDirectory);
-            return tempDirectory;
         }
 
         public static void InvokeIfRequired(this ISynchronizeInvoke obj, MethodInvoker action)

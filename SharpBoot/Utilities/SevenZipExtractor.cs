@@ -11,7 +11,7 @@ namespace SharpBoot.Utilities
 
         public SevenZipExtractor()
         {
-            var d = Utils.GetTemporaryDirectory();
+            var d = FileIO.GetTemporaryDirectory();
             SevenZipPath = Path.Combine(d, "7za.exe");
             File.WriteAllBytes(SevenZipPath, Resources._7za);
         }
@@ -26,7 +26,7 @@ namespace SharpBoot.Utilities
         public void Close()
         {
             // ReSharper disable once AssignNullToNotNullAttribute
-            Utils.SafeDel(Path.GetDirectoryName(SevenZipPath));
+            FileIO.SafeDel(Path.GetDirectoryName(SevenZipPath));
         }
 
         public void Extract(string arch, string output, bool wait = true, int maxDelay = -1)

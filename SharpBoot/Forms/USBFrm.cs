@@ -47,7 +47,7 @@ namespace SharpBoot.Forms
                 .Select(drive => new
                 {
                     Disp =
-                        drive.VolumeLabel + " (" + drive.Name + ")         " + Utils.GetSizeString(drive.TotalSize) +
+                        drive.VolumeLabel + " (" + drive.Name + ")         " + FileIO.GetSizeString(drive.TotalSize) +
                         " " + drive.DriveFormat,
                     Value = drive
                 }).ToList();

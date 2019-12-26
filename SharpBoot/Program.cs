@@ -33,7 +33,7 @@ namespace SharpBoot
         {
             ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };
 
-            Utils.ClrTmp(true);
+            FileIO.ClrTmp(true);
 
             Utils.CurrentRandom = new Random();
 
@@ -46,7 +46,7 @@ namespace SharpBoot
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-            Application.ApplicationExit += delegate { Utils.ClrTmp(); };
+            Application.ApplicationExit += delegate { FileIO.ClrTmp(); };
             Application.ThreadException += (_, e) => Utils.HandleUnhandled(e.Exception, "Thread exception");
             AppDomain.CurrentDomain.UnhandledException += (_, e) => Utils.HandleUnhandled((Exception)e.ExceptionObject);
 
@@ -56,7 +56,7 @@ namespace SharpBoot
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainWindow());
 
-            Utils.ClrTmp();
+            FileIO.ClrTmp();
         }
 
         private static void Default_PropertyChanged(object sender, PropertyChangedEventArgs e)

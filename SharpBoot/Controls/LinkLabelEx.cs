@@ -20,7 +20,7 @@ namespace SharpBoot.Controls
             if (m.Msg == WindowMessage.WM_SETCURSOR)
             {
                 // Set the cursor to use the system hand cursor
-                SetCursor(LoadCursor(IntPtr.Zero, WinApiConstants.IDC_HAND));
+                SetCursor(LoadCursor(IntPtr.Zero, WinApi.IDC_HAND));
 
                 // Indicate that the message has been handled
                 m.Result = IntPtr.Zero;

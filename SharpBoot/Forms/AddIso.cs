@@ -294,11 +294,11 @@ namespace SharpBoot.Forms
         private void ClientOnDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
         {
             if (sw.Elapsed.TotalSeconds >= 1)
-                lblSpeed.Text = Utils.GetSizeString(e.BytesReceived / (long) sw.Elapsed.TotalSeconds) + "/s";
+                lblSpeed.Text = FileIO.GetSizeString(e.BytesReceived / (long) sw.Elapsed.TotalSeconds) + "/s";
             setprg(e.ProgressPercentage);
 
-            lblProg.Text = Utils.GetSizeString(e.BytesReceived) + " / " +
-                           Utils.GetSizeString(e.TotalBytesToReceive);
+            lblProg.Text = FileIO.GetSizeString(e.BytesReceived) + " / " +
+                           FileIO.GetSizeString(e.TotalBytesToReceive);
         }
 
         private void btnAnnul_Click(object sender, EventArgs e)

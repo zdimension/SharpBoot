@@ -71,7 +71,7 @@ namespace SharpBoot.Forms
 
         public override void DoWork()
         {
-            tmpdir = Utils.GetTemporaryDirectory();
+            tmpdir = FileIO.GetTemporaryDirectory();
 
             ChangeStatus(Strings.Init);
 
@@ -234,7 +234,7 @@ namespace SharpBoot.Forms
                 iter++;
             }
 
-            Utils.ClrTmp();
+            FileIO.ClrTmp();
         }
 
         private void FormatDrive()

@@ -12,7 +12,7 @@ namespace SharpBoot.Utilities
 
         public static void LaunchQemu(string iso, bool usb = false)
         {
-            var f = Utils.GetTemporaryDirectory();
+            var f = FileIO.GetTemporaryDirectory();
             Paths.Add(f);
 
             var floppy = Path.GetExtension(iso).ToLower() == ".img";
@@ -54,7 +54,7 @@ namespace SharpBoot.Utilities
             ext.Close();
             p.Exited += (sender, args) =>
             {
-                Utils.SafeDel(f);
+                FileIO.SafeDel(f);
                 Paths.Remove(f);
             };
         }

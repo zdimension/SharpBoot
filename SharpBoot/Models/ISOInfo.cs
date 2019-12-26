@@ -109,7 +109,7 @@ namespace SharpBoot.Models
                     Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
                     Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
 
-                    var appsxml = Utils.DownloadWithoutCache("https://zdimension.fr/sharpboot/apps.xml");
+                    var appsxml = Network.DownloadWithoutCache("https://zdimension.fr/sharpboot/apps.xml");
 
                     if (appsxml?.Length > 40 && appsxml.Substring(appsxml.Length - 37, 37) !=
                         "<!--All your base are belong to us-->")

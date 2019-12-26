@@ -45,7 +45,7 @@ namespace SharpBoot.Forms
             InitAfterLng();
             changing = true;
             LoadLanguages();
-            var c = Utils.GetCulture();
+            var c = Localization.GetCulture();
             SetCurrentLanguageItem(c);
             automaticallyAddISOInfoToolStripMenuItem.Checked = Settings.Default.AutoAddInfo;
             cbxBackType.SelectedIndex = 2;
@@ -78,7 +78,7 @@ namespace SharpBoot.Forms
 
         public void RefreshOutputSize()
         {
-            tbxSize.Text = Utils.GetSizeString(CurImages.Sum(x => x.SizeB) + Resources.basedisk.Length +
+            tbxSize.Text = FileIO.GetSizeString(CurImages.Sum(x => x.SizeB) + Resources.basedisk.Length +
                                                  SelectedBackground.Length);
         }
 
@@ -90,7 +90,7 @@ namespace SharpBoot.Forms
 
             foreach (var x in Localization.GetDisplayCultures())
             {
-                var mnit = new ToolStripMenuItem(x.NativeName, Utils.GetFlag(x.Name)) {Tag = lngs.Count};
+                var mnit = new ToolStripMenuItem(x.NativeName, Localization.GetFlag(x.Name)) {Tag = lngs.Count};
                 mnit.Click += (sender, args) => OnLanguageMenuItemClick(mnit);
                 languageToolStripMenuItem.DropDownItems.Add(mnit);
 
@@ -125,16 +125,16 @@ namespace SharpBoot.Forms
         {
             var tmp = lngs[(int)it.Tag];
 
-            if (Utils.GetCulture().Equals(tmp)) return;
+            if (Localization.GetCulture().Equals(tmp)) return;
 
             if (tmp.Equals(Localization.GetSystemCulture()) && !Localization.IsSystemCultureSupported())
             {
                 Process.Start("https://poeditor.com/join/project/GDNqzsHFSk");
-                SetCurrentLanguageItem(Utils.GetCulture());
+                SetCurrentLanguageItem(Localization.GetCulture());
                 return;
             }
 
-            Utils.SetAppLng(tmp);
+            Localization.SetAppLanguage(tmp);
 
             if (changing && FieldsEmpty)
                 InitAfterLng();
@@ -191,7 +191,7 @@ namespace SharpBoot.Forms
             RefreshOutputSize();
 
 
-            lvIsos.Rows.Add(name, Utils.GetFileSizeString(filePath), cat, desc, filePath);
+            lvIsos.Rows.Add(name, FileIO.GetFileSizeString(filePath), cat, desc, filePath);
         }
 
         private ToolStripMenuItem FindLanguageItem(CultureInfo ci)
@@ -209,7 +209,7 @@ namespace SharpBoot.Forms
 
         private void g_GenerationFinished(GenIsoFrm g)
         {
-            Utils.ClrTmp();
+            FileIO.ClrTmp();
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
@@ -317,7 +317,7 @@ namespace SharpBoot.Forms
                 g.CustomFiles = CustomFiles;
                 g.ShowDialog(this);
 
-                Utils.ClrTmp();
+                FileIO.ClrTmp();
             }
         }
 
@@ -534,7 +534,7 @@ namespace SharpBoot.Forms
                     CurImages.Add(new ImageLine(a.Element("Nom").Value, a.Element("Path").Value,
                         a.Element("Desc").Value,
                         a.Element("Cat").Value));
-                    lvIsos.Rows.Add(a.Element("Nom").Value, Utils.GetFileSizeString(a.Element("Path").Value),
+                    lvIsos.Rows.Add(a.Element("Nom").Value, FileIO.GetFileSizeString(a.Element("Path").Value),
                         a.Element("Cat").Value, a.Element("Desc").Value, a.Element("Path").Value);
                 }
             }
@@ -698,7 +698,7 @@ namespace SharpBoot.Forms
                     "", entryfrm.SelectedType);
                 CurImages.Add(im);
                 RefreshOutputSize();
-                lvIsos.Rows.Add(im.Name, Utils.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
+                lvIsos.Rows.Add(im.Name, FileIO.GetFileSizeString(entryfrm.FilePath), "", "", entryfrm.FilePath);
             }
         }
 
