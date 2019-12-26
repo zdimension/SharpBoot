@@ -27,6 +27,6 @@
 
 | File | Target path |
 |------|-------------|
-| eltorito.img | `SharpBoot\Resources\basedisk.7z\boot\grub` |
+| eltorito.img | `SharpBoot\Resources\Components\basedisk.7z\boot\grub` |
 | boot.img | `SharpBoot.AdminProcess\Resources` |
 | core.img | `SharpBoot.AdminProcess\Resources` |
