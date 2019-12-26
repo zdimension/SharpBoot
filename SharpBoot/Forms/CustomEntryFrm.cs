@@ -33,13 +33,5 @@ namespace SharpBoot.Forms
         {
             btnOK.Enabled = File.Exists(tbxDest.Text);
         }
-
-        /*public void LoadTypes()
-        {
-            var lst = new[]
-            {
-                
-            }.ToList();
-        }*/
     }
 }
