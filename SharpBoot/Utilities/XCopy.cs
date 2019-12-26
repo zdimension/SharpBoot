@@ -13,22 +13,22 @@ namespace SharpBoot.Utilities
     public class XCopy
     {
         private string Destination;
-        private int FilePercentCompleted;
+        private double FilePercentCompleted;
         private bool IsCancelled;
 
         private string Source;
 
         public static void Copy(string source, string destination, bool overwrite, bool nobuffering,
-            EventHandler<ProgressChangedEventArgs> handler, CancellationToken token = default)
+            Action<double> handler, CancellationToken token = default)
         {
             new XCopy().CopyInternal(source, destination, overwrite, nobuffering, handler, token);
         }
 
         private event EventHandler Completed;
-        private event EventHandler<ProgressChangedEventArgs> ProgressChanged;
+        private event Action<double> ProgressChanged;
 
         private void CopyInternal(string source, string destination, bool overwrite, bool nobuffering,
-            EventHandler<ProgressChangedEventArgs> handler, CancellationToken token = default)
+            Action<double> handler, CancellationToken token = default)
         {
             try
             {
@@ -76,11 +76,11 @@ namespace SharpBoot.Utilities
         private void OnProgressChanged(double percent)
         {
             // only raise an event when progress has changed
-            if ((int) percent > FilePercentCompleted)
+            if (percent > FilePercentCompleted)
             {
-                FilePercentCompleted = (int) percent;
+                FilePercentCompleted = percent;
 
-                ProgressChanged?.Invoke(this, new ProgressChangedEventArgs(FilePercentCompleted, null));
+                ProgressChanged?.Invoke(FilePercentCompleted);
             }
         }
 
