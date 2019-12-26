@@ -212,7 +212,7 @@ namespace SharpBoot.Properties {
         
         /// <summary>
         ///   Recherche une chaîne localisée semblable à &lt;?xml version=&quot;1.0&quot; ?&gt;
-        ///&lt;apps version=&quot;41&quot;&gt;
+        ///&lt;apps version=&quot;42&quot;&gt;
         ///    &lt;categories&gt;
         ///        &lt;cat id=&quot;0&quot; def=&quot;Backup&quot;&gt;
         ///            &lt;text lang=&quot;de&quot;&gt;Sicherungskopie&lt;/text&gt;
@@ -223,7 +223,7 @@ namespace SharpBoot.Properties {
         ///            &lt;text lang=&quot;uk&quot;&gt;Резервна копія&lt;/text&gt;
         ///            &lt;text lang=&quot;zh-Hant&quot;&gt;備份&lt;/text&gt;
         ///            &lt;text lang=&quot;fr&quot;&gt;Sauvegarde&lt;/text&gt;
-        ///            &lt;text lang=&quot;pt&quot;&gt;Cópi [le reste de la chaîne a été tronqué]&quot;;.
+        ///            &lt;text lang=&quot;pt&quot;&gt;Cópia de seguran [le reste de la chaîne a été tronqué]&quot;;.
         /// </summary>
         internal static string DefaultISOs {
             get {

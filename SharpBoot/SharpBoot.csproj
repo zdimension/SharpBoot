@@ -694,6 +694,7 @@
   <ItemGroup>
     <Content Include="bin\Debug\libz.exe" />
     <Content Include="bin\Release\libz.exe" />
+    <None Include="Resources\apps.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

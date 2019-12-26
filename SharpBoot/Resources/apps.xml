@@ -1,0 +1,1372 @@
+<?xml version="1.0" ?>
+<apps version="43">
+    <categories>
+        <cat id="0" def="Backup">
+            <text lang="de">Sicherungskopie</text>
+            <text lang="es">Respaldo</text>
+            <text lang="zh-Hans">备份</text>
+            <text lang="ru">Резервная копия</text>
+            <text lang="cs">Zálohování</text>
+            <text lang="uk">Резервна копія</text>
+            <text lang="zh-Hant">備份</text>
+            <text lang="fr">Sauvegarde</text>
+            <text lang="pt">Cópia de segurança</text>
+            <text lang="pl">Kopia zapasowa</text>
+            <text lang="hu">Biztonsági mentés</text>
+        </cat>
+        <cat id="1" def="BIOS">
+        </cat>
+        <cat id="2" def="CPU">
+            <text lang="zh-Hans">中央处理器</text>
+            <text lang="ru">Процессор</text>
+            <text lang="uk">Процесор</text>
+        </cat>
+        <cat id="3" def="Linux">
+        </cat>
+        <cat id="4" def="Partition">
+            <text lang="es">Partición</text>
+            <text lang="it">Partizione</text>
+            <text lang="zh-Hans">分区</text>
+            <text lang="ru">Раздел</text>
+            <text lang="cs">Oddíl</text>
+            <text lang="ro">Partiție</text>
+            <text lang="uk">Розділ</text>
+            <text lang="zh-Hant">磁碟分區</text>
+            <text lang="fr">Partitions</text>
+            <text lang="pt">Partição</text>
+            <text lang="pl">Zarządzanie partycjami</text>
+            <text lang="hu">Partíció</text>
+        </cat>
+        <cat id="5" def="Password">
+            <text lang="de">Passwort</text>
+            <text lang="es">Contraseña</text>
+            <text lang="zh-Hans">密码</text>
+            <text lang="ru">Пароль</text>
+            <text lang="cs">Heslo</text>
+            <text lang="ro">Parolă</text>
+            <text lang="uk">Пароль</text>
+            <text lang="zh-Hant">密碼</text>
+            <text lang="fr">Mot de passe</text>
+            <text lang="pt">Palavra-passe</text>
+            <text lang="pl">Resetowanie haseł</text>
+            <text lang="hu">Jelszó</text>
+        </cat>
+        <cat id="6" def="RAM">
+            <text lang="zh-Hans">内存</text>
+            <text lang="ru">ОЗУ</text>
+            <text lang="uk">ОЗП</text>
+            <text lang="hu">Memória</text>
+        </cat>
+        <cat id="7" def="Recovery">
+            <text lang="de">Wiederherstellung</text>
+            <text lang="es">Recuperación</text>
+            <text lang="it">Recupero</text>
+            <text lang="zh-Hans">数据恢复</text>
+            <text lang="ru">Восстановление</text>
+            <text lang="cs">Zotavení</text>
+            <text lang="ro">Recuperare</text>
+            <text lang="uk">Відновлення</text>
+            <text lang="zh-Hant">還原</text>
+            <text lang="fr">Récupération</text>
+            <text lang="pt">Recuperação</text>
+            <text lang="pl">Odzyskiwanie</text>
+            <text lang="hu">Visszaállítás</text>
+        </cat>
+        <cat id="8" def="Testing">
+            <text lang="de">Testen</text>
+            <text lang="es">Probando</text>
+            <text lang="zh-Hans">诊断软件</text>
+            <text lang="ru">Тестирование</text>
+            <text lang="cs">Testování</text>
+            <text lang="ro">Testare</text>
+            <text lang="uk">Тестування</text>
+            <text lang="zh-Hant">調試</text>
+            <text lang="fr">Test</text>
+            <text lang="pt">Teste</text>
+            <text lang="pl">Testowanie</text>
+            <text lang="hu">Tesztelés</text>
+        </cat>
+        <cat id="9" def="Utility">
+            <text lang="de">Dienstprogramm</text>
+            <text lang="es">Utilidades</text>
+            <text lang="zh-Hans">实用软件</text>
+            <text lang="ru">Утилита</text>
+            <text lang="cs">Užitný</text>
+            <text lang="ro">Utilitate</text>
+            <text lang="uk">Утиліти</text>
+            <text lang="zh-Hant">工具</text>
+            <text lang="fr">Utilitaires</text>
+            <text lang="pt">Utilitário</text>
+            <text lang="pl">Narzędzia</text>
+            <text lang="hu">Eszköz</text>
+        </cat>
+        <cat id="10" def="Antivirus">
+            <text lang="zh-Hans">防病毒</text>
+            <text lang="ru">Антивирус</text>
+            <text lang="uk">Антивірус</text>
+            <text lang="zh-Hant">防病毒</text>
+            <text lang="pt">Antivírus</text>
+            <text lang="pl">Antywirus</text>
+            <text lang="hu">Vírusírtók</text>
+        </cat>
+        <cat id="11" def="Windows">
+        </cat>
+    </categories>
+    <!--
+	Categories:
+	
+	-1		None
+	0		Backup
+	1		BIOS
+	2		CPU
+	3		Linux
+	4		Partition
+	5		Password
+	6		RAM
+	7		Recovery
+	8		Testing
+	9		Utility
+    10      Antivirus
+    11      Windows
+	
+	-->
+    <app>
+        <name>Kali Linux</name>
+        <category>3</category>
+        <filenameRegex>^kali-linux-([0-9.]+)-([0-9a-z]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="cs">Kali Linux je linuxová distribuce odvozená od Debianu, navržená pro digitální forenzní analýzu a penetrační testy.</desc>
+            <desc lang="de">Kali Linux ist eine auf Debian beruhende Distribution, die vor allem Programme für Sicherheitstests versammelt. Obwohl Kali sich in erster Linie an professionelle Computersicherheitsfachleute richtet, steht es auch Privatanwendern zur Verfügung.</desc>
+            <desc lang="fr">Kali Linux est une distribution Linux pour pénétrer les systèmes.</desc>
+            <desc lang="ro">Kali este o distribuție Linux bazată pe Debian GNU / Linux concepută pentru securitatea în informatică și gestionată de către Offensive Security. Este considerat succesorul lui BackTrack Linux.</desc>
+            <desc lang="en">Kali Linux is a penetration testing Linux distribution.</desc>
+            <desc lang="ru">Kali Linux - GNU/Linux-LiveCD, возникший как результат слияния WHAX и Auditor Security Collection.</desc>
+            <desc lang="zh-Hans">Kali Linux是基于Debian的Linux发行版， 设计用于数位鉴识和渗透测试（英语：Penetration test）。由Offensive Security Ltd维护和资助。最先由Offensive Security的Mati Aharoni和Devon Kearns通过重写BackTrack来完成，BackTrack是他们之前写的用于取证的Linux发行版。</desc>
+            <desc lang="zh-Hant">Kali Linux是基於Debian的Linux發行版， 設計用於數位鑑識和滲透測試（英語：Penetration test）。由Offensive Security Ltd維護和資助。最先由Offensive Security的Mati Aharoni和Devon Kearns通過重寫BackTrack來完成，BackTrack是他們之前寫的用於取證的Linux發行版。</desc>
+            <desc lang="es">Kali Linux es una distribución basada en Debian GNU/Linux diseñada principalmente para la auditoría y seguridad informática en general.</desc>
+            <desc lang="it">Kali Linux è una distribuzione basata su Debian GNU/Linux, pensata per l'informatica forense e la sicurezza informatica, in particolare penetration testing, creata e gestita da Offensive Security. È considerato il successore di BackTrack Linux.</desc>
+            <desc lang="pt">Kali Linux é uma distribuição GNU/Linux baseada no Debian, considerado o sucessor do Back Track. O projeto apresenta várias melhorias, além de mais aplicativos. É voltado principalmente para auditoria e segurança de computadores em geral.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>sha1:8e0f63bc97842b2af6ff34986790efeb10d4d1a0</hash>
+                <name>Kali Linux 1.0.7</name>
+                <download>http://cdimage.kali.org/kali-1.0.7/kali-linux-1.0.7-i386.iso</download>
+                <filenameRegex>/kali-linux-1.0.7-(.*).iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha1:6e5e6390b9d2f6a54bc980f50d6312d9c77bf30b</hash>
+                <name>Kali Linux 2.0 x86</name>
+                <download>http://cdimage.kali.org/kali-2.0/kali-linux-2.0-i386.iso</download>
+                <filenameRegex>kali-linux-2.0-i386.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>sha1:aaeb89a78f155377282f81a785aa1b38ee5f8ba0</hash>
+                <name>Kali Linux 2.0 x64</name>
+                <download>http://cdimage.kali.org/kali-2.0/kali-linux-2.0-amd64.iso</download>
+                <filenameRegex>kali-linux-2.0-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha1:23dadf9c6d3fcd190e345ee070aa57155e93b745</hash>
+                <name>Kali Linux 2016.1 x86</name>
+                <download>http://cdimage.kali.org/kali-2016.1/kali-linux-2016.1-i386.iso</download>
+                <filenameRegex>kali-linux-2016.1-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha1:deaa41c5c8f26b7854cafb34b6f1b567871c4875</hash>
+                <name>Kali Linux 2016.1 x64</name>
+                <download>http://cdimage.kali.org/kali-2016.1/kali-linux-2016.1-amd64.iso</download>
+                <filenameRegex>kali-linux-2016.1-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha1:1344fc30ec7d1c49b83f4b6bbb46fc3e8bf5feac</hash>
+                <name>Kali Linux 2019.4 x86</name>
+                <download>http://cdimage.kali.org/kali-2019.4/kali-linux-2019.4-i386.iso</download>
+                <filenameRegex>kali-linux-2016.1-i386.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>sha1:186c5227e24ceb60deb711f1bdc34ad9f4718ff9</hash>
+                <name>Kali Linux 2016.1 x64</name>
+                <download>http://cdimage.kali.org/kali-2019.4/kali-linux-2019.4-amd64.iso</download>
+                <filenameRegex>kali-linux-2019.4-amd64.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Fedora</name>
+        <category>3</category>
+        <filenameRegex>^Fedora-Live-([A-Za-z]+)-([0-9a-z]+)-([0-9-]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Fedora ist eine RPM-basierte Linux-Distribution. Ziel der Entwickler der Distribution ist es, freie Software zu fördern und ein Betriebssystem für eine möglichst vielfältige Zielgruppe zu gestalten.</desc>
+            <desc lang="fr">Fedora, anciennement Fedora Core, est un système d’exploitation libre et une distribution GNU/Linux communautaire développée par le projet Fedora et sponsorisée par l’entreprise Red Hat.</desc>
+            <desc lang="ro">Fedora este o distribuție Linux bazată pe pachete RPM dezvoltată de comunitatea Proiectul Fedora și sponsorizată de Red Hat.</desc>
+            <desc lang="en">Fedora is a fast, stable, and powerful operating system for everyday use built by a worldwide community of friends.</desc>
+            <desc lang="ru">Fedora (англ. "мягкая фетровая шляпа", произносится "федо́ра", ранее Fedora Core) - дистрибутив операционной системы GNU/Linux. Этот дистрибутив спонсируется фирмой Red Hat и поддерживается сообществом.</desc>
+            <desc lang="zh-Hans">Fedora Linux（第七版以前为Fedora Core）是较具知名度的Linux发行套件之一，由Fedora 专案社群开发、红帽公司赞助，目标是建立一套新颖、多功能并且自由（开放原始码）的作业系统。</desc>
+            <desc lang="zh-Hant">Fedora Linux（第七版以前為Fedora Core）是較具知名度的Linux發行套件之一，由Fedora 專案社群開發、紅帽公司贊助，目標是建立一套新穎、多功能並且自由（開放原始碼）的作業系統。</desc>
+            <desc lang="es">Fedora es una distribución Linux para propósitos generales basada en RPM, que se caracteriza por ser un sistema estable, la cual es mantenida gracias a una comunidad internacional de ingenieros, diseñadores gráficos y usuarios que informan de fallos y prueban nuevas tecnologías. Cuenta con el respaldo y la promoción de Red Hat.</desc>
+            <desc lang="cs">Fedora (do verze 6 včetně Fedora Core) je linuxová distribuce založená na balíčkovacím systému RPM, vyvíjená komunitou vývojářů okolo Fedora Project, sponzorovaného společností Red Hat, od jejíž distribuce se projekt oddělil.</desc>
+            <desc lang="it">Fedora (in precedenza Fedora Core) è una distribuzione GNU/Linux curata dal Progetto Fedora, un progetto Open Source sponsorizzato (ma non direttamente supportato) da Red Hat e supportato dalla rispettiva community.</desc>
+            <desc lang="pt">Fedora antigamente chamado Fedora Core é um sistema operativo que tem por base o Linux, a distribuição Linux é completamente livre de custos para poder usufruir e partilhar. Foi criada pela Red Hat. Atualmente mantida pelo Projeto Fedora (Fedora Project) e patrocinado pela Red Hat.</desc>
+            <desc lang="uk">Fedora (колишня Fedora Core) — дистрибутив Linux на основі RPM, котрий розробляється спільнотою Fedora Project, і спонсорується компанією Red Hat. Він прагне бути повноцінною, універсальною операційною системою, до складу якої входить виключно вільне та відкрите програмне забезпечення.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>sha256:b115c5653b855de2353e41ff0c72158350f14a020c041462f35ba2a47bd1e33b</hash>
+                <name>Fedora 20.1</name>
+                <download>http://download.fedoraproject.org/pub/fedora/linux/releases/20/Live/i386/Fedora-Live-Desktop-i686-20-1.iso</download>
+                <filenameRegex>Fedora-Live-Desktop-i686-20-1.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha256:6e4c47b582ece2b431ee95d6f453945d11e28c712f7619b178cb31979138f884</hash>
+                <name>Fedora 22.3 Workstation x86</name>
+                <download>http://mir01.syntis.net/fedora/linux/releases/22/Workstation/i386/iso/Fedora-Live-Workstation-i686-22-3.iso</download>
+                <filenameRegex>Fedora-Live-Workstation-i686-22-3.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha256:615abfc89709a46a078dd1d39638019aa66f62b0ff8325334f1af100551bb6cf</hash>
+                <name>Fedora 22.3 Workstation x64</name>
+                <download>http://mir01.syntis.net/fedora/linux/releases/22/Workstation/x86_64/iso/Fedora-Live-Workstation-x86_64-22-3.iso</download>
+                <filenameRegex>Fedora-Live-Workstation-x86_64-22-3.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha256:1c96e1529cb25b08dac4ef29cb4f6eafdd9b6bbf008642fb4ae01a5e9bb31255</hash>
+                <name>Fedora 24 Workstation x86</name>
+                <download>https://download.fedoraproject.org/pub/fedora/linux/releases/24/Workstation/i386/iso/Fedora-Workstation-Live-i386-24-1.2.iso</download>
+                <filenameRegex>Fedora-Workstation-Live-i386-24-1.2.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha256:8e12d7ba1fcf3328b8514d627788ee0146c0eef75a5e27f0674ee1fe4f1feaf6</hash>
+                <name>Fedora 24 Workstation x64</name>
+                <download>https://download.fedoraproject.org/pub/fedora/linux/releases/24/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-24-1.2.iso</download>
+                <filenameRegex>Fedora-Workstation-Live-x86_64-24-1.2.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>sha256:1d73ce30bfb96274c53b09013ea23320f0f64a1b0c663217110a5baf0b2c6528</hash>
+                <name>Fedora 31 Workstation x64</name>
+                <download>https://download.fedoraproject.org/pub/fedora/linux/releases/31/Workstation/x86_64/iso/Fedora-Workstation-Live-x86_64-31-1.9.iso</download>
+                <filenameRegex>Fedora-Workstation-Live-x86_64-31-1.9.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Fusion Linux</name>
+        <category>3</category>
+        <filenameRegex>^Fusion-Linux-([0-9]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Fusion Linux est un système conçu pour les ordinateurs de bureau.</desc>
+            <desc lang="en">Fusion Linux is a Linux distribution that has desktop usability.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>6e17614e3cb23db3f63446f55b179d17</hash>
+                <name>Fusion Linux 15</name>
+                <download></download>
+                <filenameRegex>Fusion-Linux-15.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>4caa6e3c438b645839711fa8da4f17fe</hash>
+                <name>Fusion Linux 16 64-bit</name>
+                <download></download>
+                <filenameRegex>Fusion-Linux-16-64bit.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Inquisitor</name>
+        <category>3</category>
+        <filenameRegex>^inq-live-([0-9a-z.]+)-([0-9a-z-]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Inquisitor est un système de test matériel.</desc>
+            <desc lang="en">Inquisitor is a software suite used for hardware diagnostics, stress testing, certification and benchmarking platform.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>25ab080c12f540236bca7fad901f7ff0</hash>
+                <name>Inquisitor Live 3.0</name>
+                <download>http://downloads.sourceforge.net/project/inq/inquisitor/3.0/inq-live-3.0-x86.iso</download>
+                <filenameRegex>/^inq-live-3\.0-(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash>b990071901cd60a9d6ebfb058ee57794</hash>
+                <name>Inquisitor Live 3.1 beta 2 x86</name>
+                <download>http://downloads.sourceforge.net/inq/inq-live-3.1beta2-i386-debian.iso</download>
+                <filenameRegex>inq-live-3.1beta2-i386-debian.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>c7fef1289f36b4c25ee4057a9988d975</hash>
+                <name>Inquisitor Live 3.1 beta 2 x64</name>
+                <download>http://downloads.sourceforge.net/inq/inq-live-3.1beta2-amd64-debian.iso</download>
+                <filenameRegex>inq-live-3.1beta2-amd64-debian.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Knoppix</name>
+        <category>3</category>
+        <filenameRegex>^KNOPPIX_V([0-9.]+)CD-[0-9-]{10}-[A-Z]{2}\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Knoppix ist eine freie GNU/Linux-Distribution, deren Hauptanwendungsbereich im Live-Betrieb liegt. Sie wird von Klaus Knopper entwickelt, von dessen Namen sich die Benennung ableitet.</desc>
+            <desc lang="fr">Knoppix est une distribution GNU/Linux basée sur le système de paquets du système Debian GNU/Linux.</desc>
+            <desc lang="ro">Knoppix este un sistem de operare cu nucleu Linux ce se bazează pe Debian GNU/Linux. A fost creată de Klaus Knopper. Rulează în totalitate de pe CD dar si de pe DVD, așa că poate rula și pe un calculator fără hard-disc , dar se poate si instala pe hard-disc.</desc>
+            <desc lang="en">Knoppix, ois an operating system based on Debian designed to be run directly from a CD / DVD (Live CD) or a USB flash drive (Live USB), one of the first of its kind for any operating system. Knoppix was developed by, and named after, Linux consultant Klaus Knopper.</desc>
+            <desc lang="uk">Knoppix - це дистрибутив GNU/Linux зі збіркою вільних програм, які працюють з компакт-диска (Live-CD чи Live-DVD), створений на базі Debian GNU/Linux. Встановлення його на твердий диск не обов'язкове.</desc>
+            <desc lang="ru">Knoppix (произносится «кно́ппикс») — дистрибутив операционной системы Linux, один из первых LiveCD-дистрибутивов, основанных на Debian.</desc>
+            <desc lang="zh-Hans">KNOPPIX是一套光盘或USB闪存盘启动的GNU/Linux系统（LiveCD），功能包括：自动硬件监测、支持常见的显卡、声卡、SCSI和USB设备，以及其它外设。KNOPPIX可用于Linux演示、光盘教学、系统急救，经过适当改造，还可以用于商业软件的产品演示。KNOPPIX采用了特殊的解压缩技术，不需要硬盘安装，一张CD，就容纳了2GB的可执行程序，供用户自由使用。</desc>
+            <desc lang="zh-Hant">KNOPPIX是一套光盤或USB閃存盤啟動的GNU/Linux系統（LiveCD），功能包括：自動硬件監測、支持常見的顯卡、聲卡、SCSI和USB設備，以及其它外設。KNOPPIX可用於Linux演示、光盤教學、系統急救，經過適當改造，還可以用於商業軟件的產品演示。KNOPPIX採用了特殊的解壓縮技術，不需要硬盤安裝，一張CD，就容納了2GB的可執行程序，供用戶自由使用。</desc>
+            <desc lang="es">Knoppix es una distribución de GNU/Linux creada por Klaus Knopper. Está basada en Debian y actualmente por defecto utiliza LXDE como entorno de escritorio, aunque en el menú de arranque se puede especificar otro tipo de interfaz gráfica a usar (Gnome, IceWM,...).</desc>
+            <desc lang="cs">Knoppix je asi nejznámější distribuce operačního systému Linux na Live CD, což znamená, že ke svému běhu nepotřebuje pevný disk a není nutné ji instalovat. Celý systém včetně aplikací je umístěn na jediném CD a po nabootování je plně funkční. Je založená na Debianu.</desc>
+            <desc lang="it">Knoppix è una distribuzione GNU/Linux, derivata da Debian, famosa per il fatto di essere una delle più complete tra le distribuzioni Live CD.</desc>
+            <desc lang="pt">Knoppix, algumas vezes escrito KNOPPIX é uma distribuição GNU/Linux baseado no Debian projetada para rodar diretamente em um CD/DVD (Live CD), pendrive (Live USB), sendo uma das primeiras a implementar este método de arranque e execução.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>43e1bf11bd52d88d61379fdd38fe869c</hash>
+                <name>Knoppix 7.2.0</name>
+                <download>http://ftp.free.fr/pub/Distributions_Linux/knoppix/KNOPPIX_V7.2.0CD-2013-06-16-EN.iso</download>
+                <filenameRegex>/KNOPPIX_V7\.2\.0(.*).iso</filenameRegex>
+            </version>
+            <version>
+                <hash>0db0b36fc7bad7b50835f68c369e854c</hash>
+                <name>Knoppix 7.6.1</name>
+                <download>http://ftp.uni-kl.de/pub/linux/knoppix-dvd/KNOPPIX_V7.6.1DVD-2016-01-16-EN.iso</download>
+                <filenameRegex>/KNOPPIX_V7\.6\.1(.*).iso</filenameRegex>
+            </version>
+            <version>
+                <hash>b86e6ef78d5f85812aa50d766f4b14e6</hash>
+                <name>Knoppix 8.6.1 (2019-10-14)</name>
+                <download>http://ftp.knoppix.nl/os/Linux/distr/knoppix-dvd/KNOPPIX_V8.6.1-2019-10-14-EN.iso</download>
+                <filenameRegex>/KNOPPIX_V8\.6\.1(.*).iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>NetbootCD</name>
+        <category>3</category>
+        <filenameRegex>^NetbootCD-[0-9.]+\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">NetbootCD est un live CD Linux basé sur Tiny Core Linux.</desc>
+            <desc lang="en">NetbootCD is a Linux live CD based on Tiny Core Linux.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash></hash>
+                <name>NetbootCD 9.0</name>
+                <download>https://github.com/IsaacSchemm/netbootcd/releases/download/v9.0/NetbootCD.iso</download>
+                <filenameRegex>NetbootCD.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash></hash>
+                <name>NetbootCD 9.0 CorePlus</name>
+                <download>https://github.com/IsaacSchemm/netbootcd/releases/download/v9.0/NetbootCD+CorePlus.iso</download>
+                <filenameRegex>NetbootCD.CorePlus.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>75ef50099a4887df5195a31adb474db0</hash>
+                <name>NetbootCD 5.3.3</name>
+                <download>http://downloads.tuxfamily.org/netbootcd/5.3.3/NetbootCD-5.3.3.iso</download>
+                <filenameRegex>NetbootCD-5.3.3.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>edc09e3cb8b5d3dec50bb4f8b00db6fc</hash>
+                <name>NetbootCD 7.1</name>
+                <download>https://github.com/IsaacSchemm/netbootcd/releases/download/v7.1/NetbootCD.iso</download>
+                <filenameRegex>NetbootCD.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>ff263f31957ac33652164066201fd14f</hash>
+                <name>NetbootCD 7.1 CorePlus</name>
+                <download>https://github.com/IsaacSchemm/netbootcd/releases/download/v7.1/NetbootCD.CorePlus.iso</download>
+                <filenameRegex>NetbootCD.CorePlus.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Ubuntu</name>
+        <category>3</category>
+        <filenameRegex>^ubuntu(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Ubuntu (auch: Ubuntu Linux) ist eine kostenlose Linux-Distribution, die auf Debian basiert. Der Name Ubuntu bedeutet auf Zulu etwa "Menschlichkeit" und bezeichnet eine afrikanische Philosophie.</desc>
+            <desc lang="fr">Ubuntu est un système d’exploitation open source basé sur la distribution Linux Debian.</desc>
+            <desc lang="ro">Ubuntu este un sistem de operare bazat pe Linux pentru computerele personale, servere și netbook-uri.</desc>
+            <desc lang="zh-Hant">Ubuntu 是一個以桌面應用為主的GNU/Linux作業系統，其名稱來自非洲南部祖魯語或科薩語的「ubuntu」一詞（譯為烏班圖），意思是「人性」、「我的存在是因為大家的存在」，是非洲傳統的一種價值觀。</desc>
+            <desc lang="zh-Hans">Ubuntu 是一个以桌面应用为主的GNU/Linux作业系统，其名称来自非洲南部祖鲁语或科萨语的“ubuntu”一词（译为乌班图），意思是“人性”、“我的存在是因为大家的存在”，是非洲传统的一种价值观。</desc>
+            <desc lang="ru">Ubuntu от зулу ubuntu — человечность; «Убу́нту») — операционная система, основанная на Debian GNU/Linux. Основным разработчиком и спонсором является компания Canonical.</desc>
+            <desc lang="uk">Ubuntu — операційна система для робочих станцій, лептопів і серверів, найпопулярніший у світі дистрибутив Linux.</desc>
+            <desc lang="es">Ubuntu es un sistema operativo basado en GNU/Linux y que se distribuye como software libre , el cual incluye su propio entorno de escritorio denominado Unity.</desc>
+            <desc lang="en">Ubuntu is a Debian-based Linux operating system and distribution for personal computers, smartphones and network servers. It uses Unity as its default user interface.</desc>
+            <desc lang="cs">Ubuntu je linuxová distribuce pro pracovní stanice, servery, osobní počítače a notebooky, založená na Debian GNU/Linux. Je sponzorována společností Canonical Ltd (vlastněnou Markem Shuttleworthem) a název distribuce je odvozen ze zuluského pojmu Ubuntu znamenajícího přibližně "lidskost ostatním".</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>09eb43dcfce2b7246bdd6e8108e755df</hash>
+                <name>Ubuntu 12.04.5 (Precise Pangolin) LTS x86</name>
+                <download>http://releases.ubuntu.com/12.04.5/ubuntu-12.04.5-desktop-i386.iso</download>
+                <filenameRegex>/ubuntu-12.04(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>48b4edf237c489eebbfef208c2650d11</hash>
+                <name>Ubuntu 12.04.5 (Precise Pangolin) LTS x64</name>
+                <download>http://releases.ubuntu.com/12.04.5/ubuntu-12.04.5-desktop-amd64.iso</download>
+                <filenameRegex>/ubuntu-12.04(.*)-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>08d25bf879e353686a974b7b14ae7d81</hash>
+                <name>Ubuntu Server 14.04.6 (Trusty Tahr) x86</name>
+                <download>http://releases.ubuntu.com/14.04.6/ubuntu-14.04.6-server-i386.iso</download>
+                <filenameRegex>ubuntu-14.04.6-server-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>c4d4d037d7d0a05e8f526d18aa25fb5e</hash>
+                <name>Ubuntu 14.04.6 (Trusty Tahr) x86</name>
+                <download>http://releases.ubuntu.com/14.04/ubuntu-14.04.6-desktop-i386.iso</download>
+                <filenameRegex>ubuntu-14.04.6-desktop-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>0d9ee8b0b0205a8487d6ed8785ee63a8</hash>
+                <name>Ubuntu Server 15.10 (Wily Werewolf) x86</name>
+                <download></download>
+                <filenameRegex>ubuntu-15.10-server-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>fb4eef05edcabfc5cccd4cb44f3f9b48</hash>
+                <name>Ubuntu Server 15.10 (Wily Werewolf) x64</name>
+                <download></download>
+                <filenameRegex>ubuntu-15.10-server-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>7d483b990de4e1369b76b7b693737191</hash>
+                <name>Ubuntu 15.10 (Wily Werewolf) x86</name>
+                <download></download>
+                <filenameRegex>ubuntu-15.10-desktop-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>ece816e12f97018fa3d4974b5fd27337</hash>
+                <name>Ubuntu 15.10 (Wily Werewolf) x64</name>
+                <download></download>
+                <filenameRegex>ubuntu-15.10-desktop-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>494c03028524dff2de5c41a800674692</hash>
+                <name>Ubuntu Server 16.04 x86</name>
+                <download>http://releases.ubuntu.com/16.04/ubuntu-16.04-server-i386.iso</download>
+                <filenameRegex>ubuntu-16.04-server-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>23e97cd5d4145d4105fbf29878534049</hash>
+                <name>Ubuntu Server 16.04 x64</name>
+                <download>http://releases.ubuntu.com/16.04/ubuntu-16.04-server-amd64.iso</download>
+                <filenameRegex>ubuntu-16.04-server-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>610c4a399df39a78866f9236b8c658da</hash>
+                <name>Ubuntu 16.04 x86</name>
+                <download>http://releases.ubuntu.com/16.04/ubuntu-16.04-desktop-i386.iso</download>
+                <filenameRegex>ubuntu-16.04-desktop-i386.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>c94d54942a2954cf852884d656224186</hash>
+                <name>Ubuntu 16.04 x64</name>
+                <download>http://releases.ubuntu.com/16.04/ubuntu-16.04-desktop-amd64.iso</download>
+                <filenameRegex>ubuntu-16.04-desktop-amd64.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Edubuntu</name>
+        <category>3</category>
+        <filenameRegex>^edubuntu(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Edubuntu ist eine für die Verwendung in der Schule entwickelte Erweiterung zu Ubuntu, das auf dem Ubuntu Linux Terminal Server Project aufsetzt.</desc>
+            <desc lang="fr">Edubuntu est un système d'exploitation basé sur la distribution GNU/Linux Ubuntu comprenant un ensemble de logiciels libres dédiés à l'éducation.</desc>
+            <desc lang="ro">Edubuntu este o distribuție membră a familiei Ubuntu de distribuții Linux, special proiectată pentru a fi folosită în scopuri educaționale.</desc>
+            <desc lang="en">Edubuntu, previously known as Ubuntu Education Edition, is an official derivative of the Ubuntu operating system designed for use in classrooms inside schools, homes and communities.</desc>
+            <desc lang="ru">Edubuntu — дистрибутив операционной системы Linux, основанный на дистрибутиве Ubuntu. Ориентирован на использование в образовательных учреждениях.</desc>
+            <desc lang="uk">Edubuntu — один із варіантів Ubuntu, дистрибутив лінукс розроблений для навчальних класів.</desc>
+            <desc lang="zh-Hans">Edubuntu是Ubuntu Linux的教育分支，并包含了Linux终端机伺服器计画，以及大量的教育应用程序，例如GCompris、KDE教育计划和Schooltool Calendar。</desc>
+            <desc lang="zh-Hant">Edubuntu是Ubuntu Linux的教育分支，並包含了Linux終端機伺服器計畫，以及大量的教育應用程序，例如GCompris、KDE教育計劃和Schooltool Calendar。</desc>
+            <desc lang="es">Edubuntu es una derivación oficial de la distribución Linux Ubuntu, destinada para su uso en ambientes escolares.</desc>
+            <desc lang="cs">Edubuntu je verze linuxové distribuce Ubuntu, která se specializuje na školství. V Edubuntu je k dispozici Linux Terminal Server Project, mnoho výukových aplikací včetně GCompris, KDE Education Project, školní informační systém SchoolTool či správce počítačové učebny a monitorovací nástroj Epoptes.</desc>
+            <desc lang="it">Edubuntu, anche conosciuta come Ubuntu Education Edition, è una distribuzione GNU/Linux, progettata per l'uso in ambito scolastico e basata su Ubuntu.</desc>
+            <desc lang="pt">Edubuntu é uma distribuição Linux desenvolvida pela Canonical Ltd baseada no sistema operacional Ubuntu para ambientes escolares.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>1919086a97af4092342933a5eccbab62</hash>
+                <name>Edubuntu 14.04</name>
+                <download>http://cdimage.ubuntu.com/edubuntu/releases/14.04/release/edubuntu-14.04-dvd-i386.iso</download>
+                <filenameRegex>edubuntu-14.04-dvd-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>58b66c277b0b59c56e590676cd351cc6</hash>
+                <name>Edubuntu 15.10 x86</name>
+                <download>http://cdimage.ubuntu.com/edubuntu/dvd/current/wily-dvd-i386.iso</download>
+                <filenameRegex>wily-dvd-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>5b26a7d36b4b8098577c2a081e4e1b2a</hash>
+                <name>Edubuntu 15.10 x64</name>
+                <download>http://cdimage.ubuntu.com/edubuntu/dvd/current/wily-dvd-amd64.iso</download>
+                <filenameRegex>wily-dvd-amd64.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>d97f1efde8d4b676b4687a5393bf4bd1</hash>
+                <name>Edubuntu 16.04 x86</name>
+                <download>http://cdimage.ubuntu.com/edubuntu/dvd/current/xenial-dvd-i386.iso</download>
+                <filenameRegex>xenial-dvd-i386.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>c546ae7e889537e1fa38c17de9c94b79</hash>
+                <name>Edubuntu 16.04 x64</name>
+                <download>http://cdimage.ubuntu.com/edubuntu/dvd/current/xenial-dvd-amd64.iso</download>
+                <filenameRegex>xenial-dvd-amd64.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Kubuntu</name>
+        <category>3</category>
+        <filenameRegex>^kubuntu(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Kubuntu ist eine Ubuntu-Variante mit der Arbeitsumgebung KDE, die erstmals mit der Version 5.04 erschienen ist.</desc>
+            <desc lang="fr">Kubuntu est la version KDE d'Ubuntu.</desc>
+            <desc lang="ro">Kubuntu este un derivat oficial al Ubuntu ce folosește KDE Plasma Desktop în locul GNOME.</desc>
+            <desc lang="en">Kubuntu is the KDE version of Ubuntu.</desc>
+            <desc lang="ru">Kubuntu (произносится "кубу́нту") - производный от Ubuntu дистрибутив Linux. Kubuntu использует графическое окружение KDE вместо стандартного для Ubuntu Unity.</desc>
+            <desc lang="uk">Kubuntu - варіант дистрибутиву Ubuntu, котрий як стільничне середовище використовує KDE замість Unity. Він є частиною проекту Ubuntu, і базується на тій же системі.</desc>
+            <desc lang="zh-Hans">Kubuntu，是众多Ubuntu分支的一种，它采用KDE Plasma桌面为其预设桌面环境。它和Ubuntu采用同样的 软体库。基本上，Kubuntu和Ubuntu没有太大的差异，只是预设桌面系统采用KDE，并非Unity。</desc>
+            <desc lang="zh-Hant">Kubuntu，是眾多Ubuntu分支的一種，它採用KDE Plasma桌面為其預設桌面環境。它和Ubuntu採用同樣的 軟體庫。基本上，Kubuntu和Ubuntu沒有太大的差異，只是預設桌面系統採用KDE，並非Unity。</desc>
+            <desc lang="es">Kubuntu es una distribución Linux que utiliza KDE como entorno de escritorio. Es desarrollado por Blue Systems y sus colaboradores. Es un derivado oficial de Ubuntu y su nombre significa "hacia la humanidad" en el idioma bemba, y se deriva de ubuntu ("humanidad"). La K al principio representa la comunidad KDE, la cual le provee de su escritorio (entorno gráfico) y programas.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>327cf4202f8e2601ce0d772082c84b86</hash>
+                <name>Kubuntu 14.04</name>
+                <download>http://cdimage.ubuntu.com/kubuntu/releases/14.04/release/kubuntu-14.04-desktop-i386.iso</download>
+                <filenameRegex>kubuntu-14.04-desktop-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>fff89107d7ae4d386f46707245902bab</hash>
+                <name>Kubuntu 15.10 x86</name>
+                <download>http://cdimage.ubuntu.com/kubuntu/releases/15.10/release/kubuntu-15.10-desktop-i386.iso</download>
+                <filenameRegex>/kubuntu-15.10(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>2e9967a25d87f7c685c63101eddb17d6</hash>
+                <name>Kubuntu 15.10 x64</name>
+                <download>http://cdimage.ubuntu.com/kubuntu/releases/15.10/release/kubuntu-15.10-desktop-amd64.iso</download>
+                <filenameRegex>/kubuntu-15.10(.*)-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Lubuntu</name>
+        <category>3</category>
+        <filenameRegex>^lubuntu(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Lubuntu ist ein Derivat, das für den Einsatz auf leistungsschwächerer Hardware konzipiert ist. Als Desktop-Umgebung setzt es das besonders ressourcensparende LXDE ein, durch den Einsatz von Openbox als Fenstermanager wird nur etwa halb soviel Arbeitsspeicher wie bei Xubuntu benötigt.</desc>
+            <desc lang="fr">Lubuntu est la version LXDE d'Ubuntu.</desc>
+            <desc lang="en">Lubuntu is the LXDE version of Ubuntu.</desc>
+            <desc lang="ru">Lubuntu - легковесный и энергоэффективный производный от Ubuntu дистрибутив Linux с малым потреблением ресурсов. В качестве среды рабочего стола используется LXDE.</desc>
+            <desc lang="uk">Lubuntu (вимовляється: "лубунту") - видозмінена версія Linux-дистрибутиву Ubuntu.</desc>
+            <desc lang="zh-Hans">Lubuntu是Ubuntu Linux桌面系统计划的一个分支，其预设桌面环境为LXDE，特别适用于配备老旧的电脑。</desc>
+            <desc lang="zh-Hant">Lubuntu是Ubuntu Linux桌面系統計劃的一個分支，其預設桌面環境為LXDE，特別適用於配備老舊的電腦。</desc>
+            <desc lang="es">Lubuntu es una distribución oficial del proyecto Ubuntu que tiene por lema "menos recursos y más eficiencia energética", usando el gestor de escritorio LXDE. El nombre Lubuntu es una combinación entre LXDE y Ubuntu.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>b0d1c58c8515ab40382d01f59655ba85</hash>
+                <name>Lubuntu 14.04</name>
+                <download>http://cdimage.ubuntu.com/lubuntu/releases/14.04/release/lubuntu-14.04-desktop-i386.iso</download>
+                <filenameRegex>lubuntu-14.04-desktop-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>85987b5e0755822ba54f4068017b3ab0</hash>
+                <name>Lubuntu 15.10 x86</name>
+                <download>http://cdimage.ubuntu.com/lubuntu/releases/15.10/release/lubuntu-15.10-desktop-i386.iso</download>
+                <filenameRegex>/lubuntu-15.10(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>890962cac23a95505c8edac4cdd7842b</hash>
+                <name>Lubuntu 15.10 x64</name>
+                <download>http://cdimage.ubuntu.com/lubuntu/releases/15.10/release/lubuntu-15.10-desktop-amd64.iso</download>
+                <filenameRegex>/lubuntu-15.10(.*)-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Ubuntu GNOME</name>
+        <category>3</category>
+        <filenameRegex>^ubuntu-gnome(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Die Variante Ubuntu GNOME (vormals: Ubuntu Gnome Remix) verwendet die Gnome Shell an Stelle von Unity, sowie ein paar andere Gnome-Applikationen, welche in Ubuntu standardmäßig nicht installiert sind.</desc>
+            <desc lang="fr">Ubuntu GNOME est l'édition d'Ubuntu reposant sur l'environnement GNOME.</desc>
+            <desc lang="en">Ubuntu GNOME is the GNOME edition of Ubuntu.</desc>
+            <desc lang="zh-Hans">Ubuntu GNOME是一个基于Ubuntu的Linux发行版，但其使用的是桌面环境Gnome。此项目开始于一个名为"remix"的非官方项目，后被接纳为官方发行版之一。第一个稳定版本为12.10。</desc>
+            <desc lang="zh-Hant">Ubuntu GNOME是一個基於Ubuntu的Linux發行版，但其使用的是桌面環境Gnome。此項目開始於一個名為"remix"的非官方項目，後被接納為官方發行版之一。第一個穩定版本為12.10。</desc>
+            <desc lang="es">Ubuntu GNOME es un sistema operativo basado en GNU/Linux y que se distribuye como software libre. Es un derivado oficial de Ubuntu pero en vez de usar el entorno de escritorio Unity, que Ubuntu adoptó a partir de su versión 11.04, usa GNOME.] Su primera versión estable estuvo basada en Ubuntu 12.10.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>ab5c39caef103694fe97bda23412ff00</hash>
+                <name>Ubuntu GNOME 14.04</name>
+                <download>http://cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/release/ubuntu-gnome-14.04-desktop-i386.iso</download>
+                <filenameRegex>/ubuntu-gnome-14.04(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>97b49f32a70b46537c34e24e43c16526</hash>
+                <name>Ubuntu GNOME 15.10 x86</name>
+                <download>http://cdimage.ubuntu.com/ubuntu-gnome/releases/15.10/release/ubuntu-gnome-15.10-desktop-i386.iso</download>
+                <filenameRegex>/ubuntu-gnome-15.10(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>b89cd1cee3acc2ec174f8d995bd74794</hash>
+                <name>Ubuntu GNOME 15.10 x64</name>
+                <download>http://cdimage.ubuntu.com/ubuntu-gnome/releases/15.10/release/ubuntu-gnome-15.10-desktop-amd64.iso</download>
+                <filenameRegex>/ubuntu-gnome-15.10(.*)-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Ubuntu Studio</name>
+        <category>3</category>
+        <filenameRegex>^ubuntustudio(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Ubuntu Studio ist speziell auf die Anforderungen von Audio-, Grafik- und Videobearbeitung ausgerichtet. Für solche Zwecke wurde den Ubuntu-Quellen ein Kernel mit Echtzeitfunktionen hinzugefügt, der dafür keinerlei Energiesparfunktionen unterstützt.</desc>
+            <desc lang="fr">Ubuntu Studio est un système gratuit et ouvert pour les gens créatifs.</desc>
+            <desc lang="ro">Ubuntu Studio este o variantă de Ubuntu care se concentrează pe editare video, audio și grafică.</desc>
+            <desc lang="en">Ubuntu Studio is a free and open operating system for creative people.</desc>
+            <desc lang="ru">Ubuntu Studio - дистрибутив Linux, основанный на Ubuntu, использует в качестве графической среды XFCE и приложения на GTK+.</desc>
+            <desc lang="uk">Ubuntu Studio - дистрибутив Linux, що базується на Ubuntu, використовує як графічне середовище XFCE (GNOME до версії 11.10) і застосунки на GTK+.</desc>
+            <desc lang="zh-Hans">Ubuntu Studio 是一个Ubuntu官方认可的Ubuntu作业系统衍生版本 。这个版本主要是为一般的多媒体制作而设计。原始的版本是基于Ubuntu 7.04，在2007年5月10日发布。</desc>
+            <desc lang="zh-Hant">Ubuntu Studio 是一個Ubuntu官方認可的Ubuntu作業系統衍生版本 。這個版本主要是為一般的多媒體製作而設計。原始的版本是基於Ubuntu 7.04，在2007年5月10日發佈。</desc>
+            <desc lang="es">Ubuntu Studio es una distribución GNU/Linux basada en Ubuntu. Está orientada a la edición multimedia profesional de audio, video y gráficos.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>75cdb9b7cb42e4bd04d2554e6142764c</hash>
+                <name>Ubuntu Studio 14.04 x86</name>
+                <download>http://cdimage.ubuntu.com/ubuntustudio/releases/14.04/release/ubuntustudio-14.04-dvd-i386.iso</download>
+                <filenameRegex>ubuntustudio-14.04-dvd-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>fd71373372858a872920d02763feeeca</hash>
+                <name>Ubuntu Studio 15.10 x86</name>
+                <download>http://cdimage.ubuntu.com/ubuntustudio/releases/15.10/release/ubuntustudio-15.10-dvd-i386.iso</download>
+                <filenameRegex>/ubuntustudio-15.10(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>749e2c7b5d50e353129b77e4e04494a9</hash>
+                <name>Ubuntu Studio 15.10 x64</name>
+                <download>http://cdimage.ubuntu.com/ubuntustudio/releases/15.10/release/ubuntustudio-15.10-dvd-amd64.iso</download>
+                <filenameRegex>/ubuntustudio-15.10(.*)-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Xubuntu</name>
+        <category>3</category>
+        <filenameRegex>^xubuntu(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Xubuntu ist eine Abwandlung von Ubuntu, die die ressourcensparende Xfce-Arbeitsumgebung verwendet. Daher eignet sich Xubuntu für ältere Computer mit wenig Arbeitsspeicher, bei denen die Installation der Standardversion problematisch ist.</desc>
+            <desc lang="fr">Xubuntu est l'édition d'Ubuntu reposant sur l'environnement Xfce.</desc>
+            <desc lang="ro">Xubuntu este o distribuție oficială derivată din Ubuntu, folosind sistemul grafic Xfce.</desc>
+            <desc lang="en">Xubuntu is the Xfce version of Ubuntu.</desc>
+            <desc lang="ru">Xubuntu - дистрибутив Linux, основанный на проекте Ubuntu, базирующийся в свою очередь на Debian. Использует так называемую "лёгкую" графическую среду Xfce и приложения на GTK+2.</desc>
+            <desc lang="uk">Xubuntu (читається як "ксубунту") - офіційний варіант дистрибутиву Ubuntu, котрий як стільничне середовище використовує Xfce. Xubuntu призначено для малопотужних комп'ютерів, або для тих, хто бажає отримати більшу швидкодію і використовує здебільшого застосунки GTK+.</desc>
+            <desc lang="zh-Hans">Xubuntu（发音为ZOO-bun-too）是一个Ubuntu Linux的官方衍生版，它基于桌面环境Xfce。Xubuntu主要面向旧式电脑的使用者和追求更快捷的桌面环境的使用者。它主要运行基于GTK+的程序。</desc>
+            <desc lang="zh-Hant">Xubuntu（發音為ZOO-bun-too）是一個Ubuntu Linux的官方衍生版，它基於桌面環境Xfce。Xubuntu主要面向舊式電腦的使用者和追求更快捷的桌面環境的使用者。它主要運行基於GTK+的程序。</desc>
+            <desc lang="es">Xubuntu es una distribución Linux basada en Ubuntu. Está mantenida por la comunidad y es un derivado de Ubuntu oficialmente reconocido por Canonical, usando el entorno de escritorio Xfce.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>ccd326466b705bc324a20dd45cb3de82</hash>
+                <name>Xubuntu 14.04</name>
+                <download>http://cdimage.ubuntu.com/xubuntu/releases/14.04/release/xubuntu-14.04-desktop-i386.iso</download>
+                <filenameRegex>xubuntu-14.04-desktop-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>0425162cb27a9d273895faff1d25729d</hash>
+                <name>Xubuntu 15.10 x86</name>
+                <download>http://cdimage.ubuntu.com/xubuntu/releases/15.10/release/xubuntu-15.10-desktop-i386.iso</download>
+                <filenameRegex>/xubuntu-15.10(.*)-i386.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>cfaad06f964bf4d22997d99997bf4683</hash>
+                <name>Xubuntu 15.10 x64</name>
+                <download>http://cdimage.ubuntu.com/xubuntu/releases/15.10/release/xubuntu-15.10-desktop-amd64.iso</download>
+                <filenameRegex>/xubuntu-15.10(.*)-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>EaseUS Partition Master WinPE Edition</name>
+        <category>4</category>
+        <filenameRegex>easeuspartitionmasterwinpeedition.iso</filenameRegex>
+        <noDl>true</noDl>
+        <description>
+            <desc lang="en">EaseUS Partition Master is software that manages disk partitioning. The product enables users to resize FAT16, FAT32, or NTFS partitions and to create, copy, format, merge, remove, and split partitions while keeping data intact.</desc>
+        </description>
+        <versions />
+    </app>
+    <app>
+        <name>Parted Magic</name>
+        <category>4</category>
+        <filenameRegex>^pmagic(.*)\.iso$</filenameRegex>
+        <noDl>true</noDl>
+        <description>
+            <desc lang="fr">Parted Magic est une distribution Linux commerciale comportant des outils de partionnement et de récupération de données, vendue sous forme de disque de démarrage.</desc>
+            <desc lang="en">Parted Magic is a commercial Linux distribution with disk partitioning and data recovery tools, sold as a Linux-based bootable disk. It is named after Parted.</desc>
+            <desc lang="de">Parted Magic ist eine rund 480 Megabyte große Live-GNU/Linux-Distribution aus den Vereinigten Staaten mit dem Ziel, die eine komplette Festplatten-Management-Lösung zu bieten.</desc>
+            <desc lang="ru">Parted Magic - небольшой дистрибутив Linux, предназначенный для разбиения жёстких дисков и восстановления данных. Само название намекает на инструмент разбиения диска — gparted.</desc>
+            <desc lang="zh-Hans">Parted Magic是一个轻量的Linux发行版，包含了许多可用于硬碟分割以及资料复原（英语：Data recovery）的自由软体。是以GParted及PartitionMagic为灵感而命名。</desc>
+            <desc lang="zh-Hant">Parted Magic是一個輕量的Linux發行版，包含了許多可用於硬碟分割以及資料復原（英語：Data recovery）的自由軟體。是以GParted及PartitionMagic為靈感而命名。</desc>
+            <desc lang="es">Parted Magic es un Live CD con herramientas de particionado de discos con licencia GPL.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>3441b138b43a62a1b6b1d3e4dca12e71</hash>
+                <name>Parted Magic 2014-11-19</name>
+                <download>www.google.com/search?q=Parted Magic 2014-11-19</download>
+                <filenameRegex>pmagic_2014_11_19.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Clonezilla</name>
+        <category>4</category>
+        <filenameRegex>^clonezilla-live-([0-9]{8})-([a-z]+)-([a-z0-9-]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Clonezilla ist ein kostenloses und freies Computerprogramm des taiwanischen National Center for High Performance Computing (NCHC) zum Herstellen von 1:1-Abbildern von PC-Festplatten.</desc>
+            <desc lang="fr">Clonezilla est un outil de partitionnement et de clonage de disques similaire a True Image® ou Norton Ghost®.</desc>
+            <desc lang="en">Clonezilla is a partition and disk imaging/cloning program similar to True Image® or Norton Ghost®.</desc>
+            <desc lang="ru">Clonezilla - свободное программное обеспечение с открытым исходным кодом, предназначенное для клонирования дисков и отдельных разделов жёсткого диска, а также создания резервных копий и аварийного восстановления системы.</desc>
+            <desc lang="zh-Hans">再生龙（Clonezilla）是一个免费的灾难恢复、硬碟克隆、硬碟映像档制作的部署和解决方案，由台湾的国家高速网路与计算中心（国网中心）所开发，以GNU通用公共授权条款（GPL）发布。</desc>
+            <desc lang="zh-Hant">再生龍（Clonezilla）是一個免費的災難恢復、硬碟克隆、硬碟映像檔製作的部署和解決方案，由台灣的國家高速網路與計算中心（國網中心）所開發，以GNU通用公共授權條款（GPL）發佈。</desc>
+            <desc lang="es">Clonezilla es un software libre de recuperación ante desastres, sirve para la clonación de discos y particiones. Clonezilla está diseñado por Steven Shaiu y desarrollado por el NCHC Labs en Taiwán.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>d46caefe02a807ee05f2693cba228632</hash>
+                <name>Clonezilla 2.4.2-61 x86</name>
+                <download>http://downloads.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.4.2-61/clonezilla-live-2.4.2-61-i686-pae.iso</download>
+                <filenameRegex>clonezilla-live-2.4.2-61-i686-pae.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>95aed0dd50964c3adcb17183ab1dff37</hash>
+                <name>Clonezilla 2.4.2-61 x64</name>
+                <download>http://downloads.sourceforge.net/project/clonezilla/clonezilla_live_stable/2.4.2-61/clonezilla-live-2.4.2-61-amd64.iso</download>
+                <filenameRegex>clonezilla-live-2.4.2-61-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Darik's Boot and Nuke</name>
+        <category>4</category>
+        <filenameRegex>^dban-([0-9.]+)_([a-z0-9]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Darik’s Boot and Nuke (meist abgekürzt mit dem Akronym "DBAN") ist ein freies, Linux-basiertes Live-System, dessen Aufgabe einzig das unwiderrufliche Löschen von Festplatten oder anderen beschreibbaren Datenspeichern ist. Im Ergebnis können die Dateien selbst mit forensischen Spezialwerkzeugen nicht wiederhergestellt werden.</desc>
+            <desc lang="fr">DBAN est un disque de démarrage qui efface automatiquement le contenu de tous les disques qu'il détecte.</desc>
+            <desc lang="en">DBAN is a self-contained boot disk that automatically deletes the contents of any disk it detects.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>d076d4bc510eb39f57196773172ad072</hash>
+                <name>Darik's Boot and Nuke 2.2.8</name>
+                <download>http://downloads.sourceforge.net/project/dban/dban/dban-2.2.8/dban-2.2.8_i586.iso</download>
+                <filenameRegex>/dban-2.2.8_(.*).iso</filenameRegex>
+            </version>
+            <version>
+                <hash>33a1df4171e649462ef9679ac207aa77</hash>
+                <name>Darik's Boot and Nuke 2.3.0</name>
+                <download>http://downloads.sourceforge.net/project/dban/dban/dban-2.3.0/dban-2.3.0_i586.iso</download>
+                <filenameRegex>/dban-2.3.0_(.*).iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>GParted</name>
+        <category>4</category>
+        <filenameRegex>^gparted-live-([0-9.-]+)([0-9a-z]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">GParted (GNU Parted) ist ein freies plattformübergreifendes Partitionierungsprogramm, das mit den grafischen Oberflächen GParted und QtParted dazu verwendet werden kann, Partitionen und darin liegende Dateisysteme zu bearbeiten und zu überprüfen.</desc>
+            <desc lang="fr">GParted est un gestionnaire de partitions qui permet de redimensionner, copier et déplacer des partitions sans pertes.</desc>
+            <desc lang="en">GParted is a free partition manager that enables you to resize, copy, and move partitions without data loss.</desc>
+            <desc lang="ru">GParted (GNOME Partition Editor) - редактор дисковых разделов, являющийся графической оболочкой к GNU Parted. Предназначен для различных операций с разделами (и файловыми системами, находящимися на них), таких как: создание, уничтожение, изменение размера, перемещение, проверка и копирование.</desc>
+            <desc lang="uk">GParted (GNOME Partition editor) - редактор дискових розділів, що використовується для різних операцій з розділами (створення, видалення, зміни розміру, переміщення, перевірки, копіювання й призначення мітки «завантажувальний») та розміщеними на них файловими системами (призначення їх типу, тобто, форматування).</desc>
+            <desc lang="zh-Hans">GParted是硬盘分区软件GNU Parted的GTK+图形界面前端，是GNOME桌面环境的默认分区软件。</desc>
+            <desc lang="zh-Hant">GParted是硬盤分區軟件GNU Parted的GTK+圖形界面前端，是GNOME桌面環境的默認分區軟件。</desc>
+            <desc lang="es">GParted es un editor de particiones para el entorno de escritorio GNOME. Esta aplicación es usada para crear, eliminar, redimensionar, inspeccionar y copiar particiones, como también los sistemas de archivos que se encuentran en ellas. Esto es útil para crear espacio para nuevos sistemas operativos, reorganizar el uso del disco y crear imágenes de un disco en una partición.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>d57b2f94a54a0f48899f8e21d070cb40</hash>
+                <name>GParted 0.19.0-1</name>
+                <download>http://downloads.sourceforge.net/project/gparted/gparted-live-stable/0.19.0-1/gparted-live-0.19.0-1-i486.iso</download>
+                <filenameRegex>/gparted-live-0.19.0-1-(.*).iso</filenameRegex>
+            </version>
+            <version>
+                <hash>f6e11d722ab8167568bdf6e393c50651</hash>
+                <name>GParted 0.24.0-2 x86</name>
+                <download>http://downloads.sourceforge.net/project/gparted/gparted-live-stable/0.24.0-2/gparted-live-0.24.0-2-i586.iso</download>
+                <filenameRegex>/gparted-live-0.24.0-2-i(3|5|6)86.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>556094cd6041198536e559b287154d98</hash>
+                <name>GParted 0.24.0-2 x64</name>
+                <download>http://downloads.sourceforge.net/project/gparted/gparted-live-stable/0.24.0-2/gparted-live-0.24.0-2-amd64.iso</download>
+                <filenameRegex>/gparted-live-0.24.0-2-amd64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Offline Windows NT Password &amp; Registry Editor</name>
+        <category>5</category>
+        <filenameRegex>^((cd[0-9]{6})\.iso|chntpw\.iso)$</filenameRegex>
+        <description>
+            <desc lang="de">CHNTPW ist ein Hilfsprogramm, um das Passwort eines beliebigen Nutzers zurückzusetzen, welcher ein gültiges lokales Benutzerkonto auf einem Windows system hat.</desc>
+            <desc lang="fr">CHNTPW est un outil permettant de modifier ou effacer les mot de passe de Windows 95 à 10.</desc>
+            <desc lang="en">CHNTPW is a utility to reset the password of any user that has a valid local account on your Windows system.</desc>
+            <desc lang="ru">CHNTPW - UNIX утилита с открытым исходным кодом, предназначенная для считывания и модификации базы данных паролей Windows (SAM).</desc>
+            <desc lang="es">CHNTPW (Change NT Password), es una utilidad de Linux, diseñado para sobreescribir, resetear, cambiar o modificar passwords de las cuentas de usarios Windows.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>06bbed5b81475c6899dbb549a755b00d</hash>
+                <name>chntpw 2014-02-01</name>
+                <download>https://dl.dropboxusercontent.com/u/98959151/chntpw_140201.iso</download>
+                <filenameRegex>/(cd140201\.iso|chntpw\.iso)</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Kon-Boot</name>
+        <category>5</category>
+        <filenameRegex>^kon-boot(.*).(img|iso)$</filenameRegex>
+        <description>
+            <desc lang="en">Kon-Boot is a tool which can log you into Windows without knowing the password. It hooks into the system BIOS and temporarily changes the Windows kernel while booting. It allows you to enter anything as the password during login. The next time you start the computer without Kon-Boot, the original password will be back and the system will behave as if nothing has happened.</desc>
+            <desc lang="es">Kon-Boot es una aplicación multiplataforma desarrollada por Piotr Bania para KryptosLogic que parchea directamente el kernel saltando el proceso de autenticación y nos introduce directamente como administrador del equipo.</desc>
+            <desc lang="fr">Kon-boot est un logiciel qui permet de modifier le contenu d'un noyau Linux ou Windows à la volée pendant le boot. Sous Linux, il permet de se logger en tant que root sans connaitre le mot de passe. Sous Windows, il permet de se logger en utilisant n'importe quel compte utilisateur ou administrateur, toujours sans connaître le mot de passe.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>eed910d2ef9b058cf3eec28294bd303c</hash>
+                <name>Kon-Boot 2.5</name>
+                <download>https://dl.dropboxusercontent.com/u/98959151/konboot.img</download>
+                <filenameRegex>konboot.img</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Ophcrack</name>
+        <category>5</category>
+        <filenameRegex>^ophcrack-(\w+)-livecd-([0-9.]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Ophcrack ist ein freies Computerprogramm unter der GPL-Lizenz, das verschlüsselte(gehashte) Passwörter mithilfe von Rainbow Tables versucht zu entschlüsseln. Das Programm unterstützt das Importieren von LM-Hashes und NTLM-Hashes, inklusive des direkten Importierens der SAM-Datei unter Windows.</desc>
+            <desc lang="fr">Ophcrack est un outil gratuit de craquage de mot de passes.</desc>
+            <desc lang="en">Ophcrack is a free Windows password cracker based on rainbow tables.</desc>
+            <desc lang="es">Ophcrack es una herramienta para crackear las contraseñas de Windows basada en las tablas Rainbow. Es una implementación muy eficiente de las tablas Rainbow hecha por los inventores de este método. Viene con una Interfaz Gráfica de Usuario GTK+ y corre bajo Windows, Mac OS X (CPU Intel) y también en Linux.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>b23afa62f670dee41c8f01c436c0a092</hash>
+                <name>Ophcrack (XP) 3.6.0</name>
+                <download>http://downloads.sourceforge.net/project/ophcrack/ophcrack-livecd/3.6.0/ophcrack-xp-livecd-3.6.0.iso</download>
+                <filenameRegex>/ophcrack-xp-livecd-(.*).iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>f0753acfe2fce5249ceceec7dfeacea9</hash>
+                <name>Ophcrack (Vista/7/8) 3.6.0</name>
+                <download>http://downloads.sourceforge.net/project/ophcrack/ophcrack-livecd/3.6.0/ophcrack-vista-livecd-3.6.0.iso</download>
+                <filenameRegex>/ophcrack-vista-livecd-(.*).iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Memtest86+</name>
+        <category>6</category>
+        <filenameRegex>^(?:memtest86(\+|plus)[-_]([0-9.]+).iso|MEMTEST\.IMG)$</filenameRegex>
+        <description>
+            <desc lang="de">Memtest86+ ist eine Software, mit der man den Arbeitsspeicher eines Computers auf Fehler überprüfen kann.</desc>
+            <desc lang="fr">Memtest86+ permet d'effectuer un diagnostic complet de la mémoire d'un ordinateur.</desc>
+            <desc lang="en">Memtest86+ is an open source memory test software programs designed to test and stress test an x86 architecture computer's RAM.</desc>
+            <desc lang="es">Memtest86+ es un programa informático para ordenadores compatibles con x86. Su finalidad es pasar una prueba de stress a la memoria RAM del ordenador para encontrar errores en los módulos propiamente dichos o en los datapaths (chipset, controladoras de memoria).</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>0f3d162f0c2f42da1455993ac4df396b</hash>
+                <name>Memtest86+ 5.01</name>
+                <download>https://dl.dropboxusercontent.com/u/98959151/memtest86plus-501.iso</download>
+                <filenameRegex>memtest86plus_501.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Memtest86</name>
+        <category>6</category>
+        <filenameRegex>^Memtest86-([0-9.]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="de">Memtest86 ist eine Software, mit der man den Arbeitsspeicher eines Computers auf Fehler überprüfen kann.</desc>
+            <desc lang="fr">Memtest86 permet d'effectuer un diagnostic complet de la mémoire d'un ordinateur.</desc>
+            <desc lang="en">Memtest86 is an open source memory test software programs designed to test and stress test an x86 architecture computer's RAM.</desc>
+            <desc lang="es">Memtest86 es un programa informático para ordenadores compatibles con x86. Su finalidad es pasar una prueba de stress a la memoria RAM del ordenador para encontrar errores en los módulos propiamente dichos o en los datapaths (chipset, controladoras de memoria).</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>0c7dd6227dabcb1a5e56c96f178f381d</hash>
+                <name>Memtest86 4.3.7</name>
+                <download>https://dl.dropboxusercontent.com/u/98959151/Memtest86-4.3.7.iso</download>
+                <filenameRegex>Memtest86-4.3.7.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>ad1310faef37409e1a1b845a5268cb76</hash>
+                <name>Memtest86 6.2.0</name>
+                <download>https://dl.dropboxusercontent.com/u/98959151/Memtest86-6.2.0.iso</download>
+                <filenameRegex>Memtest86-6.2.0.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Redo Backup and Recovery</name>
+        <category>4</category>
+        <filenameRegex>^redobackup-livecd-([0-9.]+)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Redo Backup est un système de sauvegarde, de restauration et d'édition de partition.</desc>
+            <desc lang="en">Redo Backup is an easy rescue system with GUI tools for full system backup, bare metal recovery and partition editing.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>f84b757242c1b050f8cbed7142197d81</hash>
+                <name>Redo Backup and Recovery 1.0.4</name>
+                <download>http://downloads.sourceforge.net/project/redobackup/redobackup-livecd-1.0.4.iso</download>
+                <filenameRegex>redobackup-livecd-1.0.4.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Ultimate Boot CD 4 DOS</name>
+        <category>9</category>
+        <filenameRegex>^ubcd[0-9]{2,3}\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">UBCD 4 DOS est un système qui regroupe plein d'outils utiles.</desc>
+            <desc lang="en">UBCD 4 DOS is a system that regroups lots of useful utilities.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>a5617e0bdd3ccc3cb3a1b1dd20396d7a</hash>
+                <name>Ultimate Boot CD 4 DOS 5.3.0</name>
+                <download>http://ftp.cc.uoc.gr/mirrors/linux/ubcd/ubcd530.iso</download>
+                <filenameRegex>ubcd530.iso</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Ultimate Boot CD 4 DOS 5.3.5</name>
+                <download>http://ftp.cc.uoc.gr/mirrors/linux/ubcd/ubcd535.iso</download>
+                <filenameRegex>ubcd535.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Arch Linux</name>
+        <category>3</category>
+        <filenameRegex>^archlinux-(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Arch Linux est une distribution Linux créée par Judd Vinet qui met l'accent sur la simplicité (selon le principe KISS). Judd a été inspiré par une autre distribution Linux appelée Crux Linux.</desc>
+            <desc lang="en">Arch Linux is a Linux distribution for computers based on IA-32 and x86-64 architectures. It is composed predominantly of free and open-source software, and supports community involvement.</desc>
+            <desc lang="de">Arch Linux ist eine i686- und AMD64-optimierte Linux-Distribution mit Rolling Releases, dessen Entwicklerteam dem KISS-Prinzip folgt. Zugunsten der Einfachheit wird auf grafische Installations- und Konfigurationshilfen verzichtet.</desc>
+            <desc lang="ro">Arch Linux este o distribuție de Linux creată de Judd Vinet. Inspirată de CRUX, această distribuție are ca obiectiv rapiditatea și simplitatea, adresându-se utilizatorilor avansați.</desc>
+            <desc lang="ru">Arch - "легковесный", простой и гибкий дистрибутив Linux, оптимизированный для архитектур i686 и x86-64, использующий последние стабильные версии программ и дополняемый поддерживаемым сообществом репозиторием AUR.</desc>
+            <desc lang="uk">Arch Linux - мінімалістичний, гнучкий дистрибутив Linux, оптимізований для архітектур i686 та x86-64. Використовує останні стабільні версії програм і доповнюється AUR-репозиторієм (який підтримуєтсья користувачами).</desc>
+            <desc lang="zh-Hans">Arch Linux是朝向轻量（lightweight）以及简单（simple）的Linux发行版。其中“简单”（Simplicity）被定义为“避免不必要或复杂的修改”，也就是说，是由开发者角度定义，而非使用者角度思考。</desc>
+            <desc lang="zh-Hant">Arch Linux是朝向輕量（lightweight）以及簡單（simple）的Linux發行版。其中「簡單」（Simplicity）被定義為「避免不必要或複雜的修改」，也就是說，是由開發者角度定義，而非使用者角度思考。</desc>
+            <desc lang="es">Arch Linux es una distribución Linux para computadoras i686 y x86-64. Se compone predominantemente de software libre y de código abierto (FOSS), y apoya la participación comunitaria.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>bbcd48b73851ae8f31c08f83a86b8ef2</hash>
+                <name>Arch Linux 2015.12.01</name>
+                <download>http://mirror.rackspace.com/archlinux/iso/2015.12.01/archlinux-2015.12.01-dual.iso</download>
+                <filenameRegex>archlinux-2015.12.01-dual.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>BackTrack</name>
+        <category>3</category>
+        <filenameRegex>^(BT|bt)\d(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="en">BackTrack is a Linux distribution that focused on security based on the Ubuntu Linux distribution aimed at digital forensics and penetration testing use.</desc>
+            <desc lang="fr">BackTrack est une distribution Linux, basée sur Slackware jusqu'à la version 3 et Ubuntu depuis la version 4, apparue en 2006. Elle est née de la fusion de Whax et Auditor. Son objectif est de fournir une distribution regroupant l'ensemble des outils nécessaires aux tests de sécurité d'un réseau.</desc>
+            <desc lang="de">BackTrack (zu Deutsch etwa Zurückverfolgung) ist eine von einer Live-CD, einem USB-Stick oder über ein Netzwerk bootende Linux-Distribution zur Überprüfung der Sicherheit einzelner Rechner in Netzwerken sowie der Gesamtsicherheit des Netzwerks.</desc>
+            <desc lang="ro">&lt;&lt;Back|Track este o distribuție de Linux (distribuită ca LiveDistro) ce este rezultatul unirii dintre WHAX și Auditor Security Collection. Are ca avantaj designul și structura modulară al distribuției SLAX ce permit utilizatorului includerea scripturilor, uneltelor sau kernel-urilor personalizate.</desc>
+            <desc lang="uk">BackTrack - дистрибутив Linux, що розповсюджується у вигляді LiveCD, створений на базі Debian, доповнений утилітами для пен-тестінгу програм, мереж та систем. За кількістю спеціалізованих програм з аудиту й злому систем безпеки, BackTrack є одним з найкращих дистрибутивів.</desc>
+            <desc lang="es">BackTrack es una distribución GNU/Linux en formato LiveCD pensada y diseñada para la auditoría de seguridad y relacionada con la seguridad informática en general. Actualmente tiene una gran popularidad y aceptación en la comunidad que se mueve en torno a la seguridad informática.</desc>
+            <desc lang="zh-Hans">BackTrack 是一个基于Ubuntu GNU/Linux的发行版本，主要用做数字取证和入侵测试。他的名字引用自回溯法（backtracking）。</desc>
+            <desc lang="zh-Hant">BackTrack 是一個基於Ubuntu GNU/Linux的發行版本，主要用做數字取證和入侵測試。他的名字引用自回溯法（backtracking）。</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>aafff8ff5b71fdb6fccdded49a6541a0</hash>
+                <name>BackTrack 5 R3 GNOME x86</name>
+                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-GNOME-32.iso</download>
+                <filenameRegex>BT5R3-GNOME-32.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>8cd98b693ce542b671edecaed48ab06d</hash>
+                <name>BackTrack 5 R3 GNOME x64</name>
+                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-GNOME-64.iso</download>
+                <filenameRegex>BT5R3-GNOME-64.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash>d324687fb891e695089745d461268576</hash>
+                <name>BackTrack 5 R3 KDE x86</name>
+                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-KDE-32.iso</download>
+                <filenameRegex>BT5R3-KDE-32.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>981b897b7fdf34fb1431ba84fe93249f</hash>
+                <name>BackTrack 5 R3 KDE x64</name>
+                <download>http://ftp.cc.uoc.gr/mirrors/linux/backtrack/BT5R3-KDE-64.iso</download>
+                <filenameRegex>BT5R3-KDE-64.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>CentOS</name>
+        <category>3</category>
+        <filenameRegex>^CentOS-(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">CentOS (Community ENTerprise Operating System) est une distribution GNU/Linux principalement destinée aux serveurs. Tous ses paquets, à l'exception du logo, sont des paquets compilés à partir des sources de la distribution RHEL (Red Hat Enterprise Linux), éditée par la société Red Hat.</desc>
+            <desc lang="en">CentOS (abbreviated from Community ENTerprise Operating System) is a Linux distribution that attempts to provide a free, enterprise-class, community-supported computing platform which aims to be functionally compatible with its upstream source, Red Hat Enterprise Linux (RHEL).</desc>
+            <desc lang="de">CentOS (Community ENTerprise Operating System) ist eine Linux-Distribution, die auf der Distribution Red Hat Enterprise Linux (RHEL) des Unternehmens Red Hat aufbaut. Die Distribution wird von einer offenen Gruppe von freiwilligen Entwicklern betreut, gepflegt und weiterentwickelt.</desc>
+            <desc lang="ro">Community ENTerprise Operating System (CentOS) este un sistem de operare GNU/Linux, liber și gratuit, bazat pe cel liber, dar comercial (plătit), Red Hat Enterprise Linux, de la firma Red Hat. El a luat naștere pentru a oferi o distribuție gratuită pentru afaceri, care dorește să mențină compatibilitate binară de 100% cu cea originală.</desc>
+            <desc lang="ru">CentOS (англ. Community ENTerprise Operating System) - дистрибутив Linux, основанный на коммерческом Red Hat Enterprise Linux компании Red Hat и совместимый с ним. Срок поддержки каждой версии CentOS составляет 10 лет.</desc>
+            <desc lang="uk">CentOS (Community ENTerprise Operating System) — вільно доступний дистрибутив Лінукс на основі комерційного дистрибутиву Red Hat Enterprise Linux компанії Red Hat.</desc>
+            <desc lang="zh-Hans">CentOS（Community ENTerprise Operating System）是Linux发行版之一，它是来自于Red Hat Enterprise Linux依照开放原始码规定释出的原始码所编译而成。由于出自同样的原始码，因此有些要求高度稳定性的伺服器以CentOS替代商业版的Red Hat Enterprise Linux使用。</desc>
+            <desc lang="zh-Hant">CentOS（Community ENTerprise Operating System）是Linux發行版之一，它是來自於Red Hat Enterprise Linux依照開放原始碼規定釋出的原始碼所編譯而成。由於出自同樣的原始碼，因此有些要求高度穩定性的伺服器以CentOS替代商業版的Red Hat Enterprise Linux使用。</desc>
+            <desc lang="es">CentOS (Community ENTerprise Operating System) es una bifurcación a nivel binario de la distribución Linux Red Hat Enterprise Linux RHEL, compilado por voluntarios a partir del código fuente publicado por Red Hat.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>sha256:6540a8dffdf7a7b61f51c9ff1a8616a817214f883c1dce9a8c63b477276c61be</hash>
+                <name>CentOS 7 x86_64</name>
+                <download>http://buildlogs.centos.org/rolling/7/isos/x86_64/CentOS-7-x86_64-DVD.iso</download>
+                <filenameRegex>/CentOS-7-x86_64-(.*).iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Damn Small Linux</name>
+        <category>3</category>
+        <filenameRegex>^dsl-(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Damn Small Linux, couramment abrégé sous le sigle DSL, est une distribution GNU/Linux basée sur la Knoppix, elle-même basée sur le système de paquets du système Debian GNU/Linux. DSL est considérée comme un miniLinux et peut être installée sur des machines très anciennes, comme des i486 (un syslinux est même fourni pour les machines trop anciennes pour isolinux).</desc>
+            <desc lang="en">Damn Small Linux (commonly abbreviated DSL) is a computer operating system for the x86 family of personal computers. It was designed to run graphical applications on older PC hardware—for example, machines with 486/early Pentium processors and very little memory. DSL is a Live CD with a size of 50 MB.</desc>
+            <desc lang="de">Damn Small Linux ist eine englischsprachige Linux-Distribution, die sich von einer Visitenkarten-CD (50 MB) starten lässt. Das Damn-Small-Linux-Projekt wurde von John Andrews und Robert Shingledecker ins Leben gerufen und basierte ursprünglich auf Knoppix. Heute basiert Damn Small Linux auf Debian GNU/Linux.</desc>
+            <desc lang="ro">Damn Small Linux, cunoscut și sub numele DSL este o distribuție gratuită a sistemului de operare Linux pentru calculatore personale. Sistemul de operare a fost proiectat pentru folosire pe calculatoare PC mai vechi, de exemplu, calculatoare cu procesoare Intel 80386/Intel 80486/sau primele procesoare Pentium, și cu memorie redusă. DSL este bootabil de pe CD (LiveCD), având dimensiunea de aproximativ 50 MB.</desc>
+            <desc lang="ru">Damn Small Linux (DSL; англ. Damn Small Linux — чертовски маленький Линукс) — дистрибутив Linux на основе Debian для архитектуры x86, загружаемый с LiveCD-"визитки". Также он может быть установлен на жёсткий диск, USB Flash Drive и т. п.</desc>
+            <desc lang="uk">Damn Small Linux — дистрибутив Linux на базі Debian. У новій версії представлена нова версія ядра Linux 2.4.31, додана підтримка Prism 2, оновлені деякі додатки. Damn Small Linux — це Live CD невеликого розміру (лише 50 Мб).</desc>
+            <desc lang="zh-Hans">Damn Small Linux简称DSL，是种供x86系列个人电脑使用的作业系统。最早这个project是由一位非科班出身的电脑玩家John Andrews基于好奇想试试看又小又合用的Linux能做到怎样？结果做出了一张小光碟的LiveCD，而后日渐发展而成。</desc>
+            <desc lang="zh-Hant">Damn Small Linux簡稱DSL，是種供x86系列個人電腦使用的作業系統。最早這個project是由一位非科班出身的電腦玩家John Andrews基於好奇想試試看又小又合用的Linux能做到怎樣？結果做出了一張小光碟的LiveCD，而後日漸發展而成。</desc>
+            <desc lang="es">Damn Small Linux (abreviado como DSL) es una distribución Linux LiveCD funcional y completa, basada en Knoppix pensada para funcionar en computadoras de la familia x86 con muy pocos recursos o antiguos, como los procesadores Intel 80486 y siguientes.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>705e76ea3675c60ad3b3f7ce87fe9e6a</hash>
+                <name>Damn Small Linux 4.4.10 (initrd)</name>
+                <download>http://distro.ibiblio.org/damnsmall/current/dsl-4.4.10-initrd.iso</download>
+                <filenameRegex>dsl-4.4.10-initrd.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>fe33cec8a9972d41aa0e9fe1fa14c8b6</hash>
+                <name>Damn Small Linux 4.4.10 (syslinux)</name>
+                <download>http://distro.ibiblio.org/damnsmall/current/dsl-4.4.10-syslinux.iso</download>
+                <filenameRegex>dsl-4.4.10-syslinux.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>5cb7e0d4506c249b78bbe0cd4695b865</hash>
+                <name>Damn Small Linux 4.4.10 (standard)</name>
+                <download>http://distro.ibiblio.org/damnsmall/current/dsl-4.4.10.iso</download>
+                <filenameRegex>dsl-4.4.10.iso</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Debian</name>
+        <category>3</category>
+        <filenameRegex>^debian-(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Debian est un système d'exploitation libre pour votre ordinateur. Un système d'exploitation est la suite des programmes de base et des utilitaires qui permettent à un ordinateur de fonctionner.</desc>
+            <desc lang="en">Debian is a Unix-like computer operating system and a Linux distribution that is composed entirely of free and open-source software, most of which is under the GNU General Public License, and packaged by a group of individuals known as the Debian Project.</desc>
+            <desc lang="de">Debian ist ein seit 1993 gemeinschaftlich entwickeltes freies Betriebssystem. Debian GNU/Linux, das auf den grundlegenden Systemwerkzeugen des GNU-Projektes sowie dem Linux-Kernel basiert. Es ist eine der ältesten, einflussreichsten und am weitesten verbreiteten GNU/Linux-Distributionen.</desc>
+            <desc lang="ro">Debian GNU/Linux este un sistem de operare compus din software liber, și o distribuție populară și foarte influentă între distribuțiile GNU/Linux. Această distribuție este menținută la zi datorită efortului voluntar depus de utilizatori de pe întreg mapamondul.</desc>
+            <desc lang="ru">Debian — операционная система, состоящая из свободного ПО с открытым исходным кодом. В настоящее время Debian GNU/Linux — один из самых популярных и важных дистрибутивов GNU/Linux, в первичной форме оказавший значительное влияние на развитие этого типа ОС в целом.</desc>
+            <desc lang="uk">Debian (Debian GNU/Linux) — комп’ютерна операційна система, основний дистрибутив якої складається тільки з вільного програмного забезпечення (main-секції архіву Debian). Популярний та впливовий дистрибутив GNU/Linux. Багатоцільова операційна система, що використовується: настільними комп'ютерами, лептопами, серверами, вбудованими системами.</desc>
+            <desc lang="zh-Hans">Debian是由GPL和其他自由软体许可协议授权的自由软体组成的作业系统，由Debian计画（Debian Project）组织维护。</desc>
+            <desc lang="zh-Hant">Debian是由GPL和其他自由軟體許可協議授權的自由軟體組成的作業系統，由Debian計畫（Debian Project）組織維護。</desc>
+            <desc lang="es">Debian GNU/Linux es un sistema operativo libre, desarrollado por miles de voluntarios alrededor del mundo, que colaboran a través de Internet.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>50ffc2920373b6168abb489f12ca4268</hash>
+                <name>Debian 8.2.0 x86 CD</name>
+                <download>http://cdimage.debian.org/debian-cd/8.2.0/i386/iso-cd/debian-8.2.0-i386-CD-1.iso</download>
+                <filenameRegex>debian-8.2.0-i386-CD-1.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>eb23f1b3aac17bf79c6dea38e930c083</hash>
+                <name>Debian 8.2.0 x86 DVD</name>
+                <download>http://cdimage.debian.org/debian-cd/8.2.0/i386/iso-dvd/debian-8.2.0-i386-DVD-1.iso</download>
+                <filenameRegex>debian-8.2.0-i386-DVD-1.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>5e172c7df6ab46ded2f2b44df22e1ca2</hash>
+                <name>Debian 8.2.0 x64 CD</name>
+                <download>http://cdimage.debian.org/debian-cd/8.2.0/amd64/iso-cd/debian-8.2.0-amd64-CD-1.iso</download>
+                <filenameRegex>debian-8.2.0-amd64-CD-1.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>6b753a489928c6be9e41c245681dca7e</hash>
+                <name>Debian 8.2.0 x64 DVD</name>
+                <download>http://cdimage.debian.org/debian-cd/8.2.0/amd64/iso-dvd/debian-8.2.0-amd64-DVD-1.iso</download>
+                <filenameRegex>debian-8.2.0-amd64-DVD-1.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Dr Web LiveDisk</name>
+        <category>10</category>
+        <filenameRegex>^drweb-livedisk-(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">Dr.Web est une entreprise de développement d'antivirus russe, et porte le nom de son produit phare, Dr.Web. Initialement sorti en 1992, c'est rapidement devenu l'antivirus le plus utilisé en Russie. Dr.Web est une des quelques</desc>
+            <desc lang="en">Dr.Web is a Russian anti-malware company, and the name of its flagship software suite. First released in 1992, it became the first anti-virus service in Russia. Doctor Web is one of a few anti-virus vendors in the world that owns its technologies for detecting and curing malware.</desc>
+            <desc lang="de">Doctor Web, Ltd. ist Anbieter eigenentwickelter IT-Sicherheitslösungen und Managed Security Services für IT-Provider. Die Antivirensoftware Dr.Web wird seit 1992 vom Firmengründer Igor Danilov (* 1964) entwickelt.</desc>
+            <desc lang="ro">Dr. Web este o suită de software anti-malware, precum și numele companiei rusești care îl produce. Lansat în 1992, Dr. Web a fost primul serviciu anti-virus din Rusia.</desc>
+            <desc lang="ru">Dr.Web (рус. Доктор Веб) — общее название семейства программного антивирусного ПО для различных платформ (Windows, OS X, Linux, мобильные платформы) и линейки программно-аппаратных решений (Dr.Web Office Shield), а также решений для обеспечения безопасности всех узлов корпоративной сети (Dr.Web Enterprise Suite).</desc>
+            <desc lang="uk">Dr. Web — антивіруси цього сімейства призначені для захисту від поштових і мережевих черв'яків, руткітів, файлових вірусів, троянських програм, стелс-вірусів, поліморфних вірусів, рекламного ПЗ (adware), потенційно небезпечного ПЗ, хакерських утиліт, програм-люків, програм-жартів, від спаму, фішинг-повідомлень і технічного спаму.</desc>
+            <desc lang="zh-Hans">Dr.Web（又名大蜘蛛）是来自 俄罗斯Doctor Web软体公司所开发的防毒软体。Dr.Web Anti-Virus在1992年首次发布，为俄罗斯第一所提供防毒服务的供应商。总部设于圣彼得堡，创始人为Igor Daniloff。</desc>
+            <desc lang="zh-Hant">Dr.Web（又名大蜘蛛）是來自 俄羅斯Doctor Web軟體公司所開發的防毒軟體。Dr.Web Anti-Virus在1992年首次發布，為俄羅斯第一所提供防毒服務的供應商。總部設於聖彼得堡，創始人為Igor Daniloff。</desc>
+            <desc lang="es">Dr. Web es una suite de antivirus Ruso. Fue lanzado en 1992 y se convirtió en el primer servicio antivirus en Rusia.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash></hash>
+                <name>Dr Web LiveDisk 9.0.0</name>
+                <download>http://download.geo.drweb.com/pub/drweb/livedisk/drweb-livedisk-900-cd.iso</download>
+                <filenameRegex>drweb-livedisk-900-cd.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>FreeBSD</name>
+        <category>3</category>
+        <filenameRegex>^FreeBSD-(.*)\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">FreeBSD est un système d'exploitation UNIX libre. Le nom vient de l'association d'une part de free qui signifie à la fois "libre" et "gratuit" dans l'anglais courant, et d'autre part de Berkeley software distribution (BSD), l'UNIX développé à l'université de Berkeley.</desc>
+            <desc lang="en">FreeBSD is a free Unix-like operating system descended from Research Unix via the Berkeley Software Distribution (BSD). Although for legal reasons FreeBSD cannot use the Unix trademark, it is a direct descendant of BSD, which was historically also called "BSD Unix" or "Berkeley Unix".</desc>
+            <desc lang="de">FreeBSD ist ein freies und vollständiges unixoides Betriebssystem, das direkt von der Berkeley Software Distribution abstammt. Mit einer Community aus fast 390 dauerhaft aktiven, offiziellen und Tausenden mitwirkenden Entwicklern gehört FreeBSD zu den größten Open-Source-Projekten. Obwohl der Fokus der Entwickler auf der Erstellung einer stabilen Software-Plattform für Server und Appliances liegt, wird es auch auf Desktop-Computern verwendet.</desc>
+            <desc lang="ro">FreeBSD este un sistem de operare liber Unix-like descendent din AT&amp;T UNIX(r) prin ramura Berkeley Software Distribution (BSD), mai exact provine din sistemele de operare 386BSD și 4.4BSD. Rulează pe calculatoare cu procesoare compatibile cu familia Intel x86, dar și pe procesoare DEC Alpha, UltraSPARC(r) (al firmei Sun Microsystems), Itanium (IA-64), AMD64, PowerPC, PC-98, ARM și MIPS.</desc>
+            <desc lang="ru">FreeBSD — свободная Unix-подобная операционная система, потомок AT&amp;T Unix по линии BSD, созданной в университете Беркли. FreeBSD работает на PC-совместимых системах семейства x86, включая Microsoft Xbox, а также на DEC Alpha, Sun UltraSPARC, IA-64, AMD64, PowerPC, NEC PC-98, ARM. Готовится поддержка архитектуры MIPS.</desc>
+            <desc lang="uk">FreeBSD — UNIX-подібна операційна система, коріння якої тягнеться від AT&amp;T UNIX, через Berkeley Software Distribution (BSD) гілку операційних систем 386BSD та 4.4BSD. Працює на Intel x86 (IA-32), сумісних з ПК системах (включно з Microsoft Xbox, а також DEC Alpha, Sun, Itanium (IA-64), AMD64, PowerPC та NEC PC-98 архітектурах.</desc>
+            <desc lang="zh-Hans">FreeBSD是一种自由的类Unix操作系统，它起源于AT&amp;T Unix，是经过BSD、386BSD（英语：386BSD）和4.4BSD（英语：Berkeley Software Distribution）发展而来的类Unix的一个重要分支。虽然出于法律原因FreeBSD不能称为Unix，但它是BSD的直接后裔，而BSD历史上被称为BSD Unix或Berkeley Unix。FreeBSD拥有超过200名活跃开发者和上千名贡献者。</desc>
+            <desc lang="zh-Hant">FreeBSD是一種自由的類Unix操作系統，它起源於AT&amp;T Unix，是經過BSD、386BSD（英語：386BSD）和4.4BSD（英語：Berkeley Software Distribution）發展而來的類Unix的一個重要分支。雖然出於法律原因FreeBSD不能稱為Unix，但它是BSD的直接後裔，而BSD歷史上被稱為BSD Unix或Berkeley Unix。FreeBSD擁有超過200名活躍開發者和上千名貢獻者。</desc>
+            <desc lang="es">FreeBSD es un sistema operativo libre para computadoras basado en las CPU de arquitectura Intel, incluyendo procesadores Intel 80386, Intel 80486 (versiones SX y DX), y Pentium. También funciona en procesadores compatibles con Intel como AMD y Cyrix. Actualmente también es posible utilizarlo hasta en once arquitecturas distintas como Alpha, AMD64, IA-64, MIPS, PowerPC y UltraSPARC.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>b38c407d9f3870ad7583f3f62e8b0a68</hash>
+                <name>FreeBSD 10.2 x86</name>
+                <download>http://ftp.freebsd.org/pub/FreeBSD/releases/i386/i386/ISO-IMAGES/10.2/FreeBSD-10.2-RELEASE-i386-dvd1.iso</download>
+                <filenameRegex>/FreeBSD-10.2-RELEASE-i386-(.*).iso</filenameRegex>
+            </version>
+            <version>
+                <hash>bbeb9d785d15d05333d1b99be88bc746</hash>
+                <name>FreeBSD 10.2 x64</name>
+                <download>http://ftp.freebsd.org/pub/FreeBSD/releases/amd64/amd64/ISO-IMAGES/10.2/FreeBSD-10.2-RELEASE-amd64-dvd1.iso</download>
+                <filenameRegex>/FreeBSD-10.2-RELEASE-amd64-(.*).iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>FreeDOS</name>
+        <category>9</category>
+        <filenameRegex>^fd11src\.iso$</filenameRegex>
+        <description>
+            <desc lang="fr">FreeDOS est un système d'exploitation complet, libre, et 100 % compatible MS-DOS.</desc>
+            <desc lang="en">FreeDOS (formerly Free-DOS and PD-DOS) is a free operating system for IBM PC compatible computers. It intends to provide a complete DOS-compatible environment for running legacy software and supporting embedded systems.</desc>
+            <desc lang="de">FreeDOS ist ein Betriebssystem aus der Gruppe der DOS-Betriebssysteme. Die Entwicklung von FreeDOS findet innerhalb des FreeDOS-Projekts statt, in dem sich mehrere Einzelprojekte zusammengefunden haben, um eine freie und kompatible Alternative zum Betriebssystem MS-DOS zu schaffen, dessen Weiterentwicklung von seinem Hersteller Microsoft eingestellt wurde.</desc>
+            <desc lang="ro">FreeDOS (fostă gratuit Free-DOS și PD-DOS) este un sistem de operare pentru computere compatibile IBM. FreeDOS este compus din mai multe programe diferite, separate, care să acționeze ca "pachete" pentru a FreeDOS. Ca un membru al familiei DOS, acesta prevede în principal accesul la disc prin intermediul kernel-ului său și oferă management parțial al memoriei, dar nu implicit GUI (deși Open GEM este listat pe site-ul oficial FreeDOS). </desc>
+            <desc lang="ru">FreeDOS — операционная система, совместимая с MS-DOS. FreeDOS распространяется на условиях GNU General Public License, включает несколько программ под другими свободными и несвободными лицензиями.</desc>
+            <desc lang="uk">FreeDOS (колишній Free-DOS і PD-DOS) — операційна система для IBM-сумісних комп'ютерів, створена як вільна альтернатива DOS з оточенням з GNU утиліт. З областей застосування FreeDOS називається передустановлення на нові комп'ютери, запуск старих ігор, використання на вбудовуваній техніці, створення CD/Flash для установки прошивок і налаштування материнської плати, навчання студентів основам побудови операційних систем, запуск музичного плеєра, використання в DOSEmu (емулятор DOS для Linux).</desc>
+            <desc lang="zh-Hans">FreeDOS（曾叫做Free-DOS和PD-DOS）是一个在IBM PC兼容机下运行的操作系统。FreeDOS由许多不同的独立程序组成，这些程序就是整个FreeDOS项目中的"包"。</desc>
+            <desc lang="zh-Hant">FreeDOS（曾叫做Free-DOS和PD-DOS）是一個在IBM PC兼容機下運行的操作系統。FreeDOS由許多不同的獨立程序組成，這些程序就是整個FreeDOS項目中的「包」。</desc>
+            <desc lang="es">FreeDOS es un proyecto que aspira a crear un sistema operativo libre que sea totalmente compatible con las aplicaciones y los controladores de MS-DOS. El intérprete de línea de comandos usado por FreeDOS se llama FreeCOM.</desc>
+        </description>
+        <versions>
+            <version>
+                <hash>c9bfcf2d08dbe8bdb1fe95fb339e0b2b</hash>
+                <name>FreeDOS 1.0 (ISO, install only)</name>
+                <download>http://www.freedos.org/download/download/fdbasecd.iso</download>
+                <filenameRegex>fdbasecd.iso</filenameRegex>
+            </version>
+            <version>
+                <hash>5008c37cf0506ed7a95b2cd8ecb7db77</hash>
+                <name>FreeDOS 1.0 (bootable floppy image)</name>
+                <download>http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.0/fdboot.img</download>
+                <filenameRegex>fdboot.img</filenameRegex>
+            </version>
+            <version>
+                <hash>2e0ab23bec79ff33071d80ea26f124dc</hash>
+                <name>FreeDOS 1.1 (ISO, install only, include source)</name>
+                <download>http://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.1/fd11src.iso</download>
+                <filenameRegex>fd11src.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Kaspersky Rescue Disk</name>
+        <category>10</category>
+        <filenameRegex>^kav_rescue_(.*)\.iso$</filenameRegex>
+        <description></description>
+        <versions>
+            <version>
+                <hash></hash>
+                <name>Kaspersky Rescue Disk 10</name>
+                <download>http://rescuedisk.kaspersky-labs.com/rescuedisk/updatable/kav_rescue_10.iso</download>
+                <filenameRegex>kav_rescue_10.iso</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+        </versions>
+    </app>
+    <app>
+        <name>Windows</name>
+        <category>11</category>
+        <filenameRegex>^(.*)windows(.*)\.iso$</filenameRegex>
+        <description></description>
+        <versions>
+            <version>
+                <hash></hash>
+                <name>Windows 10</name>
+                <download></download>
+                <filenameRegex>/(.*)windows(.*)10(.*)\.iso$</filenameRegex>
+                <isLatest>true</isLatest>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows 8.1</name>
+                <download></download>
+                <filenameRegex>/windows(.*)8\.1(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows 8</name>
+                <download></download>
+                <filenameRegex>/windows(.*)8(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows 7</name>
+                <download></download>
+                <filenameRegex>/windows(.*)7(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows Vista</name>
+                <download></download>
+                <filenameRegex>/windows(.*)vista(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows XP</name>
+                <download></download>
+                <filenameRegex>/windows(.*)xp(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows Server 2016</name>
+                <download></download>
+                <filenameRegex>/windows(.*)2016(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows Server 2008</name>
+                <download></download>
+                <filenameRegex>/windows(.*)2008(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows Server 2003</name>
+                <download></download>
+                <filenameRegex>/windows(.*)2003(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows 2000</name>
+                <download></download>
+                <filenameRegex>/windows(.*)(2000|2k)(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows 98</name>
+                <download></download>
+                <filenameRegex>/windows(.*)98(.*)\.iso$</filenameRegex>
+            </version>
+            <version>
+                <hash></hash>
+                <name>Windows 95</name>
+                <download></download>
+                <filenameRegex>/windows(.*)95(.*)\.iso$</filenameRegex>
+            </version>
+        </versions>
+    </app>
+    <!--
+	Categories:
+	
+	-1		None
+	0		Backup
+	1		BIOS
+	2		CPU
+	3		Linux
+	4		Partition
+	5		Password
+	6		RAM
+	7		Recovery
+	8		Testing
+	9		Utility
+	10		Antivirus
+	11		Windows
+	
+	-->
+</apps>
