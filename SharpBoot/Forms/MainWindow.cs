@@ -56,18 +56,8 @@ namespace SharpBoot.Forms
 
             ISOInfo.UpdateFinished += (o, args) =>
             {
-                try
-                {
-                    if (InvokeRequired)
-                        Invoke((MethodInvoker) (() => mniUpdate.Visible = false));
-                    else mniUpdate.Visible = false;
-                }
-                catch
-                {
-                    // ignored
-                }
+                this.InvokeIfRequired(() => mniUpdate.Visible = false);
             };
-
 
             if (Settings.Default.FirstLaunch && dev_FirstLaunch)
             {
