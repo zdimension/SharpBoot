@@ -28,7 +28,7 @@ namespace SharpBoot.Utilities
 {
     public static class Utils
     {
-        public static Random CurrentRandom;
+        public static readonly Random CurrentRandom = new Random();
 
         public static bool Is64 => Environment.GetEnvironmentVariable("PROCESSOR_ARCHITECTURE").IndexOf("64") > 0;
 

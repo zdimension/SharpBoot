@@ -35,13 +35,10 @@ namespace SharpBoot
 
             FileIO.ClrTmp(true);
 
-            Utils.CurrentRandom = new Random();
-
             Settings.Default.PropertyChanged += Default_PropertyChanged;
 
             if (Settings.Default.AppsXml == "") Settings.Default.AppsXml = Resources.DefaultISOs;
             ISOInfo.RefreshISOs();
-
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
