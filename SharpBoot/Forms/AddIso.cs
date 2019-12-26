@@ -309,7 +309,7 @@ namespace SharpBoot.Forms
         private void cbxDetIso_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (changing) return;
-            if (cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null)
+            if (cbxDetIso.SelectedIndex != -1 && cbxDetIso.SelectedItem != null && cbxDetIso.Visible)
                 IsoV = cbxDetIso.SelectedIndex == 0
                     ? new ISOV("other", "")
                     : selinfo2 == null
