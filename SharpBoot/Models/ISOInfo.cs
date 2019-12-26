@@ -193,7 +193,7 @@ namespace SharpBoot.Models
             ISOV resk;
 
             var s = ISOs.FirstOrDefault(x =>
-                Regex.IsMatch(Path.GetFileName(filename), x.Filename)); // find by filename regex
+                Regex.IsMatch(Path.GetFileName(filename), x.Filename, RegexOptions.IgnoreCase | RegexOptions.CultureInvariant)); // find by filename regex
 
             if (s != null && s.LatestVersion == null)
             {
