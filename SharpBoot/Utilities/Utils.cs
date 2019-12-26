@@ -104,7 +104,9 @@ namespace SharpBoot.Utilities
         public static string[] AddRecommended(this string[] arr, int recIndex)
         {
             var copy = (string[]) arr.Clone();
-            copy[recIndex] += " " + Strings.Recommended;
+            var rec = copy[recIndex] + " " + Strings.Recommended;
+            copy[recIndex] = copy[0];
+            copy[0] = rec;
             return copy;
         }
 
