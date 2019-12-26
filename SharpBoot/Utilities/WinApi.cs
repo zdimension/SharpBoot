@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Windows.Forms;
 using Microsoft.Win32.SafeHandles;
 
 namespace SharpBoot.Utilities
@@ -31,6 +32,12 @@ namespace SharpBoot.Utilities
     {
         [DllImport("uxtheme.dll", ExactSpelling = true, CharSet = CharSet.Unicode)]
         public static extern int SetWindowTheme(IntPtr hwnd, string pszSubAppName, string pszSubIdList);
+
+        public static void EnableWindowsTheme(this Control ctl)
+        {
+            if (Utils.IsWin)
+                SetWindowTheme(ctl.Handle, "explorer", null);
+        }
     }
 
     public static class Kernel32

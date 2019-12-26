@@ -51,7 +51,7 @@ namespace SharpBoot.Forms
             cbxBackType.SelectedIndex = 2;
 
             RefreshOutputSize();
-            if (Utils.IsWin) UxTheme.SetWindowTheme(lvIsos.Handle, "EXPLORER", null);
+            lvIsos.EnableWindowsTheme();
 
 
             ISOInfo.UpdateFinished += (o, args) =>
