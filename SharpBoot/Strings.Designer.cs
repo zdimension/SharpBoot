@@ -484,6 +484,15 @@ namespace SharpBoot {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à s.
+        /// </summary>
+        internal static string SecondUnit {
+            get {
+                return ResourceManager.GetString("SecondUnit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à SharpBoot uses the following software:.
         /// </summary>
         internal static string SharpBootUsesSoft {

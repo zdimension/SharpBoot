@@ -267,4 +267,7 @@
   <data name="RemainingTime" xml:space="preserve">
     <value>Remaining time: {0:hh\:mm\:ss}</value>
   </data>
+  <data name="SecondUnit" xml:space="preserve">
+    <value>s</value>
+  </data>
 </root>

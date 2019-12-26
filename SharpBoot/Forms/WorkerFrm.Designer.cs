@@ -39,6 +39,7 @@ namespace SharpBoot.Forms
             this.bwkWorker = new System.ComponentModel.BackgroundWorker();
             this.pbxLoading = new System.Windows.Forms.PictureBox();
             this.lblAdditional = new System.Windows.Forms.Label();
+            this.lblSpeed = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxLoading)).BeginInit();
             this.SuspendLayout();
@@ -86,12 +87,18 @@ namespace SharpBoot.Forms
             resources.ApplyResources(this.lblAdditional, "lblAdditional");
             this.lblAdditional.Name = "lblAdditional";
             // 
+            // lblSpeed
+            // 
+            resources.ApplyResources(this.lblSpeed, "lblSpeed");
+            this.lblSpeed.Name = "lblSpeed";
+            // 
             // WorkerFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ControlBox = false;
+            this.Controls.Add(this.lblSpeed);
             this.Controls.Add(this.lblAdditional);
             this.Controls.Add(this.pbxLoading);
             this.Controls.Add(this.pbx);
@@ -116,5 +123,6 @@ namespace SharpBoot.Forms
         private PictureBox pbxLoading;
         private Label lblAdditional;
         protected ProgressBar pbx;
+        private Label lblSpeed;
     }
 }

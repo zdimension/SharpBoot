@@ -27,7 +27,7 @@ namespace SharpBoot.Forms
             InitializeComponent();
             lblStatus.Text = Strings.Init;
             btnAnnul.Text = Strings.Cancel;
-            lblAdditional.Text = "";
+            lblAdditional.Text = lblSpeed.Text = "";
         }
 
         public event EventHandler WorkFinished;
@@ -53,6 +53,8 @@ namespace SharpBoot.Forms
 
         public void ChangeProgressBar(int val, int max)
         {
+            if (abort) return;
+
             pbx.InvokeIfRequired(() =>
             {
                 pbx.Maximum = max;
@@ -60,12 +62,20 @@ namespace SharpBoot.Forms
             });
         }
 
-        public void ChangeProgressBarEstimate(int val, int max, DateTime started)
+        public void ChangeProgressBarEstimate(long val, long max, DateTime started, bool showSpeed=false)
         {
-            var rem =  TimeSpan.FromSeconds(val == 0 ? 0 : ((DateTime.Now - started).TotalSeconds / val *
-                                           (max - val)));
+            Localization.UpdateThreadCulture();
 
-            ChangeProgressBar(val, max);
+            var speed = val / (DateTime.Now - started).TotalSeconds;
+            var rem =  TimeSpan.FromSeconds(val == 0 ? 0 : (max - val) / speed);
+
+            ChangeProgressBar((int)Math.Round(val * 10000.0 / max), 10000);
+
+            if (showSpeed)
+            {
+                ChangeSpeed(FileIO.GetSpeedString((long)Math.Round(speed), 0));
+            }
+
             ChangeAdditional(string.Format(Strings.RemainingTime, rem));
         }
 
@@ -77,6 +87,11 @@ namespace SharpBoot.Forms
         public void ChangeAdditional(string info)
         {
             lblAdditional.InvokeIfRequired(() => lblAdditional.Text = info);
+        }
+
+        public void ChangeSpeed(string speed)
+        {
+            lblSpeed.InvokeIfRequired(() => lblSpeed.Text = speed);
         }
 
         public void ChangeProgress(int val, int max, string stat)
@@ -118,11 +133,11 @@ namespace SharpBoot.Forms
 
         public void CancelWork()
         {
+            SetCancel();
             closeonclick = true;
             abort = true;
             CancellationTokenSource.Cancel();
             bwkWorker.CancelAsync();
-            SetCancel();
             WorkCancelled?.Invoke(this, EventArgs.Empty);
         }
 

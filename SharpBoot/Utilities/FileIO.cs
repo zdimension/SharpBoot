@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.SqlServer.Server;
 
 namespace SharpBoot.Utilities
 {
@@ -43,15 +44,20 @@ namespace SharpBoot.Utilities
         [DllImport("Shlwapi.dll", CharSet = CharSet.Auto)]
         public static extern long StrFormatByteSize(long fileSize, StringBuilder buffer, int bufferSize);
 
-        public static string GetSizeString(long file)
+        public static string GetSizeString(long file, int decimals=0)
         {
             var suf = Strings.SizeSuffixes.Split(',').Select(x => x + Strings.FileUnit).ToArray();
             if (file == 0)
                 return "0 " + suf[0];
             var bytes = Math.Abs(file);
             var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-            var num = Math.Round(bytes / Math.Pow(1024, place), 1);
-            return Math.Sign(file) * num + " " + suf[place];
+            var num = bytes / Math.Pow(1024, place);
+            return (Math.Sign(file) * num).ToString("F" + decimals) + " " + suf[place];
+        }
+
+        public static string GetSpeedString(long speed, int decimals=0)
+        {
+            return GetSizeString(speed, decimals) + "/" + Strings.SecondUnit;
         }
 
         public static string GetTemporaryDirectory()
