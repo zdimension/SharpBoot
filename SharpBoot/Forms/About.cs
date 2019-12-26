@@ -32,7 +32,7 @@ namespace SharpBoot.Forms
             FormClosing += (sender, args) => { mp.Stop(); };
         }
 
-        public static List<Image> Flags => new About().ilTranslators.Images.Cast<Image>().ToList();
+        public static IReadOnlyList<Image> Flags => new About().ilTranslators.Images.Cast<Image>().ToList().AsReadOnly();
 
         private void lvTranslators_DoubleClick(object sender, EventArgs e)
         {

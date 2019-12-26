@@ -16,27 +16,23 @@ namespace SharpBoot.Utilities
 {
     class Localization
     {
-        public static List<CultureInfo> GetAvailableCultures(Type t)
+        public static IEnumerable<CultureInfo> GetAvailableCultures(Type t)
         {
-            var result = new List<CultureInfo>();
             var rm = new ResourceManager(t);
 
-            var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            foreach (var culture in cultures)
-                try
+            return CultureInfo.GetCultures(CultureTypes.AllCultures)
+                .Where(culture =>
                 {
-                    if (culture.Equals(CultureInfo.InvariantCulture)) continue;
-
-                    var rs = rm.GetResourceSet(culture, true, false);
-                    if (rs != null)
-                        result.Add(culture);
-                }
-                catch (CultureNotFoundException)
-                {
-                    //NOP
-                }
-
-            return result;
+                    try
+                    {
+                        return !culture.Equals(CultureInfo.InvariantCulture) &&
+                               rm.GetResourceSet(culture, true, false) != null;
+                    }
+                    catch (CultureNotFoundException)
+                    {
+                        return false;
+                    }
+                });
         }
 
         public static CultureInfo GetSystemCulture()
@@ -54,19 +50,14 @@ namespace SharpBoot.Utilities
             return GetAvailableCultures().Any(x => x.ThreeLetterISOLanguageName == systemLng.ThreeLetterISOLanguageName);
         }
 
-        public static List<CultureInfo> GetDisplayCultures()
+        public static IOrderedEnumerable<CultureInfo> GetDisplayCultures()
         {
             var result = GetAvailableCultures();
 
-            var systemLng = GetSystemCulture();
-
             if (!IsSystemCultureSupported())
-                result.Add(systemLng);
+                result = result.ConcatOne(GetSystemCulture());
 
-            result = result.Distinct().ToList();
-            result.Sort((x, y) => String.Compare(x.NativeName, y.NativeName, StringComparison.Ordinal));
-
-            return result;
+            return result.Distinct().OrderBy(x => x.Name, new OrdinalStringComparer());
         }
 
         public static void UpdateThreadCulture()
@@ -75,13 +66,9 @@ namespace SharpBoot.Utilities
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
         }
 
-        public static List<CultureInfo> GetAvailableCultures()
+        public static IEnumerable<CultureInfo> GetAvailableCultures()
         {
-            var result = GetAvailableCultures(typeof(Strings));
-
-            result.AddRange(GetAvailableCultures(typeof(ISOCat)));
-
-            return result;
+            return GetAvailableCultures(typeof(Strings)).Concat(GetAvailableCultures(typeof(ISOCat)));
         }
 
         public static void SetAppLanguage(CultureInfo c)

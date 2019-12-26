@@ -101,19 +101,11 @@ namespace SharpBoot.Utilities
             return new string(chars.ToArray());
         }
 
-        public static List<string> AddRecommended(this List<string> arr, int recIndex)
-        {
-            var a = arr.ToList();
-            var f = a[recIndex] + " " + Strings.Recommended;
-            a.RemoveAt(recIndex);
-            //a.Sort();
-            a.Insert(0, f);
-            return a;
-        }
-
         public static string[] AddRecommended(this string[] arr, int recIndex)
         {
-            return AddRecommended(arr.ToList(), recIndex).ToArray();
+            var copy = (string[]) arr.Clone();
+            copy[recIndex] += " " + Strings.Recommended;
+            return copy;
         }
 
         public static string RemoveRecommended(this string s)
@@ -212,6 +204,25 @@ namespace SharpBoot.Utilities
             {
                 action();
             }
+        }
+
+        public static IEnumerable<T> ConcatOne<T>(this IEnumerable<T> e, T elem)
+        {
+            if (e == null)
+                throw new ArgumentNullException(nameof(e));
+
+            foreach (var x in e)
+                yield return x;
+
+            yield return elem;
+        }
+    }
+
+    public class OrdinalStringComparer : IComparer<string>
+    {
+        public int Compare(string x, string y)
+        {
+            return string.Compare(x, y, StringComparison.Ordinal);
         }
     }
 }
