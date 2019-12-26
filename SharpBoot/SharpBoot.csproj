@@ -40,7 +40,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\logo.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\Images\logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic" />
@@ -630,8 +630,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\basedisk.7z" />
-    <None Include="Resources\mkisofs.7z" />
+    <None Include="Resources\Components\basedisk.7z" />
+    <None Include="Resources\Components\mkisofs.7z" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -639,54 +639,54 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cd_delete1.png" />
-    <None Include="Resources\cd.png" />
-    <None Include="Resources\7za.exe" />
+    <None Include="Resources\Images\cd_delete1.png" />
+    <None Include="Resources\Images\cd.png" />
+    <None Include="Resources\Components\7za.exe" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\qemu.7z" />
+    <None Include="Resources\Components\qemu.7z" />
     <None Include="Resources\sharpboot.dat" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gear_in.png" />
+    <None Include="Resources\Images\gear_in.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\question.png" />
+    <None Include="Resources\Images\question.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cd_add.png" />
+    <None Include="Resources\Images\cd_add.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\folder.png" />
+    <None Include="Resources\Images\folder.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\accept_button1.png" />
+    <None Include="Resources\Images\accept_button1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\SharpBoot.AdminProcess.exe" />
-    <None Include="Resources\page_white_add.png" />
-    <None Include="Resources\script_edit.png" />
-    <None Include="Resources\package_go.png" />
+    <None Include="Resources\Components\SharpBoot.AdminProcess.exe" />
+    <None Include="Resources\Images\page_white_add.png" />
+    <None Include="Resources\Images\script_edit.png" />
+    <None Include="Resources\Images\package_go.png" />
     <None Include="Resources\unifont.ttf" />
-    <None Include="Resources\update_anim.gif" />
-    <None Include="Resources\drive_disk.png" />
-    <None Include="Resources\ajax-loader.gif" />
-    <None Include="Resources\download.png" />
-    <None Include="Resources\flag_usa.png" />
-    <None Include="Resources\file_save_as.png" />
-    <None Include="Resources\door_out.png" />
-    <None Include="Resources\add.png" />
-    <None Include="Resources\delete.png" />
-    <None Include="Resources\compile1.png" />
-    <None Include="Resources\edit_package.png" />
-    <None Include="Resources\arrow_refresh.png" />
-    <None Include="Resources\chevron_left.png" />
-    <None Include="Resources\chevron_left_h.png" />
-    <None Include="Resources\chevron_left_d.png" />
-    <None Include="Resources\application_form_edit.png" />
+    <None Include="Resources\Images\update_anim.gif" />
+    <None Include="Resources\Images\drive_disk.png" />
+    <None Include="Resources\Images\ajax-loader.gif" />
+    <None Include="Resources\Images\download.png" />
+    <None Include="Resources\Images\flag_usa.png" />
+    <None Include="Resources\Images\file_save_as.png" />
+    <None Include="Resources\Images\door_out.png" />
+    <None Include="Resources\Images\add.png" />
+    <None Include="Resources\Images\delete.png" />
+    <None Include="Resources\Images\compile1.png" />
+    <None Include="Resources\Images\edit_package.png" />
+    <None Include="Resources\Images\arrow_refresh.png" />
+    <None Include="Resources\Images\chevron_left.png" />
+    <None Include="Resources\Images\chevron_left_h.png" />
+    <None Include="Resources\Images\chevron_left_d.png" />
+    <None Include="Resources\Images\application_form_edit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\logo.ico" />
+    <None Include="Resources\Images\logo.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\sharpboot.wav" />
