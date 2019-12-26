@@ -9,18 +9,12 @@ namespace SharpBoot.Controls
 
     public class LinkLabelEx : LinkLabel
     {
-        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-        private static extern IntPtr LoadCursor(IntPtr hInstance, int lpCursorName);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        private static extern IntPtr SetCursor(IntPtr hCursor);
-
         protected override void WndProc(ref Message m)
         {
             if (m.Msg == WindowMessage.WM_SETCURSOR)
             {
                 // Set the cursor to use the system hand cursor
-                SetCursor(LoadCursor(IntPtr.Zero, WinApi.IDC_HAND));
+                User32.SetCursor(User32.LoadCursor(IntPtr.Zero, WinApi.IDC_HAND));
 
                 // Indicate that the message has been handled
                 m.Result = IntPtr.Zero;
