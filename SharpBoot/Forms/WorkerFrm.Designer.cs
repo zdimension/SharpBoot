@@ -89,8 +89,7 @@ namespace SharpBoot.Forms
             // WorkerFrm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+                        this.BackColor = System.Drawing.Color.White;
             this.ControlBox = false;
             this.Controls.Add(this.lblAdditional);
             this.Controls.Add(this.pbxLoading);

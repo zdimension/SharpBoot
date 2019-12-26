@@ -159,8 +159,7 @@ namespace SharpBoot.Forms
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pbLogo);
+                        this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.lvTranslators);
             this.Controls.Add(this.disabledRichTextBox1);
             this.Controls.Add(this.label1);

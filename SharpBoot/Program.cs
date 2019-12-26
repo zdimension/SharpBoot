@@ -31,6 +31,10 @@ namespace SharpBoot
         [STAThread]
         private static void Main()
         {
+            // fix for high-dpi displays
+            if (Environment.OSVersion.Version.Major >= 6)
+                User32.SetProcessDPIAware();
+
             ServicePointManager.ServerCertificateValidationCallback += delegate { return true; };
 
             Utils.ClrTmp(true);

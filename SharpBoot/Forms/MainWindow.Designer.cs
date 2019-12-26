@@ -527,13 +527,11 @@ namespace SharpBoot.Forms
             // MainWindow
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblDragHere);
+                        this.Controls.Add(this.lblDragHere);
             this.Controls.Add(this.lvIsos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlBottom);
             this.Controls.Add(this.menuStrip);
-            this.DoubleBuffered = true;
             this.Icon = global::SharpBoot.Properties.Resources.logo;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainWindow";

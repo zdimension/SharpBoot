@@ -82,8 +82,7 @@
             // 
             this.AcceptButton = this.btnOK;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+                        this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btnAnnul;
             this.Controls.Add(this.rtbCode);
             this.Controls.Add(this.lblHeader);
