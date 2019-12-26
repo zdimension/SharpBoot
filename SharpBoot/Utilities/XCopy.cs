@@ -13,22 +13,22 @@ namespace SharpBoot.Utilities
     public class XCopy
     {
         private string Destination;
-        private double FilePercentCompleted;
+        private long BytesCopied;
         private bool IsCancelled;
 
         private string Source;
 
         public static void Copy(string source, string destination, bool overwrite, bool nobuffering,
-            Action<double> handler, CancellationToken token = default)
+            Action<long, long> handler, CancellationToken token = default)
         {
             new XCopy().CopyInternal(source, destination, overwrite, nobuffering, handler, token);
         }
 
         private event EventHandler Completed;
-        private event Action<double> ProgressChanged;
+        private event Action<long, long> ProgressChanged;
 
         private void CopyInternal(string source, string destination, bool overwrite, bool nobuffering,
-            Action<double> handler, CancellationToken token = default)
+            Action<long, long> handler, CancellationToken token = default)
         {
             try
             {
@@ -73,14 +73,14 @@ namespace SharpBoot.Utilities
             }
         }
 
-        private void OnProgressChanged(double percent)
+        private void OnProgressChanged(long progress, long total)
         {
             // only raise an event when progress has changed
-            if (percent > FilePercentCompleted)
+            if (progress > BytesCopied)
             {
-                FilePercentCompleted = percent;
+                BytesCopied = progress;
 
-                ProgressChanged?.Invoke(FilePercentCompleted);
+                ProgressChanged?.Invoke(progress, total);
             }
         }
 
@@ -130,7 +130,7 @@ namespace SharpBoot.Utilities
             CopyProgressCallbackReason reason, IntPtr hSourceFile, IntPtr hDestinationFile, IntPtr lpData)
         {
             if (reason == CopyProgressCallbackReason.CALLBACK_CHUNK_FINISHED)
-                OnProgressChanged(transferred / (double) total * 100.0);
+                OnProgressChanged(transferred, total);
 
             if (transferred >= total)
                 OnCompleted();

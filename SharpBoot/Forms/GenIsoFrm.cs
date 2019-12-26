@@ -211,10 +211,10 @@ namespace SharpBoot.Forms
             var started = DateTime.Now;
             XCopy.Copy(source, dest, true,
                 true,
-                (pce) =>
+                (prog, total) =>
                 {
                     if (IsCancelled) return;
-                    ChangeProgressBarEstimate((int)Math.Round(pce * 100), 10000, started);
+                    ChangeProgressBarEstimate(prog, total, started, true);
                 }, CancellationTokenSource.Token);
         }
 

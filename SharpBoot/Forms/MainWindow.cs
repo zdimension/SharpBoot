@@ -420,34 +420,39 @@ namespace SharpBoot.Forms
             btnChecksum.ShowContextMenuStrip();
         }
 
-        private void chksum<T>(string n)
+        private void ComputeChecksum<T>(string title)
             where T : HashAlgorithm, new()
         {
             Cursor = Cursors.WaitCursor;
 
-            var frm = new GenericTask(n);
+            var frm = new GenericTask(title);
             var res = "";
             frm.WorkHandler = () =>
             {
                 var d = DateTime.Now;
 
-                var sb = Hash.FileHash<T>(
-                    lvIsos.SelectedRows[0].Cells[4].Value.ToString(), 
-                    frm.CancellationTokenSource.Token,
-                    (prog, size) =>
-                    {
-                        frm.ChangeProgressBarEstimate((int)(prog * 100 / size), 100, d);
-                    });
+                try
+                {
+                    var sb = Hash.FileHash<T>(
+                        lvIsos.SelectedRows[0].Cells[4].Value.ToString(),
+                        frm.CancellationTokenSource.Token,
+                        (prog, size) => { frm.ChangeProgressBarEstimate(prog, size, d, true); });
 
-                var a = DateTime.Now;
-                var t = a - d;
 
-                res = string.Format(Strings.ChkOf, n,
-                                    Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
-                res += sb + "\r\n";
-                /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
-                                 "s";*/
-                res += string.Format(Strings.CalcIn, t);
+                    var a = DateTime.Now;
+                    var t = a - d;
+
+                    res = string.Format(Strings.ChkOf, title,
+                              Path.GetFileName(lvIsos.SelectedRows[0].Cells[4].Value.ToString())) + "\r\n";
+                    res += sb + "\r\n";
+                    /*txImInfo.Text += Strings.CalcIn + " " + t.Hours + "h " + t.Minutes + "m " + (t.TotalMilliseconds / 1000.0) +
+                                     "s";*/
+                    res += string.Format(Strings.CalcIn, t);
+                }
+                catch when (frm.abort)
+                {
+                    res = Strings.OpCancelled;
+                }
             };
 
             frm.WorkFinished += delegate
@@ -603,22 +608,22 @@ namespace SharpBoot.Forms
 
         private void btnSha1_Click(object sender, EventArgs e)
         {
-            chksum<SHA1CryptoServiceProvider>("SHA-1");
+            ComputeChecksum<SHA1CryptoServiceProvider>("SHA-1");
         }
 
         private void btnSha256_Click(object sender, EventArgs e)
         {
-            chksum<SHA256CryptoServiceProvider>("SHA-256");
+            ComputeChecksum<SHA256CryptoServiceProvider>("SHA-256");
         }
 
         private void btnSha512_Click(object sender, EventArgs e)
         {
-            chksum<SHA512CryptoServiceProvider>("SHA-512");
+            ComputeChecksum<SHA512CryptoServiceProvider>("SHA-512");
         }
 
         private void btnSha384_Click(object sender, EventArgs e)
         {
-            chksum<SHA384CryptoServiceProvider>("SHA-384");
+            ComputeChecksum<SHA384CryptoServiceProvider>("SHA-384");
         }
 
         private void lvIsos_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -646,7 +651,7 @@ namespace SharpBoot.Forms
 
         private void mD5ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            chksum<MD5CryptoServiceProvider>("MD5");
+            ComputeChecksum<MD5CryptoServiceProvider>("MD5");
         }
 
         private void updateAvailableToolStripMenuItem_Click(object sender, EventArgs e)
