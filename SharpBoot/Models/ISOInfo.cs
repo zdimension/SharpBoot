@@ -222,7 +222,7 @@ namespace SharpBoot.Models
                             sta.FirstOrDefault(
                                 x =>
                                     x.Filename.StartsWith("/") &&
-                                    Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1)));
+                                    Regex.IsMatch(Path.GetFileName(filename), x.Filename.Substring(1), RegexOptions.IgnoreCase | RegexOptions.CultureInvariant));
 
                         if (st == null && !fast)
                         {
