@@ -266,10 +266,10 @@ namespace SharpBoot.Forms
 
         private void btnGen_Click(object sender, EventArgs e)
         {
-            launchgeniso(false);
+            StartWork(false);
         }
 
-        private void launchgeniso(bool usb)
+        private void StartWork(bool usb)
         {
             Form ask = null;
             if (usb)
@@ -641,7 +641,7 @@ namespace SharpBoot.Forms
 
         private void btnUSB_Click(object sender, EventArgs e)
         {
-            launchgeniso(true);
+            StartWork(true);
         }
 
         private void mD5ToolStripMenuItem_Click(object sender, EventArgs e)
