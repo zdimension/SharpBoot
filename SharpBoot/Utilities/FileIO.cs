@@ -14,7 +14,7 @@ namespace SharpBoot.Utilities
         public static void ClrTmp(bool first = false)
         {
             Directory.GetDirectories(Path.GetTempPath())
-                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_") && (first || !QEMUISO.Paths.Contains(x)))
+                .Where(x => Path.GetFileName(x).StartsWith("SharpBoot_") && (first || !QEMU.Paths.Contains(x)))
                 .ToList()
                 .ForEach(SafeDel);
         }

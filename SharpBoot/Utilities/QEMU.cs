@@ -6,7 +6,7 @@ using SharpBoot.Properties;
 
 namespace SharpBoot.Utilities
 {
-    public class QEMUISO
+    public class QEMU
     {
         public static List<string> Paths = new List<string>();
 

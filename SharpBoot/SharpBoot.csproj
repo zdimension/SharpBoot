@@ -228,7 +228,7 @@
     <Compile Include="Utilities\Hash.cs" />
     <Compile Include="Utilities\Localization.cs" />
     <Compile Include="Utilities\Network.cs" />
-    <Compile Include="Utilities\QEMUISO.cs" />
+    <Compile Include="Utilities\QEMU.cs" />
     <Compile Include="Utilities\SevenZipExtractor.cs" />
     <Compile Include="Controls\SplitButton.cs">
       <SubType>Component</SubType>

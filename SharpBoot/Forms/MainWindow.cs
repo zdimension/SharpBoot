@@ -223,7 +223,7 @@ namespace SharpBoot.Forms
                 if (g.filesystem == "NTFS")
                     Thread.Sleep(1500); // let Windows notice the FS changes
 
-                QEMUISO.LaunchQemu(g.OutputFilepath, g._usb);
+                QEMU.LaunchQemu(g.OutputFilepath, g._usb);
             }
         }
 
@@ -360,7 +360,7 @@ namespace SharpBoot.Forms
         {
             var t = (string[]) e.Data.GetData(DataFormats.FileDrop);
             var a = t[0];
-            QEMUISO.LaunchQemu(a, a.EndsWith(Program.DirCharStr));
+            QEMU.LaunchQemu(a, a.EndsWith(Program.DirCharStr));
         }
 
         private void lvIsos_SelectionChanged(object sender, EventArgs e)
