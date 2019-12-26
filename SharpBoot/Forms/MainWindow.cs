@@ -42,11 +42,6 @@ namespace SharpBoot.Forms
             if (Settings.Default.FirstLaunch && dev_FirstLaunch)
                 Hide();
 
-            SetStyle(
-                ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.DoubleBuffer |
-                ControlStyles.ResizeRedraw,
-                true);
-
             InitAfterLng();
             changing = true;
             LoadLanguages();
@@ -90,16 +85,6 @@ namespace SharpBoot.Forms
                     : cbxBackType.SelectedIndex == 1
                         ? File.Exists(txtBackFile.Text) ? Image.FromFile(txtBackFile.Text).ToByteArray() : new byte[0]
                         : new byte[0];
-
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                var handleParam = base.CreateParams;
-                handleParam.ExStyle |= 0x02000000; // WS_EX_COMPOSITED       
-                return handleParam;
-            }
-        }
 
         public void RefreshOutputSize()
         {

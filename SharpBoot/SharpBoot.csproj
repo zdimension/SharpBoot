@@ -79,6 +79,9 @@
     <Compile Include="Forms\AskPath.Designer.cs">
       <DependentUpon>AskPath.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\GenericTask.cs">
       <SubType>Form</SubType>
     </Compile>
