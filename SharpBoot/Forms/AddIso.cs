@@ -260,7 +260,7 @@ namespace SharpBoot.Forms
                     pbxLoading.Visible = false;
                 }));
                 changing = false;
-            })
+            });
             
             th.Start();
         }

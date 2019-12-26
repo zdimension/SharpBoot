@@ -92,7 +92,5 @@ namespace SharpBoot.Utilities
             var index = dc.IndexOf(twocode);
             return index == -1 ? null : About.Flags[index];
         }
-
-        public static List<CultureInfo> UseSystemSize => new List<CultureInfo>();
     }
 }

@@ -45,13 +45,6 @@ namespace SharpBoot.Utilities
 
         public static string GetSizeString(long file)
         {
-            if (Localization.UseSystemSize.Contains(Thread.CurrentThread.CurrentUICulture))
-            {
-                var sb = new StringBuilder(20);
-                StrFormatByteSize(file, sb, sb.Capacity);
-                return sb.ToString();
-            }
-
             var suf = Strings.SizeSuffixes.Split(',').Select(x => x + Strings.FileUnit).ToArray();
             if (file == 0)
                 return "0 " + suf[0];
