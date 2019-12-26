@@ -69,6 +69,12 @@ namespace SharpBoot.Utilities
             return result;
         }
 
+        public static void UpdateThreadCulture()
+        {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+        }
+
         public static List<CultureInfo> GetAvailableCultures()
         {
             var result = GetAvailableCultures(typeof(Strings));
@@ -82,8 +88,7 @@ namespace SharpBoot.Utilities
         {
             Settings.Default.Lang = c.Name;
             Settings.Default.Save();
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+            UpdateThreadCulture();
             Settings.Default.Save();
             ISOInfo.RefreshISOs();
         }

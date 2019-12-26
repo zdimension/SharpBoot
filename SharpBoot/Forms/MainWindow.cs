@@ -211,8 +211,7 @@ namespace SharpBoot.Forms
         {
             FileIO.ClrTmp();
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+            Localization.UpdateThreadCulture();
 
             if (g.abort)
                 return;

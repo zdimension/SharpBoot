@@ -130,8 +130,7 @@ namespace SharpBoot.Forms
 
         private void bwkWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+            Localization.UpdateThreadCulture();
 
             DoWork();
 

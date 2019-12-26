@@ -40,8 +40,7 @@ namespace SharpBoot
             if (Settings.Default.AppsXml == "") Settings.Default.AppsXml = Resources.DefaultISOs;
             ISOInfo.RefreshISOs();
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+            Localization.UpdateThreadCulture();
 
             Application.ApplicationExit += delegate { FileIO.ClrTmp(); };
             Application.ThreadException += (_, e) => Utils.HandleUnhandled(e.Exception, "Thread exception");
@@ -61,8 +60,7 @@ namespace SharpBoot
             Settings.Default.Save();
             if (e.PropertyName == "Lang")
             {
-                Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+                Localization.UpdateThreadCulture();
                 ISOInfo.RefreshISOs();
             }
         }

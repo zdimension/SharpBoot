@@ -229,6 +229,8 @@ namespace SharpBoot.Forms
         {
             th = new Thread(() =>
             {
+                Localization.UpdateThreadCulture();
+
                 Invoke((MethodInvoker) (() => pbxLoading.Visible = true));
 
                 var resk = ISOInfo.GetFromFile(ISOPath, false, tokenSource.Token);
@@ -259,10 +261,7 @@ namespace SharpBoot.Forms
                 }));
                 changing = false;
             })
-            {
-                CurrentCulture = CultureInfo.CurrentCulture,
-                CurrentUICulture = CultureInfo.CurrentUICulture
-            };
+            
             th.Start();
         }
 

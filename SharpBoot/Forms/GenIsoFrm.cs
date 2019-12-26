@@ -402,8 +402,7 @@ namespace SharpBoot.Forms
                 var started = DateTime.Now;
                 p.ErrorDataReceived += (sender, args) =>
                 {
-                    Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.Lang);
-                    Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.Lang);
+                    Localization.UpdateThreadCulture();
 
                     try
                     {
